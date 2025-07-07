@@ -1,25 +1,31 @@
+# 모든 검색 엔진 허용
 User-agent: *
 Allow: /
 
-# 네이버 검색로봇
-User-agent: Yeti
-Allow: /
-
-# 구글 검색로봇
+# 구글봇 설정
 User-agent: Googlebot
 Allow: /
-
-# 다음 검색로봇
-User-agent: Daumoa
-Allow: /
-
-# 사이트맵 위치 지정
-Sitemap: https://lds77.github.io/sitemap.xml
-
-# 크롤링 속도 제한 (서버 부하 방지)
 Crawl-delay: 1
 
-# 중요하지 않은 페이지 제외
+# 네이버 봇 설정 (Yeti)
+User-agent: Yeti
+Allow: /
+Crawl-delay: 1
+
+# 다음 봇 설정
+User-agent: Daumoa
+Allow: /
+Crawl-delay: 1
+
+# Bing 봇 설정
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# 사이트맵 위치 명시
+Sitemap: https://lds77.github.io/sitemap.xml
+
+# 중요하지 않은 디렉토리 및 파일 제외
 Disallow: /admin/
 Disallow: /temp/
 Disallow: /backup/
@@ -29,15 +35,3 @@ Disallow: /*.tmp$
 # 모바일 전용 페이지 허용
 Allow: /mobile/
 Allow: /m/
-
-# 검색엔진별 특별 설정
-User-agent: NaverBot
-Allow: /
-Crawl-delay: 0.5
-
-User-agent: GoogleBot
-Allow: /
-Crawl-delay: 0.5
-
-# 호스트 지정 (중복 도메인 방지)
-Host: https://lds77.github.io
