@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>청주시 주요 병원 정보 - 직지응급환자이송단</title>
+    <meta name="description" content="청주시 내 주요 병원들의 위치, 진료과목, 응급실 운영 현황 정보. 충북대학교병원, 청주성모병원 등 대학병원 및 종합병원 안내.">
+    <meta name="keywords" content="청주 병원, 충북대학교병원, 청주성모병원, 청주 응급실, 청주 의료기관, 청주 사설구급차">
     <style>
         * {
             margin: 0;
@@ -43,6 +45,11 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            cursor: pointer;
+        }
+
+        .logo:hover {
+            opacity: 0.9;
         }
 
         .logo-icon {
@@ -372,7 +379,7 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">
+                <div class="logo" onclick="location.href='index.html'">
                     <div class="logo-icon">🚑</div>
                     <div>
                         <h1>직지응급환자이송단</h1>
@@ -386,7 +393,7 @@
 
     <nav class="breadcrumb">
         <div class="container">
-            <a href="#">홈</a> > <a href="#">서비스 지역</a> > <span>청주시 주요 병원</span>
+            <a href="index.html">홈</a> > <a href="index.html#coverage">서비스 지역</a> > <span>청주시 주요 병원</span>
         </div>
     </nav>
 
@@ -414,7 +421,7 @@
             <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">청주시 의료기관 현황</h2>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">2</div>
+                    <div class="stat-number">1</div>
                     <div class="stat-label">대학병원</div>
                 </div>
                 <div class="stat-card">
@@ -514,43 +521,6 @@
                     <div class="hospital-actions">
                         <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
                         <a href="tel:043-219-8000" class="btn btn-secondary">병원 연락</a>
-                    </div>
-                </div>
-
-                <!-- 건국대학교 충주병원 -->
-                <div class="hospital-card" data-type="university">
-                    <div class="hospital-header">
-                        <div class="hospital-type">대학병원</div>
-                        <div class="hospital-level">지역응급의료센터</div>
-                    </div>
-                    <h3>건국대학교 충주병원</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon">📍</span>
-                            <span>충주시 국원대로 82</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon">📞</span>
-                            <span>043-840-8114</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon">🚨</span>
-                            <span>응급실: 24시간 운영</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon">🛏️</span>
-                            <span>병상수: 650병상</span>
-                        </div>
-                    </div>
-                    <div class="specialties">
-                        <span class="specialty-tag">심혈관센터</span>
-                        <span class="specialty-tag">뇌신경센터</span>
-                        <span class="specialty-tag">외과센터</span>
-                        <span class="specialty-tag">응급의학과</span>
-                    </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
-                        <a href="tel:043-840-8114" class="btn btn-secondary">병원 연락</a>
                     </div>
                 </div>
 
