@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>직지응급환자이송단 - 충북 사설구급차 전문서비스</title>
+    <meta name="description" content="충청북도 전문 사설구급차 서비스. 24시간 응급환자이송, 요양병원 전문이송, 정신질환자 이송, 행사 의료지원. 010-8841-4114">
+    <meta name="keywords" content="청주 사설구급차, 충주 환자이송, 제천 구급차, 요양병원 이송, 정신질환자 이송, 알코올중독 치료이송, 행사 의료지원, 충북 응급이송">
     <style>
         * {
             margin: 0;
@@ -183,6 +185,7 @@
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid #e9ecef;
+            cursor: pointer;
         }
 
         .service-card:hover {
@@ -236,6 +239,7 @@
             text-align: center;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .coverage-item:hover {
@@ -351,6 +355,15 @@
             list-style: none;
         }
 
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #e74c3c;
+        }
+
         .footer-bottom {
             border-top: 1px solid #34495e;
             padding-top: 20px;
@@ -452,27 +465,27 @@
             <div class="container">
                 <h2 class="section-title">전문 이송 서비스</h2>
                 <div class="services-grid">
-                    <div class="service-card">
+                    <div class="service-card" onclick="location.href='general_patient_transport.html'">
                         <div class="service-icon">🏥</div>
                         <h3>일반 환자이송</h3>
                         <p>병원 간 이송, 외래진료 이송, 입퇴원 이송 등 일반적인 환자 운송 서비스를 안전하게 제공합니다.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" onclick="location.href='nursing_home_transport.html'">
                         <div class="service-icon">🏚️</div>
                         <h3>요양병원 전문이송</h3>
                         <p>요양병원 입원 및 퇴원, 병원 간 전원 시 침상형 구급차로 편안하고 안전한 이송을 보장합니다.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" onclick="location.href='mental_health_transport.html'">
                         <div class="service-icon">🧠</div>
                         <h3>정신질환자 전문이송</h3>
                         <p>정신과 병원 이송 시 전문 훈련받은 응급구조사가 동행하여 안전하고 인도적인 이송을 실시합니다.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" onclick="location.href='alcohol_treatment_transport.html'">
                         <div class="service-icon">🍺</div>
                         <h3>알코올중독 치료이송</h3>
                         <p>알코올 전문병원 이송 시 환자 상태를 고려한 맞춤형 이송 서비스를 제공합니다.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" onclick="location.href='event_medical_support.html'">
                         <div class="service-icon">🎭</div>
                         <h3>행사 의료지원</h3>
                         <p>체육대회, 축제, 콘서트 등 각종 행사 현장에서의 응급의료 지원 서비스를 제공합니다.</p>
@@ -488,22 +501,22 @@
 
         <section class="coverage">
             <div class="container">
-                <h2 class="section-title">서비스 지역</h2>
-                <p style="text-align: center; font-size: 1.1rem; color: #666;">충청북도 전 지역에서 신속한 출동이 가능합니다</p>
+                <h2 class="section-title">서비스 지역 및 병원 정보</h2>
+                <p style="text-align: center; font-size: 1.1rem; color: #666;">충청북도 전 지역에서 신속한 출동이 가능합니다 (클릭하여 지역별 병원 정보 확인)</p>
                 <div class="coverage-grid">
-                    <div class="coverage-item">
+                    <div class="coverage-item" onclick="location.href='cheongju_hospitals.html'">
                         <h4>청주시</h4>
                         <p>상당구, 서원구, 청원구, 흥덕구</p>
                     </div>
-                    <div class="coverage-item">
+                    <div class="coverage-item" onclick="location.href='chungju_hospitals.html'">
                         <h4>충주시</h4>
                         <p>시내 전 지역 및 인근 농촌지역</p>
                     </div>
-                    <div class="coverage-item">
+                    <div class="coverage-item" onclick="location.href='jecheon_hospitals.html'">
                         <h4>제천시</h4>
                         <p>시내 전 지역 및 인근 산간지역</p>
                     </div>
-                    <div class="coverage-item">
+                    <div class="coverage-item" onclick="location.href='other_regions_hospitals.html'">
                         <h4>기타 시군</h4>
                         <p>음성, 진천, 괴산, 증평, 옥천, 영동, 보은, 단양</p>
                     </div>
@@ -514,7 +527,7 @@
         <section class="pricing">
             <div class="container">
                 <h2 class="section-title">투명한 요금 안내</h2>
-                <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 30px;">2025년 7월 기준 특수차 요금표 (보건복지부 고시 준수)</p>
+                <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 30px;">2025년 1월 기준 특수차 요금표 (보건복지부 고시 준수)</p>
                 <div class="price-table">
                     <div class="price-row">
                         <span class="price-service">기본 요금 (10km 이내, 특수차)</span>
@@ -548,7 +561,7 @@
                 <p style="text-align: center; margin-top: 30px; color: #666; font-size: 0.9rem;">
                     ※ 정확한 요금은 출발지와 목적지를 확인한 후 안내해드립니다<br>
                     ※ 특수 상황 이송 및 장거리 이송의 경우 별도 상담 후 요금이 책정됩니다<br>
-                    ※ 상기 요금은 2025년 7월 기준이며 정부 고시에 따라 변동될 수 있습니다
+                    ※ 상기 요금은 2025년 1월 기준이며 정부 고시에 따라 변동될 수 있습니다
                 </p>
             </div>
         </section>
@@ -598,26 +611,26 @@
                 <div class="footer-section">
                     <h4>전문 이송 분야</h4>
                     <ul>
-                        <li>• 일반 환자이송</li>
-                        <li>• 요양병원 전문이송</li>
-                        <li>• 정신질환자 이송</li>
-                        <li>• 알코올중독 치료이송</li>
-                        <li>• 행사 의료지원</li>
+                        <li>• <a href="general_patient_transport.html">일반 환자이송</a></li>
+                        <li>• <a href="nursing_home_transport.html">요양병원 전문이송</a></li>
+                        <li>• <a href="mental_health_transport.html">정신질환자 이송</a></li>
+                        <li>• <a href="alcohol_treatment_transport.html">알코올중독 치료이송</a></li>
+                        <li>• <a href="event_medical_support.html">행사 의료지원</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>안전 관리</h4>
+                    <h4>서비스 지역</h4>
                     <ul>
-                        <li>• 정기적인 차량 점검</li>
-                        <li>• 의료장비 위생 관리</li>
-                        <li>• 직원 교육 및 훈련</li>
-                        <li>• 보험 가입 완료</li>
-                        <li>• 법정 기준 준수</li>
+                        <li>• <a href="cheongju_hospitals.html">청주시 주요 병원</a></li>
+                        <li>• <a href="chungju_hospitals.html">충주시 주요 병원</a></li>
+                        <li>• <a href="jecheon_hospitals.html">제천시 주요 병원</a></li>
+                        <li>• <a href="other_regions_hospitals.html">기타 지역 병원</a></li>
+                        <li>• 충북 전 지역 24시간</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 직지응급환자이송단. 충청북도 전문 사설구급차 서비스. All rights reserved.</p>
+                <p>&copy; 2025 직지응급환자이송단. 충청북도 전문 사설구급차 서비스. All rights reserved.</p>
                 <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">
                     응급상황 시 119 신고 후 사설구급차 이용을 권장합니다 | 본 서비스는 보건복지부 고시 기준을 준수합니다
                 </p>
