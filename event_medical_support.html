@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>행사 의료지원 서비스 - 직지응급환자이송단</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #e74c3c;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .phone-number {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Navigation */
+        .breadcrumb {
+            background: white;
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .breadcrumb a {
+            color: #6c757d;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .breadcrumb a:hover {
+            color: #e74c3c;
+        }
+
+        .breadcrumb span {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .service-hero {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .service-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .service-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .content-main h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .content-main h3 {
+            color: #34495e;
+            font-size: 1.5rem;
+            margin: 30px 0 15px 0;
+        }
+
+        .content-main p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .content-main ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .content-main li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #e8f4fd 0%, #d6eaf8 100%);
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+
+        .info-box h4 {
+            color: #2980b9;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .quick-contact {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .quick-contact h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .quick-contact .phone {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .call-btn {
+            background: white;
+            color: #3498db;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .call-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .service-features {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+        }
+
+        .service-features h4 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .feature-icon {
+            width: 30px;
+            height: 30px;
+            background: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* Event Types */
+        .events-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .event-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .event-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .event-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .event-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services-section {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .service-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .service-card h4 {
+            color: #2c3e50;
+            margin: 20px 0 15px 0;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: #666;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .pricing-table {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 40px;
+            border: 1px solid #e9ecef;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+        .price-service {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .price-amount {
+            color: #3498db;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #2980b9;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            display: none;
+            color: #555;
+            line-height: 1.7;
+            background: white;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-hero h1 {
+                font-size: 2rem;
+            }
+
+            .events-grid, .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-row {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">🚑</div>
+                    <div>
+                        <h1>직지응급환자이송단</h1>
+                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충청북도 전문 사설구급차</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="#">홈</a> > <a href="#">서비스 안내</a> > <span>행사 의료지원</span>
+        </div>
+    </nav>
+
+    <section class="service-hero">
+        <div class="container">
+            <h1>행사 의료지원 서비스</h1>
+            <p>체육대회, 축제, 콘서트 등 각종 행사 현장에서의 응급의료 지원 서비스를 제공합니다</p>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-main">
+                    <h2>서비스 개요</h2>
+                    <p>행사 의료지원 서비스는 각종 행사와 이벤트에서 발생할 수 있는 응급상황에 대비하여 전문 의료진과 구급차를 현장에 대기시키는 B2B 전문 서비스입니다. 행사 참가자들의 안전을 보장하고, 응급상황 발생 시 신속한 대응을 통해 행사가 원활하게 진행될 수 있도록 지원합니다.</p>
+
+                    <div class="info-box">
+                        <h4>💡 왜 행사 의료지원이 필요한가요?</h4>
+                        <p>대규모 행사에서는 다양한 응급상황이 발생할 수 있습니다. 열사병, 탈수, 외상, 심장질환 등의 응급상황에 즉시 대응할 수 있는 의료진이 현장에 대기하면 참가자들의 안전을 보장하고 행사 주최자의 법적 책임도 줄일 수 있습니다.</p>
+                    </div>
+
+                    <h3>지원 가능 행사 유형</h3>
+                    <ul>
+                        <li><strong>체육대회 및 마라톤</strong> - 학교, 기업, 지역 체육대회</li>
+                        <li><strong>축제 및 문화행사</strong> - 지역축제, 음악제, 문화제</li>
+                        <li><strong>콘서트 및 공연</strong> - 대형 콘서트, 뮤지컬, 연극</li>
+                        <li><strong>전시회 및 박람회</strong> - 국제전시회, 산업박람회</li>
+                        <li><strong>세미나 및 컨퍼런스</strong> - 대규모 학술회의, 기업행사</li>
+                        <li><strong>촬영 현장</strong> - 영화, 드라마, 광고 촬영</li>
+                        <li><strong>종교행사</strong> - 대형 종교집회, 야외예배</li>
+                        <li><strong>정치집회</strong> - 선거유세, 정치집회</li>
+                    </ul>
+
+                    <h3>제공 서비스</h3>
+                    <p>행사 규모와 특성에 맞는 맞춤형 의료지원 서비스를 제공합니다:</p>
+                    <ul>
+                        <li>전문 응급구조사 현장 대기</li>
+                        <li>구급차 현장 배치 (필요시 다수 배치)</li>
+                        <li>응급처치 및 기본 의료서비스</li>
+                        <li>응급환자 병원 이송</li>
+                        <li>의료진과의 핫라인 연결</li>
+                        <li>현장 의료상황 모니터링</li>
+                        <li>행사 후 의료상황 보고서 제공</li>
+                    </ul>
+
+                    <h3>응급상황 대응 능력</h3>
+                    <p>다양한 응급상황에 전문적으로 대응할 수 있습니다:</p>
+                    <ul>
+                        <li><strong>외상</strong> - 낙상, 충돌, 골절 등의 외상 처치</li>
+                        <li><strong>심혈관 응급</strong> - 심장마비, 흉통, 고혈압 등</li>
+                        <li><strong>열관련 질환</strong> - 열사병, 열탈진, 탈수 등</li>
+                        <li><strong>호흡기 응급</strong> - 천식, 알레르기, 호흡곤란</li>
+                        <li><strong>의식장애</strong> - 실신, 경련, 저혈당 등</li>
+                        <li><strong>알레르기 반응</strong> - 음식 알레르기, 벌침 등</li>
+                        <li><strong>정신적 응급</strong> - 공황발작, 과호흡 등</li>
+                    </ul>
+
+                    <h3>장비 및 인력</h3>
+                    <p>행사 특성에 맞는 전문 장비와 숙련된 인력을 배치합니다:</p>
+                    <ul>
+                        <li>완전 장비 구급차 (AED, 산소, 응급의약품)</li>
+                        <li>응급구조사 1급 자격자</li>
+                        <li>이동식 응급처치 키트</li>
+                        <li>통신장비 (무전기, 핫라인)</li>
+                        <li>간이 의료텐트 (필요시)</li>
+                        <li>휠체어, 들것 등 이송도구</li>
+                        <li>냉각용품 (여름철 야외행사)</li>
+                    </ul>
+
+                    <h3>법적 책임 및 보험</h3>
+                    <p>행사 주최자의 법적 부담을 줄이고 안전한 행사 진행을 보장합니다:</p>
+                    <ul>
+                        <li>의료사고 대비 전문 배상책임보험 가입</li>
+                        <li>의료행위에 대한 법적 책임 분담</li>
+                        <li>행사 안전관리 의무 이행 지원</li>
+                        <li>응급상황 대응 매뉴얼 제공</li>
+                        <li>사후 의료상황 보고서 및 증빙서류</li>
+                        <li>필요시 보험회사 협조</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar">
+                    <div class="quick-contact">
+                        <h3>행사 의료지원 문의</h3>
+                        <span class="phone">010-8841-4114</span>
+                        <a href="tel:010-8841-4114" class="call-btn">📞 견적 문의</a>
+                        <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.9;">사전 계획 필수</p>
+                    </div>
+
+                    <div class="service-features">
+                        <h4>서비스 특징</h4>
+                        <div class="feature-item">
+                            <div class="feature-icon">👨‍⚕️</div>
+                            <span>전문 응급구조사</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🚑</div>
+                            <span>완전 장비 구급차</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📱</div>
+                            <span>실시간 모니터링</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🏥</div>
+                            <span>병원 네트워크</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🛡️</div>
+                            <span>보험 완비</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📋</div>
+                            <span>상황보고서 제공</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="events-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">지원 가능 행사</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #666;">다양한 유형의 행사에 맞춤형 의료지원 서비스를 제공합니다</p>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-icon">🏃‍♂️</div>
+                    <h3>체육대회</h3>
+                    <p>마라톤, 축구, 농구 등 각종 스포츠 경기에서 발생할 수 있는 외상과 열사병에 대비한 의료지원</p>
+                </div>
+                <div class="event-card">
+                    <div class="event-icon">🎭</div>
+                    <h3>문화행사</h3>
+                    <p>축제, 콘서트, 공연 등 대규모 문화행사에서의 응급의료 지원 및 안전 관리</p>
+                </div>
+                <div class="event-card">
+                    <div class="event-icon">🏢</div>
+                    <h3>기업행사</h3>
+                    <p>세미나, 컨퍼런스, 기업 체육대회 등 기업 행사에서의 의료 안전망 제공</p>
+                </div>
+                <div class="event-card">
+                    <div class="event-icon">🎬</div>
+                    <h3>촬영현장</h3>
+                    <p>영화, 드라마, 광고 촬영 현장에서의 스태프 및 출연진 안전을 위한 의료지원</p>
+                </div>
+                <div class="event-card">
+                    <div class="event-icon">🙏</div>
+                    <h3>종교행사</h3>
+                    <p>대형 종교집회, 야외예배 등에서 고령자가 많은 특성을 고려한 의료지원</p>
+                </div>
+                <div class="event-card">
+                    <div class="event-icon">📈</div>
+                    <h3>전시박람회</h3>
+                    <p>국제전시회, 산업박람회 등 장기간 진행되는 행사에서의 지속적 의료지원</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">서비스 절차</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #666;">체계적인 5단계로 완벽한 행사 의료지원을 제공합니다</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">1</div>
+                    <h4>사전 상담</h4>
+                    <p>행사 규모, 참가인원, 위험요소 등을 분석하여 맞춤형 의료지원 계획을 수립합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">2</div>
+                    <h4>견적 제공</h4>
+                    <p>행사 특성에 맞는 인력과 장비를 산정하여 투명한 견적서를 제공합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">3</div>
+                    <h4>현장 준비</h4>
+                    <p>행사 시작 전 현장에 도착하여 의료진과 장비를 배치하고 비상연락망을 구축합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">4</div>
+                    <h4>현장 대기</h4>
+                    <p>행사 전 기간 동안 현장에서 대기하며 응급상황에 즉시 대응할 수 있도록 준비합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">5</div>
+                    <h4>사후 보고</h4>
+                    <p>행사 종료 후 의료상황 보고서를 작성하여 제출하고 개선사항을 제안합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">요금 안내</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #666;">행사 규모와 시간에 따른 합리적인 요금 체계</p>
+            <div class="pricing-table">
+                <div class="price-row">
+                    <span class="price-service">기본 요금 (4시간 기준)</span>
+                    <span class="price-amount">200,000원</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-service">추가 시간 (1시간당)</span>
+                    <span class="price-amount">30,000원</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-service">응급구조사 추가 배치</span>
+                    <span class="price-amount">별도 상담</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-service">구급차 추가 배치</span>
+                    <span class="price-amount">별도 상담</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-service">야간/주말 할증</span>
+                    <span class="price-amount">20%</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-service">장거리 출장 (충북 외)</span>
+                    <span class="price-amount">교통비 별도</span>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; color: #666; font-size: 0.9rem;">
+                ※ 행사 규모와 위험도에 따라 요금이 조정될 수 있습니다<br>
+                ※ 장기계약 시 할인 혜택이 있습니다<br>
+                ※ 정확한 견적은 상담 후 제공해드립니다
+            </p>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">자주 묻는 질문</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 40px;">행사 의료지원 관련 자주 묻는 질문들입니다</p>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 얼마나 미리 예약해야 하나요?
+                </div>
+                <div class="faq-answer">
+                    행사 규모와 시기에 따라 다르지만, 최소 1주일 전에는 예약해주시기 바랍니다. 대규모 행사나 성수기(봄, 가을 행사철)에는 2-3주 전 예약을 권장합니다. 응급한 경우에도 최대한 협조해드리겠습니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 어떤 규모의 행사까지 지원 가능한가요?
+                </div>
+                <div class="faq-answer">
+                    소규모 기업행사(50명)부터 대형 축제(수만 명)까지 모든 규모의 행사를 지원할 수 있습니다. 대규모 행사의 경우 다수의 구급차와 의료진을 배치하여 완벽한 의료지원을 제공합니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 의료사고 발생 시 책임은 어떻게 되나요?
+                </div>
+                <div class="faq-answer">
+                    저희는 전문 의료배상책임보험에 가입되어 있어 의료진의 과실로 인한 사고는 보험으로 처리됩니다. 다만 행사 자체의 안전관리 미흡으로 인한 사고는 행사 주최자의 책임입니다. 계약서에 명확한 책임 범위를 명시합니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 응급환자 발생 시 병원비는 누가 부담하나요?
+                </div>
+                <div class="faq-answer">
+                    응급처치는 무료로 제공되지만, 병원 이송 및 치료비는 환자 본인이나 행사 주최자가 부담합니다. 행사 주최자는 참가자들에게 사전에 안내하거나 행사보험에 가입하는 것을 권장합니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 비가 와도 서비스가 가능한가요?
+                </div>
+                <div class="faq-answer">
+                    네, 기상 조건과 관계없이 서비스를 제공합니다. 우천 시에는 방수 장비를 준비하고, 필요시 텐트를 설치하여 의료진과 장비를 보호합니다. 다만 극한 기상상황에서는 안전상 서비스가 제한될 수 있습니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 충북 외 지역에서도 서비스 받을 수 있나요?
+                </div>
+                <div class="faq-answer">
+                    네, 충북 외 지역에서도 서비스 가능합니다. 다만 거리에 따라 교통비와 숙박비가 추가로 발생할 수 있으며, 현지 의료기관과의 연계를 위해 사전 준비 시간이 더 필요할 수 있습니다.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #2c3e50; color: #ecf0f1; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <h3 style="color: #3498db; margin-bottom: 20px;">직지응급환자이송단</h3>
+            <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px;">010-8841-4114</p>
+            <p style="margin-bottom: 20px;">충청북도 행사 의료지원 전문 서비스</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                안전한 행사 진행을 위한 파트너 | 전문 의료진 대기 | 완벽한 응급의료 지원
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const allAnswers = document.querySelectorAll('.faq-answer');
+            
+            // Close all other FAQ answers
+            allAnswers.forEach(ans => {
+                if (ans !== answer) {
+                    ans.classList.remove('active');
+                }
+            });
+            
+            // Toggle current answer
+            answer.classList.toggle('active');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe cards
+        document.querySelectorAll('.event-card, .service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

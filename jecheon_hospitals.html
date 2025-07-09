@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제천시 주요 병원 정보 - 직지응급환자이송단</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #e74c3c;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .phone-number {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Navigation */
+        .breadcrumb {
+            background: white;
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .breadcrumb a {
+            color: #6c757d;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .breadcrumb a:hover {
+            color: #e74c3c;
+        }
+
+        .breadcrumb span {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .page-hero {
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background: white;
+            padding: 30px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 12px 25px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .filter-tab.active,
+        .filter-tab:hover {
+            background: #8e44ad;
+            color: white;
+            border-color: #8e44ad;
+        }
+
+        /* Statistics */
+        .stats-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #8e44ad;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #555;
+            font-weight: 600;
+        }
+
+        /* Hospital Grid */
+        .hospitals-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .hospitals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .hospital-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .hospital-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .hospital-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .hospital-type {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 15px;
+        }
+
+        .hospital-level {
+            background: #f39c12;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .hospital-card h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin: 15px 0;
+            font-weight: 700;
+        }
+
+        .hospital-info {
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .info-icon {
+            width: 20px;
+            margin-right: 10px;
+            color: #8e44ad;
+        }
+
+        .specialties {
+            margin: 15px 0;
+        }
+
+        .specialty-tag {
+            display: inline-block;
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin: 2px 5px 2px 0;
+        }
+
+        .hospital-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: #8e44ad;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #7d3c98;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #ecf0f1;
+            color: #2c3e50;
+        }
+
+        .btn-secondary:hover {
+            background: #bdc3c7;
+        }
+
+        /* Emergency Info */
+        .emergency-info {
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .emergency-info h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .emergency-info p {
+            color: #856404;
+            margin: 0;
+        }
+
+        /* Area Info */
+        .area-info {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-left: 5px solid #8e44ad;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .area-info h4 {
+            color: #6a1b99;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .hospitals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hospital-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">🚑</div>
+                    <div>
+                        <h1>직지응급환자이송단</h1>
+                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충청북도 전문 사설구급차</p>
+                    </div>
+                </div>
+                <div class="phone-number">010-8841-4114</div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="#">홈</a> > <a href="#">서비스 지역</a> > <span>제천시 주요 병원</span>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>제천시 주요 병원 정보</h1>
+            <p>산악지역 의료의 중심지 제천시 내 주요 의료기관과 응급의료 체계를 확인하세요</p>
+        </div>
+    </section>
+
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-tabs">
+                <div class="filter-tab active" onclick="filterHospitals('all')">전체</div>
+                <div class="filter-tab" onclick="filterHospitals('general')">종합병원</div>
+                <div class="filter-tab" onclick="filterHospitals('specialty')">전문병원</div>
+                <div class="filter-tab" onclick="filterHospitals('long-term')">요양병원</div>
+                <div class="filter-tab" onclick="filterHospitals('clinic')">의원</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">제천시 의료기관 현황</h2>
+            <div class="area-info">
+                <h4>🏔️ 제천시 의료 특성</h4>
+                <p>제천시는 산악지역과 농촌지역이 많아 의료 접근성이 중요한 지역입니다. 단양, 영월 등 인근 지역과 연계된 의료 서비스를 제공하며, 응급의료 상황에서는 충주나 청주의 상급병원으로의 이송이 필요한 경우가 많습니다.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">종합병원</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">요양병원</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">전문병원</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25</div>
+                    <div class="stat-label">의원급</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hospitals-section">
+        <div class="container">
+            <div class="emergency-info">
+                <h4>⚠️ 응급상황 시 주의사항</h4>
+                <p>제천시는 산악지역 특성상 응급의료 접근성이 제한적일 수 있습니다. 중증 응급환자의 경우 충주 건국대병원이나 청주 충북대병원으로의 신속한 이송이 필요할 수 있습니다.</p>
+            </div>
+
+            <div class="hospitals-grid">
+                <!-- 제천서울병원 -->
+                <div class="hospital-card" data-type="general">
+                    <div class="hospital-header">
+                        <div class="hospital-type">종합병원</div>
+                        <div class="hospital-level">지역응급의료기관</div>
+                    </div>
+                    <h3>제천서울병원</h3>
+                    <div class="hospital-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>제천시 숭문로 57</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span>043-640-7600</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🚨</span>
+                            <span>응급실: 24시간 운영</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🛏️</span>
+                            <span>병상수: 280병상</span>
+                        </div>
+                    </div>
+                    <div class="specialties">
+                        <span class="specialty-tag">내과</span>
+                        <span class="specialty-tag">외과</span>
+                        <span class="specialty-tag">정형외과</span>
+                        <span class="specialty-tag">신경외과</span>
+                        <span class="specialty-tag">응급의학과</span>
+                    </div>
+                    <div class="hospital-actions">
+                        <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                        <a href="tel:043-640-7600" class="btn btn-secondary">병원 연락</a>
+                    </div>
+                </div>
+
+                <!-- 세명대학교 부속 제천한방병원 -->
+                <div class="hospital-card" data-type="specialty">
+                    <div class="hospital-header">
+                        <div class="hospital-type">전문병원</div>
+                        <div class="hospital-level">한방전문</div>
+                    </div>
+                    <h3>세명대 부속 제천한방병원</h3>
+                    <div class="hospital-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>제천시 세명로 66</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span>043-649-1800</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🕒</span>
+                            <span>진료시간: 09:00-18:00</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🛏️</span>
+                            <span>병상수: 120병상</span>
+                        </div>
+                    </div>
+                    <div class="specialties">
+                        <span class="specialty-tag">한방내과</span>
+                        <span class="specialty-tag">침구과</span>
+                        <span class="specialty-tag">한방재활의학과</span>
+                        <span class="specialty-tag">한방신경정신과</span>
+                    </div>
+                    <div class="hospital-actions">
+                        <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                        <a href="tel:043-649-1800" class="btn btn-secondary">병원 연락</a>
+                    </div>
+                </div>
+
+                <!-- 제천성지병원 -->
+                <div class="hospital-card" data-type="general">
+                    <div class="hospital-header">
+                        <div class="hospital-type">종합병원</div>
+                        <div class="hospital-level">지역응급의료기관</div>
+                    </div>
+                    <h3>제천성지병원</h3>
+                    <div class="hospital-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>제천시 내토로 42</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span>043-640-3814</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🚨</span>
+                            <span>응급실: 24시간 운영</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🛏️</span>
+                            <span>병상수: 280병상</span>
+                        </div>
+                    </div>
+                    <div class="specialties">
+                        <span class="specialty-tag">내과</span>
+                        <span class="specialty-tag">외과</span>
+                        <span class="specialty-tag">정형외과</span>
+                        <span class="specialty-tag">신경외과</span>
+                        <span class="specialty-tag">응급의학과</span>
+                    </div>
+                    <div class="hospital-actions">
+                        <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                        <a href="tel:043-640-3814" class="btn btn-secondary">병원 연락</a>
+                    </div>
+                </div>
+
+                <!-- 제천요양병원 -->
+                <div class="hospital-card" data-type="long-term">
+                    <div class="hospital-header">
+                        <div class="hospital-type">요양병원</div>
+                        <div class="hospital-level">장기요양</div>
+                    </div>
+                    <h3>제천힐링요양병원</h3>
+                    <div class="hospital-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>제천시 중앙로 1가 35-1</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span>043-647-2000</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🕒</span>
+                            <span>면회시간: 10:00-20:00</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🛏️</span>
+                            <span>병상수: 180병상</span>
+                        </div>
+                    </div>
+                    <div class="specialties">
+                        <span class="specialty-tag">내과</span>
+                        <span class="specialty-tag">재활의학과</span>
+                        <span class="specialty-tag">물리치료</span>
+                        <span class="specialty-tag">작업치료</span>
+                    </div>
+                    <div class="hospital-actions">
+                        <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                        <a href="tel:043-647-2000" class="btn btn-secondary">병원 연락</a>
+                    </div>
+                </div>
+
+                <!-- 제천정신병원 -->
+                <div class="hospital-card" data-type="specialty">
+                    <div class="hospital-header">
+                        <div class="hospital-type">전문병원</div>
+                        <div class="hospital-level">정신과전문</div>
+                    </div>
+                    <h3>제천마음건강병원</h3>
+                    <div class="hospital-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>제천시 청전동 100-5</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span>043-648-3000</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🕒</span>
+                            <span>진료시간: 09:00-18:00</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🛏️</span>
+                            <span>병상수: 100병상</span>
+                        </div>
+                    </div>
+                    <div class="specialties">
+                        <span class="specialty-tag">정신건강의학과</span>
+                        <span class="specialty-tag">알코올중독</span>
+                        <span class="specialty-tag">우울증</span>
+                        <span class="specialty-tag">치매</span>
+                    </div>
+                    <div class="hospital-actions">
+                        <a href="tel:010-8841-4114" class="btn btn-primary">전문 이송</a>
+                        <a href="tel:043-648-3000" class="btn btn-secondary">병원 연락</a>
+                    </div>
+                </div>
+
+                <!-- 제천마음정신과의원 -->
+                <div class="hospital-card" data-type="clinic">
+                    <div class="hospital-header">
+                        <div class="hospital-type">의원급</div>
+                        <div class="hospital-level">정신과전문</div>
+                    </div>
+                    <h3>제천마음정신과의원</h3>
+                    <div class="hospital-info">
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <span>제천시 의병대로 31</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span>043-646-7582</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🕒</span>
+                            <span>진료시간: 09:00-18:00</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🏥</span>
+                            <span>외래진료 전문</span>
+                        </div>
+                    </div>
+                    <div class="specialties">
+                        <span class="specialty-tag">정신건강의학과</span>
+                        <span class="specialty-tag">우울증</span>
+                        <span class="specialty-tag">불안장애</span>
+                        <span class="specialty-tag">상담치료</span>
+                    </div>
+                    <div class="hospital-actions">
+                        <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                        <a href="tel:043-646-7582" class="btn btn-secondary">병원 연락</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #2c3e50; color: #ecf0f1; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <h3 style="color: #8e44ad; margin-bottom: 20px;">직지응급환자이송단</h3>
+            <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px;">010-8841-4114</p>
+            <p style="margin-bottom: 20px;">제천시 및 충북 전 지역 24시간 응급환자이송 서비스</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                산악지역 전문 이송 | 신속한 상급병원 연계 | 24시간 대기
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function filterHospitals(type) {
+            const cards = document.querySelectorAll('.hospital-card');
+            const tabs = document.querySelectorAll('.filter-tab');
+            
+            // Remove active class from all tabs
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+            
+            // Show/hide cards based on filter
+            cards.forEach(card => {
+                if (type === 'all' || card.dataset.type === type) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.5s ease';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Add fade in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.hospital-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
