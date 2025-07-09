@@ -25,13 +25,7 @@ Crawl-delay: 1
 # 사이트맵 위치 명시
 Sitemap: https://lds77.github.io/sitemap.xml
 
-# 중요하지 않은 디렉토리 및 파일 제외
-Disallow: /admin/
-Disallow: /temp/
-Disallow: /backup/
-Disallow: /*.log$
-Disallow: /*.tmp$
-
-# 모바일 전용 페이지 허용
-Allow: /mobile/
-Allow: /m/
+# GitHub Pages 시스템 파일 제외
+Disallow: /.git/
+Disallow: /_site/
+Disallow: /node_modules/
