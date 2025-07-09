@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고인이송 서비스 - 직지응급환자이송단</title>
+    <meta name="description" content="고인의 존엄성을 지키며 장례식장까지 정중하고 신속한 이송 서비스. 24시간 긴급 출동, 가족 배려 서비스. 010-8841-4114">
+    <meta name="keywords" content="고인이송, 장례식장 이송, 영정차, 청주 고인이송, 충북 고인이송, 24시간 이송서비스">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+
+        .logo:hover {
+            opacity: 0.9;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #2c3e50;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .phone-number {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Navigation */
+        .breadcrumb {
+            background: white;
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .breadcrumb a {
+            color: #6c757d;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .breadcrumb a:hover {
+            color: #2c3e50;
+        }
+
+        .breadcrumb span {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .service-hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .service-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .service-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .content-main h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2c3e50;
+        }
+
+        .content-main h3 {
+            color: #34495e;
+            font-size: 1.5rem;
+            margin: 30px 0 15px 0;
+        }
+
+        .content-main p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .content-main ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .content-main li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        /* Dignity Box */
+        .dignity-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 5px solid #6c757d;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+
+        .dignity-box h4 {
+            color: #495057;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Comfort Box */
+        .comfort-box {
+            background: linear-gradient(135deg, #e8f4fd 0%, #d6eaf8 100%);
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+
+        .comfort-box h4 {
+            color: #2980b9;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .quick-contact {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .quick-contact h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .quick-contact .phone {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .call-btn {
+            background: white;
+            color: #2c3e50;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .call-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .service-features {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+        }
+
+        .service-features h4 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .feature-icon {
+            width: 30px;
+            height: 30px;
+            background: #2c3e50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* Process Section */
+        .process-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .process-step {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .process-step h4 {
+            color: #2c3e50;
+            margin: 20px 0 15px 0;
+            font-size: 1.3rem;
+        }
+
+        .process-step p {
+            color: #666;
+        }
+
+        /* Services Grid */
+        .services-section {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: white;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .pricing-table {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 40px;
+            border: 1px solid #e9ecef;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+        .price-service {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .price-amount {
+            color: #2c3e50;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #34495e;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            display: none;
+            color: #555;
+            line-height: 1.7;
+            background: white;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 15px;
+            color: #ecf0f1;
+        }
+
+        .footer-section p {
+            margin-bottom: 10px;
+            color: #bdc3c7;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+            color: #95a5a6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-hero h1 {
+                font-size: 2rem;
+            }
+
+            .services-grid, .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-row {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .phone-number {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo" onclick="location.href='index.html'">
+                    <div class="logo-icon">🚑</div>
+                    <div>
+                        <h1>직지응급환자이송단</h1>
+                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충청북도 전문 사설구급차</p>
+                    </div>
+                </div>
+                <div class="phone-number">010-8841-4114</div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="index.html">홈</a> > <a href="index.html#services">서비스 안내</a> > <span>고인이송 서비스</span>
+        </div>
+    </nav>
+
+    <section class="service-hero">
+        <div class="container">
+            <h1>고인이송 서비스</h1>
+            <p>고인의 존엄성을 지키며 장례식장까지 정중하고 신속한 이송 서비스를 제공합니다</p>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-main">
+                    <h2>서비스 개요</h2>
+                    <p>고인이송 서비스는 돌아가신 분의 존엄성을 최우선으로 생각하며, 유가족의 슬픔에 공감하는 마음으로 정중하고 신속한 이송 서비스를 제공합니다. 24시간 언제든지 연락 주시면 즉시 출동하여 고인을 안전하게 장례식장이나 원하시는 장소까지 모셔드립니다.</p>
+
+                    <div class="dignity-box">
+                        <h4>🕊️ 존엄성과 예의</h4>
+                        <p>고인의 존엄성을 지키고 유가족의 마음을 헤아리는 정중한 서비스로, 인생의 마지막 길을 함께 하겠습니다.</p>
+                    </div>
+
+                    <h3>주요 이송 서비스</h3>
+                    <ul>
+                        <li><strong>병원에서 장례식장까지</strong> - 일반적인 고인이송 서비스</li>
+                        <li><strong>자택에서 장례식장까지</strong> - 자택에서 임종하신 경우의 이송</li>
+                        <li><strong>장례식장 간 이송</strong> - 장례식장 변경 시 이송 서비스</li>
+                        <li><strong>화장장 이송</strong> - 장례식장에서 화장장까지 이송</li>
+                        <li><strong>안치실 이송</strong> - 임시 안치를 위한 이송</li>
+                        <li><strong>원거리 이송</strong> - 타 지역 장례식장으로의 이송</li>
+                        <li><strong>응급 이송</strong> - 24시간 긴급 상황 대응</li>
+                    </ul>
+
+                    <h3>전문 장비 및 시설</h3>
+                    <p>고인이송에 필요한 전문 장비와 시설을 완비하고 있습니다:</p>
+                    <ul>
+                        <li>전용 이송차량 (영정차)</li>
+                        <li>고인 전용 스트레처</li>
+                        <li>위생 및 보존 장비</li>
+                        <li>실내 온도 조절 시스템</li>
+                        <li>유가족 동행 좌석</li>
+                        <li>예의에 맞는 정중한 복장</li>
+                        <li>필요 시 관련 용품 지원</li>
+                    </ul>
+
+                    <div class="comfort-box">
+                        <h4>💙 유가족을 위한 배려</h4>
+                        <p>힘든 시간을 보내고 계신 유가족의 마음을 헤아려, 모든 절차를 신속하고 정중하게 처리하여 부담을 덜어드립니다.</p>
+                    </div>
+
+                    <h3>서비스 특징</h3>
+                    <p>고인과 유가족을 위한 세심한 배려가 담긴 서비스를 제공합니다:</p>
+                    <ul>
+                        <li>24시간 365일 긴급 출동 체계</li>
+                        <li>정중하고 예의 바른 서비스</li>
+                        <li>고인의 존엄성을 지키는 이송</li>
+                        <li>유가족의 심정을 배려하는 진행</li>
+                        <li>신속하고 안전한 이송</li>
+                        <li>합리적이고 투명한 요금</li>
+                        <li>장례식장과의 원활한 연계</li>
+                    </ul>
+
+                    <h3>이송 절차 및 준비사항</h3>
+                    <p>고인이송에 필요한 절차와 준비사항을 안내해드립니다:</p>
+                    <ul>
+                        <li><strong>사망진단서</strong> - 의료진 발급 사망진단서 준비</li>
+                        <li><strong>신분증</strong> - 고인 및 유가족 신분증</li>
+                        <li><strong>장례식장 예약 확인</strong> - 목적지 장례식장 예약 상태</li>
+                        <li><strong>이송 경로 확인</strong> - 출발지에서 목적지까지 경로</li>
+                        <li><strong>가족 동행 여부</strong> - 유가족 동행 인원 확인</li>
+                        <li><strong>특별 요청사항</strong> - 종교적 절차나 특별 요구사항</li>
+                    </ul>
+
+                    <h3>장례식장 연계 서비스</h3>
+                    <p>충북 지역 주요 장례식장과의 원활한 연계 서비스를 제공합니다:</p>
+                    <ul>
+                        <li>충북대학교병원 장례식장</li>
+                        <li>청주성모병원 장례식장</li>
+                        <li>청주한국병원 장례식장</li>
+                        <li>충주의료원 장례식장</li>
+                        <li>기타 민간 장례식장</li>
+                        <li>종교 단체 장례시설</li>
+                        <li>화장장 및 납골당</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar">
+                    <div class="quick-contact">
+                        <h3>고인이송 문의</h3>
+                        <span class="phone">010-8841-4114</span>
+                        <a href="tel:010-8841-4114" class="call-btn">📞 24시간 연락</a>
+                        <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.9;">정중한 서비스</p>
+                    </div>
+
+                    <div class="service-features">
+                        <h4>서비스 특징</h4>
+                        <div class="feature-item">
+                            <div class="feature-icon">🕊️</div>
+                            <span>존엄성 보장</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">⏰</div>
+                            <span>24시간 대기</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🚗</div>
+                            <span>전용 영정차</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">👥</div>
+                            <span>유가족 배려</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🏥</div>
+                            <span>장례식장 연계</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">💰</div>
+                            <span>합리적 요금</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">이송 진행 절차</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #666;">정중하고 신속한 4단계 이송 절차</p>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>연락 및 상담</h4>
+                    <p>24시간 언제든지 연락주시면 상황을 파악하고 신속한 출동 준비를 진행합니다.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>즉시 출동</h4>
+                    <p>전용 이송차량과 전문 인력이 신속하게 출동하여 현장에 도착합니다.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>정중한 이송</h4>
+                    <p>고인의 존엄성을 지키며 정중하고 안전하게 목적지까지 이송해드립니다.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>안전한 인계</h4>
+                    <p>장례식장에 안전하게 도착하여 관계자에게 정중히 인계하고 이송을 완료합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">이송 유형별 서비스</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏥</div>
+                    <h3>병원 이송</h3>
+                    <p>병원에서 장례식장까지 가장 일반적인 고인이송 서비스를 신속하고 정중하게 제공합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>자택 이송</h3>
+                    <p>자택에서 임종하신 경우 장례식장까지 안전하고 존엄성 있는 이송 서비스를 제공합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3>장례식장 간 이송</h3>
+                    <p>장례식장 변경이나 이동이 필요한 경우 신속하고 정중한 이송 서비스를 제공합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🕯️</div>
+                    <h3>화장장 이송</h3>
+                    <p>장례식 후 화장장까지의 마지막 길을 존엄성 있게 모셔드리는 서비스입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">투명한 요금 안내</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #666;">고인이송 서비스 요금표 (거리별 요금 체계)</p>
+            <div class="pricing-table">
+                <div class="price-row">
+                    <span class="price-service">기본 요금 (10km 이내)</span>
+                    <span class="price-amount">120,000원</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-service">추가 거리 (1km당)</span>
+                    <span class="price-amount">2,000원</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-service">영정차 이용</span>
+                    <span class="price-amount">포함</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-service">전문 인력 동행</span>
+                    <span class="price-amount">포함</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-service">야간 할증 (22시~06시)</span>
+                    <span class="price-amount">30%</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-service">공휴일/주말 할증</span>
+                    <span class="price-amount">없음</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-service">장거리 이송 (50km 이상)</span>
+                    <span class="price-amount">별도 상담</span>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; color: #666; font-size: 0.9rem;">
+                ※ 유가족의 어려운 상황을 고려하여 합리적인 요금으로 책정하였습니다<br>
+                ※ 정확한 요금은 출발지와 목적지 확인 후 사전 안내해드립니다
+            </p>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">자주 묻는 질문</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 40px;">고인이송 서비스 관련 자주 묻는 질문들입니다</p>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 24시간 언제든지 이송이 가능한가요?
+                </div>
+                <div class="faq-answer">
+                    네, 저희는 24시간 365일 고인이송 서비스를 제공합니다. 평일, 주말, 공휴일, 명절 관계없이 언제든지 연락 주시면 즉시 출동 가능합니다. 야간 시간대에는 30%의 할증이 적용되지만, 긴급 상황에서는 신속한 대응을 최우선으로 하고 있습니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 이송에 필요한 서류는 무엇인가요?
+                </div>
+                <div class="faq-answer">
+                    고인이송에는 반드시 의료진이 발급한 사망진단서가 필요합니다. 또한 고인과 유가족의 신분증, 장례식장 예약 확인서가 필요할 수 있습니다. 자택에서 임종한 경우에는 경찰서 신고 후 검시 절차를 거쳐야 하므로, 상황에 따라 필요한 서류가 달라질 수 있습니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 유가족도 함께 이송차량에 탈 수 있나요?
+                </div>
+                <div class="faq-answer">
+                    네, 가능합니다. 저희 이송차량에는 유가족을 위한 별도 좌석이 마련되어 있어 고인과 함께 이동하실 수 있습니다. 다만 안전을 위해 탑승 인원에는 제한이 있으니, 미리 동행 인원을 알려주시면 적절히 준비하겠습니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 이송 비용은 언제 결제하나요?
+                </div>
+                <div class="faq-answer">
+                    이송 서비스 완료 후 현금 또는 카드로 결제 가능합니다. 유가족의 상황을 고려하여 이송 전에 정확한 요금을 안내해드리며, 추가 비용 없이 투명한 요금제로 운영하고 있습니다. 장거리 이송의 경우 별도 상담을 통해 요금을 책정합니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 타 지역으로의 장거리 이송도 가능한가요?
+                </div>
+                <div class="faq-answer">
+                    네, 타 지역으로의 장거리 이송도 가능합니다. 서울, 대전, 대구, 부산 등 전국 어디든 이송 서비스를 제공하고 있습니다. 장거리 이송의 경우 거리와 소요 시간에 따라 요금이 책정되며, 사전 상담을 통해 정확한 비용과 소요 시간을 안내해드립니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 종교적 절차나 특별한 요구사항이 있는 경우 어떻게 하나요?
+                </div>
+                <div class="faq-answer">
+                    종교적 절차나 특별한 요구사항이 있으시면 미리 말씀해 주세요. 불교, 기독교, 천주교, 유교 등 각 종교의 예법에 맞춰 이송 절차를 진행할 수 있으며, 필요한 경우 관련 용품도 준비해드립니다. 고인과 유가족의 신념을 존중하여 정중하게 서비스를 제공하겠습니다.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>직지응급환자이송단</h4>
+                    <p>📞 010-8841-4114</p>
+                    <p>📍 충청북도 청주시</p>
+                    <p>🕒 24시간 운영</p>
+                </div>
+                <div class="footer-section">
+                    <h4>주요 서비스</h4>
+                    <p>• 응급환자 이송</p>
+                    <p>• 고인이송 서비스</p>
+                    <p>• 병원 간 이송</p>
+                    <p>• 장거리 이송</p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스 지역</h4>
+                    <p>• 청주시 전지역</p>
+                    <p>• 충청북도 전지역</p>
+                    <p>• 전국 장거리 이송</p>
+                    <p>• 24시간 출동 가능</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 직지응급환자이송단. 정중하고 신속한 이송 서비스.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            // 모든 FAQ 답변 닫기
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // 클릭한 항목만 열기 (이미 열려있었다면 닫기)
+            if (!isActive) {
+                answer.classList.add('active');
+            }
+        }
+
+        // 스크롤 시 헤더 고정 효과
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.position = 'fixed';
+                header.style.top = '0';
+                header.style.width = '100%';
+                header.style.zIndex = '1000';
+                document.body.style.paddingTop = header.offsetHeight + 'px';
+            } else {
+                header.style.position = 'relative';
+                document.body.style.paddingTop = '0';
+            }
+        });
+
+        // 부드러운 스크롤 효과
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 전화 걸기 확인 (모바일에서)
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (!confirm('010-8841-4114로 전화를 거시겠습니까?')) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
