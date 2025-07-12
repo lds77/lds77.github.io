@@ -680,7 +680,7 @@
             <p class="section-subtitle">음성군 교통요지 특성에 맞는 6가지 전문 이송 서비스를 제공합니다</p>
             
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" onclick="location.href='general_patient_transport.html'">
                     <div class="service-icon">🏥</div>
                     <h3>음성 일반환자이송</h3>
                     <p>음성보건의료원에서 청주 대학병원까지 최단거리 30분 이송. 성본산업단지, 쿠팡 물류기지 등 지역 기업 근로자 건강검진 및 외래 진료 이송에 특화되어 있습니다.</p>
@@ -691,7 +691,7 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" onclick="location.href='nursing_home_transport.html'">
                     <div class="service-icon">🏚️</div>
                     <h3>음성 요양병원이송</h3>
                     <p>음성 지역 고령 근로자 및 지역 주민을 위한 요양병원 이송. 청주 요양병원과의 연계로 편안하고 안전한 침상형 이송을 제공합니다.</p>
@@ -702,7 +702,7 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" onclick="location.href='mental_health_transport.html'">
                     <div class="service-icon">🧠</div>
                     <h3>음성 정신질환자이송</h3>
                     <p>직장 스트레스나 정신건강 문제로 어려움을 겪는 분들을 위한 전문 이송. 청주·대전 정신과 병원으로 안전하고 신속하게 이송합니다.</p>
@@ -713,7 +713,7 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" onclick="location.href='alcohol_treatment_transport.html'">
                     <div class="service-icon">🍺</div>
                     <h3>음성 알코올중독 치료이송</h3>
                     <p>음성 지역 알코올중독 환자를 위한 전문 치료기관 이송. 지역 주민 및 근로자 음주 문제 해결을 위한 맞춤형 이송 서비스를 제공합니다.</p>
@@ -724,7 +724,7 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" onclick="location.href='event_medical_support.html'">
                     <div class="service-icon">🎭</div>
                     <h3>음성 행사의료지원</h3>
                     <p>지역 축제, 기업 체육대회, 물류센터 안전교육 등 각종 행사에서의 응급의료 지원. 교통 요지 특성을 활용한 신속한 의료 지원 서비스입니다.</p>
@@ -735,7 +735,7 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" onclick="location.href='goin_transport_service.html'">
                     <div class="service-icon">🕊️</div>
                     <h3>음성 고인이송</h3>
                     <p>음성 지역 고인의 존엄성을 지키며 청주·대전 장례식장까지 정중한 이송. 교통 요지인 음성의 지리적 장점을 활용하여 신속하고 정중하게 대응합니다.</p>
@@ -1000,17 +1000,6 @@
                     card.style.opacity = '1';
                     card.style.transform = 'translateY(0)';
                 }, index * 100);
-            });
-
-            // 전화 연결 확인
-            document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    if (this.getAttribute('href') === 'tel:010-8841-4114') {
-                        if (!confirm('직지응급환자이송단(010-8841-4114)으로 전화를 거시겠습니까?')) {
-                            e.preventDefault();
-                        }
-                    }
-                });
             });
         });
 
