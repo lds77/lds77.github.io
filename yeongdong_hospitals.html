@@ -240,7 +240,7 @@
 
         .specialty-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
@@ -252,8 +252,8 @@
             border-left: 3px solid #8e44ad;
         }
 
-        /* Routes Section */
-        .routes-section {
+        /* Services Section */
+        .services-section {
             background: #f8f9fa;
             padding: 80px 0;
         }
@@ -273,89 +273,69 @@
             margin-bottom: 50px;
         }
 
-        .routes-grid {
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            margin-top: 40px;
+            margin-top: 50px;
         }
 
-        .route-card {
+        .service-card {
             background: white;
-            border-radius: 15px;
             padding: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            text-align: center;
             transition: all 0.3s ease;
-            border-top: 4px solid #8e44ad;
+            border: 1px solid #e9ecef;
+            cursor: pointer;
         }
 
-        .route-card:hover {
+        .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: white;
         }
 
-        .route-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .route-icon {
-            width: 50px;
-            height: 50px;
-            background: #8e44ad;
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
             color: white;
-            margin-right: 15px;
-            font-size: 1.4rem;
         }
 
-        .route-card h3 {
-            color: #2c3e50;
+        .service-card h3 {
             font-size: 1.4rem;
             font-weight: 600;
+            margin-bottom: 15px;
+            color: #2c3e50;
         }
 
-        .route-details {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .detail-item {
-            display: flex;
-            align-items: center;
-            color: #555;
-        }
-
-        .detail-icon {
-            width: 20px;
-            margin-right: 10px;
-            color: #8e44ad;
-        }
-
-        .route-price {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 15px;
-        }
-
-        .price-label {
-            font-size: 0.9rem;
+        .service-card p {
             color: #666;
-            margin-bottom: 5px;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
-        .price-amount {
-            font-size: 1.3rem;
-            font-weight: 700;
+        .service-features {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .feature-tag {
+            background: #f3e5f5;
             color: #8e44ad;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
 
         /* FAQ Section */
@@ -598,10 +578,6 @@
                 align-items: center;
             }
 
-            .route-details {
-                grid-template-columns: 1fr;
-            }
-
             .hospital-actions {
                 flex-direction: column;
             }
@@ -704,7 +680,7 @@
             <p class="section-subtitle">영동군 지역 특성에 맞는 6가지 전문 이송 서비스를 제공합니다</p>
             
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" onclick="location.href='general_patient_transport.html'">
                     <div class="service-icon">🏥</div>
                     <h3>영동 일반환자이송</h3>
                     <p>영동보건의료원에서 대전·청주 병원까지 안전한 일반 환자이송. 외래진료, 입퇴원, 병원 간 전원 시 이용하세요.</p>
@@ -715,7 +691,7 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" onclick="location.href='nursing_hospital_transport.html'">
                     <div class="service-icon">🏚️</div>
                     <h3>영동 요양병원이송</h3>
                     <p>영동황간요양병원 입퇴원 및 청주·대전 요양병원으로의 전원 이송. 침상형 구급차로 편안한 이송을 보장합니다.</p>
@@ -726,7 +702,7 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" onclick="location.href='mental_patient_transport.html'">
                     <div class="service-icon">🧠</div>
                     <h3>영동 정신질환자이송</h3>
                     <p>영동 지역에서 대전·청주 정신과 병원으로의 안전하고 인도적인 이송. 전문 훈련받은 응급구조사가 동행합니다.</p>
@@ -737,7 +713,7 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" onclick="location.href='alcohol_addiction_transport.html'">
                     <div class="service-icon">🍺</div>
                     <h3>영동 알코올중독 치료이송</h3>
                     <p>영동 지역 알코올중독 환자의 대전·청주 전문병원 이송. 환자 상태를 고려한 맞춤형 이송 서비스입니다.</p>
@@ -748,7 +724,7 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" onclick="location.href='event_medical_support.html'">
                     <div class="service-icon">🎭</div>
                     <h3>영동 행사의료지원</h3>
                     <p>영동군 체육대회, 축제, 등반대회 등 각종 행사에서의 응급의료 지원. 산간지역 행사 전문 대응 가능합니다.</p>
@@ -759,7 +735,7 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" onclick="location.href='deceased_transport.html'">
                     <div class="service-icon">🕊️</div>
                     <h3>영동 고인이송</h3>
                     <p>영동 지역 고인의 존엄성을 지키며 장례식장까지 정중하고 신속한 이송. 산간지역도 안전하게 모셔드립니다.</p>
@@ -885,9 +861,9 @@
                 </div>
 
                 <!-- 영동황간요양병원 -->
-                <div class="hospital-card">
+                <div class="hospital-card" style="border: 2px solid #f39c12;">
                     <div class="hospital-header">
-                        <div class="hospital-type">요양병원</div>
+                        <div class="hospital-type" style="background: #f39c12;">요양병원</div>
                     </div>
                     <h3>영동황간요양병원</h3>
                     <div class="hospital-info">
@@ -951,6 +927,45 @@
                         <a href="tel:042-280-7114" class="btn btn-secondary">병원 연락</a>
                     </div>
                 </div>
+
+                <!-- 청주 주요 병원 (이송 추천) -->
+                <div class="hospital-card" style="border: 2px solid #3498db;">
+                    <div class="hospital-header">
+                        <div class="hospital-type" style="background: #3498db;">이송 추천</div>
+                    </div>
+                    <h3>충북대학교병원 (청주)</h3>
+                    <div class="hospital-info">
+                        <div class="info-item">
+                            <span class="info-icon-small">📍</span>
+                            <span>청주시 서원구 1순환로 776</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🚑</span>
+                            <span>영동에서 60분 소요</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🏥</span>
+                            <span>상급종합병원 (권역응급의료센터)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">💰</span>
+                            <span>이송비: 약 150,000원</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">⭐</span>
+                            <span>심혈관센터, 뇌신경센터, 응급의학과</span>
+                        </div>
+                    </div>
+                    <div class="hospital-actions">
+                        <a href="tel:010-8841-4114" class="btn btn-primary">전문 이송 문의</a>
+                        <a href="tel:043-269-6114" class="btn btn-secondary">병원 연락</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="emergency-banner">
+                <h4>🏔️ 영동 산간지역 응급상황 대응 시스템</h4>
+                <p>영동군의 산간지역 특성을 고려하여 겨울철 폭설, 험준한 지형 등 어려운 조건에서도 신속하게 출동하는 전문 응급의료 시스템을 운영합니다. 119 신고와 함께 즉시 연락주시면 최적의 응급처치와 병원 이송을 제공합니다.</p>
             </div>
         </div>
     </section>
@@ -1009,7 +1024,7 @@
 
         // 페이지 로드 시 애니메이션
         document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.info-card, .route-card, .hospital-card, .faq-item');
+            const cards = document.querySelectorAll('.info-card, .service-card, .hospital-card, .faq-item');
             cards.forEach((card, index) => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
@@ -1019,17 +1034,6 @@
                     card.style.opacity = '1';
                     card.style.transform = 'translateY(0)';
                 }, index * 100);
-            });
-
-            // 전화 연결 확인
-            document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    if (this.getAttribute('href') === 'tel:010-8841-4114') {
-                        if (!confirm('직지응급환자이송단(010-8841-4114)으로 전화를 거시겠습니까?')) {
-                            e.preventDefault();
-                        }
-                    }
-                });
             });
         });
 
@@ -1047,7 +1051,7 @@
         });
 
         // 모든 카드 요소 관찰
-        document.querySelectorAll('.info-card, .route-card, .hospital-card').forEach(card => {
+        document.querySelectorAll('.info-card, .service-card, .hospital-card').forEach(card => {
             observer.observe(card);
         });
     </script>
