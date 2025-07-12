@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>응급의료 정보 블로그 | 직지응급환자이송단 - 충북 응급처치 가이드</title>
+    <meta name="description" content="충청북도 전문 응급구조사가 알려주는 응급처치 방법, 환자이송 정보, 병원 가이드 등 응급의료 정보를 제공합니다.">
+    <meta name="keywords" content="응급처치 교육, 심폐소생술, CPR, 응급의료 정보, 환자이송 가이드, 청주 병원 정보, 충북 응급의료">
+    
+    <!-- 지역 SEO -->
+    <meta name="geo.region" content="KR-43">
+    <meta name="geo.placename" content="청주시, 충청북도">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="응급의료 정보 블로그 | 직지응급환자이송단">
+    <meta property="og:description" content="충청북도 전문 응급구조사가 알려주는 응급처치 방법과 환자이송 정보">
+    <meta property="og:url" content="https://lds77.github.io/blog/">
+    <meta property="og:site_name" content="직지응급환자이송단">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:image" content="https://lds77.github.io/blog/images/blog-main.jpg">
+
+    <!-- 추가 SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="직지응급환자이송단">
+    <link rel="canonical" href="https://lds77.github.io/blog/">
+
+    <!-- 구조화된 데이터 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "직지응급환자이송단 응급의료 정보 블로그",
+      "description": "충청북도 전문 응급구조사가 알려주는 응급처치 방법과 환자이송 정보",
+      "url": "https://lds77.github.io/blog/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "직지응급환자이송단",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://lds77.github.io/logo.png"
+        }
+      },
+      "inLanguage": "ko-KR"
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .blog-header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #e74c3c;
+        }
+
+        .home-link {
+            background: rgba(255,255,255,0.2);
+            padding: 12px 24px;
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .home-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .blog-hero {
+            background: linear-gradient(rgba(231, 76, 60, 0.9), rgba(192, 57, 43, 0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23f0f2f5" width="1200" height="400"/><circle fill="%23e74c3c" cx="200" cy="100" r="30" opacity="0.1"/><circle fill="%23c0392b" cx="1000" cy="300" r="50" opacity="0.1"/></svg>');
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Categories */
+        .categories {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .category-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: white;
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .category-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .category-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .category-count {
+            background: #e74c3c;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        /* Blog Posts */
+        .blog-posts {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .post-image {
+            height: 120px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .post-icon {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .post-content {
+            padding: 25px;
+        }
+
+        .post-category {
+            background: #e74c3c;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .post-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 15px 0 10px 0;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+
+        .post-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #888;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        /* Featured Post */
+        .featured-post {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+            border: 2px solid #e74c3c;
+        }
+
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            min-height: 300px;
+        }
+
+        .featured-image {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .featured-icon {
+            font-size: 4rem;
+            color: white;
+        }
+
+        .featured-text {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-badge {
+            background: #f39c12;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+
+        .featured-text h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .featured-text p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            background: #e74c3c;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .read-more:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Search & Filter */
+        .search-section {
+            background: white;
+            padding: 40px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #e74c3c;
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .filter-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tag {
+            background: #f8f9fa;
+            color: #666;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #e9ecef;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .filter-tag:hover,
+        .filter-tag.active {
+            background: #e74c3c;
+            color: white;
+            border-color: #e74c3c;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .featured-content {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-image {
+                min-height: 200px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .search-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="blog-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <div class="logo-icon">🚑</div>
+                    <div>
+                        <h1 style="font-size: 1.5rem; margin: 0;">직지응급환자이송단</h1>
+                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">응급의료 정보 블로그</p>
+                    </div>
+                </a>
+                <a href="../index.html" class="home-link">홈으로 돌아가기</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="blog-hero">
+        <div class="container">
+            <h1 class="hero-title">응급의료 정보 & 이송 가이드</h1>
+            <p class="hero-subtitle">충청북도 전문 응급구조사가 알려주는 실용적인 응급처치 방법과 환자이송 정보</p>
+        </div>
+    </section>
+
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="궁금한 응급의료 정보를 검색해보세요...">
+                    <button class="search-btn">🔍</button>
+                </div>
+                <div class="filter-tags">
+                    <a href="#all" class="filter-tag active">전체</a>
+                    <a href="#emergency" class="filter-tag">응급처치</a>
+                    <a href="#transport" class="filter-tag">환자이송</a>
+                    <a href="#hospital" class="filter-tag">병원 정보</a>
+                    <a href="#prevention" class="filter-tag">예방 건강</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">카테고리별 정보</h2>
+                <div class="category-grid">
+                    <div class="category-card" onclick="filterByCategory('emergency')">
+                        <div class="category-icon">🚨</div>
+                        <h3>응급처치 가이드</h3>
+                        <p>심폐소생술, 지혈법, 골절 처치 등 응급상황별 대처 방법</p>
+                        <span class="category-count">8개 글</span>
+                    </div>
+                    <div class="category-card" onclick="filterByCategory('transport')">
+                        <div class="category-icon">🚑</div>
+                        <h3>환자이송 정보</h3>
+                        <p>사설구급차 이용법, 필요 서류, 이송 절차 안내</p>
+                        <span class="category-count">6개 글</span>
+                    </div>
+                    <div class="category-card" onclick="filterByCategory('hospital')">
+                        <div class="category-icon">🏥</div>
+                        <h3>병원 & 의료진 정보</h3>
+                        <p>충북 지역 주요 병원 정보와 전문 진료과목 안내</p>
+                        <span class="category-count">11개 글</span>
+                    </div>
+                    <div class="category-card" onclick="filterByCategory('prevention')">
+                        <div class="category-icon">💪</div>
+                        <h3>예방 & 건강관리</h3>
+                        <p>계절별 건강관리법과 사고 예방 수칙</p>
+                        <span class="category-count">5개 글</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-posts">
+            <div class="container">
+                <h2 class="section-title">최신 게시글</h2>
+                
+                <!-- Featured Post -->
+                <article class="featured-post" onclick="location.href='emergency-first-aid-guide.html'">
+                    <div class="featured-content">
+                        <div class="featured-image">
+                            <div class="featured-icon">💊</div>
+                        </div>
+                        <div class="featured-text">
+                            <span class="featured-badge">⭐ 인기 글</span>
+                            <h2>응급상황별 기본 응급처치 방법 완벽 가이드</h2>
+                            <p>심정지, 출혈, 골절, 화상 등 응급상황별 올바른 응급처치 방법을 전문가가 상세히 알려드립니다. 생명을 구하는 골든타임 대처법을 지금 바로 배워보세요.</p>
+                            <a href="emergency-first-aid-guide.html" class="read-more">자세히 읽기 →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="posts-grid">
+                    <article class="post-card" onclick="location.href='emergency-vs-private-ambulance.html'">
+                        <div class="post-image">
+                            <div class="post-icon">🚨</div>
+                        </div>
+                        <div class="post-content">
+                            <span class="post-category">응급의료 가이드</span>
+                            <h3>119 vs 사설구급차, 언제 이용해야 할까?</h3>
+                            <p>응급상황에서 올바른 선택을 위한 완벽 가이드. 상황별 이용 기준과 장단점을 자세히 알아보세요.</p>
+                            <div class="post-meta">
+                                <span>2025.01.10</span>
+                                <span>조회 1,247</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card" onclick="location.href='patient-transport-documents.html'">
+                        <div class="post-image">
+                            <div class="post-icon">📋</div>
+                        </div>
+                        <div class="post-content">
+                            <span class="post-category">이송 정보</span>
+                            <h3>환자이송 시 필요한 서류와 준비물</h3>
+                            <p>병원 간 이송이나 응급이송 시 미리 준비해야 할 서류들과 체크리스트를 정리했습니다.</p>
+                            <div class="post-meta">
+                                <span>2025.01.08</span>
+                                <span>조회 892</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card" onclick="location.href='cheongju-hospitals-guide.html'">
+                        <div class="post-image">
+                            <div class="post-icon">🏥</div>
+                        </div>
+                        <div class="post-content">
+                            <span class="post-category">지역 의료 정보</span>
+                            <h3>청주 주요 병원별 특징과 전문 진료과목</h3>
+                            <p>청주 지역 주요 병원들의 특성화 진료과목과 이송 시 알아야 할 정보들을 정리했습니다.</p>
+                            <div class="post-meta">
+                                <span>2025.01.05</span>
+                                <span>조회 634</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card" onclick="location.href='nursing-home-transport-process.html'">
+                        <div class="post-image">
+                            <div class="post-icon">🏚️</div>
+                        </div>
+                        <div class="post-content">
+                            <span class="post-category">요양 이송</span>
+                            <h3>요양병원 입원 시 알아야 할 이송 절차</h3>
+                            <p>요양병원 입원이 결정되셨나요? 안전하고 편안한 이송을 위한 단계별 절차를 안내합니다.</p>
+                            <div class="post-meta">
+                                <span>2025.01.03</span>
+                                <span>조회 756</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card" onclick="location.href='winter-emergency-prevention.html'">
+                        <div class="post-image">
+                            <div class="post-icon">❄️</div>
+                        </div>
+                        <div class="post-content">
+                            <span class="post-category">계절 건강</span>
+                            <h3>겨울철 낙상사고 예방과 응급처치 방법</h3>
+                            <p>겨울철 빙판길 낙상사고가 증가하고 있습니다. 예방법과 응급상황 시 대처방법을 알아보세요.</p>
+                            <div class="post-meta">
+                                <span>2025.01.01</span>
+                                <span>조회 423</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card" onclick="location.href='mental-health-transport-guide.html'">
+                        <div class="post-image">
+                            <div class="post-icon">🧠</div>
+                        </div>
+                        <div class="post-content">
+                            <span class="post-category">정신건강</span>
+                            <h3>정신과 병원 이송, 가족이 알아야 할 것들</h3>
+                            <p>정신질환자 이송은 특별한 주의가 필요합니다. 가족들이 꼭 알아야 할 이송 가이드를 제공합니다.</p>
+                            <div class="post-meta">
+                                <span>2024.12.28</span>
+                                <span>조회 567</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div style="text-align: center; margin-top: 50px;">
+                    <button class="read-more" onclick="loadMorePosts()">더 많은 글 보기</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section style="background: linear-gradient(135deg, #2c3e50, #34495e); color: white; padding: 60px 0;">
+            <div class="container" style="text-align: center;">
+                <h2 style="margin-bottom: 20px; color: white;">응급의료 정보를 정기적으로 받아보세요</h2>
+                <p style="margin-bottom: 30px; opacity: 0.9;">최신 응급처치 방법과 건강 정보를 이메일로 전달해드립니다.</p>
+                <div style="max-width: 400px; margin: 0 auto; display: flex; gap: 10px;">
+                    <input type="email" placeholder="이메일 주소를 입력하세요" style="flex: 1; padding: 15px; border: none; border-radius: 25px; font-size: 1rem;">
+                    <button style="background: #e74c3c; color: white; border: none; padding: 15px 25px; border-radius: 25px; font-weight: 600; cursor: pointer;">구독하기</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #1a252f; color: #bdc3c7; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px; text-align: left;">
+                <div>
+                    <h4 style="color: white; margin-bottom: 15px;">응급연락처</h4>
+                    <p style="font-size: 1.5rem; font-weight: 700; color: #e74c3c;">010-8841-4114</p>
+                    <p style="font-size: 0.9rem;">24시간 응급환자이송 서비스</p>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 15px;">인기 카테고리</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 8px;"><a href="#emergency" style="color: #bdc3c7; text-decoration: none;">응급처치 가이드</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#transport" style="color: #bdc3c7; text-decoration: none;">환자이송 정보</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#hospital" style="color: #bdc3c7; text-decoration: none;">병원 정보</a></li>
+                        <li style="margin-bottom: 8px;"><a href="#prevention" style="color: #bdc3c7; text-decoration: none;">예방 건강</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 15px;">서비스 지역</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 8px;">청주시, 충주시, 제천시</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 8px;">충청북도 전 지역</p>
+                    <p style="font-size: 0.9rem;">전국 장거리 이송 가능</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #34495e; padding-top: 20px; font-size: 0.9rem;">
+                <p>&copy; 2025 직지응급환자이송단. All rights reserved.</p>
+                <p style="margin-top: 10px; opacity: 0.7;">충청북도 전문 응급의료 정보 제공</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 검색 기능
+        document.querySelector('.search-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchPosts();
+            }
+        });
+
+        document.querySelector('.search-btn').addEventListener('click', searchPosts);
+
+        function searchPosts() {
+            const query = document.querySelector('.search-input').value;
+            if (query.trim()) {
+                alert(`"${query}" 검색 기능은 현재 개발 중입니다.`);
+                // 실제 구현 시 서버나 클라이언트 사이드 검색 로직 추가
+            }
+        }
+
+        // 필터 기능
+        document.querySelectorAll('.filter-tag').forEach(tag => {
+            tag.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // 활성 태그 업데이트
+                document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                const category = this.getAttribute('href').substring(1);
+                filterByCategory(category);
+            });
+        });
+
+        function filterByCategory(category) {
+            const posts = document.querySelectorAll('.post-card');
+            
+            posts.forEach(post => {
+                if (category === 'all') {
+                    post.style.display = 'block';
+                } else {
+                    const postCategory = post.querySelector('.post-category').textContent.toLowerCase();
+                    const shouldShow = postCategory.includes(category) || 
+                                     (category === 'emergency' && postCategory.includes('응급')) ||
+                                     (category === 'transport' && postCategory.includes('이송')) ||
+                                     (category === 'hospital' && postCategory.includes('의료')) ||
+                                     (category === 'prevention' && postCategory.includes('건강'));
+                    
+                    post.style.display = shouldShow ? 'block' : 'none';
+                }
+            });
+        }
+
+        // 더 보기 기능
+        function loadMorePosts() {
+            alert('추가 게시글 로딩 기능은 현재 개발 중입니다.');
+            // 실제 구현 시 AJAX 또는 페이지네이션 로직 추가
+        }
+
+        // 뉴스레터 구독
+        document.querySelector('footer button').addEventListener('click', function() {
+            const email = document.querySelector('footer input[type="email"]').value;
+            if (email && email.includes('@')) {
+                alert('뉴스레터 구독이 완료되었습니다!');
+                document.querySelector('footer input[type="email"]').value = '';
+            } else {
+                alert('올바른 이메일 주소를 입력해주세요.');
+            }
+        });
+
+        // 스크롤 시 헤더 효과
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.blog-header');
+            if (window.scrollY > 100) {
+                header.style.background = 'linear-gradient(135deg, rgba(231, 76, 60, 0.95) 0%, rgba(192, 57, 43, 0.95) 100%)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // 카드 애니메이션
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // 모든 카드에 애니메이션 적용
+        document.querySelectorAll('.post-card, .category-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
