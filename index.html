@@ -314,18 +314,116 @@
             line-height: 1.6;
         }
 
-        /* FAQ Section */
-        .faq-section {
+        /* Blog Section */
+        .blog-section {
             padding: 80px 0;
             background: #f8f9fa;
         }
 
-        .faq-item {
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .blog-card {
             background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .blog-image {
+            height: 120px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .blog-icon {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-category {
+            background: #e74c3c;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .blog-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 15px 0 10px 0;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+
+        .blog-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #888;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .blog-more {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .blog-more .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        /* Section Subtitle */
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
             margin-bottom: 15px;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
         }
 
         .faq-question {
@@ -346,6 +444,7 @@
             display: none;
             color: #555;
             line-height: 1.7;
+            background: white;
         }
 
         .faq-answer.active {
@@ -639,33 +738,6 @@
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 청주에서 서울까지 이송이 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        네, 가능합니다. 청주를 기점으로 전국 어디든 장거리 이송 서비스를 제공하고 있습니다. 서울, 대전, 대구, 부산 등 전국 주요 도시로의 환자이송이 가능하며, 거리에 따른 요금은 사전에 정확히 안내해드립니다.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 응급구조사가 항상 동행하나요?
-                    </div>
-                    <div class="faq-answer">
-                        네, 저희 직지응급환자이송단은 모든 이송에 전문 응급구조사가 동행합니다. 1급 응급구조사 자격을 보유한 전문 인력이 이송 중 환자의 상태를 지속적으로 모니터링하고 필요시 응급처치를 실시합니다.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 야간이나 주말에도 이송이 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        네, 24시간 365일 언제든지 이송 서비스를 제공합니다. 야간(22시~06시)과 공휴일/주말에는 20%의 할증이 적용되지만, 응급상황에서는 신속한 대응을 최우선으로 하고 있습니다.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
                         Q. 정신질환자나 알코올중독 환자도 이송 가능한가요?
                     </div>
                     <div class="faq-answer">
@@ -684,27 +756,175 @@
             </div>
         </section>
 
+        <section class="blog-section">
+            <div class="container">
+                <h2 class="section-title">응급의료 정보 & 이송 가이드</h2>
+                <p class="section-subtitle">전문가가 알려주는 응급상황 대처법과 환자이송 정보를 확인하세요</p>
+                
+                <div class="blog-grid">
+                    <article class="blog-card" onclick="location.href='blog/emergency-first-aid-guide.html'">
+                        <div class="blog-image">
+                            <div class="blog-icon">💊</div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">응급의료 가이드</span>
+                            <h3>응급상황별 기본 응급처치 방법 완벽 가이드</h3>
+                            <p>심정지, 출혈, 골절, 화상 등 응급상황별 올바른 응급처치 방법을 전문가가 알려드립니다. 생명을 구하는 골든타임 대처법을 배워보세요.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">2025.01.12</span>
+                                <span class="blog-views">조회 1,523</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" onclick="location.href='blog/emergency-vs-private-ambulance.html'">
+                        <div class="blog-image">
+                            <div class="blog-icon">🚨</div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">응급의료 가이드</span>
+                            <h3>119 vs 사설구급차, 언제 이용해야 할까?</h3>
+                            <p>응급상황에서 올바른 선택을 위한 완벽 가이드. 상황별 이용 기준과 장단점을 자세히 알아보세요.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">2025.01.10</span>
+                                <span class="blog-views">조회 1,247</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" onclick="location.href='blog/patient-transport-documents.html'">
+                        <div class="blog-image">
+                            <div class="blog-icon">📋</div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">이송 정보</span>
+                            <h3>환자이송 시 필요한 서류와 준비물</h3>
+                            <p>병원 간 이송이나 응급이송 시 미리 준비해야 할 서류들과 체크리스트를 정리했습니다.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">2025.01.08</span>
+                                <span class="blog-views">조회 892</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" onclick="location.href='blog/cheongju-hospitals-guide.html'">
+                        <div class="blog-image">
+                            <div class="blog-icon">🏥</div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">지역 의료 정보</span>
+                            <h3>청주 주요 병원별 특징과 전문 진료과목</h3>
+                            <p>청주 지역 주요 병원들의 특성화 진료과목과 이송 시 알아야 할 정보들을 정리했습니다.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">2025.01.05</span>
+                                <span class="blog-views">조회 634</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" onclick="location.href='blog/nursing-home-transport-process.html'">
+                        <div class="blog-image">
+                            <div class="blog-icon">🏚️</div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">요양 이송</span>
+                            <h3>요양병원 입원 시 알아야 할 이송 절차</h3>
+                            <p>요양병원 입원이 결정되셨나요? 안전하고 편안한 이송을 위한 단계별 절차를 안내합니다.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">2025.01.03</span>
+                                <span class="blog-views">조회 756</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" onclick="location.href='blog/winter-emergency-prevention.html'">
+                        <div class="blog-image">
+                            <div class="blog-icon">❄️</div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">계절 건강</span>
+                            <h3>겨울철 낙상사고 예방과 응급처치 방법</h3>
+                            <p>겨울철 빙판길 낙상사고가 증가하고 있습니다. 예방법과 응급상황 시 대처방법을 알아보세요.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">2025.01.01</span>
+                                <span class="blog-views">조회 423</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="blog-more">
+                    <a href="blog/index.html" class="btn" style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">더 많은 정보 보기</a>
+                </div>
+            </div>
+        </section>
+
         <section class="coverage">
             <div class="container">
                 <h2 class="section-title">서비스 지역 및 병원 정보</h2>
                 <p style="text-align: center; font-size: 1.1rem; color: #666;">충청북도 전 지역에서 신속한 출동이 가능합니다 (클릭하여 지역별 병원 정보 확인)</p>
+                
                 <div class="coverage-grid">
                     <div class="coverage-item" onclick="location.href='cheongju_hospitals.html'">
                         <h4>청주시</h4>
                         <p>상당구, 서원구, 청원구, 흥덕구</p>
+                        <small style="color: #888;">충북 최대 도시 | 상급종합병원 다수</small>
                     </div>
                     <div class="coverage-item" onclick="location.href='chungju_hospitals.html'">
                         <h4>충주시</h4>
                         <p>시내 전 지역 및 인근 농촌지역</p>
+                        <small style="color: #888;">충북 북부 거점 | 건국대 충주병원</small>
                     </div>
                     <div class="coverage-item" onclick="location.href='jecheon_hospitals.html'">
                         <h4>제천시</h4>
                         <p>시내 전 지역 및 인근 산간지역</p>
+                        <small style="color: #888;">산간지역 의료중심 | 세명대병원</small>
                     </div>
-                    <div class="coverage-item" onclick="location.href='other_regions_hospitals.html'">
-                        <h4>기타 시군</h4>
-                        <p>음성, 진천, 괴산, 증평, 옥천, 영동, 보은, 단양</p>
+                    <div class="coverage-item" onclick="location.href='okcheon_hospitals.html'">
+                        <h4>옥천군</h4>
+                        <p>옥천읍, 동이면, 안남면 등</p>
+                        <small style="color: #888;">청주 35분 | 대전 40분 접근</small>
                     </div>
+                    <div class="coverage-item" onclick="location.href='yeongdong_hospitals.html'">
+                        <h4>영동군</h4>
+                        <p>영동읍, 황간면, 추풍령면 등</p>
+                        <small style="color: #888;">대전 접근 용이 | 산간지역</small>
+                    </div>
+                    <div class="coverage-item" onclick="location.href='eumseong_hospitals.html'">
+                        <h4>음성군</h4>
+                        <p>음성읍, 금왕읍, 대소면 등</p>
+                        <small style="color: #888;">청주 30분 | 산업단지 밀집</small>
+                    </div>
+                    <div class="coverage-item" onclick="location.href='jincheon_hospitals.html'">
+                        <h4>진천군</h4>
+                        <p>진천읍, 덕산읍, 백곡면 등</p>
+                        <small style="color: #888;">청주 25분 | 국가대표선수촌</small>
+                    </div>
+                    <div class="coverage-item" onclick="location.href='goesan_hospitals.html'">
+                        <h4>괴산군</h4>
+                        <p>괴산읍, 청천면, 칠성면 등</p>
+                        <small style="color: #888;">충주 30분 | 농촌지역</small>
+                    </div>
+                    <div class="coverage-item" onclick="location.href='jeungpyeong_hospitals.html'">
+                        <h4>증평군</h4>
+                        <p>증평읍, 도안면</p>
+                        <small style="color: #888;">청주 20분 | 충북 최소 군</small>
+                    </div>
+                    <div class="coverage-item" onclick="location.href='boeun_hospitals.html'">
+                        <h4>보은군</h4>
+                        <p>보은읍, 속리산면, 탄부면 등</p>
+                        <small style="color: #888;">속리산 인근 | 청주 45분</small>
+                    </div>
+                    <div class="coverage-item" onclick="location.href='danyang_hospitals.html'">
+                        <h4>단양군</h4>
+                        <p>단양읍, 매포읍, 가곡면 등</p>
+                        <small style="color: #888;">제천 20분 | 관광지역</small>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px; padding: 20px; background: #e8f4fd; border-radius: 10px;">
+                    <h4 style="color: #2980b9; margin-bottom: 10px;">💡 이송 서비스 안내</h4>
+                    <p style="color: #555;">각 지역별 주요 병원 정보와 청주/대전/서울 등 대도시 병원으로의 이송 경로를 확인하실 수 있습니다.</p>
                 </div>
             </div>
         </section>
@@ -886,7 +1106,7 @@
         }, observerOptions);
 
         // Observe all service cards and FAQ items
-        document.querySelectorAll('.service-card, .coverage-item, .faq-item').forEach(card => {
+        document.querySelectorAll('.service-card, .coverage-item, .faq-item, .blog-card').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -903,4 +1123,31 @@
         });
     </script>
 </body>
-</html>
+</html>(this)">
+                        Q. 청주에서 서울까지 이송이 가능한가요?
+                    </div>
+                    <div class="faq-answer">
+                        네, 가능합니다. 청주를 기점으로 전국 어디든 장거리 이송 서비스를 제공하고 있습니다. 서울, 대전, 대구, 부산 등 전국 주요 도시로의 환자이송이 가능하며, 거리에 따른 요금은 사전에 정확히 안내해드립니다.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 응급구조사가 항상 동행하나요?
+                    </div>
+                    <div class="faq-answer">
+                        네, 저희 직지응급환자이송단은 모든 이송에 전문 응급구조사가 동행합니다. 1급 응급구조사 자격을 보유한 전문 인력이 이송 중 환자의 상태를 지속적으로 모니터링하고 필요시 응급처치를 실시합니다.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 야간이나 주말에도 이송이 가능한가요?
+                    </div>
+                    <div class="faq-answer">
+                        네, 24시간 365일 언제든지 이송 서비스를 제공합니다. 야간(22시~06시)과 공휴일/주말에는 20%의 할증이 적용되지만, 응급상황에서는 신속한 대응을 최우선으로 하고 있습니다.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq
