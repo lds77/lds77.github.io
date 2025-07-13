@@ -1,8 +1,391 @@
-<div class="posts-grid">
-                    <!-- 🆕 새로 추가된 글들을 위쪽에 배치 -->
-                    <article class="post-card" onclick="location.href='emergency-first-aid-guide.html'">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>응급의료 전문 블로그 - 올바른 응급처치와 의료 이송 가이드</title>
+    <meta name="description" content="응급상황별 올바른 응급처치 방법, 119 vs 사설구급차 이용 가이드, 환자 이송 정보 등 전문적인 의료 정보를 제공합니다.">
+    <meta name="keywords" content="응급처치, 응급의료, 119, 사설구급차, 환자이송, 청주병원, 의료가이드">
+    <meta name="author" content="응급의료 전문팀">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:title" content="응급의료 전문 블로그 - 올바른 응급처치와 의료 이송 가이드">
+    <meta property="og:description" content="응급상황별 올바른 응급처치 방법, 119 vs 사설구급차 이용 가이드, 환자 이송 정보 등 전문적인 의료 정보를 제공합니다.">
+    <meta property="og:image" content="https://example.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://example.com/">
+    <meta property="twitter:title" content="응급의료 전문 블로그">
+    <meta property="twitter:description" content="응급상황별 올바른 응급처치 방법과 의료 이송 가이드">
+    <meta property="twitter:image" content="https://example.com/twitter-image.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "응급의료 전문 블로그",
+        "description": "응급상황별 올바른 응급처치 방법, 119 vs 사설구급차 이용 가이드, 환자 이송 정보 등 전문적인 의료 정보를 제공합니다.",
+        "url": "https://example.com",
+        "publisher": {
+            "@type": "Organization",
+            "name": "응급의료 전문팀"
+        },
+        "blogPost": [
+            {
+                "@type": "BlogPosting",
+                "headline": "응급상황별 기본 응급처치 방법 완벽 가이드",
+                "description": "심정지, 출혈, 골절, 화상 등 응급상황별 올바른 응급처치 방법을 전문가가 상세히 알려드립니다.",
+                "datePublished": "2025-01-12",
+                "url": "https://example.com/emergency-first-aid-guide.html"
+            }
+        ]
+    }
+    </script>
+    
+    <link rel="canonical" href="https://example.com/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #f1f5f9;
+            --accent-color: #dc2626;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: #fafafa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #1d4ed8);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .header-content {
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        /* Main Content */
+        main {
+            padding-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            text-align: center;
+        }
+        
+        /* Posts Grid */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        /* Post Card */
+        .post-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+        }
+        
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .post-image {
+            background: linear-gradient(135deg, var(--secondary-color), #e2e8f0);
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .post-icon {
+            font-size: 3rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+        
+        .post-content {
+            padding: 1.5rem;
+        }
+        
+        .post-category {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .post-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+        
+        .post-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .post-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .post-meta span:first-child::before {
+            content: "📅";
+            font-size: 0.8rem;
+        }
+        
+        .post-meta span:last-child::before {
+            content: "👁️";
+            font-size: 0.8rem;
+        }
+        
+        /* Categories */
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        
+        .category-tag {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .category-tag:hover {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Emergency CTA */
+        .emergency-cta {
+            background: linear-gradient(135deg, var(--accent-color), #b91c1c);
+            color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .emergency-cta h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .emergency-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .emergency-number {
+            font-size: 2rem;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .posts-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .header-subtitle {
+                font-size: 1rem;
+            }
+            
+            .post-card h3 {
+                font-size: 1.1rem;
+            }
+            
+            .categories {
+                gap: 0.5rem;
+            }
+            
+            .category-tag {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+        
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Loading Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .post-card {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        .post-card:nth-child(1) { animation-delay: 0.1s; }
+        .post-card:nth-child(2) { animation-delay: 0.2s; }
+        .post-card:nth-child(3) { animation-delay: 0.3s; }
+        .post-card:nth-child(4) { animation-delay: 0.4s; }
+        .post-card:nth-child(5) { animation-delay: 0.5s; }
+        .post-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>응급의료 전문 블로그</h1>
+                <p class="header-subtitle">올바른 응급처치와 의료 이송 가이드</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Emergency Call-to-Action -->
+            <section class="emergency-cta" role="banner">
+                <h2>응급상황 시 즉시 연락</h2>
+                <p>생명이 위급한 상황에서는 망설이지 마세요</p>
+                <div class="emergency-number">119</div>
+            </section>
+
+            <!-- Category Navigation -->
+            <nav class="categories" role="navigation" aria-label="카테고리 네비게이션">
+                <a href="#응급의료" class="category-tag">응급의료 가이드</a>
+                <a href="#이송정보" class="category-tag">이송 정보</a>
+                <a href="#지역의료" class="category-tag">지역 의료</a>
+                <a href="#요양이송" class="category-tag">요양 이송</a>
+                <a href="#안전예방" class="category-tag">안전 예방</a>
+                <a href="#정신건강" class="category-tag">정신건강</a>
+            </nav>
+
+            <!-- Blog Posts Section -->
+            <section>
+                <h2 class="section-title">최신 의료 정보</h2>
+                <div class="posts-grid" role="feed" aria-label="블로그 포스트 목록">
+                    <article class="post-card" onclick="location.href='emergency-first-aid-guide.html'" role="article">
                         <div class="post-image">
-                            <div class="post-icon">💊</div>
+                            <div class="post-icon" aria-hidden="true">💊</div>
                         </div>
                         <div class="post-content">
                             <span class="post-category">응급의료 가이드</span>
@@ -15,9 +398,9 @@
                         </div>
                     </article>
 
-                    <article class="post-card" onclick="location.href='emergency-vs-private-ambulance.html'">
+                    <article class="post-card" onclick="location.href='emergency-vs-private-ambulance.html'" role="article">
                         <div class="post-image">
-                            <div class="post-icon">🚨</div>
+                            <div class="post-icon" aria-hidden="true">🚨</div>
                         </div>
                         <div class="post-content">
                             <span class="post-category">응급의료 가이드</span>
@@ -30,85 +413,9 @@
                         </div>
                     </article>
 
-                    <article class="post-card" onclick="location.href='patient-transport-documents.html'">
+                    <article class="post-card" onclick="location.href='emergency-room-checklist.html'" role="article">
                         <div class="post-image">
-                            <div class="post-icon">📋</div>
-                        </div>
-                        <div class="post-content">
-                            <span class="post-category">이송 정보</span>
-                            <h3>환자이송 시 필요한 서류와 준비물</h3>
-                            <p>병원 간 이송이나 응급이송 시 미리 준비해야 할 서류들과 체크리스트를 정리했습니다.</p>
-                            <div class="post-meta">
-                                <span>2025.01.08</span>
-                                <span>조회 892</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="post-card" onclick="location.href='cheongju-hospitals-guide.html'">
-                        <div class="post-image">
-                            <div class="post-icon">🏥</div>
-                        </div>
-                        <div class="post-content">
-                            <span class="post-category">지역 의료 정보</span>
-                            <h3>청주 주요 병원별 특징과 전문 진료과목</h3>
-                            <p>청주 지역 주요 병원들의 특성화 진료과목과 이송 시 알아야 할 정보들을 정리했습니다.</p>
-                            <div class="post-meta">
-                                <span>2025.01.05</span>
-                                <span>조회 634</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="post-card" onclick="location.href='nursing-home-transport-process.html'">
-                        <div class="post-image">
-                            <div class="post-icon">🏚️</div>
-                        </div>
-                        <div class="post-content">
-                            <span class="post-category">요양 이송</span>
-                            <h3>요양병원 입원 시 알아야 할 이송 절차</h3>
-                            <p>요양병원 입원이 결정되셨나요? 안전하고 편안한 이송을 위한 단계별 절차를 안내합니다.</p>
-                            <div class="post-meta">
-                                <span>2025.01.03</span>
-                                <span>조회 756</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="post-card" onclick="location.href='winter-emergency-prevention.html'">
-                        <div class="post-image">
-                            <div class="post-icon">❄️</div>
-                        </div>
-                        <div class="post-content">
-                            <span class="post-category">계절 건강</span>
-                            <h3>겨울철 낙상사고 예방과 응급처치 방법</h3>
-                            <p>겨울철 빙판길 낙상사고가 증가하고 있습니다. 예방법과 응급상황 시 대처방법을 알아보세요.</p>
-                            <div class="post-meta">
-                                <span>2025.01.01</span>
-                                <span class="blog-views">조회 423</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="post-card" onclick="location.href='mental-health-transport-guide.html'">
-                        <div class="post-image">
-                            <div class="post-icon">🧠</div>
-                        </div>
-                        <div class="post-content">
-                            <span class="post-category">정신건강</span>
-                            <h3>정신과 병원 이송, 가족이 알아야 할 것들</h3>
-                            <p>정신질환자 이송은 특별한 주의가 필요합니다. 가족들이 꼭 알아야 할 이송 가이드를 제공합니다.</p>
-                            <div class="post-meta">
-                                <span>2024.12.28</span>
-                                <span>조회 567</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 🆕 추가할 수 있는 새 글 템플릿 -->
-                    <article class="post-card" onclick="location.href='emergency-room-checklist.html'">
-                        <div class="post-image">
-                            <div class="post-icon">📝</div>
+                            <div class="post-icon" aria-hidden="true">📝</div>
                         </div>
                         <div class="post-content">
                             <span class="post-category">응급의료 가이드</span>
@@ -121,9 +428,24 @@
                         </div>
                     </article>
 
-                    <article class="post-card" onclick="location.href='elderly-safety-guide.html'">
+                    <article class="post-card" onclick="location.href='patient-transport-documents.html'" role="article">
                         <div class="post-image">
-                            <div class="post-icon">👴</div>
+                            <div class="post-icon" aria-hidden="true">📋</div>
+                        </div>
+                        <div class="post-content">
+                            <span class="post-category">이송 정보</span>
+                            <h3>환자이송 시 필요한 서류와 준비물</h3>
+                            <p>병원 간 이송이나 응급이송 시 미리 준비해야 할 서류들과 체크리스트를 정리했습니다.</p>
+                            <div class="post-meta">
+                                <span>2025.01.08</span>
+                                <span>조회 892</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card" onclick="location.href='elderly-safety-guide.html'" role="article">
+                        <div class="post-image">
+                            <div class="post-icon" aria-hidden="true">👴</div>
                         </div>
                         <div class="post-content">
                             <span class="post-category">안전 예방</span>
@@ -135,4 +457,78 @@
                             </div>
                         </div>
                     </article>
+
+                    <article class="post-card" onclick="location.href='cheongju-hospitals-guide.html'" role="article">
+                        <div class="post-image">
+                            <div class="post-icon" aria-hidden="true">🏥</div>
+                        </div>
+                        <div class="post-content">
+                            <span class="post-category">지역 의료 정보</span>
+                            <h3>청주 주요 병원별 특징과 전문 진료과목</h3>
+                            <p>청주 지역 주요 병원들의 특성화 진료과목과 이송 시 알아야 할 정보들을 정리했습니다.</p>
+                            <div class="post-meta">
+                                <span>2025.01.05</span>
+                                <span>조회 634</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card" onclick="location.href='nursing-home-transport-process.html'" role="article">
+                        <div class="post-image">
+                            <div class="post-icon" aria-hidden="true">🏚️</div>
+                        </div>
+                        <div class="post-content">
+                            <span class="post-category">요양 이송</span>
+                            <h3>요양병원 입원 시 알아야 할 이송 절차</h3>
+                            <p>요양병원 입원이 결정되셨나요? 안전하고 편안한 이송을 위한 단계별 절차를 안내합니다.</p>
+                            <div class="post-meta">
+                                <span>2025.01.03</span>
+                                <span>조회 756</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card" onclick="location.href='winter-emergency-prevention.html'" role="article">
+                        <div class="post-image">
+                            <div class="post-icon" aria-hidden="true">❄️</div>
+                        </div>
+                        <div class="post-content">
+                            <span class="post-category">계절 건강</span>
+                            <h3>겨울철 낙상사고 예방과 응급처치 방법</h3>
+                            <p>겨울철 빙판길 낙상사고가 증가하고 있습니다. 예방법과 응급상황 시 대처방법을 알아보세요.</p>
+                            <div class="post-meta">
+                                <span>2025.01.01</span>
+                                <span>조회 423</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card" onclick="location.href='mental-health-transport-guide.html'" role="article">
+                        <div class="post-image">
+                            <div class="post-icon" aria-hidden="true">🧠</div>
+                        </div>
+                        <div class="post-content">
+                            <span class="post-category">정신건강</span>
+                            <h3>정신과 병원 이송, 가족이 알아야 할 것들</h3>
+                            <p>정신질환자 이송은 특별한 주의가 필요합니다. 가족들이 꼭 알아야 할 이송 가이드를 제공합니다.</p>
+                            <div class="post-meta">
+                                <span>2024.12.28</span>
+                                <span>조회 567</span>
+                            </div>
+                        </div>
+                    </article>
                 </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 응급의료 전문 블로그. 모든 권리 보유.</p>
+                <p>의료 정보는 참고용이며, 응급상황 시 전문의료진의 진료를 받으시기 바랍니다.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
