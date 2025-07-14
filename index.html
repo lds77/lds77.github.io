@@ -108,17 +108,26 @@
             box-sizing: border-box;
         }
 
+        html {
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
         body {
             font-family: 'Noto Sans KR', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
             background: #f8f9fa;
+            overflow-x: hidden;
+            position: relative;
+            max-width: 100vw;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            overflow-x: hidden;
         }
 
         /* Header */
@@ -428,20 +437,20 @@
         }
 
         .blog-more {
-    text-align: center;
-    margin-top: 50px;
-}
+            text-align: center;
+            margin-top: 50px;
+        }
 
-.blog-more .btn {
-    display: inline-block;
-    margin: 10px;
-    transition: all 0.3s ease;
-}
+        .blog-more .btn {
+            display: inline-block;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
 
-.blog-more .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
-}
+        .blog-more .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        }
 
         /* Section Subtitle */
         .section-subtitle {
@@ -611,6 +620,17 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            html, body {
+                overflow-x: hidden;
+                max-width: 100vw;
+            }
+            
+            .container {
+                max-width: 100%;
+                overflow-x: hidden;
+                padding: 0 15px;
+            }
+
             .header-content {
                 flex-direction: column;
                 gap: 15px;
@@ -639,22 +659,32 @@
                 text-align: center;
                 gap: 10px;
             }
-        .blog-more {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            margin-top: 40px;
+            
+            .blog-more {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                margin-top: 40px;
+                padding: 0 20px;
+                box-sizing: border-box;
+            }
+            
+            .blog-more .btn {
+                width: 100%;
+                max-width: 300px;
+                margin: 0;
+                padding: 18px 20px;
+                font-size: 1.1rem;
+                border-radius: 50px;
+                text-align: center;
+                display: block;
+                box-sizing: border-box;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
-        
-        .blog-more .btn {
-            width: 240px;
-            max-width: 90%;
-            margin: 0;
-            padding: 18px 30px;
-            font-size: 1.1rem;
-        }
-    }
 
         /* Floating Call Button */
         .floating-call {
