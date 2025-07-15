@@ -618,6 +618,47 @@
             font-size: 0.9rem;
         }
 
+        /* Floating Call Button - PC 버전 */
+        .floating-call {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.6rem;
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
+            z-index: 1001;
+            animation: pulse 2s infinite;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .floating-call:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.7);
+        }
+
+        @keyframes pulse {
+            0% { 
+                transform: scale(1); 
+                box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
+            }
+            50% { 
+                transform: scale(1.05); 
+                box-shadow: 0 8px 25px rgba(231, 76, 60, 0.7);
+            }
+            100% { 
+                transform: scale(1); 
+                box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             html, body {
@@ -631,10 +672,34 @@
                 padding: 0 15px;
             }
 
+            /* 모바일 헤더 높이 4분의 3로 줄이기 */
+            header {
+                padding: 0.75rem 0; /* 1rem에서 0.75rem으로 변경 */
+            }
+
             .header-content {
                 flex-direction: column;
-                gap: 15px;
+                gap: 10px; /* 15px에서 10px로 변경 */
                 text-align: center;
+            }
+
+            .logo-icon {
+                width: 40px; /* 50px에서 40px로 변경 */
+                height: 40px; /* 50px에서 40px로 변경 */
+                font-size: 20px; /* 24px에서 20px로 변경 */
+            }
+
+            .logo h1 {
+                font-size: 1.4rem; /* 1.8rem에서 1.4rem으로 변경 */
+            }
+
+            .logo p {
+                font-size: 0.8rem; /* 0.9rem에서 0.8rem으로 변경 */
+            }
+
+            /* 메인 컨텐츠 마진 조정 */
+            main {
+                margin-top: 90px; /* 120px에서 90px로 변경 */
             }
 
             .hero h2 {
@@ -652,6 +717,33 @@
 
             .btn {
                 width: 250px;
+            }
+
+            /* 전문이송서비스 카드 높이 절반으로 줄이기 */
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px; /* 30px에서 20px로 변경 */
+            }
+
+            .service-card {
+                padding: 15px; /* 30px에서 15px로 변경 */
+            }
+
+            .service-icon {
+                width: 50px; /* 80px에서 50px로 변경 */
+                height: 50px; /* 80px에서 50px로 변경 */
+                font-size: 1.5rem; /* 2rem에서 1.5rem으로 변경 */
+                margin: 0 auto 10px; /* 20px에서 10px로 변경 */
+            }
+
+            .service-card h3 {
+                font-size: 1.2rem; /* 1.5rem에서 1.2rem으로 변경 */
+                margin-bottom: 10px; /* 15px에서 10px로 변경 */
+            }
+
+            .service-card p {
+                font-size: 0.9rem; /* 기본 크기에서 0.9rem으로 변경 */
+                line-height: 1.4; /* 1.6에서 1.4로 변경 */
             }
 
             .price-row {
@@ -684,56 +776,205 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
-    .blog-section .container {
-        padding: 0 10px;
-    }
-    
-    .blog-grid {
-        margin-left: 0;
-        margin-right: 0;
-        padding: 0;
-        gap: 20px;
-        grid-template-columns: 1fr;
-    }
-    
-    .blog-card {
-        margin: 0;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    
-    .blog-more {
-        margin-left: 0;
-        margin-right: 0;
-        padding: 0 10px;
-    }
-}
-        }
 
-        /* Floating Call Button */
-        .floating-call {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
-            z-index: 1000;
-            animation: pulse 2s infinite;
-            text-decoration: none;
-        }
+            .blog-section .container {
+                padding: 0 10px;
+            }
+            
+            .blog-grid {
+                margin-left: 0;
+                margin-right: 0;
+                padding: 0;
+                gap: 20px;
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-card {
+                margin: 0;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            
+            .blog-more {
+                margin-left: 0;
+                margin-right: 0;
+                padding: 0 10px;
+            }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+            /* 블로그 카드 높이 3분의 1로 줄이기 (모바일) */
+            .blog-grid {
+                gap: 15px; /* 30px에서 15px로 변경 */
+            }
+
+            .blog-card {
+                margin-bottom: 10px;
+            }
+
+            .blog-image {
+                height: 40px; /* 120px에서 40px로 변경 (3분의 1) */
+            }
+
+            .blog-icon {
+                font-size: 1.5rem; /* 3rem에서 1.5rem으로 변경 */
+            }
+
+            .blog-content {
+                padding: 15px; /* 25px에서 15px로 변경 */
+            }
+
+            .blog-card h3 {
+                font-size: 1rem; /* 1.3rem에서 1rem으로 변경 */
+                margin: 8px 0 5px 0; /* 여백 축소 */
+                line-height: 1.3; /* 1.4에서 1.3으로 변경 */
+            }
+
+            .blog-card p {
+                font-size: 0.8rem; /* 0.95rem에서 0.8rem으로 변경 */
+                line-height: 1.4; /* 1.6에서 1.4로 변경 */
+                margin-bottom: 8px; /* 15px에서 8px로 변경 */
+            }
+
+            .blog-meta {
+                font-size: 0.75rem; /* 0.85rem에서 0.75rem으로 변경 */
+                padding-top: 8px; /* 15px에서 8px로 변경 */
+            }
+
+            .blog-category {
+                padding: 2px 8px; /* 4px 12px에서 2px 8px로 변경 */
+                font-size: 0.7rem; /* 0.8rem에서 0.7rem으로 변경 */
+            }
+
+            /* FAQ 섹션 절반으로 줄이기 (모바일) */
+            .faq-section {
+                padding: 40px 0; /* 80px에서 40px로 변경 */
+            }
+
+            .faq-item {
+                margin-bottom: 8px; /* 15px에서 8px로 변경 */
+            }
+
+            .faq-question {
+                padding: 12px; /* 20px에서 12px로 변경 */
+                font-size: 0.9rem; /* 기본 크기에서 0.9rem으로 변경 */
+            }
+
+            .faq-answer {
+                padding: 12px; /* 20px에서 12px로 변경 */
+                font-size: 0.85rem; /* 기본 크기에서 0.85rem으로 변경 */
+                line-height: 1.5; /* 1.7에서 1.5로 변경 */
+            }
+
+            /* 서비스 지역 섹션 절반으로 줄이기 (모바일) */
+            .coverage {
+                padding: 40px 0; /* 80px에서 40px로 변경 */
+            }
+
+            .coverage-item {
+                padding: 15px; /* 25px에서 15px로 변경 */
+            }
+
+            .coverage-item h4 {
+                font-size: 1rem; /* 기본 크기에서 1rem으로 변경 */
+                margin-bottom: 5px; /* 10px에서 5px로 변경 */
+            }
+
+            .coverage-item p {
+                font-size: 0.85rem; /* 기본 크기에서 0.85rem으로 변경 */
+                margin-bottom: 3px;
+            }
+
+            .coverage-item small {
+                font-size: 0.75rem; /* 기본 크기에서 0.75rem으로 변경 */
+            }
+
+            /* 블로그 섹션 절반으로 줄이기 (모바일) */
+            .blog-section {
+                padding: 40px 0; /* 80px에서 40px로 변경 */
+            }
+
+            .section-title {
+                font-size: 2rem; /* 2.5rem에서 2rem으로 변경 */
+                margin-bottom: 25px; /* 50px에서 25px로 변경 */
+            }
+
+            .section-subtitle {
+                font-size: 0.95rem; /* 1.1rem에서 0.95rem으로 변경 */
+                margin-bottom: 15px; /* 20px에서 15px로 변경 */
+            }
+
+            /* 투명한 요금안내 섹션 절반으로 줄이기 (모바일) */
+            .pricing {
+                padding: 40px 0; /* 80px에서 40px로 변경 */
+            }
+
+            .price-table {
+                padding: 20px; /* 40px에서 20px로 변경 */
+                margin-top: 20px; /* 40px에서 20px로 변경 */
+            }
+
+            .price-row {
+                padding: 8px 0; /* 15px에서 8px로 변경 */
+            }
+
+            .price-service {
+                font-size: 0.85rem; /* 기본 크기에서 0.85rem으로 변경 */
+            }
+
+            .price-amount {
+                font-size: 0.95rem; /* 1.1rem에서 0.95rem으로 변경 */
+            }
+
+            /* 연락처 섹션도 약간 줄이기 */
+            .contact {
+                padding: 40px 0; /* 80px에서 40px로 변경 */
+            }
+
+            .contact-grid {
+                gap: 25px; /* 40px에서 25px로 변경 */
+                margin-top: 25px; /* 40px에서 25px로 변경 */
+            }
+
+            .contact-item {
+                margin-bottom: 20px; /* 30px에서 20px로 변경 */
+            }
+
+            .contact-item h4 {
+                font-size: 1.1rem; /* 1.2rem에서 1.1rem으로 변경 */
+                margin-bottom: 8px; /* 10px에서 8px로 변경 */
+            }
+
+            .contact-item p {
+                font-size: 1rem; /* 1.1rem에서 1rem으로 변경 */
+            }
+
+            /* 모바일용 플로팅 전화 버튼 */
+            .floating-call {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+                font-size: 1.4rem;
+                box-shadow: 0 4px 15px rgba(231, 76, 60, 0.6);
+            }
+
+            .floating-call:hover {
+                transform: scale(1.05);
+            }
+
+            @keyframes pulse {
+                0% { 
+                    transform: scale(1); 
+                    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.6);
+                }
+                50% { 
+                    transform: scale(1.08); 
+                    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.8);
+                }
+                100% { 
+                    transform: scale(1); 
+                    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.6);
+                }
+            }
         }
     </style>
 </head>
