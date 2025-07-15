@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+</html><!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -36,6 +37,17 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="청주사설구급차 | 청주구급차 24시간">
     <meta name="twitter:description" content="청주사설구급차 전문업체. 청주시 4개구 24시간 구급차 서비스">
+    
+    <!-- 모바일 리더뷰 최적화 메타태그 -->
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- 리더뷰를 위한 구조화된 데이터 추가 -->
+    <meta property="article:author" content="직지응급환자이송단">
+    <meta property="article:published_time" content="2025-01-15">
+    <meta property="article:section" content="의료서비스">
     
     <!-- 지역별 구조화된 데이터 -->
     <script type="application/ld+json">
@@ -127,7 +139,6 @@
             overflow-x: hidden;
         }
 
-        /* Header */
         header {
             background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
@@ -173,7 +184,6 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        /* Navigation */
         .breadcrumb {
             background: white;
             padding: 15px 0;
@@ -195,7 +205,6 @@
             font-weight: 600;
         }
 
-        /* Hero Section */
         .page-hero {
             background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
@@ -230,7 +239,6 @@
             backdrop-filter: blur(10px);
         }
 
-        /* Quick Info Section */
         .quick-info {
             background: white;
             padding: 60px 0;
@@ -281,7 +289,6 @@
             line-height: 1.6;
         }
 
-        /* Area Specialty */
         .area-specialty {
             background: linear-gradient(135deg, #fdeaea 0%, #fad0d0 100%);
             border-left: 5px solid #e74c3c;
@@ -310,7 +317,6 @@
             border-left: 3px solid #e74c3c;
         }
 
-        /* Services Section */
         .services-section {
             background: #f8f9fa;
             padding: 80px 0;
@@ -396,7 +402,6 @@
             font-weight: 500;
         }
 
-        /* FAQ Section */
         .faq-section {
             background: white;
             padding: 80px 0;
@@ -467,7 +472,6 @@
             margin: 0;
         }
 
-        /* Hospital Section */
         .hospitals-section {
             background: #f8f9fa;
             padding: 80px 0;
@@ -574,7 +578,6 @@
             background: #bdc3c7;
         }
 
-        /* Emergency Banner */
         .emergency-banner {
             background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
             color: white;
@@ -589,7 +592,6 @@
             font-size: 1.2rem;
         }
 
-        /* Contact CTA */
         .contact-cta {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
@@ -628,7 +630,46 @@
             box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
         }
 
-        /* Responsive */
+        .floating-call {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.6rem;
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
+            z-index: 1001;
+            animation: pulse 2s infinite;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .floating-call:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.7);
+        }
+
+        @keyframes pulse {
+            0% { 
+                transform: scale(1); 
+                box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
+            }
+            50% { 
+                transform: scale(1.05); 
+                box-shadow: 0 8px 25px rgba(231, 76, 60, 0.7);
+            }
+            100% { 
+                transform: scale(1); 
+                box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
+            }
+        }
+
         @media (max-width: 768px) {
             html, body {
                 overflow-x: hidden;
@@ -641,32 +682,256 @@
                 padding: 0 15px;
             }
 
+            .page-hero {
+                padding: 40px 0;
+            }
+
             .page-hero h1 {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+            }
+
+            .page-hero p {
+                font-size: 1rem;
+                margin: 0 auto 15px;
             }
 
             .hero-features {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 20px;
+            }
+
+            .hero-feature {
+                padding: 8px 15px;
+                font-size: 0.85rem;
+            }
+
+            .quick-info {
+                padding: 30px 0;
+            }
+
+            .info-grid {
+                gap: 15px;
+                margin-top: 20px;
+                grid-template-columns: 1fr;
+            }
+
+            .info-card {
+                padding: 15px;
+            }
+
+            .info-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+                margin: 0 auto 10px;
+            }
+
+            .info-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+
+            .info-card p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+
+            .area-specialty {
+                padding: 15px;
+                margin: 20px 0;
+            }
+
+            .area-specialty h3 {
+                font-size: 1.2rem;
+                margin-bottom: 8px;
+            }
+
+            .area-specialty p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+
+            .specialty-list {
+                gap: 8px;
+                margin-top: 10px;
+                grid-template-columns: 1fr;
+            }
+
+            .specialty-item {
+                padding: 10px;
+                font-size: 0.85rem;
+            }
+
+            .services-section {
+                padding: 40px 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 25px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin-top: 25px;
+            }
+
+            .service-card {
+                padding: 15px;
+            }
+
+            .service-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                margin: 0 auto 10px;
+            }
+
+            .service-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+
+            .service-card p {
+                font-size: 0.85rem;
+                line-height: 1.4;
+                margin-bottom: 10px;
+            }
+
+            .faq-section {
+                padding: 40px 0;
+            }
+
+            .faq-grid {
+                gap: 10px;
+                margin-top: 20px;
+            }
+
+            .faq-question {
+                padding: 15px;
+                font-size: 0.95rem;
+            }
+
+            .faq-answer.active {
+                padding: 15px;
+            }
+
+            .faq-answer p {
+                font-size: 0.85rem;
+                line-height: 1.5;
+            }
+
+            .hospitals-section {
+                padding: 40px 0;
             }
 
             .hospitals-grid {
                 grid-template-columns: 1fr;
                 padding: 0 10px;
-                gap: 25px;
+                gap: 15px;
+                margin-top: 20px;
             }
 
             .hospital-card {
                 max-width: 100%;
                 margin: 0 auto;
+                padding: 15px;
+            }
+
+            .hospital-header {
+                margin-bottom: 10px;
+            }
+
+            .hospital-card h3 {
+                font-size: 1.2rem;
+                margin: 8px 0;
+            }
+
+            .hospital-info {
+                margin: 10px 0;
+            }
+
+            .info-item {
+                margin-bottom: 5px;
+                font-size: 0.85rem;
             }
 
             .hospital-actions {
                 flex-direction: column;
+                gap: 8px;
+                margin-top: 15px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+
+            .emergency-banner {
+                padding: 10px;
+                margin: 15px 0;
+            }
+
+            .emergency-banner h4 {
+                margin-bottom: 5px;
+                font-size: 1rem;
+            }
+
+            .emergency-banner p {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+
+            .contact-cta {
+                padding: 30px 0;
             }
 
             .cta-phone {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                margin: 10px 0;
+            }
+
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+                margin-top: 10px;
+            }
+
+            .floating-call {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+                font-size: 1.4rem;
+                box-shadow: 0 4px 15px rgba(231, 76, 60, 0.6);
+            }
+
+            .floating-call:hover {
+                transform: scale(1.05);
+            }
+
+            @keyframes pulse {
+                0% { 
+                    transform: scale(1); 
+                    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.6);
+                }
+                50% { 
+                    transform: scale(1.08); 
+                    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.8);
+                }
+                100% { 
+                    transform: scale(1); 
+                    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.6);
+                }
             }
         }
     </style>
@@ -689,7 +954,7 @@
 
     <nav class="breadcrumb">
         <div class="container">
-            <a href="index.html">홈</a> > <a href="index.html#coverage">서비스 지역</a> > <span>청주사설구급차</span>
+            <a href="index.html">홈</a> &gt; <a href="index.html#coverage">서비스 지역</a> &gt; <span>청주사설구급차</span>
         </div>
     </nav>
 
@@ -1119,13 +1384,14 @@
         </div>
     </footer>
 
+    <!-- Floating Call Button -->
+    <a href="tel:010-8841-4114" class="floating-call" title="청주구급차 즉시 연락">📞</a>
+
     <script>
-        // FAQ 토글 기능
         function toggleFaq(element) {
             const answer = element.nextElementSibling;
             const isActive = answer.classList.contains('active');
             
-            // 모든 FAQ 답변 닫기
             document.querySelectorAll('.faq-answer').forEach(item => {
                 item.classList.remove('active');
             });
@@ -1133,14 +1399,12 @@
                 item.classList.remove('active');
             });
             
-            // 클릭한 항목만 열기 (이미 열려있었다면 닫기)
             if (!isActive) {
                 answer.classList.add('active');
                 element.classList.add('active');
             }
         }
 
-        // 페이지 로드 시 애니메이션
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.info-card, .service-card, .hospital-card, .faq-item');
             cards.forEach((card, index) => {
@@ -1155,7 +1419,6 @@
             });
         });
 
-        // 스크롤 시 요소들 나타나는 효과
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1168,7 +1431,6 @@
             rootMargin: '0px 0px -50px 0px'
         });
 
-        // 모든 카드 요소 관찰
         document.querySelectorAll('.info-card, .service-card, .hospital-card').forEach(card => {
             observer.observe(card);
         });
@@ -1192,4 +1454,3 @@
         <span>청주구급차출동</span>
     </div>
 </body>
-</html>
