@@ -94,6 +94,7 @@
             font-size: 0.9rem;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             animation: pulse 2s infinite;
+            cursor: pointer;
         }
 
         @media (max-width: 768px) {
@@ -103,6 +104,65 @@
             
             .header-content {
                 padding-right: 120px;
+            }
+        }
+
+        /* Popup Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 10px;
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 20px;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
             }
         }
 
@@ -585,27 +645,40 @@
                 </div>
                 <div class="phone-number">010-8841-4114</div>
             </div>
-            <a href="#summary" class="mobile-summary-btn" onclick="toggleSummary(event)">요약</a>
+            <button class="mobile-summary-btn" onclick="openModal()">요약</button>
         </div>
     </header>
+
+    <!-- Summary Modal -->
+    <div id="summaryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 style="color: #2c3e50; margin-bottom: 15px;">충북 고인이송 24시간 서비스</h3>
+            <div style="line-height: 1.8; color: #555;">
+                <p style="margin-bottom: 12px;"><strong>✅ 충북 11개 시군 전지역 대응</strong><br>
+                청주시(상당구/서원구/흥덕구/청원구), 충주시, 제천시, 보은군, 옥천군, 영동군, 증평군, 진천군, 괴산군, 음성군, 단양군 어디서나 24시간 즉시 출동</p>
+                
+                <p style="margin-bottom: 12px;"><strong>✅ 주요 병원 고인이송</strong><br>
+                충북대병원, 청주성모병원, 청주한국병원, 충주의료원, 제천서울병원 등 도내 병원들 장례식장과 협력체계 구축</p>
+                
+                <p style="margin-bottom: 12px;"><strong>✅ 전문 이송 서비스</strong><br>
+                병원→장례식장, 자택→장례식장, 장례식장→화장장, 장거리 이송까지 모든 고인이송을 정중하고 안전하게 모십니다</p>
+                
+                <p style="margin-bottom: 12px;"><strong>✅ 완벽한 준비</strong><br>
+                고인 전용 스트레처, 위생장비, 유가족 동행석 완비. 불교/기독교/천주교 등 종교별 예법 준수</p>
+                
+                <p style="text-align: center; margin-top: 20px; font-size: 1.2rem; color: #2c3e50; font-weight: bold;">
+                    📞 010-8841-4114<br>
+                    <span style="font-size: 0.9rem; font-weight: normal;">연중무휴 24시간 상담</span>
+                </p>
+            </div>
+        </div>
+    </div>
 
     <section class="service-hero">
         <div class="container">
             <h1>충북 전지역 고인이송 서비스</h1>
             <p>청주 충주 제천 음성 진천 괴산 단양 보은 옥천 영동 증평 - 24시간 정중한 장례 이송</p>
-        </div>
-    </section>
-
-    <section id="summary" class="summary-section">
-        <div class="container">
-            <div class="summary-content">
-                <h3>충북 고인이송 서비스 안내</h3>
-                <p>충북 전지역(청주시, 충주시, 제천시, 보은군, 옥천군, 영동군, 증평군, 진천군, 괴산군, 음성군, 단양군) 24시간 고인이송 전문 서비스. 병원/자택에서 장례식장, 화장장까지 정중한 이송.</p>
-                
-                <p>청주고인이송, 충주고인이송, 제천고인이송 등 충북 11개 시군 어디서나 신속 출동. 충북대병원, 청주성모병원, 충주의료원, 제천서울병원 등 도내 모든 병원 연계.</p>
-                
-                <p>고인 전용 스트레처, 위생장비, 유가족 동행석 완비. 불교/기독교/천주교 등 종교별 예법 준수. 장거리 이송 가능. 📞010-8841-4114 연중무휴 24시간.</p>
-            </div>
         </div>
     </section>
 
@@ -884,13 +957,20 @@
             }
         }
 
-        function toggleSummary(event) {
-            event.preventDefault();
-            const summarySection = document.getElementById('summary');
-            summarySection.classList.toggle('active');
-            
-            if (summarySection.classList.contains('active')) {
-                summarySection.scrollIntoView({ behavior: 'smooth' });
+        // Modal functions
+        function openModal() {
+            document.getElementById('summaryModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('summaryModal').classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('summaryModal');
+            if (event.target == modal) {
+                modal.classList.remove('active');
             }
         }
 
@@ -909,15 +989,6 @@
             }
             
             lastScrollTop = scrollTop;
-        });
-
-        // 전화 걸기 확인
-        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                if (!confirm('010-8841-4114로 전화를 거시겠습니까?')) {
-                    e.preventDefault();
-                }
-            });
         });
     </script>
 </body>
