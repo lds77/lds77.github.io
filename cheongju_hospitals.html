@@ -1,7 +1,6 @@
-</html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-    <head>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T5CHBY7K97"></script>
 <script>
@@ -246,6 +245,92 @@
             padding: 15px 25px;
             border-radius: 25px;
             backdrop-filter: blur(10px);
+        }
+
+        /* Summary Button - 우측 상단 */
+        .summary-btn {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: #f39c12;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .summary-btn:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        /* Summary Popup */
+        .summary-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .summary-content {
+            background: white;
+            margin: 50px auto;
+            padding: 30px;
+            max-width: 600px;
+            border-radius: 20px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+            background: none;
+            border: none;
+        }
+
+        .summary-content h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .summary-section h3 {
+            color: #e74c3c;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .summary-section p, .summary-section ul {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .summary-section ul {
+            margin-left: 20px;
         }
 
         .quick-info {
@@ -717,6 +802,18 @@
                 font-size: 0.85rem;
             }
 
+            .summary-btn {
+                top: 70px;
+                right: 10px;
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+
+            .summary-content {
+                margin: 20px;
+                padding: 20px;
+            }
+
             .quick-info {
                 padding: 30px 0;
             }
@@ -845,7 +942,7 @@
 
             .hospitals-grid {
                 grid-template-columns: 1fr;
-                padding: 0 10px;
+                padding: 0;
                 gap: 15px;
                 margin-top: 20px;
             }
@@ -860,8 +957,13 @@
                 margin-bottom: 10px;
             }
 
+            .hospital-type {
+                padding: 4px 10px;
+                font-size: 0.75rem;
+            }
+
             .hospital-card h3 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 margin: 8px 0;
             }
 
@@ -871,13 +973,18 @@
 
             .info-item {
                 margin-bottom: 5px;
-                font-size: 0.85rem;
+                font-size: 0.8rem;
+            }
+
+            .info-icon-small {
+                width: 16px;
+                margin-right: 8px;
             }
 
             .hospital-actions {
                 flex-direction: column;
                 gap: 8px;
-                margin-top: 15px;
+                margin-top: 12px;
             }
 
             .btn {
@@ -966,6 +1073,77 @@
             <a href="index.html">홈</a> &gt; <a href="index.html#coverage">서비스 지역</a> &gt; <span>청주사설구급차</span>
         </div>
     </nav>
+
+    <!-- Summary Button -->
+    <button class="summary-btn" onclick="showSummary()">📋 요약보기</button>
+
+    <!-- Summary Popup -->
+    <div id="summaryPopup" class="summary-popup">
+        <div class="summary-content">
+            <button class="close-btn" onclick="hideSummary()">&times;</button>
+            <h2>청주사설구급차 서비스 요약</h2>
+            
+            <div class="summary-section">
+                <h3>🚑 서비스 개요</h3>
+                <p>청주시 24시간 환자이송 전문 사설구급차 서비스입니다. 충북 의료중심도시로서 상급종합병원과 첨단의료시설을 연계한 최고 수준의 응급의료 서비스를 제공합니다.</p>
+            </div>
+
+            <div class="summary-section">
+                <h3>📞 연락처</h3>
+                <p><strong>전화:</strong> 010-8841-4114 (24시간)<br>
+                <strong>지역:</strong> 청주시 4개구 전 지역 (상당구, 서원구, 청원구, 흥덕구)</p>
+            </div>
+
+            <div class="summary-section">
+                <h3>🏥 지역 특성</h3>
+                <ul>
+                    <li>충북대학교병원 (상급종합병원)</li>
+                    <li>청주성모병원 등 다수 종합병원</li>
+                    <li>권역응급의료센터 운영</li>
+                    <li>충북 최고의 의료 인프라</li>
+                </ul>
+            </div>
+
+            <div class="summary-section">
+                <h3>🏥 주요 서비스</h3>
+                <ul>
+                    <li><strong>일반환자이송:</strong> 상급종합병원 신속이송</li>
+                    <li><strong>요양병원입원:</strong> 전문 요양시설 연계</li>
+                    <li><strong>정신병원입원:</strong> 정신건강의학과 전문</li>
+                    <li><strong>알코올치료:</strong> 중독치료 전문병원</li>
+                    <li><strong>행사의료지원:</strong> 문화축제, 기업행사</li>
+                    <li><strong>고인이송:</strong> 4개구 장례식장 연계</li>
+                </ul>
+            </div>
+
+            <div class="summary-section">
+                <h3>💰 이용요금</h3>
+                <p>기본요금: 75,000원 (10km 이내)<br>
+                추가요금: 1km당 1,300원<br>
+                야간(22시~06시) 및 공휴일 20% 할증<br>
+                정확한 요금은 전화문의</p>
+            </div>
+
+            <div class="summary-section">
+                <h3>🚨 주요 병원</h3>
+                <ul>
+                    <li>충북대학교병원 (서원구)</li>
+                    <li>청주성모병원 (상당구)</li>
+                    <li>청주한국병원 (상당구)</li>
+                    <li>청주의료원 (상당구)</li>
+                    <li>오창중앙병원 (청원구)</li>
+                </ul>
+            </div>
+
+            <div class="summary-section">
+                <h3>✨ 특별 서비스</h3>
+                <p>서울 대학병원 장거리 이송 (1시간 30분-2시간)<br>
+                응급실 사전 연락 서비스<br>
+                첨단 재활의료시설 연계<br>
+                24시간 전문 응급구조사 동행</p>
+            </div>
+        </div>
+    </div>
 
     <section class="page-hero">
         <div class="container">
@@ -1181,287 +1359,178 @@
         <div class="container">
             <h2 class="section-title">청주구급차 이송 가능한 주요 의료기관</h2>
             <p class="section-subtitle">청주사설구급차로 이송 가능한 청주 지역 병원 현황과 주요 의료기관 안내</p>
-<style>
-.hospitals-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
-.hospitals-grid .hospital-card:nth-child(4),
-.hospitals-grid .hospital-card:nth-child(5) {
-    grid-column: span 1;
-}
+            <div class="hospitals-grid">
+                <!-- 충북대학교병원 -->
+                <div class="hospital-card">
+                    <div class="hospital-header">
+                        <div class="hospital-type">상급종합병원</div>
+                    </div>
+                    <h3>충북대학교병원</h3>
+                    <div class="hospital-info">
+                        <div class="info-item">
+                            <span class="info-icon-small">📍</span>
+                            <span>청주시 서원구 1순환로 776</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">📞</span>
+                            <span>043-269-6114</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🚨</span>
+                            <span>권역응급의료센터 24시간</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🛏️</span>
+                            <span>병상수: 847병상</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🏥</span>
+                            <span>외상센터, 중독센터, 뇌졸중센터</span>
+                        </div>
+                    </div>
+                    <div class="hospital-actions">
+                        <a href="tel:010-8841-4114" class="btn btn-primary">청주구급차 이송</a>
+                        <a href="tel:043-269-6114" class="btn btn-secondary">병원 연락</a>
+                    </div>
+                </div>
 
-.hospitals-grid .hospital-card:nth-child(4) {
-    margin-left: 16.67%;
-}
+                <!-- 청주성모병원 -->
+                <div class="hospital-card">
+                    <div class="hospital-header">
+                        <div class="hospital-type">종합병원</div>
+                    </div>
+                    <h3>청주성모병원</h3>
+                    <div class="hospital-info">
+                        <div class="info-item">
+                            <span class="info-icon-small">📍</span>
+                            <span>청주시 상당구 수동로 173-19</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">📞</span>
+                            <span>043-219-8114</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🚨</span>
+                            <span>응급실 24시간 운영</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🛏️</span>
+                            <span>병상수: 350병상</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🏥</span>
+                            <span>심장센터, 암센터, 재활의학과</span>
+                        </div>
+                    </div>
+                    <div class="hospital-actions">
+                        <a href="tel:010-8841-4114" class="btn btn-primary">청주구급차 이송</a>
+                        <a href="tel:043-219-8114" class="btn btn-secondary">병원 연락</a>
+                    </div>
+                </div>
 
-.hospital-card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+                <!-- 오창중앙병원 -->
+                <div class="hospital-card">
+                    <div class="hospital-header">
+                        <div class="hospital-type" style="background: #27ae60;">지역병원</div>
+                    </div>
+                    <h3>오창중앙병원</h3>
+                    <div class="hospital-info">
+                        <div class="info-item">
+                            <span class="info-icon-small">📍</span>
+                            <span>청주시 청원구 오창읍 중부로 683</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">📞</span>
+                            <span>043-218-0119</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🚨</span>
+                            <span>응급실 24시간 운영</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🛏️</span>
+                            <span>병상수: 77병상</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🏥</span>
+                            <span>가정의학과, 정형외과, 흉부외과</span>
+                        </div>
+                    </div>
+                    <div class="hospital-actions">
+                        <a href="tel:010-8841-4114" class="btn btn-primary">청주구급차 이송</a>
+                        <a href="tel:043-218-0119" class="btn btn-secondary">병원 연락</a>
+                    </div>
+                </div>
 
-.hospital-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
+                <!-- 청주한국병원 -->
+                <div class="hospital-card">
+                    <div class="hospital-header">
+                        <div class="hospital-type">종합병원</div>
+                    </div>
+                    <h3>청주한국병원</h3>
+                    <div class="hospital-info">
+                        <div class="info-item">
+                            <span class="info-icon-small">📍</span>
+                            <span>청주시 상당구 남주동 85-1</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">📞</span>
+                            <span>043-269-0114</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🚨</span>
+                            <span>응급실 24시간 운영</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🛏️</span>
+                            <span>병상수: 200병상</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🏥</span>
+                            <span>내과, 외과, 정형외과, 신경외과</span>
+                        </div>
+                    </div>
+                    <div class="hospital-actions">
+                        <a href="tel:010-8841-4114" class="btn btn-primary">청주구급차 이송</a>
+                        <a href="tel:043-269-0114" class="btn btn-secondary">병원 연락</a>
+                    </div>
+                </div>
 
-.hospital-header {
-    padding: 15px 20px;
-    border-bottom: 1px solid #e9ecef;
-}
-
-.hospital-type {
-    display: inline-block;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-    color: white;
-    background: #007bff;
-}
-
-.hospital-card h3 {
-    margin: 15px 20px;
-    color: #2c3e50;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.hospital-info {
-    padding: 0 20px 20px;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: #495057;
-}
-
-.info-icon-small {
-    margin-right: 8px;
-    width: 16px;
-    text-align: center;
-}
-
-.hospital-actions {
-    padding: 15px 20px;
-    border-top: 1px solid #e9ecef;
-    display: flex;
-    gap: 10px;
-}
-
-.btn {
-    flex: 1;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 6px;
-    text-decoration: none;
-    text-align: center;
-    font-weight: 500;
-    font-size: 14px;
-    transition: all 0.2s ease;
-    cursor: pointer;
-}
-
-.btn-primary {
-    background: #dc3545;
-    color: white;
-}
-
-.btn-primary:hover {
-    background: #c82333;
-}
-
-.btn-secondary {
-    background: #6c757d;
-    color: white;
-}
-
-.btn-secondary:hover {
-    background: #5a6268;
-}
-</style>
-
-<div class="hospitals-grid">
-    <!-- 충북대학교병원 -->
-    <div class="hospital-card">
-        <div class="hospital-header">
-            <div class="hospital-type">상급종합병원</div>
-        </div>
-        <h3>충북대학교병원</h3>
-        <div class="hospital-info">
-            <div class="info-item">
-                <span class="info-icon-small">📍</span>
-                <span>청주시 서원구 1순환로 776</span>
+                <!-- 청주의료원 -->
+                <div class="hospital-card">
+                    <div class="hospital-header">
+                        <div class="hospital-type">공공병원</div>
+                    </div>
+                    <h3>청주의료원</h3>
+                    <div class="hospital-info">
+                        <div class="info-item">
+                            <span class="info-icon-small">📍</span>
+                            <span>청주시 상당구 단재로 596</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">📞</span>
+                            <span>043-231-2151</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🚨</span>
+                            <span>응급실 24시간 운영</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🛏️</span>
+                            <span>병상수: 300병상</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🏥</span>
+                            <span>감염병 전담, 공공의료</span>
+                        </div>
+                    </div>
+                    <div class="hospital-actions">
+                        <a href="tel:010-8841-4114" class="btn btn-primary">청주구급차 이송</a>
+                        <a href="tel:043-231-2151" class="btn btn-secondary">병원 연락</a>
+                    </div>
+                </div>
             </div>
-            <div class="info-item">
-                <span class="info-icon-small">📞</span>
-                <span>043-269-6114</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">🚨</span>
-                <span>권역응급의료센터 24시간</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">🛏️</span>
-                <span>병상수: 847병상</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">🏥</span>
-                <span>외상센터, 중독센터, 뇌졸중센터</span>
-            </div>
-        </div>
-        <div class="hospital-actions">
-            <a href="tel:010-8841-4114" class="btn btn-primary">청주구급차 이송</a>
-            <a href="tel:043-269-6114" class="btn btn-secondary">병원 연락</a>
-        </div>
-    </div>
-
-    <!-- 청주성모병원 -->
-    <div class="hospital-card">
-        <div class="hospital-header">
-            <div class="hospital-type">종합병원</div>
-        </div>
-        <h3>청주성모병원</h3>
-        <div class="hospital-info">
-            <div class="info-item">
-                <span class="info-icon-small">📍</span>
-                <span>청주시 상당구 수동로 173-19</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">📞</span>
-                <span>043-219-8114</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">🚨</span>
-                <span>응급실 24시간 운영</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">🛏️</span>
-                <span>병상수: 350병상</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">🏥</span>
-                <span>심장센터, 암센터, 재활의학과</span>
-            </div>
-        </div>
-        <div class="hospital-actions">
-            <a href="tel:010-8841-4114" class="btn btn-primary">청주구급차 이송</a>
-            <a href="tel:043-219-8114" class="btn btn-secondary">병원 연락</a>
-        </div>
-    </div>
-
-    <!-- 오창중앙병원 -->
-    <div class="hospital-card">
-        <div class="hospital-header">
-            <div class="hospital-type" style="background: #27ae60;">지역병원</div>
-        </div>
-        <h3>오창중앙병원</h3>
-        <div class="hospital-info">
-            <div class="info-item">
-                <span class="info-icon-small">📍</span>
-                <span>청주시 청원구 오창읍 중부로 683</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">📞</span>
-                <span>043-218-0119</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">🚨</span>
-                <span>응급실 24시간 운영</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">🛏️</span>
-                <span>병상수: 77병상</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">🏥</span>
-                <span>가정의학과, 정형외과, 흉부외과</span>
-            </div>
-        </div>
-        <div class="hospital-actions">
-            <a href="tel:010-8841-4114" class="btn btn-primary">청주구급차 이송</a>
-            <a href="tel:043-218-0119" class="btn btn-secondary">병원 연락</a>
-        </div>
-    </div>
-
-    <!-- 청주한국병원 -->
-    <div class="hospital-card">
-        <div class="hospital-header">
-            <div class="hospital-type">종합병원</div>
-        </div>
-        <h3>청주한국병원</h3>
-        <div class="hospital-info">
-            <div class="info-item">
-                <span class="info-icon-small">📍</span>
-                <span>청주시 상당구 남주동 85-1</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">📞</span>
-                <span>043-269-0114</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">🚨</span>
-                <span>응급실 24시간 운영</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">🛏️</span>
-                <span>병상수: 200병상</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">🏥</span>
-                <span>내과, 외과, 정형외과, 신경외과</span>
-            </div>
-        </div>
-        <div class="hospital-actions">
-            <a href="tel:010-8841-4114" class="btn btn-primary">청주구급차 이송</a>
-            <a href="tel:043-269-0114" class="btn btn-secondary">병원 연락</a>
-        </div>
-    </div>
-
-    <!-- 청주의료원 -->
-    <div class="hospital-card">
-        <div class="hospital-header">
-            <div class="hospital-type">공공병원</div>
-        </div>
-        <h3>청주의료원</h3>
-        <div class="hospital-info">
-            <div class="info-item">
-                <span class="info-icon-small">📍</span>
-                <span>청주시 상당구 단재로 596</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">📞</span>
-                <span>043-231-2151</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">🚨</span>
-                <span>응급실 24시간 운영</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">🛏️</span>
-                <span>병상수: 300병상</span>
-            </div>
-            <div class="info-item">
-                <span class="info-icon-small">🏥</span>
-                <span>감염병 전담, 공공의료</span>
-            </div>
-        </div>
-        <div class="hospital-actions">
-            <a href="tel:010-8841-4114" class="btn btn-primary">청주구급차 이송</a>
-            <a href="tel:043-231-2151" class="btn btn-secondary">병원 연락</a>
-        </div>
-    </div>
-</div>
 
             <div class="emergency-banner">
                 <h4>🏥 청주사설구급차 응급의료 시스템</h4>
@@ -1523,6 +1592,24 @@
             }
         }
 
+        // Summary popup 기능
+        function showSummary() {
+            document.getElementById('summaryPopup').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideSummary() {
+            document.getElementById('summaryPopup').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // 팝업 배경 클릭 시 닫기
+        document.getElementById('summaryPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideSummary();
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.info-card, .service-card, .hospital-card, .faq-item');
             cards.forEach((card, index) => {
@@ -1572,3 +1659,4 @@
         <span>청주구급차출동</span>
     </div>
 </body>
+</html>
