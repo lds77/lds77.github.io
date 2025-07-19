@@ -1,6 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T5CHBY7K97"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T5CHBY7K97');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>괴산 사설구급차 | 괴산군 환자이송 24시간 직지응급환자이송단</title>
@@ -46,6 +56,29 @@
         "화양구곡 응급이송",
         "자연관광지 의료이송"
       ]
+    }
+    </script>
+    
+    <!-- FAQ 구조화 데이터 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "화양구곡이나 산막이옛길에서 응급상황 발생 시 즉시 출동 가능한가요?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "네, 가능합니다. 화양구곡, 산막이옛길, 쌍곡계곡 등 괴산 주요 자연관광지에서의 응급상황에 24시간 즉시 출동 체계를 운영하고 있습니다."
+            }
+        },{
+            "@type": "Question",
+            "name": "괴산에서 청주 병원까지 정말 빠르게 갈 수 있나요?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "네, 가능합니다. 괴산읍에서 청주 시내까지 약 40-50km 거리로, 중부내륙고속도로나 국도를 이용하면 응급이송 가능합니다."
+            }
+        }]
     }
     </script>
     
@@ -137,57 +170,176 @@
             font-weight: 600;
         }
 
-        /* Hero Section */
+        /* Hero Section - 모바일 높이 축소 */
         .page-hero {
             background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
             color: white;
-            padding: 80px 0;
+            padding: 40px 0;
             text-align: center;
         }
 
         .page-hero h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .page-hero p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             max-width: 800px;
-            margin: 0 auto 30px;
+            margin: 0 auto 20px;
         }
 
         .hero-features {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 10px;
             flex-wrap: wrap;
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
         .hero-feature {
             background: rgba(255,255,255,0.1);
-            padding: 15px 25px;
+            padding: 10px 20px;
             border-radius: 25px;
             backdrop-filter: blur(10px);
+            font-size: 0.9rem;
         }
 
-        /* Quick Info Section */
+        /* Summary Button - 우측 상단 */
+        .summary-btn {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: #f39c12;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .summary-btn:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        /* Summary Popup */
+        .summary-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .summary-content {
+            background: white;
+            margin: 50px auto;
+            padding: 30px;
+            max-width: 600px;
+            border-radius: 20px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+            background: none;
+            border: none;
+        }
+
+        .summary-content h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .summary-section {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .summary-section h3 {
+            color: #8e44ad;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .summary-section p, .summary-section ul {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .summary-section ul {
+            margin-left: 20px;
+        }
+
+        /* Fixed Call Button - 우측 하단 */
+        .fixed-call-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #e74c3c;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 20px rgba(231,76,60,0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .fixed-call-btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+        }
+
+        /* Quick Info Section - 모바일 높이 축소 */
         .quick-info {
             background: white;
-            padding: 60px 0;
+            padding: 40px 0;
         }
 
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            gap: 20px;
+            margin-top: 30px;
         }
 
         .info-card {
             background: #f8f9fa;
-            padding: 30px;
+            padding: 20px;
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 3px 15px rgba(0,0,0,0.1);
@@ -200,89 +352,98 @@
         }
 
         .info-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: #8e44ad;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.5rem;
+            margin: 0 auto 15px;
+            font-size: 1.3rem;
             color: white;
         }
 
         .info-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
             color: #2c3e50;
         }
 
         .info-card p {
             color: #666;
-            line-height: 1.6;
+            line-height: 1.4;
+            font-size: 0.9rem;
         }
 
-        /* Area Specialty */
+        /* Area Specialty - 모바일 높이 축소 */
         .area-specialty {
             background: linear-gradient(135deg, #f4eef9 0%, #ede3f3 100%);
             border-left: 5px solid #8e44ad;
-            padding: 25px;
-            margin: 40px 0;
+            padding: 20px;
+            margin: 30px 0;
             border-radius: 10px;
         }
 
         .area-specialty h3 {
             color: #8e44ad;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .area-specialty p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #000; /* 검정색으로 변경 */
         }
 
         .specialty-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
         }
 
         .specialty-item {
             background: white;
-            padding: 15px;
+            padding: 12px;
             border-radius: 8px;
             border-left: 3px solid #8e44ad;
+            font-size: 0.85rem;
+            color: #000; /* 검정색으로 변경 */
         }
 
-        /* Services Section */
+        /* Services Section - 모바일 높이 축소 */
         .services-section {
             background: #f8f9fa;
-            padding: 80px 0;
+            padding: 50px 0;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #2c3e50;
         }
 
         .section-subtitle {
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #666;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
         }
 
         .service-card {
             background: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: 15px;
             text-align: center;
             transition: all 0.3s ease;
@@ -297,58 +458,59 @@
         }
 
         .service-icon {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, #8e44ad, #9b59b6);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
             color: white;
         }
 
         .service-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: #2c3e50;
         }
 
         .service-card p {
             color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
         }
 
         .service-features {
             display: flex;
             justify-content: center;
-            gap: 8px;
+            gap: 5px;
             flex-wrap: wrap;
         }
 
         .feature-tag {
             background: #f4eef9;
             color: #8e44ad;
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 12px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 500;
         }
 
-        /* FAQ Section */
+        /* FAQ Section - 모바일 높이 축소 */
         .faq-section {
             background: white;
-            padding: 80px 0;
+            padding: 50px 0;
         }
 
         .faq-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
-            margin-top: 40px;
+            gap: 15px;
+            margin-top: 30px;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
@@ -365,10 +527,10 @@
         .faq-question {
             background: #8e44ad;
             color: white;
-            padding: 25px;
+            padding: 20px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: background 0.3s ease;
             display: flex;
             justify-content: space-between;
@@ -381,8 +543,8 @@
 
         .faq-question::after {
             content: '+';
-            font-size: 1.5rem;
-            font-weight: 300;
+            font-size: 1.3rem;
+            font-weight: 400;
             transition: transform 0.3s ease;
         }
 
@@ -399,33 +561,34 @@
         }
 
         .faq-answer.active {
-            padding: 25px;
+            padding: 20px;
             max-height: 300px;
         }
 
         .faq-answer p {
             color: #555;
-            line-height: 1.7;
+            line-height: 1.5;
             margin: 0;
+            font-size: 0.9rem;
         }
 
-        /* Hospital Section */
+        /* Hospital Section - 모바일 높이 축소 */
         .hospitals-section {
             background: #f8f9fa;
-            padding: 80px 0;
+            padding: 50px 0;
         }
 
         .hospitals-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
         }
 
         .hospital-card {
             background: white;
             border-radius: 15px;
-            padding: 30px;
+            padding: 25px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
         }
@@ -438,58 +601,59 @@
         .hospital-header {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .hospital-type {
             background: #8e44ad;
             color: white;
-            padding: 6px 15px;
+            padding: 5px 12px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
-            margin-right: 15px;
+            margin-right: 10px;
         }
 
         .hospital-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #2c3e50;
-            margin: 15px 0;
+            margin: 10px 0;
             font-weight: 700;
         }
 
         .hospital-info {
-            margin: 20px 0;
+            margin: 15px 0;
         }
 
         .info-item {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #555;
+            font-size: 0.85rem;
         }
 
         .info-icon-small {
             width: 20px;
-            margin-right: 12px;
+            margin-right: 10px;
             color: #8e44ad;
         }
 
         .hospital-actions {
             display: flex;
-            gap: 15px;
-            margin-top: 25px;
+            gap: 10px;
+            margin-top: 20px;
         }
 
         .btn {
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             flex: 1;
             text-align: center;
         }
@@ -513,26 +677,31 @@
             background: #bdc3c7;
         }
 
-        /* Emergency Banner */
+        /* Emergency Banner - 모바일 높이 축소 */
         .emergency-banner {
             background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
             color: white;
             padding: 20px;
             border-radius: 15px;
-            margin: 30px 0;
+            margin: 20px 0;
             text-align: center;
         }
 
         .emergency-banner h4 {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
-        /* Contact CTA */
+        .emergency-banner p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Contact CTA - 모바일 높이 축소 */
         .contact-cta {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
-            padding: 60px 0;
+            padding: 40px 0;
             text-align: center;
         }
 
@@ -542,9 +711,9 @@
         }
 
         .cta-phone {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 900;
-            margin: 20px 0;
+            margin: 15px 0;
             color: #8e44ad;
         }
 
@@ -552,12 +721,12 @@
             display: inline-block;
             background: #8e44ad;
             color: white;
-            padding: 18px 40px;
+            padding: 15px 35px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.2rem;
-            margin-top: 20px;
+            font-size: 1.1rem;
+            margin-top: 15px;
             transition: all 0.3s ease;
         }
 
@@ -567,10 +736,18 @@
             box-shadow: 0 8px 25px rgba(142, 68, 173, 0.4);
         }
 
-        /* Responsive */
+        /* Responsive - 모바일 추가 최적화 */
         @media (max-width: 768px) {
+            .page-hero {
+                padding: 30px 0;
+            }
+
             .page-hero h1 {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
+            }
+
+            .page-hero p {
+                font-size: 1rem;
             }
 
             .hero-features {
@@ -578,12 +755,82 @@
                 align-items: center;
             }
 
+            .hero-feature {
+                font-size: 0.85rem;
+                padding: 8px 16px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .info-card {
+                padding: 15px;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+
+            .hospital-card {
+                padding: 20px;
+            }
+
             .hospital-actions {
                 flex-direction: column;
             }
 
             .cta-phone {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+
+            .summary-btn {
+                top: 70px;
+                right: 10px;
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+
+            .fixed-call-btn {
+                width: 55px;
+                height: 55px;
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .summary-content {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .quick-info, .services-section, .faq-section, .hospitals-section {
+                padding: 30px 0;
+            }
+
+            .area-specialty {
+                padding: 15px;
+                margin: 20px 0;
+            }
+
+            .faq-question {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+
+            .faq-answer.active {
+                padding: 15px;
+            }
+
+            .contact-cta {
+                padding: 30px 0;
+            }
+
+            footer {
+                padding: 30px 0;
             }
         }
     </style>
@@ -610,6 +857,79 @@
         </div>
     </nav>
 
+    <!-- Summary Button -->
+    <button class="summary-btn" onclick="showSummary()">📋 요약보기</button>
+
+    <!-- Summary Popup -->
+    <div id="summaryPopup" class="summary-popup">
+        <div class="summary-content">
+            <button class="close-btn" onclick="hideSummary()">&times;</button>
+            <h2>괴산 사설구급차 서비스 요약</h2>
+            
+            <div class="summary-section">
+                <h3>🚑 서비스 개요</h3>
+                <p>괴산군 24시간 환자이송 전문 사설구급차 서비스입니다. 화양구곡, 산막이옛길 등 자연관광지 응급의료와 청주병원 신속이송에 특화되어 있습니다.</p>
+            </div>
+
+            <div class="summary-section">
+                <h3>📞 연락처</h3>
+                <p><strong>전화:</strong> 010-8841-4114 (24시간)<br>
+                <strong>지역:</strong> 괴산군 전 지역 (괴산읍, 칠성면, 청천면, 연풍면)</p>
+            </div>
+
+            <div class="summary-section">
+                <h3>🏔️ 지역 특성</h3>
+                <ul>
+                    <li>화양구곡, 쌍곡계곡 (속리산국립공원)</li>
+                    <li>산막이옛길 (전국 명소)</li>
+                    <li>칠보산 (100대 명산)</li>
+                    <li>수옥폭포, 연풍향교</li>
+                </ul>
+            </div>
+
+            <div class="summary-section">
+                <h3>🏥 주요 서비스</h3>
+                <ul>
+                    <li><strong>일반환자이송:</strong> 괴산→청주 병원 신속이송</li>
+                    <li><strong>관광지응급:</strong> 화양구곡, 산막이옛길 24시간</li>
+                    <li><strong>등산사고대응:</strong> 칠보산, 속리산 산악구조</li>
+                    <li><strong>계곡안전관리:</strong> 물놀이사고 신속대응</li>
+                    <li><strong>요양병원입원:</strong> 자연환경 요양시설</li>
+                    <li><strong>행사의료지원:</strong> 괴산고추축제, 등산대회</li>
+                </ul>
+            </div>
+
+            <div class="summary-section">
+                <h3>💰 이용요금</h3>
+                <p>기본요금 + 거리요금 (보건복지부 고시 기준)<br>
+                야간(22시~06시) 20% 할증<br>
+                정확한 요금은 전화문의</p>
+            </div>
+
+            <div class="summary-section">
+                <h3>🏥 이송 병원</h3>
+                <ul>
+                    <li>괴산군보건의료원 (괴산읍)</li>
+                    <li>괴산성모병원 (종합병원)</li>
+                    <li>충북대학교병원 (상급병원)</li>
+                    <li>충남대학교병원 (상급병원)</li>
+                </ul>
+            </div>
+
+            <div class="summary-section">
+                <h3>✨ 특별 서비스</h3>
+                <p>산간지역/임도 신속 출동<br>
+                GPS 활용 최적경로 안내<br>
+                서울 대학병원 장거리 이송 (응급이송)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Call Button -->
+    <a href="tel:010-8841-4114" class="fixed-call-btn">📞</a>
+
+    <section class="page-hero">
+        <div class="container">
     <section class="page-hero">
         <div class="container">
             <h1>괴산 사설구급차 전문 서비스</h1>
@@ -628,7 +948,7 @@
             <h2 class="section-title">괴산 사설구급차 이용 가이드</h2>
             <div class="area-specialty">
                 <h3>🏔️ 괴산군 자연관광지 특성</h3>
-                <p>괴산군은 속리산국립공원 화양동계곡과 쌍곡계곡, 100대 명산으로 지정된 칠보산, 산막이옛길 등 수많은 자연관광지가 있는 지역입니다. 전국에서 많은 관광객들이 찾는 명소들이 산간지역에 위치해 있어 응급상황 시 신속한 접근과 전문적인 응급처치가 중요합니다. 특히 화양구곡, 쌍곡계곡, 산막이옛길 등에서의 응급의료 서비스가 필수적입니다.</p>
+                <p>괴산군은 속리산국립공원 화양동계곡과 쌍곡계곡, 100대 명산으로 지정된 칠보산, 산막이옛길 등 수많은 자연관광지가 있는 지역입니다. 전국에서 많은 관광객들이 찾는 명소들이 산간지역에 위치해 있어 응급상황 시 신속한 접근과 전문적인 응급처치가 중요합니다.</p>
                 <div class="specialty-list">
                     <div class="specialty-item">
                         <strong>괴산읍</strong><br>
@@ -747,9 +1067,9 @@
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 40px; padding: 25px; background: #f4eef9; border-radius: 15px;">
-                <h4 style="color: #8e44ad; margin-bottom: 15px;">🏔️ 괴산 자연관광지 특화 서비스</h4>
-                <p style="color: #555; line-height: 1.6;">
+            <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f4eef9; border-radius: 15px;">
+                <h4 style="color: #8e44ad; margin-bottom: 10px;">🏔️ 괴산 자연관광지 특화 서비스</h4>
+                <p style="color: #555; line-height: 1.5; font-size: 0.9rem;">
                     화양구곡, 산막이옛길, 쌍곡계곡 등 괴산군의 아름다운 자연관광지 특성을 고려하여 관광객과 지역 주민을 위한 전문 응급의료 서비스를 제공합니다. 
                     산간지역과 계곡에서의 응급상황부터 일상적인 의료이송까지 신속하고 안전하게 대응합니다.
                 </p>
@@ -795,7 +1115,7 @@
                         Q. 괴산에서 서울 대학병원으로 응급 이송도 가능한가요?
                     </div>
                     <div class="faq-answer">
-                        <p>네, 장거리 응급 이송도 가능합니다. 괴산에서 서울까지는 중부내륙고속도로를 이용하여 약 2시간-2시간 30분 소요됩니다. 중증 환자나 특수 치료가 필요한 경우 서울 주요 대학병원으로 신속하게 이송하며, 이송 중 지속적인 응급처치와 모니터링을 제공합니다.</p>
+                        <p>네, 장거리 응급 이송도 가능합니다. 괴산에서 서울까지는 중부내륙고속도로를 이용하여 응급이송도 가능합니다. 중증 환자나 특수 치료가 필요한 경우 서울 주요 대학병원으로 신속하게 이송하며, 이송 중 지속적인 응급처치와 모니터링을 제공합니다.</p>
                     </div>
                 </div>
 
@@ -907,7 +1227,7 @@
                         </div>
                         <div class="info-item">
                             <span class="info-icon-small">🚑</span>
-                            <span>괴산에서 대략50분 소요</span>
+                            <span>괴산에서 응급이송 가능</span>
                         </div>
                         <div class="info-item">
                             <span class="info-icon-small">🏥</span>
@@ -969,25 +1289,25 @@
                 <p>괴산군 자연관광지에서 24시간 신속하게 출동합니다</p>
                 <div class="cta-phone">010-8841-4114</div>
                 <a href="tel:010-8841-4114" class="cta-button">📞 지금 바로 연락하기</a>
-                <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
                     응급상황 시 119 신고 후 사설구급차 이용을 권장합니다
                 </p>
             </div>
         </div>
     </section>
 
-    <footer style="background: #2c3e50; color: #ecf0f1; padding: 40px 0; text-align: center;">
+    <footer style="background: #2c3e50; color: #ecf0f1; padding: 30px 0; text-align: center;">
         <div class="container">
-            <h3 style="color: #8e44ad; margin-bottom: 20px;">직지응급환자이송단</h3>
-            <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px;">010-8841-4114</p>
-            <p style="margin-bottom: 20px;">괴산군 및 충북 전 지역 24시간 응급환자이송 서비스</p>
-            <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0; flex-wrap: wrap;">
-                <span>✓ 화양구곡</span>
-                <span>✓ 산막이옛길</span>
-                <span>✓ 자연관광지</span>
-                <span>✓ 24시간 대기</span>
+            <h3 style="color: #8e44ad; margin-bottom: 15px;">직지응급환자이송단</h3>
+            <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 10px;">010-8841-4114</p>
+            <p style="margin-bottom: 15px;">괴산군 및 충북 전 지역 24시간 응급환자이송 서비스</p>
+            <div style="display: flex; justify-content: center; gap: 20px; margin: 15px 0; flex-wrap: wrap;">
+                <span style="font-size: 0.9rem;">✓ 화양구곡</span>
+                <span style="font-size: 0.9rem;">✓ 산막이옛길</span>
+                <span style="font-size: 0.9rem;">✓ 자연관광지</span>
+                <span style="font-size: 0.9rem;">✓ 24시간 대기</span>
             </div>
-            <p style="font-size: 0.9rem; opacity: 0.8; border-top: 1px solid #34495e; padding-top: 20px; margin-top: 20px;">
+            <p style="font-size: 0.85rem; opacity: 0.8; border-top: 1px solid #34495e; padding-top: 15px; margin-top: 15px;">
                 괴산군 자연관광지 전문 사설구급차 서비스 | 보건복지부 고시 기준 준수 | 응급상황 즉시 대응
             </p>
         </div>
@@ -1014,6 +1334,24 @@
             }
         }
 
+        // Summary popup 기능
+        function showSummary() {
+            document.getElementById('summaryPopup').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideSummary() {
+            document.getElementById('summaryPopup').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // 팝업 배경 클릭 시 닫기
+        document.getElementById('summaryPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideSummary();
+            }
+        });
+
         // 페이지 로드 시 애니메이션
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.info-card, .service-card, .hospital-card, .faq-item');
@@ -1025,7 +1363,7 @@
                 setTimeout(() => {
                     card.style.opacity = '1';
                     card.style.transform = 'translateY(0)';
-                }, index * 100);
+                }, index * 50);
             });
         });
 
