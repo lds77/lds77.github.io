@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>요양병원 전문이송 서비스 - 직지응급환자이송단</title>
+    <title>충북 요양병원이송 사설구급차 | 청주 충주 제천 음성 진천 괴산 증평 영동 옥천 보은 단양 요양병원이송</title>
+    <meta name="description" content="충북 전 지역 24시간 요양병원이송 서비스. 청주, 충주, 제천, 음성, 진천, 괴산, 증평, 영동, 옥천, 보은, 단양 침상형 구급차 요양병원이송. 입퇴원, 병원간 전원, 외래진료 이송. 응급구조사 동행. 010-8841-4114">
+    <meta name="keywords" content="충북 요양병원이송, 청주 요양병원이송, 충주 요양병원이송, 제천 요양병원이송, 침상형 구급차, 요양병원 입원이송, 요양병원 퇴원이송, 사설구급차, 충청북도 요양병원이송, 24시간 이송">
+    <meta property="og:title" content="충북 요양병원이송 침상형 구급차 - 직지응급환자이송단">
+    <meta property="og:description" content="충북 전 지역 24시간 요양병원이송 서비스. 침상형 구급차, 응급구조사 동행, 의료장비 완비. 010-8841-4114">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://example.com/nursing-home-transport">
     <style>
         * {
             margin: 0;
@@ -26,10 +32,11 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
             color: white;
             padding: 1rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
         }
 
         .header-content {
@@ -54,7 +61,7 @@
             align-items: center;
             justify-content: center;
             font-size: 24px;
-            color: #e74c3c;
+            color: #27ae60;
         }
 
         .logo h1 {
@@ -67,6 +74,90 @@
             font-size: 1.8rem;
             font-weight: 900;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* SEO Summary Popup */
+        .seo-summary-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .seo-summary-btn:hover {
+            background: #229954;
+            transform: translateY(-2px);
+        }
+
+        .seo-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1001;
+        }
+
+        .seo-popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        /* Fixed Call Button */
+        .fixed-call-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #27ae60, #229954);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
 
         /* Navigation */
@@ -83,11 +174,11 @@
         }
 
         .breadcrumb a:hover {
-            color: #e74c3c;
+            color: #27ae60;
         }
 
         .breadcrumb span {
-            color: #e74c3c;
+            color: #27ae60;
             font-weight: 600;
         }
 
@@ -95,25 +186,50 @@
         .service-hero {
             background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
             color: white;
-            padding: 60px 0;
+            padding: 40px 0;
             text-align: center;
         }
 
         .service-hero h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .service-hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto;
         }
 
+        /* Coverage Area */
+        .coverage-area {
+            background: white;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .coverage-cities {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .city-tag {
+            background: #27ae60;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
         /* Main Content */
         .main-content {
-            padding: 60px 0;
+            padding: 40px 0;
             background: white;
         }
 
@@ -121,36 +237,36 @@
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 40px;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         .content-main h2 {
             color: #2c3e50;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
             border-bottom: 3px solid #27ae60;
         }
 
         .content-main h3 {
             color: #34495e;
-            font-size: 1.5rem;
-            margin: 30px 0 15px 0;
+            font-size: 1.3rem;
+            margin: 25px 0 12px 0;
         }
 
         .content-main p {
-            margin-bottom: 15px;
-            line-height: 1.8;
+            margin-bottom: 12px;
+            line-height: 1.7;
             color: #555;
         }
 
         .content-main ul {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             padding-left: 20px;
         }
 
         .content-main li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #555;
         }
 
@@ -158,21 +274,21 @@
         .highlight-box {
             background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
             border-left: 5px solid #27ae60;
-            padding: 20px;
-            margin: 25px 0;
+            padding: 15px;
+            margin: 20px 0;
             border-radius: 5px;
         }
 
         .highlight-box h4 {
             color: #27ae60;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
         /* Sidebar */
         .sidebar {
             background: #f8f9fa;
-            padding: 30px;
+            padding: 25px;
             border-radius: 10px;
             height: fit-content;
             position: sticky;
@@ -182,28 +298,28 @@
         .quick-contact {
             background: linear-gradient(135deg, #27ae60, #229954);
             color: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .quick-contact h3 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
         }
 
         .quick-contact .phone {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 900;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: block;
         }
 
         .call-btn {
             background: white;
             color: #27ae60;
-            padding: 12px 25px;
+            padding: 10px 20px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
@@ -218,151 +334,49 @@
 
         .service-features {
             background: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
             border: 1px solid #e9ecef;
         }
 
         .service-features h4 {
             color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
 
         .feature-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            padding: 10px;
+            margin-bottom: 12px;
+            padding: 8px;
             background: #f8f9fa;
             border-radius: 5px;
         }
 
         .feature-icon {
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
             background: #27ae60;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            margin-right: 12px;
-            font-size: 0.9rem;
+            margin-right: 10px;
+            font-size: 0.8rem;
         }
 
-        /* Process Steps */
-        .process-section {
-            background: #f8f9fa;
-            padding: 60px 0;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .process-step {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .step-number {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #27ae60, #229954);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .process-step h4 {
-            color: #2c3e50;
-            margin: 20px 0 15px 0;
-            font-size: 1.3rem;
-        }
-
-        .process-step p {
-            color: #666;
-        }
-
-        /* Benefits Section */
-        .benefits-section {
-            background: white;
-            padding: 60px 0;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .benefit-card {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            background: white;
-        }
-
-        .benefit-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #27ae60, #229954);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
-            color: white;
-        }
-
-        .benefit-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-
-        .benefit-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* FAQ Section */
+        /* FAQ Section - moved up */
         .faq-section {
             background: #f8f9fa;
-            padding: 60px 0;
+            padding: 40px 0;
         }
 
         .faq-item {
             background: white;
-            margin-bottom: 15px;
-            border-radius: 10px;
+            margin-bottom: 12px;
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
@@ -370,10 +384,11 @@
         .faq-question {
             background: #27ae60;
             color: white;
-            padding: 20px;
+            padding: 15px;
             cursor: pointer;
             font-weight: 600;
             transition: background 0.3s ease;
+            font-size: 0.95rem;
         }
 
         .faq-question:hover {
@@ -381,33 +396,281 @@
         }
 
         .faq-answer {
-            padding: 20px;
+            padding: 15px;
             display: none;
             color: #555;
-            line-height: 1.7;
+            line-height: 1.6;
+            font-size: 0.9rem;
         }
 
         .faq-answer.active {
             display: block;
         }
 
-        /* Responsive */
+        /* Process Steps */
+        .process-section {
+            background: white;
+            padding: 40px 0;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .process-step {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #27ae60, #229954);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .process-step h4 {
+            color: #2c3e50;
+            margin: 15px 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .process-step p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: #f8f9fa;
+            padding: 40px 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #27ae60, #229954);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #2c3e50;
+        }
+
+        .benefit-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .content-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .service-hero {
+                padding: 30px 0;
             }
 
             .service-hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+
+            .service-hero p {
+                font-size: 1rem;
+            }
+
+            .main-content {
+                padding: 25px 0;
+            }
+
+            .content-main h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-main h3 {
+                font-size: 1.2rem;
+                margin: 20px 0 10px 0;
+            }
+
+            .content-main p, .content-main li {
+                font-size: 0.9rem;
+                line-height: 1.6;
             }
 
             .process-grid, .benefits-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .process-section, .benefits-section, .faq-section {
+                padding: 30px 0;
+            }
+
+            .coverage-cities {
+                gap: 8px;
+            }
+
+            .city-tag {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .seo-summary-btn {
+                padding: 10px 14px;
+                font-size: 0.9rem;
+            }
+
+            .seo-popup-content {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            /* Mobile content compression */
+            .content-main ul {
+                margin-bottom: 15px;
+            }
+
+            .content-main li {
+                margin-bottom: 4px;
+            }
+
+            .sidebar {
+                order: -1;
+                padding: 20px;
+                position: static; /* Remove sticky positioning on mobile */
+            }
+
+            .quick-contact {
+                padding: 15px;
+            }
+
+            .feature-item {
+                padding: 6px;
+                margin-bottom: 8px;
+            }
+
+            .highlight-box {
+                padding: 12px;
+                margin: 15px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .logo h1 {
+                font-size: 1.4rem;
+            }
+
+            .phone-number {
+                font-size: 1.5rem;
+            }
+
+            .service-hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .fixed-call-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- SEO Summary Popup Button -->
+    <button class="seo-summary-btn" onclick="openSeoPopup()">📋 서비스 요약</button>
+
+    <!-- SEO Summary Popup -->
+    <div id="seoPopup" class="seo-popup">
+        <div class="seo-popup-content">
+            <button class="close-popup" onclick="closeSeoPopup()">&times;</button>
+            <h3 style="color: #27ae60; margin-bottom: 20px;">🏥 직지응급환자이송단 요양병원이송 요약</h3>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">📞 연락처</h4>
+                <p style="font-size: 1.2rem; font-weight: 700; color: #27ae60;">010-8841-4114</p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">🗺️ 서비스 지역</h4>
+                <p>충청북도 전 지역 (청주, 충주, 제천, 음성, 진천, 괴산, 증평, 영동, 옥천, 보은, 단양)</p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">🏥 주요 서비스</h4>
+                <p>• 요양병원 입원이송 • 요양병원 퇴원이송<br>• 병원간 전원이송 • 정기 외래진료<br>• 정밀검사 이송 • 응급실 이송</p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">⭐ 특징</h4>
+                <p>• 침상형 구급차 완비<br>• 응급구조사 1급 동행<br>• 24시간 운영<br>• 온도조절 시스템<br>• 보호자 동행 가능<br>• 보험 적용 가능</p>
+            </div>
+            
+            <div>
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">💰 기본요금</h4>
+                <p>10km 이내: 75,000원<br>* 보험 적용 시 환자부담 대폭 감소</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Call Button -->
+    <a href="tel:010-8841-4114" class="fixed-call-btn" title="지금 바로 전화하기">📞</a>
+
     <header>
         <div class="container">
             <div class="header-content">
@@ -415,7 +678,7 @@
                     <div class="logo-icon">🚑</div>
                     <div>
                         <h1>직지응급환자이송단</h1>
-                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충청북도 전문 사설구급차</p>
+                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충청북도 요양병원이송 전문 24시간</p>
                     </div>
                 </div>
                 <div class="phone-number">010-8841-4114</div>
@@ -425,14 +688,34 @@
 
     <nav class="breadcrumb">
         <div class="container">
-            <a href="#">홈</a> > <a href="#">서비스 안내</a> > <span>요양병원 전문이송</span>
+            <a href="#">홈</a> > <a href="#">요양병원이송 서비스</a> > <span>충북 요양병원이송</span>
         </div>
     </nav>
 
     <section class="service-hero">
         <div class="container">
-            <h1>요양병원 전문이송 서비스</h1>
-            <p>침상형 구급차와 전문 인력으로 요양병원 입·퇴원 및 병원 간 전원을 안전하고 편안하게 처리합니다</p>
+            <h1>충북 요양병원이송 침상형 구급차</h1>
+            <p>충청북도 전 지역 24시간 요양병원 입퇴원 이송, 병원간 전원, 외래진료 이송 전문</p>
+        </div>
+    </section>
+
+    <section class="coverage-area">
+        <div class="container">
+            <h2 style="color: #2c3e50; margin-bottom: 10px;">충청북도 전 지역 요양병원이송</h2>
+            <p style="color: #666;">11개 시군 어디든 침상형 구급차로 24시간 출동</p>
+            <div class="coverage-cities">
+                <span class="city-tag">청주시 요양병원이송</span>
+                <span class="city-tag">충주시 요양병원이송</span>
+                <span class="city-tag">제천시 요양병원이송</span>
+                <span class="city-tag">음성군 요양병원이송</span>
+                <span class="city-tag">진천군 요양병원이송</span>
+                <span class="city-tag">괴산군 요양병원이송</span>
+                <span class="city-tag">증평군 요양병원이송</span>
+                <span class="city-tag">영동군 요양병원이송</span>
+                <span class="city-tag">옥천군 요양병원이송</span>
+                <span class="city-tag">보은군 요양병원이송</span>
+                <span class="city-tag">단양군 요양병원이송</span>
+            </div>
         </div>
     </section>
 
@@ -440,69 +723,68 @@
         <div class="container">
             <div class="content-grid">
                 <div class="content-main">
-                    <h2>서비스 개요</h2>
-                    <p>요양병원 전문이송 서비스는 거동이 불편한 고령 환자나 만성질환자의 요양병원 입원, 퇴원, 병원 간 전원을 전문적으로 처리하는 서비스입니다. 침상형 구급차를 이용하여 환자가 누운 상태로 편안하게 이송할 수 있으며, 전문 응급구조사가 동행하여 이송 중 환자의 안전을 책임집니다.</p>
+                    <h2>충북 요양병원이송 전문 서비스</h2>
+                    <p>직지응급환자이송단은 충청북도에서 가장 전문적인 요양병원이송 서비스를 제공합니다. 침상형 구급차와 응급구조사 1급 자격자가 함께하여 거동이 불편한 환자의 안전하고 편안한 이송을 책임집니다.</p>
 
                     <div class="highlight-box">
-                        <h4>🏥 요양병원이란?</h4>
-                        <p>요양병원은 장기간 입원치료가 필요한 환자들을 위한 의료기관으로, 주로 만성질환자, 회복기 환자, 고령 환자들이 이용합니다. 일반 병원보다 장기간 입원이 가능하며, 재활치료와 요양 서비스를 함께 제공합니다.</p>
+                        <h4>🏥 요양병원이송이란?</h4>
+                        <p>장기요양이 필요한 환자의 요양병원 입원, 퇴원, 병원간 전원, 외래진료 등을 침상형 구급차로 안전하게 이송하는 전문 서비스입니다.</p>
                     </div>
 
-                    <h3>주요 이송 상황</h3>
+                    <h3>주요 요양병원이송 서비스</h3>
                     <ul>
-                        <li><strong>요양병원 입원 이송</strong> - 자택에서 요양병원까지의 입원 이송</li>
-                        <li><strong>요양병원 퇴원 이송</strong> - 요양병원에서 자택까지의 퇴원 이송</li>
-                        <li><strong>병원 간 전원</strong> - 요양병원에서 종합병원으로의 검사 및 치료를 위한 이송</li>
-                        <li><strong>응급실 이송</strong> - 요양병원에서 응급상황 발생 시 응급실로의 이송</li>
-                        <li><strong>정기 외래진료</strong> - 요양병원 환자의 타 병원 외래진료를 위한 이송</li>
-                        <li><strong>검사 이송</strong> - MRI, CT 등 정밀검사를 위한 이송</li>
+                        <li><strong>요양병원 입원이송</strong> - 자택에서 요양병원까지 입원 이송</li>
+                        <li><strong>요양병원 퇴원이송</strong> - 요양병원에서 자택까지 퇴원 이송</li>
+                        <li><strong>병원간 전원이송</strong> - 요양병원과 종합병원간 전원 이송</li>
+                        <li><strong>정기 외래진료</strong> - 요양병원 환자의 외래진료 이송</li>
+                        <li><strong>정밀검사 이송</strong> - MRI, CT, 초음파 등 검사 이송</li>
+                        <li><strong>응급실 이송</strong> - 응급상황 발생 시 응급실 이송</li>
+                        <li><strong>투석 치료 이송</strong> - 정기 투석 치료를 위한 이송</li>
                     </ul>
 
-                    <h3>전문 장비 및 시설</h3>
-                    <p>요양병원 이송에 필요한 전문 장비와 시설을 완비하고 있습니다:</p>
+                    <h3>충북 지역별 요양병원이송 네트워크</h3>
                     <ul>
-                        <li>침상형 구급차 (환자가 누운 상태로 이송 가능)</li>
-                        <li>전동 스트레처 (높이 조절 및 이동 편의)</li>
-                        <li>산소공급장치 및 흡입기</li>
-                        <li>심전도 모니터 및 혈압계</li>
-                        <li>응급처치 의료용품 일체</li>
-                        <li>온도 조절 시스템 (환자 체온 관리)</li>
-                        <li>안전벨트 및 고정장치</li>
+                        <li><strong>청주권</strong> - 청주요양병원, 충북의료원요양병원 등 연계</li>
+                        <li><strong>충주권</strong> - 충주요양병원, 건국대충주병원 연계 이송</li>
+                        <li><strong>제천권</strong> - 제천요양병원, 세명대제천한방병원 연계</li>
+                        <li><strong>음성/진천권</strong> - 서울권 대형병원 요양병원이송</li>
+                        <li><strong>괴산/증평권</strong> - 농촌지역 맞춤형 요양병원이송</li>
+                        <li><strong>영동/옥천권</strong> - 대전권 병원 연계 요양병원이송</li>
+                        <li><strong>보은/단양권</strong> - 산간지역 전문 요양병원이송</li>
                     </ul>
 
-                    <h3>대상 환자</h3>
-                    <p>다음과 같은 환자분들을 전문적으로 이송합니다:</p>
+                    <h3>침상형 구급차 전문 장비</h3>
                     <ul>
-                        <li>뇌졸중 후유증으로 거동이 불편한 환자</li>
-                        <li>치매 환자 및 인지기능 저하 환자</li>
-                        <li>욕창이나 수술 후 회복이 필요한 환자</li>
-                        <li>만성질환으로 지속적인 관리가 필요한 환자</li>
-                        <li>고령으로 인해 스스로 거동하기 어려운 환자</li>
+                        <li>전동 스트레처 (높이조절, 각도조절 가능)</li>
+                        <li>산소공급장치, 흡입기</li>
+                        <li>심전도 모니터, 혈압계, 체온계</li>
+                        <li>응급약물 및 응급처치 장비 완비</li>
+                        <li>온도조절 시스템 (환자 체온 관리)</li>
+                        <li>안전벨트 및 환자 고정장치</li>
+                        <li>보호자 동행석</li>
+                    </ul>
+
+                    <h3>요양병원이송 대상 환자</h3>
+                    <ul>
+                        <li>뇌졸중 후유증으로 거동 불편한 환자</li>
+                        <li>치매, 인지기능 저하 환자</li>
+                        <li>욕창, 수술 후 회복 중인 환자</li>
+                        <li>만성질환으로 지속 관리가 필요한 환자</li>
+                        <li>고령으로 자력 거동이 어려운 환자</li>
                         <li>호흡기 질환으로 산소공급이 필요한 환자</li>
-                        <li>관절염이나 골절로 움직임이 제한된 환자</li>
-                    </ul>
-
-                    <h3>가족을 위한 안심 서비스</h3>
-                    <p>요양병원 이송은 환자뿐만 아니라 가족에게도 큰 부담이 됩니다. 저희는 가족의 마음을 이해하며 다음과 같은 서비스를 제공합니다:</p>
-                    <ul>
-                        <li>보호자 동행 가능 (좌석 여유 시)</li>
-                        <li>이송 전 환자 상태 및 필요사항 상세 상담</li>
-                        <li>목적지 병원과의 사전 연락 및 인계 준비</li>
-                        <li>이송 중 가족과의 실시간 연락 체계</li>
-                        <li>환자 개인물품 및 의료기록 안전 보관</li>
-                        <li>24시간 상담 및 예약 접수</li>
+                        <li>관절염, 골절로 움직임이 제한된 환자</li>
                     </ul>
                 </div>
 
                 <div class="sidebar">
                     <div class="quick-contact">
-                        <h3>요양병원 이송 상담</h3>
+                        <h3>24시간 요양병원이송</h3>
                         <span class="phone">010-8841-4114</span>
-                        <a href="tel:010-8841-4114" class="call-btn">📞 지금 상담하기</a>
+                        <a href="tel:010-8841-4114" class="call-btn">📞 지금 전화하기</a>
                     </div>
 
                     <div class="service-features">
-                        <h4>전문 서비스 특징</h4>
+                        <h4>서비스 특징</h4>
                         <div class="feature-item">
                             <div class="feature-icon">🛏️</div>
                             <span>침상형 구급차</span>
@@ -513,19 +795,19 @@
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">🌡️</div>
-                            <span>온도 조절 시스템</span>
+                            <span>온도조절 시스템</span>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon">💊</div>
-                            <span>의료장비 완비</span>
+                            <div class="feature-icon">🕒</div>
+                            <span>24시간 운영</span>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">👥</div>
-                            <span>보호자 동행 가능</span>
+                            <span>보호자 동행</span>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon">⏰</div>
-                            <span>24시간 예약</span>
+                            <div class="feature-icon">💰</div>
+                            <span>보험 적용</span>
                         </div>
                     </div>
                 </div>
@@ -533,79 +815,17 @@
         </div>
     </section>
 
-    <section class="process-section">
-        <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">요양병원 이송 절차</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: #666;">전문적이고 체계적인 5단계 이송 절차로 안전을 보장합니다</p>
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h4>상세 상담</h4>
-                    <p>환자 상태, 의료기록, 특별 요구사항 등을 상세히 상담하고 적절한 이송 계획을 수립합니다.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h4>전문 장비 준비</h4>
-                    <p>환자 상태에 맞는 침상형 구급차와 필요한 의료장비를 준비하고 점검합니다.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h4>안전한 탑승</h4>
-                    <p>전문 인력이 환자를 스트레처에 안전하게 옮기고 구급차에 탑승시킵니다.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h4>모니터링 이송</h4>
-                    <p>이송 중 지속적으로 환자 상태를 모니터링하며 필요시 응급처치를 실시합니다.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <h4>안전한 인계</h4>
-                    <p>목적지에 도착하여 의료진에게 환자 상태와 이송 경과를 상세히 인계합니다.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="benefits-section">
-        <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">직지응급환자이송단의 장점</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🚁</div>
-                    <h3>신속한 출동</h3>
-                    <p>충북 전 지역 어디든 신속하게 출동하여 최단시간 내에 이송을 시작합니다.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🏥</div>
-                    <h3>병원 네트워크</h3>
-                    <p>충북 내 주요 요양병원과의 긴밀한 협력 관계로 원활한 이송을 보장합니다.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">💰</div>
-                    <h3>합리적 요금</h3>
-                    <p>투명하고 합리적인 요금 체계로 경제적 부담을 최소화합니다.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🛡️</div>
-                    <h3>보험 보장</h3>
-                    <p>충분한 보험 가입으로 이송 중 발생할 수 있는 모든 상황에 대비합니다.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="faq-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">자주 묻는 질문</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 40px;">요양병원 이송 관련 자주 묻는 질문들입니다</p>
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">자주 묻는 질문</h2>
+            <p style="text-align: center; font-size: 1rem; color: #666; margin-bottom: 30px;">충북 요양병원이송 서비스 관련 자주 묻는 질문</p>
             
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 요양병원 이송 시 보험 적용이 되나요?
+                    Q. 충북 어느 지역이든 요양병원이송이 가능한가요?
                 </div>
                 <div class="faq-answer">
-                    네, 의료진의 이송 필요성 소견서가 있는 경우 건강보험 적용이 가능합니다. 특히 응급상황이나 의학적으로 이송이 필요한 경우 보험 적용률이 높습니다. 자세한 사항은 해당 병원 원무과에 문의하시기 바랍니다.
+                    네, 청주, 충주, 제천, 음성, 진천, 괴산, 증평, 영동, 옥천, 보은, 단양 등 충북 전 지역 어디든 침상형 구급차로 24시간 요양병원이송이 가능합니다.
                 </div>
             </div>
 
@@ -614,16 +834,16 @@
                     Q. 침상형 구급차와 일반 구급차의 차이점은?
                 </div>
                 <div class="faq-answer">
-                    침상형 구급차는 환자가 침대에 누운 상태로 이송할 수 있는 전문 구급차입니다. 일반 구급차보다 내부 공간이 넓고, 전동 스트레처와 다양한 의료장비를 갖추고 있어 중환자나 거동불편 환자에게 적합합니다.
+                    침상형 구급차는 환자가 침대에 누운 상태로 이송할 수 있는 전문 구급차입니다. 전동 스트레처, 온도조절 시스템, 다양한 의료장비를 갖추고 있어 거동불편 환자나 중환자에게 적합합니다.
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 요양병원 입원 준비물은 무엇인가요?
+                    Q. 요양병원이송 시 보험 적용이 되나요?
                 </div>
                 <div class="faq-answer">
-                    기본적으로 의료보험증, 신분증, 의료기록지가 필요합니다. 개인 의료용품(약물, 보조기구), 개인 생활용품, 편안한 옷가지 등을 준비하시면 됩니다. 구체적인 준비물은 해당 요양병원에 미리 문의하시는 것이 좋습니다.
+                    의료진의 이송 필요성 소견서가 있는 경우 건강보험 적용이 가능합니다. 특히 응급상황이나 의학적으로 이송이 필요한 경우 보험 적용률이 높습니다. 자세한 사항은 해당 병원 원무과에 문의하시기 바랍니다.
                 </div>
             </div>
 
@@ -632,7 +852,7 @@
                     Q. 가족이 함께 탑승할 수 있나요?
                 </div>
                 <div class="faq-answer">
-                    네, 침상형 구급차의 경우 보호자석이 마련되어 있어 가족 1명이 함께 탑승 가능합니다. 다만 환자의 안전을 위해 응급구조사의 판단에 따라 제한될 수 있습니다.
+                    네, 침상형 구급차에는 보호자석이 마련되어 있어 가족 1명이 함께 탑승 가능합니다. 환자의 심리적 안정과 이송 중 의사소통을 위해 보호자 동행을 권장합니다.
                 </div>
             </div>
 
@@ -641,28 +861,91 @@
                     Q. 예약은 얼마나 미리 해야 하나요?
                 </div>
                 <div class="faq-answer">
-                    계획된 이송의 경우 1-2일 전 예약을 권장합니다. 요양병원 입·퇴원은 대부분 계획된 이송이므로 충분한 시간을 두고 예약하시면 됩니다. 응급상황의 경우 24시간 즉시 출동이 가능합니다.
+                    계획된 요양병원이송은 1-2일 전 예약을 권장합니다. 입퇴원 날짜가 정해지면 미리 예약하시면 원하는 시간에 서비스를 받을 수 있습니다. 응급상황은 24시간 즉시 출동합니다.
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 이송 중 환자 상태가 악화되면 어떻게 하나요?
+                    Q. 타 지역 요양병원이송도 가능한가요?
                 </div>
                 <div class="faq-answer">
-                    전문 응급구조사가 동행하여 이송 중 지속적으로 환자 상태를 모니터링합니다. 상태 악화 시 즉시 응급처치를 실시하고, 필요한 경우 가장 가까운 응급실로 이송하여 생명을 보호합니다.
+                    네, 충북에서 서울, 대전, 부산 등 전국 어디든 요양병원이송이 가능합니다. 장거리 이송 시 중간 휴게소에서 환자 상태를 점검하며 안전하게 이송합니다.
                 </div>
             </div>
         </div>
     </section>
 
-    <footer style="background: #2c3e50; color: #ecf0f1; padding: 40px 0; text-align: center;">
+    <section class="process-section">
         <div class="container">
-            <h3 style="color: #27ae60; margin-bottom: 20px;">직지응급환자이송단</h3>
-            <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px;">010-8841-4114</p>
-            <p style="margin-bottom: 20px;">충청북도 전 지역 요양병원 전문이송 서비스</p>
-            <p style="font-size: 0.9rem; opacity: 0.8;">
-                응급상황 시 119 신고 후 사설구급차 이용을 권장합니다 | 보건복지부 고시 기준 준수
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">요양병원이송 절차</h2>
+            <p style="text-align: center; font-size: 1rem; color: #666;">전문적인 5단계 요양병원이송 절차</p>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>상세 상담</h4>
+                    <p>환자 상태, 의료기록, 특별 요구사항 등 상세 상담 후 이송 계획 수립</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>장비 준비</h4>
+                    <p>환자 맞춤형 침상형 구급차와 필요 의료장비 준비 및 점검</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>안전 탑승</h4>
+                    <p>전문 인력이 환자를 스트레처에 안전하게 옮기고 구급차 탑승</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>모니터링 이송</h4>
+                    <p>이송 중 지속적 환자 상태 모니터링 및 필요시 응급처치</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h4>안전 인계</h4>
+                    <p>목적지 도착 후 의료진에게 환자 상태와 이송 경과 상세 인계</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">직지응급환자이송단의 장점</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚁</div>
+                    <h3>신속한 출동</h3>
+                    <p>충북 전 지역 어디든 신속하게 출동하여 최단시간 내에 요양병원이송 시작</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏥</div>
+                    <h3>병원 네트워크</h3>
+                    <p>충북 내 주요 요양병원과의 긴밀한 협력으로 원활한 이송 보장</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>합리적 요금</h3>
+                    <p>투명하고 합리적인 요금으로 요양병원이송 경제적 부담 최소화</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>보험 보장</h3>
+                    <p>충분한 보험 가입으로 이송 중 모든 상황에 완벽 대비</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #2c3e50; color: #ecf0f1; padding: 30px 0; text-align: center;">
+        <div class="container">
+            <h3 style="color: #27ae60; margin-bottom: 15px;">직지응급환자이송단</h3>
+            <p style="font-size: 1.6rem; font-weight: 700; margin-bottom: 12px;">010-8841-4114</p>
+            <p style="margin-bottom: 15px;">충청북도 전 지역 24시간 요양병원이송 전문</p>
+            <p style="font-size: 0.85rem; opacity: 0.8;">
+                청주 충주 제천 음성 진천 괴산 증평 영동 옥천 보은 단양 요양병원이송<br>
+                응급상황 시 119 신고 후 사설구급차 이용 권장 | 보건복지부 고시 준수
             </p>
         </div>
     </footer>
@@ -672,15 +955,29 @@
             const answer = element.nextElementSibling;
             const allAnswers = document.querySelectorAll('.faq-answer');
             
-            // Close all other FAQ answers
             allAnswers.forEach(ans => {
                 if (ans !== answer) {
                     ans.classList.remove('active');
                 }
             });
             
-            // Toggle current answer
             answer.classList.toggle('active');
+        }
+
+        function openSeoPopup() {
+            document.getElementById('seoPopup').style.display = 'block';
+        }
+
+        function closeSeoPopup() {
+            document.getElementById('seoPopup').style.display = 'none';
+        }
+
+        // Close popup when clicking outside
+        window.onclick = function(event) {
+            const popup = document.getElementById('seoPopup');
+            if (event.target == popup) {
+                popup.style.display = 'none';
+            }
         }
 
         // Smooth scrolling for anchor links
