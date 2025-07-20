@@ -58,7 +58,7 @@
 
         body {
             font-family: 'Noto Sans KR', Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.4;
             color: #333;
             background: #f8f9fa;
         }
@@ -69,11 +69,11 @@
             padding: 0 20px;
         }
 
-        /* Header */
+        /* Header - 높이 축소 */
         header {
             background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
-            padding: 1rem 0;
+            padding: 0.8rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
@@ -87,30 +87,30 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
             cursor: pointer;
         }
 
         .logo-icon {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             background: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 20px;
             color: #e74c3c;
         }
 
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 700;
             margin: 0;
         }
 
         .phone-number {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 900;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
@@ -118,7 +118,7 @@
         /* Navigation */
         .breadcrumb {
             background: white;
-            padding: 15px 0;
+            padding: 10px 0;
             border-bottom: 1px solid #e9ecef;
         }
 
@@ -137,57 +137,58 @@
             font-weight: 600;
         }
 
-        /* Hero Section */
+        /* Hero Section - 높이 50% 축소 */
         .page-hero {
             background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
             color: white;
-            padding: 80px 0;
+            padding: 40px 0;
             text-align: center;
         }
 
         .page-hero h1 {
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .page-hero p {
-            font-size: 1.3rem;
+            font-size: 1rem;
             max-width: 800px;
-            margin: 0 auto 30px;
+            margin: 0 auto 20px;
         }
 
         .hero-features {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 15px;
             flex-wrap: wrap;
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
         .hero-feature {
             background: rgba(255,255,255,0.1);
-            padding: 15px 25px;
-            border-radius: 25px;
+            padding: 8px 15px;
+            border-radius: 15px;
             backdrop-filter: blur(10px);
+            font-size: 0.9rem;
         }
 
-        /* Quick Info Section */
+        /* Quick Info Section - 높이 축소 */
         .quick-info {
             background: white;
-            padding: 60px 0;
+            padding: 30px 0;
         }
 
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            gap: 20px;
+            margin-top: 20px;
         }
 
         .info-card {
             background: #f8f9fa;
-            padding: 30px;
+            padding: 20px;
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 3px 15px rgba(0,0,0,0.1);
@@ -200,89 +201,96 @@
         }
 
         .info-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: #8e44ad;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.5rem;
+            margin: 0 auto 15px;
+            font-size: 1.2rem;
             color: white;
         }
 
         .info-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
             color: #2c3e50;
         }
 
         .info-card p {
             color: #666;
-            line-height: 1.6;
+            line-height: 1.4;
+            font-size: 0.9rem;
         }
 
-        /* Area Specialty */
+        /* Area Specialty - 축소 */
         .area-specialty {
             background: linear-gradient(135deg, #f3e5f5 0%, #e8d5ea 100%);
             border-left: 5px solid #8e44ad;
-            padding: 25px;
-            margin: 40px 0;
+            padding: 20px;
+            margin: 20px 0;
             border-radius: 10px;
         }
 
         .area-specialty h3 {
             color: #8e44ad;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .area-specialty p {
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
 
         .specialty-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
         }
 
         .specialty-item {
             background: white;
-            padding: 15px;
+            padding: 10px;
             border-radius: 8px;
             border-left: 3px solid #8e44ad;
+            font-size: 0.9rem;
         }
 
-        /* Services Section */
+        /* Services Section - 높이 축소 */
         .services-section {
             background: #f8f9fa;
-            padding: 80px 0;
+            padding: 40px 0;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #2c3e50;
         }
 
         .section-subtitle {
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #666;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
         }
 
         .service-card {
             background: white;
-            padding: 30px;
+            padding: 20px;
             border-radius: 15px;
             text-align: center;
             transition: all 0.3s ease;
@@ -297,58 +305,59 @@
         }
 
         .service-icon {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, #8e44ad, #9b59b6);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
             color: white;
         }
 
         .service-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: #2c3e50;
         }
 
         .service-card p {
             color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
         }
 
         .service-features {
             display: flex;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
         }
 
         .feature-tag {
             background: #f3e5f5;
             color: #8e44ad;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.8rem;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
             font-weight: 500;
         }
 
-        /* FAQ Section */
+        /* FAQ Section - 축소 */
         .faq-section {
             background: white;
-            padding: 80px 0;
+            padding: 40px 0;
         }
 
         .faq-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
-            margin-top: 40px;
+            gap: 15px;
+            margin-top: 20px;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
@@ -365,10 +374,10 @@
         .faq-question {
             background: #8e44ad;
             color: white;
-            padding: 25px;
+            padding: 18px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: background 0.3s ease;
             display: flex;
             justify-content: space-between;
@@ -381,7 +390,7 @@
 
         .faq-question::after {
             content: '+';
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 300;
             transition: transform 0.3s ease;
         }
@@ -399,33 +408,34 @@
         }
 
         .faq-answer.active {
-            padding: 25px;
-            max-height: 300px;
+            padding: 18px;
+            max-height: 250px;
         }
 
         .faq-answer p {
             color: #555;
-            line-height: 1.7;
+            line-height: 1.5;
             margin: 0;
+            font-size: 0.9rem;
         }
 
-        /* Hospital Section */
+        /* Hospital Section - 축소 */
         .hospitals-section {
             background: #f8f9fa;
-            padding: 80px 0;
+            padding: 40px 0;
         }
 
         .hospitals-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
         .hospital-card {
             background: white;
             border-radius: 15px;
-            padding: 30px;
+            padding: 20px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
         }
@@ -438,58 +448,59 @@
         .hospital-header {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .hospital-type {
             background: #8e44ad;
             color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
             font-weight: 600;
-            margin-right: 15px;
+            margin-right: 10px;
         }
 
         .hospital-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #2c3e50;
-            margin: 15px 0;
+            margin: 10px 0;
             font-weight: 700;
         }
 
         .hospital-info {
-            margin: 20px 0;
+            margin: 15px 0;
         }
 
         .info-item {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #555;
+            font-size: 0.9rem;
         }
 
         .info-icon-small {
-            width: 20px;
-            margin-right: 12px;
+            width: 18px;
+            margin-right: 10px;
             color: #8e44ad;
         }
 
         .hospital-actions {
             display: flex;
-            gap: 15px;
-            margin-top: 25px;
+            gap: 10px;
+            margin-top: 20px;
         }
 
         .btn {
-            padding: 12px 24px;
-            border-radius: 25px;
+            padding: 10px 20px;
+            border-radius: 20px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             flex: 1;
             text-align: center;
         }
@@ -513,26 +524,30 @@
             background: #bdc3c7;
         }
 
-        /* Emergency Banner */
+        /* Emergency Banner - 축소 */
         .emergency-banner {
             background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
             color: white;
-            padding: 20px;
+            padding: 15px;
             border-radius: 15px;
-            margin: 30px 0;
+            margin: 20px 0;
             text-align: center;
         }
 
         .emergency-banner h4 {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
-        /* Contact CTA */
+        .emergency-banner p {
+            font-size: 0.9rem;
+        }
+
+        /* Contact CTA - 축소 */
         .contact-cta {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
-            padding: 60px 0;
+            padding: 40px 0;
             text-align: center;
         }
 
@@ -542,9 +557,9 @@
         }
 
         .cta-phone {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 900;
-            margin: 20px 0;
+            margin: 15px 0;
             color: #8e44ad;
         }
 
@@ -552,12 +567,12 @@
             display: inline-block;
             background: #8e44ad;
             color: white;
-            padding: 18px 40px;
+            padding: 15px 35px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.2rem;
-            margin-top: 20px;
+            font-size: 1.1rem;
+            margin-top: 15px;
             transition: all 0.3s ease;
         }
 
@@ -567,15 +582,156 @@
             box-shadow: 0 8px 25px rgba(142, 68, 173, 0.4);
         }
 
-        /* Responsive */
+        /* SEO 요약 팝업 */
+        .seo-summary-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #8e44ad;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .seo-summary-btn:hover {
+            background: #7d3c98;
+            transform: translateY(-2px);
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .popup-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: popupShow 0.3s ease;
+        }
+
+        @keyframes popupShow {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .popup-title {
+            color: #8e44ad;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f3e5f5;
+            padding-bottom: 10px;
+        }
+
+        .summary-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .summary-item h4 {
+            color: #2c3e50;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .summary-item p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* 고정 전화 버튼 */
+        .fixed-call-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(231, 76, 60, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .fixed-call-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(231, 76, 60, 0.6);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(231, 76, 60, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+        }
+
+        /* 모바일 최적화 */
         @media (max-width: 768px) {
             .page-hero h1 {
-                font-size: 2.2rem;
+                font-size: 1.6rem;
+            }
+
+            .page-hero p {
+                font-size: 0.9rem;
             }
 
             .hero-features {
                 flex-direction: column;
                 align-items: center;
+                gap: 10px;
+            }
+
+            .hero-feature {
+                font-size: 0.8rem;
+                padding: 6px 12px;
             }
 
             .hospital-actions {
@@ -583,7 +739,78 @@
             }
 
             .cta-phone {
-                font-size: 2rem;
+                font-size: 1.6rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hospitals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .specialty-list {
+                grid-template-columns: 1fr;
+            }
+
+            .popup-content {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .seo-summary-btn {
+                font-size: 0.8rem;
+                padding: 10px 15px;
+                top: 15px;
+                right: 15px;
+            }
+
+            .fixed-call-btn {
+                width: 55px;
+                height: 55px;
+                bottom: 15px;
+                right: 15px;
+                font-size: 1.3rem;
+            }
+        }
+
+        /* 더 컴팩트한 모바일 버전 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .page-hero {
+                padding: 30px 0;
+            }
+
+            .quick-info, .services-section, .faq-section, .hospitals-section {
+                padding: 25px 0;
+            }
+
+            .contact-cta {
+                padding: 30px 0;
+            }
+
+            .info-card, .service-card, .hospital-card {
+                padding: 15px;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .service-card h3, .hospital-card h3 {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -595,14 +822,59 @@
                 <div class="logo" onclick="location.href='index.html'">
                     <div class="logo-icon">🚑</div>
                     <div>
-                        <div style="font-size: 1.8rem; font-weight: 700; margin: 0; color: white;">직지응급환자이송단</div>
-                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충청북도 전문 사설구급차</p>
+                        <div style="font-size: 1.4rem; font-weight: 700; margin: 0; color: white;">직지응급환자이송단</div>
+                        <p style="font-size: 0.8rem; margin: 0; opacity: 0.9;">충청북도 전문 사설구급차</p>
                     </div>
                 </div>
                 <div class="phone-number">010-8841-4114</div>
             </div>
         </div>
     </header>
+
+    <!-- SEO 요약 버튼 -->
+    <button class="seo-summary-btn" onclick="openSummary()">📋 서비스 요약</button>
+
+    <!-- SEO 요약 팝업 -->
+    <div class="popup-overlay" id="summaryPopup">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closeSummary()">&times;</button>
+            <h3 class="popup-title">🚑 영동 사설구급차 서비스 요약</h3>
+            
+            <div class="summary-item">
+                <h4>📍 서비스 지역</h4>
+                <p>영동군 전 지역, 추풍령·황간면 산간지역</p>
+            </div>
+
+            <div class="summary-item">
+                <h4>🏥 주요 이송 병원</h4>
+                <p>영동보건의료원, 충남대학교병원(대전), 충북대학교병원(청주)</p>
+            </div>
+
+            <div class="summary-item">
+                <h4>⏰ 운영 시간</h4>
+                <p>24시간 365일 응급환자이송 서비스</p>
+            </div>
+
+            <div class="summary-item">
+                <h4>🚑 이송 서비스</h4>
+                <p>일반환자, 요양병원, 정신병원, 알코올중독, 행사의료지원, 고인이송</p>
+            </div>
+
+            <div class="summary-item">
+                <h4>🏔️ 특화 서비스</h4>
+                <p>산간지역 전문, 겨울철 폭설 대응, 험준한 지형 안전 이송</p>
+            </div>
+
+            <div class="summary-item">
+                <h4>📞 긴급 연락처</h4>
+                <p style="font-size: 1.2rem; font-weight: 700; color: #e74c3c;">010-8841-4114</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="tel:010-8841-4114" class="btn btn-primary" style="padding: 12px 25px; font-size: 1rem;">📞 지금 바로 전화하기</a>
+            </div>
+        </div>
+    </div>
 
     <nav class="breadcrumb">
         <div class="container">
@@ -686,8 +958,8 @@
                     <p>영동보건의료원에서 대전·청주 병원까지 안전한 일반 환자이송. 외래진료, 입퇴원, 병원 간 전원 시 이용하세요.</p>
                     <div class="service-features">
                         <span class="feature-tag">영동보건의료원</span>
-                        <span class="feature-tag">대전 대략50분</span>
-                        <span class="feature-tag">청주 대략60분</span>
+                        <span class="feature-tag">대전 응급이송</span>
+                        <span class="feature-tag">청주 응급이송</span>
                     </div>
                 </div>
 
@@ -747,9 +1019,9 @@
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 40px; padding: 25px; background: #f3e5f5; border-radius: 15px;">
-                <h4 style="color: #8e44ad; margin-bottom: 15px;">🏔️ 영동 지역 특화 서비스</h4>
-                <p style="color: #555; line-height: 1.6;">
+            <div style="text-align: center; margin-top: 20px; padding: 20px; background: #f3e5f5; border-radius: 15px;">
+                <h4 style="color: #8e44ad; margin-bottom: 10px;">🏔️ 영동 지역 특화 서비스</h4>
+                <p style="color: #555; line-height: 1.4; font-size: 0.9rem;">
                     영동군의 산간지역 특성을 고려하여 겨울철 폭설, 여름철 집중호우 등 기후 조건에 맞는 
                     안전 장비와 우회 경로를 준비하고 있습니다. 추풍령, 황간면 등 어려운 지형도 안전하게 대응합니다.
                 </p>
@@ -777,7 +1049,7 @@
                         Q. 영동에서 대전 병원과 청주 병원 중 어디가 더 가까운가요?
                     </div>
                     <div class="faq-answer">
-                        <p>대전이 더 가깝습니다. 영동에서 대전까지는 약 45km(대략50분), 청주까지는 약 60km(대략60분) 소요됩니다. 하지만 진료과목이나 병원 사정에 따라 청주가 더 적합한 경우도 있으니 상황에 맞는 최적의 병원으로 안내해드립니다.</p>
+                        <p>대전이 더 가깝습니다. 영동에서 대전까지는 약 45km, 청주까지는 약 60km 소요됩니다. 하지만 진료과목이나 병원 사정에 따라 청주가 더 적합한 경우도 있으니 상황에 맞는 최적의 병원으로 안내해드립니다.</p>
                     </div>
                 </div>
 
@@ -786,7 +1058,7 @@
                         Q. 영동보건의료원에서 대학병원으로 응급 이송이 필요한데 얼마나 걸리나요?
                     </div>
                     <div class="faq-answer">
-                        <p>응급상황 시 최우선으로 대응합니다. 대전 충남대병원까지 45-50분, 청주 충북대병원까지 55-65분 소요됩니다. 응급구조사가 동행하여 이송 중에도 지속적인 모니터링과 응급처치를 실시합니다.</p>
+                        <p>응급상황 시 최우선으로 대응합니다. 대전 충남대병원까지 응급이송, 청주 충북대병원까지 응급이송 가능합니다. 응급구조사가 동행하여 이송 중에도 지속적인 모니터링과 응급처치를 실시합니다.</p>
                     </div>
                 </div>
 
@@ -914,10 +1186,6 @@
                             <span>상급종합병원 (권역응급의료센터)</span>
                         </div>
                         <div class="info-item">
-                            <span class="info-icon-small">💰</span>
-                            <span>이송비: 약 133,500원</span>
-                        </div>
-                        <div class="info-item">
                             <span class="info-icon-small">⭐</span>
                             <span>심장센터, 뇌신경센터, 외상센터</span>
                         </div>
@@ -948,10 +1216,6 @@
                             <span>상급종합병원 (권역응급의료센터)</span>
                         </div>
                         <div class="info-item">
-                            <span class="info-icon-small">💰</span>
-                            <span>이송비: 약 150,000원</span>
-                        </div>
-                        <div class="info-item">
                             <span class="info-icon-small">⭐</span>
                             <span>심혈관센터, 뇌신경센터, 응급의학과</span>
                         </div>
@@ -977,25 +1241,28 @@
                 <p>영동군 어느 지역이든 24시간 신속하게 출동합니다</p>
                 <div class="cta-phone">010-8841-4114</div>
                 <a href="tel:010-8841-4114" class="cta-button">📞 지금 바로 연락하기</a>
-                <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
                     응급상황 시 119 신고 후 사설구급차 이용을 권장합니다
                 </p>
             </div>
         </div>
     </section>
 
-    <footer style="background: #2c3e50; color: #ecf0f1; padding: 40px 0; text-align: center;">
+    <!-- 고정 전화 버튼 -->
+    <a href="tel:010-8841-4114" class="fixed-call-btn" title="영동 사설구급차 즉시 연결">📞</a>
+
+    <footer style="background: #2c3e50; color: #ecf0f1; padding: 30px 0; text-align: center;">
         <div class="container">
-            <h3 style="color: #8e44ad; margin-bottom: 20px;">직지응급환자이송단</h3>
-            <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px;">010-8841-4114</p>
-            <p style="margin-bottom: 20px;">영동군 및 충북 전 지역 24시간 응급환자이송 서비스</p>
-            <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0; flex-wrap: wrap;">
+            <h3 style="color: #8e44ad; margin-bottom: 15px;">직지응급환자이송단</h3>
+            <p style="font-size: 1.4rem; font-weight: 700; margin-bottom: 10px;">010-8841-4114</p>
+            <p style="margin-bottom: 15px; font-size: 0.9rem;">영동군 및 충북 전 지역 24시간 응급환자이송 서비스</p>
+            <div style="display: flex; justify-content: center; gap: 20px; margin: 15px 0; flex-wrap: wrap; font-size: 0.85rem;">
                 <span>✓ 산간지역 전문</span>
                 <span>✓ 24시간 즉시출동</span>
                 <span>✓ 전문 응급구조사</span>
                 <span>✓ 합리적 요금</span>
             </div>
-            <p style="font-size: 0.9rem; opacity: 0.8; border-top: 1px solid #34495e; padding-top: 20px; margin-top: 20px;">
+            <p style="font-size: 0.8rem; opacity: 0.8; border-top: 1px solid #34495e; padding-top: 15px; margin-top: 15px;">
                 영동군 전문 사설구급차 서비스 | 보건복지부 고시 기준 준수 | 응급상황 시 119 우선 신고
             </p>
         </div>
@@ -1022,6 +1289,31 @@
             }
         }
 
+        // SEO 요약 팝업 기능
+        function openSummary() {
+            document.getElementById('summaryPopup').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
+        }
+
+        function closeSummary() {
+            document.getElementById('summaryPopup').style.display = 'none';
+            document.body.style.overflow = 'auto'; // 스크롤 복원
+        }
+
+        // 팝업 배경 클릭 시 닫기
+        document.getElementById('summaryPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSummary();
+            }
+        });
+
+        // ESC 키로 팝업 닫기
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeSummary();
+            }
+        });
+
         // 페이지 로드 시 애니메이션
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.info-card, .service-card, .hospital-card, .faq-item');
@@ -1033,7 +1325,7 @@
                 setTimeout(() => {
                     card.style.opacity = '1';
                     card.style.transform = 'translateY(0)';
-                }, index * 100);
+                }, index * 50); // 애니메이션 속도 빠르게 조정
             });
         });
 
@@ -1047,13 +1339,68 @@
             });
         }, {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -30px 0px'
         });
 
         // 모든 카드 요소 관찰
         document.querySelectorAll('.info-card, .service-card, .hospital-card').forEach(card => {
             observer.observe(card);
         });
+
+        // 고정 전화 버튼 스크롤 효과
+        let lastScrollTop = 0;
+        const callBtn = document.querySelector('.fixed-call-btn');
+        
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // 스크롤 다운 시 버튼 약간 축소, 스크롤 업 시 원래 크기
+            if (scrollTop > lastScrollTop) {
+                // 스크롤 다운
+                callBtn.style.transform = 'scale(0.9)';
+            } else {
+                // 스크롤 업
+                callBtn.style.transform = 'scale(1)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // 전화 버튼 클릭 시 진동 효과 (모바일에서)
+        callBtn.addEventListener('click', function() {
+            if (navigator.vibrate) {
+                navigator.vibrate(200); // 200ms 진동
+            }
+            
+            // 클릭 애니메이션
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+        });
+
+        // 모바일에서 터치 스크롤 최적화
+        if ('ontouchstart' in window) {
+            document.body.style.webkitOverflowScrolling = 'touch';
+        }
+
+        // 페이지 성능 최적화 - 이미지 지연 로딩
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
     </script>
 </body>
 </html>
