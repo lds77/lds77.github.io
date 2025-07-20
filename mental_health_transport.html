@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>정신병원입원 서비스 - 직지응급환자이송단</title>
+    <title>충북 정신병원입원 사설구급차 | 청주 충주 제천 음성 진천 괴산 증평 영동 옥천 보은 단양 정신병원입원</title>
+    <meta name="description" content="충북 전 지역 24시간 정신병원입원 서비스. 청주, 충주, 제천, 음성, 진천, 괴산, 증평, 영동, 옥천, 보은, 단양 정신과 입원이송. 전문 교육받은 응급구조사 동행, 인도적 접근. 010-8841-4114">
+    <meta name="keywords" content="충북 정신병원입원, 청주 정신병원입원, 충주 정신병원입원, 제천 정신병원입원, 정신과 입원이송, 정신과 응급이송, 사설구급차, 충청북도 정신병원입원, 24시간 비밀상담">
+    <meta property="og:title" content="충북 정신병원입원 전문 사설구급차 - 직지응급환자이송단">
+    <meta property="og:description" content="충북 전 지역 24시간 정신병원입원 서비스. 전문 교육받은 응급구조사, 인도적 접근, 비밀보장. 010-8841-4114">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://example.com/mental-health-transport">
     <style>
         * {
             margin: 0;
@@ -26,10 +32,11 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            background: linear-gradient(135deg, #8e44ad 0%, #7d3c98 100%);
             color: white;
             padding: 1rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
         }
 
         .header-content {
@@ -54,7 +61,7 @@
             align-items: center;
             justify-content: center;
             font-size: 24px;
-            color: #e74c3c;
+            color: #8e44ad;
         }
 
         .logo h1 {
@@ -67,6 +74,90 @@
             font-size: 1.8rem;
             font-weight: 900;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* SEO Summary Popup */
+        .seo-summary-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #8e44ad;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(142, 68, 173, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .seo-summary-btn:hover {
+            background: #7d3c98;
+            transform: translateY(-2px);
+        }
+
+        .seo-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1001;
+        }
+
+        .seo-popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        /* Fixed Call Button */
+        .fixed-call-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #8e44ad, #7d3c98);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(142, 68, 173, 0.4);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
 
         /* Navigation */
@@ -83,11 +174,11 @@
         }
 
         .breadcrumb a:hover {
-            color: #e74c3c;
+            color: #8e44ad;
         }
 
         .breadcrumb span {
-            color: #e74c3c;
+            color: #8e44ad;
             font-weight: 600;
         }
 
@@ -95,25 +186,50 @@
         .service-hero {
             background: linear-gradient(135deg, #8e44ad 0%, #7d3c98 100%);
             color: white;
-            padding: 60px 0;
+            padding: 40px 0;
             text-align: center;
         }
 
         .service-hero h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .service-hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto;
         }
 
+        /* Coverage Area */
+        .coverage-area {
+            background: white;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .coverage-cities {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .city-tag {
+            background: #8e44ad;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
         /* Main Content */
         .main-content {
-            padding: 60px 0;
+            padding: 40px 0;
             background: white;
         }
 
@@ -121,36 +237,36 @@
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 40px;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         .content-main h2 {
             color: #2c3e50;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
             border-bottom: 3px solid #8e44ad;
         }
 
         .content-main h3 {
             color: #34495e;
-            font-size: 1.5rem;
-            margin: 30px 0 15px 0;
+            font-size: 1.3rem;
+            margin: 25px 0 12px 0;
         }
 
         .content-main p {
-            margin-bottom: 15px;
-            line-height: 1.8;
+            margin-bottom: 12px;
+            line-height: 1.7;
             color: #555;
         }
 
         .content-main ul {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             padding-left: 20px;
         }
 
         .content-main li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #555;
         }
 
@@ -158,41 +274,42 @@
         .alert-box {
             background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
             border-left: 5px solid #f39c12;
-            padding: 20px;
-            margin: 25px 0;
+            padding: 15px;
+            margin: 20px 0;
             border-radius: 5px;
         }
 
         .alert-box h4 {
             color: #d68910;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
         .alert-box p {
             color: #856404;
             margin: 0;
+            font-size: 0.95rem;
         }
 
         /* Privacy Box */
         .privacy-box {
             background: linear-gradient(135deg, #e8f4fd 0%, #d6eaf8 100%);
             border-left: 5px solid #3498db;
-            padding: 20px;
-            margin: 25px 0;
+            padding: 15px;
+            margin: 20px 0;
             border-radius: 5px;
         }
 
         .privacy-box h4 {
             color: #2980b9;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
         /* Sidebar */
         .sidebar {
             background: #f8f9fa;
-            padding: 30px;
+            padding: 25px;
             border-radius: 10px;
             height: fit-content;
             position: sticky;
@@ -202,28 +319,28 @@
         .quick-contact {
             background: linear-gradient(135deg, #8e44ad, #7d3c98);
             color: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .quick-contact h3 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
         }
 
         .quick-contact .phone {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 900;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: block;
         }
 
         .call-btn {
             background: white;
             color: #8e44ad;
-            padding: 12px 25px;
+            padding: 10px 20px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
@@ -238,150 +355,49 @@
 
         .service-features {
             background: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
             border: 1px solid #e9ecef;
         }
 
         .service-features h4 {
             color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
 
         .feature-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            padding: 10px;
+            margin-bottom: 12px;
+            padding: 8px;
             background: #f8f9fa;
             border-radius: 5px;
         }
 
         .feature-icon {
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
             background: #8e44ad;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            margin-right: 12px;
-            font-size: 0.9rem;
+            margin-right: 10px;
+            font-size: 0.8rem;
         }
 
-        /* Approach Section */
-        .approach-section {
-            background: #f8f9fa;
-            padding: 60px 0;
-        }
-
-        .approach-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .approach-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
-        }
-
-        .approach-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .approach-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #8e44ad, #7d3c98);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
-            color: white;
-        }
-
-        .approach-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-
-        .approach-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Process Steps */
-        .process-section {
-            background: white;
-            padding: 60px 0;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .process-step {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .step-number {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #8e44ad, #7d3c98);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .process-step h4 {
-            color: #2c3e50;
-            margin: 20px 0 15px 0;
-            font-size: 1.3rem;
-        }
-
-        .process-step p {
-            color: #666;
-        }
-
-        /* FAQ Section */
+        /* FAQ Section - moved up */
         .faq-section {
             background: #f8f9fa;
-            padding: 60px 0;
+            padding: 40px 0;
         }
 
         .faq-item {
             background: white;
-            margin-bottom: 15px;
-            border-radius: 10px;
+            margin-bottom: 12px;
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
@@ -389,10 +405,11 @@
         .faq-question {
             background: #8e44ad;
             color: white;
-            padding: 20px;
+            padding: 15px;
             cursor: pointer;
             font-weight: 600;
             transition: background 0.3s ease;
+            font-size: 0.95rem;
         }
 
         .faq-question:hover {
@@ -400,41 +417,290 @@
         }
 
         .faq-answer {
-            padding: 20px;
+            padding: 15px;
             display: none;
             color: #555;
-            line-height: 1.7;
+            line-height: 1.6;
+            font-size: 0.9rem;
         }
 
         .faq-answer.active {
             display: block;
         }
 
-        /* Responsive */
+        /* Approach Section */
+        .approach-section {
+            background: white;
+            padding: 40px 0;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .approach-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .approach-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            background: white;
+        }
+
+        .approach-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #8e44ad, #7d3c98);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .approach-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #2c3e50;
+        }
+
+        .approach-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        /* Process Steps */
+        .process-section {
+            background: #f8f9fa;
+            padding: 40px 0;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .process-step {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #8e44ad, #7d3c98);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .process-step h4 {
+            color: #2c3e50;
+            margin: 15px 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .process-step p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .content-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .service-hero {
+                padding: 30px 0;
             }
 
             .service-hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+
+            .service-hero p {
+                font-size: 1rem;
+            }
+
+            .main-content {
+                padding: 25px 0;
+            }
+
+            .content-main h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-main h3 {
+                font-size: 1.2rem;
+                margin: 20px 0 10px 0;
+            }
+
+            .content-main p, .content-main li {
+                font-size: 0.9rem;
+                line-height: 1.6;
             }
 
             .process-grid, .approach-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .process-section, .approach-section, .faq-section {
+                padding: 30px 0;
+            }
+
+            .coverage-cities {
+                gap: 8px;
+            }
+
+            .city-tag {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .seo-summary-btn {
+                padding: 10px 14px;
+                font-size: 0.9rem;
+            }
+
+            .seo-popup-content {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            /* Mobile content compression */
+            .content-main ul {
+                margin-bottom: 15px;
+            }
+
+            .content-main li {
+                margin-bottom: 4px;
+            }
+
+            .sidebar {
+                order: -1;
+                padding: 20px;
+                position: static; /* Remove sticky positioning on mobile */
+            }
+
+            .quick-contact {
+                padding: 15px;
+            }
+
+            .feature-item {
+                padding: 6px;
+                margin-bottom: 8px;
+            }
+
+            .alert-box, .privacy-box {
+                padding: 12px;
+                margin: 15px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .logo h1 {
+                font-size: 1.4rem;
+            }
+
+            .phone-number {
+                font-size: 1.5rem;
+            }
+
+            .service-hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .fixed-call-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- SEO Summary Popup Button -->
+    <button class="seo-summary-btn" onclick="openSeoPopup()">📋 서비스 요약</button>
+
+    <!-- SEO Summary Popup -->
+    <div id="seoPopup" class="seo-popup">
+        <div class="seo-popup-content">
+            <button class="close-popup" onclick="closeSeoPopup()">&times;</button>
+            <h3 style="color: #8e44ad; margin-bottom: 20px;">🧠 직지응급환자이송단 정신병원입원 요약</h3>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">📞 24시간 비밀상담</h4>
+                <p style="font-size: 1.2rem; font-weight: 700; color: #8e44ad;">010-8841-4114</p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">🗺️ 서비스 지역</h4>
+                <p>충청북도 전 지역 (청주, 충주, 제천, 음성, 진천, 괴산, 증평, 영동, 옥천, 보은, 단양)</p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">🏥 주요 서비스</h4>
+                <p>• 정신과 입원이송 • 응급 정신과 이송<br>• 재입원 이송 • 병원간 전원<br>• 외래진료 이송 • 퇴원 후 귀가</p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">⭐ 특징</h4>
+                <p>• 전문 교육받은 응급구조사<br>• 인도적 접근법<br>• 24시간 비밀상담<br>• 법적 절차 준수<br>• 환자 인권 보호<br>• 가족 지원 서비스</p>
+            </div>
+            
+            <div>
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">🔒 안심 보장</h4>
+                <p>완전한 비밀보장<br>환자 인권 최우선<br>정신건강복지법 준수</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Call Button -->
+    <a href="tel:010-8841-4114" class="fixed-call-btn" title="24시간 비밀상담">📞</a>
+
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
                     <div class="logo-icon">🚑</div>
                     <div>
-                        <h1>직지응급환자이송단</h1>
-                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충청북도 전문 사설구급차</p>
+                        <div style="font-size: 1.8rem; font-weight: 700; margin: 0; color: white;">직지응급환자이송단</div>
+                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충청북도 정신병원입원 전문 24시간</p>
                     </div>
                 </div>
                 <div class="phone-number">010-8841-4114</div>
@@ -444,14 +710,34 @@
 
     <nav class="breadcrumb">
         <div class="container">
-            <a href="#">홈</a> > <a href="#">서비스 안내</a> > <span>정신병원 입원</span>
+            <a href="#">홈</a> > <a href="#">정신병원입원 서비스</a> > <span>충북 정신병원입원</span>
         </div>
     </nav>
 
     <section class="service-hero">
         <div class="container">
-            <h1>정신병원입원 서비스</h1>
-            <p>정신건강의학과 전문병원 이송 시 전문 훈련받은 응급구조사가 동행하여 안전하고 인도적인 이송을 실시합니다</p>
+            <h1>충북 정신병원입원 전문 사설구급차</h1>
+            <p>충청북도 전 지역 24시간 정신과 입원이송, 응급 정신과 이송, 인도적 접근과 비밀보장</p>
+        </div>
+    </section>
+
+    <section class="coverage-area">
+        <div class="container">
+            <h2 style="color: #2c3e50; margin-bottom: 10px;">충청북도 전 지역 정신병원입원</h2>
+            <p style="color: #666;">11개 시군 어디든 24시간 비밀상담 및 전문이송</p>
+            <div class="coverage-cities">
+                <span class="city-tag">청주시 정신병원입원</span>
+                <span class="city-tag">충주시 정신병원입원</span>
+                <span class="city-tag">제천시 정신병원입원</span>
+                <span class="city-tag">음성군 정신병원입원</span>
+                <span class="city-tag">진천군 정신병원입원</span>
+                <span class="city-tag">괴산군 정신병원입원</span>
+                <span class="city-tag">증평군 정신병원입원</span>
+                <span class="city-tag">영동군 정신병원입원</span>
+                <span class="city-tag">옥천군 정신병원입원</span>
+                <span class="city-tag">보은군 정신병원입원</span>
+                <span class="city-tag">단양군 정신병원입원</span>
+            </div>
         </div>
     </section>
 
@@ -459,26 +745,37 @@
         <div class="container">
             <div class="content-grid">
                 <div class="content-main">
-                    <h2>서비스 개요</h2>
-                    <p>정신병원입원 서비스는 정신건강 문제로 치료가 필요한 환자분들을 정신건강의학과 전문병원으로 안전하고 인도적으로 이송하는 전문 서비스입니다. 환자의 인권과 존엄성을 존중하면서도, 이송 중 발생할 수 있는 돌발 상황에 전문적으로 대응할 수 있도록 특별 훈련받은 응급구조사가 동행합니다.</p>
+                    <h2>충북 정신병원입원 전문 서비스</h2>
+                    <p>직지응급환자이송단은 충청북도에서 가장 전문적인 정신병원입원 서비스를 제공합니다. 정신건강 문제로 치료가 필요한 환자분들을 전문 교육받은 응급구조사가 인도적이고 안전하게 이송하며, 환자의 인권과 존엄성을 최우선으로 고려합니다.</p>
 
                     <div class="alert-box">
                         <h4>⚠️ 중요 안내</h4>
-                        <p>정신병원입원은 반드시 의료진의 진단과 보호자의 동의 하에 이루어집니다. 강제입원의 경우 정신건강복지법에 따른 적법한 절차를 준수합니다.</p>
+                        <p>정신병원입원은 반드시 의료진의 진단과 정신건강복지법에 따른 적법한 절차를 준수합니다. 모든 과정에서 환자의 인권을 보호합니다.</p>
                     </div>
 
-                    <h3>주요 이송 상황</h3>
+                    <h3>주요 정신병원입원 서비스</h3>
                     <ul>
-                        <li><strong>정신건강의학과 입원 이송</strong> - 우울증, 조현병 등 정신질환 치료를 위한 입원</li>
-                        <li><strong>응급 정신과 이송</strong> - 자해 위험이나 심각한 정신적 위기 상황</li>
+                        <li><strong>정신과 입원이송</strong> - 우울증, 조현병 등 정신질환 치료 입원</li>
+                        <li><strong>응급 정신과 이송</strong> - 자해 위험이나 심각한 정신적 위기상황</li>
                         <li><strong>재입원 이송</strong> - 치료 중단 후 증상 악화로 인한 재입원</li>
-                        <li><strong>병원 간 전원</strong> - 더 전문적인 치료를 위한 상급병원 이송</li>
-                        <li><strong>외래진료 이송</strong> - 정기적인 정신과 외래진료를 위한 이송</li>
+                        <li><strong>병원간 전원이송</strong> - 전문치료를 위한 상급병원 이송</li>
+                        <li><strong>정기 외래진료</strong> - 정신과 외래진료를 위한 이송</li>
                         <li><strong>퇴원 후 귀가</strong> - 치료 완료 후 안전한 귀가 지원</li>
+                        <li><strong>응급상황 대응</strong> - 24시간 응급상황 즉시 출동</li>
+                    </ul>
+
+                    <h3>충북 지역별 정신병원입원 네트워크</h3>
+                    <ul>
+                        <li><strong>청주권</strong> - 청주한국병원, 충북대병원 정신과 연계</li>
+                        <li><strong>충주권</strong> - 건국대충주병원, 충주의료원 정신과 연계</li>
+                        <li><strong>제천권</strong> - 제천의료원, 세명대병원 정신과 연계</li>
+                        <li><strong>음성/진천권</strong> - 서울권 전문 정신병원 이송 특화</li>
+                        <li><strong>괴산/증평권</strong> - 농촌지역 맞춤형 정신과 이송</li>
+                        <li><strong>영동/옥천권</strong> - 대전권 정신병원 연계 이송</li>
+                        <li><strong>보은/단양권</strong> - 산간지역 전문 정신과 이송</li>
                     </ul>
 
                     <h3>대상 질환 및 상황</h3>
-                    <p>다음과 같은 정신건강 문제로 치료가 필요한 경우 전문이송을 제공합니다:</p>
                     <ul>
                         <li>우울증 및 조울증(양극성 장애)</li>
                         <li>조현병 및 망상장애</li>
@@ -487,65 +784,50 @@
                         <li>치매 및 인지장애</li>
                         <li>섭식장애(거식증, 폭식증)</li>
                         <li>수면장애 및 기타 정신질환</li>
-                        <li>자해 위험이 있는 상황</li>
+                        <li>자해 위험이 있는 응급상황</li>
                     </ul>
 
                     <div class="privacy-box">
-                        <h4>🔒 개인정보 보호 및 비밀보장</h4>
-                        <p>정신병원입원시 환자와 가족의 개인정보를 철저히 보호하며, 이송 과정에서 알게 된 모든 정보는 절대 비밀로 유지됩니다. 환자의 인권과 존엄성을 최우선으로 고려합니다.</p>
+                        <h4>🔒 완전한 비밀보장</h4>
+                        <p>정신병원입원 과정에서 환자와 가족의 개인정보를 철저히 보호하며, 모든 정보는 절대 비밀로 유지됩니다. 환자의 인권과 존엄성을 최우선으로 고려합니다.</p>
                     </div>
 
-                    <h3>전문 인력 및 장비</h3>
-                    <p>정신병원입원에 필요한 전문 인력과 장비를 갖추고 있습니다:</p>
+                    <h3>전문 인력 및 안전장비</h3>
                     <ul>
-                        <li>정신병원입원시 전문 교육을 받은 응급구조사</li>
+                        <li>정신병원입원 전문 교육을 받은 응급구조사</li>
                         <li>위기상황 대응 및 소통 기법 전문가</li>
                         <li>안전장비 및 보호구 완비</li>
                         <li>진정제 및 응급의료용품</li>
                         <li>심리적 안정을 위한 환경 조성</li>
-                        <li>24시간 정신건강 전문의와의 연락체계</li>
+                        <li>24시간 정신건강 전문의 연락체계</li>
+                        <li>무표시 차량 운영 (프라이버시 보호)</li>
                     </ul>
 
-                    <h3>가족을 위한 지원</h3>
-                    <p>정신병원입원은 환자뿐만 아니라 가족에게도 큰 정서적 부담을 줍니다. 저희는 가족을 위한 지원도 함께 제공합니다:</p>
-                    <ul>
-                        <li>이송 전 가족 상담 및 설명</li>
-                        <li>법적 절차 및 입원 과정 안내</li>
-                        <li>정신건강 전문기관 연계 정보 제공</li>
-                        <li>가족 지원 프로그램 안내</li>
-                        <li>이송 후 사후관리 및 상담</li>
-                        <li>24시간 상담 및 긴급상담 지원</li>
-                    </ul>
-
-                    <h3>인도적 접근법</h3>
-                    <p>모든 이송 과정에서 환자의 인권과 존엄성을 최우선으로 고려합니다:</p>
+                    <h3>인도적 접근법 및 가족 지원</h3>
                     <ul>
                         <li>환자와의 소통 및 설득을 통한 협조적 이송</li>
                         <li>불필요한 물리적 제재 최소화</li>
                         <li>환자의 심리적 안정을 위한 배려</li>
-                        <li>개인의 사생활 및 비밀 보장</li>
-                        <li>종교적, 문화적 배경 존중</li>
-                        <li>가족과의 연락 및 소통 지원</li>
+                        <li>이송 전 가족 상담 및 설명</li>
+                        <li>법적 절차 및 입원 과정 안내</li>
+                        <li>정신건강 전문기관 연계 정보 제공</li>
+                        <li>24시간 상담 및 긴급상담 지원</li>
                     </ul>
                 </div>
 
                 <div class="sidebar">
                     <div class="quick-contact">
-                        <h3>정신병원입원 상담</h3>
+                        <h3>24시간 비밀상담</h3>
                         <span class="phone">010-8841-4114</span>
-                        <a href="tel:010-8841-4114" class="call-btn">📞 24시간 상담</a>
-                        <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.9;">비밀상담 보장</p>
+                        <a href="tel:010-8841-4114" class="call-btn">📞 지금 상담하기</a>
+                        <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.9;">완전한 비밀보장</p>
                     </div>
 
                     <div class="service-features">
-                        <h4>전문 서비스 특징</h4>
+                        <h4>서비스 특징</h4>
                         <div class="feature-item">
                             <div class="feature-icon">👨‍⚕️</div>
                             <span>전문 교육 인력</span>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">🛡️</div>
-                            <span>안전장비 완비</span>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">🤝</div>
@@ -553,15 +835,19 @@
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">🔒</div>
-                            <span>비밀보장</span>
+                            <span>완전 비밀보장</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">⚖️</div>
+                            <span>법적 절차 준수</span>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">📱</div>
                             <span>24시간 상담</span>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon">⚖️</div>
-                            <span>법적 절차 준수</span>
+                            <div class="feature-icon">🛡️</div>
+                            <span>안전장비 완비</span>
                         </div>
                     </div>
                 </div>
@@ -569,10 +855,71 @@
         </div>
     </section>
 
+    <section class="faq-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">자주 묻는 질문</h2>
+            <p style="text-align: center; font-size: 1rem; color: #666; margin-bottom: 30px;">충북 정신병원입원 서비스 관련 자주 묻는 질문</p>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 충북 어느 지역이든 정신병원입원 이송이 가능한가요?
+                </div>
+                <div class="faq-answer">
+                    네, 청주, 충주, 제천, 음성, 진천, 괴산, 증평, 영동, 옥천, 보은, 단양 등 충북 전 지역 어디든 24시간 정신병원입원 이송이 가능합니다. 응급상황 시 즉시 출동합니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 환자가 이송을 거부하면 어떻게 하나요?
+                </div>
+                <div class="faq-answer">
+                    먼저 충분한 시간을 갖고 환자와 대화를 시도합니다. 전문 훈련받은 직원이 환자의 입장을 이해하고 치료의 필요성을 차근차근 설명합니다. 협조가 어려운 경우에도 항상 인도적이고 존중하는 방식으로 진행됩니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 이송 과정이 외부에 알려질까요?
+                </div>
+                <div class="faq-answer">
+                    절대 그렇지 않습니다. 환자와 가족의 개인정보는 철저히 보호되며, 무표시 차량을 사용하여 최대한 조심스럽게 이송을 진행합니다. 모든 직원은 엄격한 비밀보장 서약을 합니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 정신병원 강제입원의 법적 요건은 무엇인가요?
+                </div>
+                <div class="faq-answer">
+                    정신건강복지법에 따라 정신건강의학과 전문의 2인의 진단이 필요하며, 환자가 자신이나 타인에게 해를 끼칠 위험이 있고 치료가 필요한 경우에만 가능합니다. 보호의무자의 동의와 정신건강심의위원회의 심의를 거쳐야 합니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 가족이 함께 탑승할 수 있나요?
+                </div>
+                <div class="faq-answer">
+                    네, 환자의 안정과 협조를 위해 가족이 함께 탑승하는 것이 도움이 되는 경우 동행이 가능합니다. 다만 환자의 상태나 안전상의 이유로 전문가가 판단하여 제한될 수 있습니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 응급상황 시 즉시 출동이 가능한가요?
+                </div>
+                <div class="faq-answer">
+                    네, 24시간 대기 체계를 운영하고 있어 응급상황 시 즉시 출동이 가능합니다. 자해 위험이나 타해 위험이 있는 응급상황의 경우 우선적으로 출동하며, 필요시 119와 연계하여 신속하게 대응합니다.
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="approach-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">인도적 접근 방법</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: #666;">환자의 인권과 존엄성을 최우선으로 하는 4가지 핵심 원칙</p>
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">인도적 접근 방법</h2>
+            <p style="text-align: center; font-size: 1rem; color: #666;">환자의 인권과 존엄성을 최우선으로 하는 4가지 핵심 원칙</p>
             <div class="approach-grid">
                 <div class="approach-card">
                     <div class="approach-icon">💬</div>
@@ -600,119 +947,50 @@
 
     <section class="process-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">전문이송 절차</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: #666;">법적 절차를 준수하는 체계적인 6단계 이송 과정</p>
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">정신병원입원 절차</h2>
+            <p style="text-align: center; font-size: 1rem; color: #666;">법적 절차를 준수하는 체계적인 6단계 이송 과정</p>
             <div class="process-grid">
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <h4>상담 및 평가</h4>
-                    <p>환자 상태, 가족 상황, 법적 요건 등을 종합적으로 상담하고 평가합니다.</p>
+                    <p>환자 상태, 가족 상황, 법적 요건 등을 종합적으로 상담하고 평가</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <h4>법적 절차 확인</h4>
-                    <p>정신건강복지법에 따른 적법한 절차와 서류를 확인하고 준비합니다.</p>
+                    <p>정신건강복지법에 따른 적법한 절차와 서류를 확인하고 준비</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <h4>전문팀 준비</h4>
-                    <p>환자 상태에 맞는 전문 인력과 필요한 장비를 준비합니다.</p>
+                    <p>환자 상태에 맞는 전문 인력과 필요한 장비를 준비</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">4</div>
                     <h4>환자 접촉</h4>
-                    <p>환자와 신뢰관계를 형성하고 치료의 필요성을 차근차근 설명합니다.</p>
+                    <p>환자와 신뢰관계 형성하고 치료의 필요성을 차근차근 설명</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">5</div>
                     <h4>안전한 이송</h4>
-                    <p>환자의 안전과 존엄성을 지키며 목적지까지 안전하게 이송합니다.</p>
+                    <p>환자의 안전과 존엄성을 지키며 목적지까지 안전하게 이송</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">6</div>
                     <h4>병원 인계</h4>
-                    <p>의료진에게 환자 상태와 이송 과정을 상세히 인계하고 사후관리를 지원합니다.</p>
+                    <p>의료진에게 환자 상태와 이송 과정을 상세히 인계하고 사후관리 지원</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="faq-section">
+    <footer style="background: #2c3e50; color: #ecf0f1; padding: 30px 0; text-align: center;">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">자주 묻는 질문</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 40px;">정신병원입원 관련 자주 묻는 질문들입니다</p>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 환자가 이송을 거부하면 어떻게 하나요?
-                </div>
-                <div class="faq-answer">
-                    먼저 충분한 시간을 갖고 환자와 대화를 시도합니다. 전문 훈련받은 직원이 환자의 입장을 이해하고 치료의 필요성을 차근차근 설명합니다. 그래도 협조가 어려운 경우, 환자와 주변의 안전을 최우선으로 하여 최소한의 물리적 도움을 받을 수 있지만, 항상 인도적이고 존중하는 방식으로 진행됩니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 정신병원 강제입원의 법적 요건은 무엇인가요?
-                </div>
-                <div class="faq-answer">
-                    정신건강복지법에 따라 정신건강의학과 전문의 2인의 진단이 필요하며, 환자가 자신이나 타인에게 해를 끼칠 위험이 있고 치료가 필요한 경우에만 가능합니다. 보호의무자의 동의와 정신건강심의위원회의 심의를 거쳐야 하며, 모든 절차는 법적 요건을 준수해야 합니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 이송 과정이 외부에 알려질까요?
-                </div>
-                <div class="faq-answer">
-                    절대 그렇지 않습니다. 환자와 가족의 개인정보는 철저히 보호되며, 이송 과정에서 알게 된 모든 정보는 법적으로 보호되는 의료정보로 취급됩니다. 직원들은 엄격한 비밀보장 서약을 하며, 무표시 차량을 사용하여 최대한 조심스럽게 이송을 진행합니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 가족이 함께 탑승할 수 있나요?
-                </div>
-                <div class="faq-answer">
-                    네, 환자의 안정과 협조를 위해 가족이 함께 탑승하는 것이 도움이 되는 경우 동행이 가능합니다. 다만 환자의 상태나 안전상의 이유로 전문가가 판단하여 제한될 수 있습니다. 이송 전 상담 시 자세히 논의하겠습니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 비용은 어떻게 되나요?
-                </div>
-                <div class="faq-answer">
-                    정신병원입원은 일반 환자이송보다 전문성과 위험성이 높아 별도 상담을 통해 비용이 책정됩니다. 거리, 소요시간, 환자 상태, 필요 인력 등을 종합적으로 고려하여 투명하게 안내해드립니다. 의료보험 적용 여부는 병원 원무과에 문의하시기 바랍니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 응급상황 시 즉시 출동이 가능한가요?
-                </div>
-                <div class="faq-answer">
-                    네, 24시간 대기 체계를 운영하고 있어 응급상황 시 즉시 출동이 가능합니다. 자해 위험이나 타해 위험이 있는 응급상황의 경우 우선적으로 출동하며, 필요시 119와 연계하여 신속하게 대응합니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 어떤 정신과 병원들과 연계되어 있나요?
-                </div>
-                <div class="faq-answer">
-                    충북 내 주요 정신건강의학과 전문병원 및 종합병원 정신과와 긴밀한 협력 관계를 유지하고 있습니다. 환자의 상태와 가족의 선호도를 고려하여 가장 적합한 병원을 추천해드리며, 입원 절차도 원활하게 도와드립니다.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer style="background: #2c3e50; color: #ecf0f1; padding: 40px 0; text-align: center;">
-        <div class="container">
-            <h3 style="color: #8e44ad; margin-bottom: 20px;">직지응급환자이송단</h3>
-            <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px;">010-8841-4114</p>
-            <p style="margin-bottom: 20px;">충청북도 정신병원입원 서비스 | 24시간 비밀상담</p>
-            <p style="font-size: 0.9rem; opacity: 0.8;">
+            <h3 style="color: #8e44ad; margin-bottom: 15px;">직지응급환자이송단</h3>
+            <p style="font-size: 1.6rem; font-weight: 700; margin-bottom: 12px;">010-8841-4114</p>
+            <p style="margin-bottom: 15px;">충청북도 전 지역 24시간 정신병원입원 서비스 | 완전한 비밀상담</p>
+            <p style="font-size: 0.85rem; opacity: 0.8;">
+                청주 충주 제천 음성 진천 괴산 증평 영동 옥천 보은 단양 정신병원입원<br>
                 정신건강복지법 준수 | 환자 인권 보호 | 비밀보장 원칙
             </p>
         </div>
@@ -723,15 +1001,29 @@
             const answer = element.nextElementSibling;
             const allAnswers = document.querySelectorAll('.faq-answer');
             
-            // Close all other FAQ answers
             allAnswers.forEach(ans => {
                 if (ans !== answer) {
                     ans.classList.remove('active');
                 }
             });
             
-            // Toggle current answer
             answer.classList.toggle('active');
+        }
+
+        function openSeoPopup() {
+            document.getElementById('seoPopup').style.display = 'block';
+        }
+
+        function closeSeoPopup() {
+            document.getElementById('seoPopup').style.display = 'none';
+        }
+
+        // Close popup when clicking outside
+        window.onclick = function(event) {
+            const popup = document.getElementById('seoPopup');
+            if (event.target == popup) {
+                popup.style.display = 'none';
+            }
         }
 
         // Smooth scrolling for anchor links
