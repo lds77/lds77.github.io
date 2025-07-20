@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T5CHBY7K97"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T5CHBY7K97');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>알코올중독 입원 서비스 - 직지응급환자이송단</title>
+    <title>충북 알코올중독입원 사설구급차 | 청주 충주 제천 음성 진천 괴산 증평 영동 옥천 보은 단양 알코올중독입원</title>
+    <meta name="description" content="충북 전 지역 24시간 알코올중독입원 서비스. 청주, 충주, 제천, 음성, 진천, 괴산, 증평, 영동, 옥천, 보은, 단양 알코올 해독치료 입원이송. 금단증상 모니터링, 전문 교육받은 응급구조사. 010-8841-4114">
+    <meta name="keywords" content="충북 알코올중독입원, 청주 알코올중독입원, 충주 알코올중독입원, 제천 알코올중독입원, 알코올 해독치료, 알코올 의존증 입원, 사설구급차, 충청북도 알코올중독입원, 24시간 비밀상담">
+    <meta property="og:title" content="충북 알코올중독입원 전문 사설구급차 - 직지응급환자이송단">
+    <meta property="og:description" content="충북 전 지역 24시간 알코올중독입원 서비스. 금단증상 모니터링, 전문 교육받은 응급구조사, 비밀보장. 010-8841-4114">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://example.com/alcohol-treatment-transport">
     <style>
         * {
             margin: 0;
@@ -35,10 +32,11 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
             color: white;
             padding: 1rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
         }
 
         .header-content {
@@ -63,19 +61,97 @@
             align-items: center;
             justify-content: center;
             font-size: 24px;
-            color: #e74c3c;
-        }
-
-        .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 0;
+            color: #d35400;
         }
 
         .phone-number {
             font-size: 1.8rem;
             font-weight: 900;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* SEO Summary Popup */
+        .seo-summary-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #d35400;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(211, 84, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .seo-summary-btn:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        .seo-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1001;
+        }
+
+        .seo-popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        /* Fixed Call Button */
+        .fixed-call-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #d35400, #e67e22);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(211, 84, 0, 0.4);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
 
         /* Navigation */
@@ -92,11 +168,11 @@
         }
 
         .breadcrumb a:hover {
-            color: #e74c3c;
+            color: #d35400;
         }
 
         .breadcrumb span {
-            color: #e74c3c;
+            color: #d35400;
             font-weight: 600;
         }
 
@@ -104,25 +180,50 @@
         .service-hero {
             background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
             color: white;
-            padding: 60px 0;
+            padding: 40px 0;
             text-align: center;
         }
 
         .service-hero h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .service-hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto;
         }
 
+        /* Coverage Area */
+        .coverage-area {
+            background: white;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .coverage-cities {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .city-tag {
+            background: #d35400;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
         /* Main Content */
         .main-content {
-            padding: 60px 0;
+            padding: 40px 0;
             background: white;
         }
 
@@ -130,36 +231,36 @@
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 40px;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         .content-main h2 {
             color: #2c3e50;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
             border-bottom: 3px solid #d35400;
         }
 
         .content-main h3 {
             color: #34495e;
-            font-size: 1.5rem;
-            margin: 30px 0 15px 0;
+            font-size: 1.3rem;
+            margin: 25px 0 12px 0;
         }
 
         .content-main p {
-            margin-bottom: 15px;
-            line-height: 1.8;
+            margin-bottom: 12px;
+            line-height: 1.7;
             color: #555;
         }
 
         .content-main ul {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             padding-left: 20px;
         }
 
         .content-main li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #555;
         }
 
@@ -167,36 +268,48 @@
         .hope-box {
             background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
             border-left: 5px solid #28a745;
-            padding: 20px;
-            margin: 25px 0;
+            padding: 15px;
+            margin: 20px 0;
             border-radius: 5px;
         }
 
         .hope-box h4 {
             color: #155724;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .hope-box p {
+            color: #155724;
+            margin: 0;
+            font-size: 0.95rem;
         }
 
         /* Urgent Box */
         .urgent-box {
             background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
             border-left: 5px solid #f39c12;
-            padding: 20px;
-            margin: 25px 0;
+            padding: 15px;
+            margin: 20px 0;
             border-radius: 5px;
         }
 
         .urgent-box h4 {
             color: #d68910;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .urgent-box p {
+            color: #856404;
+            margin: 0;
+            font-size: 0.95rem;
         }
 
         /* Sidebar */
         .sidebar {
             background: #f8f9fa;
-            padding: 30px;
+            padding: 25px;
             border-radius: 10px;
             height: fit-content;
             position: sticky;
@@ -206,28 +319,28 @@
         .quick-contact {
             background: linear-gradient(135deg, #d35400, #e67e22);
             color: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .quick-contact h3 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
         }
 
         .quick-contact .phone {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 900;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: block;
         }
 
         .call-btn {
             background: white;
             color: #d35400;
-            padding: 12px 25px;
+            padding: 10px 20px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
@@ -242,150 +355,49 @@
 
         .service-features {
             background: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
             border: 1px solid #e9ecef;
         }
 
         .service-features h4 {
             color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
 
         .feature-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            padding: 10px;
+            margin-bottom: 12px;
+            padding: 8px;
             background: #f8f9fa;
             border-radius: 5px;
         }
 
         .feature-icon {
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
             background: #d35400;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            margin-right: 12px;
-            font-size: 0.9rem;
+            margin-right: 10px;
+            font-size: 0.8rem;
         }
 
-        /* Treatment Types */
-        .treatment-section {
-            background: #f8f9fa;
-            padding: 60px 0;
-        }
-
-        .treatment-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .treatment-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
-        }
-
-        .treatment-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .treatment-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #d35400, #e67e22);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
-            color: white;
-        }
-
-        .treatment-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-
-        .treatment-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Steps Section */
-        .steps-section {
-            background: white;
-            padding: 60px 0;
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .step-card {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .step-number {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #d35400, #e67e22);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .step-card h4 {
-            color: #2c3e50;
-            margin: 20px 0 15px 0;
-            font-size: 1.3rem;
-        }
-
-        .step-card p {
-            color: #666;
-        }
-
-        /* FAQ Section */
+        /* FAQ Section - moved up */
         .faq-section {
             background: #f8f9fa;
-            padding: 60px 0;
+            padding: 40px 0;
         }
 
         .faq-item {
             background: white;
-            margin-bottom: 15px;
-            border-radius: 10px;
+            margin-bottom: 12px;
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
@@ -393,10 +405,11 @@
         .faq-question {
             background: #d35400;
             color: white;
-            padding: 20px;
+            padding: 15px;
             cursor: pointer;
             font-weight: 600;
             transition: background 0.3s ease;
+            font-size: 0.95rem;
         }
 
         .faq-question:hover {
@@ -404,41 +417,286 @@
         }
 
         .faq-answer {
-            padding: 20px;
+            padding: 15px;
             display: none;
             color: #555;
-            line-height: 1.7;
+            line-height: 1.6;
+            font-size: 0.9rem;
         }
 
         .faq-answer.active {
             display: block;
         }
 
-        /* Responsive */
+        /* Treatment Types */
+        .treatment-section {
+            background: white;
+            padding: 40px 0;
+        }
+
+        .treatment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .treatment-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .treatment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            background: white;
+        }
+
+        .treatment-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #d35400, #e67e22);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .treatment-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #2c3e50;
+        }
+
+        .treatment-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        /* Steps Section */
+        .steps-section {
+            background: #f8f9fa;
+            padding: 40px 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .step-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #d35400, #e67e22);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .step-card h4 {
+            color: #2c3e50;
+            margin: 15px 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .step-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .content-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .service-hero {
+                padding: 30px 0;
             }
 
             .service-hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+
+            .service-hero p {
+                font-size: 1rem;
+            }
+
+            .main-content {
+                padding: 25px 0;
+            }
+
+            .content-main h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-main h3 {
+                font-size: 1.2rem;
+                margin: 20px 0 10px 0;
+            }
+
+            .content-main p, .content-main li {
+                font-size: 0.9rem;
+                line-height: 1.6;
             }
 
             .treatment-grid, .steps-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .treatment-section, .steps-section, .faq-section {
+                padding: 30px 0;
+            }
+
+            .coverage-cities {
+                gap: 8px;
+            }
+
+            .city-tag {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .seo-summary-btn {
+                padding: 10px 14px;
+                font-size: 0.9rem;
+            }
+
+            .seo-popup-content {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            /* Mobile content compression */
+            .content-main ul {
+                margin-bottom: 15px;
+            }
+
+            .content-main li {
+                margin-bottom: 4px;
+            }
+
+            .sidebar {
+                order: -1;
+                padding: 20px;
+                position: static; /* Remove sticky positioning on mobile */
+            }
+
+            .quick-contact {
+                padding: 15px;
+            }
+
+            .feature-item {
+                padding: 6px;
+                margin-bottom: 8px;
+            }
+
+            .hope-box, .urgent-box {
+                padding: 12px;
+                margin: 15px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .phone-number {
+                font-size: 1.5rem;
+            }
+
+            .service-hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .fixed-call-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- SEO Summary Popup Button -->
+    <button class="seo-summary-btn" onclick="openSeoPopup()">📋 서비스 요약</button>
+
+    <!-- SEO Summary Popup -->
+    <div id="seoPopup" class="seo-popup">
+        <div class="seo-popup-content">
+            <button class="close-popup" onclick="closeSeoPopup()">&times;</button>
+            <h3 style="color: #d35400; margin-bottom: 20px;">🍺 직지응급환자이송단 알코올중독입원 요약</h3>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">📞 24시간 비밀상담</h4>
+                <p style="font-size: 1.2rem; font-weight: 700; color: #d35400;">010-8841-4114</p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">🗺️ 서비스 지역</h4>
+                <p>충청북도 전 지역 (청주, 충주, 제천, 음성, 진천, 괴산, 증평, 영동, 옥천, 보은, 단양)</p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">🏥 주요 서비스</h4>
+                <p>• 알코올 해독치료 입원 • 응급 알코올중독 이송<br>• 금단증상 치료 입원 • 재활 프로그램 입원<br>• 정신과 합병증 치료 • 가족개입 이송</p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">⭐ 특징</h4>
+                <p>• 금단증상 모니터링<br>• 전문 교육받은 응급구조사<br>• 24시간 응급 출동<br>• 안전 관리 시스템<br>• 가족 지원 서비스<br>• 완전한 비밀보장</p>
+            </div>
+            
+            <div>
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">💚 희망의 메시지</h4>
+                <p>알코올 의존증은 치료 가능한 질병입니다<br>회복은 가능하며 새로운 삶을 시작할 수 있습니다</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Call Button -->
+    <a href="tel:010-8841-4114" class="fixed-call-btn" title="24시간 응급상담">📞</a>
+
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
                     <div class="logo-icon">🚑</div>
                     <div>
-                        <h1>직지응급환자이송단</h1>
-                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충청북도 전문 사설구급차</p>
+                        <div style="font-size: 1.8rem; font-weight: 700; margin: 0; color: white;">직지응급환자이송단</div>
+                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충청북도 알코올중독입원 전문 24시간</p>
                     </div>
                 </div>
                 <div class="phone-number">010-8841-4114</div>
@@ -448,14 +706,34 @@
 
     <nav class="breadcrumb">
         <div class="container">
-            <a href="#">홈</a> > <a href="#">서비스 안내</a> > <span>알코올중독 입원</span>
+            <a href="#">홈</a> > <a href="#">알코올중독입원 서비스</a> > <span>충북 알코올중독입원</span>
         </div>
     </nav>
 
     <section class="service-hero">
         <div class="container">
-            <h1>알코올중독 입원 서비스</h1>
-            <p>알코올중독 의존증 전문병원 이송 시 환자 상태를 고려한 맞춤형 이송 서비스를 제공합니다</p>
+            <h1>충북 알코올중독입원 전문 사설구급차</h1>
+            <p>충청북도 전 지역 24시간 알코올 해독치료 입원, 금단증상 모니터링, 재활치료 연계</p>
+        </div>
+    </section>
+
+    <section class="coverage-area">
+        <div class="container">
+            <h2 style="color: #2c3e50; margin-bottom: 10px;">충청북도 전 지역 알코올중독입원</h2>
+            <p style="color: #666;">11개 시군 어디든 24시간 응급출동 및 전문이송</p>
+            <div class="coverage-cities">
+                <span class="city-tag">청주시 알코올중독입원</span>
+                <span class="city-tag">충주시 알코올중독입원</span>
+                <span class="city-tag">제천시 알코올중독입원</span>
+                <span class="city-tag">음성군 알코올중독입원</span>
+                <span class="city-tag">진천군 알코올중독입원</span>
+                <span class="city-tag">괴산군 알코올중독입원</span>
+                <span class="city-tag">증평군 알코올중독입원</span>
+                <span class="city-tag">영동군 알코올중독입원</span>
+                <span class="city-tag">옥천군 알코올중독입원</span>
+                <span class="city-tag">보은군 알코올중독입원</span>
+                <span class="city-tag">단양군 알코올중독입원</span>
+            </div>
         </div>
     </section>
 
@@ -463,34 +741,42 @@
         <div class="container">
             <div class="content-grid">
                 <div class="content-main">
-                    <h2>서비스 개요</h2>
-                    <p>알코올중독 입원 서비스는 알코올 의존증(알코올중독)으로 전문적인 치료가 필요한 환자분들을 알코올 전문병원으로 안전하게 이송하는 특화된 서비스입니다. 알코올 금단증상이나 정신적 혼란 상태에 있는 환자의 특성을 이해하고, 이에 맞는 전문적인 대응이 가능한 숙련된 응급구조사가 동행합니다.</p>
+                    <h2>충북 알코올중독입원 전문 서비스</h2>
+                    <p>직지응급환자이송단은 충청북도에서 가장 전문적인 알코올중독입원 서비스를 제공합니다. 알코올 의존증(알코올중독)으로 전문적인 치료가 필요한 환자분들을 알코올 전문병원으로 안전하게 이송하며, 금단증상 모니터링과 응급처치가 가능한 숙련된 응급구조사가 동행합니다.</p>
 
                     <div class="hope-box">
-                        <h4>💚 희망의 메시지</h4>
-                        <p>알코올 의존증은 질병입니다. 적절한 치료를 받으면 충분히 회복 가능하며, 많은 분들이 건강한 삶을 되찾고 있습니다. 치료의 첫걸음을 내딛는 용기가 회복의 시작입니다.</p>
+                        <h4>💚 회복에 대한 희망</h4>
+                        <p>알코올 의존증은 치료 가능한 질병입니다. 적절한 치료를 받으면 충분히 회복 가능하며, 많은 분들이 건강한 삶을 되찾고 있습니다. 치료의 첫걸음이 회복의 시작입니다.</p>
                     </div>
 
-                    <h3>알코올 의존증이란?</h3>
-                    <p>알코올 의존증(알코올중독)은 알코올에 대한 강한 갈망과 조절 능력 상실을 특징으로 하는 만성 질환입니다. 신체적, 정신적, 사회적 문제를 야기하며 전문적인 의료진의 도움이 필요한 질병입니다.</p>
-
-                    <h3>주요 이송 상황</h3>
+                    <h3>주요 알코올중독입원 서비스</h3>
                     <ul>
-                        <li><strong>알코올 해독 치료 입원</strong> - 안전한 환경에서의 금단증상 관리</li>
-                        <li><strong>응급 알코올 중독</strong> - 급성 알코올 중독이나 의식저하 상태</li>
-                        <li><strong>금단증상 치료</strong> - 떨림, 발작, 환각 등 심각한 금단증상</li>
+                        <li><strong>알코올 해독치료 입원</strong> - 안전한 환경에서의 금단증상 관리</li>
+                        <li><strong>응급 알코올중독 이송</strong> - 급성 알코올중독이나 의식저하 응급이송</li>
+                        <li><strong>금단증상 치료 입원</strong> - 떨림, 발작, 환각 등 심각한 금단증상</li>
                         <li><strong>재활 프로그램 입원</strong> - 장기적인 회복을 위한 재활치료</li>
-                        <li><strong>정신과 합병증</strong> - 우울증, 불안장애 등 동반 질환 치료</li>
+                        <li><strong>정신과 합병증 치료</strong> - 우울증, 불안장애 등 동반 질환</li>
                         <li><strong>가족개입 이송</strong> - 가족의 요청에 의한 치료 연계</li>
+                        <li><strong>재입원 이송</strong> - 치료 중단 후 증상 악화 시 재입원</li>
+                    </ul>
+
+                    <h3>충북 지역별 알코올중독입원 네트워크</h3>
+                    <ul>
+                        <li><strong>청주권</strong> - 청주한국병원, 충북대병원 알코올 전문센터 연계</li>
+                        <li><strong>충주권</strong> - 건국대충주병원, 충주의료원 알코올 해독치료</li>
+                        <li><strong>제천권</strong> - 제천의료원, 세명대병원 알코올 의존증 치료</li>
+                        <li><strong>음성/진천권</strong> - 서울권 알코올 전문병원 연계 이송</li>
+                        <li><strong>괴산/증평권</strong> - 농촌지역 맞춤형 알코올중독입원</li>
+                        <li><strong>영동/옥천권</strong> - 대전권 알코올 전문병원 연계</li>
+                        <li><strong>보은/단양권</strong> - 산간지역 전문 알코올중독입원</li>
                     </ul>
 
                     <div class="urgent-box">
-                        <h4>⚠️ 응급상황 징후</h4>
-                        <p>다음 증상이 나타나면 즉시 연락하세요: 의식저하, 호흡곤란, 심한 떨림, 발작, 환각, 자해 위험, 극심한 구토와 탈수</p>
+                        <h4>⚠️ 알코올 금단증상 응급징후</h4>
+                        <p>의식저하, 호흡곤란, 심한 떨림, 발작, 환각, 자해 위험, 극심한 구토와 탈수 증상이 나타나면 즉시 연락하세요!</p>
                     </div>
 
-                    <h3>대상 환자</h3>
-                    <p>다음과 같은 상황의 환자분들을 전문적으로 이송합니다:</p>
+                    <h3>알코올중독입원 대상 환자</h3>
                     <ul>
                         <li>만성적인 과음으로 일상생활이 어려운 경우</li>
                         <li>음주를 중단했을 때 심한 금단증상이 나타나는 경우</li>
@@ -499,10 +785,10 @@
                         <li>알코올로 인한 건강 문제가 발생한 경우</li>
                         <li>음주 후 기억장애나 행동장애가 빈번한 경우</li>
                         <li>본인이 치료 의지를 보이지 않는 경우</li>
+                        <li>급성 알코올 중독으로 응급처치가 필요한 경우</li>
                     </ul>
 
-                    <h3>전문 대응 능력</h3>
-                    <p>알코올 의존증 환자의 특성을 이해한 전문적인 서비스를 제공합니다:</p>
+                    <h3>전문 대응 능력 및 장비</h3>
                     <ul>
                         <li>금단증상 모니터링 및 응급처치</li>
                         <li>환자의 정신상태 변화에 대한 적절한 대응</li>
@@ -510,10 +796,10 @@
                         <li>가족과의 갈등 상황에서의 중재 역할</li>
                         <li>치료 거부 환자에 대한 설득과 소통</li>
                         <li>응급상황 시 즉각적인 의료진 연락</li>
+                        <li>산소공급장치, 심전도 모니터 등 의료장비 완비</li>
                     </ul>
 
-                    <h3>가족을 위한 지원</h3>
-                    <p>알코올 의존증은 환자뿐만 아니라 가족 전체에게 영향을 미칩니다:</p>
+                    <h3>가족 지원 및 회복 프로그램</h3>
                     <ul>
                         <li>가족 상담 및 교육 자료 제공</li>
                         <li>치료 과정에 대한 상세한 설명</li>
@@ -521,37 +807,27 @@
                         <li>치료비 및 보험 적용에 대한 상담</li>
                         <li>재발 방지를 위한 가족의 역할 교육</li>
                         <li>24시간 가족 상담 및 긴급 지원</li>
-                    </ul>
-
-                    <h3>회복과 희망</h3>
-                    <p>알코올 의존증은 치료 가능한 질병입니다:</p>
-                    <ul>
-                        <li>전문적인 해독 치료를 통한 신체적 회복</li>
-                        <li>심리치료와 상담을 통한 정신적 회복</li>
-                        <li>재활 프로그램을 통한 사회적 기능 회복</li>
-                        <li>지속적인 관리를 통한 재발 방지</li>
-                        <li>가족 관계의 회복과 사회 복귀</li>
-                        <li>건강하고 의미있는 삶의 재구성</li>
+                        <li>사회복귀 프로그램 연계 서비스</li>
                     </ul>
                 </div>
 
                 <div class="sidebar">
                     <div class="quick-contact">
-                        <h3>알코올중독 입원 상담</h3>
+                        <h3>24시간 알코올중독입원</h3>
                         <span class="phone">010-8841-4114</span>
-                        <a href="tel:010-8841-4114" class="call-btn">📞 24시간 상담</a>
-                        <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.9;">비밀상담 보장</p>
+                        <a href="tel:010-8841-4114" class="call-btn">📞 지금 상담하기</a>
+                        <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.9;">완전한 비밀보장</p>
                     </div>
 
                     <div class="service-features">
-                        <h4>전문 서비스 특징</h4>
-                        <div class="feature-item">
-                            <div class="feature-icon">👨‍⚕️</div>
-                            <span>전문 교육 인력</span>
-                        </div>
+                        <h4>서비스 특징</h4>
                         <div class="feature-item">
                             <div class="feature-icon">🩺</div>
                             <span>금단증상 모니터링</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">👨‍⚕️</div>
+                            <span>전문 교육 인력</span>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">🛡️</div>
@@ -563,7 +839,7 @@
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">🔒</div>
-                            <span>비밀보장</span>
+                            <span>완전 비밀보장</span>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">⏰</div>
@@ -575,10 +851,71 @@
         </div>
     </section>
 
+    <section class="faq-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">자주 묻는 질문</h2>
+            <p style="text-align: center; font-size: 1rem; color: #666; margin-bottom: 30px;">충북 알코올중독입원 서비스 관련 자주 묻는 질문</p>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 충북 어느 지역이든 알코올중독입원 이송이 가능한가요?
+                </div>
+                <div class="faq-answer">
+                    네, 청주, 충주, 제천, 음성, 진천, 괴산, 증평, 영동, 옥천, 보은, 단양 등 충북 전 지역 어디든 24시간 알코올중독입원 이송이 가능합니다. 응급상황 시 즉시 출동합니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 환자가 치료를 거부하면 어떻게 하나요?
+                </div>
+                <div class="faq-answer">
+                    알코올 의존증 환자는 종종 본인의 문제를 인정하지 않거나 치료를 거부할 수 있습니다. 저희는 충분한 시간을 갖고 환자를 설득하며, 가족과 함께 치료의 필요성을 차근차근 설명합니다. 필요시 전문 상담사와 연계하여 동기 면담을 진행합니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 알코올 금단증상은 얼마나 위험한가요?
+                </div>
+                <div class="faq-answer">
+                    알코올 금단증상은 생명을 위협할 수 있는 심각한 의학적 응급상황입니다. 떨림, 발작, 환각, 의식장애 등이 나타날 수 있으며, 특히 진전섬망(DT)은 치사율이 높은 위험한 상태입니다. 반드시 의료진의 감독 하에 안전한 환경에서 해독 치료를 받아야 합니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 치료 기간은 얼마나 걸리나요?
+                </div>
+                <div class="faq-answer">
+                    해독 치료는 보통 1-2주, 재활 치료는 4-12주 정도 소요됩니다. 개인의 상태와 중독 정도에 따라 차이가 있으며, 완전한 회복을 위해서는 지속적인 외래치료와 자조모임 참여가 필요합니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 치료비가 많이 드나요?
+                </div>
+                <div class="faq-answer">
+                    알코올 의존증은 질병분류상 정신질환으로 분류되어 건강보험이 적용됩니다. 입원치료의 경우 본인부담금은 20% 정도이며, 의료급여 대상자는 더 적은 비용으로 치료받을 수 있습니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 응급상황 시 즉시 출동이 가능한가요?
+                </div>
+                <div class="faq-answer">
+                    네, 24시간 응급 출동 체계를 운영하고 있습니다. 특히 알코올 금단증상이나 의식저하 등 응급상황에서는 우선적으로 출동하며, 필요시 119와 연계하여 생명을 구하는 것을 최우선으로 합니다.
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="treatment-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">치료 유형별 이송</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: #666;">환자 상태에 맞는 적절한 치료기관으로 연결해드립니다</p>
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">치료 유형별 이송</h2>
+            <p style="text-align: center; font-size: 1rem; color: #666;">환자 상태에 맞는 적절한 치료기관으로 연결</p>
             <div class="treatment-grid">
                 <div class="treatment-card">
                     <div class="treatment-icon">🏥</div>
@@ -606,114 +943,45 @@
 
     <section class="steps-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">이송 절차</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: #666;">체계적이고 안전한 5단계 이송 과정</p>
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">알코올중독입원 절차</h2>
+            <p style="text-align: center; font-size: 1rem; color: #666;">체계적이고 안전한 5단계 이송 과정</p>
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-number">1</div>
                     <h4>응급 상담</h4>
-                    <p>환자 상태, 음주 패턴, 금단증상 등을 파악하고 응급도를 평가합니다.</p>
+                    <p>환자 상태, 음주 패턴, 금단증상 등을 파악하고 응급도를 평가</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">2</div>
                     <h4>병원 연계</h4>
-                    <p>환자 상태에 가장 적합한 알코올 전문병원을 선정하고 입원을 준비합니다.</p>
+                    <p>환자 상태에 가장 적합한 알코올 전문병원을 선정하고 입원 준비</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
                     <h4>전문팀 출동</h4>
-                    <p>알코올 의존증 이송 경험이 풍부한 전문 응급구조사가 출동합니다.</p>
+                    <p>알코올 의존증 이송 경험이 풍부한 전문 응급구조사가 출동</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">4</div>
                     <h4>안전한 이송</h4>
-                    <p>금단증상 모니터링과 안전 관리를 하며 목적지까지 이송합니다.</p>
+                    <p>금단증상 모니터링과 안전 관리를 하며 목적지까지 이송</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">5</div>
                     <h4>병원 인계</h4>
-                    <p>의료진에게 환자 상태와 이송 경과를 상세히 인계하고 치료를 시작합니다.</p>
+                    <p>의료진에게 환자 상태와 이송 경과를 상세히 인계하고 치료 시작</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="faq-section">
+    <footer style="background: #2c3e50; color: #ecf0f1; padding: 30px 0; text-align: center;">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">자주 묻는 질문</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 40px;">알코올중독 입원 관련 자주 묻는 질문들입니다</p>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 환자가 치료를 거부하면 어떻게 하나요?
-                </div>
-                <div class="faq-answer">
-                    알코올 의존증 환자는 종종 본인의 문제를 인정하지 않거나 치료를 거부할 수 있습니다. 저희는 충분한 시간을 갖고 환자를 설득하며, 가족과 함께 치료의 필요성을 차근차근 설명합니다. 강제적인 방법보다는 환자의 마음을 여는 것이 중요하며, 필요시 전문 상담사와 연계하여 동기 면담을 진행합니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 알코올 금단증상은 얼마나 위험한가요?
-                </div>
-                <div class="faq-answer">
-                    알코올 금단증상은 생명을 위협할 수 있는 심각한 의학적 응급상황입니다. 떨림, 발작, 환각, 의식장애 등이 나타날 수 있으며, 특히 진전섬망(DT)은 치사율이 높은 위험한 상태입니다. 따라서 반드시 의료진의 감독 하에 안전한 환경에서 해독 치료를 받아야 합니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 치료 기간은 얼마나 걸리나요?
-                </div>
-                <div class="faq-answer">
-                    해독 치료는 보통 1-2주, 재활 치료는 4-12주 정도 소요됩니다. 하지만 개인의 상태와 중독 정도에 따라 차이가 있으며, 완전한 회복을 위해서는 지속적인 외래치료와 자조모임 참여가 필요합니다. 회복은 평생에 걸친 과정이라고 보는 것이 적절합니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 치료비가 많이 드나요?
-                </div>
-                <div class="faq-answer">
-                    알코올 의존증은 질병분류상 정신질환으로 분류되어 건강보험이 적용됩니다. 입원치료의 경우 본인부담금은 20% 정도이며, 의료급여 대상자는 더 적은 비용으로 치료받을 수 있습니다. 정확한 치료비는 병원별로 다르므로 입원 전 원무과에 문의하시기 바랍니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 가족이 함께 치료에 참여해야 하나요?
-                </div>
-                <div class="faq-answer">
-                    네, 가족의 참여는 치료 성공에 매우 중요합니다. 가족교육 프로그램을 통해 알코올 의존증에 대한 이해를 높이고, 환자를 지지하는 방법을 배울 수 있습니다. 또한 가족 자신도 상처받은 부분이 있으므로 가족 상담이나 자조모임 참여를 권장합니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 재발률이 높다고 하는데 치료 효과가 있나요?
-                </div>
-                <div class="faq-answer">
-                    알코올 의존증은 만성질환의 특성상 재발 가능성이 있지만, 적절한 치료를 받으면 충분히 회복 가능합니다. 중요한 것은 재발을 실패가 아닌 회복 과정의 일부로 보고, 지속적인 치료와 관리를 통해 건강한 삶을 유지하는 것입니다. 많은 환자들이 성공적으로 회복하여 정상적인 사회생활을 하고 있습니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 응급상황 시 즉시 출동이 가능한가요?
-                </div>
-                <div class="faq-answer">
-                    네, 24시간 응급 출동 체계를 운영하고 있습니다. 특히 알코올 금단증상이나 의식저하 등 응급상황에서는 우선적으로 출동하며, 필요시 119와 연계하여 생명을 구하는 것을 최우선으로 합니다. 주저하지 마시고 즉시 연락주세요.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer style="background: #2c3e50; color: #ecf0f1; padding: 40px 0; text-align: center;">
-        <div class="container">
-            <h3 style="color: #d35400; margin-bottom: 20px;">직지응급환자이송단</h3>
-            <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px;">010-8841-4114</p>
-            <p style="margin-bottom: 20px;">충청북도 알코올중독 입원 서비스 | 24시간 비밀상담</p>
-            <p style="font-size: 0.9rem; opacity: 0.8;">
+            <h3 style="color: #d35400; margin-bottom: 15px;">직지응급환자이송단</h3>
+            <p style="font-size: 1.6rem; font-weight: 700; margin-bottom: 12px;">010-8841-4114</p>
+            <p style="margin-bottom: 15px;">충청북도 전 지역 24시간 알코올중독입원 서비스 | 완전한 비밀상담</p>
+            <p style="font-size: 0.85rem; opacity: 0.8;">
+                청주 충주 제천 음성 진천 괴산 증평 영동 옥천 보은 단양 알코올중독입원<br>
                 회복은 가능합니다 | 환자 인권 보호 | 가족 지원 서비스
             </p>
         </div>
@@ -724,15 +992,29 @@
             const answer = element.nextElementSibling;
             const allAnswers = document.querySelectorAll('.faq-answer');
             
-            // Close all other FAQ answers
             allAnswers.forEach(ans => {
                 if (ans !== answer) {
                     ans.classList.remove('active');
                 }
             });
             
-            // Toggle current answer
             answer.classList.toggle('active');
+        }
+
+        function openSeoPopup() {
+            document.getElementById('seoPopup').style.display = 'block';
+        }
+
+        function closeSeoPopup() {
+            document.getElementById('seoPopup').style.display = 'none';
+        }
+
+        // Close popup when clicking outside
+        window.onclick = function(event) {
+            const popup = document.getElementById('seoPopup');
+            if (event.target == popup) {
+                popup.style.display = 'none';
+            }
         }
 
         // Smooth scrolling for anchor links
