@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>충북 고인이송 24시간 - 청주 충주 제천 음성 진천 괴산 단양 보은 옥천 영동 증평 장례 이송</title>
-    <meta name="description" content="충북 고인이송 24시간 전문. 청주고인이송, 충주고인이송, 제천고인이송, 음성고인이송, 진천고인이송, 괴산고인이송, 단양고인이송, 보은고인이송, 옥천고인이송, 영동고인이송, 증평고인이송. 장례식장 이송, 화장장 이송 010-8841-4114">
-    <meta name="keywords" content="충북고인이송, 청주고인이송, 충주고인이송, 제천고인이송, 음성고인이송, 진천고인이송, 괴산고인이송, 단양고인이송, 보은고인이송, 옥천고인이송, 영동고인이송, 증평고인이송, 충북장례이송, 청주장례이송, 충주장례이송, 24시간고인이송, 장례식장이송, 화장장이송, 병원고인이송, 자택고인이송">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="직지응급환자이송단">
-    <meta property="og:title" content="충북 고인이송 24시간 - 청주 충주 제천 전지역 장례 이송">
-    <meta property="og:description" content="충북 전지역 고인이송 24시간 전문. 청주, 충주, 제천, 음성, 진천, 괴산, 단양, 보은, 옥천, 영동, 증평 장례식장 이송. 010-8841-4114">
+    <title>충북 고인이송 사설구급차 | 청주 충주 제천 음성 진천 괴산 증평 영동 옥천 보은 단양 고인이송</title>
+    <meta name="description" content="충북 전 지역 24시간 고인이송 서비스. 청주, 충주, 제천, 음성, 진천, 괴산, 증평, 영동, 옥천, 보은, 단양 장례식장 이송, 화장장 이송. 정중하고 존엄한 이송. 010-8841-4114">
+    <meta name="keywords" content="충북 고인이송, 청주 고인이송, 충주 고인이송, 제천 고인이송, 충북 장례이송, 장례식장 이송, 화장장 이송, 사설구급차, 충청북도 고인이송, 24시간 고인이송">
+    <meta property="og:title" content="충북 고인이송 전문 사설구급차 - 직지응급환자이송단">
+    <meta property="og:description" content="충북 전 지역 24시간 고인이송 서비스. 정중하고 존엄한 이송, 유가족 동행 가능. 010-8841-4114">
     <meta property="og:type" content="website">
-    <link rel="canonical" href="https://yourwebsite.com/goin-transport">
+    <link rel="canonical" href="https://example.com/goin-transport">
     <style>
         * {
             margin: 0;
@@ -21,7 +19,7 @@
 
         body {
             font-family: 'Noto Sans KR', Arial, sans-serif;
-            line-height: 1.5;
+            line-height: 1.6;
             color: #333;
             background: #f8f9fa;
         }
@@ -29,14 +27,14 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
 
         /* Header */
         header {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
-            padding: 0.3rem 0;
+            padding: 1rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: relative;
         }
@@ -51,119 +49,83 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            cursor: pointer;
+            gap: 15px;
         }
 
         .logo-icon {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             background: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 24px;
             color: #2c3e50;
         }
 
-        .logo h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0;
-        }
-
         .phone-number {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 900;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        /* Mobile Summary Button */
-        .mobile-summary-btn {
-            display: none;
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            background: white;
-            color: #2c3e50;
-            padding: 8px 15px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            animation: pulse 2s infinite;
+        /* SEO Summary Popup */
+        .seo-summary-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 50px;
             cursor: pointer;
+            font-weight: 600;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+            transition: all 0.3s ease;
         }
 
-        @media (max-width: 768px) {
-            .mobile-summary-btn {
-                display: block;
-            }
-            
-            .header-content {
-                padding-right: 120px;
-            }
+        .seo-summary-btn:hover {
+            background: #34495e;
+            transform: translateY(-2px);
         }
 
-        /* Popup Modal */
-        .modal {
+        .seo-popup {
             display: none;
             position: fixed;
-            z-index: 10000;
-            left: 0;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            animation: fadeIn 0.3s ease;
+            background: rgba(0,0,0,0.5);
+            z-index: 1001;
         }
 
-        .modal.active {
-            display: block;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 10% auto;
-            padding: 20px;
-            border: 1px solid #888;
+        .seo-popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
             width: 90%;
-            max-width: 600px;
-            border-radius: 10px;
-            position: relative;
-            animation: slideIn 0.3s ease;
+            max-height: 80vh;
+            overflow-y: auto;
         }
 
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
+        .close-popup {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
             cursor: pointer;
-            line-height: 20px;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-        }
-
-        @keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            color: #666;
         }
 
         /* Fixed Call Button */
@@ -173,276 +135,293 @@
             right: 20px;
             width: 60px;
             height: 60px;
-            background: #e74c3c;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
             color: white;
+            text-decoration: none;
             font-size: 24px;
-            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
-            transition: all 0.3s ease;
-            z-index: 9999;
-            animation: bounce 2s infinite;
-        }
-
-        .fixed-call-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
+            box-shadow: 0 4px 12px rgba(44, 62, 80, 0.4);
+            z-index: 1000;
+            animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-            }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Navigation */
+        .breadcrumb {
+            background: white;
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .breadcrumb a {
+            color: #6c757d;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .breadcrumb a:hover {
+            color: #2c3e50;
+        }
+
+        .breadcrumb span {
+            color: #2c3e50;
+            font-weight: 600;
         }
 
         /* Hero Section */
         .service-hero {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
-            padding: 20px 0;
+            padding: 40px 0;
             text-align: center;
         }
 
         .service-hero h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .service-hero p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        /* Summary Section */
-        .summary-section {
-            background: #fff;
-            padding: 15px 0;
-            border-bottom: 2px solid #e9ecef;
-            display: none;
+        /* Coverage Area */
+        .coverage-area {
+            background: white;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
         }
 
-        .summary-section.active {
-            display: block;
+        .coverage-cities {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
         }
 
-        .summary-content {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #2c3e50;
-        }
-
-        .summary-content h3 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .summary-content p {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
+        .city-tag {
+            background: #2c3e50;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
 
         /* Main Content */
         .main-content {
-            padding: 20px 0;
+            padding: 40px 0;
             background: white;
         }
 
         .content-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 20px;
-            margin-top: 15px;
+            gap: 40px;
+            margin-top: 30px;
         }
 
         .content-main h2 {
             color: #2c3e50;
-            font-size: 1.6rem;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
             border-bottom: 3px solid #2c3e50;
         }
 
         .content-main h3 {
             color: #34495e;
-            font-size: 1.2rem;
-            margin: 15px 0 8px 0;
+            font-size: 1.3rem;
+            margin: 25px 0 12px 0;
         }
 
         .content-main p {
-            margin-bottom: 8px;
-            line-height: 1.6;
+            margin-bottom: 12px;
+            line-height: 1.7;
             color: #555;
-            font-size: 0.95rem;
         }
 
         .content-main ul {
-            margin-bottom: 10px;
+            margin-bottom: 18px;
             padding-left: 20px;
         }
 
         .content-main li {
-            margin-bottom: 3px;
+            margin-bottom: 6px;
             color: #555;
-            font-size: 0.95rem;
         }
 
-        /* Boxes */
-        .dignity-box, .comfort-box {
-            padding: 12px;
-            margin: 12px 0;
+        /* Dignity Box */
+        .dignity-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 5px solid #6c757d;
+            padding: 15px;
+            margin: 20px 0;
             border-radius: 5px;
         }
 
-        .dignity-box {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-left: 4px solid #6c757d;
+        .dignity-box h4 {
+            color: #495057;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
+        .dignity-box p {
+            color: #495057;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Comfort Box */
         .comfort-box {
             background: linear-gradient(135deg, #e8f4fd 0%, #d6eaf8 100%);
-            border-left: 4px solid #3498db;
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
         }
 
-        .dignity-box h4, .comfort-box h4 {
-            margin-bottom: 5px;
-            font-size: 1rem;
+        .comfort-box h4 {
+            color: #2980b9;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .comfort-box p {
+            color: #2980b9;
+            margin: 0;
+            font-size: 0.95rem;
         }
 
         /* Sidebar */
         .sidebar {
             background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 25px;
+            border-radius: 10px;
             height: fit-content;
             position: sticky;
-            top: 15px;
+            top: 20px;
         }
 
         .quick-contact {
             background: linear-gradient(135deg, #2c3e50, #34495e);
             color: white;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
         }
 
         .quick-contact h3 {
-            margin-bottom: 8px;
-            font-size: 1.1rem;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
         }
 
         .quick-contact .phone {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 900;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             display: block;
         }
 
         .call-btn {
             background: white;
             color: #2c3e50;
-            padding: 8px 15px;
-            border-radius: 20px;
+            padding: 10px 20px;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
             display: inline-block;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
+        }
+
+        .call-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .service-features {
             background: white;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 10px;
             border: 1px solid #e9ecef;
         }
 
         .service-features h4 {
             color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 1rem;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
 
         .feature-item {
             display: flex;
             align-items: center;
-            margin-bottom: 8px;
-            padding: 5px;
+            margin-bottom: 12px;
+            padding: 8px;
             background: #f8f9fa;
             border-radius: 5px;
-            font-size: 0.9rem;
         }
 
         .feature-icon {
-            width: 22px;
-            height: 22px;
+            width: 28px;
+            height: 28px;
             background: #2c3e50;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            margin-right: 8px;
-            font-size: 0.7rem;
+            margin-right: 10px;
+            font-size: 0.8rem;
         }
 
-        /* FAQ Section */
+        /* FAQ Section - moved up */
         .faq-section {
             background: #f8f9fa;
-            padding: 20px 0;
+            padding: 40px 0;
         }
 
         .faq-item {
             background: white;
-            margin-bottom: 8px;
-            border-radius: 5px;
+            margin-bottom: 12px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .faq-question {
             background: #2c3e50;
             color: white;
-            padding: 12px;
+            padding: 15px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 0.9rem;
+            transition: background 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .faq-question:hover {
+            background: #34495e;
         }
 
         .faq-answer {
-            padding: 12px;
+            padding: 15px;
             display: none;
             color: #555;
-            line-height: 1.5;
-            font-size: 0.85rem;
+            line-height: 1.6;
+            font-size: 0.9rem;
         }
 
         .faq-answer.active {
@@ -452,32 +431,32 @@
         /* Process Section */
         .process-section {
             background: white;
-            padding: 20px 0;
+            padding: 40px 0;
         }
 
         .process-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .process-step {
             background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 25px;
+            border-radius: 12px;
             text-align: center;
             position: relative;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .step-number {
             position: absolute;
-            top: -12px;
+            top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 25px;
-            height: 25px;
+            width: 35px;
+            height: 35px;
             background: linear-gradient(135deg, #2c3e50, #34495e);
             border-radius: 50%;
             display: flex;
@@ -485,200 +464,275 @@
             justify-content: center;
             color: white;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 1.1rem;
         }
 
         .process-step h4 {
             color: #2c3e50;
-            margin: 12px 0 8px 0;
-            font-size: 1rem;
+            margin: 15px 0 10px 0;
+            font-size: 1.2rem;
         }
 
         .process-step p {
             color: #666;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         /* Services Grid */
         .services-section {
             background: #f8f9fa;
-            padding: 20px 0;
+            padding: 40px 0;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .service-card {
             background: white;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 25px;
+            border-radius: 12px;
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid #e9ecef;
         }
 
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
         .service-icon {
-            width: 50px;
-            height: 50px;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, #2c3e50, #34495e);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 10px;
-            font-size: 1.3rem;
+            margin: 0 auto 15px;
+            font-size: 1.8rem;
             color: white;
         }
 
         .service-card h3 {
-            font-size: 1rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             color: #2c3e50;
         }
 
         .service-card p {
             color: #666;
-            line-height: 1.4;
-            font-size: 0.85rem;
-        }
-
-        /* SEO Content */
-        .seo-content {
-            background: white;
-            padding: 20px 0;
-            border-top: 1px solid #e9ecef;
-        }
-
-        .seo-text {
-            color: #666;
-            font-size: 0.9rem;
             line-height: 1.6;
-            margin-bottom: 10px;
+            font-size: 0.9rem;
         }
 
-        /* Footer */
-        footer {
-            background: #2c3e50;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .footer-section h4 {
-            margin-bottom: 8px;
-            color: #ecf0f1;
-            font-size: 1rem;
-        }
-
-        .footer-section p {
-            margin-bottom: 3px;
-            color: #bdc3c7;
-            font-size: 0.85rem;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #34495e;
-            padding-top: 10px;
-            color: #95a5a6;
-            font-size: 0.8rem;
-        }
-
-        /* Responsive */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .content-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .service-hero h1 {
-                font-size: 1.5rem;
+                gap: 25px;
             }
 
             .service-hero {
-                padding: 15px 0;
+                padding: 30px 0;
+            }
+
+            .service-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .service-hero p {
+                font-size: 1rem;
             }
 
             .main-content {
-                padding: 15px 0;
+                padding: 25px 0;
             }
 
-            .services-grid, .process-grid {
+            .content-main h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-main h3 {
+                font-size: 1.2rem;
+                margin: 20px 0 10px 0;
+            }
+
+            .content-main p, .content-main li {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+
+            .process-grid, .services-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .process-section, .services-section, .faq-section {
+                padding: 30px 0;
+            }
+
+            .coverage-cities {
+                gap: 8px;
+            }
+
+            .city-tag {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .seo-summary-btn {
+                padding: 10px 14px;
+                font-size: 0.9rem;
+            }
+
+            .seo-popup-content {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            /* Mobile content compression */
+            .content-main ul {
+                margin-bottom: 15px;
+            }
+
+            .content-main li {
+                margin-bottom: 4px;
+            }
+
+            .sidebar {
+                order: -1;
+                padding: 20px;
+                position: static; /* Remove sticky positioning on mobile */
+            }
+
+            .quick-contact {
+                padding: 15px;
+            }
+
+            .feature-item {
+                padding: 6px;
+                margin-bottom: 8px;
+            }
+
+            .dignity-box, .comfort-box {
+                padding: 12px;
+                margin: 15px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content {
+                flex-direction: column;
                 gap: 10px;
             }
 
             .phone-number {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
 
-            h2 {
-                font-size: 1.4rem !important;
+            .service-hero h1 {
+                font-size: 1.6rem;
             }
 
-            .sidebar {
-                position: static;
+            .fixed-call-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo" onclick="location.href='index.html'">
-                    <div class="logo-icon">🚑</div>
-                    <div>
-                        <h1>직지응급환자이송단</h1>
-                        <p style="font-size: 0.8rem; margin: 0; opacity: 0.9;">충북 전지역 고인이송</p>
-                    </div>
-                </div>
-                <div class="phone-number">010-8841-4114</div>
-            </div>
-            <button class="mobile-summary-btn" onclick="openModal()">요약</button>
-        </div>
-    </header>
+    <!-- SEO Summary Popup Button -->
+    <button class="seo-summary-btn" onclick="openSeoPopup()">📋 서비스 요약</button>
 
-    <!-- Summary Modal -->
-    <div id="summaryModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h3 style="color: #2c3e50; margin-bottom: 15px;">충북 고인이송 24시간 서비스</h3>
-            <div style="line-height: 1.8; color: #555;">
-                <p style="margin-bottom: 12px;"><strong>✅ 충북 11개 시군 전지역 대응</strong><br>
-                청주시(상당구/서원구/흥덕구/청원구), 충주시, 제천시, 보은군, 옥천군, 영동군, 증평군, 진천군, 괴산군, 음성군, 단양군 어디서나 24시간 즉시 출동</p>
-                
-                <p style="margin-bottom: 12px;"><strong>✅ 주요 병원 고인이송</strong><br>
-                충북대병원, 청주성모병원, 청주한국병원, 충주의료원, 제천서울병원 등 도내 병원들 장례식장과 협력체계 구축</p>
-                
-                <p style="margin-bottom: 12px;"><strong>✅ 전문 이송 서비스</strong><br>
-                병원→장례식장, 자택→장례식장, 장례식장→화장장, 장거리 이송까지 모든 고인이송을 정중하고 안전하게 모십니다</p>
-                
-                <p style="margin-bottom: 12px;"><strong>✅ 완벽한 준비</strong><br>
-                고인 전용 스트레처, 위생장비, 유가족 동행석 완비. 불교/기독교/천주교 등 종교별 예법 준수</p>
-                
-                <p style="text-align: center; margin-top: 20px; font-size: 1.2rem; color: #2c3e50; font-weight: bold;">
-                    📞 010-8841-4114<br>
-                    <span style="font-size: 0.9rem; font-weight: normal;">연중무휴 24시간 상담</span>
-                </p>
+    <!-- SEO Summary Popup -->
+    <div id="seoPopup" class="seo-popup">
+        <div class="seo-popup-content">
+            <button class="close-popup" onclick="closeSeoPopup()">&times;</button>
+            <h3 style="color: #2c3e50; margin-bottom: 20px;">🕊️ 직지응급환자이송단 고인이송 요약</h3>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">📞 24시간 상담</h4>
+                <p style="font-size: 1.2rem; font-weight: 700; color: #2c3e50;">010-8841-4114</p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">🗺️ 서비스 지역</h4>
+                <p>충청북도 전 지역 (청주, 충주, 제천, 음성, 진천, 괴산, 증평, 영동, 옥천, 보은, 단양)</p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">🏥 주요 이송</h4>
+                <p>• 병원 → 장례식장 • 자택 → 장례식장<br>• 장례식장 → 화장장 • 장거리 이송<br>• 유가족 동행 가능</p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">⭐ 특징</h4>
+                <p>• 정중하고 존엄한 이송<br>• 24시간 365일 운영<br>• 충북 전 지역 대응<br>• 고인 전용 장비 완비<br>• 종교별 예법 준수</p>
+            </div>
+            
+            <div>
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">🕊️ 서비스 정신</h4>
+                <p>고인의 존엄성을 지키며<br>유가족의 마음을 위로하는<br>정중한 이송 서비스</p>
             </div>
         </div>
     </div>
 
+    <!-- Fixed Call Button -->
+    <a href="tel:010-8841-4114" class="fixed-call-btn" title="24시간 상담">📞</a>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">🚑</div>
+                    <div>
+                        <div style="font-size: 1.8rem; font-weight: 700; margin: 0; color: white;">직지응급환자이송단</div>
+                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충청북도 고인이송 전문 24시간</p>
+                    </div>
+                </div>
+                <div class="phone-number">010-8841-4114</div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="#">홈</a> > <a href="#">고인이송 서비스</a> > <span>충북 고인이송</span>
+        </div>
+    </nav>
+
     <section class="service-hero">
         <div class="container">
-            <h1>충북 전지역 고인이송 서비스</h1>
-            <p>청주 충주 제천 음성 진천 괴산 단양 보은 옥천 영동 증평 - 24시간 정중한 장례 이송</p>
+            <h1>충북 고인이송 전문 사설구급차</h1>
+            <p>충청북도 전 지역 24시간 정중하고 존엄한 장례식장 이송, 화장장 이송</p>
+        </div>
+    </section>
+
+    <section class="coverage-area">
+        <div class="container">
+            <h2 style="color: #2c3e50; margin-bottom: 10px;">충청북도 전 지역 고인이송</h2>
+            <p style="color: #666;">11개 시군 어디든 24시간 정중한 이송</p>
+            <div class="coverage-cities">
+                <span class="city-tag">청주시 고인이송</span>
+                <span class="city-tag">충주시 고인이송</span>
+                <span class="city-tag">제천시 고인이송</span>
+                <span class="city-tag">음성군 고인이송</span>
+                <span class="city-tag">진천군 고인이송</span>
+                <span class="city-tag">괴산군 고인이송</span>
+                <span class="city-tag">증평군 고인이송</span>
+                <span class="city-tag">영동군 고인이송</span>
+                <span class="city-tag">옥천군 고인이송</span>
+                <span class="city-tag">보은군 고인이송</span>
+                <span class="city-tag">단양군 고인이송</span>
+            </div>
         </div>
     </section>
 
@@ -686,15 +740,15 @@
         <div class="container">
             <div class="content-grid">
                 <div class="content-main">
-                    <h2>충북 고인이송 서비스 개요</h2>
-                    <p>충청북도 전 지역에서 고인의 존엄성을 지키며 정중하고 신속한 이송 서비스를 제공합니다. 청주, 충주, 제천을 비롯한 충북 11개 시군 어디서나 24시간 즉시 출동합니다.</p>
+                    <h2>충북 고인이송 전문 서비스</h2>
+                    <p>직지응급환자이송단은 충청북도에서 가장 정중하고 존엄한 고인이송 서비스를 제공합니다. 고인의 존엄성을 지키며 유가족의 마음을 위로하는 24시간 전문 이송 서비스로, 충북 11개 시군 어디서나 신속하게 출동합니다.</p>
 
                     <div class="dignity-box">
-                        <h4>🕊️ 충북 전지역 24시간 서비스</h4>
-                        <p>청주시, 충주시, 제천시, 보은군, 옥천군, 영동군, 증평군, 진천군, 괴산군, 음성군, 단양군 전지역 대응</p>
+                        <h4>🕊️ 충북 전 지역 24시간 서비스</h4>
+                        <p>청주시, 충주시, 제천시, 보은군, 옥천군, 영동군, 증평군, 진천군, 괴산군, 음성군, 단양군 전 지역 대응</p>
                     </div>
 
-                    <h3>충북 시군별 주요 이송 구간</h3>
+                    <h3>충북 시군별 주요 고인이송 구간</h3>
                     <ul>
                         <li><strong>청주 고인이송</strong> - 상당구, 서원구, 흥덕구, 청원구 전지역</li>
                         <li><strong>충주 고인이송</strong> - 충주시내, 수안보, 앙성, 노은 등</li>
@@ -703,6 +757,10 @@
                         <li><strong>진천 고인이송</strong> - 진천읍, 덕산, 초평, 문백 등</li>
                         <li><strong>괴산 고인이송</strong> - 괴산읍, 감물, 장연, 연풍 등</li>
                         <li><strong>증평 고인이송</strong> - 증평읍, 도안면 전지역</li>
+                        <li><strong>영동 고인이송</strong> - 영동읍, 황간, 심천, 용화 등</li>
+                        <li><strong>옥천 고인이송</strong> - 옥천읍, 동이, 안내, 안남 등</li>
+                        <li><strong>보은 고인이송</strong> - 보은읍, 속리산, 마로, 회남 등</li>
+                        <li><strong>단양 고인이송</strong> - 단양읍, 매포, 대강, 가곡 등</li>
                     </ul>
 
                     <h3>충북 주요 병원별 고인이송</h3>
@@ -711,30 +769,51 @@
                         <li>청주성모병원 장례식장 이송</li>
                         <li>청주한국병원 장례식장 이송</li>
                         <li>충주의료원 장례식장 이송</li>
+                        <li>제천의료원 장례식장 이송</li>
                         <li>제천서울병원 장례식장 이송</li>
                         <li>음성소망병원 장례식장 이송</li>
                     </ul>
 
                     <div class="comfort-box">
-                        <h4>💙 충북 전지역 즉시 출동</h4>
-                        <p>보은, 옥천, 영동, 단양 등 충북 남부/북부 어디서나 신속 대응. 서울, 대전 등 타지역 이송도 가능합니다.</p>
+                        <h4>💙 정중하고 존엄한 이송</h4>
+                        <p>고인 전용 스트레처, 위생장비, 유가족 동행석 완비. 불교/기독교/천주교 등 종교별 예법 준수</p>
                     </div>
 
-                    <h3>이송 절차 및 준비사항</h3>
+                    <h3>고인이송 준비사항</h3>
                     <ul>
-                        <li><strong>사망진단서</strong> - 병원 발급 필수</li>
-                        <li><strong>신분증</strong> - 고인 및 유가족</li>
-                        <li><strong>장례식장 예약</strong> - 목적지 확인</li>
-                        <li><strong>종교 예법</strong> - 특별 요청사항</li>
+                        <li><strong>사망진단서</strong> - 병원 발급 필수 서류</li>
+                        <li><strong>신분증</strong> - 고인 및 유가족 신분증</li>
+                        <li><strong>장례식장 예약</strong> - 목적지 장례식장 확인</li>
+                        <li><strong>종교 예법</strong> - 특별 종교적 요청사항</li>
+                        <li><strong>개인 소지품</strong> - 고인의 개인 소지품 정리</li>
+                    </ul>
+
+                    <h3>이송 가능 구간</h3>
+                    <ul>
+                        <li>병원 → 장례식장 (충북 전 지역)</li>
+                        <li>자택 → 장례식장 (24시간 가능)</li>
+                        <li>장례식장 → 화장장 (전국 어디든)</li>
+                        <li>요양원 → 장례식장 (신속 대응)</li>
+                        <li>충북 → 타지역 장거리 이송</li>
+                        <li>타지역 → 충북 고인이송</li>
+                    </ul>
+
+                    <h3>전문 장비 및 서비스</h3>
+                    <ul>
+                        <li>위생 및 방역 장비 완비</li>
+                        <li>유가족 동행석 완비</li>
+                        <li>종교별 예법에 맞는 이송</li>
+                        <li>정중하고 조용한 이송 진행</li>
+                        <li>24시간 365일 즉시 출동</li>
                     </ul>
                 </div>
 
                 <div class="sidebar">
                     <div class="quick-contact">
-                        <h3>충북 고인이송</h3>
+                        <h3>24시간 고인이송</h3>
                         <span class="phone">010-8841-4114</span>
-                        <a href="tel:010-8841-4114" class="call-btn">📞 24시간 상담</a>
-                        <p style="font-size: 0.8rem; margin-top: 8px; opacity: 0.9;">충북 전지역 대응</p>
+                        <a href="tel:010-8841-4114" class="call-btn">📞 지금 상담하기</a>
+                        <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.9;">충북 전 지역 대응</p>
                     </div>
 
                     <div class="service-features">
@@ -748,8 +827,8 @@
                             <span>24시간 대기</span>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon">🚗</div>
-                            <span>충북 전지역</span>
+                            <div class="feature-icon">🗺️</div>
+                            <span>충북 전 지역</span>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">👥</div>
@@ -771,15 +850,15 @@
 
     <section class="faq-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 1.6rem; color: #2c3e50; margin-bottom: 8px;">자주 묻는 질문</h2>
-            <p style="text-align: center; font-size: 0.9rem; color: #666; margin-bottom: 15px;">충북 고인이송 관련 FAQ</p>
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">자주 묻는 질문</h2>
+            <p style="text-align: center; font-size: 1rem; color: #666; margin-bottom: 30px;">충북 고인이송 서비스 관련 자주 묻는 질문</p>
             
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 충북 전지역 24시간 이송이 가능한가요?
+                    Q. 충북 전 지역 24시간 고인이송이 가능한가요?
                 </div>
                 <div class="faq-answer">
-                    네, 청주, 충주, 제천, 보은, 옥천, 영동, 증평, 진천, 괴산, 음성, 단양 등 충북 11개 시군 전지역 24시간 365일 고인이송 서비스를 제공합니다. 명절, 공휴일도 정상 운영합니다.
+                    네, 청주, 충주, 제천, 보은, 옥천, 영동, 증평, 진천, 괴산, 음성, 단양 등 충북 11개 시군 전 지역에서 24시간 365일 고인이송 서비스를 제공합니다. 명절, 공휴일도 정상 운영합니다.
                 </div>
             </div>
 
@@ -806,7 +885,7 @@
                     Q. 유가족이 함께 이송차량에 탑승할 수 있나요?
                 </div>
                 <div class="faq-answer">
-                    네, 고인이송 차량에는 유가족 동행석이 마련되어 있습니다. 안전을 위해 3-4명까지 탑승 가능하며, 미리 인원을 알려주시면 준비하겠습니다.
+                    네, 고인이송 차량에는 유가족 동행석이 마련되어 있습니다. 안전을 위해 미리 동행 인원을 알려주시면 준비하겠습니다.
                 </div>
             </div>
 
@@ -832,8 +911,8 @@
 
     <section class="process-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 1.6rem; color: #2c3e50; margin-bottom: 8px;">이송 진행 절차</h2>
-            <p style="text-align: center; font-size: 0.9rem; color: #666;">신속하고 정중한 4단계 절차</p>
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">고인이송 절차</h2>
+            <p style="text-align: center; font-size: 1rem; color: #666;">신속하고 정중한 4단계 절차</p>
             <div class="process-grid">
                 <div class="process-step">
                     <div class="step-number">1</div>
@@ -861,7 +940,7 @@
 
     <section class="services-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 1.6rem; color: #2c3e50; margin-bottom: 8px;">충북 지역별 고인이송</h2>
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">충북 지역별 고인이송</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🏥</div>
@@ -897,82 +976,84 @@
         </div>
     </section>
 
-    <section class="seo-content">
+    <footer style="background: #2c3e50; color: #ecf0f1; padding: 30px 0; text-align: center;">
         <div class="container">
-            <p class="seo-text">
-                충북고인이송 전문 직지응급환자이송단은 청주고인이송, 충주고인이송, 제천고인이송을 비롯해 보은고인이송, 옥천고인이송, 영동고인이송, 증평고인이송, 진천고인이송, 괴산고인이송, 음성고인이송, 단양고인이송까지 충청북도 11개 시군 전지역에서 24시간 장례이송 서비스를 제공합니다.
+            <h3 style="color: #95a5a6; margin-bottom: 15px;">직지응급환자이송단</h3>
+            <p style="font-size: 1.6rem; font-weight: 700; margin-bottom: 12px;">010-8841-4114</p>
+            <p style="margin-bottom: 15px;">충청북도 전 지역 24시간 고인이송 전문 서비스</p>
+            <p style="font-size: 0.85rem; opacity: 0.8;">
+                청주 충주 제천 음성 진천 괴산 증평 영동 옥천 보은 단양 고인이송<br>
+                고인의 존엄성을 지키며 | 유가족의 마음을 위로하는 | 정중한 이송 서비스
             </p>
-            <p class="seo-text">
-                충북 장례식장 이송은 충북대학교병원 장례식장, 청주성모병원 장례식장, 청주한국병원 장례식장, 충주의료원 장례식장, 제천서울병원 장례식장 등과 긴밀히 연계하여 병원 고인이송, 자택 고인이송, 요양원 고인이송, 화장장 이송까지 모든 장례 이송을 정중하게 모십니다. 청주시 상당구, 서원구, 흥덕구, 청원구는 물론 오창, 오송 등 신도시 지역도 신속 대응합니다.
-            </p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>직지응급환자이송단</h4>
-                    <p>📞 010-8841-4114</p>
-                    <p>📍 충북 전지역 서비스</p>
-                    <p>🕒 24시간 365일</p>
-                </div>
-                <div class="footer-section">
-                    <h4>충북 고인이송</h4>
-                    <p>• 청주 충주 제천</p>
-                    <p>• 보은 옥천 영동</p>
-                    <p>• 증평 진천 괴산</p>
-                    <p>• 음성 단양 전지역</p>
-                </div>
-                <div class="footer-section">
-                    <h4>이송 서비스</h4>
-                    <p>• 병원 장례식장</p>
-                    <p>• 자택 고인이송</p>
-                    <p>• 화장장 이송</p>
-                    <p>• 장거리 이송</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 직지응급환자이송단. 충북 전지역 고인이송 전문.</p>
-            </div>
         </div>
     </footer>
-
-    <!-- Fixed Call Button -->
-    <a href="tel:010-8841-4114" class="fixed-call-btn" aria-label="전화 걸기">
-        📞
-    </a>
 
     <script>
         function toggleFaq(element) {
             const answer = element.nextElementSibling;
-            const isActive = answer.classList.contains('active');
+            const allAnswers = document.querySelectorAll('.faq-answer');
             
-            document.querySelectorAll('.faq-answer').forEach(item => {
-                item.classList.remove('active');
+            allAnswers.forEach(ans => {
+                if (ans !== answer) {
+                    ans.classList.remove('active');
+                }
             });
             
-            if (!isActive) {
-                answer.classList.add('active');
-            }
+            answer.classList.toggle('active');
         }
 
-        // Modal functions
-        function openModal() {
-            document.getElementById('summaryModal').classList.add('active');
+        function openSeoPopup() {
+            document.getElementById('seoPopup').style.display = 'block';
         }
 
-        function closeModal() {
-            document.getElementById('summaryModal').classList.remove('active');
+        function closeSeoPopup() {
+            document.getElementById('seoPopup').style.display = 'none';
         }
 
-        // Close modal when clicking outside
+        // Close popup when clicking outside
         window.onclick = function(event) {
-            const modal = document.getElementById('summaryModal');
-            if (event.target == modal) {
-                modal.classList.remove('active');
+            const popup = document.getElementById('seoPopup');
+            if (event.target == popup) {
+                popup.style.display = 'none';
             }
         }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe cards
+        document.querySelectorAll('.service-card, .process-step').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
 
         // 스크롤 시 전화 버튼 강조
         let lastScrollTop = 0;
@@ -982,10 +1063,10 @@
             
             if (scrollTop > lastScrollTop && scrollTop > 100) {
                 callBtn.style.transform = 'scale(1.15)';
-                callBtn.style.boxShadow = '0 8px 25px rgba(231, 76, 60, 0.7)';
+                callBtn.style.boxShadow = '0 8px 25px rgba(44, 62, 80, 0.7)';
             } else {
                 callBtn.style.transform = 'scale(1)';
-                callBtn.style.boxShadow = '0 4px 15px rgba(231, 76, 60, 0.4)';
+                callBtn.style.boxShadow = '0 4px 15px rgba(44, 62, 80, 0.4)';
             }
             
             lastScrollTop = scrollTop;
