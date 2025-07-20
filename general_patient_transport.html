@@ -1,9 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>일반 환자이송 서비스 - 직지응급환자이송단</title>
+    <title>충북 환자이송 사설구급차 | 청주 충주 제천 음성 진천 괴산 증평 영동 옥천 보은 단양 환자이송</title>
+    <meta name="description" content="충북 전 지역 24시간 환자이송 서비스. 청주, 충주, 제천, 음성, 진천, 괴산, 증평, 영동, 옥천, 보은, 단양 사설구급차 이송. 병원간 이송, 외래진료, 입퇴원 이송. 응급구조사 동행, 의료장비 완비. 010-8841-4114">
+    <meta name="keywords" content="충북 환자이송, 청주 환자이송, 충주 환자이송, 제천 환자이송, 사설구급차, 병원이송, 환자이송서비스, 응급환자이송, 충청북도 구급차, 의료진 동행, 24시간 이송">
+    <meta property="og:title" content="충북 환자이송 사설구급차 - 직지응급환자이송단">
+    <meta property="og:description" content="충북 전 지역 24시간 환자이송 서비스. 응급구조사 동행, 의료장비 완비. 010-8841-4114">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://example.com/patient-transport">
     <style>
         * {
             margin: 0;
@@ -30,6 +37,7 @@
             color: white;
             padding: 1rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
         }
 
         .header-content {
@@ -69,6 +77,90 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        /* SEO Summary Popup */
+        .seo-summary-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .seo-summary-btn:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .seo-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1001;
+        }
+
+        .seo-popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        /* Fixed Call Button */
+        .fixed-call-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
         /* Navigation */
         .breadcrumb {
             background: white;
@@ -95,25 +187,50 @@
         .service-hero {
             background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
-            padding: 60px 0;
+            padding: 40px 0;
             text-align: center;
         }
 
         .service-hero h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .service-hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto;
         }
 
+        /* Coverage Area */
+        .coverage-area {
+            background: white;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .coverage-cities {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .city-tag {
+            background: #e74c3c;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
         /* Main Content */
         .main-content {
-            padding: 60px 0;
+            padding: 40px 0;
             background: white;
         }
 
@@ -121,43 +238,43 @@
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 40px;
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         .content-main h2 {
             color: #2c3e50;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
             border-bottom: 3px solid #e74c3c;
         }
 
         .content-main h3 {
             color: #34495e;
-            font-size: 1.5rem;
-            margin: 30px 0 15px 0;
+            font-size: 1.3rem;
+            margin: 25px 0 12px 0;
         }
 
         .content-main p {
-            margin-bottom: 15px;
-            line-height: 1.8;
+            margin-bottom: 12px;
+            line-height: 1.7;
             color: #555;
         }
 
         .content-main ul {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             padding-left: 20px;
         }
 
         .content-main li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #555;
         }
 
         /* Sidebar */
         .sidebar {
             background: #f8f9fa;
-            padding: 30px;
+            padding: 25px;
             border-radius: 10px;
             height: fit-content;
             position: sticky;
@@ -167,28 +284,28 @@
         .quick-contact {
             background: linear-gradient(135deg, #e74c3c, #c0392b);
             color: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .quick-contact h3 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
         }
 
         .quick-contact .phone {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 900;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: block;
         }
 
         .call-btn {
             background: white;
             color: #e74c3c;
-            padding: 12px 25px;
+            padding: 10px 20px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
@@ -203,68 +320,108 @@
 
         .service-features {
             background: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
             border: 1px solid #e9ecef;
         }
 
         .service-features h4 {
             color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
 
         .feature-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            padding: 10px;
+            margin-bottom: 12px;
+            padding: 8px;
             background: #f8f9fa;
             border-radius: 5px;
         }
 
         .feature-icon {
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
             background: #e74c3c;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            margin-right: 12px;
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        /* FAQ Section - moved up */
+        .faq-section {
+            background: #f8f9fa;
+            padding: 40px 0;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            background: #e74c3c;
+            color: white;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .faq-question:hover {
+            background: #c0392b;
+        }
+
+        .faq-answer {
+            padding: 15px;
+            display: none;
+            color: #555;
+            line-height: 1.6;
             font-size: 0.9rem;
+        }
+
+        .faq-answer.active {
+            display: block;
         }
 
         /* Process Steps */
         .process-section {
-            background: #f8f9fa;
-            padding: 60px 0;
+            background: white;
+            padding: 40px 0;
         }
 
         .process-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .process-step {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
             text-align: center;
             position: relative;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .step-number {
             position: absolute;
-            top: -20px;
+            top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             background: linear-gradient(135deg, #e74c3c, #c0392b);
             border-radius: 50%;
             display: flex;
@@ -272,30 +429,31 @@
             justify-content: center;
             color: white;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .process-step h4 {
             color: #2c3e50;
-            margin: 20px 0 15px 0;
-            font-size: 1.3rem;
+            margin: 15px 0 10px 0;
+            font-size: 1.2rem;
         }
 
         .process-step p {
             color: #666;
+            font-size: 0.9rem;
         }
 
         /* Pricing Table */
         .pricing-detail {
-            background: white;
-            padding: 60px 0;
+            background: #f8f9fa;
+            padding: 40px 0;
         }
 
         .pricing-table {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 40px;
-            margin-top: 40px;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 30px;
             border: 1px solid #e9ecef;
         }
 
@@ -303,7 +461,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 12px 0;
             border-bottom: 1px solid #dee2e6;
         }
 
@@ -319,70 +477,172 @@
         .price-amount {
             color: #e74c3c;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
-        /* FAQ Section */
-        .faq-section {
-            background: #f8f9fa;
-            padding: 60px 0;
-        }
-
-        .faq-item {
-            background: white;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .faq-question {
-            background: #e74c3c;
-            color: white;
-            padding: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-
-        .faq-question:hover {
-            background: #c0392b;
-        }
-
-        .faq-answer {
-            padding: 20px;
-            display: none;
-            color: #555;
-            line-height: 1.7;
-        }
-
-        .faq-answer.active {
-            display: block;
-        }
-
-        /* Responsive */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .content-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .service-hero {
+                padding: 30px 0;
             }
 
             .service-hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+
+            .service-hero p {
+                font-size: 1rem;
+            }
+
+            .main-content {
+                padding: 25px 0;
+            }
+
+            .content-main h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-main h3 {
+                font-size: 1.2rem;
+                margin: 20px 0 10px 0;
+            }
+
+            .content-main p, .content-main li {
+                font-size: 0.9rem;
+                line-height: 1.6;
             }
 
             .process-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .process-section, .pricing-detail, .faq-section {
+                padding: 30px 0;
             }
 
             .price-row {
                 flex-direction: column;
                 text-align: center;
+                gap: 8px;
+                padding: 10px 0;
+            }
+
+            .coverage-cities {
+                gap: 8px;
+            }
+
+            .city-tag {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .seo-summary-btn {
+                padding: 10px 14px;
+                font-size: 0.9rem;
+            }
+
+            .seo-popup-content {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            /* Mobile content compression */
+            .content-main ul {
+                margin-bottom: 15px;
+            }
+
+            .content-main li {
+                margin-bottom: 4px;
+            }
+
+            .sidebar {
+                order: -1;
+                padding: 20px;
+                position: static; /* Remove sticky positioning on mobile */
+            }
+
+            .quick-contact {
+                padding: 15px;
+            }
+
+            .feature-item {
+                padding: 6px;
+                margin-bottom: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content {
+                flex-direction: column;
                 gap: 10px;
+            }
+
+            .logo h1 {
+                font-size: 1.4rem;
+            }
+
+            .phone-number {
+                font-size: 1.5rem;
+            }
+
+            .service-hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .fixed-call-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- SEO Summary Popup Button -->
+    <button class="seo-summary-btn" onclick="openSeoPopup()">📋 서비스 요약</button>
+
+    <!-- SEO Summary Popup -->
+    <div id="seoPopup" class="seo-popup">
+        <div class="seo-popup-content">
+            <button class="close-popup" onclick="closeSeoPopup()">&times;</button>
+            <h3 style="color: #e74c3c; margin-bottom: 20px;">🚑 직지응급환자이송단 서비스 요약</h3>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">📞 연락처</h4>
+                <p style="font-size: 1.2rem; font-weight: 700; color: #e74c3c;">010-8841-4114</p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">🗺️ 서비스 지역</h4>
+                <p>충청북도 전 지역 (청주, 충주, 제천, 음성, 진천, 괴산, 증평, 영동, 옥천, 보은, 단양)</p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">🏥 주요 서비스</h4>
+                <p>• 병원간 이송 • 외래진료 이송<br>• 입퇴원 이송 • 정밀검사 이송<br>• 투석/방사선 치료 이송</p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">⭐ 특징</h4>
+                <p>• 응급구조사 1급 동행<br>• 24시간 운영<br>• 침상형/휠체어형 구급차<br>• 의료장비 완비<br>• 보험 적용 가능</p>
+            </div>
+            
+            <div>
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">💰 기본요금</h4>
+                <p>10km 이내: 75,000원<br>추가 1km당: 1,300원<br>* 보험 적용 시 환자부담 대폭 감소</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Call Button -->
+    <a href="tel:010-8841-4114" class="fixed-call-btn" title="지금 바로 전화하기">📞</a>
+
     <header>
         <div class="container">
             <div class="header-content">
@@ -390,7 +650,7 @@
                     <div class="logo-icon">🚑</div>
                     <div>
                         <h1>직지응급환자이송단</h1>
-                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충청북도 전문 사설구급차</p>
+                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충청북도 전문 사설구급차 24시간</p>
                     </div>
                 </div>
                 <div class="phone-number">010-8841-4114</div>
@@ -400,14 +660,34 @@
 
     <nav class="breadcrumb">
         <div class="container">
-            <a href="#">홈</a> > <a href="#">서비스 안내</a> > <span>일반 환자이송</span>
+            <a href="#">홈</a> > <a href="#">환자이송 서비스</a> > <span>충북 일반 환자이송</span>
         </div>
     </nav>
 
     <section class="service-hero">
         <div class="container">
-            <h1>일반 환자이송 서비스</h1>
-            <p>병원 간 이송, 외래진료 이송, 입퇴원 이송 등 모든 일반적인 환자 이송을 안전하고 신속하게 처리합니다</p>
+            <h1>충북 환자이송 사설구급차 서비스</h1>
+            <p>충청북도 전 지역 24시간 병원간 이송, 외래진료 이송, 입퇴원 이송 전문</p>
+        </div>
+    </section>
+
+    <section class="coverage-area">
+        <div class="container">
+            <h2 style="color: #2c3e50; margin-bottom: 10px;">충청북도 전 지역 서비스</h2>
+            <p style="color: #666;">11개 시군 어디든 24시간 출동 가능</p>
+            <div class="coverage-cities">
+                <span class="city-tag">청주시 환자이송</span>
+                <span class="city-tag">충주시 환자이송</span>
+                <span class="city-tag">제천시 환자이송</span>
+                <span class="city-tag">음성군 환자이송</span>
+                <span class="city-tag">진천군 환자이송</span>
+                <span class="city-tag">괴산군 환자이송</span>
+                <span class="city-tag">증평군 환자이송</span>
+                <span class="city-tag">영동군 환자이송</span>
+                <span class="city-tag">옥천군 환자이송</span>
+                <span class="city-tag">보은군 환자이송</span>
+                <span class="city-tag">단양군 환자이송</span>
+            </div>
         </div>
     </section>
 
@@ -415,59 +695,47 @@
         <div class="container">
             <div class="content-grid">
                 <div class="content-main">
-                    <h2>서비스 개요</h2>
-                    <p>일반 환자이송 서비스는 응급상황이 아닌 계획된 이송을 위한 서비스로, 환자의 안전과 편의를 최우선으로 생각합니다. 전문 응급구조사가 동행하여 이송 중 발생할 수 있는 모든 상황에 대비하며, 최신 의료장비를 갖춘 구급차로 안전한 이송을 보장합니다.</p>
+                    <h2>충북 환자이송 전문 서비스</h2>
+                    <p>직지응급환자이송단은 충청북도 전 지역에서 가장 신뢰받는 사설구급차 서비스입니다. 응급구조사 1급 자격자가 직접 동행하여 환자의 안전한 이송을 책임지며, 최신 의료장비를 갖춘 구급차로 24시간 서비스를 제공합니다.</p>
 
-                    <h3>주요 이송 유형</h3>
+                    <h3>주요 환자이송 서비스</h3>
                     <ul>
-                        <li><strong>병원 간 이송</strong> - 전문치료를 위한 상급병원 이송</li>
-                        <li><strong>외래진료 이송</strong> - 정기검진 및 외래진료를 위한 이송</li>
-                        <li><strong>입원 이송</strong> - 자택에서 병원까지 입원을 위한 이송</li>
-                        <li><strong>퇴원 이송</strong> - 병원에서 자택까지 퇴원 후 귀가 이송</li>
-                        <li><strong>검사 이송</strong> - MRI, CT 등 정밀검사를 위한 이송</li>
-                        <li><strong>치료 이송</strong> - 투석, 방사선 치료 등을 위한 정기 이송</li>
+                        <li><strong>병원간 이송</strong> - 상급병원 전원, 전문치료 이송</li>
+                        <li><strong>외래진료 이송</strong> - 정기검진, 외래진료 왕복 이송</li>
+                        <li><strong>입원 이송</strong> - 자택에서 병원까지 입원 이송</li>
+                        <li><strong>퇴원 이송</strong> - 병원에서 자택까지 안전한 귀가</li>
+                        <li><strong>정밀검사 이송</strong> - MRI, CT, 초음파 등 검사 이송</li>
+                        <li><strong>치료 이송</strong> - 투석, 항암치료, 방사선 치료 정기 이송</li>
+                        <li><strong>요양원 이송</strong> - 요양원 입소, 병원 진료 이송</li>
                     </ul>
 
-                    <h3>서비스 특징</h3>
-                    <p>저희 일반 환자이송 서비스는 다음과 같은 특징을 가지고 있습니다:</p>
+                    <h3>충북 지역별 특화 서비스</h3>
                     <ul>
-                        <li>전문 응급구조사 1급 자격자 동행</li>
-                        <li>환자 상태에 맞는 맞춤형 이송</li>
-                        <li>침상형 및 휠체어형 구급차 보유</li>
-                        <li>산소공급장치, 심전도 모니터 등 기본 의료장비 완비</li>
-                        <li>24시간 예약 접수 및 응급 출동</li>
-                        <li>충북 전 지역 서비스 가능</li>
-                        <li>보험 적용 가능 (의료진 소견서 첨부 시)</li>
+                        <li><strong>청주권</strong> - 청주성모병원, 충북대병원, 청주한국병원 등 연계</li>
+                        <li><strong>충주권</strong> - 건국대충주병원, 충주의료원 등 신속 이송</li>
+                        <li><strong>제천권</strong> - 세명대 제천한방병원, 제천의료원 등 산간지역 전문</li>
+                        <li><strong>음성/진천권</strong> - 서울권 대형병원 이송 전문</li>
+                        <li><strong>괴산/증평권</strong> - 농촌지역 맞춤형 이송 서비스</li>
+                        <li><strong>영동/옥천권</strong> - 대전권 병원 연계 이송 서비스</li>
+                        <li><strong>보은/단양권</strong> - 산간오지 전문 이송 서비스</li>
                     </ul>
 
-                    <h3>대상 환자</h3>
-                    <p>다음과 같은 경우에 일반 환자이송 서비스를 이용하실 수 있습니다:</p>
+                    <h3>전문 의료진 및 장비</h3>
                     <ul>
-                        <li>거동이 불편한 고령 환자</li>
-                        <li>수술 후 회복 중인 환자</li>
-                        <li>만성질환으로 정기적인 병원 방문이 필요한 환자</li>
-                        <li>휠체어 이용 환자</li>
-                        <li>침상에서 움직이기 어려운 중환자</li>
-                        <li>일반 차량 이용이 어려운 모든 환자</li>
-                    </ul>
-
-                    <h3>안전 관리</h3>
-                    <p>환자의 안전한 이송을 위해 다음과 같은 안전 관리 시스템을 운영합니다:</p>
-                    <ul>
-                        <li>출발 전 환자 상태 확인 및 적절한 장비 준비</li>
-                        <li>이송 중 지속적인 환자 상태 모니터링</li>
-                        <li>응급상황 시 즉시 119 신고 및 응급처치</li>
-                        <li>목적지 병원과의 사전 연락 및 인계</li>
-                        <li>보호자 동행 가능 (좌석 여유 시)</li>
-                        <li>정기적인 차량 점검 및 장비 관리</li>
+                        <li>응급구조사 1급 자격자 상시 동행</li>
+                        <li>산소공급장치, 심전도 모니터, 제세동기 완비</li>
+                        <li>침상형 구급차 (중환자, 수술 후 환자)</li>
+                        <li>휠체어형 구급차 (외래, 거동불편 환자)</li>
+                        <li>척추고정판, 응급약물 등 응급장비 구비</li>
+                        <li>환자 상태별 맞춤형 이송 프로토콜 적용</li>
                     </ul>
                 </div>
 
                 <div class="sidebar">
                     <div class="quick-contact">
-                        <h3>즉시 상담 신청</h3>
+                        <h3>24시간 상담 신청</h3>
                         <span class="phone">010-8841-4114</span>
-                        <a href="tel:010-8841-4114" class="call-btn">📞 지금 통화하기</a>
+                        <a href="tel:010-8841-4114" class="call-btn">📞 지금 전화하기</a>
                     </div>
 
                     <div class="service-features">
@@ -482,19 +750,19 @@
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">🕒</div>
-                            <span>24시간 서비스</span>
+                            <span>24시간 운영</span>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon">🚗</div>
+                            <div class="feature-icon">🗺️</div>
                             <span>충북 전 지역</span>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">💰</div>
-                            <span>투명한 요금</span>
+                            <span>보험 적용</span>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">🛡️</div>
-                            <span>보험 가입</span>
+                            <span>안전 보장</span>
                         </div>
                     </div>
                 </div>
@@ -502,30 +770,91 @@
         </div>
     </section>
 
+    <section class="faq-section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">자주 묻는 질문</h2>
+            <p style="text-align: center; font-size: 1rem; color: #666; margin-bottom: 30px;">충북 환자이송 서비스 관련 자주 묻는 질문</p>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 충북 어느 지역이든 이송 가능한가요?
+                </div>
+                <div class="faq-answer">
+                    네, 청주, 충주, 제천, 음성, 진천, 괴산, 증평, 영동, 옥천, 보은, 단양 등 충북 전 지역 어디든 24시간 출동 가능합니다. 산간오지나 농촌지역도 전문적으로 서비스합니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 119 구급차와 차이점은 무엇인가요?
+                </div>
+                <div class="faq-answer">
+                    119 구급차는 생명이 위험한 응급상황 전용이며, 사설구급차는 계획된 이송이나 비응급 상황에서 이용합니다. 사설구급차는 예약제로 운영되어 대기시간이 없고, 보다 편안하고 개인화된 서비스를 제공합니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 의료보험 적용이 가능한가요?
+                </div>
+                <div class="faq-answer">
+                    의사의 이송 필요성 소견서가 있는 경우 건강보험 적용이 가능합니다. 보험 적용 시 환자 부담금이 크게 줄어들며, 자세한 사항은 해당 병원 원무과에 문의하시기 바랍니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 예약은 얼마나 미리 해야 하나요?
+                </div>
+                <div class="faq-answer">
+                    계획된 이송은 1-2일 전 예약을 권장하지만, 당일 예약도 차량 여유가 있으면 가능합니다. 응급상황은 즉시 출동하며, 24시간 상담 전화를 운영합니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 서울, 대전 등 타 지역 이송도 가능한가요?
+                </div>
+                <div class="faq-answer">
+                    네, 충북에서 서울, 대전, 부산 등 전국 어디든 이송 가능합니다. 장거리 이송 시 중간 휴게소에서 환자 상태를 점검하며 안전하게 이송합니다.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q. 휠체어나 침대 환자도 이송 가능한가요?
+                </div>
+                <div class="faq-answer">
+                    네, 휠체어 환자와 침상 환자 모두 이송 가능합니다. 환자 상태에 맞는 적절한 구급차(휠체어형/침상형)를 배치하여 안전하고 편안한 이송을 제공합니다.
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="process-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">이송 절차</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: #666;">간단한 4단계로 안전한 환자이송을 진행합니다</p>
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">이송 절차</h2>
+            <p style="text-align: center; font-size: 1rem; color: #666;">간단한 4단계로 안전한 환자이송</p>
             <div class="process-grid">
                 <div class="process-step">
                     <div class="step-number">1</div>
-                    <h4>상담 및 예약</h4>
-                    <p>전화 상담을 통해 환자 상태, 출발지, 목적지, 이송 시간 등을 확인하고 예약을 진행합니다.</p>
+                    <h4>전화 상담</h4>
+                    <p>환자 상태, 출발지, 목적지, 이송 시간 등을 확인하고 예약 진행</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <h4>차량 준비</h4>
-                    <p>환자 상태에 맞는 적절한 구급차와 의료장비를 준비하고 응급구조사가 출동합니다.</p>
+                    <p>환자 맞춤형 구급차와 의료장비 준비, 응급구조사 출동</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
-                    <h4>안전한 이송</h4>
-                    <p>환자를 안전하게 구급차에 탑승시키고 이송 중 지속적으로 상태를 모니터링합니다.</p>
+                    <h4>안전 이송</h4>
+                    <p>환자 안전 탑승, 이송 중 지속적 상태 모니터링</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">4</div>
                     <h4>목적지 도착</h4>
-                    <p>목적지 병원에 안전하게 도착하여 의료진에게 환자를 인계하고 이송을 완료합니다.</p>
+                    <p>목적지 병원 도착, 의료진에게 안전 인계 완료</p>
                 </div>
             </div>
         </div>
@@ -533,8 +862,8 @@
 
     <section class="pricing-detail">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">일반 환자이송 요금표</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: #666;">2025년 7월 기준 특수차 요금표 (보건복지부 고시 준수)</p>
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">충북 환자이송 요금표</h2>
+            <p style="text-align: center; font-size: 1rem; color: #666;">2025년 7월 기준 보건복지부 고시 준수</p>
             <div class="pricing-table">
                 <div class="price-row">
                     <span class="price-service">기본 요금 (10km 이내)</span>
@@ -543,10 +872,6 @@
                 <div class="price-row">
                     <span class="price-service">추가 거리 (1km당)</span>
                     <span class="price-amount">1,300원</span>
-                </div>
-                <div class="price-row">
-                    <span class="price-service">침상형 구급차 이용</span>
-                    <span class="price-amount">+10,000원</span>
                 </div>
                 <div class="price-row">
                     <span class="price-service">응급구조사 동행</span>
@@ -561,82 +886,22 @@
                     <span class="price-amount">20%</span>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 30px; color: #666; font-size: 0.9rem;">
-                ※ 청주시내 → 서울대병원 예상요금: 약 140,000원 (편도, 주간기준)<br>
-                ※ 정확한 요금은 출발지와 목적지 확인 후 사전 안내해드립니다<br>
-                ※ 보험 적용 시 환자 부담금이 크게 줄어들 수 있습니다 (의료진 소견서 필요)
+            <p style="text-align: center; margin-top: 25px; color: #666; font-size: 0.9rem;">
+                ※ 청주 → 서울대병원: 약 140,000원 (편도) | 충주 → 대전성모병원: 약 95,000원<br>
+                ※ 정확한 요금은 출발지와 목적지 확인 후 사전 안내<br>
+                ※ 보험 적용 시 환자 부담금 대폭 감소 (의료진 소견서 필요)
             </p>
         </div>
     </section>
 
-    <section class="faq-section">
+    <footer style="background: #2c3e50; color: #ecf0f1; padding: 30px 0; text-align: center;">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #2c3e50; margin-bottom: 20px;">자주 묻는 질문</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 40px;">일반 환자이송 서비스 관련 자주 묻는 질문들입니다</p>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 119 구급차와 사설구급차의 차이점은 무엇인가요?
-                </div>
-                <div class="faq-answer">
-                    119 구급차는 생명이 위험한 응급상황에서 무료로 이용하는 공공 서비스입니다. 사설구급차는 계획된 이송이나 비응급 상황에서 이용하며, 보다 편안하고 개인화된 서비스를 제공합니다. 응급상황에서는 반드시 119를 먼저 신고하시기 바랍니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 예약은 얼마나 미리 해야 하나요?
-                </div>
-                <div class="faq-answer">
-                    계획된 이송의 경우 1-2일 전 예약을 권장하지만, 당일 예약도 차량 여유가 있다면 가능합니다. 응급상황의 경우 즉시 출동이 가능하며, 24시간 상담 전화를 운영하고 있습니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 보호자가 함께 탑승할 수 있나요?
-                </div>
-                <div class="faq-answer">
-                    네, 구급차 내 좌석에 여유가 있는 경우 보호자 1명이 함께 탑승 가능합니다. 다만 환자의 안전을 위해 응급구조사의 판단에 따라 제한될 수 있습니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 의료보험 적용이 가능한가요?
-                </div>
-                <div class="faq-answer">
-                    의료진의 소견서(이송 필요성 확인서)가 있는 경우 건강보험 적용이 가능합니다. 자세한 사항은 해당 병원 원무과나 건강보험공단에 문의하시기 바랍니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 휠체어나 침대 환자도 이송 가능한가요?
-                </div>
-                <div class="faq-answer">
-                    네, 휠체어 이용 환자와 침상 환자 모두 이송 가능합니다. 환자 상태에 맞는 적절한 구급차(휠체어형/침상형)를 배치하여 안전하고 편안한 이송을 제공합니다.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Q. 장거리 이송도 가능한가요?
-                </div>
-                <div class="faq-answer">
-                    충북에서 서울, 부산 등 전국 어디든 이송 가능합니다. 장거리 이송의 경우 중간 휴게소에서 환자 상태 점검 및 휴식을 취하며 안전하게 이송합니다. 요금은 거리에 따라 산정됩니다.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer style="background: #2c3e50; color: #ecf0f1; padding: 40px 0; text-align: center;">
-        <div class="container">
-            <h3 style="color: #e74c3c; margin-bottom: 20px;">직지응급환자이송단</h3>
-            <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px;">010-8841-4114</p>
-            <p style="margin-bottom: 20px;">충청북도 전 지역 24시간 응급환자이송 서비스</p>
-            <p style="font-size: 0.9rem; opacity: 0.8;">
-                응급상황 시 119 신고 후 사설구급차 이용을 권장합니다 | 보건복지부 고시 기준 준수
+            <h3 style="color: #e74c3c; margin-bottom: 15px;">직지응급환자이송단</h3>
+            <p style="font-size: 1.6rem; font-weight: 700; margin-bottom: 12px;">010-8841-4114</p>
+            <p style="margin-bottom: 15px;">충청북도 전 지역 24시간 환자이송 전문</p>
+            <p style="font-size: 0.85rem; opacity: 0.8;">
+                청주 충주 제천 음성 진천 괴산 증평 영동 옥천 보은 단양 환자이송<br>
+                응급상황 시 119 신고 후 사설구급차 이용 권장 | 보건복지부 고시 준수
             </p>
         </div>
     </footer>
@@ -646,15 +911,29 @@
             const answer = element.nextElementSibling;
             const allAnswers = document.querySelectorAll('.faq-answer');
             
-            // Close all other FAQ answers
             allAnswers.forEach(ans => {
                 if (ans !== answer) {
                     ans.classList.remove('active');
                 }
             });
             
-            // Toggle current answer
             answer.classList.toggle('active');
+        }
+
+        function openSeoPopup() {
+            document.getElementById('seoPopup').style.display = 'block';
+        }
+
+        function closeSeoPopup() {
+            document.getElementById('seoPopup').style.display = 'none';
+        }
+
+        // Close popup when clicking outside
+        window.onclick = function(event) {
+            const popup = document.getElementById('seoPopup');
+            if (event.target == popup) {
+                popup.style.display = 'none';
+            }
         }
 
         // Smooth scrolling for anchor links
