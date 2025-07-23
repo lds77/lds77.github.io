@@ -78,15 +78,15 @@
             padding: 0 20px;
         }
 
-        /* Header */
-        header {
+        /* er */
+        er {
             background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
             padding: 1rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .header-content {
+        .er-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -454,7 +454,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        .hospital-header {
+        .hospital-er {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
@@ -808,6 +808,42 @@
             }
         }
     </style>
+    <style>
+/* 네이버 블로그 고정 버튼 */
+.fixed-blog-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #03C75A, #00B04F);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.fixed-blog-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(3, 199, 90, 0.6);
+    color: white;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+    .fixed-blog-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+}
+</style>
 </head>
 <body>
     <header>
@@ -1318,5 +1354,7 @@
             observer.observe(card);
         });
     </script>
+    <!-- 네이버 블로그 고정 버튼 -->
+<a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
 </body>
 </html>
