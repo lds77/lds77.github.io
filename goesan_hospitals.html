@@ -833,8 +833,44 @@
             }
         }
     </style>
+    <style>
+/* 네이버 블로그 고정 버튼 */
+.fixed-blog-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #03C75A, #00B04F);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.fixed-blog-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(3, 199, 90, 0.6);
+    color: white;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+    .fixed-blog-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+}
+</style>
 </head>
-<body>
+<>
     <header>
         <div class="container">
             <div class="header-content">
@@ -1336,12 +1372,12 @@
         // Summary popup 기능
         function showSummary() {
             document.getElementById('summaryPopup').style.display = 'block';
-            document.body.style.overflow = 'hidden';
+            document..style.overflow = 'hidden';
         }
 
         function hideSummary() {
             document.getElementById('summaryPopup').style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document..style.overflow = 'auto';
         }
 
         // 팝업 배경 클릭 시 닫기
@@ -1384,5 +1420,7 @@
             observer.observe(card);
         });
     </script>
+            <!-- 네이버 블로그 고정 버튼 -->
+<a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
 </body>
 </html>
