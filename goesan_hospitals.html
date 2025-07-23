@@ -7,9 +7,9 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-T5CHBY7K97');
     </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>괴산 사설구급차 | 괴산군 환자이송 24시간 직지응급환자이송단</title>
@@ -135,12 +135,6 @@
             color: #e74c3c;
         }
 
-        .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 0;
-        }
-
         .phone-number {
             font-size: 1.8rem;
             font-weight: 900;
@@ -169,7 +163,7 @@
             font-weight: 600;
         }
 
-        /* Hero Section - 모바일 높이 축소 */
+        /* Hero Section */
         .page-hero {
             background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
             color: white;
@@ -205,7 +199,7 @@
             font-size: 0.9rem;
         }
 
-        /* Summary Button - 우측 상단 */
+        /* Summary Button */
         .summary-btn {
             position: fixed;
             top: 80px;
@@ -291,7 +285,7 @@
             margin-left: 20px;
         }
 
-        /* Fixed Call Button - 우측 하단 */
+        /* Fixed Buttons */
         .fixed-call-btn {
             position: fixed;
             bottom: 20px;
@@ -312,6 +306,25 @@
             animation: pulse 2s infinite;
         }
 
+        .fixed-blog-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #03C75A, #00B04F);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.1); }
@@ -323,7 +336,13 @@
             transform: translateY(-3px);
         }
 
-        /* Quick Info Section - 모바일 높이 축소 */
+        .fixed-blog-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(3, 199, 90, 0.6);
+            color: white;
+        }
+
+        /* Quick Info Section */
         .quick-info {
             background: white;
             padding: 40px 0;
@@ -375,7 +394,7 @@
             font-size: 0.9rem;
         }
 
-        /* Area Specialty - 모바일 높이 축소 */
+        /* Area Specialty */
         .area-specialty {
             background: linear-gradient(135deg, #f4eef9 0%, #ede3f3 100%);
             border-left: 5px solid #8e44ad;
@@ -393,7 +412,7 @@
         .area-specialty p {
             font-size: 0.9rem;
             line-height: 1.5;
-            color: #000; /* 검정색으로 변경 */
+            color: #000;
         }
 
         .specialty-list {
@@ -409,10 +428,10 @@
             border-radius: 8px;
             border-left: 3px solid #8e44ad;
             font-size: 0.85rem;
-            color: #000; /* 검정색으로 변경 */
+            color: #000;
         }
 
-        /* Services Section - 모바일 높이 축소 */
+        /* Services Section */
         .services-section {
             background: #f8f9fa;
             padding: 50px 0;
@@ -453,7 +472,6 @@
         .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            background: white;
         }
 
         .service-icon {
@@ -499,7 +517,7 @@
             font-weight: 500;
         }
 
-        /* FAQ Section - 모바일 높이 축소 */
+        /* FAQ Section */
         .faq-section {
             background: white;
             padding: 50px 0;
@@ -571,7 +589,7 @@
             font-size: 0.9rem;
         }
 
-        /* Hospital Section - 모바일 높이 축소 */
+        /* Hospital Section */
         .hospitals-section {
             background: #f8f9fa;
             padding: 50px 0;
@@ -676,7 +694,7 @@
             background: #bdc3c7;
         }
 
-        /* Emergency Banner - 모바일 높이 축소 */
+        /* Emergency Banner */
         .emergency-banner {
             background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
             color: white;
@@ -696,7 +714,7 @@
             line-height: 1.4;
         }
 
-        /* Contact CTA - 모바일 높이 축소 */
+        /* Contact CTA */
         .contact-cta {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
@@ -735,7 +753,7 @@
             box-shadow: 0 8px 25px rgba(142, 68, 173, 0.4);
         }
 
-        /* Responsive - 모바일 추가 최적화 */
+        /* Responsive */
         @media (max-width: 768px) {
             .page-hero {
                 padding: 30px 0;
@@ -767,16 +785,8 @@
                 font-size: 0.9rem;
             }
 
-            .info-card {
+            .info-card, .service-card, .hospital-card {
                 padding: 15px;
-            }
-
-            .service-card {
-                padding: 20px;
-            }
-
-            .hospital-card {
-                padding: 20px;
             }
 
             .hospital-actions {
@@ -794,9 +804,13 @@
                 font-size: 0.85rem;
             }
 
+            .fixed-call-btn, .fixed-blog-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 18px;
+            }
+
             .fixed-call-btn {
-                width: 55px;
-                height: 55px;
                 bottom: 15px;
                 right: 15px;
             }
@@ -827,50 +841,10 @@
             .contact-cta {
                 padding: 30px 0;
             }
-
-            footer {
-                padding: 30px 0;
-            }
         }
     </style>
-    <style>
-/* 네이버 블로그 고정 버튼 */
-.fixed-blog-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #03C75A, #00B04F);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-.fixed-blog-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(3, 199, 90, 0.6);
-    color: white;
-}
-
-/* 모바일 최적화 */
-@media (max-width: 768px) {
-    .fixed-blog-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-    }
-}
-</style>
 </head>
-<>
+<body>
     <header>
         <div class="container">
             <div class="header-content">
@@ -963,8 +937,9 @@
     <!-- Fixed Call Button -->
     <a href="tel:010-8841-4114" class="fixed-call-btn">📞</a>
 
-    <section class="page-hero">
-        <div class="container">
+    <!-- Fixed Blog Button -->
+    <a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
+
     <section class="page-hero">
         <div class="container">
             <h1>괴산 사설구급차 전문 서비스</h1>
@@ -1249,7 +1224,7 @@
                     </div>
                 </div>
 
-                <!-- 청주 주요 병원 (이송 추천) -->
+                <!-- 충북대학교병원 -->
                 <div class="hospital-card" style="border: 2px solid #e74c3c;">
                     <div class="hospital-header">
                         <div class="hospital-type" style="background: #e74c3c;">이송 추천</div>
@@ -1279,7 +1254,7 @@
                     </div>
                 </div>
 
-                <!-- 대전 주요 병원 (이송 추천) -->
+                <!-- 충남대학교병원 -->
                 <div class="hospital-card" style="border: 2px solid #3498db;">
                     <div class="hospital-header">
                         <div class="hospital-type" style="background: #3498db;">이송 추천</div>
@@ -1372,12 +1347,12 @@
         // Summary popup 기능
         function showSummary() {
             document.getElementById('summaryPopup').style.display = 'block';
-            document..style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
         }
 
         function hideSummary() {
             document.getElementById('summaryPopup').style.display = 'none';
-            document..style.overflow = 'auto';
+            document.body.style.overflow = 'auto';
         }
 
         // 팝업 배경 클릭 시 닫기
@@ -1420,7 +1395,5 @@
             observer.observe(card);
         });
     </script>
-    <!-- 네이버 블로그 고정 버튼 -->
-<a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
 </body>
 </html>
