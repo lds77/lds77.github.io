@@ -846,17 +846,18 @@
 </style>
 </head>
 <body>
-    <header>
+    <!-- Header Section: 배경색을 빨간색으로 변경하고 내부 텍스트 색상을 조정했습니다. -->
+    <header style="background-color: #e74c3c; padding: 15px 0;">
         <div class="container">
-            <div class="header-content">
-                <div class="logo" onclick="location.href='index.html'">
-                    <div class="logo-icon">🚑</div>
+            <div class="header-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                <div class="logo" onclick="location.href='index.html'" style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                    <div class="logo-icon" style="width: 40px; height: 40px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #e74c3c;">🚑</div>
                     <div>
                         <div style="font-size: 1.8rem; font-weight: 700; margin: 0; color: white;">직지응급환자이송단</div>
-                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충청북도 전문 사설구급차</p>
+                        <p style="font-size: 0.8rem; margin: 0; opacity: 0.9; color: white;">충청북도 전문 사설구급차</p>
                     </div>
                 </div>
-                <div class="phone-number">010-8841-4114</div>
+                <div class="phone-number" style="font-size: 1.5rem; font-weight: 900; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); color: white;">010-8841-4114</div>
             </div>
         </div>
     </header>
