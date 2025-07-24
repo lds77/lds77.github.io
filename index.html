@@ -1,542 +1,4 @@
-</style>
-    <style>
-/* 네이버 블로그 고정 버튼 */
-.fixed-blog-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #03C75A, #00B04F);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-.fixed-blog-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(3, 199, 90, 0.6);
-    color: white;
-}
-
-/* 모바일 최적화 */
-@media (max-width: 768px) {
-    .fixed-blog-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-    }
-}
-</style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <div class="logo-icon">🚑</div>
-                    <div>
-                        <h1>직지응급환자이송단</h1>
-                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충청북도 전문 사설구급차</p>
-                    </div>
-                </div>
-                <div class="emergency-contact">
-                    <div class="emergency-text">24시간 응급환자이송 대기</div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h2>청주사설구급차 | 충주,제천,음성,괴산,진천,증평,단양,보은,옥천,영동 24시간 응급환자이송</h2>
-                <p>청주를 중심으로 충청북도 전 지역을 대상으로 전문 응급구조사가 동행하는 안전한 사설구급차 서비스를 제공합니다. 24시간 언제든지 연락주세요.</p>
-                <div class="cta-buttons">
-                    <a href="tel:010-8841-4114" class="btn btn-primary">📞 즉시 통화</a>
-                    <a href="#services" class="btn btn-secondary">서비스 안내</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="services">
-            <div class="container">
-                <h2 class="section-title">상황별 전문 이송 서비스</h2>
-                <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 30px;">청주사설구급차를 통한 전문 환자이송 서비스</p>
-                <div class="services-grid">
-                    <div class="service-card" onclick="location.href='general_patient_transport.html'">
-                        <div class="service-icon">🏥</div>
-                        <h3>환자이송</h3>
-                        <p>청주·충주·제천등 병원 간 이송, 외래진료 이송, 입퇴원 이송 등 일반적인 환자이송 서비스를 안전하게 제공합니다.</p>
-                    </div>
-                    <div class="service-card" onclick="location.href='nursing_home_transport.html'">
-                        <div class="service-icon">🏚️</div>
-                        <h3>요양병원 전문이송</h3>
-                        <p>충북 지역 요양병원 입원 및 퇴원, 병원 간 전원 시 구급차로 편안하고 안전한 이송을 보장합니다.</p>
-                    </div>
-                    <div class="service-card" onclick="location.href='mental_health_transport.html'">
-                        <div class="service-icon">🧠</div>
-                        <h3>정신병원 입원</h3>
-                        <p>정신병원 입원 시 전문 훈련받은 응급구조사가 동행하여 안전하고 인도적인 이송을 실시합니다.</p>
-                    </div>
-                    <div class="service-card" onclick="location.href='alcohol_treatment_transport.html'">
-                        <div class="service-icon">🍺</div>
-                        <h3>알콜중독</h3>
-                        <p>알콜중독 전문병원 입원 시 환자 상태를 고려한 맞춤형 이송 서비스를 제공합니다.</p>
-                    </div>
-                    <div class="service-card" onclick="location.href='event_medical_support.html'">
-                        <div class="service-icon">🎭</div>
-                        <h3>행사구급차</h3>
-                        <p>체육대회, 축제, 콘서트 등 각종 행사 현장에서의 응급의료 지원 서비스를 제공합니다.</p>
-                    </div>
-                    <div class="service-card" onclick="location.href='goin_transport_service.html'">
-                        <div class="service-icon">🕊️</div>
-                        <h3>고인 이송</h3>
-                        <p>고인의 존엄성을 지키며 장례식장까지 정중하고 신속한 이송 서비스를 제공합니다.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="faq-section">
-            <div class="container">
-                <h2 class="section-title">자주 묻는 질문</h2>
-                <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 40px;">청주 사설구급차 이용 시 자주 묻는 질문들입니다</p>
-                
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 정신질환자나 알콜중독 환자도 이송 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        네, 가능합니다. 정신질환자와 알콜중독 환자 이송을 위한 특별한 훈련을 받은 전문 인력이 상주하고 있으며, 환자의 상태와 안전을 최우선으로 하는 인도적인 이송 서비스를 제공합니다.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 보험 적용이 되나요?
-                    </div>
-                    <div class="faq-answer">
-                        사설구급차 이용료는 일반적으로 건강보험 적용이 되지 않습니다. 다만, 실비보험이나 상해보험에 따라 보상이 가능한 경우가 있으니 해당 보험사에 문의하시기 바랍니다. 정확한 요금은 사전에 투명하게 안내해드립니다.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 청주에서 서울까지 이송이 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        네, 가능합니다. 청주를 기점으로 전국 어디든 장거리 이송 서비스를 제공하고 있습니다. 서울, 대전, 대구, 부산 등 전국 주요 도시로의 환자이송이 가능하며, 거리에 따른 요금은 사전에 정확히 안내해드립니다.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 응급구조사가 항상 동행하나요?
-                    </div>
-                    <div class="faq-answer">
-                        네, 저희 직지응급환자이송단은 상황별로 전문 응급구조사가 동행합니다. 1급 응급구조사 자격을 보유한 전문 인력이 이송 중 환자의 상태를 지속적으로 모니터링하고 필요시 응급처치를 실시합니다.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 야간이나 주말에도 이송이 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        네, 24시간 365일 언제든지 이송 서비스를 제공합니다. 야간(22시~06시)과 공휴일/주말에는 20%의 할증이 적용되지만, 응급상황에서는 신속한 대응을 최우선으로 하고 있습니다.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 요양병원 이송 시 필요한 준비물이 있나요?
-                    </div>
-                    <div class="faq-answer">
-                        환자의 의료기록, 보험증, 신분증, 복용 중인 약물 리스트를 준비해주세요. 침상형 구급차 이용 시에는 편안한 의복과 개인 용품을 챙겨주시면 됩니다. 의료장비는 저희가 모두 준비합니다.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 미리 예약이 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        네, 가능합니다. 계획된 이송의 경우 미리 예약을 받고 있으며, 응급상황에서는 즉시 출동합니다. 예약 시에는 이송 날짜, 시간, 출발지, 목적지, 환자 상태 등을 알려주시면 됩니다.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="coverage">
-            <div class="container">
-                <h2 class="section-title">서비스 지역 및 병원 정보</h2>
-                <p style="text-align: center; font-size: 1.1rem; color: #666;">충청북도 전 지역에서 환자이송 가능합니다 (클릭하여 지역별 병원 정보 확인)</p>
-                
-                <div class="coverage-grid">
-                    <div class="coverage-item" onclick="location.href='cheongju_hospitals.html'">
-                        <h4>청주사설구급차</h4>
-                        <p>상당구, 서원구, 청원구, 흥덕구</p>
-                        <small style="color: #FF6B35;">충북 최대 도시 | 상급종합병원 다수</small>
-                    </div>
-                    <div class="coverage-item" onclick="location.href='chungju_hospitals.html'">
-                        <h4>충주사설구급차</h4>
-                        <p>시내 전 지역 및 인근 농촌지역</p>
-                        <small style="color: #FF6B35;">충북 북부 거점 | 건국대 충주병원</small>
-                    </div>
-                    <div class="coverage-item" onclick="location.href='jecheon_hospitals.html'">
-                        <h4>제천사설구급차</h4>
-                        <p>시내 전 지역 및 인근 산간지역</p>
-                        <small style="color: #FF6B35;">산간지역 의료중심 | 세명대병원</small>
-                    </div>
-                    <div class="coverage-item" onclick="location.href='okcheon_hospitals.html'">
-                        <h4>옥천환자이송</h4>
-                        <p>옥천읍, 동이면, 안남면 등</p>
-                        <small style="color: #FF6B35;">청주 이송 | 대전 신속 이송</small>
-                    </div>
-                    <div class="coverage-item" onclick="location.href='yeongdong_hospitals.html'">
-                        <h4>영동사설구급차</h4>
-                        <p>영동읍, 황간면, 추풍령면 등</p>
-                        <small style="color: #FF6B35;">대전 접근 용이 | 산간지역</small>
-                    </div>
-                    <div class="coverage-item" onclick="location.href='eumseong_hospitals.html'">
-                        <h4>음성행사구급차</h4>
-                        <p>음성읍, 금왕읍, 대소면 등</p>
-                        <small style="color: #FF6B35;">청주 밀접지역 | 산업단지 밀집</small>
-                    </div>
-                    <div class="coverage-item" onclick="location.href='jincheon_hospitals.html'">
-                        <h4>진천환자이송</h4>
-                        <p>진천읍, 덕산읍, 백곡면 등</p>
-                        <small style="color: #FF6B35;">청주 인근지역 | 국가대표선수촌</small>
-                    </div>
-                    <div class="coverage-item" onclick="location.href='goesan_hospitals.html'">
-                        <h4>괴산응급이송</h4>
-                        <p>괴산읍, 청천면, 칠성면 등</p>
-                        <small style="color: #FF6B35;">청주 신속이송 | 농촌지역</small>
-                    </div>
-                    <div class="coverage-item" onclick="location.href='jeungpyeong_hospitals.html'">
-                        <h4>증평사설구급차</h4>
-                        <p>증평읍, 도안면</p>
-                        <small style="color: #FF6B35;">청주 밀접지역 | 충북 최소 군</small>
-                    </div>
-                    <div class="coverage-item" onclick="location.href='boeun_hospitals.html'">
-                        <h4>보은구급차</h4>
-                        <p>보은읍, 속리산면, 탄부면 등</p>
-                        <small style="color: #FF6B35;">속리산 인근 | 청주 이송</small>
-                    </div>
-                    <div class="coverage-item" onclick="location.href='danyang_hospitals.html'">
-                        <h4>단양환자이송</h4>
-                        <p>단양읍, 매포읍, 가곡면 등</p>
-                        <small style="color: #FF6B35;">제천 인근지역 | 관광지역</small>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 40px; padding: 20px; background: #e8f4fd; border-radius: 10px;">
-                    <h4 style="color: #2980b9; margin-bottom: 10px;">💡 이송 서비스 안내</h4>
-                    <p style="color: #555;">각 지역별 주요 병원 정보와 청주/대전/서울 등 대도시 병원으로의 이송 경로를 확인하실 수 있습니다.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="blog-section">
-            <div class="container">
-                <h2 class="section-title">응급의료 정보 & 이송 가이드</h2>
-                <p class="section-subtitle">전문가가 알려주는 응급상황 대처법과 환자이송 정보를 확인하세요</p>
-                
-                <div class="blog-grid">
-                    <article class="blog-card" onclick="location.href='blog/emergency-first-aid-guide.html'">
-                        <div class="blog-image">
-                            <div class="blog-icon">💊</div>
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-category">응급의료 가이드</span>
-                            <h3>응급상황별 기본 응급처치 방법 완벽 가이드</h3>
-                            <p>심정지, 출혈, 골절, 화상 등 응급상황별 올바른 응급처치 방법을 전문가가 알려드립니다. 생명을 구하는 골든타임 대처법을 배워보세요.</p>
-                            <div class="blog-meta">
-                                <span class="blog-date">2025.01.12</span>
-                                <span class="blog-views">조회 1,523</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="blog-card" onclick="location.href='blog/emergency-vs-private-ambulance.html'">
-                        <div class="blog-image">
-                            <div class="blog-icon">🚨</div>
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-category">응급의료 가이드</span>
-                            <h3>119 vs 사설구급차, 언제 이용해야 할까?</h3>
-                            <p>응급상황에서 올바른 선택을 위한 완벽 가이드. 상황별 이용 기준과 장단점을 자세히 알아보세요.</p>
-                            <div class="blog-meta">
-                                <span class="blog-date">2025.01.10</span>
-                                <span class="blog-views">조회 1,247</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="blog-card" onclick="location.href='blog/patient-transport-documents.html'">
-                        <div class="blog-image">
-                            <div class="blog-icon">📋</div>
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-category">이송 정보</span>
-                            <h3>환자이송 시 필요한 서류와 준비물</h3>
-                            <p>병원 간 이송이나 응급이송 시 미리 준비해야 할 서류들과 체크리스트를 정리했습니다.</p>
-                            <div class="blog-meta">
-                                <span class="blog-date">2025.01.08</span>
-                                <span class="blog-views">조회 892</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="blog-card" onclick="location.href='blog/cheongju-hospitals-guide.html'">
-                        <div class="blog-image">
-                            <div class="blog-icon">🏥</div>
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-category">지역 의료 정보</span>
-                            <h3>청주 주요 병원별 특징과 전문 진료과목</h3>
-                            <p>청주 지역 주요 병원들의 특성화 진료과목과 이송 시 알아야 할 정보들을 정리했습니다.</p>
-                            <div class="blog-meta">
-                                <span class="blog-date">2025.01.05</span>
-                                <span class="blog-views">조회 634</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="blog-card" onclick="location.href='blog/nursing-home-transport-process.html'">
-                        <div class="blog-image">
-                            <div class="blog-icon">🏚️</div>
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-category">요양 이송</span>
-                            <h3>요양병원 입원 시 알아야 할 이송 절차</h3>
-                            <p>요양병원 입원이 결정되셨나요? 안전하고 편안한 이송을 위한 단계별 절차를 안내합니다.</p>
-                            <div class="blog-meta">
-                                <span class="blog-date">2025.01.03</span>
-                                <span class="blog-views">조회 756</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="blog-card" onclick="location.href='blog/winter-emergency-prevention.html'">
-                        <div class="blog-image">
-                            <div class="blog-icon">❄️</div>
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-category">계절 건강</span>
-                            <h3>겨울철 낙상사고 예방과 응급처치 방법</h3>
-                            <p>겨울철 빙판길 낙상사고가 증가하고 있습니다. 예방법과 응급상황 시 대처방법을 알아보세요.</p>
-                            <div class="blog-meta">
-                                <span class="blog-date">2025.01.01</span>
-                                <span class="blog-views">조회 423</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="blog-more">
-                    <div style="display: flex; gap: 20px; align-items: center; justify-content: center;">
-                        <a href="blog/index.html" class="btn" style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">더 많은 정보 보기</a>
-                        <a href="https://blog.naver.com/ldszuno" target="_blank" rel="noopener noreferrer" class="btn" style="background: linear-gradient(135deg, #03C75A, #00B04F); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">📝 네이버 블로그</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="pricing">
-            <div class="container">
-                <h2 class="section-title">투명한 요금 안내</h2>
-                <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 30px;">2025년 1월 기준 특수차 요금표 (보건복지부 고시 준수)</p>
-                <div class="price-table">
-                    <div class="price-row">
-                        <span class="price-service">기본 요금 (10km 이내, 특수차)</span>
-                        <span class="price-amount">75,000원</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-service">추가 거리 (1km당)</span>
-                        <span class="price-amount">1,300원</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-service">응급구조사 동행</span>
-                        <span class="price-amount">포함</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-service">야간 할증 (22시~06시)</span>
-                        <span class="price-amount">20%</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-service">공휴일/주말 할증</span>
-                        <span class="price-amount">20%</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price-service">특수 환자 이송 (정신질환/중독)</span>
-                        <span class="price-amount">별도 상담</span>
-                    </div>
-                </div>
-                <p style="text-align: center; margin-top: 30px; color: #666; font-size: 0.9rem;">
-                    ※ 정확한 요금은 출발지와 목적지를 확인한 후 안내해드립니다<br>
-                    ※ 특수 상황 이송 및 장거리 이송의 경우 별도 상담 후 요금이 책정됩니다<br>
-                    ※ 상기 요금은 2025년 1월 기준이며 정부 고시에 따라 변동될 수 있습니다
-                </p>
-            </div>
-        </section>
-
-        <section class="contact">
-            <div class="container">
-                <h2 class="section-title" style="color: white;">연락처 및 운영시간</h2>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <h4>환자이송 연락처</h4>
-                            <p style="font-size: 2rem; font-weight: 700; color: #e74c3c;">010-8841-4114</p>
-                        </div>
-                        <div class="contact-item">
-                            <h4>운영시간</h4>
-                            <p>24시간 연중무휴<br>응급상황 즉시 출동</p>
-                        </div>
-                    </div>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <h4>사업자 정보</h4>
-                            <p style="font-size: 0.95rem;">직지응급환자이송단<br>대표자: 손기범<br>담당자: 강경성<br>충청북도 소재</p>
-                        </div>
-                        <div class="contact-item">
-                            <h4>자격 및 허가</h4>
-                            <p style="font-size: 0.95rem;">응급환자이송업 신고<br>전문 응급구조사 상주<br>의료장비 완비</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>서비스 특징</h4>
-                    <ul>
-                        <li>• 24시간 연중무휴 대기</li>
-                        <li>• 전문 응급구조사 동행</li>
-                        <li>• 최신 의료장비 구비</li>
-                        <li>• 충북 전 지역 서비스</li>
-                        <li>• 투명한 요금 체계</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>전문 이송 분야</h4>
-                    <ul>
-                        <li>• <a href="general_patient_transport.html">환자이송</a></li>
-                        <li>• <a href="nursing_home_transport.html">요양병원 전문이송</a></li>
-                        <li>• <a href="mental_health_transport.html">정신병원 입원</a></li>
-                        <li>• <a href="alcohol_treatment_transport.html">알콜중독</a></li>
-                        <li>• <a href="event_medical_support.html">행사구급차</a></li>
-                        <li>• <a href="goin_transport_service.html">고인이송</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>서비스 지역</h4>
-                    <ul>
-                        <li>• 청주시(상당구,흥덕구,서원구,청원구)</li>
-                        <li>• 충주시,제천시
-                        <li>• 단양군,음성군,괴산군</li>
-                        <li>• 진천군,증평군,보은군</li>
-                        <li>• 옥천군,영동군</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 직지응급환자이송단. 충청북도 전문 사설구급차 서비스. All rights reserved.</p>
-                <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">
-                    응급상황 시 119 신고 후 사설구급차 이용을 권장합니다 | 본 서비스는 보건복지부 고시 기준을 준수합니다
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating Call Button -->
-    <a href="tel:010-8841-4114" class="floating-call" title="즉시 통화">📞</a>
-
-    <script>
-        // FAQ 토글 기능
-        function toggleFaq(element) {
-            const answer = element.nextElementSibling;
-            const isActive = answer.classList.contains('active');
-            
-            // 모든 FAQ 답변 닫기
-            document.querySelectorAll('.faq-answer').forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            // 클릭한 항목만 열기 (이미 열려있었다면 닫기)
-            if (!isActive) {
-                answer.classList.add('active');
-            }
-        }
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Header background change on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'linear-gradient(135deg, rgba(231, 76, 60, 0.95) 0%, rgba(192, 57, 43, 0.95) 100%)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)';
-                header.style.backdropFilter = 'none';
-            }
-        });
-
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all service cards and FAQ items
-        document.querySelectorAll('.service-card, .coverage-item, .faq-item, .blog-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
-
-        // 전화 걸기 확인 기능 제거 - 이제 바로 전화앱으로 연결됩니다
-    </script>
-    <!-- 네이버 블로그 고정 버튼 -->
-<a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
-</body>
-</html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -1612,3 +1074,542 @@
                 }
             }
         }
+</style>
+    <style>
+/* 네이버 블로그 고정 버튼 */
+.fixed-blog-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #03C75A, #00B04F);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.fixed-blog-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(3, 199, 90, 0.6);
+    color: white;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+    .fixed-blog-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+}
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">🚑</div>
+                    <div>
+                        <h1>직지응급환자이송단</h1>
+                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충청북도 전문 사설구급차</p>
+                    </div>
+                </div>
+                <div class="emergency-contact">
+                    <div class="emergency-text">24시간 응급환자이송 대기</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>청주사설구급차 | 충주,제천,음성,괴산,진천,증평,단양,보은,옥천,영동 24시간 응급환자이송</h2>
+                <p>청주를 중심으로 충청북도 전 지역을 대상으로 전문 응급구조사가 동행하는 안전한 사설구급차 서비스를 제공합니다. 24시간 언제든지 연락주세요.</p>
+                <div class="cta-buttons">
+                    <a href="tel:010-8841-4114" class="btn btn-primary">📞 즉시 통화</a>
+                    <a href="#services" class="btn btn-secondary">서비스 안내</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">상황별 전문 이송 서비스</h2>
+                <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 30px;">청주사설구급차를 통한 전문 환자이송 서비스</p>
+                <div class="services-grid">
+                    <div class="service-card" onclick="location.href='general_patient_transport.html'">
+                        <div class="service-icon">🏥</div>
+                        <h3>환자이송</h3>
+                        <p>청주·충주·제천등 병원 간 이송, 외래진료 이송, 입퇴원 이송 등 일반적인 환자이송 서비스를 안전하게 제공합니다.</p>
+                    </div>
+                    <div class="service-card" onclick="location.href='nursing_home_transport.html'">
+                        <div class="service-icon">🏚️</div>
+                        <h3>요양병원 전문이송</h3>
+                        <p>충북 지역 요양병원 입원 및 퇴원, 병원 간 전원 시 구급차로 편안하고 안전한 이송을 보장합니다.</p>
+                    </div>
+                    <div class="service-card" onclick="location.href='mental_health_transport.html'">
+                        <div class="service-icon">🧠</div>
+                        <h3>정신병원 입원</h3>
+                        <p>정신병원 입원 시 전문 훈련받은 응급구조사가 동행하여 안전하고 인도적인 이송을 실시합니다.</p>
+                    </div>
+                    <div class="service-card" onclick="location.href='alcohol_treatment_transport.html'">
+                        <div class="service-icon">🍺</div>
+                        <h3>알콜중독</h3>
+                        <p>알콜중독 전문병원 입원 시 환자 상태를 고려한 맞춤형 이송 서비스를 제공합니다.</p>
+                    </div>
+                    <div class="service-card" onclick="location.href='event_medical_support.html'">
+                        <div class="service-icon">🎭</div>
+                        <h3>행사구급차</h3>
+                        <p>체육대회, 축제, 콘서트 등 각종 행사 현장에서의 응급의료 지원 서비스를 제공합니다.</p>
+                    </div>
+                    <div class="service-card" onclick="location.href='goin_transport_service.html'">
+                        <div class="service-icon">🕊️</div>
+                        <h3>고인 이송</h3>
+                        <p>고인의 존엄성을 지키며 장례식장까지 정중하고 신속한 이송 서비스를 제공합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">자주 묻는 질문</h2>
+                <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 40px;">청주 사설구급차 이용 시 자주 묻는 질문들입니다</p>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 정신질환자나 알콜중독 환자도 이송 가능한가요?
+                    </div>
+                    <div class="faq-answer">
+                        네, 가능합니다. 정신질환자와 알콜중독 환자 이송을 위한 특별한 훈련을 받은 전문 인력이 상주하고 있으며, 환자의 상태와 안전을 최우선으로 하는 인도적인 이송 서비스를 제공합니다.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 보험 적용이 되나요?
+                    </div>
+                    <div class="faq-answer">
+                        사설구급차 이용료는 일반적으로 건강보험 적용이 되지 않습니다. 다만, 실비보험이나 상해보험에 따라 보상이 가능한 경우가 있으니 해당 보험사에 문의하시기 바랍니다. 정확한 요금은 사전에 투명하게 안내해드립니다.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 청주에서 서울까지 이송이 가능한가요?
+                    </div>
+                    <div class="faq-answer">
+                        네, 가능합니다. 청주를 기점으로 전국 어디든 장거리 이송 서비스를 제공하고 있습니다. 서울, 대전, 대구, 부산 등 전국 주요 도시로의 환자이송이 가능하며, 거리에 따른 요금은 사전에 정확히 안내해드립니다.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 응급구조사가 항상 동행하나요?
+                    </div>
+                    <div class="faq-answer">
+                        네, 저희 직지응급환자이송단은 상황별로 전문 응급구조사가 동행합니다. 1급 응급구조사 자격을 보유한 전문 인력이 이송 중 환자의 상태를 지속적으로 모니터링하고 필요시 응급처치를 실시합니다.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 야간이나 주말에도 이송이 가능한가요?
+                    </div>
+                    <div class="faq-answer">
+                        네, 24시간 365일 언제든지 이송 서비스를 제공합니다. 야간(22시~06시)과 공휴일/주말에는 20%의 할증이 적용되지만, 응급상황에서는 신속한 대응을 최우선으로 하고 있습니다.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 요양병원 이송 시 필요한 준비물이 있나요?
+                    </div>
+                    <div class="faq-answer">
+                        환자의 의료기록, 보험증, 신분증, 복용 중인 약물 리스트를 준비해주세요. 침상형 구급차 이용 시에는 편안한 의복과 개인 용품을 챙겨주시면 됩니다. 의료장비는 저희가 모두 준비합니다.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 미리 예약이 가능한가요?
+                    </div>
+                    <div class="faq-answer">
+                        네, 가능합니다. 계획된 이송의 경우 미리 예약을 받고 있으며, 응급상황에서는 즉시 출동합니다. 예약 시에는 이송 날짜, 시간, 출발지, 목적지, 환자 상태 등을 알려주시면 됩니다.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="coverage">
+            <div class="container">
+                <h2 class="section-title">서비스 지역 및 병원 정보</h2>
+                <p style="text-align: center; font-size: 1.1rem; color: #666;">충청북도 전 지역에서 환자이송 가능합니다 (클릭하여 지역별 병원 정보 확인)</p>
+                
+                <div class="coverage-grid">
+                    <div class="coverage-item" onclick="location.href='cheongju_hospitals.html'">
+                        <h4>청주사설구급차</h4>
+                        <p>상당구, 서원구, 청원구, 흥덕구</p>
+                        <small style="color: #FF6B35;">충북 최대 도시 | 상급종합병원 다수</small>
+                    </div>
+                    <div class="coverage-item" onclick="location.href='chungju_hospitals.html'">
+                        <h4>충주사설구급차</h4>
+                        <p>시내 전 지역 및 인근 농촌지역</p>
+                        <small style="color: #FF6B35;">충북 북부 거점 | 건국대 충주병원</small>
+                    </div>
+                    <div class="coverage-item" onclick="location.href='jecheon_hospitals.html'">
+                        <h4>제천사설구급차</h4>
+                        <p>시내 전 지역 및 인근 산간지역</p>
+                        <small style="color: #FF6B35;">산간지역 의료중심 | 세명대병원</small>
+                    </div>
+                    <div class="coverage-item" onclick="location.href='okcheon_hospitals.html'">
+                        <h4>옥천환자이송</h4>
+                        <p>옥천읍, 동이면, 안남면 등</p>
+                        <small style="color: #FF6B35;">청주 이송 | 대전 신속 이송</small>
+                    </div>
+                    <div class="coverage-item" onclick="location.href='yeongdong_hospitals.html'">
+                        <h4>영동사설구급차</h4>
+                        <p>영동읍, 황간면, 추풍령면 등</p>
+                        <small style="color: #FF6B35;">대전 접근 용이 | 산간지역</small>
+                    </div>
+                    <div class="coverage-item" onclick="location.href='eumseong_hospitals.html'">
+                        <h4>음성행사구급차</h4>
+                        <p>음성읍, 금왕읍, 대소면 등</p>
+                        <small style="color: #FF6B35;">청주 밀접지역 | 산업단지 밀집</small>
+                    </div>
+                    <div class="coverage-item" onclick="location.href='jincheon_hospitals.html'">
+                        <h4>진천환자이송</h4>
+                        <p>진천읍, 덕산읍, 백곡면 등</p>
+                        <small style="color: #FF6B35;">청주 인근지역 | 국가대표선수촌</small>
+                    </div>
+                    <div class="coverage-item" onclick="location.href='goesan_hospitals.html'">
+                        <h4>괴산응급이송</h4>
+                        <p>괴산읍, 청천면, 칠성면 등</p>
+                        <small style="color: #FF6B35;">청주 신속이송 | 농촌지역</small>
+                    </div>
+                    <div class="coverage-item" onclick="location.href='jeungpyeong_hospitals.html'">
+                        <h4>증평사설구급차</h4>
+                        <p>증평읍, 도안면</p>
+                        <small style="color: #FF6B35;">청주 밀접지역 | 충북 최소 군</small>
+                    </div>
+                    <div class="coverage-item" onclick="location.href='boeun_hospitals.html'">
+                        <h4>보은구급차</h4>
+                        <p>보은읍, 속리산면, 탄부면 등</p>
+                        <small style="color: #FF6B35;">속리산 인근 | 청주 이송</small>
+                    </div>
+                    <div class="coverage-item" onclick="location.href='danyang_hospitals.html'">
+                        <h4>단양환자이송</h4>
+                        <p>단양읍, 매포읍, 가곡면 등</p>
+                        <small style="color: #FF6B35;">제천 인근지역 | 관광지역</small>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px; padding: 20px; background: #e8f4fd; border-radius: 10px;">
+                    <h4 style="color: #2980b9; margin-bottom: 10px;">💡 이송 서비스 안내</h4>
+                    <p style="color: #555;">각 지역별 주요 병원 정보와 청주/대전/서울 등 대도시 병원으로의 이송 경로를 확인하실 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-section">
+            <div class="container">
+                <h2 class="section-title">응급의료 정보 & 이송 가이드</h2>
+                <p class="section-subtitle">전문가가 알려주는 응급상황 대처법과 환자이송 정보를 확인하세요</p>
+                
+                <div class="blog-grid">
+                    <article class="blog-card" onclick="location.href='blog/emergency-first-aid-guide.html'">
+                        <div class="blog-image">
+                            <div class="blog-icon">💊</div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">응급의료 가이드</span>
+                            <h3>응급상황별 기본 응급처치 방법 완벽 가이드</h3>
+                            <p>심정지, 출혈, 골절, 화상 등 응급상황별 올바른 응급처치 방법을 전문가가 알려드립니다. 생명을 구하는 골든타임 대처법을 배워보세요.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">2025.01.12</span>
+                                <span class="blog-views">조회 1,523</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" onclick="location.href='blog/emergency-vs-private-ambulance.html'">
+                        <div class="blog-image">
+                            <div class="blog-icon">🚨</div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">응급의료 가이드</span>
+                            <h3>119 vs 사설구급차, 언제 이용해야 할까?</h3>
+                            <p>응급상황에서 올바른 선택을 위한 완벽 가이드. 상황별 이용 기준과 장단점을 자세히 알아보세요.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">2025.01.10</span>
+                                <span class="blog-views">조회 1,247</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" onclick="location.href='blog/patient-transport-documents.html'">
+                        <div class="blog-image">
+                            <div class="blog-icon">📋</div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">이송 정보</span>
+                            <h3>환자이송 시 필요한 서류와 준비물</h3>
+                            <p>병원 간 이송이나 응급이송 시 미리 준비해야 할 서류들과 체크리스트를 정리했습니다.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">2025.01.08</span>
+                                <span class="blog-views">조회 892</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" onclick="location.href='blog/cheongju-hospitals-guide.html'">
+                        <div class="blog-image">
+                            <div class="blog-icon">🏥</div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">지역 의료 정보</span>
+                            <h3>청주 주요 병원별 특징과 전문 진료과목</h3>
+                            <p>청주 지역 주요 병원들의 특성화 진료과목과 이송 시 알아야 할 정보들을 정리했습니다.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">2025.01.05</span>
+                                <span class="blog-views">조회 634</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" onclick="location.href='blog/nursing-home-transport-process.html'">
+                        <div class="blog-image">
+                            <div class="blog-icon">🏚️</div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">요양 이송</span>
+                            <h3>요양병원 입원 시 알아야 할 이송 절차</h3>
+                            <p>요양병원 입원이 결정되셨나요? 안전하고 편안한 이송을 위한 단계별 절차를 안내합니다.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">2025.01.03</span>
+                                <span class="blog-views">조회 756</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" onclick="location.href='blog/winter-emergency-prevention.html'">
+                        <div class="blog-image">
+                            <div class="blog-icon">❄️</div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">계절 건강</span>
+                            <h3>겨울철 낙상사고 예방과 응급처치 방법</h3>
+                            <p>겨울철 빙판길 낙상사고가 증가하고 있습니다. 예방법과 응급상황 시 대처방법을 알아보세요.</p>
+                            <div class="blog-meta">
+                                <span class="blog-date">2025.01.01</span>
+                                <span class="blog-views">조회 423</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="blog-more">
+                    <div style="display: flex; gap: 20px; align-items: center; justify-content: center;">
+                        <a href="blog/index.html" class="btn" style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">더 많은 정보 보기</a>
+                        <a href="https://blog.naver.com/ldszuno" target="_blank" rel="noopener noreferrer" class="btn" style="background: linear-gradient(135deg, #03C75A, #00B04F); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">📝 네이버 블로그</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing">
+            <div class="container">
+                <h2 class="section-title">투명한 요금 안내</h2>
+                <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 30px;">2025년 1월 기준 특수차 요금표 (보건복지부 고시 준수)</p>
+                <div class="price-table">
+                    <div class="price-row">
+                        <span class="price-service">기본 요금 (10km 이내, 특수차)</span>
+                        <span class="price-amount">75,000원</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-service">추가 거리 (1km당)</span>
+                        <span class="price-amount">1,300원</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-service">응급구조사 동행</span>
+                        <span class="price-amount">포함</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-service">야간 할증 (22시~06시)</span>
+                        <span class="price-amount">20%</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-service">공휴일/주말 할증</span>
+                        <span class="price-amount">20%</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-service">특수 환자 이송 (정신질환/중독)</span>
+                        <span class="price-amount">별도 상담</span>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 30px; color: #666; font-size: 0.9rem;">
+                    ※ 정확한 요금은 출발지와 목적지를 확인한 후 안내해드립니다<br>
+                    ※ 특수 상황 이송 및 장거리 이송의 경우 별도 상담 후 요금이 책정됩니다<br>
+                    ※ 상기 요금은 2025년 1월 기준이며 정부 고시에 따라 변동될 수 있습니다
+                </p>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="container">
+                <h2 class="section-title" style="color: white;">연락처 및 운영시간</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h4>환자이송 연락처</h4>
+                            <p style="font-size: 2rem; font-weight: 700; color: #e74c3c;">010-8841-4114</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>운영시간</h4>
+                            <p>24시간 연중무휴<br>응급상황 즉시 출동</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h4>사업자 정보</h4>
+                            <p style="font-size: 0.95rem;">직지응급환자이송단<br>대표자: 손기범<br>담당자: 강경성<br>충청북도 소재</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>자격 및 허가</h4>
+                            <p style="font-size: 0.95rem;">응급환자이송업 신고<br>전문 응급구조사 상주<br>의료장비 완비</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>서비스 특징</h4>
+                    <ul>
+                        <li>• 24시간 연중무휴 대기</li>
+                        <li>• 전문 응급구조사 동행</li>
+                        <li>• 최신 의료장비 구비</li>
+                        <li>• 충북 전 지역 서비스</li>
+                        <li>• 투명한 요금 체계</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>전문 이송 분야</h4>
+                    <ul>
+                        <li>• <a href="general_patient_transport.html">환자이송</a></li>
+                        <li>• <a href="nursing_home_transport.html">요양병원 전문이송</a></li>
+                        <li>• <a href="mental_health_transport.html">정신병원 입원</a></li>
+                        <li>• <a href="alcohol_treatment_transport.html">알콜중독</a></li>
+                        <li>• <a href="event_medical_support.html">행사구급차</a></li>
+                        <li>• <a href="goin_transport_service.html">고인이송</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스 지역</h4>
+                    <ul>
+                        <li>• 청주시(상당구,흥덕구,서원구,청원구)</li>
+                        <li>• 충주시,제천시
+                        <li>• 단양군,음성군,괴산군</li>
+                        <li>• 진천군,증평군,보은군</li>
+                        <li>• 옥천군,영동군</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 직지응급환자이송단. 충청북도 전문 사설구급차 서비스. All rights reserved.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">
+                    응급상황 시 119 신고 후 사설구급차 이용을 권장합니다 | 본 서비스는 보건복지부 고시 기준을 준수합니다
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Call Button -->
+    <a href="tel:010-8841-4114" class="floating-call" title="즉시 통화">📞</a>
+
+    <script>
+        // FAQ 토글 기능
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            // 모든 FAQ 답변 닫기
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // 클릭한 항목만 열기 (이미 열려있었다면 닫기)
+            if (!isActive) {
+                answer.classList.add('active');
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'linear-gradient(135deg, rgba(231, 76, 60, 0.95) 0%, rgba(192, 57, 43, 0.95) 100%)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards and FAQ items
+        document.querySelectorAll('.service-card, .coverage-item, .faq-item, .blog-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // 전화 걸기 확인 기능 제거 - 이제 바로 전화앱으로 연결됩니다
+    </script>
+    <!-- 네이버 블로그 고정 버튼 -->
+<a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
+</body>
+</html>
