@@ -3,909 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>고령자 안전사고 예방법과 응급대처 - 낙상사고 완전 가이드</title>
-    <meta name="description" content="어르신들의 가정 내 안전사고를 예방하고, 응급상황 발생 시 올바른 대처방법을 알려드립니다. 낙상사고 예방과 응급처치법 완전 정리.">
-    <meta name="keywords" content="고령자 안전사고, 낙상사고 예방, 노인 골절, 고관절 골절, 어르신 안전, 낙상 응급처치, 노인 운동">
-    <meta name="author" content="응급의료 전문팀">
-    
-    <!-- Open Graph / Facebook -->
+    <title>청주구급차 안전사고 예방법과 응급처치 | 직지응급환자이송단</title>
+    <meta name="description" content="청주 직지응급환자이송단이 알려주는 고령자 낙상사고 예방법과 응급처치. 가정 내 환경 개선부터 운동법, 사고 발생 시 대처 요령까지 총정리.">
+    <meta name="keywords" content="청주구급차, 고령자 안전사고, 낙상사고 예방법, 낙상 응급처치, 직지응급환자이송단, 청주 응급이송, 노인 안전">
+    <meta name="author" content="직지응급환자이송단">
+
     <meta property="og:type" content="article">
-    <meta property="og:title" content="고령자 안전사고 예방법과 응급대처 - 낙상사고 완전 가이드">
-    <meta property="og:description" content="어르신들의 가정 내 안전사고를 예방하고, 응급상황 발생 시 올바른 대처방법을 알려드립니다.">
-    <meta property="og:url" content="https://example.com/elderly-safety-guide.html">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="고령자 안전사고 예방법과 응급대처">
-    <meta name="twitter:description" content="어르신들의 가정 내 안전사고를 예방하고, 응급상황 발생 시 올바른 대처방법을 알려드립니다.">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "고령자 안전사고 예방법과 응급대처 - 낙상사고 완전 가이드",
-        "description": "어르신들의 가정 내 안전사고를 예방하고, 응급상황 발생 시 올바른 대처방법을 알려드립니다.",
-        "datePublished": "2025-01-07",
-        "dateModified": "2025-01-07",
-        "author": {
-            "@type": "Organization",
-            "name": "응급의료 전문팀"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "응급의료 가이드"
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://example.com/elderly-safety-guide.html"
-        }
-    }
-    </script>
-    
+    <meta property="og:title" content="청주구급차 안전사고 예방법과 응급처치 | 직지응급환자이송단">
+    <meta property="og:description" content="청주 직지응급환자이송단이 알려주는 고령자 낙상사고 예방법과 응급처치.">
+    <meta property="og:url" content="https://lds77.github.io/elderly-safety-guide.html">
+
     <style>
         :root {
-            --primary-color: #dc2626;
-            --secondary-color: #fef2f2;
-            --accent-color: #059669;
+            --primary-color: #059669; /* Green */
+            --secondary-color: #f0fdf4;
+            --danger-color: #dc2626; /* Red */
+            --info-color: #2563eb; /* Blue */
             --text-primary: #1e293b;
-            --text-secondary: #64748b;
             --border-color: #e2e8f0;
-            --warning-color: #d97706;
-            --info-color: #2563eb;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
             --border-radius: 12px;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+            font-family: 'Noto Sans KR', sans-serif;
             line-height: 1.7;
             color: var(--text-primary);
-            background-color: #fafafa;
+            background-color: #f8fafc;
         }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
         header {
-            background: linear-gradient(135deg, var(--primary-color), #b91c1c);
+            background: linear-gradient(135deg, var(--primary-color), #065f46);
             color: white;
-            padding: 3rem 0;
-            margin-bottom: 3rem;
-        }
-        
-        .header-content {
-            text-align: center;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-weight: 400;
-        }
-        
-        /* Article Content */
-        .article-meta {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-        
-        .article-meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        /* Statistics Alert */
-        .stats-alert {
-            background: linear-gradient(135deg, var(--secondary-color), #fecaca);
-            border: 2px solid var(--primary-color);
-            border-radius: var(--border-radius);
-            padding: 2rem;
+            padding: 2.5rem 0;
             margin-bottom: 2rem;
             text-align: center;
         }
-        
-        .stats-alert h3 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .stats-numbers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .stat-item {
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--primary-color);
-        }
-        
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-top: 0.25rem;
-        }
-        
-        /* Content Sections */
-        .content-section {
+        h1 { font-size: 2.2rem; font-weight: 700; }
+        .header-subtitle { font-size: 1.1rem; opacity: 0.9; }
+
+        .section {
             background: white;
             border-radius: var(--border-radius);
             padding: 2rem;
             margin-bottom: 2rem;
             box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
         }
-        
         .section-title {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: center;
+            gap: 0.75rem;
         }
-        
-        .section-icon {
-            font-size: 1.5rem;
-        }
-        
-        /* Prevention Grid */
-        .prevention-grid {
+
+        /* Info Grid */
+        .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
-            margin-top: 1.5rem;
         }
-        
-        .prevention-card {
-            background: #f8fafc;
-            border: 2px solid var(--border-color);
-            border-radius: var(--border-radius);
+        .info-card {
+            background: var(--secondary-color);
+            border-radius: 10px;
             padding: 1.5rem;
-            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary-color);
         }
-        
-        .prevention-card:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
-        }
-        
-        .prevention-card h4 {
-            color: var(--accent-color);
-            font-size: 1.1rem;
-            font-weight: 600;
+        .info-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
-        
-        .prevention-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .prevention-list li {
-            padding: 0.5rem 0;
-            position: relative;
+        .info-card ul { list-style: none; padding: 0; }
+        .info-card li {
+            margin-bottom: 0.75rem;
             padding-left: 1.5rem;
-            border-bottom: 1px solid rgba(5, 150, 105, 0.1);
+            position: relative;
         }
-        
-        .prevention-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .prevention-list li::before {
+        .info-card li::before {
             content: "✓";
             position: absolute;
             left: 0;
-            top: 0.5rem;
-            color: var(--accent-color);
+            color: var(--primary-color);
             font-weight: bold;
         }
-        
-        /* Exercise Section */
-        .exercise-grid {
+
+        /* Emergency Section */
+        .emergency-section { border-left: 5px solid var(--danger-color); }
+        .emergency-section .section-title { color: var(--danger-color); }
+        .emergency-steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .exercise-card {
-            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-            border: 2px solid var(--accent-color);
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
             text-align: center;
-            transition: all 0.3s ease;
         }
-        
-        .exercise-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
+        .step {
+            background: #fef2f2;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid #fecaca;
         }
-        
-        .exercise-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .exercise-card h4 {
-            color: var(--accent-color);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-        
-        .exercise-card p {
-            color: #065f46;
-            font-size: 0.9rem;
-        }
-        
-        /* Emergency Response */
-        .emergency-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .emergency-step {
-            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-            border: 2px solid var(--info-color);
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            text-align: center;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .emergency-step:hover {
-            transform: translateY(-2px);
-        }
-        
         .step-number {
-            background: var(--info-color);
+            background: var(--danger-color);
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            margin: 0 auto 1rem;
+            margin: 0 auto 0.5rem;
         }
-        
-        .emergency-step h4 {
-            color: var(--info-color);
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
+        .step p { margin: 0; font-weight: 500; }
+        .warning-box {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-left: 5px solid #f59e0b;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border-radius: 10px;
         }
-        
-        .emergency-step p {
-            color: #1e40af;
-            font-size: 0.9rem;
-        }
-        
-        /* Warning Signs */
-        .warning-signs {
-            background: linear-gradient(135deg, #fef3c7, #fde68a);
-            border: 2px solid var(--warning-color);
-            border-radius: var(--border-radius);
+        .warning-box h4 { color: #b45309; margin-bottom: 0.5rem; }
+        .warning-box ul { list-style-position: inside; padding-left: 0; color: #78350f; }
+
+        /* Statistics */
+        .stats-alert {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-left: 5px solid var(--info-color);
             padding: 2rem;
-            margin: 2rem 0;
+            text-align: center;
         }
-        
-        .warning-signs h3 {
-            color: var(--warning-color);
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+        .stats-alert h2 { color: var(--info-color); }
+        .stats-numbers {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .warning-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            justify-content: space-around;
+            flex-wrap: wrap;
             gap: 1rem;
             margin-top: 1rem;
         }
-        
-        .warning-item {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid rgba(217, 119, 6, 0.3);
-        }
-        
-        .warning-item h4 {
-            color: var(--warning-color);
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .warning-item p {
-            color: #92400e;
-            font-size: 0.9rem;
-        }
-        
-        /* Risk Factors */
-        .risk-factors {
-            background: var(--secondary-color);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .risk-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .risk-category {
-            background: white;
-            border: 2px solid var(--primary-color);
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-        }
-        
-        .risk-category h4 {
-            color: var(--primary-color);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2rem; font-weight: 700; color: var(--info-color); }
+        .stat-label { font-size: 1rem; color: #1e3a8a; }
+
+        /* Fixed Home Button */
+        .fixed-home-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--primary-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .risk-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .risk-list li {
-            padding: 0.3rem 0;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .risk-list li::before {
-            content: "⚠️";
-            position: absolute;
-            left: 0;
-            top: 0.3rem;
-            font-size: 0.8rem;
-        }
-        
-        /* Back Button */
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--info-color);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
+            justify-content: center;
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            font-size: 1.8rem;
+            z-index: 1000;
         }
-        
-        .back-button:hover {
-            background: #1d4ed8;
-            transform: translateY(-1px);
-            box-shadow: var(--shadow);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .header-subtitle {
-                font-size: 1rem;
-            }
-            
-            .prevention-grid,
-            .exercise-grid,
-            .emergency-steps {
-                grid-template-columns: 1fr;
-            }
-            
-            .content-section {
-                padding: 1.5rem;
-            }
-            
-            .article-meta {
-                flex-direction: column;
-                gap: 0.5rem;
-                align-items: center;
-            }
-            
-            .stats-numbers {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        /* Animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .content-section {
-            animation: fadeIn 0.6s ease forwards;
-        }
-        
-        .content-section:nth-child(1) { animation-delay: 0.1s; }
-        .content-section:nth-child(2) { animation-delay: 0.2s; }
-        .content-section:nth-child(3) { animation-delay: 0.3s; }
-        .content-section:nth-child(4) { animation-delay: 0.4s; }
-        .content-section:nth-child(5) { animation-delay: 0.5s; }
+        .fixed-home-btn:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
+
     <header>
         <div class="container">
-            <div class="header-content">
-                <h1>고령자 안전사고 예방법과 응급대처</h1>
-                <p class="header-subtitle">어르신들의 건강하고 안전한 일상을 위한 완전 가이드</p>
-            </div>
+            <h1>청주 어르신 낙상사고 예방과 응급처치</h1>
+            <p class="header-subtitle">청주구급차 직지응급환자이송단이 알려드리는 안전 가이드</p>
         </div>
     </header>
 
-    <main>
-        <div class="container">
-            <a href="index.html" class="back-button">
-                ← 블로그 홈으로 돌아가기
-            </a>
-
-            <div class="article-meta">
-                <span>📅 2025년 1월 7일</span>
-                <span>👁️ 조회수 145</span>
-                <span>⏱️ 읽기 시간 8분</span>
-            </div>
-
-            <div class="stats-alert">
-                <h3>📊 고령자 안전사고 현황</h3>
-                <p style="color: #991b1b; font-weight: 500; margin-bottom: 1rem;">최근 4년간 고령자 안전사고 통계를 통해 보는 심각성</p>
-                <div class="stats-numbers">
-                    <div class="stat-item">
-                        <div class="stat-number">62.7%</div>
-                        <div class="stat-label">낙상사고 비율</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">20.4%</div>
-                        <div class="stat-label">뇌손상 발생률</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">20%</div>
-                        <div class="stat-label">고관절 골절 사망률</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">11,055건</div>
-                        <div class="stat-label">주택 내 사고</div>
-                    </div>
+    <main class="container">
+        <div class="section stats-alert">
+            <h2 class="section-title">📊 한 번의 낙상, 돌이킬 수 없는 결과</h2>
+            <p>고령자에게 낙상은 단순한 사고가 아닙니다. 심각한 후유증을 남겨 삶의 질을 위협할 수 있습니다.</p>
+            <div class="stats-numbers">
+                <div class="stat-item">
+                    <div class="stat-number">60% 이상</div>
+                    <div class="stat-label">노인 손상 원인</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">20%</div>
+                    <div class="stat-label">고관절 골절 후 1년 내 사망률</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">70% 이상</div>
+                    <div class="stat-label">주택 내에서 발생</div>
                 </div>
             </div>
+        </div>
 
-            <article class="content-section">
-                <h2 class="section-title">
-                    <span class="section-icon">⚠️</span>
-                    고령자 낙상사고가 위험한 이유
-                </h2>
-                <p>고령자에게 낙상사고는 단순한 넘어짐이 아닙니다. <strong>한 번의 낙상으로 인해 골절, 뇌출혈 등 심각한 부상을 입을 수 있으며, 장기간의 회복 과정에서 다양한 합병증이 발생할 수 있습니다.</strong></p>
-
-                <div class="risk-factors">
-                    <h3 style="color: var(--primary-color); font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">🎯 고령자 낙상의 위험요인</h3>
-                    <div class="risk-categories">
-                        <div class="risk-category">
-                            <h4>🧠 신체적 변화</h4>
-                            <ul class="risk-list">
-                                <li>근력 및 균형감각 저하</li>
-                                <li>골밀도 감소 (골다공증)</li>
-                                <li>시력 및 청력 감퇴</li>
-                                <li>반사신경 둔화</li>
-                                <li>관절 유연성 저하</li>
-                            </ul>
-                        </div>
-
-                        <div class="risk-category">
-                            <h4>💊 질병 및 약물</h4>
-                            <ul class="risk-list">
-                                <li>어지럼증을 유발하는 약물</li>
-                                <li>혈압약, 수면제 부작용</li>
-                                <li>당뇨병으로 인한 신경병증</li>
-                                <li>파킨슨병, 치매</li>
-                                <li>심혈관계 질환</li>
-                            </ul>
-                        </div>
-
-                        <div class="risk-category">
-                            <h4>🏠 환경적 요인</h4>
-                            <ul class="risk-list">
-                                <li>미끄러운 바닥 (욕실, 주방)</li>
-                                <li>조명 부족</li>
-                                <li>계단 및 문턱</li>
-                                <li>불안정한 가구</li>
-                                <li>전선이나 카펫의 주름</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="warning-signs">
-                    <h3>🚨 즉시 병원에 가야 하는 증상</h3>
-                    <div class="warning-grid">
-                        <div class="warning-item">
-                            <h4>머리 외상</h4>
-                            <p>의식 잃음, 심한 두통, 구토, 어지럼증</p>
-                        </div>
-                        <div class="warning-item">
-                            <h4>골절 의심</h4>
-                            <p>심한 통증, 움직일 수 없음, 변형된 모양</p>
-                        </div>
-                        <div class="warning-item">
-                            <h4>심각한 타박상</h4>
-                            <p>광범위한 멍, 지속적인 출혈, 심한 부종</p>
-                        </div>
-                        <div class="warning-item">
-                            <h4>호흡곤란</h4>
-                            <p>숨쉬기 어려움, 가슴 통증, 창백해짐</p>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="content-section">
-                <h2 class="section-title">
-                    <span class="section-icon">🛡️</span>
-                    가정 내 낙상사고 예방법
-                </h2>
-                <p>고령자 낙상사고의 74.8%가 주택에서 발생합니다. 집 안 환경을 안전하게 개선하는 것이 가장 효과적인 예방법입니다.</p>
-
-                <div class="prevention-grid">
-                    <div class="prevention-card">
-                        <h4>🚿 욕실 안전</h4>
-                        <ul class="prevention-list">
-                            <li>미끄럼 방지 매트 설치</li>
-                            <li>욕조 및 샤워실에 안전손잡이 설치</li>
-                            <li>바닥에 물기 즉시 제거</li>
-                            <li>샤워 의자 사용</li>
-                            <li>밝은 조명 확보</li>
-                        </ul>
-                    </div>
-
-                    <div class="prevention-card">
-                        <h4>🏠 실내 환경</h4>
-                        <ul class="prevention-list">
-                            <li>복도와 계단에 충분한 조명</li>
-                            <li>전선 정리 및 카펫 고정</li>
-                            <li>문턱 제거 또는 경사로 설치</li>
-                            <li>계단에 양쪽 손잡이 설치</li>
-                            <li>미끄러운 바닥재 교체</li>
-                        </ul>
-                    </div>
-
-                    <div class="prevention-card">
-                        <h4>🛏️ 침실 안전</h4>
-                        <ul class="prevention-list">
-                            <li>침대 높이를 무릎 높이로 조절</li>
-                            <li>침대 옆에 조명 스위치</li>
-                            <li>야간 조명등 설치</li>
-                            <li>침대 옆에 필요용품 배치</li>
-                            <li>미끄럼 방지 슬리퍼 착용</li>
-                        </ul>
-                    </div>
-
-                    <div class="prevention-card">
-                        <h4>🍳 주방 안전</h4>
-                        <ul class="prevention-list">
-                            <li>주방 바닥 항상 건조하게 유지</li>
-                            <li>자주 사용하는 물건은 손 닿는 곳에</li>
-                            <li>의자 대신 안전한 발판 사용</li>
-                            <li>날카로운 모서리에 보호대 설치</li>
-                            <li>물기 제거용 수건 항상 준비</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-
-            <article class="content-section">
-                <h2 class="section-title">
-                    <span class="section-icon">💪</span>
-                    낙상 예방을 위한 운동법
-                </h2>
-                <p>규칙적인 운동은 근력 강화와 균형감각 향상에 도움이 됩니다. 무리하지 않는 범위에서 꾸준히 실시하는 것이 중요합니다.</p>
-
-                <div class="exercise-grid">
-                    <div class="exercise-card">
-                        <div class="exercise-icon">🦵</div>
-                        <h4>하체 근력 강화</h4>
-                        <p>의자에 앉았다 일어서기, 다리 들어올리기, 까치발 들기 등으로 다리 근육을 강화합니다.</p>
-                    </div>
-
-                    <div class="exercise-card">
-                        <div class="exercise-icon">⚖️</div>
-                        <h4>균형감각 훈련</h4>
-                        <p>한 발로 서기, 옆으로 걷기, 발끝-뒤꿈치 걷기로 균형감각을 키웁니다.</p>
-                    </div>
-
-                    <div class="exercise-card">
-                        <div class="exercise-icon">🤸</div>
-                        <h4>유연성 운동</h4>
-                        <p>목, 어깨, 허리 스트레칭으로 관절 유연성을 유지합니다.</p>
-                    </div>
-
-                    <div class="exercise-card">
-                        <div class="exercise-icon">🚶</div>
-                        <h4>유산소 운동</h4>
-                        <p>실내에서 제자리 걷기, 계단 오르내리기로 심폐기능을 향상시킵니다.</p>
-                    </div>
-
-                    <div class="exercise-card">
-                        <div class="exercise-icon">🧘</div>
-                        <h4>태극권</h4>
-                        <p>느린 동작과 호흡으로 균형감각과 근력을 동시에 기릅니다.</p>
-                    </div>
-
-                    <div class="exercise-card">
-                        <div class="exercise-icon">💺</div>
-                        <h4>의자 운동</h4>
-                        <p>앉은 상태에서 할 수 있는 안전한 운동으로 근력을 유지합니다.</p>
-                    </div>
-                </div>
-
-                <div style="background: #f0fdf4; border: 2px solid var(--accent-color); border-radius: var(--border-radius); padding: 1.5rem; margin-top: 2rem;">
-                    <h4 style="color: var(--accent-color); margin-bottom: 1rem;">💡 운동 시 주의사항</h4>
-                    <ul style="color: #065f46; margin: 0; padding-left: 1.5rem;">
-                        <li>운동 전 의사와 상담하여 개인에게 맞는 운동 선택</li>
-                        <li>처음에는 10-15분부터 시작하여 점진적으로 시간 증가</li>
-                        <li>어지럼증이나 통증이 있을 때는 즉시 중단</li>
-                        <li>안전한 장소에서 보호자와 함께 운동</li>
-                        <li>운동 후 충분한 수분 섭취와 휴식</li>
+        <div class="section">
+            <h2 class="section-title">🛡️ 가정 내 낙상사고, 이렇게 예방하세요</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🏠 생활 환경 개선</h3>
+                    <ul>
+                        <li>화장실/욕실에 미끄럼 방지 매트와 안전손잡이를 설치하세요.</li>
+                        <li>집안의 문턱을 제거하거나 경사로를 설치해 이동을 편하게 하세요.</li>
+                        <li>복도, 계단, 침실에 야간 조명을 설치해 어두운 곳이 없도록 하세요.</li>
+                        <li>바닥의 전선, 카펫 등을 정리해 걸려 넘어질 위험을 없애세요.</li>
                     </ul>
                 </div>
-            </article>
-
-            <article class="content-section">
-                <h2 class="section-title">
-                    <span class="section-icon">🚨</span>
-                    낙상사고 발생 시 응급대처법
-                </h2>
-                <p>낙상사고가 발생했을 때 올바른 응급처치와 신속한 대응이 환자의 예후를 크게 좌우합니다.</p>
-
-                <div class="emergency-steps">
-                    <div class="emergency-step">
-                        <div class="step-number">1</div>
-                        <h4>안전 확인</h4>
-                        <p>환자와 주변 상황의 안전을 먼저 확인하고, 추가 위험요인을 제거합니다.</p>
-                    </div>
-
-                    <div class="emergency-step">
-                        <div class="step-number">2</div>
-                        <h4>의식 확인</h4>
-                        <p>환자의 의식 상태를 확인하고, 의식이 없다면 즉시 119에 신고합니다.</p>
-                    </div>
-
-                    <div class="emergency-step">
-                        <div class="step-number">3</div>
-                        <h4>움직임 금지</h4>
-                        <p>척추나 목 손상 가능성이 있으므로 함부로 움직이지 말고 그 자리에서 안정을 취합니다.</p>
-                    </div>
-
-                    <div class="emergency-step">
-                        <div class="step-number">4</div>
-                        <h4>출혈 지혈</h4>
-                        <p>출혈이 있다면 깨끗한 천으로 상처 부위를 압박하여 지혈합니다.</p>
-                    </div>
-
-                    <div class="emergency-step">
-                        <div class="step-number">5</div>
-                        <h4>체온 유지</h4>
-                        <p>담요나 옷으로 체온을 유지하고, 쇼크를 예방합니다.</p>
-                    </div>
-
-                    <div class="emergency-step">
-                        <div class="step-number">6</div>
-                        <h4>병원 이송</h4>
-                        <p>전문의료진의 진료를 받기 위해 신속하게 병원으로 이송합니다.</p>
-                    </div>
-                </div>
-
-                <div style="background: linear-gradient(135deg, #fee2e2, #fecaca); border: 2px solid var(--primary-color); border-radius: var(--border-radius); padding: 2rem; margin-top: 2rem;">
-                    <h4 style="color: var(--primary-color); margin-bottom: 1rem; font-weight: 600;">🚫 하지 말아야 할 행동</h4>
-                    <ul style="color: #991b1b; margin: 0; padding-left: 1.5rem; font-weight: 500;">
-                        <li>의식을 잃은 환자에게 물이나 약을 먹이는 행위</li>
-                        <li>골절이 의심되는 부위를 함부로 움직이는 것</li>
-                        <li>머리를 다친 환자를 급하게 일으키는 것</li>
-                        <li>민간요법이나 파스 등을 즉시 사용하는 것</li>
-                        <li>병원 가는 것을 미루고 집에서 경과를 보는 것</li>
+                <div class="info-card">
+                    <h3>💪 건강 관리 및 운동</h3>
+                    <ul>
+                        <li>규칙적인 운동으로 하체 근력과 균형감각을 기르세요. (예: 의자에 앉았다 일어서기, 한 발로 서기)</li>
+                        <li>어지럼증을 유발할 수 있는 약을 복용 중이라면 의사와 상담하세요.</li>
+                        <li>매년 시력, 청력 검사를 받아 신체 변화에 대비하세요.</li>
+                        <li>미끄럽지 않고 발에 잘 맞는 편안한 신발을 착용하세요.</li>
                     </ul>
                 </div>
-            </article>
-
-            <article class="content-section">
-                <h2 class="section-title">
-                    <span class="section-icon">🩺</span>
-                    주요 골절 유형과 증상
-                </h2>
-                <p>고령자에게 흔히 발생하는 골절 유형과 그 증상을 미리 알아두면 신속한 대응에 도움됩니다.</p>
-
-                <div class="prevention-grid">
-                    <div class="prevention-card">
-                        <h4>🦴 고관절 골절</h4>
-                        <ul class="prevention-list">
-                            <li>극심한 통증으로 움직일 수 없음</li>
-                            <li>다리 길이가 달라 보임</li>
-                            <li>다리가 바깥쪽으로 돌아감</li>
-                            <li>체중을 실을 수 없음</li>
-                            <li>즉시 수술적 치료 필요</li>
-                        </ul>
-                    </div>
-
-                    <div class="prevention-card">
-                        <h4>🤲 손목 골절</h4>
-                        <ul class="prevention-list">
-                            <li>손목 부위의 심한 통증과 부종</li>
-                            <li>손목 모양의 변형</li>
-                            <li>손가락 움직임의 제한</li>
-                            <li>저림 증상</li>
-                            <li>즉시 고정 후 병원 이송</li>
-                        </ul>
-                    </div>
-
-                    <div class="prevention-card">
-                        <h4>🦴 척추압박골절</h4>
-                        <ul class="prevention-list">
-                            <li>등이나 허리의 극심한 통증</li>
-                            <li>자세 변경 시 통증 악화</li>
-                            <li>키가 줄어들거나 등이 굽음</li>
-                            <li>기침이나 재채기 시 통증</li>
-                            <li>조기 치료로 합병증 예방</li>
-                        </ul>
-                    </div>
-
-                    <div class="prevention-card">
-                        <h4>🦵 발목 골절</h4>
-                        <ul class="prevention-list">
-                            <li>발목 부위의 심한 통증</li>
-                            <li>부종과 멍</li>
-                            <li>걸을 수 없음</li>
-                            <li>발목 모양 변형</li>
-                            <li>즉시 고정하고 냉찜질</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-
-            <article class="content-section">
-                <h2 class="section-title">
-                    <span class="section-icon">📞</span>
-                    응급상황 연락처 및 체크리스트
-                </h2>
-                <p>응급상황에서 당황하지 않도록 중요한 연락처와 체크리스트를 미리 준비해두세요.</p>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                    <div style="background: linear-gradient(135deg, #fee2e2, #fecaca); border: 2px solid var(--primary-color); border-radius: var(--border-radius); padding: 2rem;">
-                        <h4 style="color: var(--primary-color); font-size: 1.2rem; margin-bottom: 1rem;">🚨 응급연락처</h4>
-                        <div style="space-y: 0.5rem;">
-                            <p style="color: #991b1b; font-weight: 600; margin-bottom: 0.5rem;">• <strong>119</strong> - 응급상황 신고</p>
-                            <p style="color: #991b1b; font-weight: 600; margin-bottom: 0.5rem;">• <strong>1339</strong> - 응급의료상담</p>
-                            <p style="color: #991b1b; font-weight: 600; margin-bottom: 0.5rem;">• <strong>가족 연락처</strong> - 미리 저장</p>
-                            <p style="color: #991b1b; font-weight: 600; margin-bottom: 0.5rem;">• <strong>주치의 연락처</strong></p>
-                            <p style="color: #991b1b; font-weight: 600;">• <strong>가까운 응급실</strong> - 경로 확인</p>
-                        </div>
-                    </div>
-
-                    <div style="background: linear-gradient(135deg, #dbeafe, #bfdbfe); border: 2px solid var(--info-color); border-radius: var(--border-radius); padding: 2rem;">
-                        <h4 style="color: var(--info-color); font-size: 1.2rem; margin-bottom: 1rem;">📋 준비사항 체크리스트</h4>
-                        <div style="space-y: 0.5rem;">
-                            <p style="color: #1e40af; font-weight: 500; margin-bottom: 0.5rem;">✓ 복용 중인 약물 리스트</p>
-                            <p style="color: #1e40af; font-weight: 500; margin-bottom: 0.5rem;">✓ 알레르기 정보</p>
-                            <p style="color: #1e40af; font-weight: 500; margin-bottom: 0.5rem;">✓ 건강보험증</p>
-                            <p style="color: #1e40af; font-weight: 500; margin-bottom: 0.5rem;">✓ 최근 건강검진 결과</p>
-                            <p style="color: #1e40af; font-weight: 500;">✓ 응급키트 (소독약, 붕대 등)</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="background: #f0fdf4; border: 2px solid var(--accent-color); border-radius: var(--border-radius); padding: 2rem; margin-top: 2rem; text-align: center;">
-                    <h4 style="color: var(--accent-color); font-size: 1.3rem; margin-bottom: 1rem;">💚 예방이 최선의 치료입니다</h4>
-                    <p style="color: #065f46; font-weight: 500; font-size: 1.1rem;">정기적인 건강검진, 안전한 환경 조성, 꾸준한 운동으로<br>건강하고 안전한 노년을 보내세요</p>
-                </div>
-            </article>
-
-            <div class="stats-alert">
-                <h3>📞 기억하세요</h3>
-                <p style="color: #991b1b; font-weight: 600; font-size: 1.2rem;">응급상황 시 119 | 응급의료상담 1339 | 가족에게 즉시 연락</p>
             </div>
+        </div>
+
+        <div class="section emergency-section">
+            <h2 class="section-title">🚨 낙상사고 발생 시 응급 대처법</h2>
+            <p style="text-align:center; margin-bottom: 1.5rem;">사고 발생 시, 당황하지 않고 침착하게 대응하는 것이 가장 중요합니다. <br>특히 머리나 엉덩방아를 찧은 경우, 함부로 움직이지 않도록 해야 합니다.</p>
+            <div class="emergency-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <p>섣불리 움직이지 말고, 호흡을 가다듬으며 통증 부위를 확인합니다.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <p>일어날 수 있다면, 주변의 안정된 가구를 잡고 천천히 일어납니다.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <p>통증이 심하거나 움직일 수 없다면 즉시 119나 가족에게 도움을 요청합니다.</p>
+                </div>
+            </div>
+            <div class="warning-box">
+                <h4>🚫 보호자가 절대 하지 말아야 할 행동</h4>
+                <ul>
+                    <li>환자를 함부로 일으키거나 옮기려 하지 마세요. (척추, 고관절 손상 위험)</li>
+                    <li>의식이 없는 환자에게 물이나 약을 먹이지 마세요.</li>
+                    <li>괜찮을 거라며 병원 가는 것을 미루지 마세요.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+             <h2 class="section-title">📞 위급상황 발생 시, 직지응급환자이송단</h2>
+             <p style="text-align: center;">
+                청주 지역 어르신들의 안전을 위해 직지응급환자이송단이 항상 대기하고 있습니다. <br>
+                응급상황 발생 시 또는 병원 이송이 필요할 때, 신속하고 안전하게 도와드리겠습니다.
+             </p>
+             <div style="text-align: center; margin-top: 1.5rem;">
+                <p style="font-size: 1.5rem; font-weight: bold; color: var(--danger-color);">
+                    응급상황 신고: 119<br>
+                    병원 문의 및 이송 상담: 직지응급환자이송단
+                </p>
+             </div>
         </div>
     </main>
 
-    <script>
-        // 페이지 로드 시 안전 체크리스트 초기화
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('고령자 안전사고 예방 가이드가 로드되었습니다.');
-            
-            // 스크롤 시 애니메이션 효과
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
+    <a href="https://lds77.github.io/" class="fixed-home-btn" title="홈으로 가기">🏠</a>
 
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // 모든 카드 요소에 관찰자 적용
-            document.querySelectorAll('.prevention-card, .exercise-card, .emergency-step').forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
-            });
-        });
-    </script>
 </body>
 </html>
