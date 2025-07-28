@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>충청북도 병원정보(전화번호포함) 지역별 병원정보 찾기 ㅣ 직지응급환자이송단</title>
+    <title>충청북도 병원찾기 청주,충주,제천,음성 등 충북 병원찾기 ㅣ 직지응급환자이송단</title>
     <meta property="og:title" content="충청북도 병원정보 찾기 | 직지응급환자이송단">
     <meta property="og:description" content="충북 전 지역 병원 정보 및 전화번호를 지역별, 종류별로 확인하세요. 종합병원, 요양병원, 한방병원 등 상세 정보 제공.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://lds77.github.io/chungbuk-medical.jpg"> 
     <meta property="og:url" content="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html"> 
-    <meta property="og:site_name" content="충청북도 병원정보 찾기">
+    <meta property="og:site_name" content="충청북도 병원찾기">
     <meta property="og:locale" content="ko_KR">
     <style>
+        /* General styling for the page */
         * {
             margin: 0;
             padding: 0;
@@ -25,6 +26,7 @@
             background-color: #f5f5f5;
         }
         
+        /* Header section styling */
         .header {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
@@ -44,6 +46,7 @@
             opacity: 0.9;
         }
         
+        /* Emergency notice bar styling */
         .emergency-notice {
             background-color: #ff6b6b;
             color: white;
@@ -53,12 +56,14 @@
             font-size: 0.9em;
         }
         
+        /* Main container styling */
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 15px;
         }
         
+        /* General section styling */
         .info-section {
             background: white;
             padding: 20px;
@@ -75,6 +80,7 @@
             font-size: 1.3em;
         }
         
+        /* Tab buttons for filtering by category */
         .category-tabs {
             display: flex;
             flex-wrap: wrap;
@@ -105,6 +111,7 @@
             color: white;
         }
         
+        /* Animation for content fade-in */
         .hospital-category {
             animation: fadeIn 0.5s;
         }
@@ -114,6 +121,7 @@
             to { opacity: 1; }
         }
         
+        /* Grid layout for hospital cards */
         .hospital-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -121,6 +129,7 @@
             margin-top: 15px;
         }
         
+        /* Individual hospital card styling */
         .hospital-card {
             background: #f8f9fa;
             border: 1px solid #dee2e6;
@@ -191,6 +200,7 @@
             height: 16px;
         }
         
+        /* Statistics container styling */
         .stats-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -218,6 +228,7 @@
             opacity: 0.9;
         }
         
+        /* Search input and button styling */
         .search-container {
             margin-bottom: 20px;
             display: flex;
@@ -256,6 +267,7 @@
             transform: translateY(-1px);
         }
         
+        /* Region filter buttons styling */
         .region-filter {
             display: flex;
             flex-wrap: wrap;
@@ -280,6 +292,7 @@
             border-color: #2a5298;
         }
         
+        /* Footer styling */
         .footer {
             background-color: #1e3c72;
             color: white;
@@ -293,6 +306,7 @@
             font-size: 0.9em;
         }
 
+        /* Floating home button styling */
         .home-button {
             position: fixed;
             bottom: 20px;
@@ -315,6 +329,7 @@
             box-shadow: 0 5px 12px rgba(0,0,0,0.3);
         }
         
+        /* Responsive design for smaller screens */
         @media (max-width: 768px) {
             .header {
                 padding: 15px 0;
@@ -454,18 +469,18 @@
     
     <div class="container">
         <div class="info-section">
-            <h2>📊 충청북도 지역별 병원 현황</h2>
+            <h2>📊 충청북도 지역별 병원 현황 (2024년 8월 기준)</h2>
             <div class="stats-container">
                 <div class="stat-card">
-                    <div class="stat-number">81</div>
-                    <div class="stat-label">종합병원 ㅣ병원</div>
+                    <div class="stat-number">76</div>
+                    <div class="stat-label">종합병원·병원</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">62</div>
+                    <div class="stat-number">56</div>
                     <div class="stat-label">요양병원</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">28</div>
+                    <div class="stat-number">19</div>
                     <div class="stat-label">한방병원</div>
                 </div>
                 <div class="stat-card">
@@ -473,7 +488,7 @@
                     <div class="stat-label">치과병원</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">9</div>
+                    <div class="stat-number">12</div>
                     <div class="stat-label">정신병원</div>
                 </div>
             </div>
@@ -504,565 +519,1192 @@
             <div class="category-tabs">
                 <button class="tab-button active" onclick="showCategory('all', event)">전체 병원</button>
                 <button class="tab-button" onclick="showCategory('종합병원', event)">종합병원</button>
+                <button class="tab-button" onclick="showCategory('병원', event)">병원</button>
                 <button class="tab-button" onclick="showCategory('요양병원', event)">요양병원</button>
                 <button class="tab-button" onclick="showCategory('한방병원', event)">한방병원</button>
                 <button class="tab-button" onclick="showCategory('치과병원', event)">치과병원</button>
                 <button class="tab-button" onclick="showCategory('정신병원', event)">정신병원</button>
                 <button class="tab-button" onclick="showCategory('의료원', event)">의료원</button>
-                <button class="tab-button" onclick="showCategory('병원', event)">병원</button> </div>
+            </div>
             
             <div id="hospitalContent">
                 <div class="hospital-grid">
-                    <div class="hospital-card" data-region="청주시" data-category="종합병원">
-                        <div class="hospital-name">충북대학교병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 김영규</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 서원구 1순환로 776-0 (개신동)</div>
-                        <div class="phone-number">📞 043-269-6114</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="종합병원">
-                        <div class="hospital-name">청주성모병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 김종강</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 청원구 주성로 173-19 (주중동)</div>
-                        <div class="phone-number">📞 043-219-8000</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="충주시" data-category="종합병원">
-                        <div class="hospital-name">건국대학교 충주병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 유자은</div>
-                        <div class="hospital-info"><strong>주소:</strong> 충주시 국원대로 82-0 (교현동)</div>
-                        <div class="phone-number">📞 043-840-8200</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="제천시" data-category="종합병원">
-                        <div class="hospital-name">제천서울병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 박미령</div>
-                        <div class="hospital-info"><strong>주소:</strong> 제천시 서부로 57-0 (서부동)</div>
-                        <div class="phone-number">📞 043-642-7606</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="종합병원">
-                        <div class="hospital-name">효성병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 정상진</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 상당구 쇠내로 16-0 (금천동)</div>
-                        <div class="phone-number">📞 043-221-5000</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="종합병원">
-                        <div class="hospital-name">한국병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 손재신</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 상당구 단재로 106-0 (영운동)</div>
-                        <div class="phone-number">📞 043-222-7000</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="종합병원">
-                        <div class="hospital-name">하나병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 박중겸</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 흥덕구 2순환로 1262-0 (가경동)</div>
-                        <div class="phone-number">📞 043-230-6114</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
-                        <div class="hospital-name">청주시노인전문병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 청주시장</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 서원구 구룡로62번길 29-0 (장성동)</div>
-                        <div class="phone-number">📞 043-220-8000</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
-                        <div class="hospital-name">하나노인전문병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 박창제</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 서원구 대농로 431-0 (주삼동)</div>
-                        <div class="phone-number">📞 043-270-8114</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="충주시" data-category="요양병원">
-                        <div class="hospital-name">충주성모요양병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 조광흥</div>
-                        <div class="hospital-info"><strong>주소:</strong> 충주시 중심3길 4-2 (문화동)</div>
-                        <div class="phone-number">📞 043-843-9300</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
-                        <div class="hospital-name">대전대학교 청주한방병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 서정원</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 상당구 용담로105번길 4-0 (용담동)</div>
-                        <div class="phone-number">📞 043-229-3787</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="충주시" data-category="한방병원">
-                        <div class="hospital-name">세명대학교 충주한방병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 김현승</div>
-                        <div class="hospital-info"><strong>주소:</strong> 충주시 상방4길 63-0 (봉방동)</div>
-                        <div class="phone-number">📞 043-856-1010</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="제천시" data-category="한방병원">
-                        <div class="hospital-name">세명대한방병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 김현승</div>
-                        <div class="hospital-info"><strong>주소:</strong> 제천시 세명로 66-0 (모산동)</div>
-                        <div class="phone-number">📞 043-645-1010</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="치과병원">
-                        <div class="hospital-name">서울김치과병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 치과병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 유종학</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 흥덕구 사직대로 132-0 (성동,금영동)</div>
-                        <div class="phone-number">📞 043-263-7528</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="치과병원">
-                        <div class="hospital-name">온누리치과병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 치과병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 옥순영</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 흥덕구 사직대로 160-0</div>
-                        <div class="phone-number">📞 043-266-2875</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="제천시" data-category="정신병원">
-                        <div class="hospital-name">제천병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 오만식</div>
-                        <div class="hospital-info"><strong>주소:</strong> 제천시 북부로13길 94-0 (천남동)</div>
-                        <div class="phone-number">📞 043-640-6100</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="괴산군" data-category="정신병원">
-                        <div class="hospital-name">벧엘기독병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 김동수</div>
-                        <div class="hospital-info"><strong>주소:</strong> 괴산군 문광면 황석2길 20-148</div>
-                        <div class="phone-number">📞 043-833-1004</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="충주시" data-category="종합병원 의료원">
-                        <div class="hospital-name">충청북도 충주의료원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 윤창규</div>
-                        <div class="hospital-info"><strong>주소:</strong> 충주시 안림로 239-50 (안림동)</div>
-                        <div class="phone-number">📞 043-871-0114</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="종합병원 의료원">
-                        <div class="hospital-name">충청북도 청주의료원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 김영규</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 서원구 흥덕로 48-0 (사직동)</div>
-                        <div class="phone-number">📞 043-279-2300</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="병원">
-                        <div class="hospital-name">청주탑병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 이현준</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 상당구 교서로 1-0, 1~5층 (영동)</div>
-                        <div class="phone-number">📞 043-900-8875</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="병원">
-                        <div class="hospital-name">다나여성병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 신서규</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 청원구 충청대로 179-0 (주중동)</div>
-                        <div class="phone-number">📞 043-218-3575</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="제천시" data-category="종합병원">
-                        <div class="hospital-name">명지병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 이왕준</div>
-                        <div class="hospital-info"><strong>주소:</strong> 제천시 내토로 991-0 (고암동)</div>
-                        <div class="phone-number">📞 043-640-8114</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="진천군" data-category="종합병원">
-                        <div class="hospital-name">중앙제일병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 이홍익</div>
-                        <div class="hospital-info"><strong>주소:</strong> 진천군 진천읍 중앙북로 36-0</div>
-                        <div class="phone-number">📞 043-533-1711</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="옥천군" data-category="종합병원">
-                        <div class="hospital-name">옥천성모병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 신영철</div>
-                        <div class="hospital-info"><strong>주소:</strong> 옥천군 옥천읍 성왕로 1195-0</div>
-                        <div class="phone-number">📞 043-730-7000</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="보은군" data-category="병원">
-                        <div class="hospital-name">보은한양병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 김병호</div>
-                        <div class="hospital-info"><strong>주소:</strong> 보은군 보은읍 보은로 102-0</div>
-                        <div class="phone-number">📞 043-544-1500</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="괴산군" data-category="병원">
-                        <div class="hospital-name">괴산성모병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 나수연</div>
-                        <div class="hospital-info"><strong>주소:</strong> 괴산군 괴산읍 읍내정로 116-0</div>
-                        <div class="phone-number">📞 043-830-5400</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="영동군" data-category="병원">
-                        <div class="hospital-name">영동병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 윤왕영</div>
-                        <div class="hospital-info"><strong>주소:</strong> 영동군 영동읍 대학로 106-0</div>
-                        <div class="phone-number">📞 043-740-9000</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="음성군" data-category="병원">
-                        <div class="hospital-name">음성메디시티병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 윤건식</div>
-                        <div class="hospital-info"><strong>주소:</strong> 음성군 음성읍 시장로126번길 9</div>
-                        <div class="phone-number">📞 043-871-9999</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="단양군" data-category="병원">
-                        <div class="hospital-name">단양서울병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 박미령</div>
-                        <div class="hospital-info"><strong>주소:</strong> 단양군 단양읍 삼봉로 341</div>
-                        <div class="phone-number">📞 043-423-0221</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="증평군" data-category="병원">
-                        <div class="hospital-name">증평계룡병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 이상기</div>
-                        <div class="hospital-info"><strong>주소:</strong> 증평군 증평읍 중부로 2465</div>
-                        <div class="phone-number">📞 043-838-9119</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
-                        <div class="hospital-name">청주현대요양병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 윤흥동</div>
-                        <div class="hospital-info"><strong>주소:</strong> 충주시 연수상가3길 14-0 (연수동)</div>
-                        <div class="phone-number">📞 043-857-8009</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
-                        <div class="hospital-name">세종의료재단 청주요양병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 민동식</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 흥덕구 2순환로 1265 (가경동)</div>
-                        <div class="phone-number">📞 043-238-5656</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
-                        <div class="hospital-name">태평요양병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 이승준</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 청원구 내수읍 마산길 8-11</div>
-                        <div class="phone-number">📞 043-900-1004</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="충주시" data-category="요양병원">
-                        <div class="hospital-name">다름요양병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 전하론</div>
-                        <div class="hospital-info"><strong>주소:</strong> 충주시 앙성면 용당1길 29-0</div>
-                        <div class="phone-number">📞 043-851-8700</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="제천시" data-category="요양병원">
-                        <div class="hospital-name">제천은혜요양병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 기정일</div>
-                        <div class="hospital-info"><strong>주소:</strong> 제천시 의림대로 17-0 (영천동)</div>
-                        <div class="phone-number">📞 043-647-8275</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="보은군" data-category="정신병원">
-                        <div class="hospital-name">마음편한병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 천용택</div>
-                        <div class="hospital-info"><strong>주소:</strong> 보은군 보은읍 뱃들로 53-0</div>
-                        <div class="phone-number">📞 043-542-3100</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="정신병원">
-                        <div class="hospital-name">충북병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 오현진</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 서원구 현도면 우록4길 151-0</div>
-                        <div class="phone-number">📞 043-260-8200</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="옥천군" data-category="정신병원">
-                        <div class="hospital-name">감곡원병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 박영호</div>
-                        <div class="hospital-info"><strong>주소:</strong> 옥천군 청성면 청성로 654-1</div>
-                        <div class="phone-number">📞 043-732-2070</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
-                        <div class="hospital-name">청주자생한방병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 박병모</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 상당구 상당로 66-0 (문화동)</div>
-                        <div class="phone-number">📞 043-901-0402</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
-                        <div class="hospital-name">청주나비솔한방병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 류정만</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 서원구 산남로 56-0 (산남동)</div>
-                        <div class="phone-number">📞 043-286-7700</div>
-                    </div>
-                    
+                    <!-- Hospital data will be dynamically inserted here from CSV -->
                     <div class="hospital-card" data-region="청주시" data-category="한방병원">
                         <div class="hospital-name">마음따뜻한방병원</div>
                         <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 황욱근</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 상당구 무심동로 22-0 (용암동)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 황웅근</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 무심동로 22-0 (용암동, 2~4층 (용암동))</div>
                         <div class="phone-number">📞 043-283-8850</div>
                     </div>
-                    
                     <div class="hospital-card" data-region="충주시" data-category="한방병원">
                         <div class="hospital-name">해오름한방병원</div>
                         <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
                         <div class="hospital-info"><strong>대표자:</strong> 최정호</div>
-                        <div class="hospital-info"><strong>주소:</strong> 충주시 사천개1길 2-0 (호암동)</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 사천개1길 2-0 (호암동, 5층 (호암동,청보테라스빌딩5,6층))</div>
                         <div class="phone-number">📞 043-848-2300</div>
                     </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
-                        <div class="hospital-name">리치한방병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 서정원</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 상당구 중고개로 137-0 (용암동)</div>
-                        <div class="phone-number">📞 043-258-7000</div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">청주탑병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이형준</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 교서로 1-0, 1~5 층 (영동)</div>
+                        <div class="phone-number">📞 043-900-8875</div>
                     </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
-                        <div class="hospital-name">청주차차한방병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 김가연</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 흥덕구 사운로 292-0 (운천동)</div>
-                        <div class="phone-number">📞 043-715-2647</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
-                        <div class="hospital-name">든든한방병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 최규석</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 상당구 2순환로2031번길 6-3 (방서동)</div>
-                        <div class="phone-number">📞 043-285-0285</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
-                        <div class="hospital-name">청주흑한방병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 염선규</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 흥덕구 강서로 107-0 (강서동)</div>
-                        <div class="phone-number">📞 043-715-2200</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="충주시" data-category="한방병원">
-                        <div class="hospital-name">이강한방병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 연홍경</div>
-                        <div class="hospital-info"><strong>주소:</strong> 충주시 번영대로 109-0 (연수동)</div>
-                        <div class="phone-number">📞 043-855-2010</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="제천시" data-category="한방병원">
-                        <div class="hospital-name">몸튼한방병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 강현빈</div>
-                        <div class="hospital-info"><strong>주소:</strong> 제천시 봉양읍 옥전1길 7-0</div>
-                        <div class="phone-number">📞 043-653-6555</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
-                        <div class="hospital-name">채은한방병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 이채은</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 청원구 오창읍 오창대로 412-0</div>
-                        <div class="phone-number">📞 043-1533-0607</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
-                        <div class="hospital-name">동현한방병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 김동현</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 청원구 상당로 282-0 (내덕동)</div>
-                        <div class="phone-number">📞 043-224-2300</div>
-                    </div>
-                    
                     <div class="hospital-card" data-region="청주시" data-category="한방병원">
                         <div class="hospital-name">경희정한방병원</div>
                         <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
                         <div class="hospital-info"><strong>대표자:</strong> 정종식</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 상당구 무심동로 22-0 (용암동)</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 무심동로 22-0 (용암동)</div>
                         <div class="phone-number">📞 043-293-7555</div>
                     </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
-                        <div class="hospital-name">올리브한방병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 김종철</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 흥덕구 사직대로 38-0 (복대동)</div>
-                        <div class="phone-number">📞 043-265-1075</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
-                        <div class="hospital-name">경희보리수 한방병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 최재신</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 서원구 사직대로 140 (사창동)</div>
-                        <div class="phone-number">📞 043-264-5577</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
-                        <div class="hospital-name">청주첨단한방병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 김동현</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 상당구 영운로 160-1 (서운동)</div>
-                        <div class="phone-number">📞 043-717-0001</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="치과병원">
-                        <div class="hospital-name">에이라인치과병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 치과병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 이재준</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 흥덕구 강서로 115-1 (강서동)</div>
-                        <div class="phone-number">📞 043-263-3333</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="치과병원">
-                        <div class="hospital-name">참좋은치과병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 치과병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 신용문</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 서원구 청남로 1990-0 (분평동)</div>
-                        <div class="phone-number">📞 043-296-3500</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="충주시" data-category="치과병원">
-                        <div class="hospital-name">서울대한유치과병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 치과병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 손효정</div>
-                        <div class="hospital-info"><strong>주소:</strong> 충주시 봉계1길 42 (봉방동)</div>
-                        <div class="phone-number">📞 043-852-7528</div>
-                    </div>
-                    
-                    <div class="hospital-card" data-region="청주시" data-category="병원">
-                        <div class="hospital-name">공군항공우주의료원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 공군항공우주의료원장</div>
-                        <div class="hospital-info"><strong>주소:</strong> 청주시 상당구 남일면 단재로 635-0</div>
-                        <div class="phone-number">📞 043-290-5647</div>
-                    </div>
-                    
                     <div class="hospital-card" data-region="괴산군" data-category="요양병원">
-                        <div class="hospital-name">아이캠용양병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
+                        <div class="hospital-name">아이쿱요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
                         <div class="hospital-info"><strong>대표자:</strong> 강세일</div>
-                        <div class="hospital-info"><strong>주소:</strong> 괴산군 칠성면 자연드림길 223-0 (병원동)</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 괴산군 칠성면 자연드림길 223-0 (병원동)</div>
                         <div class="phone-number">📞 043-925-0000</div>
                     </div>
-                    
                     <div class="hospital-card" data-region="충주시" data-category="병원">
                         <div class="hospital-name">충주미래병원</div>
                         <div class="hospital-info"><strong>종류:</strong> 병원</div>
                         <div class="hospital-info"><strong>대표자:</strong> 이민준</div>
-                        <div class="hospital-info"><strong>주소:</strong> 충주시 국원대로 99-0 (교현동)</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 국원대로 99-0 (교현동, 0동 (교현동,미래병원))</div>
                         <div class="phone-number">📞 043-852-9119</div>
                     </div>
-                    
                     <div class="hospital-card" data-region="충주시" data-category="요양병원">
-                        <div class="hospital-name">에이스용양병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 전하론</div>
-                        <div class="hospital-info"><strong>주소:</strong> 충주시 연수동산로 8-0 (연수동)</div>
+                        <div class="hospital-name">의료법인 채화의료재단 에이스요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김중기</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 수안보면 조산공원길 9-9 ( )</div>
+                        <div class="phone-number">📞 043-1800-7799</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
+                        <div class="hospital-name">동현한방병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김동현</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 청원구 상당로 282-0 (내덕동, 1,3,4층 (내덕동,태성빌딩))</div>
+                        <div class="phone-number">📞 043-224-2300</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">강병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 강동헌</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 무심동로 22-0 (용암동)</div>
+                        <div class="phone-number">📞 043-288-0200</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
+                        <div class="hospital-name">채음한방병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이채은</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 청원구 오창읍 오창대로 412-0</div>
+                        <div class="phone-number">📞 043-1533-0607</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
+                        <div class="hospital-name">리치한방병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 서정원</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 중고개로 137-0 (용암동, 7,8층 (용암동))</div>
+                        <div class="phone-number">📞 043-258-7000</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
+                        <div class="hospital-name">청주차차한방병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김가연</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 사운로 292-0 (운천동, 3~5,7층 (운천동))</div>
+                        <div class="phone-number">📞 043-715-2647</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
+                        <div class="hospital-name">든든한방병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 최규섭</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 2순환로2031번길 6-3 (방서동, 2~5층 (방서동))</div>
+                        <div class="phone-number">📞 043-285-0285</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="치과병원">
+                        <div class="hospital-name">서울좋은치과병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 치과병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 유종한</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 대신로 132-0 (송정동,청주산업단지비즈니스센터)</div>
+                        <div class="phone-number">📞 043-263-7528</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">서로손병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 박영조</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 청원구 충청대로 98-0 (율량동,한길빌딩)</div>
+                        <div class="phone-number">📞 043-211-0663</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
+                        <div class="hospital-name">청주필한방병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 염선규</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 강서로 107-0 (강서동, (강서동))</div>
+                        <div class="phone-number">📞 043-715-2200</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="병원">
+                        <div class="hospital-name">충주위담통합병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 충주시장</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 수안보면 수안보로 129-0</div>
+                        <div class="phone-number">📞 043-846-2220</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="한방병원">
+                        <div class="hospital-name">이강한방병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 연희경</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 번영대로 109-0 (연수동, (연수동))</div>
+                        <div class="phone-number">📞 043-855-2010</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">웰니스어린이병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 홍대의</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 2순환로2031번길 6-20 (방서동, (방서동))</div>
+                        <div class="phone-number">� 043-225-7700</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
+                        <div class="hospital-name">누리요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 박경배</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 오송읍 오송생명로 168-0</div>
+                        <div class="phone-number">📞 043-239-0070</div>
+                    </div>
+                    <div class="hospital-card" data-region="진천군" data-category="병원">
+                        <div class="hospital-name">의료법인가은의료재단 혁신성모병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 유장선</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 진천군 덕산읍 자안로 9-0</div>
+                        <div class="phone-number">📞 043-533-1000</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">의료법인 라온의료재단 오창호수병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김충범</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 청원구 오창읍 중심상업1로 54-0</div>
+                        <div class="phone-number">📞 043-214-1004</div>
+                    </div>
+                    <div class="hospital-card" data-region="증평군" data-category="요양병원">
+                        <div class="hospital-name">의료법인 여덕의료재단 증평요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김형철</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 증평군 증평읍 중앙로 114-0</div>
+                        <div class="phone-number">📞 043-760-8886</div>
+                    </div>
+                    <div class="hospital-card" data-region="보은군" data-category="요양병원">
+                        <div class="hospital-name">의료법인 누가의료재단 속리산요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이은성</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 보은군 속리산면 속리산로 701-0 (속리산요양병원)</div>
+                        <div class="phone-number">📞 043-934-0100</div>
+                    </div>
+                    <div class="hospital-card" data-region="증평군" data-category="병원">
+                        <div class="hospital-name">의료법인 여덕의료재단 증평병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 최석배</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 증평군 증평읍 중앙로 114-0</div>
+                        <div class="phone-number">📞 043-760-8885</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="병원">
+                        <div class="hospital-name">무궁화의료소비자생활협동조합 뉴베스트병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이상열</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 사천개1길 2-0 (호암동)</div>
+                        <div class="phone-number">📞 043-724-0303</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="요양병원">
+                        <div class="hospital-name">제천은혜요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 우경희</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 의림대로 17-0 (영천동)</div>
+                        <div class="phone-number">📞 043-647-8277</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
+                        <div class="hospital-name">실버안요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이영준</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 청원구 오창읍 오창대로 414-0 (실버안노인요양원)</div>
+                        <div class="phone-number">📞 043-217-3388</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="치과병원">
+                        <div class="hospital-name">온누리치과병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 치과병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 옥순영</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 사직대로 160-0, 2 층 201호 (사창동,두진하트리움에덴)</div>
+                        <div class="phone-number">📞 043-266-2875</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="요양병원">
+                        <div class="hospital-name">제천은혜요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 기정일</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 의림대로 17-0 (영천동)</div>
+                        <div class="phone-number">📞 043-647-8275</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="종합병원">
+                        <div class="hospital-name">재단법인베스티안재단베스티안병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김경식</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 오송읍 오송생명1로 191-0</div>
+                        <div class="phone-number">📞 043-910-7575</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="병원">
+                        <div class="hospital-name">김앤권병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김태진</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 번영대로 239-0 (연수동)</div>
+                        <div class="phone-number">📞 043-848-1123</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
+                        <div class="hospital-name">청주자생한방병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 박병모</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 상당로 66-0 (문화동, (문화동))</div>
+                        <div class="phone-number">📞 043-901-0402</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
+                        <div class="hospital-name">올리브한방병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김종철</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 사직대로 38-0 (복대동,포빌)</div>
+                        <div class="phone-number">📞 043-265-1075</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
+                        <div class="hospital-name">의료법인홍익의료재단파스카요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이정일</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 청원구 내수읍 마산길 8-11</div>
+                        <div class="phone-number">📞 043-900-1004</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
+                        <div class="hospital-name">남궁요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 노요안</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 상당로 47-0 (남문로2가, (남문로2가))</div>
+                        <div class="phone-number">📞 043-252-3000</div>
+                    </div>
+                    <div class="hospital-card" data-region="증평군" data-category="요양병원">
+                        <div class="hospital-name">의료법인청진의료재단디에스요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 민동식</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 증평군 증평읍 중앙로 114-0 ((3,4,5층))</div>
+                        <div class="phone-number">📞 043-909-9100</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
+                        <div class="hospital-name">청주나비솔한방병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 류정만</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 산남로 56-0 (산남동,에버프라자)</div>
+                        <div class="phone-number">📞 043-286-7700</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">의료법인송암의료재단마이크로재활병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 민지홍</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 사직대로 26-0 (복대동, (복대동))</div>
+                        <div class="phone-number">📞 043-265-0051</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">마디사랑병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 변재용</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 상당로 112-0 (북문로2가, (북문로2가))</div>
+                        <div class="phone-number">📞 043-298-9988</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="치과병원">
+                        <div class="hospital-name">에이라인치과병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 치과병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이재준</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 강서로 115-1 (강서동, (강서동))</div>
+                        <div class="phone-number">📞 043-263-3333</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
+                        <div class="hospital-name">의료법인 하람의료재단 청주탑요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김정규</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 궁뜰로 16-0 (미평동, (미평동))</div>
+                        <div class="phone-number">📞 043-296-5000</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">청주삼성병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 손태옥</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 청남로 2014-0 (분평동, 3~8층 (분평동))</div>
+                        <div class="phone-number">📞 043-223-8124</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="요양병원">
+                        <div class="hospital-name">제천우석요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 유재형</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 풍양로 89-0 (중앙로1가, (중앙로1가))</div>
+                        <div class="phone-number">📞 043-642-4000</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="한방병원">
+                        <div class="hospital-name">목토한방병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 강현빈</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 봉양읍 옥전1길 7-0</div>
+                        <div class="phone-number">📞 043-653-6555</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
+                        <div class="hospital-name">경희보리수 한방병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 최재승</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 사직대로 140, 201호 (사창동,현대코아)</div>
+                        <div class="phone-number">📞 043-264-5577</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원 의료원">
+                        <div class="hospital-name">청주시립요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 청주시장</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 궁뜰로62번길 29-0 (장성동,청주시노인전문병원)</div>
+                        <div class="phone-number">📞 043-220-8000</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="요양병원">
+                        <div class="hospital-name">의료법인 문화의료재단 문화실버요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 우종희</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 국원대로 6-0 (문화동, (문화동))</div>
+                        <div class="phone-number">📞 043-854-8802</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">첼로병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 기영진</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 청원구 향군로 132-0 (내덕동, (내덕동))</div>
+                        <div class="phone-number">📞 043-211-9090</div>
+                    </div>
+                    <div class="hospital-card" data-region="증평군" data-category="병원">
+                        <div class="hospital-name">의료법인 청진의료재단 디에스병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 민동식</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 증평군 증평읍 중앙로 114-0 ((지하1층,지상1,2,6층))</div>
+                        <div class="phone-number">📞 043-909-9000</div>
+                    </div>
+                    <div class="hospital-card" data-region="음성군" data-category="요양병원">
+                        <div class="hospital-name">의료법인 청미의료재단 청미요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김현기</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 음성군 감곡면 장감로 118-1</div>
+                        <div class="phone-number">📞 043-883-2449</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">뿌리병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이신노</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 청원구 내덕로 56-0 (내덕동, (내덕동))</div>
+                        <div class="phone-number">📞 043-221-0119</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
+                        <div class="hospital-name">예미담요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 오종현</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 청원구 충청대로 100-0 (율량동, (율량동))</div>
+                        <div class="phone-number">📞 043-215-7075</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="요양병원">
+                        <div class="hospital-name">의료법인 자산의료재단 제천서울요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 박미령</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 동명로 67-0 (명동)</div>
+                        <div class="phone-number">📞 043-642-8605</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">의료법인샘의료재단청주복음병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 남태현</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 사직대로 160-0 (사창동,두진하트리움에덴)</div>
+                        <div class="phone-number">📞 043-264-1000</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="치과병원">
+                        <div class="hospital-name">서울더블유치과병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 치과병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 손효정</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 봉계1길 42 (봉방동, (봉방동))</div>
+                        <div class="phone-number">📞 043-852-7528</div>
+                    </div>
+                    <div class="hospital-card" data-region="증평군" data-category="병원">
+                        <div class="hospital-name">의료법인우준의료재단증평미래병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 정상진</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 증평군 증평읍 중부로 2465-0</div>
+                        <div class="phone-number">📞 043-930-3100</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
+                        <div class="hospital-name">의료법인원광의료재단청주원광효도요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 오성배</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 월명로 15-0 (복대동,원광효도요양병원)</div>
+                        <div class="phone-number">📞 043-267-0301</div>
+                    </div>
+                    <div class="hospital-card" data-region="음성군" data-category="요양병원">
+                        <div class="hospital-name">의료법인 태종의료재단 음성요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 양선승</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 음성군 음성읍 시장로126번길 9-0</div>
+                        <div class="phone-number">📞 043-871-9900</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">아이웰어린이병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김염</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 청원구 주성로 273-0 (주성동, (주성동))</div>
+                        <div class="phone-number">📞 043-288-3535</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">청주프라임병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 정범영</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 짐대로72번길 37-0 (복대동)</div>
+                        <div class="phone-number">📞 043-1899-8523</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">다나여성병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 신서규</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 청원구 충청대로 179-0 (주중동,청주다나여성병원)</div>
+                        <div class="phone-number">📞 043-218-3575</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
+                        <div class="hospital-name">의료법인 제이원의료재단 큰나무요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 전하람</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 풍년로193번길 15-0 (가경동)</div>
+                        <div class="phone-number">📞 043-231-0200</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
+                        <div class="hospital-name">서원요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김태균</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 남이면 남석로 316-26 (서원요양병원)</div>
+                        <div class="phone-number">📞 043-233-6000</div>
+                    </div>
+                    <div class="hospital-card" data-region="진천군" data-category="정신병원">
+                        <div class="hospital-name">의료법인 노은의료재단 도은병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 박상현</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 진천군 문백면 문진로 88-56 (도은병원)</div>
+                        <div class="phone-number">📞 043-930-2000</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="병원">
+                        <div class="hospital-name">의료법인 성지의료재단 제천성지병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 안재홍</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 의림대로 284-0 (청전동, (청전동))</div>
+                        <div class="phone-number">📞 043-640-3814</div>
+                    </div>
+                    <div class="hospital-card" data-region="진천군" data-category="요양병원">
+                        <div class="hospital-name">의료법인 노은의료재단 효담요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 박상현</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 진천군 문백면 문진로 88-56</div>
+                        <div class="phone-number">📞 043-930-0961</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">청주소아청소년병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 신경식</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 사운로 292-0 (운천동)</div>
+                        <div class="phone-number">📞 043-225-7700</div>
+                    </div>
+                    <div class="hospital-card" data-region="음성군" data-category="요양병원">
+                        <div class="hospital-name">의료법인 순원의료재단 굿모닝요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 조덕환</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 음성군 대소면 대금로 532-0</div>
+                        <div class="phone-number">📞 043-878-8600</div>
+                    </div>
+                    <div class="hospital-card" data-region="음성군" data-category="요양병원">
+                        <div class="hospital-name">음성한국의료소비자생활협동조합 음성한국요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 정승원</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 음성군 금왕읍 무극로285번길 12</div>
+                        <div class="phone-number">📞 043-882-5851</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">남궁병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 노요안</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 상당로 47 (남문로2가)</div>
+                        <div class="phone-number">📞 043-252-3000</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
+                        <div class="hospital-name">청주첨단한방병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김동현</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 영운로 160-1 (서운동, (서운동))</div>
+                        <div class="phone-number">📞 043-717-0001</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">청주아이엠재활요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 우봉식</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 청남로 2140 (모충동)</div>
+                        <div class="phone-number">📞 043-284-0675</div>
+                    </div>
+                    <div class="hospital-card" data-region="영동군" data-category="요양병원">
+                        <div class="hospital-name">의료법인조윤의료재단 감고을요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 윤왕영</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 영동군 영동읍 대학로 106-0</div>
+                        <div class="phone-number">📞 043-740-9100</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="종합병원 의료원">
+                        <div class="hospital-name">충청북도 충주의료원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 윤창규</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 안림로 239-50 (안림동,충청북도충주의료원)</div>
+                        <div class="phone-number">📞 043-871-0114</div>
+                    </div>
+                    <div class="hospital-card" data-region="증평군" data-category="병원">
+                        <div class="hospital-name">의료법인 계룡의료재단 증평계룡병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 용석열</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 증평군 증평읍 중부로 2465</div>
+                        <div class="phone-number">📞 043-838-9119</div>
+                    </div>
+                    <div class="hospital-card" data-region="괴산군" data-category="병원">
+                        <div class="hospital-name">의료법인 대광의료재단 괴산성모병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 나숙연</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 괴산군 괴산읍 임꺽정로 116-0 (괴산성모병원)</div>
+                        <div class="phone-number">📞 043-830-5400</div>
+                    </div>
+                    <div class="hospital-card" data-region="옥천군" data-category="요양병원">
+                        <div class="hospital-name">의료법인 도담의료재단 휴향요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 장영아</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 옥천군 옥천읍 청풍로 267-14</div>
+                        <div class="phone-number">📞 043-733-6604</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">씨엔씨푸른병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 황찬호</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 2순환로 1234-0 (강서동, (강서동))</div>
+                        <div class="phone-number">📞 043-291-8114</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="요양병원">
+                        <div class="hospital-name">내토의료소비자생활협동조합햇살요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 임환우</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 동명로 67 (명동)</div>
+                        <div class="phone-number">📞 043-642-9513</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">새빛병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 홍정훈</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 서부로 1350 (성화동)</div>
+                        <div class="phone-number">📞 043-234-7509</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="종합병원">
+                        <div class="hospital-name">의료법인 명지의료재단 명지병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이왕준</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 내토로 991-0 (고암동,의료법인명지의료재단명지병원)</div>
+                        <div class="phone-number">📞 043-640-8114</div>
+                    </div>
+                    <div class="hospital-card" data-region="괴산군" data-category="정신병원">
+                        <div class="hospital-name">의료법인 동숙의료재단 벧엘기독병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김동숙</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 괴산군 문광면 흑석2길 20-148 (벧엘기독병원)</div>
+                        <div class="phone-number">📞 043-833-1004</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">아이엠재활병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 우봉식</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 청남로 2140-0 (모충동, (모충동))</div>
+                        <div class="phone-number">📞 043-284-0675</div>
+                    </div>
+                    <div class="hospital-card" data-region="음성군" data-category="병원">
+                        <div class="hospital-name">의료법인거서의료재단음성메디시티병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 임영순</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 음성군 음성읍 시장로126번길 9</div>
+                        <div class="phone-number">📞 043-871-9999</div>
+                    </div>
+                    <div class="hospital-card" data-region="괴산군" data-category="요양병원">
+                        <div class="hospital-name">이화의료소비자생활협동조합괴산이화병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 노정환</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 괴산군 연풍면 수옥정길 10</div>
+                        <div class="phone-number">📞 043-834-8119</div>
+                    </div>
+                    <div class="hospital-card" data-region="옥천군" data-category="정신병원">
+                        <div class="hospital-name">의료법인 요섭의료재단 감람원병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 박영호</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 옥천군 청성면 청성로 654-1</div>
+                        <div class="phone-number">📞 043-732-2070</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="요양병원">
+                        <div class="hospital-name">효사랑의료소비자생활협동조합 사랑요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 황동선</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 의림대로 17 (영천동)</div>
+                        <div class="phone-number">📞 043-652-6542</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="병원">
+                        <div class="hospital-name">의료법인범곡의료재단제일병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이영숙</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 의림대로 194 (중앙로2가)</div>
+                        <div class="phone-number">📞 043-645-0001</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="요양병원">
+                        <div class="hospital-name">의료법인 목민의료재단 충주성모요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김인옥</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 앙성면 산전장수2길 55-0</div>
+                        <div class="phone-number">📞 043-844-2000</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">카톨릭병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김지묵</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 사직대로 277-0 (사직동)</div>
+                        <div class="phone-number">📞 043-274-4401</div>
+                    </div>
+                    <div class="hospital-card" data-region="괴산군" data-category="병원">
+                        <div class="hospital-name">의료법인 대광의료재단 괴산성모병원(구/괴산삼성병원)</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 나숙연</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 괴산군 괴산읍 임꺽정로 116</div>
+                        <div class="phone-number">📞 043-834-3900</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
+                        <div class="hospital-name">소망요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 정인서</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 단재로 132 (영운동)</div>
+                        <div class="phone-number">📞 043-255-0126</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="요양병원">
+                        <div class="hospital-name">의료법인 솔트의료재단 예성요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 임은희</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 용두천로 333-0 (청전동)</div>
+                        <div class="phone-number">📞 043-653-7700</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">청주시노인전문병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 한수환</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 궁뜰로62번길 29 (장성동)</div>
+                        <div class="phone-number">📞 043-220-8000</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">서울우리병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 손형권</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 서현중로 66 (강서동, (강서동))</div>
+                        <div class="phone-number">📞 043-249-5000</div>
+                    </div>
+                    <div class="hospital-card" data-region="보은군" data-category="요양병원">
+                        <div class="hospital-name">의료법인 아인의료재단 성암요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 민혜정</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 보은군 내북면 남부로 6427-27 (병원)</div>
+                        <div class="phone-number">📞 043-544-0330</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">씨엔씨병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이지용</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 서현북로 83-0 (가경동, (가경동))</div>
+                        <div class="phone-number">📞 043-239-8114</div>
+                    </div>
+                    <div class="hospital-card" data-region="영동군" data-category="요양병원 의료원">
+                        <div class="hospital-name">영동군립노인전문병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 영동군수</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 영동군 영동읍 대학로 290</div>
+                        <div class="phone-number">📞 043-744-9633</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
+                        <div class="hospital-name">의료법인 세종의료재단 세종노인요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 안민호</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 2순환로 1265 (가경동)</div>
+                        <div class="phone-number">📞 043-238-5656</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="요양병원">
+                        <div class="hospital-name">국민보건의료소비자생활협동조합 중앙효요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 박상준</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 풍양로 91 (중앙로1가)</div>
+                        <div class="phone-number">📞 043-6464-2846</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">청주우리병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 오재인</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 1순환로 1037 (분평동)</div>
+                        <div class="phone-number">📞 043-296-9119</div>
+                    </div>
+                    <div class="hospital-card" data-region="보은군" data-category="요양병원">
+                        <div class="hospital-name">의료법인브루노의료재단보은요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 박태현</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 보은군 수한면 후평바리미길 31-0 (노인요양병원)</div>
+                        <div class="phone-number">📞 043-544-7114</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">서울아동병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이은애</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 가로수로 1317-0 (복대동,서울아동병원)</div>
+                        <div class="phone-number">📞 043-221-1122</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="정신병원">
+                        <div class="hospital-name">예사랑병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이상구</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 2순환로2031번길 6-9 (방서동, (방서동))</div>
+                        <div class="phone-number">📞 043-298-7337</div>
+                    </div>
+                    <div class="hospital-card" data-region="영동군" data-category="정신병원">
+                        <div class="hospital-name">의료법인 다원의료재단 영동제일병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 임점식</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 영동군 양강면 양정죽촌로 53-12 ( )</div>
+                        <div class="phone-number">📞 043-745-3004</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="요양병원 의료원">
+                        <div class="hospital-name">청풍호노인사랑병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 제천시장</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 금성면 청풍호로 1147-0</div>
+                        <div class="phone-number">📞 043-646-0808</div>
+                    </div>
+                    <div class="hospital-card" data-region="옥천군" data-category="요양병원">
+                        <div class="hospital-name">의료법인 건우의료재단 큰사랑요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 정기권</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 옥천군 옥천읍 중앙로 72-0</div>
+                        <div class="phone-number">📞 043-730-9000</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="요양병원">
+                        <div class="hospital-name">의료법인 현오의료재단 늘푸른요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이경선</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 앙성면 용당1길 29-0</div>
                         <div class="phone-number">📞 043-851-8700</div>
                     </div>
-                    
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">의료법인 한미의료재단 김숙자소아청소년병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김숙자</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 직지대로 745-0 (운천동,김숙자소아.청소년병원)</div>
+                        <div class="phone-number">📞 043-263-8280</div>
+                    </div>
                     <div class="hospital-card" data-region="제천시" data-category="요양병원">
-                        <div class="hospital-name">제천요양병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 김세영</div>
-                        <div class="hospital-info"><strong>주소:</strong> 제천시 용두대로55길 64-0 (하소동)</div>
-                        <div class="phone-number">📞 043-640-3000</div>
+                        <div class="hospital-name">의료법인 창민의료재단 제천노인전문요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 오만식</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 북부로13길 94-0 (천남동, (천남동))</div>
+                        <div class="phone-number">📞 043-640-6000</div>
                     </div>
-                    
-                    <div class="hospital-card" data-region="보은군" data-category="요양병원">
-                        <div class="hospital-name">속리산요양병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 이종학</div>
-                        <div class="hospital-info"><strong>주소:</strong> 보은군 내북면 성암2길 11-0</div>
-                        <div class="phone-number">📞 043-543-9800</div>
-                    </div>
-                    
                     <div class="hospital-card" data-region="옥천군" data-category="요양병원">
-                        <div class="hospital-name">옥천군립노인요양병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 박성환</div>
-                        <div class="hospital-info"><strong>주소:</strong> 옥천군 옥천읍 향수길 160-0</div>
-                        <div class="phone-number">📞 043-731-5000</div>
+                        <div class="hospital-name">의료법인 창곡의료재단 참조은요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 최종숙</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 옥천군 옥천읍 삼양로5길 12-0</div>
+                        <div class="phone-number">📞 043-731-0066</div>
                     </div>
-                    
-                    <div class="hospital-card" data-region="영동군" data-category="요양병원">
-                        <div class="hospital-name">영동요양병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 이성우</div>
-                        <div class="hospital-info"><strong>주소:</strong> 영동군 영동읍 대학로 106-0</div>
+                    <div class="hospital-card" data-region="음성군" data-category="병원">
+                        <div class="hospital-name">의료법인 태성의료재단 제일조은병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 천지영</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 음성군 금왕읍 음성로1230번길 10-0 ( )</div>
+                        <div class="phone-number">📞 043-883-8800</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="요양병원">
+                        <div class="hospital-name">의료법인 송원의료재단 송원요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김종순</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 주덕읍 신양로 62-0 ( )</div>
+                        <div class="phone-number">📞 043-856-3501</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">오창중앙병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김용한</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 청원구 오창읍 중부로 683</div>
+                        <div class="phone-number">📞 043-218-0119</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
+                        <div class="hospital-name">소망요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 정인서</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 단재로 132-0 (영운동)</div>
+                        <div class="phone-number">📞 043-255-0126</div>
+                    </div>
+                    <div class="hospital-card" data-region="음성군" data-category="요양병원">
+                        <div class="hospital-name">음성사랑의료생활협동조합 음성사랑요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 남진현</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 음성군 대소면 대금로 567-7</div>
+                        <div class="phone-number">📞 043-882-3800</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">모태안여성병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김만기</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 복대로17번길 57-0 (개신동,모태안여성병원)</div>
+                        <div class="phone-number">📞 043-272-0001</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">마디사랑병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 변재용</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 산남로 56 (산남동)</div>
+                        <div class="phone-number">📞 043-298-9988</div>
+                    </div>
+                    <div class="hospital-card" data-region="괴산군" data-category="병원">
+                        <div class="hospital-name">괴산병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이태인</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 괴산군 괴산읍 임꺽정로 108</div>
+                        <div class="phone-number">📞 043-834-3500</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="정신병원">
+                        <div class="hospital-name">호암병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 노현송</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 예성로 16 (호암동, (호암동))</div>
+                        <div class="phone-number">📞 043-852-3800</div>
+                    </div>
+                    <div class="hospital-card" data-region="증평군" data-category="병원">
+                        <div class="hospital-name">증평연세병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이노균</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 증평군 증평읍 중앙로 149-0</div>
+                        <div class="phone-number">📞 043-838-9771</div>
+                    </div>
+                    <div class="hospital-card" data-region="영동군" data-category="병원">
+                        <div class="hospital-name">의료법인 조윤의료재단 영동병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 윤왕영</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 영동군 영동읍 대학로 106-0 (영동병원)</div>
                         <div class="phone-number">📞 043-740-9000</div>
                     </div>
-                    
+                    <div class="hospital-card" data-region="괴산군" data-category="병원">
+                        <div class="hospital-name">의료법인 명신의료재단 괴산서부병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 박영숙</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 괴산군 괴산읍 읍내로 259-0 (서부병원)</div>
+                        <div class="phone-number">📞 043-834-8275</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="요양병원">
+                        <div class="hospital-name">충주현대요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 윤희동</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 연수상가3길 14-0 (연수동)</div>
+                        <div class="phone-number">📞 043-857-8009</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="정신병원">
+                        <div class="hospital-name">주사랑병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 유용진</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 가덕면 보청대로 4673-61 (주사랑병원)</div>
+                        <div class="phone-number">📞 043-286-0692</div>
+                    </div>
                     <div class="hospital-card" data-region="진천군" data-category="요양병원">
-                        <div class="hospital-name">진천요양병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 진천군수</div>
-                        <div class="hospital-info"><strong>주소:</strong> 진천군 진천읍 진광로 1251-0</div>
-                        <div class="phone-number">📞 043-539-7500</div>
+                        <div class="hospital-name">의료법인 진천의료재단 진천효병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 조정희</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 진천군 이월면 반지길 54-0 (진천효병원)</div>
+                        <div class="phone-number">📞 043-537-0035</div>
                     </div>
-                    
-                    <div class="hospital-card" data-region="음성군" data-category="요양병원">
-                        <div class="hospital-name">금왕효사랑병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 이재호</div>
-                        <div class="hospital-info"><strong>주소:</strong> 음성군 금왕읍 무극로 321-0</div>
-                        <div class="phone-number">📞 043-881-8000</div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">청주현대병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 엄성문</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 비하로 65-0 (비하동)</div>
+                        <div class="phone-number">📞 043-237-2114</div>
                     </div>
-                    
-                    <div class="hospital-card" data-region="단양군" data-category="요양병원">
-                        <div class="hospital-name">단양요양병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 이성우</div>
-                        <div class="hospital-info"><strong>주소:</strong> 단양군 단양읍 매포읍 평동리 230-0</div>
-                        <div class="phone-number">📞 043-420-5500</div>
+                    <div class="hospital-card" data-region="영동군" data-category="요양병원">
+                        <div class="hospital-name">영동제일병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 오경식</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 영동군 양강면 양정죽촌로 53-12</div>
+                        <div class="phone-number">📞 043-745-3004</div>
                     </div>
-                    
-                    <div class="hospital-card" data-region="증평군" data-category="요양병원">
-                        <div class="hospital-name">증평노인전문요양병원</div>
-                        <div class="hospital-info"><strong>종류:</strong> 요양병원</div>
-                        <div class="hospital-info"><strong>대표자:</strong> 강병문</div>
-                        <div class="hospital-info"><strong>주소:</strong> 증평군 증평읍 충청대로 1974-0</div>
-                        <div class="phone-number">📞 043-835-7777</div>
+                    <div class="hospital-card" data-region="충주시" data-category="요양병원 의료원">
+                        <div class="hospital-name">충주시노인전문병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 충주시장</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 동량면 충원대로 1398-0 (충주시노인전문병원)</div>
+                        <div class="phone-number">📞 043-855-9393</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
+                        <div class="hospital-name">하나노인전문병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 박찬제</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 대림로 431-0 (죽림동,하나노인전문병원)</div>
+                        <div class="phone-number">📞 043-270-8114</div>
+                    </div>
+                    <div class="hospital-card" data-region="음성군" data-category="병원">
+                        <div class="hospital-name">의료법인 청암의료재단 음성연세병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 윤봉식</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 음성군 음성읍 예술로 86-9</div>
+                        <div class="phone-number">📞 043-872-4298</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">청주소아병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 홍대의</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 사운로 292 (운천동)</div>
+                        <div class="phone-number">📞 043-225-7700</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">의료법인 송암의료재단 마이크로병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 민지홍</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 사직대로 26-0 (복대동, (복대동))</div>
+                        <div class="phone-number">📞 043-265-0071</div>
+                    </div>
+                    <div class="hospital-card" data-region="단양군" data-category="요양병원 의료원">
+                        <div class="hospital-name">단양군립노인요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 단양군수</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 단양군 단양읍 별곡6길 10-0 (단양군노인요양전문병원)</div>
+                        <div class="phone-number">📞 043-423-8844</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
+                        <div class="hospital-name">의료법인 참사랑재단 참사랑요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 최항석</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 청남로 1910-0 (미평동, (미평동))</div>
+                        <div class="phone-number">📞 043-298-9100</div>
+                    </div>
+                    <div class="hospital-card" data-region="증평군" data-category="병원">
+                        <div class="hospital-name">의료법인 계룡의료재단 증평계룡병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이상기</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 증평군 증평읍 중부로 2465</div>
+                        <div class="phone-number">📞 043-838-9119</div>
+                    </div>
+                    <div class="hospital-card" data-region="보은군" data-category="병원">
+                        <div class="hospital-name">의료법인 정민의료재단 보은한양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김병호</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 보은군 보은읍 보은로 102-0</div>
+                        <div class="phone-number">📞 043-544-1500</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="병원">
+                        <div class="hospital-name">의료법인 중원의료재단 충주중앙병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 유희범</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 충인1길 60-0 (충인동)</div>
+                        <div class="phone-number">📞 043-856-2100</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원 의료원">
+                        <div class="hospital-name">충북도립노인전문병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 충청북도지사</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 청남로 1910-0 (미평동,충북도립노인전문병원)</div>
+                        <div class="phone-number">📞 043-287-7715</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="한방병원">
+                        <div class="hospital-name">세명대학교 충주한방병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김형순</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 상방4길 63-0 (봉방동,세명대학교충주한방병원)</div>
+                        <div class="phone-number">📞 043-856-1010</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="치과병원">
+                        <div class="hospital-name">참조은치과병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 치과병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 신용문</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 청남로 1990-0 (분평동)</div>
+                        <div class="phone-number">📞 043-296-3500</div>
+                    </div>
+                    <div class="hospital-card" data-region="진천군" data-category="종합병원">
+                        <div class="hospital-name">의료법인 건명의료재단 중앙제일병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이희엽</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 진천군 진천읍 중앙북로 36-0 (진천성모병원)</div>
+                        <div class="phone-number">📞 043-533-1711</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">공군항공우주의료원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 공군항공우주의료원장</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 남일면 단재로 635-0</div>
+                        <div class="phone-number">📞 043-290-5647</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="종합병원">
+                        <div class="hospital-name">의료법인한마음의료재단하나병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 박중겸</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 2순환로 1262-0 (가경동,하나병원)</div>
+                        <div class="phone-number">📞 043-230-6114</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="종합병원">
+                        <div class="hospital-name">청주성모병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김종강</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 청원구 주성로 173-19 (주중동,청주성모병원)</div>
+                        <div class="phone-number">📞 043-219-8000</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="요양병원">
+                        <div class="hospital-name">초정요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김진성</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 청원구 내수읍 우산길 91-0</div>
+                        <div class="phone-number">📞 043-213-7123</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="정신병원">
+                        <div class="hospital-name">의료법인 창민의료재단 제천병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 오만식</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 북부로13길 94-0 (천남동,제천병원)</div>
+                        <div class="phone-number">📞 043-640-6100</div>
+                    </div>
+                    <div class="hospital-card" data-region="음성군" data-category="정신병원">
+                        <div class="hospital-name">의료법인 현대소망의료재단 현대병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이강표</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 음성군 생극면 일생로 516-0 ( )</div>
+                        <div class="phone-number">📞 043-878-4341</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="정신병원">
+                        <div class="hospital-name">의료법인 혜광의료재단 충북병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 오형진</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 현도면 우록4길 151-0 ( )</div>
+                        <div class="phone-number">📞 043-260-8200</div>
+                    </div>
+                    <div class="hospital-card" data-region="보은군" data-category="정신병원">
+                        <div class="hospital-name">의료법인 의명의료재단 마음편한병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 천용태</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 보은군 보은읍 뱃들로 53-0</div>
+                        <div class="phone-number">📞 043-542-3100</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">의료법인 최헌식기념의료재단 최병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 최완영</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 흥덕구 사직대로 49 (복대동)</div>
+                        <div class="phone-number">📞 043-264-0751</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="한방병원">
+                        <div class="hospital-name">대원교육재단 세명대학교 부속한방병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김형순</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 세명로 66-0 (모산동,세명대한방병원)</div>
+                        <div class="phone-number">📞 043-645-1010</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="병원">
+                        <div class="hospital-name">제천현대병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김효진</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 의림대로 284 (청전동)</div>
+                        <div class="phone-number">📞 043-644-7575</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="종합병원">
+                        <div class="hospital-name">의료법인 정산의료재단 효성병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 오창진</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 쇠내로 16-0 (금천동,효성병원)</div>
+                        <div class="phone-number">📞 043-221-5000</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="종합병원">
+                        <div class="hospital-name">의료법인 인화재단 한국병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 송재승</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 단재로 106-0 (영운동,한국병원)</div>
+                        <div class="phone-number">📞 043-222-7000</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="요양병원">
+                        <div class="hospital-name">의료법인 용은의료재단 충주요양병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 요양병원(일반요양병원)</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 조광희</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 중심3길 4-2 (문화동, (문화동))</div>
+                        <div class="phone-number">📞 043-843-9300</div>
+                    </div>
+                    <div class="hospital-card" data-region="옥천군" data-category="종합병원">
+                        <div class="hospital-name">의료법인 힐링의료재단 옥천성모병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 신영철</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 옥천군 옥천읍 성왕로 1195-0 ( )</div>
+                        <div class="phone-number">📞 043-730-7000</div>
+                    </div>
+                    <div class="hospital-card" data-region="단양군" data-category="병원">
+                        <div class="hospital-name">의료법인 자산의료재단 단양서울병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 박미령</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 단양군 단양읍 삼봉로 341</div>
+                        <div class="phone-number">📞 043-423-0221</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="한방병원">
+                        <div class="hospital-name">대전대학교 청주한방병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 한방병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 서정원</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 용담로105번길 4-0 (용담동,청주한방병원)</div>
+                        <div class="phone-number">📞 043-229-3787</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="종합병원">
+                        <div class="hospital-name">충북대학교병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김원섭</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 1순환로 776-0 (개신동,충북대학교병원)</div>
+                        <div class="phone-number">📞 043-269-6114</div>
+                    </div>
+                    <div class="hospital-card" data-region="제천시" data-category="종합병원">
+                        <div class="hospital-name">의료법인 자산의료재단 제천서울병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 박미령</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 제천시 숭문로 57-0 (서부동,서울병원)</div>
+                        <div class="phone-number">📞 043-642-7606</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="종합병원">
+                        <div class="hospital-name">건국대학교 충주병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 유자은</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 국원대로 82-0 (교현동,건국대학교충주병원)</div>
+                        <div class="phone-number">📞 043-840-8200</div>
+                    </div>
+                    <div class="hospital-card" data-region="음성군" data-category="병원">
+                        <div class="hospital-name">(재)예수의꽃동네유지재단 인곡자애병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 오웅진</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 음성군 맹동면 꽃동네길 37-0</div>
+                        <div class="phone-number">📞 043-879-0301</div>
+                    </div>
+                    <div class="hospital-card" data-region="음성군" data-category="정신병원">
+                        <div class="hospital-name">의료법인 음성소망의료재단 음성소망병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 정신병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 이강표</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 음성군 생극면 일생로 518-0 ( )</div>
+                        <div class="phone-number">📞 043-878-4111</div>
+                    </div>
+                    <div class="hospital-card" data-region="충주시" data-category="종합병원 의료원">
+                        <div class="hospital-name">지방공사 충청북도충주의료원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 배규룡</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 충주시 안림로 239-50 (안림동,충청북도충주의료원)</div>
+                        <div class="phone-number">📞 043-871-0114</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="병원">
+                        <div class="hospital-name">의료법인 청주병원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 조임호</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 상당구 상당로 163-0 (북문로3가)</div>
+                        <div class="phone-number">📞 043-220-1234</div>
+                    </div>
+                    <div class="hospital-card" data-region="청주시" data-category="종합병원 의료원">
+                        <div class="hospital-name">충청북도 청주의료원</div>
+                        <div class="hospital-info"><strong>종류:</strong> 종합병원</div>
+                        <div class="hospital-info"><strong>대표자:</strong> 김영규</div>
+                        <div class="hospital-info"><strong>주소:</strong> 충청북도 청주시 서원구 흥덕로 48-0 (사직동,청주의료원)</div>
+                        <div class="phone-number">📞 043-279-2300</div>
                     </div>
                 </div>
             </div>
@@ -1077,81 +1719,88 @@
     <a href="https://lds77.github.io/" class="home-button">홈으로</a>
 
     <script>
+        /**
+         * Handles the click event for category filter buttons.
+         * @param {string} category - The category to filter by.
+         * @param {Event} event - The click event object.
+         */
         function showCategory(category, event) {
-            // 모든 탭 버튼에서 active 클래스 제거
+            // Remove 'active' class from all tab buttons
             document.querySelectorAll('.tab-button').forEach(button => {
                 button.classList.remove('active');
             });
-            // 클릭된 버튼에 active 클래스 추가
-            event.target.classList.add('active');
+            // Add 'active' class to the clicked button
+            event.currentTarget.classList.add('active');
 
-            // 필터 적용
-            applyFilters(category);
+            // Apply filters
+            applyFilters();
         }
 
+        /**
+         * Handles the click event for region filter buttons.
+         * @param {string} region - The region to filter by.
+         * @param {Event} event - The click event object.
+         */
         function filterByRegion(region, event) {
-            // 모든 지역 버튼에서 active 클래스 제거
+            // Remove 'active' class from all region buttons
             document.querySelectorAll('.region-button').forEach(button => {
                 button.classList.remove('active');
             });
-            // 클릭된 버튼에 active 클래스 추가
-            event.target.classList.add('active');
+            // Add 'active' class to the clicked button
+            event.currentTarget.classList.add('active');
 
-            // 필터 적용 (지역 필터만 변경)
-            applyFilters(null, region);
+            // Apply filters
+            applyFilters();
         }
 
+        /**
+         * Handles the click event for the search button.
+         */
         function searchHospitals() {
-            applyFilters(); // 검색어 필터 적용
+            applyFilters();
         }
-
-        let currentCategoryFilter = 'all'; // 현재 선택된 카테고리 필터
-        let currentRegionFilter = 'all'; // 현재 선택된 지역 필터
-
-        function applyFilters(category = null, region = null) {
-            if (category !== null) {
-                currentCategoryFilter = category;
-            }
-            if (region !== null) {
-                currentRegionFilter = region;
-            }
-
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase(); // 검색어 가져오기
+        
+        /**
+         * Applies all active filters (category, region, and search term) to the hospital list.
+         */
+        function applyFilters() {
+            const currentCategoryFilter = document.querySelector('.tab-button.active').textContent.trim();
+            const currentRegionFilter = document.querySelector('.region-button.active').textContent.trim();
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
 
             document.querySelectorAll('.hospital-card').forEach(card => {
                 const hospitalName = card.querySelector('.hospital-name').textContent.toLowerCase();
                 const cardRegion = card.dataset.region ? card.dataset.region.toLowerCase() : '';
                 const cardCategory = card.dataset.category ? card.dataset.category.toLowerCase() : '';
-                const address = card.querySelector('.hospital-info:nth-of-type(3)') ? card.querySelector('.hospital-info:nth-of-type(3)').textContent.toLowerCase() : '';
-                const phoneNumber = card.querySelector('.phone-number') ? card.querySelector('.phone-number').textContent.toLowerCase() : '';
+                const address = card.querySelector('.hospital-info:nth-of-type(3)').textContent.toLowerCase();
+                const phoneNumber = card.querySelector('.phone-number').textContent.toLowerCase();
 
+                // Check region filter
+                const isRegionMatch = (currentRegionFilter === '전체' || cardRegion.includes(currentRegionFilter.replace('시', '').replace('군', '')));
 
-                let isRegionMatch = (currentRegionFilter === 'all' || cardRegion.includes(currentRegionFilter)); // includes를 사용하여 부분 일치도 허용
-                let isCategoryMatch = false; // 기본값 false
-
-                if (currentCategoryFilter === 'all') {
+                // Check category filter
+                let isCategoryMatch = false;
+                if (currentCategoryFilter === '전체 병원') {
                     isCategoryMatch = true;
                 } else if (currentCategoryFilter === '의료원') {
-                    // '의료원' 카테고리는 병원 이름에 '의료원'이 포함된 경우를 검색합니다.
-                    isCategoryMatch = hospitalName.includes('의료원');
+                    isCategoryMatch = cardCategory.includes('의료원');
+                } else if (currentCategoryFilter === '요양병원') {
+                    isCategoryMatch = cardCategory.includes('요양병원');
                 } else if (currentCategoryFilter === '병원') {
-                     // '병원' 카테고리는 data-category에 '병원'이 포함된 경우를 검색합니다.
-                    isCategoryMatch = cardCategory.includes('병원') && !hospitalName.includes('의료원') && !cardCategory.includes('종합병원') && !cardCategory.includes('요양병원') && !cardCategory.includes('한방병원') && !cardCategory.includes('치과병원') && !cardCategory.includes('정신병원');
-                }
-                else {
-                    // 그 외의 카테고리는 data-category와 현재 필터 값이 정확히 일치하는지 확인합니다.
-                    isCategoryMatch = (cardCategory.includes(currentCategoryFilter));
+                    // Show items categorized as '병원' but exclude other specific types
+                    isCategoryMatch = cardCategory.includes('병원') && !cardCategory.includes('종합병원') && !cardCategory.includes('요양병원') && !cardCategory.includes('한방병원') && !cardCategory.includes('치과병원') && !cardCategory.includes('정신병원');
+                } else {
+                    isCategoryMatch = cardCategory.includes(currentCategoryFilter.replace('병원',''));
                 }
 
-                let isSearchMatch = true;
-                if (searchTerm) {
-                    isSearchMatch = hospitalName.includes(searchTerm) || 
-                                    cardRegion.includes(searchTerm) || 
-                                    address.includes(searchTerm) ||
-                                    phoneNumber.includes(searchTerm);
-                }
+                // Check search term filter
+                const isSearchMatch = (searchTerm === '') ||
+                                      hospitalName.includes(searchTerm) || 
+                                      cardRegion.includes(searchTerm) || 
+                                      address.includes(searchTerm) ||
+                                      phoneNumber.includes(searchTerm);
 
-                // 모든 조건이 일치할 때만 카드를 표시
+                // Show or hide the card based on all filters
                 if (isRegionMatch && isCategoryMatch && isSearchMatch) {
                     card.classList.remove('hidden');
                 } else {
@@ -1160,7 +1809,10 @@
             });
         }
 
-        // 페이지 로드 시 초기 필터 적용 (모든 병원 표시)
+        // Add event listener for the search input to filter on key up
+        document.getElementById('searchInput').addEventListener('keyup', searchHospitals);
+
+        // Apply initial filters when the page loads
         document.addEventListener('DOMContentLoaded', () => {
             applyFilters();
         });
