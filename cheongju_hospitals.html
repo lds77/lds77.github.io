@@ -567,89 +567,82 @@
             margin: 0;
         }
 
+        /* 의료기관 섹션 - 모바일 최적화 */
         .hospitals-section {
             background: #f8f9fa;
-            padding: 80px 0;
+            padding: 50px 0;
         }
 
-        .hospitals-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-            justify-items: center;
+        .hospital-category {
+            margin-bottom: 25px;
         }
 
-        .hospital-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .hospital-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .hospital-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .hospital-type {
+        .category-title {
             background: #e74c3c;
             color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-right: 15px;
+            text-align: center;
         }
 
-        .hospital-card h3 {
-            font-size: 1.5rem;
+        .hospitals-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 12px;
+        }
+
+        .hospital-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hospital-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .hospital-name {
+            font-size: 1rem;
+            font-weight: 600;
             color: #2c3e50;
-            margin: 15px 0;
-            font-weight: 700;
+            margin-bottom: 6px;
         }
 
         .hospital-info {
-            margin: 20px 0;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.3;
+            margin-bottom: 4px;
         }
 
-        .info-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            color: #555;
-        }
-
-        .info-icon-small {
-            width: 20px;
-            margin-right: 12px;
+        .hospital-phone {
             color: #e74c3c;
+            font-weight: 600;
+            margin-top: 4px;
+            font-size: 0.85rem;
         }
 
         .hospital-actions {
             display: flex;
-            gap: 15px;
-            margin-top: 25px;
+            gap: 6px;
+            margin-top: 8px;
         }
 
         .btn {
-            padding: 12px 24px;
-            border-radius: 25px;
+            padding: 6px 12px;
+            border-radius: 15px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             flex: 1;
             text-align: center;
         }
@@ -748,6 +741,32 @@
         .floating-call:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 25px rgba(231, 76, 60, 0.7);
+        }
+
+        /* 네이버 블로그 고정 버튼 */
+        .fixed-blog-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #03C75A, #00B04F);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .fixed-blog-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(3, 199, 90, 0.6);
+            color: white;
         }
 
         @keyframes pulse {
@@ -861,17 +880,6 @@
                 line-height: 1.4;
             }
 
-            .specialty-list {
-                gap: 8px;
-                margin-top: 10px;
-                grid-template-columns: 1fr;
-            }
-
-            .specialty-item {
-                padding: 10px;
-                font-size: 0.85rem;
-            }
-
             .services-section {
                 padding: 40px 0;
             }
@@ -941,65 +949,56 @@
                 padding: 40px 0;
             }
 
-            .hospitals-grid {
+            .hospital-category {
+                margin-bottom: 20px;
+            }
+
+            .category-title {
+                padding: 10px 15px;
+                font-size: 1rem;
+            }
+
+            .hospitals-list {
                 grid-template-columns: 1fr;
-                padding: 0;
-                gap: 15px;
-                margin-top: 20px;
+                gap: 10px;
             }
 
-            .hospital-card {
-                max-width: 100%;
-                margin: 0 auto;
-                padding: 15px;
+            .hospital-item {
+                padding: 12px;
             }
 
-            .hospital-header {
-                margin-bottom: 10px;
-            }
-
-            .hospital-type {
-                padding: 4px 10px;
-                font-size: 0.75rem;
-            }
-
-            .hospital-card h3 {
-                font-size: 1.1rem;
-                margin: 8px 0;
+            .hospital-name {
+                font-size: 1rem;
+                margin-bottom: 5px;
             }
 
             .hospital-info {
-                margin: 10px 0;
-            }
-
-            .info-item {
-                margin-bottom: 5px;
                 font-size: 0.8rem;
             }
 
-            .info-icon-small {
-                width: 16px;
-                margin-right: 8px;
+            .hospital-phone {
+                font-size: 0.85rem;
+                margin-top: 3px;
             }
 
             .hospital-actions {
                 flex-direction: column;
-                gap: 8px;
-                margin-top: 12px;
+                gap: 5px;
+                margin-top: 8px;
             }
 
             .btn {
-                padding: 10px 20px;
-                font-size: 0.85rem;
+                padding: 6px 12px;
+                font-size: 0.75rem;
             }
 
             .emergency-banner {
-                padding: 10px;
-                margin: 15px 0;
+                padding: 15px;
+                margin: 20px 0;
             }
 
             .emergency-banner h4 {
-                margin-bottom: 5px;
+                margin-bottom: 8px;
                 font-size: 1rem;
             }
 
@@ -1036,6 +1035,12 @@
                 transform: scale(1.05);
             }
 
+            .fixed-blog-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 18px;
+            }
+
             @keyframes pulse {
                 0% { 
                     transform: scale(1); 
@@ -1052,42 +1057,6 @@
             }
         }
     </style>
-    <style>
-/* 네이버 블로그 고정 버튼 */
-.fixed-blog-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #03C75A, #00B04F);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-.fixed-blog-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(3, 199, 90, 0.6);
-    color: white;
-}
-
-/* 모바일 최적화 */
-@media (max-width: 768px) {
-    .fixed-blog-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-    }
-}
-</style>
 </head>
 <body>
     <header>
@@ -1100,13 +1069,12 @@
                         <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">청주사설구급차 전문</p>
                     </div>
                 </div>
-                <!-- 이 부분이 변경됩니다. -->
-            <div class="emergency-contact">
-                <a href="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html" 
-                   style="color: #FFFF00; font-weight: bold; font-size: 1.3em; text-decoration: none; display: block; text-align: right; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
-                    충북 지역별 병원찾기(클릭)
-                </a>
-            </div>
+                <div class="emergency-contact">
+                    <a href="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html" 
+                       style="color: #FFFF00; font-weight: bold; font-size: 1.3em; text-decoration: none; display: block; text-align: right; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
+                        충북 지역별 병원찾기(클릭)
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -1152,7 +1120,7 @@
                 <ul>
                     <li><strong>일반환자이송:</strong> 상급종합병원 신속이송</li>
                     <li><strong>요양병원입원:</strong> 전문 요양시설 연계</li>
-                    <li><strong>정신병원입원:</strong> 정신건강의학과 전문</li>
+                    <li><strong>정신병원입원:</b> 정신건강의학과 전문</li>
                     <li><strong>알코올치료:</strong> 중독치료 전문병원</li>
                     <li><strong>행사의료지원:</strong> 문화축제, 기업행사</li>
                     <li><strong>고인이송:</strong> 4개구 장례식장 연계</li>
@@ -1201,57 +1169,70 @@
         </div>
     </section>
 
-    <section class="quick-info">
+    <section class="faq-section">
         <div class="container">
-            <h2 class="section-title">청주사설구급차 이용 가이드</h2>
-            <div class="area-specialty">
-                <h3>🏥 청주시 의료중심도시 특성</h3>
-                <p>청주시는 충청북도의 중심도시로 충북대학교병원, 청주성모병원 등 상급종합병원이 위치하고 있습니다. 첨단의료시설이 발달하여 우수한 의료 인프라를 자랑합니다. 4개구(상당구, 서원구, 청원구, 흥덕구)로 구성되어 있으며, 각 지역별 특성에 맞는 전문 청주구급차 이송 서비스를 제공합니다.</p>
-                <div class="specialty-list">
-                    <div class="specialty-item">
-                        <strong>상당구 청주구급차</strong><br>
-                        청주 시내 중심, 충북대병원, 청주성모병원
-                    </div>
-                    <div class="specialty-item">
-                        <strong>서원구 청주구급차</strong><br>
-                        충북대병원, 교육문화 중심지
-                    </div>
-                    <div class="specialty-item">
-                        <strong>청원구 청주구급차</strong><br>
-                        신도시 지역, 첨단의료시설
-                    </div>
-                    <div class="specialty-item">
-                        <strong>흥덕구 청주구급차</strong><br>
-                        산업단지, 신도시
-                    </div>
-                </div>
-            </div>
+            <h2 class="section-title">청주사설구급차 자주 묻는 질문</h2>
+            <p class="section-subtitle">청주구급차 이용 시 자주 묻는 질문들입니다</p>
             
-            <div class="info-grid">
-                <div class="info-card">
-                    <div class="info-icon">🏥</div>
-                    <h3>상급종합병원 즉시이송</h3>
-                    <p>충북대학교병원을 비롯한 상급종합병원으로의 신속한 이송과 전문 응급의료 서비스를 제공합니다.</p>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 청주 4개구 어디든 청주구급차 출동 가능한가요?
+                    </div>
+                    <div class="faq-answer">
+                        <p>네, 가능합니다. 상당구, 서원구, 청원구, 흥덕구 전 지역에서 24시간 즉시 청주구급차 출동 서비스를 제공합니다. 청주 시내는 물론 오송, 오창 등 신도시 지역까지 신속한 대응이 가능하며, 각 구별 특성에 맞는 맞춤형 청주사설구급차 이송 서비스를 제공합니다.</p>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <div class="info-icon">🧬</div>
-                    <h3>첨단의료시설 연계</h3>
-                    <p>청주 지역의 최신 의료기술과 시설을 활용한 전문 청주사설구급차 이송 서비스를 제공합니다.</p>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 충북대학교병원으로 청주구급차 즉시 이송 가능한가요?
+                    </div>
+                    <div class="faq-answer">
+                        <p>네, 즉시 이송 가능합니다. 충북대학교병원은 청주 지역 대표 상급종합병원으로, 권역응급의료센터를 운영하고 있어 중증 응급환자 이송에 최적화되어 있습니다. 청주 시내 어디서든 응급이송 도착 가능하며, 응급실과의 사전 연락을 통해 신속한 치료가 이루어지도록 청주사설구급차가 지원합니다.</p>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <div class="info-icon">🌆</div>
-                    <h3>4개구 전문커버</h3>
-                    <p>상당구, 서원구, 청원구, 흥덕구 각 지역 특성에 맞는 맞춤형 청주구급차 환자이송 서비스를 제공합니다.</p>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 청주구급차 요금은 얼마인가요?
+                    </div>
+                    <div class="faq-answer">
+                        <p>청주구급차 이용 요금은 기본요금(10km 이내) 75,000원부터 시작하며, 추가 거리는 1km당 1,300원입니다. 야간(22시~06시)과 공휴일에는 20% 할증이 적용됩니다. 정확한 청주사설구급차 요금은 출발지와 목적지를 확인한 후 투명하게 안내해드립니다.</p>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <div class="info-icon">🎯</div>
-                    <h3>충북 의료중심</h3>
-                    <p>충청북도 중심도시로서 도내 전 지역에서 청주로 집중되는 환자이송에 최적화된 청주사설구급차 시스템을 운영합니다.</p>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 청주에서 서울 대학병원으로 장거리 청주구급차 이송도 가능한가요?
+                    </div>
+                    <div class="faq-answer">
+                        <p>네, 장거리 이송도 가능합니다. 청주에서 서울까지는 경부고속도로를 이용하여 약 1시간 30분-2시간 소요됩니다. 중증 환자나 특수 치료가 필요한 경우 서울 주요 대학병원(서울대병원, 삼성서울병원, 서울아산병원 등)으로 신속하게 청주사설구급차로 이송하며, 이송 중 지속적인 응급처치와 모니터링을 제공합니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 청주 지역 요양병원 전문 청주구급차 이송 서비스는 어떤가요?
+                    </div>
+                    <div class="faq-answer">
+                        <p>청주시는 충북에서 가장 많은 요양병원이 위치한 지역입니다. 침상형 청주구급차를 이용하여 안전하고 편안한 이송을 제공하며, 각 요양병원별 특성과 전문 분야를 고려한 맞춤형 청주사설구급차 이송 서비스를 제공합니다. 또한 청주 지역의 첨단 재활의료시설로의 이송도 가능합니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 청주구급차 번호와 즉시 연락 방법은?
+                    </div>
+                    <div class="faq-answer">
+                        <p>청주구급차 즉시 출동 연락처는 010-8841-4114입니다. 24시간 연중무휴로 운영하며, 응급상황 발생 시 언제든지 연락주시면 신속하게 청주사설구급차가 출동합니다. 일반 이송부터 응급 이송까지 모든 상황에 대응 가능하며, 전문 응급구조사가 동행하여 안전한 이송을 보장합니다.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- 청주사설구급차 전문 이송 서비스 (Services Section) - 순서 변경됨 -->
     <section class="services-section">
         <div class="container">
             <h2 class="section-title">청주사설구급차 전문 이송 서비스</h2>
@@ -1335,249 +1316,762 @@
         </div>
     </section>
 
-    <section class="faq-section">
-        <div class="container">
-            <h2 class="section-title">청주사설구급차 자주 묻는 질문</h2>
-            <p class="section-subtitle">청주구급차 이용 시 자주 묻는 질문들입니다</p>
-            
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 청주 4개구 어디든 청주구급차 출동 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        <p>네, 가능합니다. 상당구, 서원구, 청원구, 흥덕구 전 지역에서 24시간 즉시 청주구급차 출동 서비스를 제공합니다. 청주 시내는 물론 오송, 오창 등 신도시 지역까지 신속한 대응이 가능하며, 각 구별 특성에 맞는 맞춤형 청주사설구급차 이송 서비스를 제공합니다.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 충북대학교병원으로 청주구급차 즉시 이송 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        <p>네, 즉시 이송 가능합니다. 충북대학교병원은 청주 지역 대표 상급종합병원으로, 권역응급의료센터를 운영하고 있어 중증 응급환자 이송에 최적화되어 있습니다. 청주 시내 어디서든 응급이송 도착 가능하며, 응급실과의 사전 연락을 통해 신속한 치료가 이루어지도록 청주사설구급차가 지원합니다.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 청주구급차 요금은 얼마인가요?
-                    </div>
-                    <div class="faq-answer">
-                        <p>청주구급차 이용 요금은 기본요금(10km 이내) 75,000원부터 시작하며, 추가 거리는 1km당 1,300원입니다. 야간(22시~06시)과 공휴일에는 20% 할증이 적용됩니다. 정확한 청주사설구급차 요금은 출발지와 목적지를 확인한 후 투명하게 안내해드립니다.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 청주에서 서울 대학병원으로 장거리 청주구급차 이송도 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        <p>네, 장거리 이송도 가능합니다. 청주에서 서울까지는 경부고속도로를 이용하여 약 1시간 30분-2시간 소요됩니다. 중증 환자나 특수 치료가 필요한 경우 서울 주요 대학병원(서울대병원, 삼성서울병원, 서울아산병원 등)으로 신속하게 청주사설구급차로 이송하며, 이송 중 지속적인 응급처치와 모니터링을 제공합니다.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 청주 지역 요양병원 전문 청주구급차 이송 서비스는 어떤가요?
-                    </div>
-                    <div class="faq-answer">
-                        <p>청주시는 충북에서 가장 많은 요양병원이 위치한 지역입니다. 침상형 청주구급차를 이용하여 안전하고 편안한 이송을 제공하며, 각 요양병원별 특성과 전문 분야를 고려한 맞춤형 청주사설구급차 이송 서비스를 제공합니다. 또한 청주 지역의 첨단 재활의료시설로의 이송도 가능합니다.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 청주구급차 번호와 즉시 연락 방법은?
-                    </div>
-                    <div class="faq-answer">
-                        <p>청주구급차 즉시 출동 연락처는 010-8841-4114입니다. 24시간 연중무휴로 운영하며, 응급상황 발생 시 언제든지 연락주시면 신속하게 청주사설구급차가 출동합니다. 일반 이송부터 응급 이송까지 모든 상황에 대응 가능하며, 전문 응급구조사가 동행하여 안전한 이송을 보장합니다.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="hospitals-section">
         <div class="container">
-            <h2 class="section-title">청주구급차 이송 가능한 주요 의료기관</h2>
-            <p class="section-subtitle">청주사설구급차로 이송 가능한 청주 지역 병원 현황과 주요 의료기관 안내</p>
+            <h2 class="section-title">청주 지역 주요 의료기관</h2>
+            <p class="section-subtitle">청주사설구급차로 이송 가능한 청주 지역 의료기관 현황</p>
 
-            <div class="hospitals-grid">
-                <!-- 충북대학교병원 -->
-                <div class="hospital-card">
-                    <div class="hospital-header">
-                        <div class="hospital-type">상급종합병원</div>
-                    </div>
-                    <h3>충북대학교병원</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon-small">📍</span>
-                            <span>청주시 서원구 1순환로 776</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">📞</span>
-                            <span>043-269-6114</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🚨</span>
-                            <span>권역응급의료센터 24시간</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🛏️</span>
-                            <span>병상수: 847병상</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🏥</span>
-                            <span>외상센터, 중독센터, 뇌졸중센터</span>
+            <!-- 종합병원 -->
+            <div class="hospital-category">
+                <div class="category-title">🏥 종합병원</div>
+                <div class="hospitals-list">
+                    <div class="hospital-item">
+                        <div class="hospital-name">충북대학교병원</div>
+                        <div class="hospital-info">서원구 1순환로 776-0 (개신동,충북대학교병원) | 상급종합병원<br>대표자: 김원섭</div>
+                        <div class="hospital-phone">📞 043-269-6114</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-269-6114" class="btn btn-secondary">병원 연락</a>
                         </div>
                     </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">청주구급차 이송</a>
-                        <a href="tel:043-269-6114" class="btn btn-secondary">병원 연락</a>
-                    </div>
-                </div>
-
-                <!-- 청주성모병원 -->
-                <div class="hospital-card">
-                    <div class="hospital-header">
-                        <div class="hospital-type">종합병원</div>
-                    </div>
-                    <h3>청주성모병원</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon-small">📍</span>
-                            <span>청주시 상당구 수동로 173-19</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">📞</span>
-                            <span>043-219-8114</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🚨</span>
-                            <span>응급실 24시간 운영</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🛏️</span>
-                            <span>병상수: 350병상</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🏥</span>
-                            <span>심장센터, 암센터, 재활의학과</span>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주성모병원</div>
+                        <div class="hospital-info">청원구 주성로 173-19 (주중동,청주성모병원) | 종합병원<br>대표자: 김종강</div>
+                        <div class="hospital-phone">📞 043-219-8000</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-219-8000" class="btn btn-secondary">병원 연락</a>
                         </div>
                     </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">청주구급차 이송</a>
-                        <a href="tel:043-219-8114" class="btn btn-secondary">병원 연락</a>
-                    </div>
-                </div>
-
-                <!-- 오창중앙병원 -->
-                <div class="hospital-card">
-                    <div class="hospital-header">
-                        <div class="hospital-type" style="background: #27ae60;">지역병원</div>
-                    </div>
-                    <h3>오창중앙병원</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon-small">📍</span>
-                            <span>청주시 청원구 오창읍 중부로 683</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">📞</span>
-                            <span>043-218-0119</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🚨</span>
-                            <span>응급실 24시간 운영</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🛏️</span>
-                            <span>병상수: 77병상</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🏥</span>
-                            <span>가정의학과, 정형외과, 흉부외과</span>
+                    <div class="hospital-item">
+                        <div class="hospital-name">한국병원</div>
+                        <div class="hospital-info">상당구 단재로 106-0 (영운동,한국병원) | 종합병원<br>대표자: 송재승</div>
+                        <div class="hospital-phone">📞 043-222-7000</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-222-7000" class="btn btn-secondary">병원 연락</a>
                         </div>
                     </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">청주구급차 이송</a>
-                        <a href="tel:043-218-0119" class="btn btn-secondary">병원 연락</a>
-                    </div>
-                </div>
-
-                <!-- 청주한국병원 -->
-                <div class="hospital-card">
-                    <div class="hospital-header">
-                        <div class="hospital-type">종합병원</div>
-                    </div>
-                    <h3>청주한국병원</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon-small">📍</span>
-                            <span>청주시 상당구 남주동 85-1</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">📞</span>
-                            <span>043-269-0114</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🚨</span>
-                            <span>응급실 24시간 운영</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🛏️</span>
-                            <span>병상수: 200병상</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🏥</span>
-                            <span>내과, 외과, 정형외과, 신경외과</span>
+                    <div class="hospital-item">
+                        <div class="hospital-name">효성병원</div>
+                        <div class="hospital-info">상당구 쇠내로 16-0 (금천동,효성병원) | 종합병원<br>대표자: 오창진</div>
+                        <div class="hospital-phone">📞 043-221-5000</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-221-5000" class="btn btn-secondary">병원 연락</a>
                         </div>
                     </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">청주구급차 이송</a>
-                        <a href="tel:043-269-0114" class="btn btn-secondary">병원 연락</a>
-                    </div>
-                </div>
-
-                <!-- 청주의료원 -->
-                <div class="hospital-card">
-                    <div class="hospital-header">
-                        <div class="hospital-type">공공병원</div>
-                    </div>
-                    <h3>청주의료원</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon-small">📍</span>
-                            <span>청주시 상당구 단재로 596</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">📞</span>
-                            <span>043-231-2151</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🚨</span>
-                            <span>응급실 24시간 운영</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🛏️</span>
-                            <span>병상수: 300병상</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🏥</span>
-                            <span>감염병 전담, 공공의료</span>
+                    <div class="hospital-item">
+                        <div class="hospital-name">하나병원</div>
+                        <div class="hospital-info">흥덕구 2순환로 1262-0 (가경동,하나병원) | 종합병원<br>대표자: 박중겸</div>
+                        <div class="hospital-phone">📞 043-230-6114</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-230-6114" class="btn btn-secondary">병원 연락</a>
                         </div>
                     </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">청주구급차 이송</a>
-                        <a href="tel:043-231-2151" class="btn btn-secondary">병원 연락</a>
+                    <div class="hospital-item">
+                        <div class="hospital-name">베스티안병원</div>
+                        <div class="hospital-info">흥덕구 오송읍 오송생명1로 191-0 | 종합병원<br>대표자: 김경식</div>
+                        <div class="hospital-phone">📞 043-910-7575</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-910-7575" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주의료원</div>
+                        <div class="hospital-info">서원구 흥덕로 48-0 (사직동,청주의료원) | 종합병원<br>대표자: 김영규</div>
+                        <div class="hospital-phone">📞 043-279-2300</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-279-2300" class="btn btn-secondary">병원 연락</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="emergency-banner">
-                <h4>🏥 청주사설구급차 응급의료 시스템</h4>
-                <p>충북 최고의 의료 인프라를 갖춘 청주시에서 상급종합병원과 첨단의료시설을 연계한 우수한 청주구급차 응급의료 서비스를 경험하세요. 4개구 어디서든 신속한 대응이 가능합니다.</p>
+            <!-- 일반병원 -->
+            <div class="hospital-category">
+                <div class="category-title">🏥 일반병원</div>
+                <div class="hospitals-list">
+                    <div class="hospital-item">
+                        <div class="hospital-name">오창중앙병원</div>
+                        <div class="hospital-info">청원구 오창읍 중부로 683<br>대표자: 김용한</div>
+                        <div class="hospital-phone">📞 043-218-0119</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-218-0119" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주탑병원</div>
+                        <div class="hospital-info">상당구 교서로 1-0, 1~5 층 (영동)<br>대표자: 이형준</div>
+                        <div class="hospital-phone">📞 043-900-8875</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-900-8875" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">강병원</div>
+                        <div class="hospital-info">상당구 무심동로 22-0 (용암동)<br>대표자: 강동헌</div>
+                        <div class="hospital-phone">📞 043-288-0200</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-288-0200" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">서로손병원</div>
+                        <div class="hospital-info">청원구 충청대로 98-0 (율량동,한길빌딩)<br>대표자: 박영조</div>
+                        <div class="hospital-phone">📞 043-211-0663</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-211-0663" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">웰니스어린이병원</div>
+                        <div class="hospital-info">상당구 2순환로2031번길 6-20 (방서동, (방서동))<br>대표자: 홍대의</div>
+                        <div class="hospital-phone">📞 043-225-7700</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-225-7700" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">오창호수병원</div>
+                        <div class="hospital-info">청원구 오창읍 중심상업1로 54-0<br>대표자: 김충범</div>
+                        <div class="hospital-phone">📞 043-214-1004</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-214-1004" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">마이크로재활병원</div>
+                        <div class="hospital-info">흥덕구 사직대로 26-0 (복대동, (복대동))<br>대표자: 민지홍</div>
+                        <div class="hospital-phone">� 043-265-0051</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-265-0051" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">마디사랑병원</div>
+                        <div class="hospital-info">상당구 상당로 112-0 (북문로2가, (북문로2가))<br>대표자: 변재용</div>
+                        <div class="hospital-phone">📞 043-298-9988</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-298-9988" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주삼성병원</div>
+                        <div class="hospital-info">서원구 청남로 2014-0 (분평동, 3~8층 (분평동))<br>대표자: 손태옥</div>
+                        <div class="hospital-phone">📞 043-223-8124</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-223-8124" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">첼로병원</div>
+                        <div class="hospital-info">청원구 향군로 132-0 (내덕동, (내덕동))<br>대표자: 기영진</div>
+                        <div class="hospital-phone">📞 043-211-9090</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-211-9090" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">뿌리병원</div>
+                        <div class="hospital-info">청원구 내덕로 56-0 (내덕동, (내덕동))<br>대표자: 이신노</div>
+                        <div class="hospital-phone">📞 043-221-0119</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-221-0119" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주복음병원</div>
+                        <div class="hospital-info">서원구 사직대로 160-0 (사창동,두진하트리움에덴)<br>대표자: 남태현</div>
+                        <div class="hospital-phone">📞 043-264-1000</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-264-1000" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">아이웰어린이병원</div>
+                        <div class="hospital-info">청원구 주성로 273-0 (주성동, (주성동))<br>대표자: 김염</div>
+                        <div class="hospital-phone">📞 043-288-3535</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-288-3535" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주프라임병원</div>
+                        <div class="hospital-info">흥덕구 짐대로72번길 37-0 (복대동)<br>대표자: 정범영</div>
+                        <div class="hospital-phone">📞 043-1899-8523</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-1899-8523" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">다나여성병원</div>
+                        <div class="hospital-info">청원구 충청대로 179-0 (주중동,청주다나여성병원)<br>대표자: 신서규</div>
+                        <div class="hospital-phone">📞 043-218-3575</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-218-3575" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주소아청소년병원</div>
+                        <div class="hospital-info">흥덕구 사운로 292-0 (운천동)<br>대표자: 신경식</div>
+                        <div class="hospital-phone">📞 043-225-7700</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-225-7700" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">남궁병원</div>
+                        <div class="hospital-info">상당구 상당로 47 (남문로2가)<br>대표자: 노요안</div>
+                        <div class="hospital-phone">📞 043-252-3000</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-252-3000" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주아이엠재활요양병원</div>
+                        <div class="hospital-info">서원구 청남로 2140 (모충동)<br>대표자: 우봉식</div>
+                        <div class="hospital-phone">📞 043-284-0675</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-284-0675" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">씨엔씨푸른병원</div>
+                        <div class="hospital-info">흥덕구 2순환로 1234-0 (강서동, (강서동))<br>대표자: 황찬호</div>
+                        <div class="hospital-phone">📞 043-291-8114</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-291-8114" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">새빛병원</div>
+                        <div class="hospital-info">서원구 서부로 1350 (성화동)<br>대표자: 홍정훈</div>
+                        <div class="hospital-phone">📞 043-234-7509</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-234-7509" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">아이엠재활병원</div>
+                        <div class="hospital-info">서원구 청남로 2140-0 (모충동, (모충동))<br>대표자: 우봉식</div>
+                        <div class="hospital-phone">📞 043-284-0675</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-284-0675" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">카톨릭병원</div>
+                        <div class="hospital-info">충청북도 청주시 서원구 사직대로 277-0 (사직동)<br>대표자: 김지묵</div>
+                        <div class="hospital-phone">📞 043-274-4401</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-274-4401" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주시노인전문병원</div>
+                        <div class="hospital-info">충청북도 청주시 흥덕구 궁뜰로62번길 29 (장성동)<br>대표자: 한수환</div>
+                        <div class="hospital-phone">📞 043-220-8000</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-220-8000" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">서울우리병원</div>
+                        <div class="hospital-info">충청북도 청주시 흥덕구 서현중로 66 (강서동, (강서동))<br>대표자: 손형권</div>
+                        <div class="hospital-phone">📞 043-249-5000</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-249-5000" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">씨엔씨병원</div>
+                        <div class="hospital-info">충청북도 청주시 흥덕구 서현북로 83-0 (가경동, (가경동))<br>대표자: 이지용</div>
+                        <div class="hospital-phone">📞 043-239-8114</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-239-8114" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주우리병원</div>
+                        <div class="hospital-info">충청북도 청주시 서원구 1순환로 1037 (분평동)<br>대표자: 오재인</div>
+                        <div class="hospital-phone">📞 043-296-9119</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-296-9119" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">서울아동병원</div>
+                        <div class="hospital-info">충청북도 청주시 흥덕구 가로수로 1317-0 (복대동,서울아동병원)<br>대표자: 이은애</div>
+                        <div class="hospital-phone">📞 043-221-1122</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-221-1122" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">김숙자소아청소년병원</div>
+                        <div class="hospital-info">충청북도 청주시 흥덕구 직지대로 745-0 (운천동,김숙자소아.청소년병원)<br>대표자: 김숙자</div>
+                        <div class="hospital-phone">📞 043-263-8280</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-263-8280" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">모태안여성병원</div>
+                        <div class="hospital-info">충청북도 청주시 서원구 복대로17번길 57-0 (개신동,모태안여성병원)<br>대표자: 김만기</div>
+                        <div class="hospital-phone">📞 043-272-0001</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-272-0001" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주현대병원</div>
+                        <div class="hospital-info">충청북도 청주시 흥덕구 비하로 65-0 (비하동)<br>대표자: 엄성문</div>
+                        <div class="hospital-phone">📞 043-237-2114</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-237-2114" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주소아병원</div>
+                        <div class="hospital-info">충청북도 청주시 흥덕구 사운로 292 (운천동)<br>대표자: 홍대의</div>
+                        <div class="hospital-phone">📞 043-225-7700</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-225-7700" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">마이크로병원</div>
+                        <div class="hospital-info">충청북도 청주시 흥덕구 사직대로 26-0 (복대동, (복대동))<br>대표자: 민지홍</div>
+                        <div class="hospital-phone">📞 043-265-0071</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-265-0071" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">공군항공우주의료원</div>
+                        <div class="hospital-info">충청북도 청주시 상당구 남일면 단재로 635-0<br>대표자: 공군항공우주의료원장</div>
+                        <div class="hospital-phone">📞 043-290-5647</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-290-5647" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">최병원</div>
+                        <div class="hospital-info">충청북도 청주시 흥덕구 사직대로 49 (복대동)<br>대표자: 최완영</div>
+                        <div class="hospital-phone">📞 043-264-0751</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-264-0751" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주병원</div>
+                        <div class="hospital-info">충청북도 청주시 상당구 상당로 163-0 (북문로3가)<br>대표자: 조임호</div>
+                        <div class="hospital-phone">📞 043-220-1234</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-220-1234" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 요양병원 -->
+            <div class="hospital-category">
+                <div class="category-title">🏚️ 요양병원</div>
+                <div class="hospitals-list">
+                    <div class="hospital-item">
+                        <div class="hospital-name">누리요양병원</div>
+                        <div class="hospital-info">흥덕구 오송읍 오송생명로 168-0<br>대표자: 박경배</div>
+                        <div class="hospital-phone">📞 043-239-0070</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-239-0070" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">실버안요양병원</div>
+                        <div class="hospital-info">청원구 오창읍 오창대로 414-0 (실버안노인요양원)<br>대표자: 이영준</div>
+                        <div class="hospital-phone">📞 043-217-3388</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-217-3388" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">파스카요양병원</div>
+                        <div class="hospital-info">청원구 내수읍 마산길 8-11<br>대표자: 이정일</div>
+                        <div class="hospital-phone">📞 043-900-1004</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-900-1004" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">남궁요양병원</div>
+                        <div class="hospital-info">상당구 상당로 47-0 (남문로2가, (남문로2가))<br>대표자: 노요안</div>
+                        <div class="hospital-phone">📞 043-252-3000</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-252-3000" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주탑요양병원</div>
+                        <div class="hospital-info">서원구 궁뜰로 16-0 (미평동, (미평동))<br>대표자: 김정규</div>
+                        <div class="hospital-phone">📞 043-296-5000</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-296-5000" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주시립요양병원</div>
+                        <div class="hospital-info">서원구 궁뜰로62번길 29-0 (장성동,청주시노인전문병원)<br>대표자: 청주시장</div>
+                        <div class="hospital-phone">📞 043-220-8000</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-220-8000" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">예미담요양병원</div>
+                        <div class="hospital-info">청원구 충청대로 100-0 (율량동, (율량동))<br>대표자: 오종현</div>
+                        <div class="hospital-phone">📞 043-215-7075</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-215-7075" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주원광효도요양병원</div>
+                        <div class="hospital-info">흥덕구 월명로 15-0 (복대동,원광효도요양병원)<br>대표자: 오성배</div>
+                        <div class="hospital-phone">📞 043-267-0301</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-267-0301" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">큰나무요양병원</div>
+                        <div class="hospital-info">흥덕구 풍년로193번길 15-0 (가경동)<br>대표자: 전하람</div>
+                        <div class="hospital-phone">📞 043-231-0200</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-231-0200" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">서원요양병원</div>
+                        <div class="hospital-info">서원구 남이면 남석로 316-26 (서원요양병원)<br>대표자: 김태균</div>
+                        <div class="hospital-phone">📞 043-233-6000</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-233-6000" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">소망요양병원</div>
+                        <div class="hospital-info">상당구 단재로 132 (영운동)<br>대표자: 정인서</div>
+                        <div class="hospital-phone">📞 043-255-0126</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-255-0126" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">세종노인요양병원</div>
+                        <div class="hospital-info">흥덕구 2순환로 1265 (가경동)<br>대표자: 안민호</div>
+                        <div class="hospital-phone">📞 043-238-5656</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-238-5656" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">참사랑요양병원</div>
+                        <div class="hospital-info">서원구 청남로 1910-0 (미평동, (미평동))<br>대표자: 최항석</div>
+                        <div class="hospital-phone">📞 043-298-9100</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-298-9100" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">충북도립노인전문병원</div>
+                        <div class="hospital-info">서원구 청남로 1910-0 (미평동,충북도립노인전문병원)<br>대표자: 충청북도지사</div>
+                        <div class="hospital-phone">📞 043-287-7715</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-287-7715" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">초정요양병원</div>
+                        <div class="hospital-info">청원구 내수읍 우산길 91-0<br>대표자: 김진성</div>
+                        <div class="hospital-phone">📞 043-213-7123</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-213-7123" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">하나노인전문병원</div>
+                        <div class="hospital-info">서원구 대림로 431-0 (죽림동,하나노인전문병원)<br>대표자: 박찬제</div>
+                        <div class="hospital-phone">📞 043-270-8114</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-270-8114" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 한방병원 -->
+            <div class="hospital-category">
+                <div class="category-title">🌿 한방병원</div>
+                <div class="hospitals-list">
+                    <div class="hospital-item">
+                        <div class="hospital-name">대전대학교 청주한방병원</div>
+                        <div class="hospital-info">상당구 용담로105번길 4-0 (용담동,청주한방병원)<br>대표자: 서정원</div>
+                        <div class="hospital-phone">📞 043-229-3787</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-229-3787" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">마음따뜻한방병원</div>
+                        <div class="hospital-info">상당구 무심동로 22-0 (용암동, 2~4층 (용암동))<br>대표자: 황웅근</div>
+                        <div class="hospital-phone">📞 043-283-8850</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-283-8850" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">경희정한방병원</div>
+                        <div class="hospital-info">상당구 무심동로 22-0 (용암동)<br>대표자: 정종식</div>
+                        <div class="hospital-phone">📞 043-293-7555</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-293-7555" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">동현한방병원</div>
+                        <div class="hospital-info">청원구 상당로 282-0 (내덕동, 1,3,4층 (내덕동,태성빌딩))<br>대표자: 김동현</div>
+                        <div class="hospital-phone">📞 043-224-2300</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-224-2300" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">채음한방병원</div>
+                        <div class="hospital-info">청원구 오창읍 오창대로 412-0<br>대표자: 이채은</div>
+                        <div class="hospital-phone">📞 043-1533-0607</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-1533-0607" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">리치한방병원</div>
+                        <div class="hospital-info">상당구 중고개로 137-0 (용암동, 7,8층 (용암동))<br>대표자: 서정원</div>
+                        <div class="hospital-phone">📞 043-258-7000</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-258-7000" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주차차한방병원</div>
+                        <div class="hospital-info">흥덕구 사운로 292-0 (운천동, 3~5,7층 (운천동))<br>대표자: 김가연</div>
+                        <div class="hospital-phone">📞 043-715-2647</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-715-2647" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">든든한방병원</div>
+                        <div class="hospital-info">상당구 2순환로2031번길 6-3 (방서동, 2~5층 (방서동))<br>대표자: 최규섭</div>
+                        <div class="hospital-phone">📞 043-285-0285</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-285-0285" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주필한방병원</div>
+                        <div class="hospital-info">흥덕구 강서로 107-0 (강서동, (강서동))<br>대표자: 염선규</div>
+                        <div class="hospital-phone">📞 043-715-2200</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-715-2200" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주자생한방병원</div>
+                        <div class="hospital-info">상당구 상당로 66-0 (문화동, (문화동))<br>대표자: 박병모</div>
+                        <div class="hospital-phone">📞 043-901-0402</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-901-0402" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">올리브한방병원</div>
+                        <div class="hospital-info">흥덕구 사직대로 38-0 (복대동,포빌)<br>대표자: 김종철</div>
+                        <div class="hospital-phone">📞 043-265-1075</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-265-1075" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주나비솔한방병원</div>
+                        <div class="hospital-info">서원구 산남로 56-0 (산남동,에버프라자)<br>대표자: 류정만</div>
+                        <div class="hospital-phone">📞 043-286-7700</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-286-7700" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">경희보리수 한방병원</div>
+                        <div class="hospital-info">서원구 사직대로 140, 201호 (사창동,현대코아)<br>대표자: 최재승</div>
+                        <div class="hospital-phone">📞 043-264-5577</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-264-5577" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">청주첨단한방병원</div>
+                        <div class="hospital-info">상당구 영운로 160-1 (서운동, (서운동))<br>대표자: 김동현</div>
+                        <div class="hospital-phone">📞 043-717-0001</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-717-0001" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 정신병원 -->
+            <div class="hospital-category">
+                <div class="category-title">🧠 정신병원</div>
+                <div class="hospitals-list">
+                    <div class="hospital-item">
+                        <div class="hospital-name">예사랑병원</div>
+                        <div class="hospital-info">상당구 2순환로2031번길 6-9 (방서동, (방서동))<br>대표자: 이상구</div>
+                        <div class="hospital-phone">📞 043-298-7337</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-298-7337" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">주사랑병원</div>
+                        <div class="hospital-info">상당구 가덕면 보청대로 4673-61 (주사랑병원)<br>대표자: 유용진</div>
+                        <div class="hospital-phone">📞 043-286-0692</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-286-0692" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">충북병원</div>
+                        <div class="hospital-info">서원구 현도면 우록4길 151-0 ( )<br>대표자: 오형진</div>
+                        <div class="hospital-phone">📞 043-260-8200</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-260-8200" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 치과병원 -->
+            <div class="hospital-category">
+                <div class="category-title">🦷 치과병원</div>
+                <div class="hospitals-list">
+                    <div class="hospital-item">
+                        <div class="hospital-name">서울좋은치과병원</div>
+                        <div class="hospital-info">흥덕구 대신로 132-0 (송정동,청주산업단지비즈니스센터)<br>대표자: 유종한</div>
+                        <div class="hospital-phone">📞 043-263-7528</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-263-7528" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">온누리치과병원</div>
+                        <div class="hospital-info">서원구 사직대로 160-0, 2 층 201호 (사창동,두진하트리움에덴)<br>대표자: 옥순영</div>
+                        <div class="hospital-phone">📞 043-266-2875</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-266-2875" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">에이라인치과병원</div>
+                        <div class="hospital-info">흥덕구 강서로 115-1 (강서동, (강서동))<br>대표자: 이재준</div>
+                        <div class="hospital-phone">📞 043-263-3333</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-263-3333" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                    <div class="hospital-item">
+                        <div class="hospital-name">참조은치과병원</div>
+                        <div class="hospital-info">서원구 청남로 1990-0 (분평동)<br>대표자: 신용문</div>
+                        <div class="hospital-phone">📞 043-296-3500</div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-296-3500" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1617,6 +2111,9 @@
     <!-- Floating Call Button -->
     <a href="tel:010-8841-4114" class="floating-call" title="청주구급차 즉시 연락">📞</a>
 
+    <!-- 네이버 블로그 고정 버튼 -->
+    <a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
+
     <script>
         function toggleFaq(element) {
             const answer = element.nextElementSibling;
@@ -1654,7 +2151,7 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.info-card, .service-card, .hospital-card, .faq-item');
+            const cards = document.querySelectorAll('.info-card, .service-card, .hospital-item, .faq-item');
             cards.forEach((card, index) => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
@@ -1663,7 +2160,7 @@
                 setTimeout(() => {
                     card.style.opacity = '1';
                     card.style.transform = 'translateY(0)';
-                }, index * 100);
+                }, index * 50);
             });
         });
 
@@ -1679,7 +2176,7 @@
             rootMargin: '0px 0px -50px 0px'
         });
 
-        document.querySelectorAll('.info-card, .service-card, .hospital-card').forEach(card => {
+        document.querySelectorAll('.info-card, .service-card, .hospital-item').forEach(card => {
             observer.observe(card);
         });
     </script>
@@ -1701,7 +2198,5 @@
         <span>청주응급환자이송</span>
         <span>청주구급차비용</span>
     </div>
-    <!-- 네이버 블로그 고정 버튼 -->
-<a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
 </body>
 </html>
