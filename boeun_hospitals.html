@@ -173,15 +173,15 @@
             box-shadow: 0 6px 25px rgba(231, 76, 60, 0.6);
         }
 
-        /* er - 높이 줄임 */
-        er {
+        /* Header - 높이 줄임 */
+        header {
             background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
             padding: 0.5rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .er-content {
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -530,7 +530,7 @@
         .hospital-card {
             background: white;
             border-radius: 15px;
-            padding: 20px;
+            padding: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             width: 100%;
@@ -542,7 +542,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        .hospital-er {
+        .hospital-header {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
@@ -559,21 +559,22 @@
         }
 
         .hospital-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #2c3e50;
-            margin: 10px 0;
+            margin: 8px 0;
             font-weight: 700;
         }
 
         .hospital-info {
-            margin: 15px 0;
+            margin: 10px 0;
         }
 
         .info-item {
             display: flex;
             align-items: center;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #555;
+            font-size: 0.9rem;
         }
 
         .info-icon-small {
@@ -584,19 +585,19 @@
 
         .hospital-actions {
             display: flex;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 8px;
+            margin-top: 12px;
         }
 
         .btn {
-            padding: 10px 20px;
-            border-radius: 25px;
+            padding: 8px 16px;
+            border-radius: 20px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             flex: 1;
             text-align: center;
         }
@@ -674,6 +675,32 @@
             box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
         }
 
+        /* 네이버 블로그 고정 버튼 */
+        .fixed-blog-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #03C75A, #00B04F);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .fixed-blog-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(3, 199, 90, 0.6);
+            color: white;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             html, body {
@@ -707,6 +734,12 @@
                 font-size: 20px;
             }
 
+            .fixed-blog-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 18px;
+            }
+
             .page-hero h1 {
                 font-size: 1.8rem;
             }
@@ -722,13 +755,36 @@
                 gap: 15px;
             }
 
+            /* 모바일에서 의료기관 카드 높이 더 줄이기 */
             .hospital-card {
                 max-width: 100%;
                 margin: 0 auto;
+                padding: 12px;
+            }
+
+            .hospital-card h3 {
+                font-size: 1.1rem;
+                margin: 6px 0;
+            }
+
+            .hospital-info {
+                margin: 8px 0;
+            }
+
+            .info-item {
+                margin-bottom: 4px;
+                font-size: 0.85rem;
             }
 
             .hospital-actions {
+                margin-top: 10px;
+                gap: 6px;
                 flex-direction: column;
+            }
+
+            .btn {
+                padding: 6px 12px;
+                font-size: 0.75rem;
             }
 
             .cta-phone {
@@ -748,43 +804,51 @@
                 padding: 20px 0;
             }
         }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* 추가 모바일 최적화 */
+        @media (max-width: 480px) {
+            .summary-content {
+                margin: 5px;
+                padding: 10px;
+            }
+            
+            .summary-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .page-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.3rem;
+            }
+            
+            .phone-number {
+                font-size: 1.3rem;
+            }
+
+            .cta-phone {
+                font-size: 1.8rem;
+            }
+        }
     </style>
-    <style>
-/* 네이버 블로그 고정 버튼 */
-.fixed-blog-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #03C75A, #00B04F);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-.fixed-blog-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(3, 199, 90, 0.6);
-    color: white;
-}
-
-/* 모바일 최적화 */
-@media (max-width: 768px) {
-    .fixed-blog-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-    }
-}
-</style>
 </head>
 <body>
     <!-- 요약 페이지 버튼 -->
@@ -821,6 +885,9 @@
     <!-- 고정 전화 버튼 -->
     <button class="fixed-phone-btn" onclick="location.href='tel:010-8841-4114'">📞</button>
 
+    <!-- 네이버 블로그 고정 버튼 -->
+    <a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
+
     <header style="background-color: #e74c3c; padding: 15px 0;">
         <div class="container">
             <div class="header-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
@@ -831,13 +898,12 @@
                         <p style="font-size: 0.8rem; margin: 0; opacity: 0.9; color: white;">충청북도 전문 사설구급차</p>
                     </div>
                 </div>
-                <!-- 이 부분이 변경됩니다. -->
-            <div class="emergency-contact">
-                <a href="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html" 
-                   style="color: #FFFF00; font-weight: bold; font-size: 1.3em; text-decoration: none; display: block; text-align: right; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
-                    충북 지역별 병원찾기(클릭)
-                </a>
-            </div>
+                <div class="emergency-contact">
+                    <a href="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html" 
+                       style="color: #FFFF00; font-weight: bold; font-size: 1.3em; text-decoration: none; display: block; text-align: right; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
+                        충북 지역별 병원찾기(클릭)
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -861,52 +927,64 @@
         </div>
     </section>
 
-    <section class="quick-info">
+    <section class="faq-section">
         <div class="container">
-            <h2 class="section-title">보은 사설구급차 이용 가이드</h2>
-            <div class="area-specialty">
-                <h3>⛰️ 보은군 속리산 산악지역 특성</h3>
-                <p>보은군은 속리산국립공원과 세계문화유산으로 지정된 법주사, 삼국시대 격전지 삼년산성 등 다양한 역사문화 관광자원을 보유한 지역입니다. 특히 속리산 등산객과 법주사 참배객, 속리산숲체험휴양마을 이용객 등이 많아 산악지역 응급의료 서비스가 중요합니다. 모노레일, 스카이바이크, 집라인 등 액티비티 시설도 갖춰져 있어 관광객 안전관리가 필수적입니다.</p>
-                <div class="specialty-list">
-                    <div class="specialty-item">
-                        <strong>속리산면</strong><br>
-                        법주사, 속리산국립공원
-                    </div>
-                    <div class="specialty-item">
-                        <strong>보은읍</strong><br>
-                        군청소재지, 삼년산성
-                    </div>
-                    <div class="specialty-item">
-                        <strong>장안면</strong><br>
-                        선병국가옥, 농촌체험
-                    </div>
-                    <div class="specialty-item">
-                        <strong>숲체험휴양마을</strong><br>
-                        산림휴양, 체험시설
-                    </div>
-                </div>
-            </div>
+            <h2 class="section-title">보은 사설구급차 자주 묻는 질문</h2>
+            <p class="section-subtitle">보은 지역 환자이송 관련 자주 묻는 질문들입니다</p>
             
-            <div class="info-grid">
-                <div class="info-card">
-                    <div class="info-icon">⛰️</div>
-                    <h3>보은지역 전문</h3>
-                    <p>속리산 등산객과 보은지역 응급상황에 특화된 전문 구조 및 이송 시스템을 운영합니다.</p>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 속리산이나 법주사에서 응급상황 발생 시 즉시 출동 가능한가요?
+                    </div>
+                    <div class="faq-answer">
+                        <p>네, 가능합니다. 속리산국립공원, 법주사, 삼년산성 등 보은 주요 관광지에서의 응급상황에 24시간 즉시 출동 체계를 운영하고 있습니다. 보은지역 경험이 있는 전문 응급구조사가 동행하며, 필요시 119와 연계하여 최적의 병원으로 이송합니다.</p>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <div class="info-icon">🚗</div>
-                    <h3>청주 신속이송</h3>
-                    <p>보은에서 청주까지 최적의 거리로 산악지역 특성을 고려한 최적 경로로 신속하게 이송합니다.</p>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 보은에서 청주 병원까지 정말 빠르게 갈 수 있나요?
+                    </div>
+                    <div class="faq-answer">
+                        <p>네, 가능합니다. 보은읍에서 청주 시내까지 약 45-55km 거리로, 중부내륙고속도로나 국도를 이용하면 대략1시간 내에 도착 가능합니다. 다만 속리산이나 산간지역에서는 출발지까지의 접근시간을 추가로 고려해야 합니다. 응급상황 시 최적의 경로를 선택하여 신속하게 이송합니다.</p>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <div class="info-icon">🏛️</div>
-                    <h3>문화유산 응급의료</h3>
-                    <p>법주사, 삼년산성 등 문화유산 관광지에서의 응급상황에 전문적으로 대응합니다.</p>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 속리산숲체험휴양마을이나 체험시설에서 사고 시에도 출동하나요?
+                    </div>
+                    <div class="faq-answer">
+                        <p>네, 출동합니다. 속리산숲체험휴양마을에서의 체험활동 중 사고나 모노레일, 스카이바이크, 집라인 등 액티비티 시설에서의 안전사고에 전문적으로 대응합니다. 산림휴양시설의 특성을 고려한 신속한 응급처치 후 적절한 의료기관으로 이송합니다.</p>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <div class="info-icon">🌲</div>
-                    <h3>산림휴양 특화</h3>
-                    <p>속리산숲체험휴양마을 등 산림휴양시설에서의 응급상황과 체험활동 중 사고에 전문 대응합니다.</p>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 보은에서 서울 대학병원으로 응급 이송도 가능한가요?
+                    </div>
+                    <div class="faq-answer">
+                        <p>네, 장거리 응급 이송도 가능합니다. 보은에서 서울까지는 중부내륙고속도로를 이용하여 약 2시간 30분-3시간 소요됩니다. 중증 환자나 특수 치료가 필요한 경우 서울 주요 대학병원으로 신속하게 이송하며, 이송 중 지속적인 응급처치와 모니터링을 제공합니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 속리산 알몸마라톤대회나 지역행사 시 행사구급차도 가능한가요?
+                    </div>
+                    <div class="faq-answer">
+                        <p>네, 가능합니다. 말티재 알몸마라톤대회, 속리산 등반대회, 법주사 행사 등에서 행사구급차 지원 서비스를 제공합니다. 보은지역 특성을 고려한 응급구조사와 행사구급차를 현장에 배치하여 응급상황에 즉시 대응하며, 필요시 병원 이송까지 원스톱으로 처리합니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Q. 외각지역이나 접근이 어려운 작은마을도 출동하나요?
+                    </div>
+                    <div class="faq-answer">
+                        <p>네, 출동합니다. 임도 등 접근이 어려운 곳까지 출동 가능합니다. 필요시 도보로 현장에 도착한 후, 환자를 안전한 곳으로 이동시켜 구급차로 환승하여 병원까지 이송하는 시스템을 운영하고 있습니다.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -995,64 +1073,52 @@
         </div>
     </section>
 
-    <section class="faq-section">
+    <section class="quick-info">
         <div class="container">
-            <h2 class="section-title">보은 사설구급차 자주 묻는 질문</h2>
-            <p class="section-subtitle">보은 지역 환자이송 관련 자주 묻는 질문들입니다</p>
+            <h2 class="section-title">보은 사설구급차 이용 가이드</h2>
+            <div class="area-specialty">
+                <h3>⛰️ 보은군 속리산 산악지역 특성</h3>
+                <p>보은군은 속리산국립공원과 세계문화유산으로 지정된 법주사, 삼국시대 격전지 삼년산성 등 다양한 역사문화 관광자원을 보유한 지역입니다. 특히 속리산 등산객과 법주사 참배객, 속리산숲체험휴양마을 이용객 등이 많아 산악지역 응급의료 서비스가 중요합니다. 모노레일, 스카이바이크, 집라인 등 액티비티 시설도 갖춰져 있어 관광객 안전관리가 필수적입니다.</p>
+                <div class="specialty-list">
+                    <div class="specialty-item">
+                        <strong>속리산면</strong><br>
+                        법주사, 속리산국립공원
+                    </div>
+                    <div class="specialty-item">
+                        <strong>보은읍</strong><br>
+                        군청소재지, 삼년산성
+                    </div>
+                    <div class="specialty-item">
+                        <strong>장안면</strong><br>
+                        선병국가옥, 농촌체험
+                    </div>
+                    <div class="specialty-item">
+                        <strong>숲체험휴양마을</strong><br>
+                        산림휴양, 체험시설
+                    </div>
+                </div>
+            </div>
             
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 속리산이나 법주사에서 응급상황 발생 시 즉시 출동 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        <p>네, 가능합니다. 속리산국립공원, 법주사, 삼년산성 등 보은 주요 관광지에서의 응급상황에 24시간 즉시 출동 체계를 운영하고 있습니다. 보은지역 경험이 있는 전문 응급구조사가 동행하며, 필요시 119와 연계하여 최적의 병원으로 이송합니다.</p>
-                    </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">⛰️</div>
+                    <h3>보은지역 전문</h3>
+                    <p>속리산 등산객과 보은지역 응급상황에 특화된 전문 구조 및 이송 시스템을 운영합니다.</p>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 보은에서 청주 병원까지 정말 빠르게 갈 수 있나요?
-                    </div>
-                    <div class="faq-answer">
-                        <p>네, 가능합니다. 보은읍에서 청주 시내까지 약 45-55km 거리로, 중부내륙고속도로나 국도를 이용하면 대략1시간 내에 도착 가능합니다. 다만 속리산이나 산간지역에서는 출발지까지의 접근시간을 추가로 고려해야 합니다. 응급상황 시 최적의 경로를 선택하여 신속하게 이송합니다.</p>
-                    </div>
+                <div class="info-card">
+                    <div class="info-icon">🚗</div>
+                    <h3>청주 신속이송</h3>
+                    <p>보은에서 청주까지 최적의 거리로 산악지역 특성을 고려한 최적 경로로 신속하게 이송합니다.</p>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 속리산숲체험휴양마을이나 체험시설에서 사고 시에도 출동하나요?
-                    </div>
-                    <div class="faq-answer">
-                        <p>네, 출동합니다. 속리산숲체험휴양마을에서의 체험활동 중 사고나 모노레일, 스카이바이크, 집라인 등 액티비티 시설에서의 안전사고에 전문적으로 대응합니다. 산림휴양시설의 특성을 고려한 신속한 응급처치 후 적절한 의료기관으로 이송합니다.</p>
-                    </div>
+                <div class="info-card">
+                    <div class="info-icon">🏛️</div>
+                    <h3>문화유산 응급의료</h3>
+                    <p>법주사, 삼년산성 등 문화유산 관광지에서의 응급상황에 전문적으로 대응합니다.</p>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 보은에서 서울 대학병원으로 응급 이송도 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        <p>네, 장거리 응급 이송도 가능합니다. 보은에서 서울까지는 중부내륙고속도로를 이용하여 약 2시간 30분-3시간 소요됩니다. 중증 환자나 특수 치료가 필요한 경우 서울 주요 대학병원으로 신속하게 이송하며, 이송 중 지속적인 응급처치와 모니터링을 제공합니다.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 속리산 알몸마라톤대회나 지역행사 시 행사구급차도 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        <p>네, 가능합니다. 말티재 알몸마라톤대회, 속리산 등반대회, 법주사 행사 등에서 행사구급차 지원 서비스를 제공합니다. 보은지역 특성을 고려한 응급구조사와 행사구급차 현장에 배치하여 응급상황에 즉시 대응하며, 필요시 병원 이송까지 원스톱으로 처리합니다.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 외각지역이나 접근이 어려운 작은마을도 출동하나요?
-                    </div>
-                    <div class="faq-answer">
-                        <p>네, 출동합니다. 임도 등 접근이 어려운 곳까지 출동 가능합니다. 필요시 도보로 현장에 도착한 후, 환자를 안전한 곳으로 이동시켜 주요 구급차로 환승하여 병원까지 이송하는 시스템을 운영하고 있습니다.</p>
-                    </div>
+                <div class="info-card">
+                    <div class="info-icon">🌲</div>
+                    <h3>산림휴양 특화</h3>
+                    <p>속리산숲체험휴양마을 등 산림휴양시설에서의 응급상황과 체험활동 중 사고에 전문 대응합니다.</p>
                 </div>
             </div>
         </div>
@@ -1064,75 +1130,137 @@
             <p class="section-subtitle">보은 지역 병원 현황과 이송 가능한 주요 의료기관 안내</p>
 
             <div class="hospitals-grid">
-                <!-- 보은보건의료원 -->
+                <!-- 의료법인 누가의료재단 속리산요양병원 -->
                 <div class="hospital-card">
                     <div class="hospital-header">
-                        <div class="hospital-type">보건의료원</div>
+                        <div class="hospital-type">요양병원</div>
                     </div>
-                    <h3>보은군보건의료원</h3>
+                    <h3>속리산요양병원</h3>
                     <div class="hospital-info">
                         <div class="info-item">
                             <span class="info-icon-small">📍</span>
-                            <span>보은군 보은읍 뱃골1길 39</span>
+                            <span>속리산면 속리산로 701</span>
                         </div>
                         <div class="info-item">
                             <span class="info-icon-small">📞</span>
-                            <span>043-540-5000</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🚨</span>
-                            <span>응급실: 24시간 운영</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🛏️</span>
-                            <span>병상수: 100병상</span>
+                            <span>043-934-0100</span>
                         </div>
                         <div class="info-item">
                             <span class="info-icon-small">🏥</span>
-                            <span>내과, 외과, 정형외과, 응급의학과</span>
+                            <span>일반요양병원</span>
                         </div>
                     </div>
                     <div class="hospital-actions">
                         <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
-                        <a href="tel:043-540-5000" class="btn btn-secondary">병원 연락</a>
+                        <a href="tel:043-934-0100" class="btn btn-secondary">병원 연락</a>
                     </div>
                 </div>
 
-                <!-- 속리산병원 -->
+                <!-- 의료법인 아인의료재단 성암요양병원 -->
+                <div class="hospital-card">
+                    <div class="hospital-header">
+                        <div class="hospital-type">요양병원</div>
+                    </div>
+                    <h3>성암요양병원</h3>
+                    <div class="hospital-info">
+                        <div class="info-item">
+                            <span class="info-icon-small">📍</span>
+                            <span>내북면 남부로 6427-27</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">📞</span>
+                            <span>043-544-0330</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🏥</span>
+                            <span>일반요양병원</span>
+                        </div>
+                    </div>
+                    <div class="hospital-actions">
+                        <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                        <a href="tel:043-544-0330" class="btn btn-secondary">병원 연락</a>
+                    </div>
+                </div>
+
+                <!-- 의료법인브루노의료재단보은요양병원 -->
+                <div class="hospital-card">
+                    <div class="hospital-header">
+                        <div class="hospital-type">요양병원</div>
+                    </div>
+                    <h3>보은요양병원</h3>
+                    <div class="hospital-info">
+                        <div class="info-item">
+                            <span class="info-icon-small">📍</span>
+                            <span>수한면 후평바리미길 31</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">📞</span>
+                            <span>043-544-7114</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🏥</span>
+                            <span>일반요양병원</span>
+                        </div>
+                    </div>
+                    <div class="hospital-actions">
+                        <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                        <a href="tel:043-544-7114" class="btn btn-secondary">병원 연락</a>
+                    </div>
+                </div>
+
+                <!-- 의료법인 정민의료재단 보은한양병원 -->
                 <div class="hospital-card" style="border: 2px solid #f39c12;">
                     <div class="hospital-header">
-                        <div class="hospital-type" style="background: #f39c12;">지역병원</div>
+                        <div class="hospital-type" style="background: #f39c12;">일반병원</div>
                     </div>
-                    <h3>속리산병원</h3>
+                    <h3>보은한양병원</h3>
                     <div class="hospital-info">
                         <div class="info-item">
                             <span class="info-icon-small">📍</span>
-                            <span>보은군 속리산면 법주사로 84</span>
+                            <span>보은읍 보은로 102</span>
                         </div>
                         <div class="info-item">
                             <span class="info-icon-small">📞</span>
-                            <span>043-543-2000</span>
+                            <span>043-544-1500</span>
                         </div>
                         <div class="info-item">
                             <span class="info-icon-small">🏥</span>
-                            <span>속리산 인근 의료서비스</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🛏️</span>
-                            <span>외래진료 위주</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">⭐</span>
-                            <span>내과, 정형외과, 응급처치</span>
+                            <span>병원</span>
                         </div>
                     </div>
                     <div class="hospital-actions">
                         <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
-                        <a href="tel:043-543-2000" class="btn btn-secondary">병원 연락</a>
+                        <a href="tel:043-544-1500" class="btn btn-secondary">병원 연락</a>
                     </div>
                 </div>
 
-                <!-- 청주 주요 병원 (이송 추천) -->
+                <!-- 의료법인 의명의료재단 마음편한병원 -->
+                <div class="hospital-card" style="border: 2px solid #9b59b6;">
+                    <div class="hospital-header">
+                        <div class="hospital-type" style="background: #9b59b6;">정신병원</div>
+                    </div>
+                    <h3>마음편한병원</h3>
+                    <div class="hospital-info">
+                        <div class="info-item">
+                            <span class="info-icon-small">📍</span>
+                            <span>보은읍 뱃들로 53</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">📞</span>
+                            <span>043-542-3100</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon-small">🧠</span>
+                            <span>정신병원</span>
+                        </div>
+                    </div>
+                    <div class="hospital-actions">
+                        <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                        <a href="tel:043-542-3100" class="btn btn-secondary">병원 연락</a>
+                    </div>
+                </div>
+
+                <!-- 충북대학교병원 (이송 추천) -->
                 <div class="hospital-card" style="border: 2px solid #e74c3c;">
                     <div class="hospital-header">
                         <div class="hospital-type" style="background: #e74c3c;">이송 추천</div>
@@ -1149,46 +1277,12 @@
                         </div>
                         <div class="info-item">
                             <span class="info-icon-small">🏥</span>
-                            <span>상급종합병원 (권역응급의료센터)</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">⭐</span>
-                            <span>외상센터, 심장센터, 뇌신경센터</span>
+                            <span>상급종합병원</span>
                         </div>
                     </div>
                     <div class="hospital-actions">
                         <a href="tel:010-8841-4114" class="btn btn-primary">전문 이송 문의</a>
                         <a href="tel:043-269-6114" class="btn btn-secondary">병원 연락</a>
-                    </div>
-                </div>
-
-                <!-- 대전 주요 병원 (이송 추천) -->
-                <div class="hospital-card" style="border: 2px solid #3498db;">
-                    <div class="hospital-header">
-                        <div class="hospital-type" style="background: #3498db;">이송 추천</div>
-                    </div>
-                    <h3>충남대학교병원 (대전)</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon-small">📍</span>
-                            <span>대전 중구 문화로 282</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🚑</span>
-                            <span>보은에서 1시간 소요</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🏥</span>
-                            <span>상급종합병원 (권역응급의료센터)</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">⭐</span>
-                            <span>외상센터, 뇌졸중센터, 심혈관센터</span>
-                        </div>
-                    </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">전문 이송 문의</a>
-                        <a href="tel:042-280-7114" class="btn btn-secondary">병원 연락</a>
                     </div>
                 </div>
             </div>
@@ -1335,53 +1429,6 @@
         });
     </script>
 
-    <!-- 애니메이션 CSS -->
-    <style>
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-
-        /* 추가 모바일 최적화 */
-        @media (max-width: 480px) {
-            .summary-content {
-                margin: 5px;
-                padding: 10px;
-            }
-            
-            .summary-content h2 {
-                font-size: 1.5rem;
-            }
-            
-            .page-hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title {
-                font-size: 1.6rem;
-            }
-            
-            .logo h1 {
-                font-size: 1.3rem;
-            }
-            
-            .phone-number {
-                font-size: 1.3rem;
-            }
-
-            .cta-phone {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
-
     <!-- 추가 SEO 최적화 요소들 -->
     <div style="display: none;">
         <!-- 검색엔진용 숨겨진 키워드 목록 -->
@@ -1399,7 +1446,5 @@
         <span>삼년산성구급차</span>
         <span>숲체험휴양마을구급차</span>
     </div>
-    <!-- 네이버 블로그 고정 버튼 -->
-<a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
 </body>
 </html>
