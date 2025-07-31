@@ -970,27 +970,41 @@
     <section class="treatment-section">
         <div class="container">
             <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">치료 유형별 이송</h2>
-            <p style="text-align: center; font-size: 1rem; color: #666;">환자 상태에 맞는 적절한 치료기관으로 연결</p>
-            <div class="treatment-grid">
-                <div class="treatment-card">
-                    <div class="treatment-icon">🏥</div>
-                    <h3>해독 치료</h3>
-                    <p>의료진 감독 하에 안전하게 알콜을 끊고 금단증상을 관리하는 단계입니다. 보통 1-2주 소요됩니다.</p>
+            <p style="text-align: center; font-size: 1rem; color: #666; margin-bottom: 30px;">환자 상태에 맞는 적절한 치료기관으로 연결</p>
+            
+            <div class="treatment-item">
+                <div class="treatment-question" onclick="toggleTreatment(this)">
+                    🏥 해독 치료 이송 (클릭하여 자세히)
                 </div>
-                <div class="treatment-card">
-                    <div class="treatment-icon">🧠</div>
-                    <h3>재활 치료</h3>
-                    <p>심리치료, 그룹치료, 행동요법 등을 통해 근본적인 회복을 추구하는 장기 프로그램입니다.</p>
+                <div class="treatment-answer">
+                    의료진 감독 하에 안전하게 알콜을 끊고 금단증상을 관리하는 단계입니다. 보통 1-2주 소요되며, 생명을 위협할 수 있는 금단증상을 안전하게 관리합니다. 전문 의료진이 24시간 모니터링하며 필요시 응급처치를 시행합니다.
                 </div>
-                <div class="treatment-card">
-                    <div class="treatment-icon">👥</div>
-                    <h3>사회복귀 프로그램</h3>
-                    <p>사회적 기능을 회복하고 직업재활, 가족관계 회복을 위한 종합적인 지원 프로그램입니다.</p>
+            </div>
+
+            <div class="treatment-item">
+                <div class="treatment-question" onclick="toggleTreatment(this)">
+                    🧠 재활 치료 이송 (클릭하여 자세히)
                 </div>
-                <div class="treatment-card">
-                    <div class="treatment-icon">🔄</div>
-                    <h3>지속 관리</h3>
-                    <p>퇴원 후에도 지속적인 외래치료와 자조모임을 통해 재발을 방지하는 장기 관리 프로그램입니다.</p>
+                <div class="treatment-answer">
+                    심리치료, 그룹치료, 행동요법 등을 통해 근본적인 회복을 추구하는 장기 프로그램입니다. 개인상담, 집단치료, 가족치료, 인지행동치료 등을 통해 알콜 없는 삶을 살아갈 수 있는 능력을 기릅니다.
+                </div>
+            </div>
+
+            <div class="treatment-item">
+                <div class="treatment-question" onclick="toggleTreatment(this)">
+                    👥 사회복귀 프로그램 이송 (클릭하여 자세히)
+                </div>
+                <div class="treatment-answer">
+                    사회적 기능을 회복하고 직업재활, 가족관계 회복을 위한 종합적인 지원 프로그램입니다. 직업훈련, 대인관계 기술, 스트레스 관리, 여가활동 등을 통해 건강한 사회생활로의 복귀를 지원합니다.
+                </div>
+            </div>
+
+            <div class="treatment-item">
+                <div class="treatment-question" onclick="toggleTreatment(this)">
+                    🔄 지속 관리 프로그램 (클릭하여 자세히)
+                </div>
+                <div class="treatment-answer">
+                    퇴원 후에도 지속적인 외래치료와 자조모임을 통해 재발을 방지하는 장기 관리 프로그램입니다. 정기적인 상담, 약물치료, AA모임 참여, 가족 지원 등을 통해 장기간의 회복을 유지합니다.
                 </div>
             </div>
         </div>
