@@ -132,6 +132,32 @@
             color: #666;
         }
 
+        /* Fixed Blog Button */
+        .fixed-blog-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #03C75A, #00B04F);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .fixed-blog-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(3, 199, 90, 0.6);
+            color: white;
+        }
+
         /* Fixed Call Button */
         .fixed-call-btn {
             position: fixed;
@@ -392,7 +418,7 @@
             font-size: 0.8rem;
         }
 
-        /* FAQ Section - moved up */
+        /* FAQ Section */
         .faq-section {
             background: #f8f9fa;
             padding: 40px 0;
@@ -432,107 +458,247 @@
             display: block;
         }
 
-        /* Process Section */
+        /* Process Section - 원형 프레임 디자인 */
         .process-section {
             background: white;
             padding: 40px 0;
         }
 
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+        .process-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
         }
 
-        .process-step {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
+        .process-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(44, 62, 80, 0.15);
+            border-color: #2c3e50;
+        }
+
+        .process-question {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 18px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border-radius: 23px 23px 0 0;
             position: relative;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        .step-number {
+        .process-question::before {
+            content: '';
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
             position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 35px;
-            height: 35px;
-            background: linear-gradient(135deg, #2c3e50, #34495e);
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .process-question::after {
+            content: '▼';
+            font-size: 14px;
+            transition: transform 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .process-question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .process-question:hover {
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+        }
+
+        .process-number {
+            position: absolute;
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            background: white;
+            color: #2c3e50;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             font-weight: 700;
             font-size: 1.1rem;
+            z-index: 2;
         }
 
-        .process-step h4 {
-            color: #2c3e50;
-            margin: 15px 0 10px 0;
-            font-size: 1.2rem;
+        .process-text {
+            margin-left: 60px;
+            flex: 1;
         }
 
-        .process-step p {
-            color: #666;
-            font-size: 0.9rem;
+        .process-answer {
+            padding: 25px 30px;
+            display: none;
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 0 0 23px 23px;
+            position: relative;
         }
 
-        /* Services Grid */
+        .process-answer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            right: 30px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #2c3e50 50%, transparent 100%);
+        }
+
+        .process-answer.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        /* Services Section - 원형 프레임 디자인 */
         .services-section {
             background: #f8f9fa;
             padding: 40px 0;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .service-card {
+        .service-item {
             background: white;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e9ecef;
             transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        .service-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.15);
+            border-color: #3498db;
+        }
+
+        .service-question {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 18px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border-radius: 23px 23px 0 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .service-question::before {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-question::after {
+            content: '▼';
+            font-size: 14px;
+            transition: transform 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .service-question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .service-question:hover {
+            background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
         }
 
         .service-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #2c3e50, #34495e);
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: white;
+            color: #3498db;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 15px;
-            font-size: 1.8rem;
-            color: white;
+            font-size: 1.5rem;
+            z-index: 2;
+            font-weight: 700;
         }
 
-        .service-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #2c3e50;
+        .service-text {
+            margin-left: 70px;
+            flex: 1;
         }
 
-        .service-card p {
-            color: #666;
-            line-height: 1.6;
-            font-size: 0.9rem;
+        .service-answer {
+            padding: 25px 30px;
+            display: none;
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            background: linear-gradient(135deg, #f0f8ff 0%, #ffffff 100%);
+            border-radius: 0 0 23px 23px;
+            position: relative;
+        }
+
+        .service-answer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            right: 30px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #3498db 50%, transparent 100%);
+        }
+
+        .service-answer.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Mobile Responsive */
@@ -572,11 +738,6 @@
                 line-height: 1.6;
             }
 
-            .process-grid, .services-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
             .process-section, .services-section, .faq-section {
                 padding: 30px 0;
             }
@@ -600,7 +761,6 @@
                 margin: 10px;
             }
 
-            /* Mobile content compression */
             .content-main ul {
                 margin-bottom: 15px;
             }
@@ -612,7 +772,7 @@
             .sidebar {
                 order: -1;
                 padding: 20px;
-                position: static; /* Remove sticky positioning on mobile */
+                position: static;
             }
 
             .quick-contact {
@@ -628,20 +788,11 @@
                 padding: 12px;
                 margin: 15px 0;
             }
-        }
 
-        @media (max-width: 480px) {
-            .header-content {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .phone-number {
-                font-size: 1.5rem;
-            }
-
-            .service-hero h1 {
-                font-size: 1.6rem;
+            .fixed-blog-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 18px;
             }
 
             .fixed-call-btn {
@@ -649,44 +800,128 @@
                 height: 50px;
                 font-size: 20px;
             }
+
+            /* Process Items Mobile */
+            .process-item {
+                border-radius: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .process-question {
+                padding: 15px 20px;
+                font-size: 0.9rem;
+                border-radius: 18px 18px 0 0;
+            }
+            
+            .process-question::before {
+                width: 35px;
+                height: 35px;
+                left: 15px;
+            }
+            
+            .process-number {
+                left: 17px;
+                width: 31px;
+                height: 31px;
+                font-size: 1rem;
+            }
+            
+            .process-text {
+                margin-left: 50px;
+            }
+            
+            .process-answer {
+                padding: 20px 25px;
+                font-size: 0.9rem;
+                border-radius: 0 0 18px 18px;
+            }
+            
+            .process-answer::before {
+                left: 25px;
+                right: 25px;
+            }
+
+            /* Service Items Mobile */
+            .service-item {
+                border-radius: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .service-question {
+                padding: 15px 20px;
+                font-size: 0.9rem;
+                border-radius: 18px 18px 0 0;
+            }
+            
+            .service-question::before {
+                width: 45px;
+                height: 45px;
+                left: 15px;
+            }
+            
+            .service-icon {
+                left: 18px;
+                width: 35px;
+                height: 35px;
+                font-size: 1.3rem;
+            }
+            
+            .service-text {
+                margin-left: 60px;
+            }
+            
+            .service-answer {
+                padding: 20px 25px;
+                font-size: 0.9rem;
+                border-radius: 0 0 18px 18px;
+            }
+            
+            .service-answer::before {
+                left: 25px;
+                right: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+                padding-left: 15px;
+            }
+
+            .logo {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .logo > div:last-child {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo > div:last-child > div {
+                font-size: 1.6rem;
+            }
+
+            .logo > div:last-child > p {
+                font-size: 0.75rem;
+                margin-left: -10px;
+            }
+
+            .phone-number {
+                font-size: 1.3rem;
+                width: 100%;
+                text-align: left;
+                padding-left: 15px;
+            }
+
+            .service-hero h1 {
+                font-size: 1.6rem;
+            }
         }
     </style>
-    <style>
-/* 네이버 블로그 고정 버튼 */
-.fixed-blog-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #03C75A, #00B04F);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-.fixed-blog-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(3, 199, 90, 0.6);
-    color: white;
-}
-
-/* 모바일 최적화 */
-@media (max-width: 768px) {
-    .fixed-blog-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-    }
-}
-</style>
 </head>
 <body>
     <!-- SEO Summary Popup Button -->
@@ -719,11 +954,15 @@
             </div>
             
             <div>
-                <h4 style="color: #2c3e50; margin-bottom: 8px;">🕊️ 서비스 정신</h4>
+                <h4 style="color: #2c3e50; margin-bottom: 8px;">
+<h4 style="color: #2c3e50; margin-bottom: 8px;">🕊️ 서비스 정신</h4>
                 <p>고인의 존엄성을 지키며<br>유가족의 마음을 위로하는<br>정중한 이송 서비스</p>
             </div>
         </div>
     </div>
+
+    <!-- Fixed Blog Button -->
+    <a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
 
     <!-- Fixed Call Button -->
     <a href="tel:010-8841-4114" class="fixed-call-btn" title="24시간 상담">📞</a>
@@ -738,13 +977,12 @@
                         <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충북 고인이송 사설구급차</p>
                     </div>
                 </div>
-                <!-- 이 부분이 변경됩니다. -->
-            <div class="emergency-contact">
-                <a href="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html" 
-                   style="color: #FFFF00; font-weight: bold; font-size: 1.3em; text-decoration: none; display: block; text-align: right; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
-                    충북 지역별 병원찾기(클릭)
-                </a>
-            </div>
+                <div class="emergency-contact">
+                    <a href="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html" 
+                       style="color: #FFFF00; font-weight: bold; font-size: 1.3em; text-decoration: none; display: block; text-align: right; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
+                        충북 지역별 병원찾기(클릭)
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -938,27 +1176,45 @@
     <section class="process-section">
         <div class="container">
             <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">고인이송 절차</h2>
-            <p style="text-align: center; font-size: 1rem; color: #666;">신속하고 정중한 4단계 절차</p>
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h4>전화 상담</h4>
-                    <p>24시간 상담원이 위치와 상황을 확인합니다</p>
+            <p style="text-align: center; font-size: 1rem; color: #666; margin-bottom: 30px;">신속하고 정중한 4단계 절차</p>
+            
+            <div class="process-item">
+                <div class="process-question" onclick="toggleProcess(this)">
+                    <div class="process-number">1</div>
+                    <div class="process-text">전화 상담 (클릭하여 자세히)</div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h4>즉시 출동</h4>
-                    <p>가장 가까운 차량이 현장으로 출동합니다</p>
+                <div class="process-answer">
+                    24시간 상담원이 위치와 상황을 확인합니다. 고인의 위치(병원, 자택, 요양원 등), 목적지 장례식장, 유가족 동행 여부, 종교적 요청사항 등을 상세히 파악합니다. 응급상황이므로 즉시 출동 준비를 하며, 예상 도착시간을 안내해드립니다.
                 </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h4>정중한 이송</h4>
-                    <p>고인을 정중히 모시고 안전하게 이송합니다</p>
+            </div>
+
+            <div class="process-item">
+                <div class="process-question" onclick="toggleProcess(this)">
+                    <div class="process-number">2</div>
+                    <div class="process-text">즉시 출동 (클릭하여 자세히)</div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h4>안전한 인계</h4>
-                    <p>장례식장에 안전하게 인계 완료합니다</p>
+                <div class="process-answer">
+                    가장 가까운 차량이 현장으로 출동합니다. 고인이송 전용 장비와 위생용품을 준비하고, 유가족 동행을 위한 좌석을 확보합니다. 충북 전 지역 어디든 신속히 출동하며, 산간이나 농촌지역도 정확한 위치를 파악하여 도착합니다.
+                </div>
+            </div>
+
+            <div class="process-item">
+                <div class="process-question" onclick="toggleProcess(this)">
+                    <div class="process-number">3</div>
+                    <div class="process-text">정중한 이송 (클릭하여 자세히)</div>
+                </div>
+                <div class="process-answer">
+                    고인을 정중히 모시고 안전하게 이송합니다. 종교별 예법을 준수하며, 유가족의 마음을 위로하는 따뜻한 서비스를 제공합니다. 이송 중에는 조용하고 부드러운 운전으로 고인의 존엄성을 지키며, 유가족과 함께 마지막 길을 동행합니다.
+                </div>
+            </div>
+
+            <div class="process-item">
+                <div class="process-question" onclick="toggleProcess(this)">
+                    <div class="process-number">4</div>
+                    <div class="process-text">안전한 인계 (클릭하여 자세히)</div>
+                </div>
+                <div class="process-answer">
+                    장례식장에 안전하게 인계 완료합니다. 장례식장 직원과 함께 고인을 정중히 모시고, 필요한 서류와 개인 소지품을 유가족에게 전달합니다. 장례 절차에 대한 안내도 도움을 드리며, 유가족이 편안히 장례를 치를 수 있도록 지원합니다.
                 </div>
             </div>
         </div>
@@ -967,36 +1223,65 @@
     <section class="services-section">
         <div class="container">
             <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">충북 지역별 고인이송</h2>
-            <div class="services-grid">
-                <div class="service-card">
+            <p style="text-align: center; font-size: 1rem; color: #666; margin-bottom: 30px;">11개 시군 맞춤형 고인이송 서비스</p>
+            
+            <div class="service-item">
+                <div class="service-question" onclick="toggleService(this)">
                     <div class="service-icon">🏥</div>
-                    <h3>청주 고인이송</h3>
-                    <p>상당구, 서원구, 흥덕구, 청원구 전지역 병원/자택 이송</p>
+                    <div class="service-text">청주 고인이송 (클릭하여 자세히)</div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🏥</div>
-                    <h3>충주 고인이송</h3>
-                    <p>충주시내, 수안보, 앙성, 노은 전지역 24시간 이송</p>
+                <div class="service-answer">
+                    상당구, 서원구, 흥덕구, 청원구 전지역 병원/자택 이송을 담당합니다. 충북대병원, 청주성모병원, 청주한국병원 등 주요 병원과 연계되어 있으며, 청주 시내 주요 장례식장으로의 신속한 이송이 가능합니다. 오송생명과학단지, 오창과학산업단지 등 산업단지 지역도 포함됩니다.
                 </div>
-                <div class="service-card">
+            </div>
+
+            <div class="service-item">
+                <div class="service-question" onclick="toggleService(this)">
                     <div class="service-icon">🏥</div>
-                    <h3>제천 고인이송</h3>
-                    <p>제천시내, 봉양, 백운, 송학 등 전지역 신속 이송</p>
+                    <div class="service-text">충주 고인이송 (클릭하여 자세히)</div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🏥</div>
-                    <h3>음성진천 이송</h3>
-                    <p>음성읍, 금왕, 진천읍, 덕산 등 혁신도시 포함</p>
+                <div class="service-answer">
+                    충주시내, 수안보, 앙성, 노은 전지역 24시간 이송 서비스를 제공합니다. 건국대충주병원, 충주의료원을 비롯한 지역 병원들과 긴밀히 협력하며, 수안보 온천지구나 앙성면, 노은면 등 외곽지역까지 신속하게 출동합니다.
                 </div>
-                <div class="service-card">
+            </div>
+
+            <div class="service-item">
+                <div class="service-question" onclick="toggleService(this)">
                     <div class="service-icon">🏥</div>
-                    <h3>괴산증평 이송</h3>
-                    <p>괴산읍, 증평읍, 도안면 등 중부내륙 전지역</p>
+                    <div class="service-text">제천 고인이송 (클릭하여 자세히)</div>
                 </div>
-                <div class="service-card">
+                <div class="service-answer">
+                    제천시내, 봉양, 백운, 송학 등 전지역 신속 이송을 담당합니다. 제천의료원, 세명대 제천한방병원 등과 연계하여 서비스하며, 산간지역인 백운면, 송학면까지도 안전하게 이송합니다. 청풍호 주변 관광지역도 포함됩니다.
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-question" onclick="toggleService(this)">
                     <div class="service-icon">🏥</div>
-                    <h3>남부3군 이송</h3>
-                    <p>보은, 옥천, 영동 전지역 및 단양 북부권 이송</p>
+                    <div class="service-text">음성진천 이송 (클릭하여 자세히)</div>
+                </div>
+                <div class="service-answer">
+                    음성읍, 금왕, 진천읍, 덕산 등 혁신도시 포함 전지역을 담당합니다. 음성 혁신도시, 진천 혁신도시의 공공기관 직원 가족분들의 고인이송도 전문적으로 처리하며, 금왕읍, 대소면, 감곡면 등 농촌지역까지 빠르게 출동합니다.
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-question" onclick="toggleService(this)">
+                    <div class="service-icon">🏥</div>
+                    <div class="service-text">괴산증평 이송 (클릭하여 자세히)</div>
+                </div>
+                <div class="service-answer">
+                    괴산읍, 증평읍, 도안면 등 중부내륙 전지역을 담당합니다. 괴산의 청정지역 특성을 고려한 서비스를 제공하며, 속리산 국립공원 인근 지역까지도 출동합니다. 증평군의 도안면과 같은 신도시 지역도 포함하여 완벽한 서비스를 제공합니다.
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-question" onclick="toggleService(this)">
+                    <div class="service-icon">🏥</div>
+                    <div class="service-text">남부3군 이송 (클릭하여 자세히)</div>
+                </div>
+                <div class="service-answer">
+                    보은, 옥천, 영동 전지역 및 단양 북부권 이송을 담당합니다. 속리산 보은, 대청호 옥천, 포도로 유명한 영동, 단양팔경의 단양까지 충북 남부와 북부 산간지역 전문 서비스를 제공합니다. 지리적 특성을 고려한 맞춤형 이송 서비스가 특징입니다.
                 </div>
             </div>
         </div>
@@ -1048,6 +1333,58 @@
             answer.classList.toggle('active');
         }
 
+        function toggleProcess(element) {
+            const answer = element.nextElementSibling;
+            const allAnswers = document.querySelectorAll('.process-answer');
+            const allQuestions = document.querySelectorAll('.process-question');
+            
+            // 모든 질문에서 active 클래스 제거
+            allQuestions.forEach(q => q.classList.remove('active'));
+            
+            // 다른 답변들은 모두 닫기
+            allAnswers.forEach(ans => {
+                if (ans !== answer) {
+                    ans.classList.remove('active');
+                }
+            });
+            
+            // 클릭한 답변과 질문 토글
+            const isActive = answer.classList.contains('active');
+            if (!isActive) {
+                element.classList.add('active');
+                answer.classList.add('active');
+            } else {
+                element.classList.remove('active');
+                answer.classList.remove('active');
+            }
+        }
+
+        function toggleService(element) {
+            const answer = element.nextElementSibling;
+            const allAnswers = document.querySelectorAll('.service-answer');
+            const allQuestions = document.querySelectorAll('.service-question');
+            
+            // 모든 질문에서 active 클래스 제거
+            allQuestions.forEach(q => q.classList.remove('active'));
+            
+            // 다른 답변들은 모두 닫기
+            allAnswers.forEach(ans => {
+                if (ans !== answer) {
+                    ans.classList.remove('active');
+                }
+            });
+            
+            // 클릭한 답변과 질문 토글
+            const isActive = answer.classList.contains('active');
+            if (!isActive) {
+                element.classList.add('active');
+                answer.classList.add('active');
+            } else {
+                element.classList.remove('active');
+                answer.classList.remove('active');
+            }
+        }
+
         function openSeoPopup() {
             document.getElementById('seoPopup').style.display = 'block';
         }
@@ -1094,7 +1431,7 @@
         }, observerOptions);
 
         // Observe cards
-        document.querySelectorAll('.service-card, .process-step').forEach(card => {
+        document.querySelectorAll('.process-item, .service-item').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -1118,7 +1455,5 @@
             lastScrollTop = scrollTop;
         });
     </script>
-    <!-- 네이버 블로그 고정 버튼 -->
-<a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
 </body>
 </html>
