@@ -68,12 +68,6 @@
             color: #27ae60;
         }
 
-        .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 0;
-        }
-
         .phone-number {
             font-size: 1.8rem;
             font-weight: 900;
@@ -83,7 +77,7 @@
         /* SEO Summary Popup */
         .seo-summary-btn {
             position: fixed;
-            top: 60px;
+            top: 50px;
             right: 10px;
             background: #27ae60;
             color: white;
@@ -136,6 +130,32 @@
             font-size: 24px;
             cursor: pointer;
             color: #666;
+        }
+
+        /* Fixed Blog Button */
+        .fixed-blog-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #03C75A, #00B04F);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .fixed-blog-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(3, 199, 90, 0.6);
+            color: white;
         }
 
         /* Fixed Call Button */
@@ -371,7 +391,7 @@
             font-size: 0.8rem;
         }
 
-        /* FAQ Section - moved up */
+        /* FAQ Section */
         .faq-section {
             background: #f8f9fa;
             padding: 40px 0;
@@ -411,107 +431,247 @@
             display: block;
         }
 
-        /* Process Steps */
-        .process-section {
+        /* Service Section - 원형 프레임 디자인 */
+        .service-section {
             background: white;
             padding: 40px 0;
         }
 
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+        .service-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
         }
 
-        .process-step {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
+        .service-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.15);
+            border-color: #27ae60;
+        }
+
+        .service-question {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            padding: 18px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border-radius: 23px 23px 0 0;
             position: relative;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .service-question::before {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-question::after {
+            content: '▼';
+            font-size: 14px;
+            transition: transform 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .service-question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .service-question:hover {
+            background: linear-gradient(135deg, #229954 0%, #27ae60 100%);
+        }
+
+        .service-icon {
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: white;
+            color: #27ae60;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 2;
+            font-weight: 700;
+        }
+
+        .service-text {
+            margin-left: 70px;
+            flex: 1;
+        }
+
+        .service-answer {
+            padding: 25px 30px;
+            display: none;
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            background: linear-gradient(135deg, #f0fff0 0%, #ffffff 100%);
+            border-radius: 0 0 23px 23px;
+            position: relative;
+        }
+
+        .service-answer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            right: 30px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #27ae60 50%, transparent 100%);
+        }
+
+        .service-answer.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        /* Process Section - 원형 프레임 디자인 */
+        .process-section {
+            background: #f8f9fa;
+            padding: 40px 0;
+        }
+
+        .process-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .process-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(44, 62, 80, 0.15);
+            border-color: #2c3e50;
+        }
+
+        .process-question {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 18px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border-radius: 23px 23px 0 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .process-question::before {
+            content: '';
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .process-question::after {
+            content: '▼';
+            font-size: 14px;
+            transition: transform 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .process-question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .process-question:hover {
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
         }
 
         .step-number {
             position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 35px;
-            height: 35px;
-            background: linear-gradient(135deg, #27ae60, #229954);
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            background: white;
+            color: #2c3e50;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             font-weight: 700;
             font-size: 1.1rem;
+            z-index: 2;
         }
 
-        .process-step h4 {
-            color: #2c3e50;
-            margin: 15px 0 10px 0;
-            font-size: 1.2rem;
+        .process-text {
+            margin-left: 60px;
+            flex: 1;
         }
 
-        .process-step p {
-            color: #666;
-            font-size: 0.9rem;
+        .process-answer {
+            padding: 25px 30px;
+            display: none;
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 0 0 23px 23px;
+            position: relative;
         }
 
-        /* Benefits Section */
-        .benefits-section {
-            background: #f8f9fa;
-            padding: 40px 0;
+        .process-answer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            right: 30px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #2c3e50 50%, transparent 100%);
         }
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+        .process-answer.active {
+            display: block;
+            animation: slideDown 0.3s ease;
         }
 
-        .benefit-card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-
-        .benefit-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #27ae60, #229954);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            font-size: 1.8rem;
-            color: white;
-        }
-
-        .benefit-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #2c3e50;
-        }
-
-        .benefit-card p {
-            color: #666;
-            line-height: 1.6;
-            font-size: 0.9rem;
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Mobile Responsive */
@@ -551,12 +711,7 @@
                 line-height: 1.6;
             }
 
-            .process-grid, .benefits-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .process-section, .benefits-section, .faq-section {
+            .service-section, .process-section, .faq-section {
                 padding: 30px 0;
             }
 
@@ -572,6 +727,8 @@
             .seo-summary-btn {
                 padding: 10px 14px;
                 font-size: 0.9rem;
+                top: 60px;
+                right: 10px;
             }
 
             .seo-popup-content {
@@ -579,7 +736,6 @@
                 margin: 10px;
             }
 
-            /* Mobile content compression */
             .content-main ul {
                 margin-bottom: 15px;
             }
@@ -591,7 +747,7 @@
             .sidebar {
                 order: -1;
                 padding: 20px;
-                position: static; /* Remove sticky positioning on mobile */
+                position: static;
             }
 
             .quick-contact {
@@ -607,24 +763,13 @@
                 padding: 12px;
                 margin: 15px 0;
             }
-        }
 
-        @media (max-width: 480px) {
-            .header-content {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .logo h1 {
-                font-size: 1.4rem;
-            }
-
-            .phone-number {
-                font-size: 1.5rem;
-            }
-
-            .service-hero h1 {
-                font-size: 1.6rem;
+            .fixed-blog-btn {
+                bottom: 20px;
+                left: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 18px;
             }
 
             .fixed-call-btn {
@@ -632,48 +777,132 @@
                 height: 50px;
                 font-size: 20px;
             }
+
+            /* Service Items Mobile */
+            .service-item {
+                border-radius: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .service-question {
+                padding: 15px 20px;
+                font-size: 0.9rem;
+                border-radius: 18px 18px 0 0;
+            }
+            
+            .service-question::before {
+                width: 45px;
+                height: 45px;
+                left: 15px;
+            }
+            
+            .service-icon {
+                left: 18px;
+                width: 35px;
+                height: 35px;
+                font-size: 1.3rem;
+            }
+            
+            .service-text {
+                margin-left: 60px;
+            }
+            
+            .service-answer {
+                padding: 20px 25px;
+                font-size: 0.9rem;
+                border-radius: 0 0 18px 18px;
+            }
+            
+            .service-answer::before {
+                left: 25px;
+                right: 25px;
+            }
+
+            /* Process Items Mobile */
+            .process-item {
+                border-radius: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .process-question {
+                padding: 15px 20px;
+                font-size: 0.9rem;
+                border-radius: 18px 18px 0 0;
+            }
+            
+            .process-question::before {
+                width: 35px;
+                height: 35px;
+                left: 15px;
+            }
+            
+            .step-number {
+                left: 17px;
+                width: 31px;
+                height: 31px;
+                font-size: 1rem;
+            }
+            
+            .process-text {
+                margin-left: 50px;
+            }
+            
+            .process-answer {
+                padding: 20px 25px;
+                font-size: 0.9rem;
+                border-radius: 0 0 18px 18px;
+            }
+            
+            .process-answer::before {
+                left: 25px;
+                right: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+                padding-left: 15px;
+            }
+
+            .logo {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .logo > div:last-child {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo > div:last-child > div {
+                font-size: 1.6rem;
+            }
+
+            .logo > div:last-child > p {
+                font-size: 0.75rem;
+                margin-left: -10px;
+            }
+
+            .phone-number {
+                font-size: 1.3rem;
+                width: 100%;
+                text-align: left;
+                padding-left: 15px;
+            }
+
+            .service-hero h1 {
+                font-size: 1.6rem;
+            }
         }
     </style>
-    <style>
-/* 네이버 블로그 고정 버튼 */
-.fixed-blog-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #03C75A, #00B04F);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-.fixed-blog-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(3, 199, 90, 0.6);
-    color: white;
-}
-
-/* 모바일 최적화 */
-@media (max-width: 768px) {
-    .fixed-blog-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-    }
-}
-</style>
 </head>
 <body>
     <!-- SEO Summary Popup Button -->
-    <button class="seo-summary-btn" onclick="openSeoPopup()">📋요약</button>
+    <button class="seo-summary-btn" onclick="openSeoPopup()">📋 요약</button>
 
     <!-- SEO Summary Popup -->
     <div id="seoPopup" class="seo-popup">
@@ -708,6 +937,9 @@
         </div>
     </div>
 
+    <!-- Fixed Blog Button -->
+    <a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
+
     <!-- Fixed Call Button -->
     <a href="tel:010-8841-4114" class="fixed-call-btn" title="지금 바로 전화하기">📞</a>
 
@@ -721,13 +953,12 @@
                         <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충북 요양병원 환자이송</p>
                     </div>
                 </div>
-                <!-- 이 부분이 변경됩니다. -->
-            <div class="emergency-contact">
-                <a href="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html" 
-                   style="color: #FFFF00; font-weight: bold; font-size: 1.3em; text-decoration: none; display: block; text-align: right; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
-                    충북 지역별 병원찾기(클릭)
-                </a>
-            </div>
+                <div class="emergency-contact">
+                    <a href="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html" 
+                       style="color: #FFFF00; font-weight: bold; font-size: 1.3em; text-decoration: none; display: block; text-align: right; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
+                        충북 지역별 병원찾기(클릭)
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -902,63 +1133,105 @@
         </div>
     </section>
 
-    <section class="process-section">
+    <section class="service-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">요양병원이송 절차</h2>
-            <p style="text-align: center; font-size: 1rem; color: #666;">전문적인 5단계 요양병원이송 절차</p>
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h4>상세 상담</h4>
-                    <p>환자 상태, 의료기록, 특별 요구사항 등 상세 상담 후 이송 계획 수립</p>
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">전문 이송 서비스</h2>
+            <p style="text-align: center; font-size: 1rem; color: #666; margin-bottom: 30px;">환자 상태별 맞춤형 요양병원이송 서비스</p>
+            
+            <div class="service-item">
+                <div class="service-question" onclick="toggleService(this)">
+                    <div class="service-icon">🏠</div>
+                    <div class="service-text">요양병원 입퇴원 이송 (클릭하여 자세히)</div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h4>장비 준비</h4>
-                    <p>환자 맞춤형 침상형 구급차와 필요 의료장비 준비 및 점검</p>
+                <div class="service-answer">
+                    자택에서 요양병원까지의 입원이송과 요양병원에서 자택까지의 퇴원이송을 전문적으로 제공합니다. 환자의 상태를 고려하여 가장 편안하고 안전한 경로로 이송하며, 가족들의 심리적 부담을 덜어드리기 위해 세심한 배려를 제공합니다. 입원 준비물 확인부터 퇴원 후 가정 복귀까지 전 과정을 지원합니다.
                 </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h4>안전 탑승</h4>
-                    <p>전문 인력이 환자를 스트레처에 안전하게 옮기고 구급차 탑승</p>
+            </div>
+
+            <div class="service-item">
+                <div class="service-question" onclick="toggleService(this)">
+                    <div class="service-icon">🏥</div>
+                    <div class="service-text">병원간 전원 이송 (클릭하여 자세히)</div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h4>모니터링 이송</h4>
-                    <p>이송 중 지속적 환자 상태 모니터링 및 필요시 응급처치</p>
+                <div class="service-answer">
+                    요양병원과 종합병원 간의 전원이송을 전문적으로 담당합니다. 응급상황 발생 시 즉시 상급병원으로 이송하거나, 치료 완료 후 요양병원으로의 복귀 이송을 제공합니다. 의료진 간의 원활한 의사소통을 통해 환자의 의료 연속성을 보장하며, 전원 시 필요한 모든 의료기록과 검사결과를 안전하게 관리합니다.
                 </div>
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <h4>안전 인계</h4>
-                    <p>목적지 도착 후 의료진에게 환자 상태와 이송 경과 상세 인계</p>
+            </div>
+
+            <div class="service-item">
+                <div class="service-question" onclick="toggleService(this)">
+                    <div class="service-icon">🩺</div>
+                    <div class="service-text">정기 외래진료 이송 (클릭하여 자세히)</div>
+                </div>
+                <div class="service-answer">
+                    요양병원 입원 환자의 정기적인 외래진료를 위한 이송 서비스입니다. 전문과 진료, 정밀검사, 재활치료 등을 위해 외부 병원 방문이 필요한 경우 안전하고 편리한 이송을 제공합니다. 진료 일정에 맞춰 미리 예약하여 대기시간을 최소화하고, 진료 완료 후 즉시 요양병원으로 복귀할 수 있도록 지원합니다.
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-question" onclick="toggleService(this)">
+                    <div class="service-icon">🔬</div>
+                    <div class="service-text">정밀검사 이송 (클릭하여 자세히)</div>
+                </div>
+                <div class="service-answer">
+                    MRI, CT, 초음파, 내시경 등 정밀검사를 위한 전문 이송 서비스입니다. 검사 전 금식이나 특별한 준비사항이 있는 경우 사전에 안내하고 관리합니다. 검사 중 대기시간 동안 환자의 편안함을 위해 휴게 공간을 제공하며, 검사 결과 확인 후 안전하게 복귀 이송을 진행합니다. 조영제 사용 검사 시 알레르기 반응에 대비한 응급처치 준비도 완비되어 있습니다.
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="benefits-section">
+    <section class="process-section">
         <div class="container">
-            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">직지응급환자이송단의 장점</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🚁</div>
-                    <h3>신속한 출동</h3>
-                    <p>충북 전 지역 어디든 신속하게 출동하여 최단시간 내에 요양병원이송 시작</p>
+            <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">요양병원이송 절차</h2>
+            <p style="text-align: center; font-size: 1rem; color: #666; margin-bottom: 30px;">전문적인 5단계 요양병원이송 절차</p>
+            
+            <div class="process-item">
+                <div class="process-question" onclick="toggleProcess(this)">
+                    <div class="step-number">1</div>
+                    <div class="process-text">상세 상담 (클릭하여 자세히)</div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🏥</div>
-                    <h3>병원 네트워크</h3>
-                    <p>충북 내 주요 요양병원과의 긴밀한 협력으로 원활한 이송 보장</p>
+                <div class="process-answer">
+                    환자 상태, 의료기록, 특별 요구사항 등 상세 상담 후 이송 계획을 수립합니다. 환자의 질병 상태, 거동 능력, 의식 수준, 특별한 의료기기 사용 여부 등을 파악하여 가장 적합한 이송 방법을 결정합니다. 가족의 요청사항과 우려사항도 충분히 청취하여 맞춤형 이송 계획을 세웁니다.
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">💰</div>
-                    <h3>합리적 요금</h3>
-                    <p>투명하고 합리적인 요금으로 요양병원이송 경제적 부담 최소화</p>
+            </div>
+
+            <div class="process-item">
+                <div class="process-question" onclick="toggleProcess(this)">
+                    <div class="step-number">2</div>
+                    <div class="process-text">장비 준비 (클릭하여 자세히)</div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🛡️</div>
-                    <h3>보험 보장</h3>
-                    <p>충분한 보험 가입으로 이송 중 모든 상황에 완벽 대비</p>
+                <div class="process-answer">
+                    환자 맞춤형 침상형 구급차와 필요 의료장비를 준비하고 점검합니다. 산소공급장치, 흡입기, 심전도 모니터 등 환자 상태에 필요한 모든 장비를 사전 점검하고, 온도조절 시스템을 환자에게 적합하게 설정합니다. 응급상황에 대비한 응급약물과 제세동기도 준비합니다.
+                </div>
+            </div>
+
+            <div class="process-item">
+                <div class="process-question" onclick="toggleProcess(this)">
+                    <div class="step-number">3</div>
+                    <div class="process-text">안전 탑승 (클릭하여 자세히)</div>
+                </div>
+                <div class="process-answer">
+                    전문 인력이 환자를 스트레처에 안전하게 옮기고 구급차에 탑승시킵니다. 환자의 체위를 편안하게 유지하고, 안전벨트와 고정장치를 적절히 사용하여 이송 중 안전을 보장합니다. 보호자도 함께 탑승하여 환자의 심리적 안정을 도모합니다.
+                </div>
+            </div>
+
+            <div class="process-item">
+                <div class="process-question" onclick="toggleProcess(this)">
+                    <div class="step-number">4</div>
+                    <div class="process-text">모니터링 이송 (클릭하여 자세히)</div>
+                </div>
+                <div class="process-answer">
+                    이송 중 지속적으로 환자 상태를 모니터링하며 필요시 응급처치를 시행합니다. 혈압, 맥박, 호흡, 산소포화도 등 생체징후를 실시간으로 확인하고, 환자의 의식 상태와 불편감을 지속적으로 관찰합니다. 급작스러운 상태 변화 시 즉시 대응할 수 있도록 준비되어 있습니다.
+                </div>
+            </div>
+
+            <div class="process-item">
+                <div class="process-question" onclick="toggleProcess(this)">
+                    <div class="step-number">5</div>
+                    <div class="process-text">안전 인계 (클릭하여 자세히)</div>
+                </div>
+                <div class="process-answer">
+                    목적지 도착 후 의료진에게 환자 상태와 이송 경과를 상세히 인계합니다. 이송 중 관찰된 환자의 상태 변화, 투여된 응급처치, 발생한 특이사항 등을 의료진에게 정확히 전달합니다. 환자가 안전하게 병실이나 진료실로 이동할 때까지 함께 동행하여 완전한 인계를 완료합니다.
                 </div>
             </div>
         </div>
@@ -1010,6 +1283,58 @@
             answer.classList.toggle('active');
         }
 
+        function toggleService(element) {
+            const answer = element.nextElementSibling;
+            const allAnswers = document.querySelectorAll('.service-answer');
+            const allQuestions = document.querySelectorAll('.service-question');
+            
+            // 모든 질문에서 active 클래스 제거
+            allQuestions.forEach(q => q.classList.remove('active'));
+            
+            // 다른 답변들은 모두 닫기
+            allAnswers.forEach(ans => {
+                if (ans !== answer) {
+                    ans.classList.remove('active');
+                }
+            });
+            
+            // 클릭한 답변과 질문 토글
+            const isActive = answer.classList.contains('active');
+            if (!isActive) {
+                element.classList.add('active');
+                answer.classList.add('active');
+            } else {
+                element.classList.remove('active');
+                answer.classList.remove('active');
+            }
+        }
+
+        function toggleProcess(element) {
+            const answer = element.nextElementSibling;
+            const allAnswers = document.querySelectorAll('.process-answer');
+            const allQuestions = document.querySelectorAll('.process-question');
+            
+            // 모든 질문에서 active 클래스 제거
+            allQuestions.forEach(q => q.classList.remove('active'));
+            
+            // 다른 답변들은 모두 닫기
+            allAnswers.forEach(ans => {
+                if (ans !== answer) {
+                    ans.classList.remove('active');
+                }
+            });
+            
+            // 클릭한 답변과 질문 토글
+            const isActive = answer.classList.contains('active');
+            if (!isActive) {
+                element.classList.add('active');
+                answer.classList.add('active');
+            } else {
+                element.classList.remove('active');
+                answer.classList.remove('active');
+            }
+        }
+
         function openSeoPopup() {
             document.getElementById('seoPopup').style.display = 'block';
         }
@@ -1055,15 +1380,13 @@
             });
         }, observerOptions);
 
-        // Observe benefit cards
-        document.querySelectorAll('.benefit-card, .process-step').forEach(card => {
+        // Observe cards
+        document.querySelectorAll('.service-item, .process-item').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(card);
         });
     </script>
-    <!-- 네이버 블로그 고정 버튼 -->
-<a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
 </body>
 </html>
