@@ -132,6 +132,32 @@
             color: #666;
         }
 
+        /* Fixed Blog Button */
+        .fixed-blog-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #03C75A, #00B04F);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .fixed-blog-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(3, 199, 90, 0.6);
+            color: white;
+        }
+
         /* Fixed Call Button */
         .fixed-call-btn {
             position: fixed;
@@ -371,7 +397,7 @@
             font-size: 0.8rem;
         }
 
-        /* FAQ Section - moved up */
+        /* FAQ Section */
         .faq-section {
             background: #f8f9fa;
             padding: 40px 0;
@@ -411,108 +437,247 @@
             display: block;
         }
 
-        /* Event Types */
+        /* Events Section - 원형 프레임 디자인 */
         .events-section {
             background: white;
             padding: 40px 0;
         }
 
-        .events-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .event-card {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
-        }
-
-        .event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        .event-item {
             background: white;
+            margin-bottom: 20px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .event-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.15);
+            border-color: #3498db;
+        }
+
+        .event-question {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 18px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border-radius: 23px 23px 0 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .event-question::before {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .event-question::after {
+            content: '▼';
+            font-size: 14px;
+            transition: transform 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .event-question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .event-question:hover {
+            background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
         }
 
         .event-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: white;
+            color: #3498db;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 15px;
-            font-size: 1.8rem;
-            color: white;
+            font-size: 1.5rem;
+            z-index: 2;
+            font-weight: 700;
         }
 
-        .event-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #2c3e50;
+        .event-text {
+            margin-left: 70px;
+            flex: 1;
         }
 
-        .event-card p {
-            color: #666;
-            line-height: 1.6;
-            font-size: 0.9rem;
+        .event-answer {
+            padding: 25px 30px;
+            display: none;
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            background: linear-gradient(135deg, #f0f8ff 0%, #ffffff 100%);
+            border-radius: 0 0 23px 23px;
+            position: relative;
         }
 
-        /* Services Section */
+        .event-answer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            right: 30px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #3498db 50%, transparent 100%);
+        }
+
+        .event-answer.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        /* Services Section - 원형 프레임 디자인 */
         .services-section {
             background: #f8f9fa;
             padding: 40px 0;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+        .service-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
         }
 
-        .service-card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
+        .service-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(44, 62, 80, 0.15);
+            border-color: #2c3e50;
+        }
+
+        .service-question {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 18px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border-radius: 23px 23px 0 0;
             position: relative;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .service-question::before {
+            content: '';
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-question::after {
+            content: '▼';
+            font-size: 14px;
+            transition: transform 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .service-question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .service-question:hover {
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
         }
 
         .service-number {
             position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 35px;
-            height: 35px;
-            background: linear-gradient(135deg, #3498db, #2980b9);
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            background: white;
+            color: #2c3e50;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             font-weight: 700;
             font-size: 1.1rem;
+            z-index: 2;
         }
 
-        .service-card h4 {
-            color: #2c3e50;
-            margin: 15px 0 10px 0;
-            font-size: 1.2rem;
+        .service-text {
+            margin-left: 60px;
+            flex: 1;
         }
 
-        .service-card p {
-            color: #666;
-            font-size: 0.9rem;
+        .service-answer {
+            padding: 25px 30px;
+            display: none;
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 0 0 23px 23px;
+            position: relative;
+        }
+
+        .service-answer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            right: 30px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #2c3e50 50%, transparent 100%);
+        }
+
+        .service-answer.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Pricing Section */
@@ -589,11 +754,6 @@
                 line-height: 1.6;
             }
 
-            .events-grid, .services-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
             .events-section, .services-section, .faq-section, .pricing-section {
                 padding: 30px 0;
             }
@@ -617,7 +777,6 @@
                 margin: 10px;
             }
 
-            /* Mobile content compression */
             .content-main ul {
                 margin-bottom: 15px;
             }
@@ -629,7 +788,7 @@
             .sidebar {
                 order: -1;
                 padding: 20px;
-                position: static; /* Remove sticky positioning on mobile */
+                position: static;
             }
 
             .quick-contact {
@@ -652,20 +811,11 @@
                 gap: 8px;
                 padding: 10px 0;
             }
-        }
 
-        @media (max-width: 480px) {
-            .header-content {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .phone-number {
-                font-size: 1.5rem;
-            }
-
-            .service-hero h1 {
-                font-size: 1.6rem;
+            .fixed-blog-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 18px;
             }
 
             .fixed-call-btn {
@@ -673,44 +823,128 @@
                 height: 50px;
                 font-size: 20px;
             }
+
+            /* Event Items Mobile */
+            .event-item {
+                border-radius: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .event-question {
+                padding: 15px 20px;
+                font-size: 0.9rem;
+                border-radius: 18px 18px 0 0;
+            }
+            
+            .event-question::before {
+                width: 45px;
+                height: 45px;
+                left: 15px;
+            }
+            
+            .event-icon {
+                left: 18px;
+                width: 35px;
+                height: 35px;
+                font-size: 1.3rem;
+            }
+            
+            .event-text {
+                margin-left: 60px;
+            }
+            
+            .event-answer {
+                padding: 20px 25px;
+                font-size: 0.9rem;
+                border-radius: 0 0 18px 18px;
+            }
+            
+            .event-answer::before {
+                left: 25px;
+                right: 25px;
+            }
+
+            /* Service Items Mobile */
+            .service-item {
+                border-radius: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .service-question {
+                padding: 15px 20px;
+                font-size: 0.9rem;
+                border-radius: 18px 18px 0 0;
+            }
+            
+            .service-question::before {
+                width: 35px;
+                height: 35px;
+                left: 15px;
+            }
+            
+            .service-number {
+                left: 17px;
+                width: 31px;
+                height: 31px;
+                font-size: 1rem;
+            }
+            
+            .service-text {
+                margin-left: 50px;
+            }
+            
+            .service-answer {
+                padding: 20px 25px;
+                font-size: 0.9rem;
+                border-radius: 0 0 18px 18px;
+            }
+            
+            .service-answer::before {
+                left: 25px;
+                right: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+                padding-left: 15px;
+            }
+
+            .logo {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .logo > div:last-child {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo > div:last-child > div {
+                font-size: 1.6rem;
+            }
+
+            .logo > div:last-child > p {
+                font-size: 0.75rem;
+                margin-left: -10px;
+            }
+
+            .phone-number {
+                font-size: 1.3rem;
+                width: 100%;
+                text-align: left;
+                padding-left: 15px;
+            }
+
+            .service-hero h1 {
+                font-size: 1.6rem;
+            }
         }
     </style>
-    <style>
-/* 네이버 블로그 고정 버튼 */
-.fixed-blog-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #03C75A, #00B04F);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-.fixed-blog-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(3, 199, 90, 0.6);
-    color: white;
-}
-
-/* 모바일 최적화 */
-@media (max-width: 768px) {
-    .fixed-blog-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
-    }
-}
-</style>
 </head>
 <body>
     <!-- SEO Summary Popup Button -->
@@ -739,7 +973,7 @@
             
             <div style="margin-bottom: 15px;">
                 <h4 style="color: #2c3e50; margin-bottom: 8px;">⭐ 제공 서비스</h4>
-                <p>• 전문 응급구조사 현장 대기<br>• 완전 장비 구급차 배치<br>• 응급처치 및 병원 이송<br>• 실시간 의료상황 모니터링<br>• 상황보고서 제공</p>
+<p>• 전문 응급구조사 현장 대기<br>• 완전 장비 구급차 배치<br>• 응급처치 및 병원 이송<br>• 실시간 의료상황 모니터링<br>• 상황보고서 제공</p>
             </div>
             
             <div>
@@ -748,6 +982,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Fixed Blog Button -->
+    <a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
 
     <!-- Fixed Call Button -->
     <a href="tel:010-8841-4114" class="fixed-call-btn" title="견적 문의 전화">📞</a>
@@ -762,13 +999,12 @@
                         <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충북 행사구급차 전문</p>
                     </div>
                 </div>
-                <!-- 이 부분이 변경됩니다. -->
-            <div class="emergency-contact">
-                <a href="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html" 
-                   style="color: #FFFF00; font-weight: bold; font-size: 1.3em; text-decoration: none; display: block; text-align: right; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
-                    충북 지역별 병원찾기(클릭)
-                </a>
-            </div>
+                <div class="emergency-contact">
+                    <a href="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html" 
+                       style="color: #FFFF00; font-weight: bold; font-size: 1.3em; text-decoration: none; display: block; text-align: right; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
+                        충북 지역별 병원찾기(클릭)
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -966,37 +1202,65 @@
     <section class="events-section">
         <div class="container">
             <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">지원 가능 행사</h2>
-            <p style="text-align: center; font-size: 1rem; color: #666;">다양한 유형의 행사에 맞춤형 행사구급차 서비스</p>
-            <div class="events-grid">
-                <div class="event-card">
+            <p style="text-align: center; font-size: 1rem; color: #666; margin-bottom: 30px;">다양한 유형의 행사에 맞춤형 행사구급차 서비스</p>
+            
+            <div class="event-item">
+                <div class="event-question" onclick="toggleEvent(this)">
                     <div class="event-icon">🏃‍♂️</div>
-                    <h3>체육대회</h3>
-                    <p>마라톤, 축구, 농구 등 각종 스포츠 경기에서 발생할 수 있는 외상과 열사병에 대비한 행사구급차</p>
+                    <div class="event-text">체육대회 행사구급차 (클릭하여 자세히)</div>
                 </div>
-                <div class="event-card">
+                <div class="event-answer">
+                    마라톤, 축구, 농구 등 각종 스포츠 경기에서 발생할 수 있는 외상과 열사병에 대비한 행사구급차입니다. 운동 중 발생하는 탈수, 근육 경련, 골절, 염좌 등에 즉시 대응할 수 있는 전문 의료진이 현장에 대기합니다. 특히 마라톤과 같은 지구력 운동에서는 심혈관 응급상황에 대한 특별한 준비를 갖추고 있습니다.
+                </div>
+            </div>
+
+            <div class="event-item">
+                <div class="event-question" onclick="toggleEvent(this)">
                     <div class="event-icon">🎭</div>
-                    <h3>문화행사</h3>
-                    <p>축제, 콘서트, 공연 등 대규모 문화행사에서의 응급의료 지원 및 안전 관리</p>
+                    <div class="event-text">문화행사 행사구급차 (클릭하여 자세히)</div>
                 </div>
-                <div class="event-card">
+                <div class="event-answer">
+                    축제, 콘서트, 공연 등 대규모 문화행사에서의 응급의료 지원 및 안전 관리를 제공합니다. 군중 집중으로 인한 압사사고, 무대 사고, 음주로 인한 응급상황 등에 대비합니다. 야외 축제의 경우 기상 조건에 따른 응급상황 대응과 대규모 인파 관리 경험을 바탕으로 안전한 행사 진행을 지원합니다.
+                </div>
+            </div>
+
+            <div class="event-item">
+                <div class="event-question" onclick="toggleEvent(this)">
                     <div class="event-icon">🏢</div>
-                    <h3>기업행사</h3>
-                    <p>세미나, 컨퍼런스, 기업 체육대회 등 기업 행사에서의 의료 안전망 제공</p>
+                    <div class="event-text">기업행사 행사구급차 (클릭하여 자세히)</div>
                 </div>
-                <div class="event-card">
+                <div class="event-answer">
+                    세미나, 컨퍼런스, 기업 체육대회 등 기업 행사에서의 의료 안전망을 제공합니다. 장시간 앉아있는 세미나에서의 순환기 문제, 기업 체육대회에서의 운동 부상, 회식 후 음주 관련 응급상황 등에 대응합니다. 기업의 명성과 직결되는 만큼 신속하고 조용한 대응을 통해 행사 진행에 지장을 최소화합니다.
+                </div>
+            </div>
+
+            <div class="event-item">
+                <div class="event-question" onclick="toggleEvent(this)">
                     <div class="event-icon">🎬</div>
-                    <h3>촬영현장</h3>
-                    <p>영화, 드라마, 광고 촬영 현장에서의 스태프 및 출연진 안전을 위한 행사구급차</p>
+                    <div class="event-text">촬영현장 행사구급차 (클릭하여 자세히)</div>
                 </div>
-                <div class="event-card">
+                <div class="event-answer">
+                    영화, 드라마, 광고 촬영 현장에서의 스태프 및 출연진 안전을 위한 행사구급차 서비스입니다. 액션 시퀀스 촬영 중 부상, 장시간 촬영으로 인한 과로, 특수 효과나 스턴트로 인한 사고 등에 즉시 대응합니다. 촬영 일정에 맞춰 24시간 대기하며, 응급상황 시 촬영 중단 최소화를 위해 신속한 처치와 이송을 제공합니다.
+                </div>
+            </div>
+
+            <div class="event-item">
+                <div class="event-question" onclick="toggleEvent(this)">
                     <div class="event-icon">🙏</div>
-                    <h3>종교행사</h3>
-                    <p>대형 종교집회, 야외예배 등에서 고령자가 많은 특성을 고려한 행사구급차</p>
+                    <div class="event-text">종교행사 행사구급차 (클릭하여 자세히)</div>
                 </div>
-                <div class="event-card">
+                <div class="event-answer">
+                    대형 종교집회, 야외예배 등에서 고령자가 많은 특성을 고려한 행사구급차 서비스입니다. 고령 참석자들의 만성질환 악화, 장시간 서 있거나 앉아있음으로 인한 어지럼증, 실신 등에 특별히 주의를 기울입니다. 종교적 분위기를 해치지 않도록 조용하고 신중한 대응을 하며, 필요시 기도나 위로의 말씀도 함께 제공합니다.
+                </div>
+            </div>
+
+            <div class="event-item">
+                <div class="event-question" onclick="toggleEvent(this)">
                     <div class="event-icon">📈</div>
-                    <h3>전시박람회</h3>
-                    <p>국제전시회, 산업박람회 등 장기간 진행되는 행사에서의 지속적 행사구급차</p>
+                    <div class="event-text">전시박람회 행사구급차 (클릭하여 자세히)</div>
+                </div>
+                <div class="event-answer">
+                    국제전시회, 산업박람회 등 장기간 진행되는 행사에서의 지속적 행사구급차 서비스입니다. 장시간 서서 관람하는 관람객들의 다리 부종, 어지럼증, 넘어짐 사고 등에 대응합니다. 다국적 참가자들을 고려하여 기본적인 영어 의료 용어 구사가 가능한 의료진을 배치하며, 며칠간 지속되는 행사의 특성상 교대 근무를 통해 지속적인 의료 지원을 제공합니다.
                 </div>
             </div>
         </div>
@@ -1005,32 +1269,55 @@
     <section class="services-section">
         <div class="container">
             <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">행사구급차 의료지원 절차</h2>
-            <p style="text-align: center; font-size: 1rem; color: #666;">체계적인 5단계로 완벽한 행사 의료지원</p>
-            <div class="services-grid">
-                <div class="service-card">
+            <p style="text-align: center; font-size: 1rem; color: #666; margin-bottom: 30px;">체계적인 5단계로 완벽한 행사 의료지원</p>
+            
+            <div class="service-item">
+                <div class="service-question" onclick="toggleService(this)">
                     <div class="service-number">1</div>
-                    <h4>사전 상담</h4>
-                    <p>행사 규모, 참가인원, 위험요소 등을 분석하여 맞춤형 의료지원 계획 수립</p>
+                    <div class="service-text">사전 상담 (클릭하여 자세히)</div>
                 </div>
-                <div class="service-card">
+                <div class="service-answer">
+                    행사 규모, 참가인원, 위험요소 등을 분석하여 맞춤형 의료지원 계획을 수립합니다. 행사 유형별 특성을 파악하고, 예상되는 응급상황을 사전에 분석합니다. 행사장 접근성, 주변 병원 현황, 날씨 조건 등을 종합적으로 검토하여 최적의 의료지원 방안을 제시합니다.
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-question" onclick="toggleService(this)">
                     <div class="service-number">2</div>
-                    <h4>견적 제공</h4>
-                    <p>행사 특성에 맞는 인력과 장비를 산정하여 투명한 견적서 제공</p>
+                    <div class="service-text">견적 제공 (클릭하여 자세히)</div>
                 </div>
-                <div class="service-card">
+                <div class="service-answer">
+                    행사 특성에 맞는 인력과 장비를 산정하여 투명한 견적서를 제공합니다. 응급구조사 인원 수, 구급차 대수, 근무 시간, 추가 장비 등을 상세히 명시합니다. 장기계약이나 정기 행사의 경우 할인 혜택을 제공하며, 예산에 맞는 맞춤형 패키지도 제안합니다.
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-question" onclick="toggleService(this)">
                     <div class="service-number">3</div>
-                    <h4>현장 준비</h4>
-                    <p>행사 시작 전 현장에 도착하여 의료진과 장비를 배치하고 비상연락망 구축</p>
+                    <div class="service-text">현장 준비 (클릭하여 자세히)</div>
                 </div>
-                <div class="service-card">
+                <div class="service-answer">
+                    행사 시작 전 현장에 도착하여 의료진과 장비를 배치하고 비상연락망을 구축합니다. 구급차 주차 위치 확보, 응급처치실 설치, 주변 병원과의 핫라인 연결, 행사 진행진과의 연락체계 구축 등을 완료합니다. 현장 상황에 맞는 최종 점검을 실시합니다.
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-question" onclick="toggleService(this)">
                     <div class="service-number">4</div>
-                    <h4>현장 대기</h4>
-                    <p>행사 전 기간 동안 현장에서 대기하며 응급상황에 즉시 대응할 수 있도록 준비</p>
+                    <div class="service-text">현장 대기 (클릭하여 자세히)</div>
                 </div>
-                <div class="service-card">
+                <div class="service-answer">
+                    행사 전 기간 동안 현장에서 대기하며 응급상황에 즉시 대응할 수 있도록 준비합니다. 정기적인 순찰을 통해 위험 요소를 사전에 파악하고, 응급환자 발생 시 3분 이내 현장 도착을 목표로 합니다. 경미한 부상부터 중증 응급상황까지 모든 상황에 대응 가능한 체계를 유지합니다.
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-question" onclick="toggleService(this)">
                     <div class="service-number">5</div>
-                    <h4>사후 보고</h4>
-                    <p>행사 종료 후 의료상황 보고서를 작성하여 제출하고 개선사항 제안</p>
+                    <div class="service-text">사후 보고 (클릭하여 자세히)</div>
+                </div>
+                <div class="service-answer">
+                    행사 종료 후 의료상황 보고서를 작성하여 제출하고 개선사항을 제안합니다. 응급상황 발생 현황, 대응 시간, 처치 내용, 병원 이송 여부 등을 상세히 기록합니다. 향후 유사 행사를 위한 개선사항과 예방책을 제안하여 더욱 안전한 행사 운영을 위한 자료를 제공합니다.
                 </div>
             </div>
         </div>
@@ -1100,6 +1387,58 @@
             answer.classList.toggle('active');
         }
 
+        function toggleEvent(element) {
+            const answer = element.nextElementSibling;
+            const allAnswers = document.querySelectorAll('.event-answer');
+            const allQuestions = document.querySelectorAll('.event-question');
+            
+            // 모든 질문에서 active 클래스 제거
+            allQuestions.forEach(q => q.classList.remove('active'));
+            
+            // 다른 답변들은 모두 닫기
+            allAnswers.forEach(ans => {
+                if (ans !== answer) {
+                    ans.classList.remove('active');
+                }
+            });
+            
+            // 클릭한 답변과 질문 토글
+            const isActive = answer.classList.contains('active');
+            if (!isActive) {
+                element.classList.add('active');
+                answer.classList.add('active');
+            } else {
+                element.classList.remove('active');
+                answer.classList.remove('active');
+            }
+        }
+
+        function toggleService(element) {
+            const answer = element.nextElementSibling;
+            const allAnswers = document.querySelectorAll('.service-answer');
+            const allQuestions = document.querySelectorAll('.service-question');
+            
+            // 모든 질문에서 active 클래스 제거
+            allQuestions.forEach(q => q.classList.remove('active'));
+            
+            // 다른 답변들은 모두 닫기
+            allAnswers.forEach(ans => {
+                if (ans !== answer) {
+                    ans.classList.remove('active');
+                }
+            });
+            
+            // 클릭한 답변과 질문 토글
+            const isActive = answer.classList.contains('active');
+            if (!isActive) {
+                element.classList.add('active');
+                answer.classList.add('active');
+            } else {
+                element.classList.remove('active');
+                answer.classList.remove('active');
+            }
+        }
+
         function openSeoPopup() {
             document.getElementById('seoPopup').style.display = 'block';
         }
@@ -1146,14 +1485,12 @@
         }, observerOptions);
 
         // Observe cards
-        document.querySelectorAll('.event-card, .service-card').forEach(card => {
+        document.querySelectorAll('.event-item, .service-item').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(card);
         });
     </script>
-    <!-- 네이버 블로그 고정 버튼 -->
-<a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
 </body>
 </html>
