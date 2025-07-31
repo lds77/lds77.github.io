@@ -132,7 +132,7 @@
             color: #666;
         }
 
-        /* Fixed Blog Button - 전화버튼과 같은 높이 */
+        /* Fixed Blog Button */
         .fixed-blog-btn {
             position: fixed;
             bottom: 20px;
@@ -458,58 +458,121 @@
             display: block;
         }
 
-        /* Treatment Types */
+        /* Treatment Section */
         .treatment-section {
             background: white;
             padding: 40px 0;
         }
 
-        .treatment-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .treatment-card {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
-        }
-
-        .treatment-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        /* Treatment Items - 원형 프레임 디자인 */
+        .treatment-item {
             background: white;
+            margin-bottom: 20px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .treatment-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(211, 84, 0, 0.15);
+            border-color: #d35400;
+        }
+
+        .treatment-question {
+            background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
+            color: white;
+            padding: 18px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border-radius: 23px 23px 0 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .treatment-question::before {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .treatment-question::after {
+            content: '▼';
+            font-size: 14px;
+            transition: transform 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .treatment-question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .treatment-question:hover {
+            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
         }
 
         .treatment-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #d35400, #e67e22);
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: white;
+            color: #d35400;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 15px;
-            font-size: 1.8rem;
-            color: white;
+            font-size: 1.5rem;
+            z-index: 2;
+            font-weight: 700;
         }
 
-        .treatment-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #2c3e50;
+        .treatment-text {
+            margin-left: 70px;
+            flex: 1;
         }
 
-        .treatment-card p {
-            color: #666;
-            line-height: 1.6;
-            font-size: 0.9rem;
+        .treatment-answer {
+            padding: 25px 30px;
+            display: none;
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%);
+            border-radius: 0 0 23px 23px;
+            position: relative;
+        }
+
+        .treatment-answer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            right: 30px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #d35400 50%, transparent 100%);
+        }
+
+        .treatment-answer.active {
+            display: block;
+            animation: slideDown 0.3s ease;
         }
 
         /* Steps Section */
@@ -518,48 +581,126 @@
             padding: 40px 0;
         }
 
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+        /* Steps Items - 원형 프레임 디자인 */
+        .steps-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
         }
 
-        .step-card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
+        .steps-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(44, 62, 80, 0.15);
+            border-color: #2c3e50;
+        }
+
+        .steps-question {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 18px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border-radius: 23px 23px 0 0;
             position: relative;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .steps-question::before {
+            content: '';
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .steps-question::after {
+            content: '▼';
+            font-size: 14px;
+            transition: transform 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .steps-question.active::after {
+            transform: rotate(180deg);
+        }
+
+        .steps-question:hover {
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
         }
 
         .step-number {
             position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 35px;
-            height: 35px;
-            background: linear-gradient(135deg, #d35400, #e67e22);
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            background: white;
+            color: #2c3e50;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             font-weight: 700;
             font-size: 1.1rem;
+            z-index: 2;
         }
 
-        .step-card h4 {
-            color: #2c3e50;
-            margin: 15px 0 10px 0;
-            font-size: 1.2rem;
+        .step-text {
+            margin-left: 60px;
+            flex: 1;
         }
 
-        .step-card p {
-            color: #666;
-            font-size: 0.9rem;
+        .steps-answer {
+            padding: 25px 30px;
+            display: none;
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 0 0 23px 23px;
+            position: relative;
+        }
+
+        .steps-answer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            right: 30px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #2c3e50 50%, transparent 100%);
+        }
+
+        .steps-answer.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Mobile Responsive */
@@ -599,11 +740,6 @@
                 line-height: 1.6;
             }
 
-            .treatment-grid, .steps-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
             .treatment-section, .steps-section, .faq-section {
                 padding: 30px 0;
             }
@@ -620,8 +756,8 @@
             .seo-summary-btn {
                 padding: 10px 14px;
                 font-size: 0.9rem;
-                top: 60px; /* 모바일에서 상단 여백 조정 */
-                right: 10px; /* 모바일에서 우측 여백 조정 */
+                top: 60px;
+                right: 10px;
             }
 
             .seo-popup-content {
@@ -657,7 +793,6 @@
                 margin: 15px 0;
             }
 
-            /* Mobile fixed buttons - 같은 높이 좌우 배치 */
             .fixed-blog-btn {
                 bottom: 20px;
                 left: 20px;
@@ -671,41 +806,121 @@
                 height: 50px;
                 font-size: 20px;
             }
+
+            /* Treatment Items Mobile */
+            .treatment-item {
+                border-radius: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .treatment-question {
+                padding: 15px 20px;
+                font-size: 0.9rem;
+                border-radius: 18px 18px 0 0;
+            }
+            
+            .treatment-question::before {
+                width: 45px;
+                height: 45px;
+                left: 15px;
+            }
+            
+            .treatment-icon {
+                left: 18px;
+                width: 35px;
+                height: 35px;
+                font-size: 1.3rem;
+            }
+            
+            .treatment-text {
+                margin-left: 60px;
+            }
+            
+            .treatment-answer {
+                padding: 20px 25px;
+                font-size: 0.9rem;
+                border-radius: 0 0 18px 18px;
+            }
+            
+            .treatment-answer::before {
+                left: 25px;
+                right: 25px;
+            }
+
+            /* Steps Items Mobile */
+            .steps-item {
+                border-radius: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .steps-question {
+                padding: 15px 20px;
+                font-size: 0.9rem;
+                border-radius: 18px 18px 0 0;
+            }
+            
+            .steps-question::before {
+                width: 35px;
+                height: 35px;
+                left: 15px;
+            }
+            
+            .step-number {
+                left: 17px;
+                width: 31px;
+                height: 31px;
+                font-size: 1rem;
+            }
+            
+            .step-text {
+                margin-left: 50px;
+            }
+            
+            .steps-answer {
+                padding: 20px 25px;
+                font-size: 0.9rem;
+                border-radius: 0 0 18px 18px;
+            }
+            
+            .steps-answer::before {
+                left: 25px;
+                right: 25px;
+            }
         }
 
         @media (max-width: 480px) {
             .header-content {
                 flex-direction: column;
                 gap: 10px;
-                align-items: flex-start; /* 로고와 텍스트를 왼쪽 정렬 */
-                padding-left: 15px; /* 전체 헤더 콘텐츠 왼쪽 여백 */
+                align-items: flex-start;
+                padding-left: 15px;
             }
 
             .logo {
-                width: 100%; /* 로고 영역 전체 너비 사용 */
-                justify-content: flex-start; /* 로고 아이콘과 텍스트를 왼쪽 정렬 */
+                width: 100%;
+                justify-content: flex-start;
             }
 
-            .logo > div:last-child { /* '직지응급환자이송단'과 그 아래 텍스트를 감싸는 div */
+            .logo > div:last-child {
                 display: flex;
                 flex-direction: column;
-                align-items: flex-start; /* 내부 텍스트도 왼쪽 정렬 */
+                align-items: flex-start;
             }
 
-            .logo > div:last-child > div { /* '직지응급환자이송단' 텍스트 */
-                font-size: 1.6rem; /* 글자 크기 조정 */
+            .logo > div:last-child > div {
+                font-size: 1.6rem;
             }
 
-            .logo > div:last-child > p { /* '충청북도 알콜중독치료 전문 24시간' 텍스트 */
-                font-size: 0.75rem; /* 글자 크기 조정 */
-                margin-left: -10px; /* 왼쪽으로 더 밀기 */
+            .logo > div:last-child > p {
+                font-size: 0.75rem;
+                margin-left: -10px;
             }
 
             .phone-number {
                 font-size: 1.3rem;
-                width: 100%; /* 전화번호도 전체 너비 사용 */
-                text-align: left; /* 전화번호 왼쪽 정렬 */
-                padding-left: 15px; /* 전화번호 왼쪽 여백 */
+                width: 100%;
+                text-align: left;
+                padding-left: 15px;
             }
 
             .service-hero h1 {
@@ -751,7 +966,7 @@
         </div>
     </div>
 
-    <!-- Fixed Blog Button - 팝업 없이 바로 새 창 열기 -->
+    <!-- Fixed Blog Button -->
     <a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
 
     <!-- Fixed Call Button -->
@@ -764,17 +979,15 @@
                     <div class="logo-icon">🚑</div>
                     <div>
                         <div style="font-size: 1.8rem; font-weight: 700; margin: 0; color: white;">직지응급환자이송단</div>
-                        <!-- 이 부분을 수정했습니다. -->
                         <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">알콜중독치료 강제입원 전문</p>
                     </div>
                 </div>
-                <!-- 이 부분이 변경됩니다. -->
-            <div class="emergency-contact">
-                <a href="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html" 
-                   style="color: #FFFF00; font-weight: bold; font-size: 1.3em; text-decoration: none; display: block; text-align: right; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
-                    충북 지역별 병원찾기(클릭)
-                </a>
-            </div>
+                <div class="emergency-contact">
+                    <a href="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html" 
+                       style="color: #FFFF00; font-weight: bold; font-size: 1.3em; text-decoration: none; display: block; text-align: right; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
+                        충북 지역별 병원찾기(클릭)
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -974,37 +1187,41 @@
             
             <div class="treatment-item">
                 <div class="treatment-question" onclick="toggleTreatment(this)">
-                    🏥 해독 치료 이송 (클릭하여 자세히)
+                    <div class="treatment-icon">🏥</div>
+                    <div class="treatment-text">해독 치료 이송 (클릭하여 자세히)</div>
                 </div>
                 <div class="treatment-answer">
-                    의료진 감독 하에 안전하게 알콜을 끊고 금단증상을 관리하는 단계입니다. 보통 1-2주 소요되며, 생명을 위협할 수 있는 금단증상을 안전하게 관리합니다. 전문 의료진이 24시간 모니터링하며 필요시 응급처치를 시행합니다.
+                    의료진 감독 하에 안전하게 알콜을 끊고 금단증상을 관리하는 단계입니다. 보통 1-2주 소요되며, 생명을 위협할 수 있는 금단증상을 안전하게 관리합니다. 전문 의료진이 24시간 모니터링하며 필요시 응급처치를 시행합니다. 떨림, 발작, 환각, 의식장애 등의 위험한 증상들을 체계적으로 관리하여 안전한 회복의 첫걸음을 돕습니다.
                 </div>
             </div>
 
             <div class="treatment-item">
                 <div class="treatment-question" onclick="toggleTreatment(this)">
-                    🧠 재활 치료 이송 (클릭하여 자세히)
+                    <div class="treatment-icon">🧠</div>
+                    <div class="treatment-text">재활 치료 이송 (클릭하여 자세히)</div>
                 </div>
                 <div class="treatment-answer">
-                    심리치료, 그룹치료, 행동요법 등을 통해 근본적인 회복을 추구하는 장기 프로그램입니다. 개인상담, 집단치료, 가족치료, 인지행동치료 등을 통해 알콜 없는 삶을 살아갈 수 있는 능력을 기릅니다.
+                    심리치료, 그룹치료, 행동요법 등을 통해 근본적인 회복을 추구하는 장기 프로그램입니다. 개인상담, 집단치료, 가족치료, 인지행동치료 등을 통해 알콜 없는 삶을 살아갈 수 있는 능력을 기릅니다. 음주 욕구 관리, 스트레스 대처 방법, 대인관계 기술 등을 체계적으로 학습하여 지속 가능한 회복을 지원합니다.
                 </div>
             </div>
 
             <div class="treatment-item">
                 <div class="treatment-question" onclick="toggleTreatment(this)">
-                    👥 사회복귀 프로그램 이송 (클릭하여 자세히)
+                    <div class="treatment-icon">👥</div>
+                    <div class="treatment-text">사회복귀 프로그램 이송 (클릭하여 자세히)</div>
                 </div>
                 <div class="treatment-answer">
-                    사회적 기능을 회복하고 직업재활, 가족관계 회복을 위한 종합적인 지원 프로그램입니다. 직업훈련, 대인관계 기술, 스트레스 관리, 여가활동 등을 통해 건강한 사회생활로의 복귀를 지원합니다.
+                    사회적 기능을 회복하고 직업재활, 가족관계 회복을 위한 종합적인 지원 프로그램입니다. 직업훈련, 대인관계 기술, 스트레스 관리, 여가활동 등을 통해 건강한 사회생활로의 복귀를 지원합니다. 취업 준비, 가족 상담, 사회적응 훈련 등을 통해 완전한 사회복귀를 목표로 합니다.
                 </div>
             </div>
 
             <div class="treatment-item">
                 <div class="treatment-question" onclick="toggleTreatment(this)">
-                    🔄 지속 관리 프로그램 (클릭하여 자세히)
+                    <div class="treatment-icon">🔄</div>
+                    <div class="treatment-text">지속 관리 프로그램 (클릭하여 자세히)</div>
                 </div>
                 <div class="treatment-answer">
-                    퇴원 후에도 지속적인 외래치료와 자조모임을 통해 재발을 방지하는 장기 관리 프로그램입니다. 정기적인 상담, 약물치료, AA모임 참여, 가족 지원 등을 통해 장기간의 회복을 유지합니다.
+                    퇴원 후에도 지속적인 외래치료와 자조모임을 통해 재발을 방지하는 장기 관리 프로그램입니다. 정기적인 상담, 약물치료, AA모임 참여, 가족 지원 등을 통해 장기간의 회복을 유지합니다. 재발 위험 신호 조기 발견, 위기 상황 대처 능력 강화, 지속적인 동기 유지를 통해 평생 회복을 지원합니다.
                 </div>
             </div>
         </div>
@@ -1013,32 +1230,55 @@
     <section class="steps-section">
         <div class="container">
             <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 15px;">알콜중독치료 절차</h2>
-            <p style="text-align: center; font-size: 1rem; color: #666;">체계적이고 안전한 5단계 이송 과정</p>
-            <div class="steps-grid">
-                <div class="step-card">
+            <p style="text-align: center; font-size: 1rem; color: #666; margin-bottom: 30px;">체계적이고 안전한 5단계 이송 과정</p>
+            
+            <div class="steps-item">
+                <div class="steps-question" onclick="toggleSteps(this)">
                     <div class="step-number">1</div>
-                    <h4>응급 상담</h4>
-                    <p>환자 상태, 음주 패턴, 금단증상 등을 파악하고 응급도를 평가</p>
+                    <div class="step-text">응급 상담 (클릭하여 자세히)</div>
                 </div>
-                <div class="step-card">
+                <div class="steps-answer">
+                    환자 상태, 음주 패턴, 금단증상 등을 파악하고 응급도를 평가합니다. 24시간 상담 가능하며, 전문 상담사가 환자의 알콜 사용 정도, 이전 치료 경험, 현재 건강상태, 가족력 등을 종합적으로 평가하여 적절한 치료 방향을 제시합니다.
+                </div>
+            </div>
+
+            <div class="steps-item">
+                <div class="steps-question" onclick="toggleSteps(this)">
                     <div class="step-number">2</div>
-                    <h4>병원 연계</h4>
-                    <p>환자 상태에 가장 적합한 알콜 전문병원을 선정하고 입원 준비</p>
+                    <div class="step-text">병원 연계 (클릭하여 자세히)</div>
                 </div>
-                <div class="step-card">
+                <div class="steps-answer">
+                    환자 상태에 가장 적합한 알콜 전문병원을 선정하고 입원 준비를 진행합니다. 충북 지역 내 알콜 전문병원과의 네트워크를 통해 최적의 치료기관을 선택하며, 입원 절차와 필요 서류를 미리 준비합니다.
+                </div>
+            </div>
+
+            <div class="steps-item">
+                <div class="steps-question" onclick="toggleSteps(this)">
                     <div class="step-number">3</div>
-                    <h4>전문팀 출동</h4>
-                    <p>알콜중독 이송 경험이 풍부한 전문 응급구조사가 출동</p>
+                    <div class="step-text">전문팀 출동 (클릭하여 자세히)</div>
                 </div>
-                <div class="step-card">
+                <div class="steps-answer">
+                    알콜중독 이송 경험이 풍부한 전문 응급구조사가 출동합니다. 금단증상 관리, 환자 안전, 응급처치에 특화된 교육을 받은 전문 인력이 적절한 의료장비와 함께 현장에 출동하여 환자를 안전하게 보호합니다.
+                </div>
+            </div>
+
+            <div class="steps-item">
+                <div class="steps-question" onclick="toggleSteps(this)">
                     <div class="step-number">4</div>
-                    <h4>안전한 이송</h4>
-                    <p>금단증상 모니터링과 안전 관리를 하며 목적지까지 이송</p>
+                    <div class="step-text">안전한 이송 (클릭하여 자세히)</div>
                 </div>
-                <div class="step-card">
+                <div class="steps-answer">
+                    금단증상 모니터링과 안전 관리를 하며 목적지까지 이송합니다. 이송 중 환자의 생체징후를 지속적으로 모니터링하고, 응급상황 발생 시 즉시 대응할 수 있는 장비와 인력을 갖추고 있습니다.
+                </div>
+            </div>
+
+            <div class="steps-item">
+                <div class="steps-question" onclick="toggleSteps(this)">
                     <div class="step-number">5</div>
-                    <h4>병원 인계</h4>
-                    <p>의료진에게 환자 상태와 이송 경과를 상세히 인계하고 치료 시작</p>
+                    <div class="step-text">병원 인계 (클릭하여 자세히)</div>
+                </div>
+                <div class="steps-answer">
+                    의료진에게 환자 상태와 이송 경과를 상세히 인계하고 치료가 시작됩니다. 이송 중 관찰된 환자의 상태 변화, 투여된 응급처치, 가족력과 음주력 등을 의료진에게 정확히 전달하여 원활한 치료 시작을 지원합니다.
                 </div>
             </div>
         </div>
@@ -1090,6 +1330,58 @@
             answer.classList.toggle('active');
         }
 
+        function toggleTreatment(element) {
+            const answer = element.nextElementSibling;
+            const allAnswers = document.querySelectorAll('.treatment-answer');
+            const allQuestions = document.querySelectorAll('.treatment-question');
+            
+            // 모든 질문에서 active 클래스 제거
+            allQuestions.forEach(q => q.classList.remove('active'));
+            
+            // 다른 답변들은 모두 닫기
+            allAnswers.forEach(ans => {
+                if (ans !== answer) {
+                    ans.classList.remove('active');
+                }
+            });
+            
+            // 클릭한 답변과 질문 토글
+            const isActive = answer.classList.contains('active');
+            if (!isActive) {
+                element.classList.add('active');
+                answer.classList.add('active');
+            } else {
+                element.classList.remove('active');
+                answer.classList.remove('active');
+            }
+        }
+
+        function toggleSteps(element) {
+            const answer = element.nextElementSibling;
+            const allAnswers = document.querySelectorAll('.steps-answer');
+            const allQuestions = document.querySelectorAll('.steps-question');
+            
+            // 모든 질문에서 active 클래스 제거
+            allQuestions.forEach(q => q.classList.remove('active'));
+            
+            // 다른 답변들은 모두 닫기
+            allAnswers.forEach(ans => {
+                if (ans !== answer) {
+                    ans.classList.remove('active');
+                }
+            });
+            
+            // 클릭한 답변과 질문 토글
+            const isActive = answer.classList.contains('active');
+            if (!isActive) {
+                element.classList.add('active');
+                answer.classList.add('active');
+            } else {
+                element.classList.remove('active');
+                answer.classList.remove('active');
+            }
+        }
+
         function openSeoPopup() {
             document.getElementById('seoPopup').style.display = 'block';
         }
@@ -1136,7 +1428,7 @@
         }, observerOptions);
 
         // Observe cards
-        document.querySelectorAll('.treatment-card, .step-card').forEach(card => {
+        document.querySelectorAll('.treatment-item, .steps-item').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
