@@ -1339,89 +1339,519 @@
         </div>
     </section>
 
+    <style>
+.faq-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.faq-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.faq-grid {
+    display: grid;
+    gap: 15px;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+    background: #667eea;
+    color: white;
+    padding: 20px 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    position: relative;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-question:hover {
+    background: #5a6fd8;
+}
+
+.faq-answer {
+    display: none;
+    padding: 25px;
+    background: white;
+    border-top: 2px solid #667eea;
+}
+
+.faq-answer.active {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.faq-answer p {
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 모바일 컴팩트 스타일 */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 25px 0;
+    }
+    
+    .faq-section .container {
+        padding: 0 15px;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+        line-height: 1.2;
+    }
+    
+    .section-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+    
+    .faq-grid {
+        gap: 10px;
+    }
+    
+    .faq-question {
+        padding: 15px 20px;
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+    
+    .faq-question::after {
+        right: 20px;
+        font-size: 1.2rem;
+    }
+    
+    .faq-answer {
+        padding: 15px 20px;
+    }
+    
+    .faq-answer p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+}
+
+/* 아주 작은 화면 */
+@media (max-width: 360px) {
+    .faq-section {
+        padding: 20px 0;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .faq-question {
+        padding: 12px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .faq-answer {
+        padding: 12px 15px;
+    }
+    
+    .faq-answer p {
+        font-size: 0.8rem;
+    }
+}
+</style>
+
+<script>
+function toggleFaq(element) {
+    const answer = element.nextElementSibling;
+    const question = element;
+    
+    // Close all other FAQ items
+    const allQuestions = document.querySelectorAll('.faq-question');
+    const allAnswers = document.querySelectorAll('.faq-answer');
+    
+    allQuestions.forEach(q => {
+        if (q !== question) {
+            q.classList.remove('active');
+        }
+    });
+    
+    allAnswers.forEach(a => {
+        if (a !== answer) {
+            a.classList.remove('active');
+        }
+    });
+    
+    // Toggle current item
+    question.classList.toggle('active');
+    answer.classList.toggle('active');
+}
+</script>
+
     <!-- 청주사설구급차 전문 이송 서비스 (Services Section) - 순서 변경됨 -->
     <section class="services-section">
-        <div class="container">
-            <h2 class="section-title">청주사설구급차 전문 이송 서비스</h2>
-            <p class="section-subtitle">청주시 의료중심도시 특성에 맞는 6가지 전문 청주구급차 이송 서비스를 제공합니다</p>
-            
-            <div class="services-grid">
-                <div class="service-card" onclick="location.href='general_patient_transport.html'">
-                    <div class="service-icon">🏥</div>
-                    <h3>청주 일반환자이송</h3>
-                    <p>충북대학교병원, 청주성모병원 등 상급종합병원 이송. 청주시 4개구 병원 간 전원, 외래진료, 입퇴원 청주구급차 이송에 특화되어 있습니다.</p>
-                    <div class="service-features">
-                        <span class="feature-tag">상급종합병원</span>
-                        <span class="feature-tag">4개구 커버</span>
-                        <span class="feature-tag">외래진료</span>
-                    </div>
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content">
+                    <h2 class="section-title">청주사설구급차 전문 이송 서비스</h2>
+                    <p class="section-subtitle">청주시 의료중심도시 특성에 맞는 6가지 전문 청주구급차 이송 서비스를 제공합니다</p>
                 </div>
-
-                <div class="service-card" onclick="location.href='nursing_home_transport.html'">
-                    <div class="service-icon">🏚️</div>
-                    <h3>청주 요양병원입원</h3>
-                    <p>청주시 다수의 요양병원과 연계하여 청주사설구급차로 안전하고 편안한 이송. 청주 지역 전문 의료시설까지 이송 서비스를 제공합니다.</p>
-                    <div class="service-features">
-                        <span class="feature-tag">침상형 구급차</span>
-                        <span class="feature-tag">요양병원 연계</span>
-                        <span class="feature-tag">전문 이송</span>
-                    </div>
-                </div>
-
-                <div class="service-card" onclick="location.href='mental_health_transport.html'">
-                    <div class="service-icon">🧠</div>
-                    <h3>청주 정신병원 입원</h3>
-                    <p>청주 지역 정신병원과 연계하여 안전하고 인도적인 청주구급차 이송. 충북대병원 정신건강의학과 등 전문 의료진에게 신속하게 이송합니다.</p>
-                    <div class="service-features">
-                        <span class="feature-tag">정신병원입원</span>
-                        <span class="feature-tag">충북대병원</span>
-                        <span class="feature-tag">비밀보장</span>
-                    </div>
-                </div>
-
-                <div class="service-card" onclick="location.href='alcohol_treatment_transport.html'">
-                    <div class="service-icon">🍺</div>
-                    <h3>청주 알코올중독 입원</h3>
-                    <p>청주시 알코올중독 전문치료 병원과 연계하여 체계적인 치료 이송. 도시 특성상 다양한 치료기관 선택이 가능한 맞춤형 청주사설구급차 이송 서비스입니다.</p>
-                    <div class="service-features">
-                        <span class="feature-tag">알코올중독 입원</span>
-                        <span class="feature-tag">치료기관 연계</span>
-                        <span class="feature-tag">체계적 치료</span>
-                    </div>
-                </div>
-
-                <div class="service-card" onclick="location.href='event_medical_support.html'">
-                    <div class="service-icon">🎭</div>
-                    <h3>청주 행사의료지원</h3>
-                    <p>청주시 각종 문화축제, 체육대회, 기업 이벤트 등에서의 응급의료 지원. 의료중심도시 인프라를 활용한 전문 청주구급차 지원 서비스입니다.</p>
-                    <div class="service-features">
-                        <span class="feature-tag">문화축제</span>
-                        <span class="feature-tag">체육대회</span>
-                        <span class="feature-tag">의료중심도시</span>
-                    </div>
-                </div>
-
-                <div class="service-card" onclick="location.href='goin_transport_service.html'">
-                    <div class="service-icon">🕊️</div>
-                    <h3>청주 고인이송</h3>
-                    <p>청주시 4개구 장례식장으로의 정중한 고인 이송. 의료중심도시 특성상 다양한 장례시설 연계와 존엄성을 지키는 전문 청주사설구급차 이송 서비스를 제공합니다.</p>
-                    <div class="service-features">
-                        <span class="feature-tag">존엄성 보장</span>
-                        <span class="feature-tag">4개구 커버</span>
-                        <span class="feature-tag">장례시설 연계</span>
-                    </div>
-                </div>
+                <span class="main-toggle-btn">+</span>
             </div>
+            
+            <div class="main-accordion-content">
+                <div class="services-grid">
+                    <div class="service-card" onclick="location.href='general_patient_transport.html'">
+                        <div class="service-icon">🏥</div>
+                        <h3>청주 일반환자이송</h3>
+                        <p>충북대학교병원, 청주성모병원 등 상급종합병원 이송. 청주시 4개구 병원 간 전원, 외래진료, 입퇴원 청주구급차 이송에 특화되어 있습니다.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">상급종합병원</span>
+                            <span class="feature-tag">4개구 커버</span>
+                            <span class="feature-tag">외래진료</span>
+                        </div>
+                    </div>
 
-            <div style="text-align: center; margin-top: 40px; padding: 25px; background: #fdeaea; border-radius: 15px;">
-                <h4 style="color: #e74c3c; margin-bottom: 15px;">🏥 청주사설구급차 특화 서비스</h4>
-                <p style="color: #555; line-height: 1.6;">
-                    충청북도 중심도시 청주의 상급종합병원과 첨단의료시설을 연계한 우수한 청주구급차 응급의료 서비스를 제공합니다. 
-                    4개구 전 지역에서 24시간 신속한 대응이 가능하며, 충북 최고의 의료 인프라를 활용한 전문 청주사설구급차 이송 서비스를 경험하세요.
-                </p>
+                    <div class="service-card" onclick="location.href='nursing_home_transport.html'">
+                        <div class="service-icon">🏚️</div>
+                        <h3>청주 요양병원입원</h3>
+                        <p>청주시 다수의 요양병원과 연계하여 청주사설구급차로 안전하고 편안한 이송. 청주 지역 전문 의료시설까지 이송 서비스를 제공합니다.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">침상형 구급차</span>
+                            <span class="feature-tag">요양병원 연계</span>
+                            <span class="feature-tag">전문 이송</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card" onclick="location.href='mental_health_transport.html'">
+                        <div class="service-icon">🧠</div>
+                        <h3>청주 정신병원 입원</h3>
+                        <p>청주 지역 정신병원과 연계하여 안전하고 인도적인 청주구급차 이송. 충북대병원 정신건강의학과 등 전문 의료진에게 신속하게 이송합니다.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">정신병원입원</span>
+                            <span class="feature-tag">충북대병원</span>
+                            <span class="feature-tag">비밀보장</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card" onclick="location.href='alcohol_treatment_transport.html'">
+                        <div class="service-icon">🍺</div>
+                        <h3>청주 알코올중독 입원</h3>
+                        <p>청주시 알코올중독 전문치료 병원과 연계하여 체계적인 치료 이송. 도시 특성상 다양한 치료기관 선택이 가능한 맞춤형 청주사설구급차 이송 서비스입니다.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">알코올중독 입원</span>
+                            <span class="feature-tag">치료기관 연계</span>
+                            <span class="feature-tag">체계적 치료</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card" onclick="location.href='event_medical_support.html'">
+                        <div class="service-icon">🎭</div>
+                        <h3>청주 행사의료지원</h3>
+                        <p>청주시 각종 문화축제, 체육대회, 기업 이벤트 등에서의 응급의료 지원. 의료중심도시 인프라를 활용한 전문 청주구급차 지원 서비스입니다.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">문화축제</span>
+                            <span class="feature-tag">체육대회</span>
+                            <span class="feature-tag">의료중심도시</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card" onclick="location.href='goin_transport_service.html'">
+                        <div class="service-icon">🕊️</div>
+                        <h3>청주 고인이송</h3>
+                        <p>청주시 4개구 장례식장으로의 정중한 고인 이송. 의료중심도시 특성상 다양한 장례시설 연계와 존엄성을 지키는 전문 청주사설구급차 이송 서비스를 제공합니다.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">존엄성 보장</span>
+                            <span class="feature-tag">4개구 커버</span>
+                            <span class="feature-tag">장례시설 연계</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 25px; padding: 15px; background: #fdeaea; border-radius: 15px;">
+                    <h4 style="color: #e74c3c; margin-bottom: 10px;">🏥 청주사설구급차 특화 서비스</h4>
+                    <p style="color: #555; line-height: 1.6;">
+                        충청북도 중심도시 청주의 상급종합병원과 첨단의료시설을 연계한 우수한 청주구급차 응급의료 서비스를 제공합니다. 
+                        4개구 전 지역에서 24시간 신속한 대응이 가능하며, 충북 최고의 의료 인프라를 활용한 전문 청주사설구급차 이송 서비스를 경험하세요.
+                    </p>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+.main-accordion {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.main-accordion-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.main-accordion-header:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px);
+}
+
+.header-content {
+    flex-grow: 1;
+}
+
+.main-accordion-header .section-title {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main-accordion-header .section-subtitle {
+    margin: 0;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: 400;
+}
+
+.main-toggle-btn {
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+}
+
+.main-accordion-header.active .main-toggle-btn {
+    transform: rotate(45deg);
+}
+
+.main-accordion-content {
+    display: none;
+    background: white;
+    padding: 30px;
+}
+
+.main-accordion-content.active {
+    display: block;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border-color: #667eea;
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.service-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.feature-tag {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .main-accordion-header {
+        padding: 20px 25px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-accordion-header .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .main-toggle-btn {
+        margin: 15px 0 0 0;
+    }
+    
+    .main-accordion-content {
+        padding: 20px;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    
+    .service-card {
+        padding: 12px;
+    }
+    
+    .service-card h3 {
+        font-size: 1rem;
+        margin: 0 0 8px 0;
+    }
+    
+    .service-card p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+        margin-bottom: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .service-icon {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+    
+    .service-features {
+        gap: 4px;
+        flex-wrap: wrap;
+    }
+    
+    .feature-tag {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+    }
+}
+</style>
+
+<script>
+function toggleMainAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+</script>
+    
     <section class="quick-info">
         <div class="container">
             <h2 class="section-title">청주사설구급차 이용 가이드</h2>
