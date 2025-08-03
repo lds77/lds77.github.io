@@ -130,36 +130,39 @@
         }
         
         /* Individual hospital card styling */
-        .hospital-card {
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
-            border-radius: 6px;
-            padding: 12px;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            display: block;
-        }
-        
-        .hospital-card.hidden {
-            display: none;
-        }
+.hospital-card {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 12px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
 
-        .hospital-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 100%;
-            background-color: #2a5298;
-            transition: width 0.3s;
-        }
+.hospital-card.hidden {
+    /* display: none; */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+.hospital-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2a5298;
+    transition: width 0.3s;
+}
         
-        .hospital-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
+        .hospital-card:hover:not(.hidden) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
         
         .hospital-card:hover::before {
             width: 100%;
@@ -1819,3 +1822,4 @@
     </script>
 </body>
 </html>
+
