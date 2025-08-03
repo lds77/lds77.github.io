@@ -215,38 +215,45 @@
         }
 
         /* 요약 페이지 모달 */
-        .summary-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            display: none;
-            z-index: 2000;
-            overflow-y: auto;
-        }
-
-        .summary-content {
-            background: white;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 15px;
-            max-width: 600px;
-            margin: 20px auto;
-            position: relative;
-        }
-
-        .summary-close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #666;
-        }
+.summary-modal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0,0,0,0.8);
+   /* display: none; */
+   opacity: 0;
+   visibility: hidden;
+   transform: scale(0.8);
+   transition: all 0.3s ease;
+   z-index: 2000;
+   overflow-y: auto;
+}
+.summary-modal.active {
+   opacity: 1;
+   visibility: visible;
+   transform: scale(1);
+}
+.summary-content {
+   background: white;
+   margin: 20px;
+   padding: 20px;
+   border-radius: 15px;
+   max-width: 600px;
+   margin: 20px auto;
+   position: relative;
+}
+.summary-close {
+   position: absolute;
+   top: 10px;
+   right: 15px;
+   background: none;
+   border: none;
+   font-size: 24px;
+   cursor: pointer;
+   color: #666;
+}
 
         /* 고정 전화 버튼 */
         .fixed-phone-btn {
@@ -1578,27 +1585,6 @@
         }
     </style>
 
-    <!-- 추가 SEO 최적화 요소들 -->
-    <div style="display: none;">
-        <!-- 검색엔진용 숨겨진 키워드 목록 -->
-        <span>단양사설구급차업체</span>
-        <span>단양환자이송</span>
-        <span>단양응급이송</span>
-        <span>단양사설구급차</span>
-        <span>단양구급차요금</span>
-        <span>단양구급차번호</span>
-        <span>소백산구급차</span>
-        <span>단양종합병원이송</span>
-        <span>단양24시간구급차</span>
-        <span>단양응급환자이송</span>
-        <span>단양구급차비용</span>
-        <span>단양읍구급차</span>
-        <span>매포읍구급차</span>
-        <span>대강면구급차</span>
-        <span>가곡면구급차</span>
-        <span>단양행사구급차</span>
-        <span>도담삼봉구급차</span>
-    </div>
  <!-- 네이버 블로그 고정 버튼 -->
 <a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
 </body>
