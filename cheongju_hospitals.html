@@ -1543,7 +1543,7 @@ function toggleFaq(element) {
         <div class="main-accordion">
             <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
                 <div class="header-content">
-                    <h2 class="section-title">청주사설구급차 전문 이송 서비스</h2>
+                    <h2 class="section-title">청주사설구급차 전문 이송 6가지 서비스</h2>
                     <p class="section-subtitle">청주시 의료중심도시 특성에 맞는 6가지 전문 청주구급차 이송 서비스를 제공합니다</p>
                 </div>
                 <span class="main-toggle-btn">+</span>
@@ -1618,12 +1618,18 @@ function toggleFaq(element) {
                     </div>
                 </div>
 
-                <div style="text-align: center; margin-top: 25px; padding: 15px; background: #fdeaea; border-radius: 15px;">
-                    <h4 style="color: #e74c3c; margin-bottom: 10px;">🏥 청주사설구급차 특화 서비스</h4>
-                    <p style="color: #555; line-height: 1.6;">
-                        충청북도 중심도시 청주의 상급종합병원과 첨단의료시설을 연계한 우수한 청주구급차 응급의료 서비스를 제공합니다. 
-                        4개구 전 지역에서 24시간 신속한 대응이 가능하며, 충북 최고의 의료 인프라를 활용한 전문 청주사설구급차 이송 서비스를 경험하세요.
-                    </p>
+                <div class="feature-banner-accordion">
+                    <div class="feature-banner-header" onclick="toggleFeatureBanner(this)">
+                        <span class="banner-icon">🏥</span>
+                        <h4>청주사설구급차 특화 서비스</h4>
+                        <span class="banner-toggle-btn">+</span>
+                    </div>
+                    <div class="feature-banner-content">
+                        <p>
+                            충청북도 중심도시 청주의 상급종합병원과 첨단의료시설을 연계한 우수한 청주구급차 응급의료 서비스를 제공합니다. 
+                            4개구 전 지역에서 24시간 신속한 대응이 가능하며, 충북 최고의 의료 인프라를 활용한 전문 청주사설구급차 이송 서비스를 경험하세요.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1777,8 +1783,70 @@ function toggleFaq(element) {
     color: white;
     padding: 5px 12px;
     border-radius: 20px;
-    font-size: ;
+    font-size: 0.85rem;
     font-weight: 500;
+}
+
+/* 특화서비스 아코디언 */
+.feature-banner-accordion {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.feature-banner-header {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.feature-banner-header:hover {
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+}
+
+.banner-icon {
+    font-size: 1.3rem;
+    margin-right: 12px;
+}
+
+.feature-banner-header h4 {
+    margin: 0;
+    flex-grow: 1;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.banner-toggle-btn {
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.feature-banner-header.active .banner-toggle-btn {
+    transform: rotate(45deg);
+}
+
+.feature-banner-content {
+    display: none;
+    background: #fdeaea;
+    padding: 20px;
+    border-top: 2px solid #e74c3c;
+}
+
+.feature-banner-content.active {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+.feature-banner-content p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
 }
 
 @media (max-width: 768px) {
@@ -1795,7 +1863,7 @@ function toggleFaq(element) {
     }
     
     .main-accordion-header .section-subtitle {
-        font-size: ;
+        font-size: 0.85rem;
         line-height: 1.3;
     }
     
@@ -1805,52 +1873,90 @@ function toggleFaq(element) {
     }
     
     .main-accordion-content {
-        padding: 20px;
+        padding: 15px;
     }
     
     .services-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 12px;
+        gap: 8px;
+        margin-bottom: 15px;
     }
     
     .service-card {
-        padding: 12px;
+        padding: 8px;
+        min-height: auto;
     }
     
     .service-card h3 {
-        font-size: 1rem;
-        margin: 0 0 8px 0;
+        font-size: 0.85rem;
+        margin: 0 0 4px 0;
+        line-height: 1.2;
     }
     
     .service-card p {
-        font-size: 0.8rem;
-        line-height: 1.3;
-        margin-bottom: 10px;
+        font-size: 0.7rem;
+        line-height: 1.2;
+        margin-bottom: 6px;
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
     
     .service-icon {
-        font-size: 1.8rem;
-        margin-bottom: 8px;
+        font-size: 1.3rem;
+        margin-bottom: 4px;
     }
     
     .service-features {
-        gap: 4px;
+        gap: 2px;
         flex-wrap: wrap;
     }
     
     .feature-tag {
-        font-size: 0.7rem;
-        padding: 3px 6px;
+        font-size: 0.6rem;
+        padding: 2px 4px;
+        border-radius: 8px;
+    }
+    
+    .feature-banner-header {
+        padding: 10px 15px;
+    }
+    
+    .banner-icon {
+        font-size: 1.1rem;
+        margin-right: 8px;
+    }
+    
+    .feature-banner-header h4 {
+        font-size: 0.9rem;
+    }
+    
+    .banner-toggle-btn {
+        font-size: 1.1rem;
+    }
+    
+    .feature-banner-content {
+        padding: 12px 15px;
+    }
+    
+    .feature-banner-content p {
+        font-size: 0.8rem;
+        line-height: 1.4;
     }
 }
 </style>
 
 <script>
 function toggleMainAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+
+function toggleFeatureBanner(element) {
     const content = element.nextElementSibling;
     const header = element;
     
