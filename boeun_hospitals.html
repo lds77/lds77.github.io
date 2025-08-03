@@ -1332,6 +1332,31 @@ function toggleAccordion(element) {
     content.classList.toggle('active');
 }
 
+// All accordion items start closed
+</script>
+
+<script>
+function toggleAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    // Close all other accordion items
+    const allItems = document.querySelectorAll('.accordion-item');
+    allItems.forEach(item => {
+        const itemHeader = item.querySelector('.accordion-header');
+        const itemContent = item.querySelector('.accordion-content');
+        
+        if (itemHeader !== header) {
+            itemHeader.classList.remove('active');
+            itemContent.classList.remove('active');
+        }
+    });
+    
+    // Toggle current item
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+
 // Open first accordion item by default
 document.addEventListener('DOMContentLoaded', function() {
     const firstHeader = document.querySelector('.accordion-header');
