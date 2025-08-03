@@ -180,7 +180,7 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #3498db 0%, #c0392b 100%);
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
@@ -352,7 +352,7 @@
         .service-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, #3498db, #c0392b);
+            background: linear-gradient(135deg, #3498db, #2980b9);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -3337,12 +3337,14 @@ footer .container {
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'linear-gradient(135deg, rgba(231, 76, 60, 0.95) 0%, rgba(192, 57, 43, 0.95) 100%)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)';
-                header.style.backdropFilter = 'none';
-            }
+    header.style.background = 'linear-gradient(135deg, rgba(52, 152, 219, 0.95) 0%, rgba(41, 128, 185, 0.95) 100%)';
+    /* 기존: header.style.background = 'linear-gradient(135deg, rgba(231, 76, 60, 0.95) 0%, rgba(192, 57, 43, 0.95) 100%)'; */
+    header.style.backdropFilter = 'blur(10px)';
+} else {
+    header.style.background = 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)';
+    /* 기존: header.style.background = 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)'; */
+    header.style.backdropFilter = 'none';
+}
         });
 
         // Add animation on scroll
