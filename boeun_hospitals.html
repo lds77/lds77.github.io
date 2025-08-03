@@ -1523,19 +1523,41 @@ function toggleMainAccordion(element) {
 
 @media (max-width: 768px) {
     .accordion-header {
-        padding: 15px 20px;
+        padding: 12px 15px;
     }
     
     .accordion-header h3 {
-        font-size: 1.1rem;
+        font-size: 1rem;
+    }
+    
+    .accordion-header .accordion-icon {
+        font-size: 1.2rem;
+        margin-right: 10px;
     }
     
     .accordion-content {
-        padding: 20px;
+        padding: 15px;
+    }
+    
+    .accordion-content p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin-bottom: 12px;
     }
     
     .detail-list {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+    
+    .detail-item {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+    
+    .detail-item strong {
+        font-size: 0.85rem;
+        margin-bottom: 3px;
     }
 }
 </style>
