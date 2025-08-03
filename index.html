@@ -1401,14 +1401,18 @@
 }
 
 .main-accordion-content {
-    display: none;
+    /* 기존: display: none; */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
     background: white;
-    padding: 30px;
+    padding: 0 30px;
 }
 
 .main-accordion-content.active {
-    display: block;
-    animation: slideDown 0.4s ease;
+    /* 기존: display: block; */
+    max-height: 2000px; /* 콘텐츠 양에 따라 충분한 높이 */
+    padding: 30px;
 }
 
 .faq-grid {
@@ -1452,15 +1456,19 @@
 }
 
 .faq-answer {
-    display: none;
-    padding: 25px;
+    /* 기존: display: none; */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 25px;
     background: white;
     border-top: 2px solid #667eea;
 }
 
 .faq-answer.active {
-    display: block;
-    animation: slideDown 0.3s ease;
+    /* 기존: display: block; */
+    max-height: 500px; /* 충분한 높이 설정 */
+    padding: 25px;
 }
 
 .faq-answer p {
@@ -3054,14 +3062,18 @@ function toggleContactAccordion(element) {
 }
 
 .contact-accordion-content {
-    display: none;
+    /* 기존: display: none; */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
     background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
-    padding: 25px 40px;
+    padding: 0 40px;
 }
 
 .contact-accordion-content.active {
-    display: block;
-    animation: slideDown 0.4s ease;
+    /* 기존: display: block; */
+    max-height: 800px;
+    padding: 25px 40px;
 }
 
 @keyframes slideDown {
@@ -3361,14 +3373,18 @@ footer .container {
 }
 
 .footer-accordion-content {
-    display: none;
+    /* 기존: display: none; */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
     background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
-    padding: 25px 40px;
+    padding: 0 40px;
 }
 
 .footer-accordion-content.active {
-    display: block;
-    animation: slideDown 0.4s ease;
+    /* 기존: display: block; */
+    max-height: 600px;
+    padding: 25px 40px;
 }
 
 @keyframes slideDown {
