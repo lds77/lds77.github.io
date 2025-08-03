@@ -997,15 +997,15 @@
     .hero-features {
         gap: 6px;
         max-width: 100%;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
     }
     
     .hero-feature {
-        padding: 4px 8px;
-        font-size: 0.7rem;
-        border-radius: 12px;
-        flex: 1;
-        min-width: 0;
+        padding: 4px 6px;
+        font-size: 0.65rem;
+        border-radius: 10px;
         text-align: center;
         white-space: nowrap;
         overflow: hidden;
