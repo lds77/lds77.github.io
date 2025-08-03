@@ -1,50 +1,117 @@
 # 사이트 기본 정보
-title: "청주 사설구급차 서비스 | 응급환자이송단"
-description: "청주를 기점으로 충북 전역에서 사설구급차 서비스를 제공합니다. 24시간 응급환자이송 서비스, 응급환자이송단 강경성 010-8841-4114"
+title: "청주 사설구급차 서비스 | 직지응급환자이송단"
+description: "청주를 기점으로 충북 전역에서 사설구급차 서비스를 제공합니다. 24시간 응급환자이송 서비스, 직지응급환자이송단 강경성 010-8841-4114"
 url: "https://lds77.github.io"
 baseurl: ""
 
 # SEO 관련 설정
-author: "응급환자이송단 강경성"
+author: "직지응급환자이송단 강경성"
 lang: ko-KR
 locale: ko_KR
 
 # 비즈니스 정보
 business:
-  name: "응급환자이송단"
-  owner: "강경성"
-  phone: "010-8841-4114"
-  service_area: "충청북도 전역"
-  location: "청주시"
-  hours: "24시간 운영"
+ name: "직지응급환자이송단"
+ owner: "손기범"
+ manager: "강경성"
+ phone: "010-8841-4114"
+ service_area: "충청북도 전역"
+ location: "청주시"
+ hours: "24시간 운영"
 
 # 소셜 미디어 및 연락처
 social:
-  phone: "010-8841-4114"
-  emergency_phone: "010-8841-4114"
+ phone: "010-8841-4114"
+ emergency_phone: "010-8841-4114"
+ blog: "https://blog.naver.com/ldszuno"
+ website: "https://lds77.github.io"
+ business_registration: "응급환자이송업 신고"
 
 # SEO 키워드
 keywords: 
-  - 청주 사설구급차
-  - 충북 사설구급차
-  - 응급환자이송
-  - 청주 행사구급차
-  - 충북 행사구급차
-  - 사설구급차 서비스
-  - 청주 응급이송
-  - 충북 응급이송
-  - 민간구급차
-  - 환자이송
-  - 응급환자이송단
-  - 강경성
+ # 지역별 키워드
+ - 청주 사설구급차
+ - 충주 사설구급차
+ - 제천 사설구급차
+ - 음성 사설구급차
+ - 괴산 사설구급차
+ - 진천 사설구급차
+ - 증평 사설구급차
+ - 단양 사설구급차
+ - 보은 사설구급차
+ - 옥천 사설구급차
+ - 영동 사설구급차
+ - 충북 사설구급차
+ # 서비스별 키워드
+ - 응급환자이송
+ - 요양병원 이송
+ - 정신병원 입원
+ - 알콜중독 치료
+ - 행사구급차
+ - 고인이송
+ - 청주 응급이송
+ - 충북 응급이송
+ - 민간구급차
+ - 환자이송
+ - 침상형구급차
+ - 24시간구급차
+ # 브랜드 키워드
+ - 직지응급환자이송단
+ - 강경성
+ - 손기범
 
 # 지역 정보
 location:
-  city: "청주시"
-  region: "충청북도"
-  country: "대한민국"
-  latitude: 36.6424
-  longitude: 127.4890
+ city: "청주시"
+ region: "충청북도"
+ country: "대한민국"
+ latitude: 36.4800984
+ longitude: 127.2890328
+
+# 고급 SEO 설정
+seo:
+ organization: "직지응급환자이송단"
+ contact_type: "customer service"
+ contact_option: "24/7"
+ area_served: "충청북도"
+ brand: "직지응급환자이송단"
+ founding_date: "2020"
+
+# 지역별 페이지 정보
+regional_pages:
+ - name: "청주"
+   url: "/cheongju_hospitals.html"
+   keywords: ["청주사설구급차", "상당구구급차", "서원구구급차", "청원구구급차", "흥덕구구급차"]
+ - name: "충주"
+   url: "/chungju_hospitals.html"
+   keywords: ["충주사설구급차", "충북북부구급차", "건국대충주병원이송"]
+ - name: "제천"
+   url: "/jecheon_hospitals.html"
+   keywords: ["제천사설구급차", "세명대병원이송", "산간지역구급차"]
+ - name: "음성"
+   url: "/eumseong_hospitals.html"
+   keywords: ["음성사설구급차", "성본산업단지구급차", "한화솔루션구급차"]
+ - name: "괴산"
+   url: "/goesan_hospitals.html"
+   keywords: ["괴산사설구급차", "화양구곡구급차", "산막이옛길응급이송"]
+ - name: "진천"
+   url: "/jincheon_hospitals.html"
+   keywords: ["진천사설구급차", "생거진천구급차", "농다리응급이송"]
+ - name: "증평"
+   url: "/jeungpyeong_hospitals.html"
+   keywords: ["증평사설구급차", "최소군구급차", "좌구산천문대구급차"]
+ - name: "단양"
+   url: "/danyang_hospitals.html"
+   keywords: ["단양사설구급차", "소백산구급차", "단양8경응급이송"]
+ - name: "보은"
+   url: "/boeun_hospitals.html"
+   keywords: ["보은사설구급차", "속리산구급차", "법주사응급이송"]
+ - name: "옥천"
+   url: "/okcheon_hospitals.html"
+   keywords: ["옥천사설구급차", "충남경계구급차", "옥천보건의료원이송"]
+ - name: "영동"
+   url: "/yeongdong_hospitals.html"
+   keywords: ["영동사설구급차", "황간구급차", "추풍령구급차"]
 
 # Jekyll 설정
 markdown: kramdown
@@ -54,20 +121,20 @@ timezone: Asia/Seoul
 
 # 플러그인 (GitHub Pages에서 지원하는 플러그인들)
 plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-feed
+ - jekyll-sitemap
+ - jekyll-seo-tag
+ - jekyll-feed
 
 # 제외할 파일들
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - README.md
+ - Gemfile
+ - Gemfile.lock
+ - node_modules
+ - vendor/bundle/
+ - vendor/cache/
+ - vendor/gems/
+ - vendor/ruby/
+ - README.md
 
 # 검색 엔진 최적화
 google_analytics: # 구글 애널리틱스 ID가 있으면 여기에 입력
@@ -76,7 +143,37 @@ naver_site_verification: # 네이버 사이트 확인 코드가 있으면 여기
 
 # 사이트 구조화 데이터
 structured_data:
-  type: "LocalBusiness"
-  business_type: "응급환자이송 서비스"
-  price_range: "$$"
-  opening_hours: "Mo-Su 00:00-24:00"
+ type: "MedicalBusiness"
+ business_type: "응급환자이송 서비스"
+ price_range: "₩₩"
+ opening_hours: "Mo-Su 00:00-23:59"
+ service_types:
+   - "응급환자이송"
+   - "요양병원 전문이송"
+   - "정신병원 강제입원"
+   - "알콜중독 강제입원"
+   - "행사구급차"
+   - "고인이송"
+ service_areas:
+   - "청주시"
+   - "충주시"
+   - "제천시"
+   - "음성군"
+   - "괴산군"
+   - "진천군"
+   - "증평군"
+   - "단양군"
+   - "보은군"
+   - "옥천군"
+   - "영동군"
+
+# 성능 최적화
+compress_html:
+ clippings: all
+ comments: all
+ endings: all
+ startings: [html, head, body]
+
+# 보안 설정
+safe: true
+whitelist: []
