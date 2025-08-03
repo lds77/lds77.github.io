@@ -1860,55 +1860,380 @@ function toggleMainAccordion(element) {
 </script>
     
     <section class="quick-info">
-        <div class="container">
-            <h2 class="section-title">청주사설구급차 이용 가이드</h2>
-            <div class="area-specialty">
-                <h3>🏥 청주시 의료중심도시 특성</h3>
-                <p>청주시는 충청북도의 중심도시로 충북대학교병원, 청주성모병원 등 상급종합병원이 위치하고 있습니다. 첨단의료시설이 발달하여 우수한 의료 인프라를 자랑합니다. 4개구(상당구, 서원구, 청원구, 흥덕구)로 구성되어 있으며, 각 지역별 특성에 맞는 전문 청주구급차 이송 서비스를 제공합니다.</p>
-                <div class="specialty-list">
-                    <div class="specialty-item">
-                        <strong>상당구 청주구급차</strong><br>
-                        청주 시내 중심, 충북대병원, 청주성모병원
-                    </div>
-                    <div class="specialty-item">
-                        <strong>서원구 청주구급차</strong><br>
-                        충북대병원, 교육문화 중심지
-                    </div>
-                    <div class="specialty-item">
-                        <strong>청원구 청주구급차</strong><br>
-                        신도시 지역, 첨단의료시설
-                    </div>
-                    <div class="specialty-item">
-                        <strong>흥덕구 청주구급차</strong><br>
-                        산업단지, 신도시
-                    </div>
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content">
+                    <h2 class="section-title">청주사설구급차 이용 가이드</h2>
+                    <p class="section-subtitle">청주시 의료중심도시 특성에 맞는 전문 구급차 서비스 안내</p>
                 </div>
+                <span class="main-toggle-btn">+</span>
             </div>
             
-            <div class="info-grid">
-                <div class="info-card">
-                    <div class="info-icon">🏥</div>
-                    <h3>상급종합병원 즉시이송</h3>
-                    <p>충북대학교병원을 비롯한 상급종합병원으로의 신속한 이송과 전문 응급의료 서비스를 제공합니다.</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">🧬</div>
-                    <h3>첨단의료시설 연계</h3>
-                    <p>청주 지역의 최신 의료기술과 시설을 활용한 전문 청주사설구급차 이송 서비스를 제공합니다.</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">🌆</div>
-                    <h3>4개구 전문커버</h3>
-                    <p>상당구, 서원구, 청원구, 흥덕구 각 지역 특성에 맞는 맞춤형 청주구급차 환자이송 서비스를 제공합니다.</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">🎯</div>
-                    <h3>충북 의료중심</h3>
-                    <p>충청북도 중심도시로서 도내 전 지역에서 청주로 집중되는 환자이송에 최적화된 청주사설구급차 시스템을 운영합니다.</p>
+            <div class="main-accordion-content">
+                <div class="sub-accordion-container">
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🏥</span>
+                            <h3>청주시 의료중심도시 특성</h3>
+                            <span class="sub-toggle-btn">+</span>
+                        </div>
+                        <div class="sub-accordion-content">
+                            <p>청주시는 충청북도의 중심도시로 충북대학교병원, 청주성모병원 등 상급종합병원이 위치하고 있습니다. 첨단의료시설이 발달하여 우수한 의료 인프라를 자랑합니다. 4개구(상당구, 서원구, 청원구, 흥덕구)로 구성되어 있으며, 각 지역별 특성에 맞는 전문 청주구급차 이송 서비스를 제공합니다.</p>
+                            <div class="specialty-list">
+                                <div class="specialty-item">
+                                    <strong>상당구 청주구급차</strong><br>
+                                    청주 시내 중심, 충북대병원, 청주성모병원
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>서원구 청주구급차</strong><br>
+                                    충북대병원, 교육문화 중심지
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>청원구 청주구급차</strong><br>
+                                    신도시 지역, 첨단의료시설
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>흥덕구 청주구급차</strong><br>
+                                    산업단지, 신도시
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🏥</span>
+                            <h3>상급종합병원 즉시이송</h3>
+                            <span class="sub-toggle-btn">+</span>
+                        </div>
+                        <div class="sub-accordion-content">
+                            <p>충북대학교병원을 비롯한 상급종합병원으로의 신속한 이송과 전문 응급의료 서비스를 제공합니다. 24시간 응급실과 연계하여 골든타임을 확보하고, 전문 의료진의 즉시 치료가 가능하도록 지원합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🧬</span>
+                            <h3>첨단의료시설 연계</h3>
+                            <span class="sub-toggle-btn">+</span>
+                        </div>
+                        <div class="sub-accordion-content">
+                            <p>청주 지역의 최신 의료기술과 시설을 활용한 전문 청주사설구급차 이송 서비스를 제공합니다. MRI, CT 등 고도의 진단장비와 연계하여 정확한 진단과 치료가 가능합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🌆</span>
+                            <h3>4개구 전문커버</h3>
+                            <span class="sub-toggle-btn">+</span>
+                        </div>
+                        <div class="sub-accordion-content">
+                            <p>상당구, 서원구, 청원구, 흥덕구 각 지역 특성에 맞는 맞춤형 청주구급차 환자이송 서비스를 제공합니다. 각 구별 교통망과 의료시설 분포를 고려한 최적의 이송 경로를 설정합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🎯</span>
+                            <h3>충북 의료중심</h3>
+                            <span class="sub-toggle-btn">+</span>
+                        </div>
+                        <div class="sub-accordion-content">
+                            <p>충청북도 중심도시로서 도내 전 지역에서 청주로 집중되는 환자이송에 최적화된 청주사설구급차 시스템을 운영합니다. 충북 전역의 의료 허브 역할을 담당합니다.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+.main-accordion {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.main-accordion-header {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+    padding: 30px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.main-accordion-header:hover {
+    background: linear-gradient(135deg, #229954 0%, #27ae60 100%);
+    transform: translateY(-2px);
+}
+
+.header-content {
+    flex-grow: 1;
+}
+
+.main-accordion-header .section-title {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main-accordion-header .section-subtitle {
+    margin: 0;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: 400;
+}
+
+.main-toggle-btn {
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+}
+
+.main-accordion-header.active .main-toggle-btn {
+    transform: rotate(45deg);
+}
+
+.main-accordion-content {
+    display: none;
+    background: #f8f9fa;
+    padding: 30px;
+}
+
+.main-accordion-content.active {
+    display: block;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sub-accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sub-accordion-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.sub-accordion-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #27ae60;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.sub-accordion-header:hover {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    border-color: #229954;
+}
+
+.sub-accordion-header.active {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+}
+
+.sub-accordion-icon {
+    font-size: 1.3rem;
+    margin-right: 12px;
+}
+
+.sub-accordion-header h3 {
+    margin: 0;
+    flex-grow: 1;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.sub-accordion-header.active h3 {
+    color: white;
+}
+
+.sub-toggle-btn {
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    color: #27ae60;
+}
+
+.sub-accordion-header.active .sub-toggle-btn {
+    transform: rotate(45deg);
+    color: white;
+}
+
+.sub-accordion-content {
+    display: none;
+    background: white;
+    padding: 20px;
+    border-top: 2px solid #27ae60;
+}
+
+.sub-accordion-content.active {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+.sub-accordion-content p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.specialty-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.specialty-item {
+    background: #f8f9ff;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #27ae60;
+    font-size: 0.9rem;
+}
+
+.specialty-item strong {
+    color: #27ae60;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+}
+
+@media (max-width: 768px) {
+    .main-accordion-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-accordion-header .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+        line-height: 1.2;
+    }
+    
+    .main-accordion-header .section-subtitle {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+    
+    .main-toggle-btn {
+        margin: 10px 0 0 0;
+        font-size: 1.5rem;
+    }
+    
+    .main-accordion-content {
+        padding: 15px;
+    }
+    
+    .sub-accordion-header {
+        padding: 10px 15px;
+    }
+    
+    .sub-accordion-icon {
+        font-size: 1.1rem;
+        margin-right: 8px;
+    }
+    
+    .sub-accordion-header h3 {
+        font-size: 0.9rem;
+    }
+    
+    .sub-toggle-btn {
+        font-size: 1.1rem;
+    }
+    
+    .sub-accordion-content {
+        padding: 12px 15px;
+    }
+    
+    .sub-accordion-content p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+    
+    .specialty-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+    }
+    
+    .specialty-item {
+        padding: 8px;
+        font-size: 0.75rem;
+    }
+    
+    .specialty-item strong {
+        font-size: 0.8rem;
+        margin-bottom: 2px;
+    }
+}
+</style>
+
+<script>
+function toggleMainAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+
+function toggleSubAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    // Close all other sub-accordion items
+    const allSubHeaders = document.querySelectorAll('.sub-accordion-header');
+    const allSubContents = document.querySelectorAll('.sub-accordion-content');
+    
+    allSubHeaders.forEach(h => {
+        if (h !== header) {
+            h.classList.remove('active');
+        }
+    });
+    
+    allSubContents.forEach(c => {
+        if (c !== content) {
+            c.classList.remove('active');
+        }
+    });
+    
+    // Toggle current item
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+</script>
 
     <section class="hospitals-section">
         <div class="container">
