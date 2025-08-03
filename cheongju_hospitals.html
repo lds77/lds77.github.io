@@ -3123,22 +3123,103 @@ function toggleCategoryAccordion(element) {
 </script>
 
     <footer style="background: #2c3e50; color: #ecf0f1; padding: 40px 0; text-align: center;">
-        <div class="container">
-            <h3 style="color: #e74c3c; margin-bottom: 20px;">청주사설구급차 직지응급환자이송단</h3>
-            <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px;">010-8841-4114</p>
-            <p style="margin-bottom: 20px;">청주구급차 및 충북 전 지역 24시간 응급환자이송 서비스</p>
-            <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0; flex-wrap: wrap;">
-                <span>✓ 청주사설구급차</span>
-                <span>✓ 4개구 전 지역</span>
-                <span>✓ 상급종합병원</span>
-                <span>✓ 24시간 대기</span>
-            </div>
-            <p style="font-size: 0.9rem; opacity: 0.8; border-top: 1px solid #34495e; padding-top: 20px; margin-top: 20px;">
-                청주시 의료중심도시 전문 청주구급차 서비스 | 보건복지부 고시 기준 준수 | 응급상황 즉시 대응<br>
-                키워드: 청주사설구급차, 청주구급차, 청주시구급차, 상당구구급차, 서원구구급차, 청원구구급차, 흥덕구구급차
-            </p>
+    <div class="container">
+        <h3 style="color: #e74c3c; margin-bottom: 20px;">청주사설구급차 직지응급환자이송단</h3>
+        <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px;">010-8841-4114</p>
+        <p style="margin-bottom: 20px;">청주구급차 및 충북 전 지역 24시간 응급환자이송 서비스</p>
+        <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0; flex-wrap: wrap;">
+            <span>✓ 청주사설구급차</span>
+            <span>✓ 4개구 전 지역</span>
+            <span>✓ 상급종합병원</span>
+            <span>✓ 24시간 대기</span>
         </div>
-    </footer>
+        <p style="font-size: 0.9rem; opacity: 0.8; border-top: 1px solid #34495e; padding-top: 20px; margin-top: 20px;">
+            청주시 의료중심도시 전문 청주구급차 서비스 | 보건복지부 고시 기준 준수 | 응급상황 즉시 대응<br>
+            키워드: 청주사설구급차, 청주구급차, 청주시구급차, 상당구구급차, 서원구구급차, 청원구구급차, 흥덕구구급차
+        </p>
+    </div>
+</footer>
+
+<style>
+@media (max-width: 768px) {
+    footer {
+        padding: 25px 0 !important;
+    }
+    
+    footer .container {
+        padding: 0 15px;
+    }
+    
+    footer h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 12px !important;
+        line-height: 1.2 !important;
+    }
+    
+    footer p:nth-child(2) {
+        font-size: 1.5rem !important;
+        margin-bottom: 10px !important;
+    }
+    
+    footer p:nth-child(3) {
+        font-size: 0.9rem !important;
+        margin-bottom: 15px !important;
+        line-height: 1.3 !important;
+    }
+    
+    footer div {
+        gap: 15px !important;
+        margin: 15px 0 !important;
+    }
+    
+    footer div span {
+        font-size: 0.8rem !important;
+    }
+    
+    footer p:last-child {
+        font-size: 0.75rem !important;
+        padding-top: 15px !important;
+        margin-top: 15px !important;
+        line-height: 1.3 !important;
+    }
+}
+
+@media (max-width: 360px) {
+    footer {
+        padding: 20px 0 !important;
+    }
+    
+    footer h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 10px !important;
+    }
+    
+    footer p:nth-child(2) {
+        font-size: 1.3rem !important;
+        margin-bottom: 8px !important;
+    }
+    
+    footer p:nth-child(3) {
+        font-size: 0.85rem !important;
+        margin-bottom: 12px !important;
+    }
+    
+    footer div {
+        gap: 10px !important;
+        margin: 12px 0 !important;
+    }
+    
+    footer div span {
+        font-size: 0.75rem !important;
+    }
+    
+    footer p:last-child {
+        font-size: 0.7rem !important;
+        padding-top: 12px !important;
+        margin-top: 12px !important;
+    }
+}
+</style>
 
     <!-- Floating Call Button -->
     <a href="tel:010-8841-4114" class="floating-call" title="청주구급차 즉시 연락">📞</a>
