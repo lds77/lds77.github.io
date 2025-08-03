@@ -406,17 +406,18 @@
             background: #c0392b;
         }
 
-        .faq-answer {
-            padding: 20px;
-            display: none;
-            color: #555;
-            line-height: 1.7;
-            background: white;
-        }
-
-        .faq-answer.active {
-            display: block;
-        }
+        /* 기본 FAQ 스타일 - 아래 섹션별 스타일로 대체됨
+.faq-answer {
+    padding: 20px;
+    display: none;
+    color: #555;
+    line-height: 1.7;
+    background: white;
+}
+.faq-answer.active {
+    display: block;
+}
+*/
 
         /* Coverage Section */
         .coverage {
@@ -1696,14 +1697,18 @@ function toggleFaq(element) {
 }
 
 .main-accordion-content {
-    display: none;
+    /* display: none; 제거 */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
     background: white;
-    padding: 30px;
+    padding: 0 30px;  /* 위아래 패딩을 0으로 */
 }
-
 .main-accordion-content.active {
-    display: block;
-    animation: slideDown 0.4s ease;
+    /* display: block; 제거 */
+    /* animation: slideDown 0.4s ease; 제거 */
+    max-height: 2000px;  /* 충분한 높이 */
+    padding: 30px;  /* 원래 패딩 복원 */
 }
 
 @keyframes slideDown {
@@ -2022,14 +2027,18 @@ function toggleMainAccordion(element) {
 }
 
 .main-accordion-content {
-    display: none;
+    /* 기존: display: none; */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
     background: white;
-    padding: 30px;
+    padding: 0 30px;
 }
-
 .main-accordion-content.active {
-    display: block;
-    animation: slideDown 0.4s ease;
+    /* 기존: display: block; */
+    /* 기존: animation: slideDown 0.4s ease; */
+    max-height: 2000px; /* 콘텐츠 양에 따라 충분한 높이 */
+    padding: 30px;
 }
 
 @keyframes slideDown {
@@ -2424,14 +2433,18 @@ function toggleMainAccordion(element) {
 }
 
 .main-accordion-content {
-    display: none;
+    /* 기존: display: none; */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
     background: #f8f9fa;
-    padding: 30px;
+    padding: 0 30px;
 }
-
 .main-accordion-content.active {
-    display: block;
-    animation: slideDown 0.4s ease;
+    /* 기존: display: block; */
+    /* 기존: animation: slideDown 0.4s ease; */
+    max-height: 2000px; /* 콘텐츠 양에 따라 충분한 높이 */
+    padding: 30px;
 }
 
 @keyframes slideDown {
@@ -2756,14 +2769,18 @@ function toggleMainAccordion(element) {
 }
 
 .main-accordion-content {
-    display: none;
+    /* 기존: display: none; */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
     background: white;
-    padding: 30px;
+    padding: 0 30px;
 }
-
 .main-accordion-content.active {
-    display: block;
-    animation: slideDown 0.4s ease;
+    /* 기존: display: block; */
+    /* 기존: animation: slideDown 0.4s ease; */
+    max-height: 2000px; /* 콘텐츠 양에 따라 충분한 높이 */
+    padding: 30px;
 }
 
 @keyframes slideDown {
