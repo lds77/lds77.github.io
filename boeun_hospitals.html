@@ -975,7 +975,7 @@
 /* 모바일 컴팩트 스타일 */
 @media (max-width: 768px) {
     .page-hero {
-        padding: 25px 0;
+        padding: 15px 0;
     }
     
     .page-hero .container {
@@ -983,25 +983,33 @@
     }
     
     .page-hero h1 {
-        font-size: 1.4rem;
-        margin: 0 0 10px 0;
-        line-height: 1.3;
+        font-size: 1.3rem;
+        margin: 0 0 8px 0;
+        line-height: 1.2;
     }
     
     .page-hero p {
-        font-size: 0.9rem;
-        margin: 0 0 15px 0;
-        line-height: 1.4;
+        font-size: 0.85rem;
+        margin: 0 0 12px 0;
+        line-height: 1.3;
     }
     
     .hero-features {
-        gap: 8px;
+        gap: 6px;
+        max-width: 100%;
+        justify-content: space-between;
     }
     
     .hero-feature {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-        border-radius: 15px;
+        padding: 4px 8px;
+        font-size: 0.7rem;
+        border-radius: 12px;
+        flex: 1;
+        min-width: 0;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 
