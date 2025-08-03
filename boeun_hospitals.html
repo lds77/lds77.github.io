@@ -42,34 +42,65 @@
 <link rel="image_src" href="https://lds77.github.io/og-image.jpg">
     
     <!-- 지역별 구조화된 데이터 -->
-    <script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "직지응급환자이송단 보은지점",
+  "description": "보은군 속리산 산악지역 전문 사설구급차 서비스",
+  "telephone": "010-8841-4114",
+  "url": "https://lds77.github.io/boeun_hospitals.html",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "충청북도",
+    "addressLocality": "보은군",
+    "addressCountry": "KR"
+  },
+  "areaServed": [
     {
-      "@context": "https://schema.org",
-      "@type": "MedicalBusiness",
-      "name": "직지응급환자이송단 보은지역",
-      "description": "보은군 속리산 산악지역 전문 사설구급차 서비스",
-      "telephone": "010-8841-4114",
-      "areaServed": {
-        "@type": "City",
-        "name": "보은군",
-        "containedInPlace": {
-          "@type": "State", 
-          "name": "충청북도"
-        }
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "36.4896",
-        "longitude": "127.7298"
-      },
-      "serviceType": [
-        "보은 사설구급차",
-        "보은 환자이송",
-        "속리산 응급이송",
-        "산악지역 의료이송"
-      ]
+      "@type": "City",
+      "name": "보은군",
+      "containedInPlace": {
+        "@type": "State", 
+        "name": "충청북도"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "속리산국립공원"
     }
-    </script>
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "36.4896",
+    "longitude": "127.7298"
+  },
+  "availableService": [
+    {
+      "@type": "MedicalService",
+      "name": "산악지역 응급이송",
+      "description": "속리산 산악지역 전문 응급환자이송"
+    },
+    {
+      "@type": "MedicalService",
+      "name": "관광지 응급이송",
+      "description": "속리산국립공원 관광객 응급이송"
+    },
+    {
+      "@type": "MedicalService",
+      "name": "24시간 응급환자이송",
+      "description": "보은군 전지역 24시간 응급환자이송"
+    }
+  ],
+  "serviceType": [
+    "보은 사설구급차",
+    "보은 환자이송",
+    "속리산 응급이송",
+    "산악지역 의료이송"
+  ],
+  "openingHours": "Mo-Su 00:00-23:59"
+}
+</script>
     
     <style>
         * {
