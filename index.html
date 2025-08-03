@@ -1968,14 +1968,12 @@ function toggleMainAccordion(element) {
 .main-accordion-header {
     background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
     color: white;
-    padding: 30px 0;
+    padding: 30px 40px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: all 0.3s ease;
-    width: 100%;
-    margin: 0;
 }
 
 .main-accordion-header:hover {
@@ -1985,7 +1983,6 @@ function toggleMainAccordion(element) {
 
 .header-content {
     flex-grow: 1;
-    padding: 0 40px;
 }
 
 .main-accordion-header .section-title {
@@ -2005,7 +2002,7 @@ function toggleMainAccordion(element) {
     font-size: 2rem;
     font-weight: bold;
     transition: transform 0.3s ease;
-    margin-right: 40px;
+    margin-left: 20px;
 }
 
 .main-accordion-header.active .main-toggle-btn {
@@ -2037,24 +2034,25 @@ function toggleMainAccordion(element) {
 .coverage-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 25px;
     margin-bottom: 30px;
 }
 
 .coverage-item {
     background: white;
-    padding: 20px;
-    border-radius: 12px;
-    border-left: 4px solid #2980b9;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     cursor: pointer;
     transition: all 0.3s ease;
+    border: 2px solid transparent;
+    text-align: center;
 }
 
 .coverage-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    border-left-color: #FF6B35;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border-color: #2980b9;
 }
 
 .coverage-item h4 {
@@ -2080,7 +2078,7 @@ function toggleMainAccordion(element) {
     text-align: center;
     padding: 20px;
     background: #e8f4fd;
-    border-radius: 10px;
+    border-radius: 15px;
     margin-top: 25px;
 }
 
@@ -2098,23 +2096,17 @@ function toggleMainAccordion(element) {
 
 @media (max-width: 768px) {
     .coverage {
-        padding: 25px 0;
+        padding: 30px 0;
     }
     
     .coverage .container {
-        padding: 0;
+        padding: 0 15px;
     }
     
     .main-accordion-header {
-        padding: 15px 0;
+        padding: 15px 20px;
         flex-direction: column;
         text-align: center;
-        width: 100%;
-        margin: 0;
-    }
-    
-    .header-content {
-        padding: 0 20px;
     }
     
     .main-accordion-header .section-title {
@@ -2139,14 +2131,14 @@ function toggleMainAccordion(element) {
     
     .coverage-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 8px;
+        gap: 10px;
         margin-bottom: 15px;
     }
     
     .coverage-item {
-        padding: 8px;
-        border-radius: 8px;
-        border-left-width: 3px;
+        padding: 10px;
+        border-radius: 10px;
+        min-height: auto;
     }
     
     .coverage-item h4 {
@@ -2167,6 +2159,7 @@ function toggleMainAccordion(element) {
     .service-info-banner {
         padding: 12px;
         margin-top: 15px;
+        border-radius: 10px;
     }
     
     .service-info-banner h4 {
@@ -2181,13 +2174,33 @@ function toggleMainAccordion(element) {
 }
 
 @media (max-width: 360px) {
+    .coverage {
+        padding: 25px 0;
+    }
+    
+    .main-accordion-header {
+        padding: 12px 15px;
+    }
+    
+    .main-accordion-header .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .main-accordion-header .section-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .main-accordion-content {
+        padding: 12px;
+    }
+    
     .coverage-grid {
         grid-template-columns: 1fr 1fr;
         gap: 6px;
     }
     
     .coverage-item {
-        padding: 6px;
+        padding: 8px;
     }
     
     .coverage-item h4 {
