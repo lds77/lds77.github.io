@@ -1532,174 +1532,458 @@ function toggleAccordion(element) {
 </script>
 
     <section class="hospitals-section">
-        <div class="container">
-            <h2 class="section-title">보은군 주요 의료기관 정보</h2>
-            <p class="section-subtitle">보은 지역 병원 현황과 이송 가능한 주요 의료기관 안내</p>
-
-            <div class="hospitals-grid">
-                <!-- 의료법인 누가의료재단 속리산요양병원 -->
-                <div class="hospital-card">
-                    <div class="hospital-header">
-                        <div class="hospital-type">요양병원</div>
-                    </div>
-                    <h3>속리산요양병원</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon-small">📍</span>
-                            <span>속리산면 속리산로 701</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">📞</span>
-                            <span>043-934-0100</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🏥</span>
-                            <span>일반요양병원</span>
-                        </div>
-                    </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
-                        <a href="tel:043-934-0100" class="btn btn-secondary">병원 연락</a>
-                    </div>
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content">
+                    <h2 class="section-title">보은군 주요 의료기관 정보</h2>
+                    <p class="section-subtitle">보은 지역 병원 현황과 이송 가능한 주요 의료기관 안내</p>
                 </div>
-
-                <!-- 의료법인 아인의료재단 성암요양병원 -->
-                <div class="hospital-card">
-                    <div class="hospital-header">
-                        <div class="hospital-type">요양병원</div>
-                    </div>
-                    <h3>성암요양병원</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon-small">📍</span>
-                            <span>내북면 남부로 6427-27</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">📞</span>
-                            <span>043-544-0330</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🏥</span>
-                            <span>일반요양병원</span>
-                        </div>
-                    </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
-                        <a href="tel:043-544-0330" class="btn btn-secondary">병원 연락</a>
-                    </div>
-                </div>
-
-                <!-- 의료법인브루노의료재단보은요양병원 -->
-                <div class="hospital-card">
-                    <div class="hospital-header">
-                        <div class="hospital-type">요양병원</div>
-                    </div>
-                    <h3>보은요양병원</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon-small">📍</span>
-                            <span>수한면 후평바리미길 31</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">📞</span>
-                            <span>043-544-7114</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🏥</span>
-                            <span>일반요양병원</span>
-                        </div>
-                    </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
-                        <a href="tel:043-544-7114" class="btn btn-secondary">병원 연락</a>
-                    </div>
-                </div>
-
-                <!-- 의료법인 정민의료재단 보은한양병원 -->
-                <div class="hospital-card" style="border: 2px solid #f39c12;">
-                    <div class="hospital-header">
-                        <div class="hospital-type" style="background: #f39c12;">일반병원</div>
-                    </div>
-                    <h3>보은한양병원</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon-small">📍</span>
-                            <span>보은읍 보은로 102</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">📞</span>
-                            <span>043-544-1500</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🏥</span>
-                            <span>병원</span>
-                        </div>
-                    </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
-                        <a href="tel:043-544-1500" class="btn btn-secondary">병원 연락</a>
-                    </div>
-                </div>
-
-                <!-- 의료법인 의명의료재단 마음편한병원 -->
-                <div class="hospital-card" style="border: 2px solid #9b59b6;">
-                    <div class="hospital-header">
-                        <div class="hospital-type" style="background: #9b59b6;">정신병원</div>
-                    </div>
-                    <h3>마음편한병원</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon-small">📍</span>
-                            <span>보은읍 뱃들로 53</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">📞</span>
-                            <span>043-542-3100</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🧠</span>
-                            <span>정신병원</span>
-                        </div>
-                    </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
-                        <a href="tel:043-542-3100" class="btn btn-secondary">병원 연락</a>
-                    </div>
-                </div>
-
-                <!-- 충북대학교병원 (이송 추천) -->
-                <div class="hospital-card" style="border: 2px solid #e74c3c;">
-                    <div class="hospital-header">
-                        <div class="hospital-type" style="background: #e74c3c;">이송 추천</div>
-                    </div>
-                    <h3>충북대학교병원 (청주)</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon-small">📍</span>
-                            <span>청주시 서원구 1순환로 776</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🚑</span>
-                            <span>보은에서 대략1시간 소요</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🏥</span>
-                            <span>상급종합병원</span>
-                        </div>
-                    </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">전문 이송 문의</a>
-                        <a href="tel:043-269-6114" class="btn btn-secondary">병원 연락</a>
-                    </div>
-                </div>
+                <span class="main-toggle-btn">+</span>
             </div>
+            
+            <div class="main-accordion-content">
+                <div class="hospitals-grid">
+                    <!-- 의료법인 누가의료재단 속리산요양병원 -->
+                    <div class="hospital-card">
+                        <div class="hospital-header">
+                            <div class="hospital-type">요양병원</div>
+                        </div>
+                        <h3>속리산요양병원</h3>
+                        <div class="hospital-info">
+                            <div class="info-item">
+                                <span class="info-icon-small">📍</span>
+                                <span>속리산면 속리산로 701</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">📞</span>
+                                <span>043-934-0100</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">🏥</span>
+                                <span>일반요양병원</span>
+                            </div>
+                        </div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-934-0100" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
 
-            <div class="emergency-banner">
-                <h4>⛰️ 보은 속리산 응급상황 대응 시스템</h4>
-                <p>속리산국립공원, 법주사, 속리산숲체험휴양마을 등 산악지역과 문화유산 관광지에서의 응급상황에 즉시 출동하는 전문 응급의료 시스템을 운영합니다. 119 신고와 함께 즉시 연락주시면 최적의 응급처치와 병원 이송을 제공합니다.</p>
+                    <!-- 의료법인 아인의료재단 성암요양병원 -->
+                    <div class="hospital-card">
+                        <div class="hospital-header">
+                            <div class="hospital-type">요양병원</div>
+                        </div>
+                        <h3>성암요양병원</h3>
+                        <div class="hospital-info">
+                            <div class="info-item">
+                                <span class="info-icon-small">📍</span>
+                                <span>내북면 남부로 6427-27</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">📞</span>
+                                <span>043-544-0330</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">🏥</span>
+                                <span>일반요양병원</span>
+                            </div>
+                        </div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-544-0330" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+
+                    <!-- 의료법인브루노의료재단보은요양병원 -->
+                    <div class="hospital-card">
+                        <div class="hospital-header">
+                            <div class="hospital-type">요양병원</div>
+                        </div>
+                        <h3>보은요양병원</h3>
+                        <div class="hospital-info">
+                            <div class="info-item">
+                                <span class="info-icon-small">📍</span>
+                                <span>수한면 후평바리미길 31</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">📞</span>
+                                <span>043-544-7114</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">🏥</span>
+                                <span>일반요양병원</span>
+                            </div>
+                        </div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-544-7114" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+
+                    <!-- 의료법인 정민의료재단 보은한양병원 -->
+                    <div class="hospital-card hospital-general">
+                        <div class="hospital-header">
+                            <div class="hospital-type hospital-type-general">일반병원</div>
+                        </div>
+                        <h3>보은한양병원</h3>
+                        <div class="hospital-info">
+                            <div class="info-item">
+                                <span class="info-icon-small">📍</span>
+                                <span>보은읍 보은로 102</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">📞</span>
+                                <span>043-544-1500</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">🏥</span>
+                                <span>병원</span>
+                            </div>
+                        </div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-544-1500" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+
+                    <!-- 의료법인 의명의료재단 마음편한병원 -->
+                    <div class="hospital-card hospital-mental">
+                        <div class="hospital-header">
+                            <div class="hospital-type hospital-type-mental">정신병원</div>
+                        </div>
+                        <h3>마음편한병원</h3>
+                        <div class="hospital-info">
+                            <div class="info-item">
+                                <span class="info-icon-small">📍</span>
+                                <span>보은읍 뱃들로 53</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">📞</span>
+                                <span>043-542-3100</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">🧠</span>
+                                <span>정신병원</span>
+                            </div>
+                        </div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-542-3100" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+
+                    <!-- 충북대학교병원 (이송 추천) -->
+                    <div class="hospital-card hospital-recommended">
+                        <div class="hospital-header">
+                            <div class="hospital-type hospital-type-recommended">이송 추천</div>
+                        </div>
+                        <h3>충북대학교병원 (청주)</h3>
+                        <div class="hospital-info">
+                            <div class="info-item">
+                                <span class="info-icon-small">📍</span>
+                                <span>청주시 서원구 1순환로 776</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">🚑</span>
+                                <span>보은에서 대략1시간 소요</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">🏥</span>
+                                <span>상급종합병원</span>
+                            </div>
+                        </div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">전문 이송 문의</a>
+                            <a href="tel:043-269-6114" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="emergency-banner">
+                    <h4>⛰️ 보은 속리산 응급상황 대응 시스템</h4>
+                    <p>속리산국립공원, 법주사, 속리산숲체험휴양마을 등 산악지역과 문화유산 관광지에서의 응급상황에 즉시 출동하는 전문 응급의료 시스템을 운영합니다. 119 신고와 함께 즉시 연락주시면 최적의 응급처치와 병원 이송을 제공합니다.</p>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+.main-accordion {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.main-accordion-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 30px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.main-accordion-header:hover {
+    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+    transform: translateY(-2px);
+}
+
+.header-content {
+    flex-grow: 1;
+}
+
+.main-accordion-header .section-title {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main-accordion-header .section-subtitle {
+    margin: 0;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: 400;
+}
+
+.main-toggle-btn {
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+}
+
+.main-accordion-header.active .main-toggle-btn {
+    transform: rotate(45deg);
+}
+
+.main-accordion-content {
+    display: none;
+    background: #f8f9fa;
+    padding: 30px;
+}
+
+.main-accordion-content.active {
+    display: block;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hospitals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.hospital-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 2px solid #e9ecef;
+    position: relative;
+    overflow: hidden;
+}
+
+.hospital-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.hospital-card:hover::before {
+    left: 100%;
+}
+
+.hospital-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.hospital-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.hospital-type {
+    background: #27ae60;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.hospital-general {
+    border-color: #f39c12;
+}
+
+.hospital-type-general {
+    background: #f39c12;
+}
+
+.hospital-mental {
+    border-color: #9b59b6;
+}
+
+.hospital-type-mental {
+    background: #9b59b6;
+}
+
+.hospital-recommended {
+    border-color: #e74c3c;
+}
+
+.hospital-type-recommended {
+    background: #e74c3c;
+}
+
+.hospital-card h3 {
+    margin: 0 0 20px 0;
+    font-size: 1.4rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.hospital-info {
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.info-icon-small {
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+.hospital-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    flex: 1;
+    text-align: center;
+}
+
+.btn-primary {
+    background: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #95a5a6;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #7f8c8d;
+    transform: translateY(-2px);
+}
+
+.emergency-banner {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.emergency-banner h4 {
+    margin: 0 0 15px 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.emergency-banner p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .main-accordion-header {
+        padding: 20px 25px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-accordion-header .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .main-toggle-btn {
+        margin: 15px 0 0 0;
+    }
+    
+    .hospitals-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .hospital-card {
+        padding: 20px;
+    }
+    
+    .hospital-actions {
+        flex-direction: column;
+    }
+}
+</style>
+
+<script>
+function toggleMainAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+</script>
 
     <section class="contact-cta">
         <div class="container">
