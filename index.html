@@ -2920,36 +2920,57 @@ function toggleMainAccordion(element) {
 
         <section class="contact">
     <div class="container">
-        <h2 class="section-title" style="color: white;">연락처 및 운영시간</h2>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h4>환자이송 연락처</h4>
-                    <p style="font-size: 2rem; font-weight: 700; color: #e74c3c;">010-8841-4114</p>
+        <div class="contact-accordion">
+            <div class="contact-accordion-header" onclick="toggleContactAccordion(this)">
+                <div class="contact-header-content">
+                    <h2 class="section-title">연락처 및 운영시간</h2>
+                    <p class="section-subtitle">24시간 응급환자이송 서비스 | 010-8841-4114</p>
                 </div>
-                <div class="contact-item">
-                    <h4>운영시간</h4>
-                    <p>24시간 연중무휴<br>응급상황 즉시 출동</p>
-                </div>
+                <span class="contact-toggle-btn">+</span>
             </div>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h4>사업자 정보</h4>
-                    <p style="font-size: 0.95rem;">직지응급환자이송단<br>대표자: 손기범<br>담당자: 강경성<br>충청북도 소재</p>
-                </div>
-                <div class="contact-item">
-                    <h4>자격 및 허가</h4>
-                    <p style="font-size: 0.95rem;">응급환자이송업 신고<br>전문 응급구조사 상주<br>의료장비 완비</p>
+            
+            <div class="contact-accordion-content">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h4>환자이송 연락처</h4>
+                            <p style="font-size: 2rem; font-weight: 700; color: #e74c3c;">010-8841-4114</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>운영시간</h4>
+                            <p>24시간 연중무휴<br>응급상황 즉시 출동</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h4>사업자 정보</h4>
+                            <p style="font-size: 0.95rem;">직지응급환자이송단<br>대표자: 손기범<br>담당자: 강경성<br>충청북도 소재</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>자격 및 허가</h4>
+                            <p style="font-size: 0.95rem;">응급환자이송업 신고<br>전문 응급구조사 상주<br>의료장비 완비</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+<script>
+function toggleContactAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+</script>
+
 <style>
 .contact {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    padding: 2rem 0;
+    padding: 0;
     min-height: auto;
 }
 
@@ -2959,18 +2980,83 @@ function toggleMainAccordion(element) {
     padding: 0 1rem;
 }
 
-.contact .section-title {
-    text-align: center;
-    margin-bottom: 1.5rem;
+.contact-accordion {
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.contact-accordion-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 25px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.contact-accordion-header:hover {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    transform: translateY(-2px);
+}
+
+.contact-header-content {
+    flex-grow: 1;
+}
+
+.contact-accordion-header .section-title {
+    margin: 0 0 8px 0;
     font-size: 1.8rem;
     font-weight: 700;
-    color: white !important;
+    color: white;
+}
+
+.contact-accordion-header .section-subtitle {
+    margin: 0;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+}
+
+.contact-toggle-btn {
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+}
+
+.contact-accordion-header.active .contact-toggle-btn {
+    transform: rotate(45deg);
+}
+
+.contact-accordion-content {
+    display: none;
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    padding: 25px 40px;
+}
+
+.contact-accordion-content.active {
+    display: block;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 20px;
     max-width: 900px;
     margin: 0 auto;
 }
@@ -2978,14 +3064,14 @@ function toggleMainAccordion(element) {
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 15px;
 }
 
 .contact-item {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 12px;
-    padding: 1.2rem;
+    padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -2999,7 +3085,7 @@ function toggleMainAccordion(element) {
     color: #3498db;
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 0.6rem;
+    margin-bottom: 10px;
     text-align: center;
 }
 
@@ -3026,32 +3112,47 @@ function toggleMainAccordion(element) {
 
 /* 모바일 최적화 */
 @media (max-width: 768px) {
-    .contact {
-        padding: 1.5rem 0;
+    .contact-accordion-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
     }
     
-    .contact .section-title {
-        font-size: 1.4rem;
-        margin-bottom: 1.2rem;
+    .contact-accordion-header .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+    }
+    
+    .contact-accordion-header .section-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .contact-toggle-btn {
+        margin: 8px 0 0 0;
+        font-size: 1.5rem;
+    }
+    
+    .contact-accordion-content {
+        padding: 15px 20px;
     }
     
     .contact-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 12px;
         max-width: 400px;
     }
     
     .contact-info {
-        gap: 1rem;
+        gap: 12px;
     }
     
     .contact-item {
-        padding: 1rem;
+        padding: 15px;
     }
     
     .contact-item h4 {
         font-size: 0.9rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 8px;
     }
     
     .contact-item p[style*="font-size: 2rem"] {
@@ -3069,21 +3170,38 @@ function toggleMainAccordion(element) {
         padding: 0 0.8rem;
     }
     
-    .contact {
-        padding: 1.2rem 0;
+    .contact-accordion-header {
+        padding: 12px 15px;
     }
     
-    .contact .section-title {
+    .contact-accordion-header .section-title {
         font-size: 1.2rem;
-        margin-bottom: 1rem;
+        margin-bottom: 4px;
+    }
+    
+    .contact-accordion-header .section-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .contact-accordion-content {
+        padding: 12px 15px;
     }
     
     .contact-item {
-        padding: 0.8rem;
+        padding: 12px;
+    }
+    
+    .contact-item h4 {
+        font-size: 0.85rem;
+        margin-bottom: 6px;
     }
     
     .contact-item p[style*="font-size: 2rem"] {
         font-size: 1.2rem !important;
+    }
+    
+    .contact-item p[style*="font-size: 0.95rem"] {
+        font-size: 0.75rem !important;
     }
 }
 </style>
@@ -3091,39 +3209,52 @@ function toggleMainAccordion(element) {
 
     <footer>
     <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>서비스 특징</h4>
-                <ul>
-                    <li>• 24시간 연중무휴 대기</li>
-                    <li>• 전문 응급구조사 동행</li>
-                    <li>• 최신 의료장비 구비</li>
-                    <li>• 충북 전 지역 서비스</li>
-                    <li>• 투명한 요금 체계</li>
-                </ul>
+        <div class="footer-accordion">
+            <div class="footer-accordion-header" onclick="toggleFooterAccordion(this)">
+                <div class="footer-header-content">
+                    <h3>사업자 정보 및 서비스 안내</h3>
+                    <p>직지응급환자이송단 | 충청북도 전문 사설구급차 서비스</p>
+                </div>
+                <span class="footer-toggle-btn">+</span>
             </div>
-            <div class="footer-section">
-                <h4>전문 이송 분야</h4>
-                <ul>
-                    <li>• <a href="general_patient_transport.html">환자이송</a></li>
-                    <li>• <a href="nursing_home_transport.html">요양병원 전문이송</a></li>
-                    <li>• <a href="mental_health_transport.html">정신병원 입원</a></li>
-                    <li>• <a href="alcohol_treatment_transport.html">알콜중독</a></li>
-                    <li>• <a href="event_medical_support.html">행사구급차</a></li>
-                    <li>• <a href="goin_transport_service.html">고인이송</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>서비스 지역</h4>
-                <ul>
-                    <li>• 청주시(상당구,흥덕구,서원구,청원구)</li>
-                    <li>• 충주시,제천시</li>
-                    <li>• 단양군,음성군,괴산군</li>
-                    <li>• 진천군,증평군,보은군</li>
-                    <li>• 옥천군,영동군</li>
-                </ul>
+            
+            <div class="footer-accordion-content">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>서비스 특징</h4>
+                        <ul>
+                            <li>• 24시간 연중무휴 대기</li>
+                            <li>• 전문 응급구조사 동행</li>
+                            <li>• 최신 의료장비 구비</li>
+                            <li>• 충북 전 지역 서비스</li>
+                            <li>• 투명한 요금 체계</li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>전문 이송 분야</h4>
+                        <ul>
+                            <li>• <a href="general_patient_transport.html">환자이송</a></li>
+                            <li>• <a href="nursing_home_transport.html">요양병원 전문이송</a></li>
+                            <li>• <a href="mental_health_transport.html">정신병원 입원</a></li>
+                            <li>• <a href="alcohol_treatment_transport.html">알콜중독</a></li>
+                            <li>• <a href="event_medical_support.html">행사구급차</a></li>
+                            <li>• <a href="goin_transport_service.html">고인이송</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>서비스 지역</h4>
+                        <ul>
+                            <li>• 청주시(상당구,흥덕구,서원구,청원구)</li>
+                            <li>• 충주시,제천시</li>
+                            <li>• 단양군,음성군,괴산군</li>
+                            <li>• 진천군,증평군,보은군</li>
+                            <li>• 옥천군,영동군</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
+        
         <div class="footer-bottom">
             <p>&copy; 2025 직지응급환자이송단. 충청북도 전문 사설구급차 서비스. All rights reserved.</p>
             <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">
@@ -3133,11 +3264,21 @@ function toggleMainAccordion(element) {
     </div>
 </footer>
 
+<script>
+function toggleFooterAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+</script>
+
 <style>
 footer {
     background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
     color: white;
-    padding: 2rem 0 1rem;
+    padding: 0;
     border-top: 2px solid #3498db;
 }
 
@@ -3147,20 +3288,91 @@ footer .container {
     padding: 0 1rem;
 }
 
+.footer-accordion {
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.footer-accordion-header {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    color: white;
+    padding: 20px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.footer-accordion-header:hover {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    transform: translateY(-1px);
+}
+
+.footer-header-content {
+    flex-grow: 1;
+}
+
+.footer-accordion-header h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+}
+
+.footer-accordion-header p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.footer-toggle-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+}
+
+.footer-accordion-header.active .footer-toggle-btn {
+    transform: rotate(45deg);
+}
+
+.footer-accordion-content {
+    display: none;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+    padding: 25px 40px;
+}
+
+.footer-accordion-content.active {
+    display: block;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+    gap: 20px;
 }
 
 .footer-section h4 {
     color: #3498db;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 0.8rem;
+    margin-bottom: 10px;
     border-bottom: 2px solid #3498db;
-    padding-bottom: 0.3rem;
+    padding-bottom: 5px;
 }
 
 .footer-section ul {
@@ -3170,8 +3382,8 @@ footer .container {
 }
 
 .footer-section li {
-    margin-bottom: 0.4rem;
-    font-size: 0.9rem;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
     line-height: 1.4;
 }
 
@@ -3187,103 +3399,108 @@ footer .container {
 
 .footer-bottom {
     border-top: 1px solid #34495e;
-    padding-top: 1rem;
+    padding: 15px 40px;
     text-align: center;
 }
 
 .footer-bottom p {
     margin: 0;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #bdc3c7;
     line-height: 1.4;
 }
 
 /* 모바일 최적화 */
 @media (max-width: 768px) {
-    footer {
-        padding: 1.5rem 0 0.8rem;
+    .footer-accordion-header {
+        padding: 12px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-accordion-header h3 {
+        font-size: 1.1rem;
+        margin-bottom: 3px;
+    }
+    
+    .footer-accordion-header p {
+        font-size: 0.8rem;
+    }
+    
+    .footer-toggle-btn {
+        margin: 8px 0 0 0;
+        font-size: 1.2rem;
+    }
+    
+    .footer-accordion-content {
+        padding: 15px 20px;
     }
     
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 1.2rem;
-        margin-bottom: 1.2rem;
+        gap: 15px;
     }
     
     .footer-section h4 {
-        font-size: 1rem;
-        margin-bottom: 0.6rem;
-        padding-bottom: 0.2rem;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        padding-bottom: 3px;
     }
     
     .footer-section li {
-        margin-bottom: 0.3rem;
-        font-size: 0.85rem;
-    }
-    
-    .footer-bottom {
-        padding-top: 0.8rem;
-    }
-    
-    .footer-bottom p {
+        margin-bottom: 4px;
         font-size: 0.8rem;
     }
     
+    .footer-bottom {
+        padding: 12px 20px;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.75rem;
+    }
+    
     .footer-bottom p[style] {
-        margin-top: 0.5rem !important;
-        font-size: 0.75rem !important;
+        margin-top: 6px !important;
+        font-size: 0.7rem !important;
     }
 }
 
 /* 작은 모바일 디바이스 */
 @media (max-width: 480px) {
-    footer {
-        padding: 1.2rem 0 0.6rem;
+    .footer-accordion-header {
+        padding: 10px 15px;
     }
     
-    footer .container {
-        padding: 0 0.8rem;
+    .footer-accordion-header h3 {
+        font-size: 1rem;
+    }
+    
+    .footer-accordion-header p {
+        font-size: 0.75rem;
+    }
+    
+    .footer-accordion-content {
+        padding: 12px 15px;
     }
     
     .footer-content {
-        gap: 1rem;
-        margin-bottom: 1rem;
+        gap: 12px;
     }
     
     .footer-section h4 {
-        font-size: 0.95rem;
-        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+        margin-bottom: 6px;
     }
     
     .footer-section li {
-        margin-bottom: 0.25rem;
-        font-size: 0.8rem;
+        margin-bottom: 3px;
+        font-size: 0.75rem;
         line-height: 1.3;
     }
     
     .footer-bottom {
-        padding-top: 0.6rem;
-    }
-    
-    .footer-bottom p {
-        font-size: 0.75rem;
-        line-height: 1.3;
-    }
-    
-    .footer-bottom p[style] {
-        margin-top: 0.4rem !important;
-        font-size: 0.7rem !important;
-    }
-}
-
-/* 매우 작은 모바일 */
-@media (max-width: 360px) {
-    footer {
-        padding: 1rem 0 0.5rem;
-    }
-    
-    .footer-section li {
-        font-size: 0.75rem;
+        padding: 10px 15px;
     }
     
     .footer-bottom p {
@@ -3291,6 +3508,7 @@ footer .container {
     }
     
     .footer-bottom p[style] {
+        margin-top: 5px !important;
         font-size: 0.65rem !important;
     }
 }
