@@ -1867,10 +1867,17 @@ function toggleFaq(element) {
 </script>
 
         <section class="coverage">
-            <div class="container">
-                <h2 class="section-title">서비스 지역 및 병원 정보</h2>
-                <p style="text-align: center; font-size: 1.1rem; color: #666;">충청북도 전 지역에서 환자이송 가능합니다 (클릭하여 지역별 병원 정보 확인)</p>
-                
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content">
+                    <h2 class="section-title">서비스 지역 및 병원 정보</h2>
+                    <p class="section-subtitle">충청북도 전 지역에서 환자이송 가능합니다 (클릭하여 지역별 병원 정보 확인)</p>
+                </div>
+                <span class="main-toggle-btn">+</span>
+            </div>
+            
+            <div class="main-accordion-content">
                 <div class="coverage-grid">
                     <div class="coverage-item" onclick="location.href='cheongju_hospitals.html'">
                         <h4>청주사설구급차</h4>
@@ -1928,19 +1935,286 @@ function toggleFaq(element) {
                         <small style="color: #FF6B35;">제천 인근지역 | 관광지역</small>
                     </div>
                 </div>
-
-                <div style="text-align: center; margin-top: 40px; padding: 20px; background: #e8f4fd; border-radius: 10px;">
-                    <h4 style="color: #2980b9; margin-bottom: 10px;">💡 이송 서비스 안내</h4>
-                    <p style="color: #555;">각 지역별 주요 병원 정보와 청주/대전/서울 등 대도시 병원으로의 이송 경로를 확인하실 수 있습니다.</p>
+                
+                <div class="service-info-banner">
+                    <h4>💡 이송 서비스 안내</h4>
+                    <p>각 지역별 주요 병원 정보와 청주/대전/서울 등 대도시 병원으로의 이송 경로를 확인하실 수 있습니다.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
+
+<style>
+.coverage {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+.coverage .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-accordion {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.main-accordion-header {
+    background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+    color: white;
+    padding: 30px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.main-accordion-header:hover {
+    background: linear-gradient(135deg, #1f639a 0%, #2980b9 100%);
+    transform: translateY(-2px);
+}
+
+.header-content {
+    flex-grow: 1;
+}
+
+.main-accordion-header .section-title {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main-accordion-header .section-subtitle {
+    margin: 0;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.main-toggle-btn {
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+}
+
+.main-accordion-header.active .main-toggle-btn {
+    transform: rotate(45deg);
+}
+
+.main-accordion-content {
+    display: none;
+    background: white;
+    padding: 30px;
+}
+
+.main-accordion-content.active {
+    display: block;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.coverage-item {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #2980b9;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.coverage-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-left-color: #FF6B35;
+}
+
+.coverage-item h4 {
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.coverage-item p {
+    color: #666;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.coverage-item small {
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.service-info-banner {
+    text-align: center;
+    padding: 20px;
+    background: #e8f4fd;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+.service-info-banner h4 {
+    color: #2980b9;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.service-info-banner p {
+    color: #555;
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .coverage {
+        padding: 30px 0;
+    }
+    
+    .coverage .container {
+        padding: 0 15px;
+    }
+    
+    .main-accordion-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-accordion-header .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+        line-height: 1.2;
+    }
+    
+    .main-accordion-header .section-subtitle {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+    
+    .main-toggle-btn {
+        margin: 10px 0 0 0;
+        font-size: 1.5rem;
+    }
+    
+    .main-accordion-content {
+        padding: 15px;
+    }
+    
+    .coverage-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .coverage-item {
+        padding: 12px;
+        border-radius: 8px;
+    }
+    
+    .coverage-item h4 {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+    
+    .coverage-item p {
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+        line-height: 1.2;
+    }
+    
+    .coverage-item small {
+        font-size: 0.7rem;
+    }
+    
+    .service-info-banner {
+        padding: 15px;
+    }
+    
+    .service-info-banner h4 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    
+    .service-info-banner p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 360px) {
+    .coverage-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .coverage-item {
+        padding: 10px;
+    }
+    
+    .coverage-item h4 {
+        font-size: 0.85rem;
+    }
+    
+    .coverage-item p {
+        font-size: 0.75rem;
+    }
+    
+    .coverage-item small {
+        font-size: 0.65rem;
+    }
+}
+</style>
+
+<script>
+function toggleMainAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+</script>
 
         <section class="blog-section">
-            <div class="container">
-                <h2 class="section-title">응급의료 정보 & 이송 가이드</h2>
-                <p class="section-subtitle">전문가가 알려주는 응급상황 대처법과 환자이송 정보를 확인하세요</p>
-                
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content">
+                    <h2 class="section-title">응급의료 정보 & 이송 가이드</h2>
+                    <p class="section-subtitle">전문가가 알려주는 응급상황 대처법과 환자이송 정보를 확인하세요</p>
+                </div>
+                <span class="main-toggle-btn">+</span>
+            </div>
+            
+            <div class="main-accordion-content">
                 <div class="blog-grid">
                     <article class="blog-card" onclick="location.href='blog/emergency-first-aid-guide.html'">
                         <div class="blog-image">
@@ -2040,7 +2314,283 @@ function toggleFaq(element) {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
+
+<style>
+.blog-section {
+    background: white;
+    padding: 60px 0;
+}
+
+.blog-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-accordion {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.main-accordion-header {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+    padding: 30px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.main-accordion-header:hover {
+    background: linear-gradient(135deg, #229954 0%, #27ae60 100%);
+    transform: translateY(-2px);
+}
+
+.header-content {
+    flex-grow: 1;
+}
+
+.main-accordion-header .section-title {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main-accordion-header .section-subtitle {
+    margin: 0;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.main-toggle-btn {
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+}
+
+.main-accordion-header.active .main-toggle-btn {
+    transform: rotate(45deg);
+}
+
+.main-accordion-content {
+    display: none;
+    background: #f8f9fa;
+    padding: 30px;
+}
+
+.main-accordion-content.active {
+    display: block;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border-color: #27ae60;
+}
+
+.blog-image {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    padding: 20px;
+    text-align: center;
+}
+
+.blog-icon {
+    font-size: 3rem;
+    color: white;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-category {
+    background: #27ae60;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.blog-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.blog-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.blog-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.blog-more {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.blog-more .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .blog-section {
+        padding: 30px 0;
+    }
+    
+    .blog-section .container {
+        padding: 0 15px;
+    }
+    
+    .main-accordion-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-accordion-header .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+        line-height: 1.2;
+    }
+    
+    .main-accordion-header .section-subtitle {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+    
+    .main-toggle-btn {
+        margin: 10px 0 0 0;
+        font-size: 1.5rem;
+    }
+    
+    .main-accordion-content {
+        padding: 15px;
+    }
+    
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .blog-card {
+        border-radius: 10px;
+    }
+    
+    .blog-image {
+        padding: 15px;
+    }
+    
+    .blog-icon {
+        font-size: 2rem;
+    }
+    
+    .blog-content {
+        padding: 15px;
+    }
+    
+    .blog-category {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+        margin-bottom: 8px;
+    }
+    
+    .blog-card h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    
+    .blog-card p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .blog-meta {
+        font-size: 0.75rem;
+    }
+    
+    .blog-more div {
+        flex-direction: column;
+        gap: 10px !important;
+    }
+    
+    .blog-more .btn {
+        padding: 12px 25px !important;
+        font-size: 0.9rem !important;
+        width: 100%;
+        max-width: 200px;
+    }
+}
+</style>
+
+<script>
+function toggleMainAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+</script>
 
         <section class="pricing">
             <div class="container">
