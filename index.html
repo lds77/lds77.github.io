@@ -1252,9 +1252,17 @@
 </style>
 
         <section id="services" class="services">
-            <div class="container">
-                <h2 class="section-title">상황별 전문 이송 서비스</h2>
-                <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 30px;">청주사설구급차를 통한 전문 환자이송 서비스</p>
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content">
+                    <h2 class="section-title">상황별 전문 이송 서비스</h2>
+                    <p class="section-subtitle">청주사설구급차를 통한 전문 환자이송 서비스</p>
+                </div>
+                <span class="main-toggle-btn">+</span>
+            </div>
+            
+            <div class="main-accordion-content">
                 <div class="services-grid">
                     <div class="service-card" onclick="location.href='general_patient_transport.html'">
                         <div class="service-icon">🏥</div>
@@ -1288,77 +1296,575 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
+
+<style>
+.services {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+.services .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-accordion {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.main-accordion-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.main-accordion-header:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px);
+}
+
+.header-content {
+    flex-grow: 1;
+}
+
+.main-accordion-header .section-title {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main-accordion-header .section-subtitle {
+    margin: 0;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.main-toggle-btn {
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+}
+
+.main-accordion-header.active .main-toggle-btn {
+    transform: rotate(45deg);
+}
+
+.main-accordion-content {
+    display: none;
+    background: white;
+    padding: 30px;
+}
+
+.main-accordion-content.active {
+    display: block;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border-color: #667eea;
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.service-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .services {
+        padding: 30px 0;
+    }
+    
+    .services .container {
+        padding: 0 15px;
+    }
+    
+    .main-accordion-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-accordion-header .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+        line-height: 1.2;
+    }
+    
+    .main-accordion-header .section-subtitle {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+    
+    .main-toggle-btn {
+        margin: 10px 0 0 0;
+        font-size: 1.5rem;
+    }
+    
+    .main-accordion-content {
+        padding: 15px;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .service-card {
+        padding: 10px;
+        border-radius: 10px;
+        min-height: auto;
+    }
+    
+    .service-icon {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+    
+    .service-card h3 {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+        line-height: 1.2;
+    }
+    
+    .service-card p {
+        font-size: 0.75rem;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 360px) {
+    .services {
+        padding: 25px 0;
+    }
+    
+    .main-accordion-header {
+        padding: 12px 15px;
+    }
+    
+    .main-accordion-header .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .main-accordion-header .section-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .main-accordion-content {
+        padding: 12px;
+    }
+    
+    .service-card {
+        padding: 8px;
+    }
+    
+    .service-icon {
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+    }
+    
+    .service-card h3 {
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+    }
+    
+    .service-card p {
+        font-size: 0.7rem;
+        -webkit-line-clamp: 2;
+    }
+}
+</style>
+
+<script>
+function toggleMainAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+</script>
 
         <section class="faq-section">
-            <div class="container">
-                <h2 class="section-title">자주 묻는 질문</h2>
-                <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 40px;">청주 사설구급차 이용 시 자주 묻는 질문들입니다</p>
-                
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 정신질환자나 알콜중독 환자도 이송 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        네, 가능합니다. 정신질환자와 알콜중독 환자 이송을 위한 특별한 훈련을 받은 전문 인력이 상주하고 있으며, 환자의 상태와 안전을 최우선으로 하는 인도적인 이송 서비스를 제공합니다.
-                    </div>
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content">
+                    <h2 class="section-title">자주 묻는 질문</h2>
+                    <p class="section-subtitle">청주 사설구급차 이용 시 자주 묻는 질문들입니다</p>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 보험 적용이 되나요?
+                <span class="main-toggle-btn">+</span>
+            </div>
+            
+            <div class="main-accordion-content">
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 정신질환자나 알콜중독 환자도 이송 가능한가요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 가능합니다. 정신질환자와 알콜중독 환자 이송을 위한 특별한 훈련을 받은 전문 인력이 상주하고 있으며, 환자의 상태와 안전을 최우선으로 하는 인도적인 이송 서비스를 제공합니다.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        사설구급차 이용료는 일반적으로 건강보험 적용이 되지 않습니다. 다만, 실비보험이나 상해보험에 따라 보상이 가능한 경우가 있으니 해당 보험사에 문의하시기 바랍니다. 정확한 요금은 사전에 투명하게 안내해드립니다.
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 보험 적용이 되나요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>사설구급차 이용료는 일반적으로 건강보험 적용이 되지 않습니다. 다만, 실비보험이나 상해보험에 따라 보상이 가능한 경우가 있으니 해당 보험사에 문의하시기 바랍니다. 정확한 요금은 사전에 투명하게 안내해드립니다.</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 청주에서 서울까지 이송이 가능한가요?
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 청주에서 서울까지 이송이 가능한가요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 가능합니다. 청주를 기점으로 전국 어디든 장거리 이송 서비스를 제공하고 있습니다. 서울, 대전, 대구, 부산 등 전국 주요 도시로의 환자이송이 가능하며, 거리에 따른 요금은 사전에 정확히 안내해드립니다.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        네, 가능합니다. 청주를 기점으로 전국 어디든 장거리 이송 서비스를 제공하고 있습니다. 서울, 대전, 대구, 부산 등 전국 주요 도시로의 환자이송이 가능하며, 거리에 따른 요금은 사전에 정확히 안내해드립니다.
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 응급구조사가 항상 동행하나요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 저희 직지응급환자이송단은 상황별로 전문 응급구조사가 동행합니다. 1급 응급구조사 자격을 보유한 전문 인력이 이송 중 환자의 상태를 지속적으로 모니터링하고 필요시 응급처치를 실시합니다.</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 응급구조사가 항상 동행하나요?
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 야간이나 주말에도 이송이 가능한가요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 24시간 365일 언제든지 이송 서비스를 제공합니다. 야간(22시~06시)과 공휴일/주말에는 20%의 할증이 적용되지만, 응급상황에서는 신속한 대응을 최우선으로 하고 있습니다.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        네, 저희 직지응급환자이송단은 상황별로 전문 응급구조사가 동행합니다. 1급 응급구조사 자격을 보유한 전문 인력이 이송 중 환자의 상태를 지속적으로 모니터링하고 필요시 응급처치를 실시합니다.
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 요양병원 이송 시 필요한 준비물이 있나요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>환자의 의료기록, 보험증, 신분증, 복용 중인 약물 리스트를 준비해주세요. 침상형 구급차 이용 시에는 편안한 의복과 개인 용품을 챙겨주시면 됩니다. 의료장비는 저희가 모두 준비합니다.</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 야간이나 주말에도 이송이 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        네, 24시간 365일 언제든지 이송 서비스를 제공합니다. 야간(22시~06시)과 공휴일/주말에는 20%의 할증이 적용되지만, 응급상황에서는 신속한 대응을 최우선으로 하고 있습니다.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 요양병원 이송 시 필요한 준비물이 있나요?
-                    </div>
-                    <div class="faq-answer">
-                        환자의 의료기록, 보험증, 신분증, 복용 중인 약물 리스트를 준비해주세요. 침상형 구급차 이용 시에는 편안한 의복과 개인 용품을 챙겨주시면 됩니다. 의료장비는 저희가 모두 준비합니다.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 미리 예약이 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        네, 가능합니다. 계획된 이송의 경우 미리 예약을 받고 있으며, 응급상황에서는 즉시 출동합니다. 예약 시에는 이송 날짜, 시간, 출발지, 목적지, 환자 상태 등을 알려주시면 됩니다.
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 미리 예약이 가능한가요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 가능합니다. 계획된 이송의 경우 미리 예약을 받고 있으며, 응급상황에서는 즉시 출동합니다. 예약 시에는 이송 날짜, 시간, 출발지, 목적지, 환자 상태 등을 알려주시면 됩니다.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
+
+<style>
+.faq-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.faq-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-accordion {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.main-accordion-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.main-accordion-header:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px);
+}
+
+.header-content {
+    flex-grow: 1;
+}
+
+.main-accordion-header .section-title {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main-accordion-header .section-subtitle {
+    margin: 0;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.main-toggle-btn {
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+}
+
+.main-accordion-header.active .main-toggle-btn {
+    transform: rotate(45deg);
+}
+
+.main-accordion-content {
+    display: none;
+    background: white;
+    padding: 30px;
+}
+
+.main-accordion-content.active {
+    display: block;
+    animation: slideDown 0.4s ease;
+}
+
+.faq-grid {
+    display: grid;
+    gap: 15px;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+    background: #667eea;
+    color: white;
+    padding: 20px 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    position: relative;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-question:hover {
+    background: #5a6fd8;
+}
+
+.faq-answer {
+    display: none;
+    padding: 25px;
+    background: white;
+    border-top: 2px solid #667eea;
+}
+
+.faq-answer.active {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+.faq-answer p {
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 25px 0;
+    }
+    
+    .faq-section .container {
+        padding: 0 15px;
+    }
+    
+    .main-accordion-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-accordion-header .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+    }
+    
+    .main-accordion-header .section-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .main-toggle-btn {
+        margin: 10px 0 0 0;
+        font-size: 1.5rem;
+    }
+    
+    .main-accordion-content {
+        padding: 15px;
+    }
+    
+    .faq-grid {
+        gap: 10px;
+    }
+    
+    .faq-question {
+        padding: 15px 20px;
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+    
+    .faq-question::after {
+        right: 20px;
+        font-size: 1.2rem;
+    }
+    
+    .faq-answer {
+        padding: 15px 20px;
+    }
+    
+    .faq-answer p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+}
+</style>
+
+<script>
+function toggleMainAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+
+function toggleFaq(element) {
+    const answer = element.nextElementSibling;
+    const question = element;
+    
+    // Close all other FAQ items
+    const allQuestions = document.querySelectorAll('.faq-question');
+    const allAnswers = document.querySelectorAll('.faq-answer');
+    
+    allQuestions.forEach(q => {
+        if (q !== question) {
+            q.classList.remove('active');
+        }
+    });
+    
+    allAnswers.forEach(a => {
+        if (a !== answer) {
+            a.classList.remove('active');
+        }
+    });
+    
+    // Toggle current item
+    question.classList.toggle('active');
+    answer.classList.toggle('active');
+}
+</script>
 
         <section class="coverage">
             <div class="container">
