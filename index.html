@@ -1251,302 +1251,6 @@
 }
 </style>
 
-        <section id="services" class="services">
-    <div class="container">
-        <div class="main-accordion">
-            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
-                <div class="header-content">
-                    <h2 class="section-title">상황별 전문 이송 서비스</h2>
-                    <p class="section-subtitle">청주사설구급차를 통한 전문 환자이송 서비스</p>
-                </div>
-                <span class="main-toggle-btn">+</span>
-            </div>
-            
-            <div class="main-accordion-content">
-                <div class="services-grid">
-                    <div class="service-card" onclick="location.href='general_patient_transport.html'">
-                        <div class="service-icon">🏥</div>
-                        <h3>환자이송</h3>
-                        <p>청주·충주·제천등 병원 간 이송, 외래진료 이송, 입퇴원 이송 등 일반적인 환자이송 서비스를 안전하게 제공합니다.</p>
-                    </div>
-                    <div class="service-card" onclick="location.href='nursing_home_transport.html'">
-                        <div class="service-icon">🏚️</div>
-                        <h3>요양병원 전문이송</h3>
-                        <p>충북 지역 요양병원 입원 및 퇴원, 병원 간 전원 시 구급차로 편안하고 안전한 이송을 보장합니다.</p>
-                    </div>
-                    <div class="service-card" onclick="location.href='mental_health_transport.html'">
-                        <div class="service-icon">🧠</div>
-                        <h3>정신병원 입원</h3>
-                        <p>정신병원 입원 시 전문 훈련받은 응급구조사가 동행하여 안전하고 인도적인 이송을 실시합니다.</p>
-                    </div>
-                    <div class="service-card" onclick="location.href='alcohol_treatment_transport.html'">
-                        <div class="service-icon">🍺</div>
-                        <h3>알콜중독</h3>
-                        <p>알콜중독 전문병원 입원 시 환자 상태를 고려한 맞춤형 이송 서비스를 제공합니다.</p>
-                    </div>
-                    <div class="service-card" onclick="location.href='event_medical_support.html'">
-                        <div class="service-icon">🎭</div>
-                        <h3>행사구급차</h3>
-                        <p>체육대회, 축제, 콘서트 등 각종 행사 현장에서의 응급의료 지원 서비스를 제공합니다.</p>
-                    </div>
-                    <div class="service-card" onclick="location.href='goin_transport_service.html'">
-                        <div class="service-icon">🕊️</div>
-                        <h3>고인 이송</h3>
-                        <p>고인의 존엄성을 지키며 장례식장까지 정중하고 신속한 이송 서비스를 제공합니다.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-.services {
-    background: #f8f9fa;
-    padding: 60px 0;
-}
-
-.services .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.main-accordion {
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-.main-accordion-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 30px 40px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: all 0.3s ease;
-}
-
-.main-accordion-header:hover {
-    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
-    transform: translateY(-2px);
-}
-
-.header-content {
-    flex-grow: 1;
-}
-
-.main-accordion-header .section-title {
-    margin: 0 0 10px 0;
-    font-size: 2rem;
-    font-weight: 700;
-    color: white;
-}
-
-.main-accordion-header .section-subtitle {
-    margin: 0;
-    font-size: 1.1rem;
-    color: rgba(255,255,255,0.9);
-}
-
-.main-toggle-btn {
-    font-size: 2rem;
-    font-weight: bold;
-    transition: transform 0.3s ease;
-    margin-left: 20px;
-}
-
-.main-accordion-header.active .main-toggle-btn {
-    transform: rotate(45deg);
-}
-
-.main-accordion-content {
-    display: none;
-    background: white;
-    padding: 30px;
-}
-
-.main-accordion-content.active {
-    display: block;
-    animation: slideDown 0.4s ease;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-}
-
-.service-card {
-    background: white;
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    text-align: center;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    border-color: #667eea;
-}
-
-.service-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.service-card h3 {
-    margin: 0 0 15px 0;
-    font-size: 1.3rem;
-    color: #333;
-    font-weight: 600;
-}
-
-.service-card p {
-    color: #666;
-    line-height: 1.6;
-    margin: 0;
-}
-
-@media (max-width: 768px) {
-    .services {
-        padding: 30px 0;
-    }
-    
-    .services .container {
-        padding: 0 15px;
-    }
-    
-    .main-accordion-header {
-        padding: 15px 20px;
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .main-accordion-header .section-title {
-        font-size: 1.3rem;
-        margin-bottom: 6px;
-        line-height: 1.2;
-    }
-    
-    .main-accordion-header .section-subtitle {
-        font-size: 0.85rem;
-        line-height: 1.3;
-    }
-    
-    .main-toggle-btn {
-        margin: 10px 0 0 0;
-        font-size: 1.5rem;
-    }
-    
-    .main-accordion-content {
-        padding: 15px;
-    }
-    
-    .services-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-    }
-    
-    .service-card {
-        padding: 10px;
-        border-radius: 10px;
-        min-height: auto;
-    }
-    
-    .service-icon {
-        font-size: 1.8rem;
-        margin-bottom: 8px;
-    }
-    
-    .service-card h3 {
-        font-size: 0.9rem;
-        margin-bottom: 6px;
-        line-height: 1.2;
-    }
-    
-    .service-card p {
-        font-size: 0.75rem;
-        line-height: 1.3;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-}
-
-@media (max-width: 360px) {
-    .services {
-        padding: 25px 0;
-    }
-    
-    .main-accordion-header {
-        padding: 12px 15px;
-    }
-    
-    .main-accordion-header .section-title {
-        font-size: 1.2rem;
-    }
-    
-    .main-accordion-header .section-subtitle {
-        font-size: 0.8rem;
-    }
-    
-    .main-accordion-content {
-        padding: 12px;
-    }
-    
-    .service-card {
-        padding: 8px;
-    }
-    
-    .service-icon {
-        font-size: 1.5rem;
-        margin-bottom: 6px;
-    }
-    
-    .service-card h3 {
-        font-size: 0.85rem;
-        margin-bottom: 4px;
-    }
-    
-    .service-card p {
-        font-size: 0.7rem;
-        -webkit-line-clamp: 2;
-    }
-}
-</style>
-
-<script>
-function toggleMainAccordion(element) {
-    const content = element.nextElementSibling;
-    const header = element;
-    
-    header.classList.toggle('active');
-    content.classList.toggle('active');
-}
-</script>
-
         <section class="faq-section">
     <div class="container">
         <div class="main-accordion">
@@ -1863,6 +1567,302 @@ function toggleFaq(element) {
     // Toggle current item
     question.classList.toggle('active');
     answer.classList.toggle('active');
+}
+</script>
+
+        <section id="services" class="services">
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content">
+                    <h2 class="section-title">상황별 전문 이송 서비스</h2>
+                    <p class="section-subtitle">청주사설구급차를 통한 전문 환자이송 서비스</p>
+                </div>
+                <span class="main-toggle-btn">+</span>
+            </div>
+            
+            <div class="main-accordion-content">
+                <div class="services-grid">
+                    <div class="service-card" onclick="location.href='general_patient_transport.html'">
+                        <div class="service-icon">🏥</div>
+                        <h3>환자이송</h3>
+                        <p>청주·충주·제천등 병원 간 이송, 외래진료 이송, 입퇴원 이송 등 일반적인 환자이송 서비스를 안전하게 제공합니다.</p>
+                    </div>
+                    <div class="service-card" onclick="location.href='nursing_home_transport.html'">
+                        <div class="service-icon">🏚️</div>
+                        <h3>요양병원 전문이송</h3>
+                        <p>충북 지역 요양병원 입원 및 퇴원, 병원 간 전원 시 구급차로 편안하고 안전한 이송을 보장합니다.</p>
+                    </div>
+                    <div class="service-card" onclick="location.href='mental_health_transport.html'">
+                        <div class="service-icon">🧠</div>
+                        <h3>정신병원 입원</h3>
+                        <p>정신병원 입원 시 전문 훈련받은 응급구조사가 동행하여 안전하고 인도적인 이송을 실시합니다.</p>
+                    </div>
+                    <div class="service-card" onclick="location.href='alcohol_treatment_transport.html'">
+                        <div class="service-icon">🍺</div>
+                        <h3>알콜중독</h3>
+                        <p>알콜중독 전문병원 입원 시 환자 상태를 고려한 맞춤형 이송 서비스를 제공합니다.</p>
+                    </div>
+                    <div class="service-card" onclick="location.href='event_medical_support.html'">
+                        <div class="service-icon">🎭</div>
+                        <h3>행사구급차</h3>
+                        <p>체육대회, 축제, 콘서트 등 각종 행사 현장에서의 응급의료 지원 서비스를 제공합니다.</p>
+                    </div>
+                    <div class="service-card" onclick="location.href='goin_transport_service.html'">
+                        <div class="service-icon">🕊️</div>
+                        <h3>고인 이송</h3>
+                        <p>고인의 존엄성을 지키며 장례식장까지 정중하고 신속한 이송 서비스를 제공합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.services {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+.services .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-accordion {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.main-accordion-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.main-accordion-header:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px);
+}
+
+.header-content {
+    flex-grow: 1;
+}
+
+.main-accordion-header .section-title {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main-accordion-header .section-subtitle {
+    margin: 0;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.main-toggle-btn {
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+}
+
+.main-accordion-header.active .main-toggle-btn {
+    transform: rotate(45deg);
+}
+
+.main-accordion-content {
+    display: none;
+    background: white;
+    padding: 30px;
+}
+
+.main-accordion-content.active {
+    display: block;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border-color: #667eea;
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.service-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .services {
+        padding: 30px 0;
+    }
+    
+    .services .container {
+        padding: 0 15px;
+    }
+    
+    .main-accordion-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-accordion-header .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+        line-height: 1.2;
+    }
+    
+    .main-accordion-header .section-subtitle {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+    
+    .main-toggle-btn {
+        margin: 10px 0 0 0;
+        font-size: 1.5rem;
+    }
+    
+    .main-accordion-content {
+        padding: 15px;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .service-card {
+        padding: 10px;
+        border-radius: 10px;
+        min-height: auto;
+    }
+    
+    .service-icon {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+    
+    .service-card h3 {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+        line-height: 1.2;
+    }
+    
+    .service-card p {
+        font-size: 0.75rem;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 360px) {
+    .services {
+        padding: 25px 0;
+    }
+    
+    .main-accordion-header {
+        padding: 12px 15px;
+    }
+    
+    .main-accordion-header .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .main-accordion-header .section-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .main-accordion-content {
+        padding: 12px;
+    }
+    
+    .service-card {
+        padding: 8px;
+    }
+    
+    .service-icon {
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+    }
+    
+    .service-card h3 {
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+    }
+    
+    .service-card p {
+        font-size: 0.7rem;
+        -webkit-line-clamp: 2;
+    }
+}
+</style>
+
+<script>
+function toggleMainAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    header.classList.toggle('active');
+    content.classList.toggle('active');
 }
 </script>
 
