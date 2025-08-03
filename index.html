@@ -2488,7 +2488,7 @@ function toggleMainAccordion(element) {
 
 @media (max-width: 768px) {
     .blog-section {
-        padding: 30px 0;
+        padding: 25px 0;
     }
     
     .blog-section .container {
@@ -2522,62 +2522,71 @@ function toggleMainAccordion(element) {
     }
     
     .blog-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        margin-bottom: 20px;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 15px;
     }
     
     .blog-card {
-        border-radius: 10px;
+        border-radius: 8px;
+        min-height: auto;
     }
     
     .blog-image {
-        padding: 15px;
+        padding: 8px;
     }
     
     .blog-icon {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     .blog-content {
-        padding: 15px;
+        padding: 8px;
     }
     
     .blog-category {
-        font-size: 0.7rem;
-        padding: 3px 8px;
-        margin-bottom: 8px;
+        font-size: 0.6rem;
+        padding: 2px 6px;
+        margin-bottom: 4px;
+        border-radius: 8px;
     }
     
     .blog-card h3 {
-        font-size: 1rem;
-        margin-bottom: 8px;
+        font-size: 0.8rem;
+        margin-bottom: 4px;
+        line-height: 1.2;
     }
     
     .blog-card p {
-        font-size: 0.85rem;
-        line-height: 1.4;
-        margin-bottom: 10px;
+        font-size: 0.7rem;
+        line-height: 1.2;
+        margin-bottom: 6px;
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
     
     .blog-meta {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
+        gap: 5px;
+    }
+    
+    .blog-more {
+        margin-top: 15px;
     }
     
     .blog-more div {
         flex-direction: column;
-        gap: 10px !important;
+        gap: 8px !important;
     }
     
     .blog-more .btn {
-        padding: 12px 25px !important;
-        font-size: 0.9rem !important;
+        padding: 8px 16px !important;
+        font-size: 0.8rem !important;
         width: 100%;
-        max-width: 200px;
+        max-width: 160px;
+        border-radius: 20px !important;
     }
 }
 </style>
