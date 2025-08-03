@@ -1968,12 +1968,14 @@ function toggleFaq(element) {
 .main-accordion-header {
     background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
     color: white;
-    padding: 30px 40px;
+    padding: 30px 0;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: all 0.3s ease;
+    width: 100%;
+    margin: 0;
 }
 
 .main-accordion-header:hover {
@@ -1983,6 +1985,7 @@ function toggleFaq(element) {
 
 .header-content {
     flex-grow: 1;
+    padding: 0 40px;
 }
 
 .main-accordion-header .section-title {
@@ -2002,7 +2005,7 @@ function toggleFaq(element) {
     font-size: 2rem;
     font-weight: bold;
     transition: transform 0.3s ease;
-    margin-left: 20px;
+    margin-right: 40px;
 }
 
 .main-accordion-header.active .main-toggle-btn {
@@ -2099,13 +2102,19 @@ function toggleFaq(element) {
     }
     
     .coverage .container {
-        padding: 0 15px;
+        padding: 0;
     }
     
     .main-accordion-header {
-        padding: 15px 20px;
+        padding: 15px 0;
         flex-direction: column;
         text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .header-content {
+        padding: 0 20px;
     }
     
     .main-accordion-header .section-title {
