@@ -2613,9 +2613,17 @@ function toggleMainAccordion(element) {
 </script>
 
         <section class="pricing">
-            <div class="container">
-                <h2 class="section-title">투명한 요금 안내</h2>
-                <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 30px;">2025년 1월 기준 특수차 요금표 (보건복지부 고시 준수)</p>
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content">
+                    <h2 class="section-title">투명한 요금 안내</h2>
+                    <p class="section-subtitle">2025년 1월 기준 특수차 요금표 (보건복지부 고시 준수)</p>
+                </div>
+                <span class="main-toggle-btn">+</span>
+            </div>
+            
+            <div class="main-accordion-content">
                 <div class="price-table">
                     <div class="price-row">
                         <span class="price-service">기본 요금 (10km 이내, 특수차)</span>
@@ -2642,13 +2650,273 @@ function toggleMainAccordion(element) {
                         <span class="price-amount">별도 상담</span>
                     </div>
                 </div>
-                <p style="text-align: center; margin-top: 30px; color: #666; font-size: 0.9rem;">
-                    ※ 정확한 요금은 출발지와 목적지를 확인한 후 안내해드립니다<br>
+                
+                <div class="pricing-notice">
+                    <p>※ 정확한 요금은 출발지와 목적지를 확인한 후 안내해드립니다<br>
                     ※ 특수 상황 이송 및 장거리 이송의 경우 별도 상담 후 요금이 책정됩니다<br>
-                    ※ 상기 요금은 2025년 1월 기준이며 정부 고시에 따라 변동될 수 있습니다
-                </p>
+                    ※ 상기 요금은 2025년 1월 기준이며 정부 고시에 따라 변동될 수 있습니다</p>
+                </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
+
+<style>
+.pricing {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+.pricing .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-accordion {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.main-accordion-header {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    color: white;
+    padding: 30px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.main-accordion-header:hover {
+    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+    transform: translateY(-2px);
+}
+
+.header-content {
+    flex-grow: 1;
+}
+
+.main-accordion-header .section-title {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main-accordion-header .section-subtitle {
+    margin: 0;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.main-toggle-btn {
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+}
+
+.main-accordion-header.active .main-toggle-btn {
+    transform: rotate(45deg);
+}
+
+.main-accordion-content {
+    display: none;
+    background: white;
+    padding: 30px;
+}
+
+.main-accordion-content.active {
+    display: block;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.price-table {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid #e9ecef;
+    transition: background 0.3s ease;
+}
+
+.price-row:last-child {
+    border-bottom: none;
+}
+
+.price-row:hover {
+    background: #f8f9fa;
+}
+
+.price-service {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.price-amount {
+    font-weight: 700;
+    color: #e74c3c;
+    font-size: 1.2rem;
+}
+
+.pricing-notice {
+    text-align: center;
+    background: #ffeaa7;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #f39c12;
+}
+
+.pricing-notice p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .pricing {
+        padding: 25px 0;
+    }
+    
+    .pricing .container {
+        padding: 0 15px;
+    }
+    
+    .main-accordion-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-accordion-header .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+        line-height: 1.2;
+    }
+    
+    .main-accordion-header .section-subtitle {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+    
+    .main-toggle-btn {
+        margin: 10px 0 0 0;
+        font-size: 1.5rem;
+    }
+    
+    .main-accordion-content {
+        padding: 15px;
+    }
+    
+    .price-table {
+        margin-bottom: 15px;
+        border-radius: 10px;
+    }
+    
+    .price-row {
+        padding: 12px 15px;
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    
+    .price-service {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+    
+    .price-amount {
+        font-size: 1rem;
+    }
+    
+    .pricing-notice {
+        padding: 12px;
+    }
+    
+    .pricing-notice p {
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 360px) {
+    .pricing {
+        padding: 20px 0;
+    }
+    
+    .main-accordion-header {
+        padding: 12px 15px;
+    }
+    
+    .main-accordion-header .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .main-accordion-header .section-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .main-accordion-content {
+        padding: 12px;
+    }
+    
+    .price-row {
+        padding: 10px 12px;
+    }
+    
+    .price-service {
+        font-size: 0.8rem;
+    }
+    
+    .price-amount {
+        font-size: 0.9rem;
+    }
+    
+    .pricing-notice {
+        padding: 10px;
+    }
+    
+    .pricing-notice p {
+        font-size: 0.7rem;
+    }
+}
+</style>
+
+<script>
+function toggleMainAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+</script>
 
         <section class="contact">
             <div class="container">
