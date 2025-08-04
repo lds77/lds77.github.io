@@ -1418,12 +1418,22 @@
         }
 
         function openSeoPopup() {
-            document.getElementById('seoPopup').style.display = 'block';
-        }
+    const popup = document.getElementById('seoPopup');
+    popup.classList.add('active');
+}
 
-        function closeSeoPopup() {
-            document.getElementById('seoPopup').style.display = 'none';
-        }
+function closeSeoPopup() {
+    const popup = document.getElementById('seoPopup');
+    popup.classList.remove('active');
+}
+
+// Close popup when clicking outside
+window.onclick = function(event) {
+    const popup = document.getElementById('seoPopup');
+    if (event.target == popup) {
+        closeSeoPopup();
+    }
+}
 
         // Close popup when clicking outside
         window.onclick = function(event) {
