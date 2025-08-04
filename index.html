@@ -3576,6 +3576,39 @@ footer .container {
     <a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
 
     <script>
+        // 페이지 로드 시 첫 번째 아코디언과 첫 번째 FAQ 열기
+        document.addEventListener('DOMContentLoaded', function() {
+            // 첫 번째 아코디언들 열기
+            const firstAccordions = document.querySelectorAll('.main-accordion-header');
+            const firstContactAccordion = document.querySelector('.contact-accordion-header');
+            const firstFooterAccordion = document.querySelector('.footer-accordion-header');
+            
+            if (firstAccordions[0]) {
+                firstAccordions[0].classList.add('active');
+                firstAccordions[0].nextElementSibling.classList.add('active');
+            }
+            
+            if (firstContactAccordion) {
+                firstContactAccordion.classList.add('active');
+                firstContactAccordion.nextElementSibling.classList.add('active');
+            }
+            
+            if (firstFooterAccordion) {
+                firstFooterAccordion.classList.add('active');
+                firstFooterAccordion.nextElementSibling.classList.add('active');
+            }
+            
+            // 첫 번째 FAQ 질문 열기
+            const firstFaqQuestion = document.querySelector('.faq-question');
+            const firstFaqAnswer = document.querySelector('.faq-answer');
+            
+            if (firstFaqQuestion && firstFaqAnswer) {
+                firstFaqQuestion.classList.add('active');
+                firstFaqAnswer.classList.add('active');
+            }
+        });
+
+        <script>
         // FAQ 토글 기능
         function toggleFaq(element) {
             const answer = element.nextElementSibling;
@@ -3585,9 +3618,13 @@ footer .container {
             document.querySelectorAll('.faq-answer').forEach(item => {
                 item.classList.remove('active');
             });
+            document.querySelectorAll('.faq-question').forEach(item => {
+                item.classList.remove('active');
+            });
             
             // 클릭한 항목만 열기 (이미 열려있었다면 닫기)
             if (!isActive) {
+                element.classList.add('active');
                 answer.classList.add('active');
             }
         }
