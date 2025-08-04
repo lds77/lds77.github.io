@@ -3608,7 +3608,6 @@ footer .container {
             }
         });
 
-        <script>
         // FAQ 토글 기능
         function toggleFaq(element) {
             const answer = element.nextElementSibling;
@@ -3647,14 +3646,12 @@ footer .container {
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-    header.style.background = 'linear-gradient(135deg, rgba(52, 152, 219, 0.95) 0%, rgba(41, 128, 185, 0.95) 100%)';
-    /* 기존: header.style.background = 'linear-gradient(135deg, rgba(231, 76, 60, 0.95) 0%, rgba(192, 57, 43, 0.95) 100%)'; */
-    header.style.backdropFilter = 'blur(10px)';
-} else {
-    header.style.background = 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)';
-    /* 기존: header.style.background = 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)'; */
-    header.style.backdropFilter = 'none';
-}
+                header.style.background = 'linear-gradient(135deg, rgba(52, 152, 219, 0.95) 0%, rgba(41, 128, 185, 0.95) 100%)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)';
+                header.style.backdropFilter = 'none';
+            }
         });
 
         // Add animation on scroll
@@ -3679,6 +3676,6 @@ footer .container {
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(card);
         });
-    </script>
+</script>
 </body>
 </html>
