@@ -1380,23 +1380,25 @@
             }
         }
 
-        // SEO 요약 팝업 기능
-        function openSummary() {
-            document.getElementById('summaryPopup').style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
-        }
+        // 수정된 코드 (정상 작동)
+function openSummary() {
+    const modal = document.getElementById('summaryModal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
 
-        function closeSummary() {
-            document.getElementById('summaryPopup').style.display = 'none';
-            document.body.style.overflow = 'auto'; // 스크롤 복원
-        }
+function closeSummary() {
+    const modal = document.getElementById('summaryModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
 
-        // 팝업 배경 클릭 시 닫기
-        document.getElementById('summaryPopup').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeSummary();
-            }
-        });
+// 모달 외부 클릭 시 닫기
+document.getElementById('summaryModal').onclick = function(event) {
+    if (event.target === this) {
+        closeSummary();
+    }
+}
 
         // ESC 키로 팝업 닫기
         document.addEventListener('keydown', function(e) {
