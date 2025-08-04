@@ -3337,6 +3337,12 @@ document.getElementById('summaryPopup').addEventListener('click', function(e) {
 });
 
         document.addEventListener('DOMContentLoaded', function() {
+            const firstMainAccordion = document.querySelector('.main-accordion-header');
+    const firstMainContent = document.querySelector('.main-accordion-content');
+    if (firstMainAccordion && firstMainContent) {
+        firstMainAccordion.classList.add('active');
+        firstMainContent.classList.add('active');
+    }
             const cards = document.querySelectorAll('.info-card, .service-card, .hospital-item, .faq-item');
             cards.forEach((card, index) => {
                 card.style.opacity = '0';
