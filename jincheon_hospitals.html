@@ -1382,19 +1382,19 @@
 
         // 수정된 코드 (정상 작동)
 function openSummary() {
-    const modal = document.getElementById('summaryModal');
-    modal.classList.add('active');
+    const popup = document.getElementById('summaryPopup');  // ← 올바른 ID
+    popup.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
 
 function closeSummary() {
-    const modal = document.getElementById('summaryModal');
-    modal.classList.remove('active');
+    const popup = document.getElementById('summaryPopup');  // ← 올바른 ID
+    popup.classList.remove('active');
     document.body.style.overflow = 'auto';
 }
 
 // 모달 외부 클릭 시 닫기
-document.getElementById('summaryModal').onclick = function(event) {
+document.getElementById('summaryPopup').onclick = function(event) {  // ← 올바른 ID
     if (event.target === this) {
         closeSummary();
     }
