@@ -1400,23 +1400,25 @@
             }
         }
 
-        // Summary popup 기능
-        function showSummary() {
-            document.getElementById('summaryPopup').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
+        // 수정된 코드 (정상 작동)
+function showSummary() {
+    const popup = document.getElementById('summaryPopup');
+    popup.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
 
-        function hideSummary() {
-            document.getElementById('summaryPopup').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
+function hideSummary() {
+    const popup = document.getElementById('summaryPopup');
+    popup.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
 
-        // 팝업 배경 클릭 시 닫기
-        document.getElementById('summaryPopup').addEventListener('click', function(e) {
-            if (e.target === this) {
-                hideSummary();
-            }
-        });
+// 팝업 배경 클릭 시 닫기
+document.getElementById('summaryPopup').addEventListener('click', function(e) {
+    if (e.target === this) {
+        hideSummary();
+    }
+});
 
         // 페이지 로드 시 애니메이션
         document.addEventListener('DOMContentLoaded', function() {
