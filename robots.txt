@@ -29,3 +29,5 @@ Sitemap: https://lds77.github.io/sitemap.xml
 Disallow: /.git/
 Disallow: /_site/
 Disallow: /node_modules/
+
+#DaumWebMasterTool:835a261110470677bc676c0df24f722515a02ed56e7421c78693169806581aa4:i8ihTxSjFG7XIVrbKvyY5w==
