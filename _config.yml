@@ -139,7 +139,7 @@ exclude:
 # 검색 엔진 최적화
 google_analytics: "G-T5CHBY7K97"
 google_site_verification: "CBhqeRSVuJLNOP2dsQKEgwyFOf-gjXYFw-WVwejeOCA"
-naver_site_verification: # 네이버 사이트 확인 코드가 있으면 여기에 입력
+naver_site_verification: "27252395829fbd8e3740617316bfcc4f"
 
 # 사이트 구조화 데이터
 structured_data:
