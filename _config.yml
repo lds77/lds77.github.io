@@ -137,7 +137,7 @@ exclude:
  - README.md
 
 # 검색 엔진 최적화
-google_analytics: # 구글 애널리틱스 ID가 있으면 여기에 입력
+google_analytics: "G-T5CHBY7K97"
 google_site_verification: # 구글 사이트 확인 코드가 있으면 여기에 입력
 naver_site_verification: # 네이버 사이트 확인 코드가 있으면 여기에 입력
 
