@@ -1,48 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T5CHBY7K97"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T5CHBY7K97');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- 구글 사이트 인증 코드 -->
-    <meta name="google-site-verification" content="CBhqeRSVuJLNOP2dsQKEgwyFOf-gjXYFw-WVwejeOCA">
-    <title>충청북도 병원찾기 | 청주 충주 제천 음성 병원정보</title>
-    
-    <!-- 기본 SEO 메타태그 -->
-    <meta name="description" content="충북 전 지역 병원 정보 및 전화번호를 지역별, 종류별로 확인하세요. 종합병원, 요양병원, 한방병원 등 상세 정보 제공.">
-    <meta name="keywords" content="충청북도 병원, 청주 병원, 충주 병원, 제천 병원, 음성 병원, 충북 의료기관, 응급실, 종합병원, 요양병원">
-    <meta name="author" content="직지응급환자이송단">
-    <meta name="robots" content="index, follow">
-    <!-- 언어 및 지역 설정 -->
-    <meta name="language" content="ko-KR">
-    <meta name="geo.region" content="KR-43">
-    <meta name="geo.placename" content="충청북도">
-    <!-- 캐노니컬 URL 추가 -->
-<link rel="canonical" href="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html">
-    <!-- 구조화된 데이터 (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "충청북도 병원찾기",
-        "description": "충북 전 지역 병원 정보 및 전화번호를 지역별, 종류별로 확인하세요",
-        "url": "https://lds77.github.io/chungbuk-medical-institutions-info-summary.html",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://lds77.github.io/chungbuk-medical-institutions-info-summary.html?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
-    }
-    </script>
+    <title>충청북도 병원찾기 청주,충주,제천,음성 등 충북 병원찾기 ㅣ 직지응급환자이송단</title>
     <meta property="og:title" content="충청북도 병원정보 찾기 | 직지응급환자이송단">
     <meta property="og:description" content="충북 전 지역 병원 정보 및 전화번호를 지역별, 종류별로 확인하세요. 종합병원, 요양병원, 한방병원 등 상세 정보 제공.">
     <meta property="og:type" content="website">
@@ -50,21 +12,6 @@
     <meta property="og:url" content="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html"> 
     <meta property="og:site_name" content="충청북도 병원찾기">
     <meta property="og:locale" content="ko_KR">
-    <!-- 트위터 카드 -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="충청북도 병원정보 찾기">
-    <meta name="twitter:description" content="충북 전 지역 병원 정보 및 전화번호를 지역별, 종류별로 확인하세요">
-    <meta name="twitter:image" content="https://lds77.github.io/chungbuk-medical.jpg">
-    
-    <!-- DNS 프리페치 (성능 최적화) -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-    
-    <!-- 폰트 최적화 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
     <style>
         /* General styling for the page */
         * {
@@ -184,39 +131,36 @@
         }
         
         /* Individual hospital card styling */
-.hospital-card {
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 6px;
-    padding: 12px;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-    display: block;
-}
-
-.hospital-card.hidden {
-    /* display: none; */
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(0.95);
-    pointer-events: none;
-}
-.hospital-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 100%;
-    background-color: #2a5298;
-    transition: width 0.3s;
-}
+        .hospital-card {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 12px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            display: block;
+        }
         
-        .hospital-card:hover:not(.hidden) {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
+        .hospital-card.hidden {
+            display: none;
+        }
+
+        .hospital-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background-color: #2a5298;
+            transition: width 0.3s;
+        }
+        
+        .hospital-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
         
         .hospital-card:hover::before {
             width: 100%;
@@ -1876,7 +1820,3 @@
     </script>
 </body>
 </html>
-
-
-
-
