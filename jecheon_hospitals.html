@@ -76,72 +76,183 @@
     <!-- 모바일 최적화 -->
     <meta name="format-detection" content="telephone=yes">
     <meta name="mobile-web-app-capable" content="yes">
+    <!-- 2025년 SEO 필수 메타태그 -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="theme-color" content="#27ae60">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="제천 사설구급차">
+
+<!-- 산간지역 특화 키워드 -->
+<meta name="location" content="제천시, 충청북도, 한국">
+<meta name="coverage" content="Worldwide">
+<meta name="distribution" content="Global">
+<meta name="rating" content="General">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
-    <!-- 구조화된 데이터 -->
-    <script type="application/ld+json">
+    <!-- JSON-LD 구조화 데이터 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "직지응급환자이송단 제천지점",
+  "alternateName": ["제천 사설구급차", "제천 구급차", "세명대 제천한방병원 구급차"],
+  "description": "제천시 충북 동북부 산간지역 전문 사설구급차 서비스. 24시간 세명대 제천한방병원 신속이송",
+  "telephone": "010-8841-4114",
+  "url": "https://lds77.github.io/jecheon_hospitals.html",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "충청북도",
+    "addressLocality": "제천시",
+    "addressCountry": "KR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "37.1326",
+    "longitude": "128.1906"
+  },
+  "areaServed": [
     {
-      "@context": "https://schema.org",
-      "@type": "MedicalBusiness",
-      "name": "직지응급환자이송단 제천지점",
-      "alternateName": ["제천 사설구급차", "제천 구급차", "세명대 제천한방병원 구급차"],
-      "description": "제천시 충북 동북부 산간지역 전문 사설구급차 서비스. 24시간 세명대 제천한방병원 신속이송",
-      "telephone": "010-8841-4114",
-      "url": "https://lds77.github.io/jecheon_hospitals.html",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "충청북도",
-        "addressLocality": "제천시",
-        "addressCountry": "KR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "37.1326",
-        "longitude": "128.1906"
-      },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "제천시"
-        },
-        {
-          "@type": "Place",
-          "name": "충북 동북부 산간지역"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "청풍면"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "수산면"
-        }
-      ],
-      "serviceType": [
-        "제천 사설구급차",
-        "제천 환자이송", 
-        "세명대 제천한방병원 이송",
-        "산간지역 응급의료",
-        "월악산 응급구조"
-      ],
-      "openingHours": "Mo-Su 00:00-23:59",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "010-8841-4114",
-        "contactType": "emergency",
-        "availableLanguage": "Korean",
-        "hoursAvailable": "24/7",
-        "areaServed": "제천시"
+      "@type": "City",
+      "name": "제천시"
+    },
+    {
+      "@type": "Place",
+      "name": "충북 동북부 산간지역"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "청풍면"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "수산면"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "덕산면"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "백운면"
+    }
+  ],
+  "availableService": [
+    {
+      "@type": "MedicalService",
+      "name": "세명대 제천한방병원 이송",
+      "description": "한의학과 현대의학 통합의료 전문 이송"
+    },
+    {
+      "@type": "MedicalService",
+      "name": "산간지역 응급구조",
+      "description": "월악산, 청풍호 등 산간지역 응급의료 서비스"
+    },
+    {
+      "@type": "MedicalService",
+      "name": "관광지 의료지원",
+      "description": "등산객, 관광객 대상 응급의료 지원"
+    }
+  ],
+  "serviceType": [
+    "제천 사설구급차",
+    "제천 환자이송", 
+    "세명대 제천한방병원 이송",
+    "산간지역 응급의료",
+    "월악산 응급구조"
+  ],
+  "openingHours": "Mo-Su 00:00-23:59",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "010-8841-4114",
+    "contactType": "emergency",
+    "availableLanguage": "Korean",
+    "hoursAvailable": "24/7",
+    "areaServed": "제천시"
+  },
+  "sameAs": [
+    "https://blog.naver.com/ldszuno"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "세명대 제천한방병원으로 즉시 이송 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 즉시 이송 가능합니다. 세명대학교 제천한방병원은 한의학과 현대의학이 결합된 통합의료 서비스를 제공하는 병원으로 한방응급실을 운영하고 있습니다. 제천 시내 어디든 신속 도착 가능하며, 중풍클리닉, 갑상선클리닉 등 특화 치료가 필요한 환자들에게 최적의 이송 서비스를 제공합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "월악산이나 청풍호 관광지에서도 출동 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 가능합니다. 월악산 국립공원, 청풍호, 청풍문화재단지 등 제천 지역 주요 관광지와 산간지역까지 24시간 출동 서비스를 제공합니다. 등산객이나 관광객 응급상황에 신속하게 대응하며, 산간지역 접근이 어려운 곳도 전문 응급구조사가 안전하게 이송합니다."
       }
     }
-    </script>
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "제천 사설구급차 | 제천시 충북 동북부 산간지역 환자이송 전문",
+  "description": "제천시 충북 동북부 산간지역 전문 사설구급차. 세명대 제천한방병원, 월악산, 청풍호 관광지 24시간 응급의료 서비스.",
+  "url": "https://lds77.github.io/jecheon_hospitals.html",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "홈",
+        "item": "https://lds77.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "서비스 지역",
+        "item": "https://lds77.github.io/#coverage"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "제천시 사설구급차"
+      }
+    ]
+  }
+}
+</script>
     
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        /* Core Web Vitals 최적화 */
+        img { 
+            content-visibility: auto;
+            contain-intrinsic-size: 96px 96px;
+        }
+
+        .container {
+            contain: layout style paint;
+        }
+
+        /* 폰트 최적화 */
+        @font-face {
+            font-family: 'Noto Sans KR';
+            font-display: swap;
         }
 
         html {
@@ -1143,7 +1254,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo" onclick="location.href='index.html'">
-                    <img src="/logo.jpg" alt="청주 사설구급차">
+                    <img src="/logo.jpg" alt="직지응급환자이송단 로고 - 제천 사설구급차 세명대 제천한방병원 산간지역 전문" loading="lazy" width="96" height="96">
                     <div>
                         <div style="font-size: 1.3rem; font-weight: 700; margin: 0; color: white;">직지응급환자이송단</div>
                         <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">제천사설구급차 환자이송</p>
@@ -1161,7 +1272,7 @@
 
     <nav class="breadcrumb">
         <div class="container">
-            <a href="index.html">홈</a> &gt; <a href="index.html#coverage">서비스 지역</a> &gt; <span>제천시 사설구급차</span>
+            <a href="index.html" title="직지응급환자이송단 홈페이지">홈</a> &gt; <a href="index.html#coverage" title="충북 전 지역 서비스 안내">서비스 지역</a> &gt; <span>제천시 사설구급차</span>
         </div>
     </nav>
 
@@ -1222,6 +1333,7 @@
         </div>
     </div>
 
+    <main>
     <section class="page-hero">
         <div class="container">
             <h1>제천 사설구급차 전문 서비스</h1>
@@ -1604,7 +1716,7 @@
             </div>
         </div>
     </section>
-
+</main>
     <footer style="background: #2c3e50; color: #ecf0f1; padding: 25px 0; text-align: center;">
         <div class="container">
             <h3 style="color: #27ae60; margin-bottom: 12px; font-size: 1.2rem;">제천 사설구급차 직지응급환자이송단</h3>
