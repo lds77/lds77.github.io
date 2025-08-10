@@ -78,70 +78,185 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- 2025년 SEO 필수 메타태그 -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="theme-color" content="#8e44ad">
+<meta name="apple-mobile-web-app-title" content="괴산 사설구급차">
+
+<!-- 자연관광지 특화 키워드 -->
+<meta name="location" content="괴산군, 충청북도, 한국">
+<meta name="coverage" content="Worldwide">
+<meta name="distribution" content="Global">
+<meta name="rating" content="General">
+<meta name="tourism" content="nature, hiking, valley">
     
-    <!-- 구조화된 데이터 -->
-    <script type="application/ld+json">
+    <!-- JSON-LD 구조화 데이터 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "직지응급환자이송단 괴산지점",
+  "alternateName": ["괴산 사설구급차", "괴산 구급차", "화양구곡 구급차"],
+  "description": "괴산군 화양구곡, 산막이옛길 전문 사설구급차 서비스. 24시간 자연관광지 응급이송",
+  "telephone": "010-8841-4114",
+  "url": "https://lds77.github.io/goesan_hospitals.html",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "충청북도",
+    "addressLocality": "괴산군",
+    "addressCountry": "KR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "36.8153",
+    "longitude": "127.7866"
+  },
+  "areaServed": [
     {
-      "@context": "https://schema.org",
-      "@type": "MedicalBusiness",
-      "name": "직지응급환자이송단 괴산지점",
-      "alternateName": ["괴산 사설구급차", "괴산 구급차", "화양구곡 구급차"],
-      "description": "괴산군 화양구곡, 산막이옛길 전문 사설구급차 서비스. 24시간 자연관광지 응급이송",
-      "telephone": "010-8841-4114",
-      "url": "https://lds77.github.io/goesan_hospitals.html",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "충청북도",
-        "addressLocality": "괴산군",
-        "addressCountry": "KR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "36.8153",
-        "longitude": "127.7866"
-      },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "괴산군"
-        },
-        {
-          "@type": "Place",
-          "name": "화양구곡"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "괴산읍"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "칠성면"
-        }
-      ],
-      "serviceType": [
-        "괴산 사설구급차",
-        "화양구곡 응급이송", 
-        "산막이옛길 구급차",
-        "자연관광지 응급의료",
-        "등산사고 구급차"
-      ],
-      "openingHours": "Mo-Su 00:00-23:59",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "010-8841-4114",
-        "contactType": "emergency",
-        "availableLanguage": "Korean",
-        "hoursAvailable": "24/7",
-        "areaServed": "괴산군"
+      "@type": "City",
+      "name": "괴산군"
+    },
+    {
+      "@type": "Place",
+      "name": "화양구곡"
+    },
+    {
+      "@type": "Place",
+      "name": "산막이옛길"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "괴산읍"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "칠성면"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "청천면"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "연풍면"
+    }
+  ],
+  "availableService": [
+    {
+      "@type": "MedicalService",
+      "name": "자연관광지 응급이송",
+      "description": "화양구곡, 산막이옛길 등 관광지 전문 응급의료 서비스"
+    },
+    {
+      "@type": "MedicalService",
+      "name": "등산사고 구조",
+      "description": "칠보산, 속리산 등 산악지역 응급구조 서비스"
+    },
+    {
+      "@type": "MedicalService",
+      "name": "계곡 안전관리",
+      "description": "쌍곡계곡 등 물놀이 사고 응급처치 서비스"
+    }
+  ],
+  "serviceType": [
+    "괴산 사설구급차",
+    "화양구곡 응급이송", 
+    "산막이옛길 구급차",
+    "자연관광지 응급의료",
+    "등산사고 구급차"
+  ],
+  "openingHours": "Mo-Su 00:00-23:59",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "010-8841-4114",
+    "contactType": "emergency",
+    "availableLanguage": "Korean",
+    "hoursAvailable": "24/7",
+    "areaServed": "괴산군"
+  },
+  "sameAs": [
+    "https://blog.naver.com/ldszuno"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "화양구곡이나 산막이옛길에서 응급상황 발생 시 즉시 출동 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 가능합니다. 화양구곡, 산막이옛길, 쌍곡계곡 등 괴산 주요 자연관광지에서의 응급상황에 24시간 즉시 출동 체계를 운영하고 있습니다. 산간지역과 계곡지역 특성을 고려한 전문 응급처치 후 최적의 병원으로 이송합니다. GPS와 지역 특성을 고려한 최단경로로 신속하게 접근합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "등산 중 사고나 계곡에서 물놀이 사고 시에도 출동하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 출동합니다. 칠보산, 속리산 등에서의 등산사고나 화양구곡, 쌍곡계곡에서의 물놀이 사고 등에 전문적으로 대응합니다. 산악구조와 수상구조에 경험이 있는 응급구조사가 동행하며, 필요시 119와 연계하여 구조작업을 진행한 후 신속하게 병원으로 이송합니다."
       }
     }
-    </script>
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "괴산 사설구급차 | 화양구곡 자연관광지 환자이송 전문",
+  "description": "괴산군 화양구곡, 산막이옛길 전문 사설구급차. 자연관광지 응급이송, 등산사고 구조, 계곡 안전관리 24시간 서비스.",
+  "url": "https://lds77.github.io/goesan_hospitals.html",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "홈",
+        "item": "https://lds77.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "서비스 지역",
+        "item": "https://lds77.github.io/#coverage"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "괴산군 사설구급차"
+      }
+    ]
+  }
+}
+</script>
     
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        /* Core Web Vitals 최적화 */
+        img { 
+            content-visibility: auto;
+            contain-intrinsic-size: 96px 96px;
+        }
+
+        .container {
+            contain: layout style paint;
+        }
+
+        /* 폰트 최적화 */
+        @font-face {
+            font-family: 'Noto Sans KR';
+            font-display: swap;
         }
 
         html {
@@ -1143,7 +1258,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo" onclick="location.href='index.html'">
-                    <img src="/logo.jpg" alt="청주 사설구급차">
+                    <img src="/logo.jpg" alt="직지응급환자이송단 로고 - 괴산 사설구급차 화양구곡 산막이옛길 자연관광지 전문" loading="lazy" width="96" height="96">
                     <div>
                         <div style="font-size: 1.3rem; font-weight: 700; margin: 0; color: white;">직지응급환자이송단</div>
                         <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">괴산사설구급차 환자이송</p>
@@ -1161,7 +1276,7 @@
 
     <nav class="breadcrumb">
         <div class="container">
-            <a href="index.html">홈</a> &gt; <a href="index.html#coverage">서비스 지역</a> &gt; <span>괴산군 사설구급차</span>
+            <a href="index.html" title="직지응급환자이송단 홈페이지">홈</a> &gt; <a href="index.html#coverage" title="충북 전 지역 서비스 안내">서비스 지역</a> &gt; <span>괴산군 사설구급차</span>
         </div>
     </nav>
 
@@ -1222,6 +1337,7 @@
         </div>
     </div>
 
+    <main>
     <section class="page-hero">
         <div class="container">
             <h1>괴산 사설구급차 전문 서비스</h1>
@@ -1604,7 +1720,7 @@
             </div>
         </div>
     </section>
-
+</main>
     <footer style="background: #2c3e50; color: #ecf0f1; padding: 25px 0; text-align: center;">
         <div class="container">
             <h3 style="color: #8e44ad; margin-bottom: 12px; font-size: 1.2rem;">괴산 사설구급차 직지응급환자이송단</h3>
