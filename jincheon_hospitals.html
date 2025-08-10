@@ -66,6 +66,53 @@
 <meta property="og:image:alt" content="직지응급환자이송단 로고">
 <meta property="og:image:type" content="image/jpeg">
 <link rel="image_src" href="https://lds77.github.io/og-image.jpg">
+    <!-- 성능 최적화 링크들 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="//lds77.github.io">
+<link rel="preload" href="https://lds77.github.io/진천-129.png" as="image">
+
+<!-- 지역 SEO 강화 메타태그 -->
+<meta name="local-business-type" content="응급의료서비스">
+<meta name="service-area" content="진천군, 진천읍, 초평면, 백곡면, 이월면">
+<meta name="emergency-keywords" content="진천구급차, 생거진천구급차, 농다리응급이송, 진천응급이송">
+
+<!-- FAQ 구조화 데이터 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "@id": "faq-jincheon-cheongju-speed",
+      "name": "진천에서 청주 병원까지 정말 신속하게 갈 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "진천군은 청주와 인접해 있어 최단거리 최단시간 내 도착 가능합니다. 진천읍에서 청주 시내까지 약 30-35km 거리로, 1시간 내에 도착 가능합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "faq-jincheon-nongdari-emergency",
+      "name": "농다리 관광지에서 응급상황 발생 시 즉시 출동 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "농다리, 김유신 탄생지, 백곡저수지 등 진천 주요 관광지에서의 응급상황에 24시간 즉시 출동 체계를 운영하고 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "faq-jincheon-festival-support",
+      "name": "진천 농다리축제 기간 중 의료지원도 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "농다리축제를 비롯한 진천군 각종 문화행사와 체육대회에서 응급의료 지원 서비스를 제공합니다."
+      }
+    }
+  ]
+}
+</script>
     
     <!-- 지역별 구조화된 데이터 -->
 <script type="application/ld+json">
@@ -934,6 +981,174 @@
         font-size: 18px;
     }
 }
+        /* 서브 아코디언 스타일 */
+.sub-accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sub-accordion-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.sub-accordion-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #27ae60;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.sub-accordion-header:hover {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    border-color: #229954;
+}
+
+.sub-accordion-header.active {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+}
+
+.sub-accordion-icon {
+    font-size: 1.3rem;
+    margin-right: 12px;
+}
+
+.sub-accordion-header h3 {
+    margin: 0;
+    flex-grow: 1;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.sub-accordion-header.active h3 {
+    color: white;
+}
+
+.sub-toggle-btn {
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    color: #27ae60;
+}
+
+.sub-accordion-header.active .sub-toggle-btn {
+    transform: rotate(45deg);
+    color: white;
+}
+
+.sub-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    background: white;
+    padding: 0 20px;
+    border-top: 2px solid #27ae60;
+}
+
+.sub-accordion-content.active {
+    max-height: 1500px;
+    padding: 20px;
+}
+
+/* 이중 아코디언 스타일 */
+.main-accordion {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.main-accordion-header {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+    padding: 30px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.main-accordion-header:hover {
+    background: linear-gradient(135deg, #229954 0%, #27ae60 100%);
+    transform: translateY(-2px);
+}
+
+.header-content-main {
+    flex-grow: 1;
+}
+
+.main-accordion-header .section-title {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main-accordion-header .section-subtitle {
+    margin: 0;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.main-toggle-btn {
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+}
+
+.main-accordion-header.active .main-toggle-btn {
+    transform: rotate(45deg);
+}
+
+.main-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    background: white;
+    padding: 0 30px;
+}
+
+.main-accordion-content.active {
+    max-height: 2000px;
+    padding: 30px;
+}
+
+@media (max-width: 768px) {
+    .main-accordion-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-accordion-header .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+    }
+    
+    .main-accordion-header .section-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .main-toggle-btn {
+        margin: 10px 0 0 0;
+        font-size: 1.5rem;
+    }
+    
+    .main-accordion-content {
+        padding: 15px;
+    }
+}
 </style>
 </head>
 <body>
@@ -1022,125 +1237,186 @@
         </div>
     </section>
 
-    <section class="faq-section">
-        <div class="container">
-            <h2 class="section-title">진천 사설구급차 자주 묻는 질문</h2>
-            <p class="section-subtitle">진천군 지역 환자이송 관련 자주 묻는 질문들입니다</p>
+    <section class="faq-section" role="region" aria-labelledby="faq-title">
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content-main">
+                    <h2 class="section-title">진천 사설구급차 자주 묻는 질문</h2>
+                    <p class="section-subtitle">진천군 지역 환자이송 관련 자주 묻는 질문들입니다</p>
+                </div>
+                <span class="main-toggle-btn">+</span>
+            </div>
             
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 진천에서 청주 병원까지 정말 신속하게 갈 수 있나요?
+            <div class="main-accordion-content">
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 진천에서 청주 병원까지 정말 신속하게 갈 수 있나요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 진천군은 청주와 인접해 있어 최단거리 최단시간 내 도착 가능합니다. 진천읍에서 청주 시내까지 약 30-35km 거리로, 경부고속도로나 국도를 이용하면 1시간 내에 도착 가능합니다. 응급상황 시 최적의 경로를 선택하여 신속하게 이송합니다.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>네, 진천군은 청주와 인접해 있어 최단거리 최단시간 내 도착 가능합니다. 진천읍에서 청주 시내까지 약 30-35km 거리로, 경부고속도로나 국도를 이용하면 1시간 내에 도착 가능합니다. 응급상황 시 최적의 경로를 선택하여 신속하게 이송합니다.</p>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 농다리 관광지에서 응급상황 발생 시 즉시 출동 가능한가요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 가능합니다. 농다리, 김유신 탄생지, 백곡저수지 등 진천 주요 관광지에서의 응급상황에 24시간 즉시 출동 체계를 운영하고 있습니다. 관광지 특성을 고려한 전문 응급처치 후 최적의 병원으로 이송합니다. GPS 시스템을 활용하여 정확한 위치 파악이 가능합니다.</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 농다리 관광지에서 응급상황 발생 시 즉시 출동 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        <p>네, 가능합니다. 농다리, 김유신 탄생지, 백곡저수지 등 진천 주요 관광지에서의 응급상황에 24시간 즉시 출동 체계를 운영하고 있습니다. 관광지 특성을 고려한 전문 응급처치 후 최적의 병원으로 이송합니다. GPS 시스템을 활용하여 정확한 위치 파악이 가능합니다.</p>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 진천 농다리축제 기간 중 의료지원도 가능한가요?
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 진천 농다리축제 기간 중 의료지원도 가능한가요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 가능합니다. 농다리축제를 비롯한 진천군 각종 문화행사와 체육대회에서 응급의료 지원 서비스를 제공합니다. 응급구조사와 의료장비를 현장에 배치하여 응급상황에 즉시 대응하며, 필요시 병원 이송까지 원스톱으로 처리합니다.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>네, 가능합니다. 농다리축제를 비롯한 진천군 각종 문화행사와 체육대회에서 응급의료 지원 서비스를 제공합니다. 응급구조사와 의료장비를 현장에 배치하여 응급상황에 즉시 대응하며, 필요시 병원 이송까지 원스톱으로 처리합니다.</p>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 진천에서 서울 대학병원으로 응급 이송도 가능한가요?
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 진천에서 서울 대학병원으로 응급 이송도 가능한가요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 장거리 응급 이송도 가능합니다. 진천에서 서울까지는 경부고속도로를 이용하여 약 1시간 30분-2시간 소요됩니다. 중증 환자나 특수 치료가 필요한 경우 서울 주요 대학병원으로 신속하게 이송하며, 이송 중 지속적인 응급처치와 모니터링을 제공합니다.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>네, 장거리 응급 이송도 가능합니다. 진천에서 서울까지는 경부고속도로를 이용하여 약 1시간 30분-2시간 소요됩니다. 중증 환자나 특수 치료가 필요한 경우 서울 주요 대학병원으로 신속하게 이송하며, 이송 중 지속적인 응급처치와 모니터링을 제공합니다.</p>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 김유신 탄생지나 종박물관 등 문화재 관광지에서도 출동하나요?
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 김유신 탄생지나 종박물관 등 문화재 관광지에서도 출동하나요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 출동합니다. 김유신 탄생지, 길상사, 종박물관, 향토민속자료전시관 등 진천의 모든 문화재 관광지에서 응급상황 발생 시 즉시 출동합니다. 관광지 특성을 고려한 신속하고 안전한 응급처치 후 적절한 의료기관으로 이송합니다.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>네, 출동합니다. 김유신 탄생지, 길상사, 종박물관, 향토민속자료전시관 등 진천의 모든 문화재 관광지에서 응급상황 발생 시 즉시 출동합니다. 관광지 특성을 고려한 신속하고 안전한 응급처치 후 적절한 의료기관으로 이송합니다.</p>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 생거진천 특성에 맞는 특별한 서비스가 있나요?
-                    </div>
-                    <div class="faq-answer">
-                        <p>네, 있습니다. 생거진천의 평화롭고 살기 좋은 환경에 맞춰 스트레스 없는 편안한 이송 환경을 제공합니다. 특히 고령 환자나 장기 요양이 필요한 분들을 위해 안정적이고 편안한 침상형 구급차 서비스를 제공하며, 가족 동행도 가능합니다.</p>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 생거진천 특성에 맞는 특별한 서비스가 있나요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 있습니다. 생거진천의 평화롭고 살기 좋은 환경에 맞춰 스트레스 없는 편안한 이송 환경을 제공합니다. 특히 고령 환자나 장기 요양이 필요한 분들을 위해 안정적이고 편안한 침상형 구급차 서비스를 제공하며, 가족 동행도 가능합니다.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
     <section class="quick-info">
-        <div class="container">
-            <h2 class="section-title">진천 사설구급차 이용 가이드</h2>
-            <div class="area-specialty">
-                <h3>🌸 진천군 생거진천 특성</h3>
-                <p>진천군은 '생거진천(生居鎭川)'이라 불릴 만큼 살기 좋은 고장으로 유명합니다. 국내 당일치기 여행으로도 좋은 곳인데요. 한반도 모양의 지형을 볼 수 있는 전망대부터, 국내에서 가장 오래된 돌다리인 농다리까지 다양한 관광명소가 있어 관광객 응급의료 서비스가 중요한 지역입니다. 특히 농다리, 김유신 탄생지, 백곡저수지 등 관광지에서의 응급상황 대응이 필요합니다.</p>
-                <div class="specialty-list">
-                    <div class="specialty-item">
-                        <strong>진천읍</strong><br>
-                        군청소재지, 김유신 탄생지
-                    </div>
-                    <div class="specialty-item">
-                        <strong>초평면</strong><br>
-                        농다리, 한반도지형공원
-                    </div>
-                    <div class="specialty-item">
-                        <strong>백곡면</strong><br>
-                        백곡저수지, 종박물관
-                    </div>
-                    <div class="specialty-item">
-                        <strong>이월면</strong><br>
-                        만뢰산, 자연생태공원
-                    </div>
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content-main">
+                    <h2 class="section-title">진천 사설구급차 이용 가이드</h2>
+                    <p class="section-subtitle">진천군 생거진천 특성에 맞는 전문 구급차 서비스 안내</p>
                 </div>
+                <span class="main-toggle-btn">+</span>
             </div>
             
-            <div class="info-grid">
-                <div class="info-card">
-                    <div class="info-icon">🌸</div>
-                    <h3>관광지 응급의료</h3>
-                    <p>농다리, 김유신 탄생지, 백곡저수지 등 진천 관광명소에서의 응급상황에 특화된 서비스를 제공합니다.</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">🚗</div>
-                    <h3>청주 최단거리</h3>
-                    <p>진천에서 청주까지 최적의 거리로 충북 최고 수준의 의료진에게 빠르게 이송합니다.</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">🏛️</div>
-                    <h3>역사문화 특화</h3>
-                    <p>김유신 탄생지, 길상사, 종박물관 등 역사문화 관광지에서의 응급의료 서비스를 전문적으로 제공합니다.</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">🌿</div>
-                    <h3>자연친화 지역</h3>
-                    <p>생거진천답게 자연친화적 환경에서 안전하고 편안한 환자이송 서비스를 제공합니다.</p>
+            <div class="main-accordion-content">
+                <div class="sub-accordion-container">
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🌸</span>
+                            <h3>진천군 생거진천 특성</h3>
+                            <span class="sub-toggle-btn">+</span>
+                        </div>
+                        <div class="sub-accordion-content">
+                            <p>진천군은 '생거진천(生居鎭川)'이라 불릴 만큼 살기 좋은 고장으로 유명합니다. 농다리, 김유신 탄생지, 백곡저수지 등 다양한 관광명소가 있어 관광객 응급의료 서비스가 중요한 지역입니다.</p>
+                            <div class="specialty-list">
+                                <div class="specialty-item">
+                                    <strong>진천읍</strong><br>
+                                    군청소재지, 김유신 탄생지
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>초평면</strong><br>
+                                    농다리, 한반도지형공원
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>백곡면</strong><br>
+                                    백곡저수지, 종박물관
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>이월면</strong><br>
+                                    만뢰산, 자연생태공원
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>문백면</strong><br>
+                                    농촌체험마을
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🌉</span>
+                            <h3>관광지 응급의료</h3>
+                            <span class="sub-toggle-btn">+</span>
+                        </div>
+                        <div class="sub-accordion-content">
+                            <p>농다리, 김유신 탄생지, 백곡저수지 등 진천 관광명소에서의 응급상황에 특화된 서비스를 제공합니다. 관광지 특성을 고려한 전문 응급처치와 신속한 병원 이송으로 관광객 안전을 보장합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🚗</span>
+                            <h3>청주 최단거리 이송</h3>
+                            <span class="sub-toggle-btn">+</span>
+                        </div>
+                        <div class="sub-accordion-content">
+                            <p>진천에서 청주까지 최적의 거리로 충북 최고 수준의 의료진에게 빠르게 이송합니다. 경부고속도로나 국도를 이용하여 1시간 내 도착하며, 응급상황에 따라 최적 경로를 선택합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🏛️</span>
+                            <h3>역사문화 특화 서비스</h3>
+                            <span class="sub-toggle-btn">+</span>
+                        </div>
+                        <div class="sub-accordion-content">
+                            <p>김유신 탄생지, 길상사, 종박물관 등 역사문화 관광지에서의 응급의료 서비스를 전문적으로 제공합니다. 문화재 보호와 관광객 안전을 동시에 고려한 전문 대응이 가능합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🌿</span>
+                            <h3>자연친화 안전 이송</h3>
+                            <span class="sub-toggle-btn">+</span>
+                        </div>
+                        <div class="sub-accordion-content">
+                            <p>생거진천답게 자연친화적 환경에서 안전하고 편안한 환자이송 서비스를 제공합니다. 스트레스 없는 편안한 이송 환경으로 환자의 회복에 도움이 되는 서비스를 제공합니다.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="services-section">
-        <div class="container">
-            <h2 class="section-title">진천 전문 이송 서비스</h2>
-            <p class="section-subtitle">생거진천 특성에 맞는 6가지 전문 이송 서비스를 제공합니다</p>
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content-main">
+                    <h2 class="section-title">진천 전문 이송 서비스</h2>
+                    <p class="section-subtitle">생거진천 특성에 맞는 6가지 전문 이송 서비스를 제공합니다</p>
+                </div>
+                <span class="main-toggle-btn">+</span>
+            </div>
+            
+            <div class="main-accordion-content">
             
             <div class="services-grid">
                 <div class="service-card" onclick="location.href='general_patient_transport.html'">
@@ -1216,14 +1492,24 @@
                     생거진천답게 살기 좋은 진천군의 특성을 고려하여 관광객과 지역 주민을 위한 전문 응급의료 서비스를 제공합니다. 
                     농다리, 김유신 탄생지 등 관광명소에서의 응급상황부터 일상적인 의료이송까지 신속하게 대응합니다.
                 </p>
-            </div>
-        </div>
+            </div> <!-- 특화 서비스 div 닫기 -->
+            </div> <!-- main-accordion-content 닫기 -->
+        </div> <!-- main-accordion 닫기 -->
+        </div> <!-- container 닫기 -->
     </section>
     
     <section class="hospitals-section">
-        <div class="container">
-            <h2 class="section-title">진천군 주요 의료기관 정보(전체현황은 상단 병원찾기 클릭)</h2>
-            <p class="section-subtitle">진천 지역 병원 현황과 이송 가능한 주요 의료기관 안내</p>
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content-main">
+                    <h2 class="section-title">진천군 주요 의료기관 정보(전체현황은 상단 병원찾기 클릭)</h2>
+                    <p class="section-subtitle">진천 지역 병원 현황과 이송 가능한 주요 의료기관 안내</p>
+                </div>
+                <span class="main-toggle-btn">+</span>
+            </div>
+            
+            <div class="main-accordion-content">
 
             <div class="hospitals-grid">
                 <!-- 진천보건의료원 -->
@@ -1354,8 +1640,10 @@
             <div class="emergency-banner">
                 <h4>🌸 진천 생거진천 응급상황 대응 시스템</h4>
                 <p>농다리, 김유신 탄생지 등 관광명소부터 일상 의료이송까지 생거진천의 모든 응급상황에 신속하게 대응하는 전문 응급의료 시스템을 운영합니다. 119 신고와 함께 즉시 연락주시면 최적의 응급처치와 병원 이송을 제공합니다.</p>
-            </div>
-        </div>
+            </div> <!-- emergency-banner div 닫기 -->
+            </div> <!-- main-accordion-content 닫기 -->
+        </div> <!-- main-accordion 닫기 -->
+        </div> <!-- container 닫기 -->
     </section>
 
     <!-- 고정 전화 버튼 -->
@@ -1383,141 +1671,182 @@
     </footer>
 
     <script>
-        // FAQ 토글 기능
-        function toggleFaq(element) {
-            const answer = element.nextElementSibling;
-            const isActive = answer.classList.contains('active');
-            
-            // 모든 FAQ 답변 닫기
-            document.querySelectorAll('.faq-answer').forEach(item => {
-                item.classList.remove('active');
-            });
-            document.querySelectorAll('.faq-question').forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            // 클릭한 항목만 열기 (이미 열려있었다면 닫기)
-            if (!isActive) {
-                answer.classList.add('active');
-                element.classList.add('active');
-            }
-        }
+// 메인 아코디언 토글 기능
+function toggleMainAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
 
-        // 수정된 코드 (정상 작동)
+// 서브 아코디언 토글 기능
+function toggleSubAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    // 같은 컨테이너 내의 다른 서브 아코디언들 닫기
+    const container = header.closest('.sub-accordion-container');
+    const allSubHeaders = container.querySelectorAll('.sub-accordion-header');
+    const allSubContents = container.querySelectorAll('.sub-accordion-content');
+    
+    allSubHeaders.forEach(h => {
+        if (h !== header) {
+            h.classList.remove('active');
+        }
+    });
+    
+    allSubContents.forEach(c => {
+        if (c !== content) {
+            c.classList.remove('active');
+        }
+    });
+    
+    // 현재 항목 토글
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+
+// FAQ 토글 기능
+function toggleFaq(element) {
+    const answer = element.nextElementSibling;
+    const isActive = answer.classList.contains('active');
+    
+    // 모든 FAQ 답변 닫기
+    document.querySelectorAll('.faq-answer').forEach(item => {
+        item.classList.remove('active');
+    });
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // 클릭한 항목만 열기 (이미 열려있었다면 닫기)
+    if (!isActive) {
+        answer.classList.add('active');
+        element.classList.add('active');
+    }
+}
+
+// 팝업 함수들
 function openSummary() {
-    const popup = document.getElementById('summaryPopup');  // ← 올바른 ID
+    const popup = document.getElementById('summaryPopup');
     popup.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
 
 function closeSummary() {
-    const popup = document.getElementById('summaryPopup');  // ← 올바른 ID
+    const popup = document.getElementById('summaryPopup');
     popup.classList.remove('active');
     document.body.style.overflow = 'auto';
 }
 
 // 모달 외부 클릭 시 닫기
-document.getElementById('summaryPopup').onclick = function(event) {  // ← 올바른 ID
+document.getElementById('summaryPopup').onclick = function(event) {
     if (event.target === this) {
         closeSummary();
     }
 }
 
-        // ESC 키로 팝업 닫기
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeSummary();
-            }
-        });
+// ESC 키로 팝업 닫기
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeSummary();
+    }
+});
 
-        // 페이지 로드 시 애니메이션
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.info-card, .service-card, .hospital-card, .faq-item');
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 50); // 애니메이션 속도 빠르게 조정
-            });
-        });
-
-        // 스크롤 시 요소들 나타나는 효과
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -30px 0px'
-        });
-
-        // 모든 카드 요소 관찰
-        document.querySelectorAll('.info-card, .service-card, .hospital-card').forEach(card => {
-            observer.observe(card);
-        });
-
-        // 고정 전화 버튼 스크롤 효과
-        let lastScrollTop = 0;
-        const callBtn = document.querySelector('.fixed-call-btn');
+// 페이지 로드 시 초기화
+document.addEventListener('DOMContentLoaded', function() {
+    // 첫 번째 메인 아코디언 자동 열기
+    const firstMainAccordion = document.querySelector('.main-accordion-header');
+    const firstMainContent = document.querySelector('.main-accordion-content');
+    if (firstMainAccordion && firstMainContent) {
+        firstMainAccordion.classList.add('active');
+        firstMainContent.classList.add('active');
+    }
+    
+    // 페이지 로드 시 애니메이션
+    const cards = document.querySelectorAll('.info-card, .service-card, .hospital-card, .faq-item');
+    cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         
-        window.addEventListener('scroll', function() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // 스크롤 다운 시 버튼 약간 축소, 스크롤 업 시 원래 크기
-            if (scrollTop > lastScrollTop) {
-                // 스크롤 다운
-                callBtn.style.transform = 'scale(0.9)';
-            } else {
-                // 스크롤 업
-                callBtn.style.transform = 'scale(1)';
-            }
-            
-            lastScrollTop = scrollTop;
-        });
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 50);
+    });
+});
 
-        // 전화 버튼 클릭 시 진동 효과 (모바일에서)
-        callBtn.addEventListener('click', function() {
-            if (navigator.vibrate) {
-                navigator.vibrate(200); // 200ms 진동
-            }
-            
-            // 클릭 애니메이션
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 150);
-        });
-
-        // 모바일에서 터치 스크롤 최적화
-        if ('ontouchstart' in window) {
-            document.body.style.webkitOverflowScrolling = 'touch';
+// 스크롤 시 요소들 나타나는 효과
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
         }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -30px 0px'
+});
 
-        // 페이지 성능 최적화 - 이미지 지연 로딩
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
+// 모든 카드 요소 관찰
+document.querySelectorAll('.info-card, .service-card, .hospital-card').forEach(card => {
+    observer.observe(card);
+});
 
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-    </script>
+// 고정 전화 버튼 스크롤 효과
+let lastScrollTop = 0;
+const callBtn = document.querySelector('.fixed-call-btn');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop) {
+        callBtn.style.transform = 'scale(0.9)';
+    } else {
+        callBtn.style.transform = 'scale(1)';
+    }
+    
+    lastScrollTop = scrollTop;
+});
+
+// 전화 버튼 클릭 시 진동 효과
+callBtn.addEventListener('click', function() {
+    if (navigator.vibrate) {
+        navigator.vibrate(200);
+    }
+    
+    this.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        this.style.transform = 'scale(1)';
+    }, 150);
+});
+
+// 모바일 터치 스크롤 최적화
+if ('ontouchstart' in window) {
+    document.body.style.webkitOverflowScrolling = 'touch';
+}
+
+// 이미지 지연 로딩
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+}
+</script>
     <!-- 네이버 블로그 고정 버튼 -->
 <a href="https://blog.naver.com/ldszuno" class="fixed-blog-btn" target="_blank" title="네이버 블로그">📝</a>
 </body>
