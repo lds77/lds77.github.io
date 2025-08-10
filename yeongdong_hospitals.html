@@ -808,7 +808,82 @@
             100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
         }
 
-        /* 모바일 최적화 */
+        /* 서브 아코디언 스타일 */
+        .sub-accordion-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sub-accordion-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .sub-accordion-header {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid #8e44ad;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .sub-accordion-header:hover {
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            border-color: #7d3c98;
+        }
+
+        .sub-accordion-header.active {
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+            color: white;
+        }
+
+        .sub-accordion-icon {
+            font-size: 1.3rem;
+            margin-right: 12px;
+        }
+
+        .sub-accordion-header h3 {
+            margin: 0;
+            flex-grow: 1;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .sub-accordion-header.active h3 {
+            color: white;
+        }
+
+        .sub-toggle-btn {
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            color: #8e44ad;
+        }
+
+        .sub-accordion-header.active .sub-toggle-btn {
+            transform: rotate(45deg);
+            color: white;
+        }
+
+        .sub-accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+            background: white;
+            padding: 0 20px;
+            border-top: 2px solid #8e44ad;
+        }
+
+        .sub-accordion-content.active {
+            max-height: 1500px;
+            padding: 20px;
+        }
         @media (max-width: 768px) {
             .page-hero h1 {
                 font-size: 1.6rem;
@@ -1206,8 +1281,14 @@
             </div>
             
             <div class="main-accordion-content">
-                <div class="area-specialty">
-                <h3>🏔️ 영동군 지역 특성</h3>
+    <div class="sub-accordion-container">
+        <div class="sub-accordion-item">
+            <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                <span class="sub-accordion-icon">🏔️</span>
+                <h3>영동군 산간지역 특성</h3>
+                <span class="sub-toggle-btn">+</span>
+            </div>
+            <div class="sub-accordion-content">
                 <p>영동군은 충청북도 최남단에 위치한 산간지역으로, 추풍령과 황간면 등 험준한 지형이 많아 일반 응급차량 접근이 어려운 곳이 있습니다. 저희는 이러한 지역 특성을 잘 알고 있어 안전하고 신속한 이송 서비스를 제공합니다.</p>
                 <div class="specialty-list">
                     <div class="specialty-item">
@@ -1228,7 +1309,18 @@
                     </div>
                 </div>
             </div>
-            
+            </div>
+            </div>
+        </div>
+
+        <div class="sub-accordion-item">
+            <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                <span class="sub-accordion-icon">🚑</span>
+                <h3>영동 전문 이송 서비스</h3>
+                <span class="sub-toggle-btn">+</span>
+            </div>
+            <div class="sub-accordion-content">
+                <div class="info-grid">
             <div class="info-grid">
                 <div class="info-card">
                     <div class="info-icon">🚑</div>
@@ -1252,6 +1344,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </section>
 
@@ -1526,6 +1619,33 @@
             const content = element.nextElementSibling;
             const header = element;
             
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+
+        // 서브 아코디언 토글 기능
+        function toggleSubAccordion(element) {
+            const content = element.nextElementSibling;
+            const header = element;
+            
+            // 같은 컨테이너 내의 다른 서브 아코디언들 닫기
+            const container = header.closest('.sub-accordion-container');
+            const allSubHeaders = container.querySelectorAll('.sub-accordion-header');
+            const allSubContents = container.querySelectorAll('.sub-accordion-content');
+            
+            allSubHeaders.forEach(h => {
+                if (h !== header) {
+                    h.classList.remove('active');
+                }
+            });
+            
+            allSubContents.forEach(c => {
+                if (c !== content) {
+                    c.classList.remove('active');
+                }
+            });
+            
+            // 현재 항목 토글
             header.classList.toggle('active');
             content.classList.toggle('active');
         }
