@@ -874,7 +874,97 @@
             }
         }
 
-        /* 더 컴팩트한 모바일 버전 */
+        /* 이중 아코디언 스타일 */
+        .main-accordion {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .main-accordion-header {
+            background: linear-gradient(135deg, #16a085 0%, #1abc9c 100%);
+            color: white;
+            padding: 30px 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .main-accordion-header:hover {
+            background: linear-gradient(135deg, #138d75 0%, #17a2b8 100%);
+            transform: translateY(-2px);
+        }
+
+        .header-content {
+            flex-grow: 1;
+        }
+
+        .main-accordion-header .section-title {
+            margin: 0 0 10px 0;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .main-accordion-header .section-subtitle {
+            margin: 0;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .main-toggle-btn {
+            font-size: 2rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            margin-left: 20px;
+        }
+
+        .main-accordion-header.active .main-toggle-btn {
+            transform: rotate(45deg);
+        }
+
+        .main-accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+            background: white;
+            padding: 0 30px;
+        }
+
+        .main-accordion-content.active {
+            max-height: 2000px;
+            padding: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .main-accordion-header {
+                padding: 15px 20px;
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .main-accordion-header .section-title {
+                font-size: 1.3rem;
+                margin-bottom: 6px;
+            }
+            
+            .main-accordion-header .section-subtitle {
+                font-size: 0.85rem;
+            }
+            
+            .main-toggle-btn {
+                margin: 10px 0 0 0;
+                font-size: 1.5rem;
+            }
+            
+            .main-accordion-content {
+                padding: 15px;
+            }
+        }
         @media (max-width: 480px) {
             .container {
                 padding: 0 15px;
@@ -1028,12 +1118,19 @@
         </div>
     </section>
 
-    <section class="faq-section">
-        <div class="container">
-            <h2 class="section-title">옥천 사설구급차 자주 묻는 질문</h2>
-            <p class="section-subtitle">옥천군 지역 환자이송 관련 자주 묻는 질문들입니다</p>
+    <section class="faq-section" role="region" aria-labelledby="faq-title">
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content">
+                    <h2 class="section-title">옥천 사설구급차 자주 묻는 질문</h2>
+                    <p class="section-subtitle">옥천군 지역 환자이송 관련 자주 묻는 질문들입니다</p>
+                </div>
+                <span class="main-toggle-btn">+</span>
+            </div>
             
-            <div class="faq-grid">
+            <div class="main-accordion-content">
+                <div class="faq-grid">
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         Q. 고령 어르신 요양병원 이송 시 특별한 배려가 있나요?
@@ -1088,13 +1185,24 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="quick-info">
-        <div class="container">
-            <h2 class="section-title">옥천 사설구급차 이용 가이드</h2>
-            <div class="area-specialty">
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content">
+                    <h2 class="section-title">옥천 사설구급차 이용 가이드</h2>
+                    <p class="section-subtitle">옥천군 농촌지역 특성에 맞는 전문 구급차 서비스 안내</p>
+                </div>
+                <span class="main-toggle-btn">+</span>
+            </div>
+            
+            <div class="main-accordion-content">
+                <div class="area-specialty">
                 <h3>🌾 옥천군 농촌지역 특성</h3>
                 <p>옥천군은 충청북도 남단에 위치한 농촌지역으로 충남과 경계를 이루고 있습니다. 지역 내 의료시설이 제한적이어서 청주나 대전 등 인근 대도시 병원으로의 환자이송이 중요한 지역입니다. 특히 고령 인구가 많아 요양병원 이송과 응급상황 대응이 중요합니다.</p>
                 <div class="specialty-list">
@@ -1144,14 +1252,22 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="services-section">
-        <div class="container">
-            <h2 class="section-title">옥천 전문 이송 서비스</h2>
-            <p class="section-subtitle">옥천군 농촌지역 특성에 맞는 6가지 전문 이송 서비스를 제공합니다</p>
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content">
+                    <h2 class="section-title">옥천 전문 이송 서비스</h2>
+                    <p class="section-subtitle">옥천군 농촌지역 특성에 맞는 6가지 전문 이송 서비스를 제공합니다</p>
+                </div>
+                <span class="main-toggle-btn">+</span>
+            </div>
             
-            <div class="services-grid">
+            <div class="main-accordion-content">
+                <div class="services-grid">
                 <div class="service-card" onclick="location.href='general_patient_transport.html'">
                     <div class="service-icon">🏥</div>
                     <h3>옥천 일반환자이송</h3>
@@ -1227,14 +1343,22 @@
                 </p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="hospitals-section">
-        <div class="container">
-            <h2 class="section-title">옥천군 주요 의료기관 정보(전체현황은 상단 병원찾기 클릭)</h2>
-            <p class="section-subtitle">옥천 지역 병원 현황과 이송 가능한 주요 의료기관 안내</p>
-
-            <div class="hospitals-grid">
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content">
+                    <h2 class="section-title">옥천군 주요 의료기관 정보(전체현황은 상단 병원찾기 클릭)</h2>
+                    <p class="section-subtitle">옥천 지역 병원 현황과 이송 가능한 주요 의료기관 안내</p>
+                </div>
+                <span class="main-toggle-btn">+</span>
+            </div>
+            
+            <div class="main-accordion-content">
+                <div class="hospitals-grid">
                 <!-- 옥천보건의료원 -->
                 <div class="hospital-card">
                     <div class="hospital-header">
@@ -1369,7 +1493,8 @@
                 <p>농촌지역 특성상 접근이 어려운 곳까지 신속하게 출동하는 전문 응급의료 시스템을 운영합니다. 119 신고와 함께 즉시 연락주시면 최적의 응급처치와 병원 이송을 제공합니다.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- 고정 전화 버튼 -->
     <a href="tel:010-8841-4114" class="fixed-call-btn" title="옥천 사설구급차 즉시 연결">📞</a>
@@ -1396,6 +1521,14 @@
     </footer>
 
     <script>
+        // 메인 아코디언 토글 기능
+        function toggleMainAccordion(element) {
+            const content = element.nextElementSibling;
+            const header = element;
+            
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+        }
         // FAQ 토글 기능
         function toggleFaq(element) {
             const answer = element.nextElementSibling;
@@ -1445,6 +1578,13 @@ document.getElementById('summaryPopup').onclick = function(event) {  // ← 올�
 
         // 페이지 로드 시 애니메이션
         document.addEventListener('DOMContentLoaded', function() {
+            // 첫 번째 메인 아코디언 자동 열기
+            const firstMainAccordion = document.querySelector('.main-accordion-header');
+            const firstMainContent = document.querySelector('.main-accordion-content');
+            if (firstMainAccordion && firstMainContent) {
+                firstMainAccordion.classList.add('active');
+                firstMainContent.classList.add('active');
+            }
             const cards = document.querySelectorAll('.info-card, .service-card, .hospital-card, .faq-item');
             cards.forEach((card, index) => {
                 card.style.opacity = '0';
