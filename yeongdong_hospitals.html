@@ -1153,6 +1153,122 @@
         font-size: 18px;
     }
 }
+        /* 충주 기준 컴팩트 모바일 스타일 */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    
+    .container {
+        max-width: 100%;
+        overflow-x: hidden;
+        padding: 0 15px;
+    }
+
+    .page-hero {
+        padding: 15px 0;
+    }
+    
+    .page-hero .container {
+        padding: 0 15px;
+    }
+    
+    .page-hero h1 {
+        font-size: 1.3rem;
+        margin: 0 0 8px 0;
+        line-height: 1.2;
+    }
+    
+    .page-hero p {
+        font-size: 0.9rem;
+        margin: 0 0 12px 0;
+        line-height: 1.3;
+    }
+    
+    .hero-features {
+        gap: 6px;
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    
+    .hero-feature {
+        padding: 4px 6px;
+        font-size: 0.65rem;
+        border-radius: 10px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+    
+    .service-card {
+        padding: 8px;
+        min-height: auto;
+    }
+    
+    .service-card h3 {
+        font-size: 0.85rem;
+        margin: 0 0 4px 0;
+        line-height: 1.2;
+    }
+    
+    .service-card p {
+        font-size: 0.7rem;
+        line-height: 1.2;
+        margin-bottom: 6px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .service-icon {
+        font-size: 1.3rem;
+        margin-bottom: 4px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .service-features {
+        gap: 2px;
+        flex-wrap: wrap;
+    }
+    
+    .feature-tag {
+        font-size: 0.6rem;
+        padding: 2px 4px;
+        border-radius: 8px;
+    }
+}
+
+/* 아주 작은 화면 (360px 이하) */
+@media (max-width: 360px) {
+    .page-hero {
+        padding: 12px 0;
+    }
+    
+    .page-hero h1 {
+        font-size: 1.2rem;
+    }
+    
+    .page-hero p {
+        font-size: 0.8rem;
+    }
+    
+    .hero-feature {
+        padding: 3px 5px;
+        font-size: 0.6rem;
+    }
+}
 </style>
 </head>
 <body>
@@ -1228,24 +1344,31 @@
         </div>
     </nav>
 
-    <section class="page-hero">
-        <div class="container">
-            <h1>영동 사설구급차 전문 서비스</h1>
-            <p>영동군 전 지역 24시간 환자이송 서비스. 산간지역 특성을 고려한 안전하고 신속한 이송</p>
-            <div class="hero-features">
-                <div class="hero-feature">📍 영동군 전지역 출동</div>
-                <div class="hero-feature">⏰ 24시간 즉시대응</div>
-                <div class="hero-feature">🏔️ 산간지역 전문</div>
-                <div class="hero-feature">🚗 대전·청주 이송</div>
-            </div>
+    <section class="page-hero" itemscope itemtype="https://schema.org/MedicalBusiness">
+    <div class="container">
+        <h1 itemprop="name">영동 사설구급차 24시간 전문 서비스</h1>
+        <p itemprop="description">영동구급차 전문업체! 영동군 산간지역 24시간 응급환자이송, 대전·청주 신속이송 서비스</p>
+        <!-- E-E-A-T 전문성 신호 추가 -->
+        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; margin-top: 20px; font-size: 0.9rem;">
+            <span itemprop="specialty">✓ 보건복지부 고시 기준 준수</span> │ 
+            <span>✓ 전문 응급구조사 상주</span> │ 
+            <span>✓ 다년간의 경력</span> │ 
+            <span>✓ 24시간 대기</span>
         </div>
-    </section>
+        <div class="hero-features">
+            <div class="hero-feature">🚑 영동사설구급차</div>
+            <div class="hero-feature">⏰ 24시간 영동구급차</div>
+            <div class="hero-feature">🏥 대전·청주이송</div>
+            <div class="hero-feature">📞 010-8841-4114</div>
+        </div>
+    </div>
+</section>
 
     <section class="faq-section" role="region" aria-labelledby="faq-title">
     <div class="container">
         <div class="main-accordion">
             <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
-                <div class="header-content-main">
+                <div class="header-content-accordion">
                     <h2 class="section-title">영동 사설구급차 자주 묻는 질문</h2>
                     <p class="section-subtitle">영동군 지역 환자이송 관련 자주 묻는 질문들입니다</p>
                 </div>
@@ -1317,7 +1440,7 @@
     <div class="container">
         <div class="main-accordion">
             <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
-                <div class="header-content-main">
+                <div class="header-content-accordion">
                     <h2 class="section-title">영동 사설구급차 이용 가이드</h2>
                     <p class="section-subtitle">영동군 농촌지역 특성에 맞는 전문 구급차 서비스 안내</p>
                 </div>
@@ -1412,7 +1535,7 @@
     <div class="container">
         <div class="main-accordion">
             <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
-                <div class="header-content">
+                <div class="header-content-accordion">
                     <h2 class="section-title">영동 전문 이송 서비스</h2>
                     <p class="section-subtitle">영동군 지역 특성에 맞는 6가지 전문 이송 서비스를 제공합니다</p>
                 </div>
@@ -1503,7 +1626,7 @@
     <div class="container">
         <div class="main-accordion">
             <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
-                <div class="header-content">
+                <div class="header-content-accordion">
                     <h2 class="section-title">영동군 주요 의료기관 정보(전체현황은 상단 병원찾기 클릭)</h2>
                     <p class="section-subtitle">영동 지역 병원 현황과 이송 가능한 주요 의료기관 안내</p>
                 </div>
