@@ -934,6 +934,291 @@
         font-size: 18px;
     }
 }
+        /* 충주 기준 컴팩트 모바일 스타일 */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    
+    .container {
+        max-width: 100%;
+        overflow-x: hidden;
+        padding: 0 15px;
+    }
+
+    .page-hero {
+        padding: 15px 0;
+    }
+    
+    .page-hero .container {
+        padding: 0 15px;
+    }
+    
+    .page-hero h1 {
+        font-size: 1.3rem;
+        margin: 0 0 8px 0;
+        line-height: 1.2;
+    }
+    
+    .page-hero p {
+        font-size: 0.9rem;
+        margin: 0 0 12px 0;
+        line-height: 1.3;
+    }
+    
+    .hero-features {
+        gap: 6px;
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    
+    .hero-feature {
+        padding: 4px 6px;
+        font-size: 0.65rem;
+        border-radius: 10px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+    
+    .service-card {
+        padding: 8px;
+        min-height: auto;
+    }
+    
+    .service-card h3 {
+        font-size: 0.85rem;
+        margin: 0 0 4px 0;
+        line-height: 1.2;
+    }
+    
+    .service-card p {
+        font-size: 0.7rem;
+        line-height: 1.2;
+        margin-bottom: 6px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .service-icon {
+        font-size: 1.3rem;
+        margin-bottom: 4px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .service-features {
+        gap: 2px;
+        flex-wrap: wrap;
+    }
+    
+    .feature-tag {
+        font-size: 0.6rem;
+        padding: 2px 4px;
+        border-radius: 8px;
+    }
+}
+
+/* 아주 작은 화면 (360px 이하) */
+@media (max-width: 360px) {
+    .page-hero {
+        padding: 12px 0;
+    }
+    
+    .page-hero h1 {
+        font-size: 1.2rem;
+    }
+    
+    .page-hero p {
+        font-size: 0.8rem;
+    }
+    
+    .hero-feature {
+        padding: 3px 5px;
+        font-size: 0.6rem;
+    }
+}
+
+/* 서브 아코디언 스타일 */
+.sub-accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sub-accordion-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.sub-accordion-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #e67e22;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.sub-accordion-header:hover {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    border-color: #d35400;
+}
+
+.sub-accordion-header.active {
+    background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+    color: white;
+}
+
+.sub-accordion-icon {
+    font-size: 1.3rem;
+    margin-right: 12px;
+}
+
+.sub-accordion-header h3 {
+    margin: 0;
+    flex-grow: 1;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.sub-accordion-header.active h3 {
+    color: white;
+}
+
+.sub-toggle-btn {
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    color: #e67e22;
+}
+
+.sub-accordion-header.active .sub-toggle-btn {
+    transform: rotate(45deg);
+    color: white;
+}
+
+.sub-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    background: white;
+    padding: 0 20px;
+    border-top: 2px solid #e67e22;
+}
+
+.sub-accordion-content.active {
+    max-height: 1500px;
+    padding: 20px;
+}
+
+/* 이중 아코디언 스타일 */
+.main-accordion {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.main-accordion-header {
+    background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+    color: white;
+    padding: 30px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.main-accordion-header:hover {
+    background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
+    transform: translateY(-2px);
+}
+
+.header-content-accordion {
+    flex-grow: 1;
+}
+
+.main-accordion-header .section-title {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main-accordion-header .section-subtitle {
+    margin: 0;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.main-toggle-btn {
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+}
+
+.main-accordion-header.active .main-toggle-btn {
+    transform: rotate(45deg);
+}
+
+.main-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    background: white;
+    padding: 0 30px;
+}
+
+.main-accordion-content.active {
+    max-height: 2000px;
+    padding: 30px;
+}
+
+@media (max-width: 768px) {
+    .main-accordion-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-accordion-header .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+    }
+    
+    .main-accordion-header .section-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .main-toggle-btn {
+        margin: 10px 0 0 0;
+        font-size: 1.5rem;
+    }
+    
+    .main-accordion-content {
+        padding: 15px;
+    }
+}
 </style>
 </head>
 <body>
@@ -1009,353 +1294,427 @@
         </div>
     </nav>
 
-    <section class="page-hero">
-        <div class="container">
-            <h1>증평 사설구급차 전문 서비스</h1>
-            <p>전국 최소 군지역 증평군 24시간 환자이송 서비스. 좌구산천문대 블랙스톤벨포레 응급의료와 청주 최단거리 신속 이송</p>
-            <div class="hero-features">
-                <div class="hero-feature">🌟 전국 최소 군</div>
-                <div class="hero-feature">⏰ 24시간 즉시대응</div>
-                <div class="hero-feature">🚗 청주 신속이송</div>
-                <div class="hero-feature">🌌 좌구산천문대</div>
-            </div>
+    <section class="page-hero" itemscope itemtype="https://schema.org/MedicalBusiness">
+    <div class="container">
+        <h1 itemprop="name">증평 사설구급차 24시간 전문 서비스</h1>
+        <p itemprop="description">증평구급차 전문업체! 전국 최소 군지역 24시간 응급환자이송, 좌구산천문대 블랙스톤벨포레 응급의료, 청주 신속이송 서비스</p>
+        <!-- E-E-A-T 전문성 신호 추가 -->
+        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; margin-top: 20px; font-size: 0.9rem;">
+            <span itemprop="specialty">✓ 보건복지부 고시 기준 준수</span> │ 
+            <span>✓ 전문 응급구조사 상주</span> │ 
+            <span>✓ 다년간의 경력</span> │ 
+            <span>✓ 24시간 대기</span>
         </div>
-    </section>
+        <div class="hero-features">
+            <div class="hero-feature">🚑 증평사설구급차</div>
+            <div class="hero-feature">⏰ 24시간 증평구급차</div>
+            <div class="hero-feature">🏥 청주신속이송</div>
+            <div class="hero-feature">📞 010-8841-4114</div>
+        </div>
+    </div>
+</section>
 
-    <section class="faq-section">
-        <div class="container">
-            <h2 class="section-title">증평 사설구급차 자주 묻는 질문</h2>
-            <p class="section-subtitle">증평군 지역 환자이송 관련 자주 묻는 질문들입니다</p>
+    <section class="faq-section" role="region" aria-labelledby="faq-title">
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content-accordion">
+                    <h2 class="section-title">증평 사설구급차 자주 묻는 질문</h2>
+                    <p class="section-subtitle">증평군 지역 환자이송 관련 자주 묻는 질문들입니다</p>
+                </div>
+                <span class="main-toggle-btn">+</span>
+            </div>
             
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q.  블랙스톤벨포레나 좌구산천문대에서 응급상황 발생 시 즉시 출동 가능한가요?
+            <div class="main-accordion-content">
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 블랙스톤벨포레나 좌구산천문대에서 응급상황 발생 시 즉시 출동 가능한가요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 가능합니다. 블랙스톤벨포레리조트, 좌구산천문대, 증평민속체험박물관 등 증평 주요 관광시설에서의 응급상황에 24시간 즉시 출동 체계를 운영하고 있습니다. 전국 최소 군지역의 특성을 활용하여 신속한 접근과 전문 응급처치 후 최적의 병원으로 이송합니다.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>네, 가능합니다. 블랙스톤벨포레리조트, 좌구산천문대, 증평민속체험박물관 등 증평 주요 관광시설에서의 응급상황에 24시간 즉시 출동 체계를 운영하고 있습니다. 전국 최소 군지역의 특성을 활용하여 신속한 접근과 전문 응급처치 후 최적의 병원으로 이송합니다.</p>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 증평에서 청주 병원까지 정말 빠르게 갈 수 있나요?
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 증평에서 청주 병원까지 정말 빠르게 갈 수 있나요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 가능합니다. 증평군은 청주와 바로 인접해 있어 증평읍에서 청주 시내까지 약 20-25km 거리로, 국도를 이용하면 응급이송 가능합니다. 전국 최소 군지역의 지리적 장점을 활용하여 충북에서 가장 빠른 의료이송이 가능합니다.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>네, 가능합니다. 증평군은 청주와 바로 인접해 있어 증평읍에서 청주 시내까지 약 20-25km 거리로, 국도를 이용하면 응급이송 가능합니다. 전국 최소 군지역의 지리적 장점을 활용하여 충북에서 가장 빠른 의료이송이 가능합니다.</p>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 자전거공원이나 체험시설에서 사고 시에도 출동하나요?
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 자전거공원이나 체험시설에서 사고 시에도 출동하나요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 출동합니다. 증평자전거공원에서의 자전거 사고나 각종 체험시설에서의 안전사고 등에 전문적으로 대응합니다. 소규모 지역의 특성을 활용하여 신속한 현장 도착과 전문 응급처치를 제공하며, 필요시 즉시 청주 병원으로 이송합니다.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>네, 출동합니다. 증평자전거공원에서의 자전거 사고나 각종 체험시설에서의 안전사고 등에 전문적으로 대응합니다. 소규모 지역의 특성을 활용하여 신속한 현장 도착과 전문 응급처치를 제공하며, 필요시 즉시 청주 병원으로 이송합니다.</p>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 증평에서 서울 대학병원으로 응급 이송도 가능한가요?
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 증평에서 서울 대학병원으로 응급 이송도 가능한가요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 장거리 응급 이송도 가능합니다. 증평에서 서울까지는 경부고속도로를 이용하여 응급이송 가능합니다. 중증 환자나 특수 치료가 필요한 경우 서울 주요 대학병원으로 신속하게 이송하며, 이송 중 지속적인 응급처치와 모니터링을 제공합니다.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>네, 장거리 응급 이송도 가능합니다. 증평에서 서울까지는 경부고속도로를 이용하여 응급이송 가능합니다. 중증 환자나 특수 치료가 필요한 경우 서울 주요 대학병원으로 신속하게 이송하며, 이송 중 지속적인 응급처치와 모니터링을 제공합니다.</p>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 소규모 지역이라 프라이버시 보장이 되나요?
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 소규모 지역이라 프라이버시 보장이 되나요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 철저히 보장됩니다. 전국 최소 군지역의 특성상 지역사회 구성원들 간의 관계를 고려하여 환자의 프라이버시와 개인정보를 최대한 보호합니다. 특히 정신질환자나 알코올중독 환자 이송 시에는 더욱 신중하고 비밀스럽게 처리합니다.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>네, 철저히 보장됩니다. 전국 최소 군지역의 특성상 지역사회 구성원들 간의 관계를 고려하여 환자의 프라이버시와 개인정보를 최대한 보호합니다. 특히 정신질환자나 알코올중독 환자 이송 시에는 더욱 신중하고 비밀스럽게 처리합니다.</p>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 천문대 야간 관측 중 응급상황에도 출동하나요?
-                    </div>
-                    <div class="faq-answer">
-                        <p>네, 24시간 출동 가능합니다. 좌구산천문대에서 야간 천체관측 중 발생하는 응급상황에도 즉시 대응할 수 있도록 24시간 대기 체계를 운영하고 있습니다. 야간에도 동일한 수준의 전문 응급의료 서비스를 제공하며, 야간 할증료는 20% 적용됩니다.</p>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 천문대 야간 관측 중 응급상황에도 출동하나요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 24시간 출동 가능합니다. 좌구산천문대에서 야간 천체관측 중 발생하는 응급상황에도 즉시 대응할 수 있도록 24시간 대기 체계를 운영하고 있습니다. 야간에도 동일한 수준의 전문 응급의료 서비스를 제공하며, 야간 할증료는 20% 적용됩니다.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="quick-info">
-        <div class="container">
-            <h2 class="section-title">증평 사설구급차 이용 가이드</h2>
-            <div class="area-specialty">
-                <h3>🌟 증평군 전국 최소 군지역 특성</h3>
-                <p>증평군은 81.84㎢의 면적으로 울릉군 다음으로 전국에서 두 번째로 작은 군이며, 육지에서는 가장 작은 군입니다. 2003년 전국에서 가장 늦게 개청한 증평군은 좌구산천문대, 블랙스톤벨포레리조트, 증평민속체험박물관 등 다양한 관광시설을 보유하고 있어 관광객 응급의료 서비스가 중요합니다. 특히 청주와 인접해 있어 최단거리 의료이송이 가능한 지역입니다.</p>
-                <div class="specialty-list">
-                    <div class="specialty-item">
-                        <strong>증평읍</strong><br>
-                        군청소재지, 좌구산천문대
-                    </div>
-                    <div class="specialty-item">
-                        <strong>도안면</strong><br>
-                        블랙스톤벨포레, 연암생태지질공원
-                    </div>
-                    <div class="specialty-item">
-                        <strong>관광시설</strong><br>
-                        자전거공원, 민속체험박물관
-                    </div>
-                    <div class="specialty-item">
-                        <strong>청주 인접</strong><br>
-                        최단거리 신속 이송
-                    </div>
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content-accordion">
+                    <h2 class="section-title">증평 사설구급차 이용 가이드</h2>
+                    <p class="section-subtitle">증평군 전국 최소 군지역 특성에 맞는 전문 구급차 서비스 안내</p>
                 </div>
+                <span class="main-toggle-btn">+</span>
             </div>
             
-            <div class="info-grid">
-                <div class="info-card">
-                    <div class="info-icon">🌟</div>
-                    <h3>최소 군지역 특화</h3>
-                    <p>전국 최소 군지역의 특성을 고려하여 신속하고 효율적인 응급의료 서비스를 제공합니다.</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">🚗</div>
-                    <h3>청주 최단거리</h3>
-                    <p>증평에서 청주까지 최적거리로 충북에서 가장 빠른 의료이송이 가능합니다.</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">🌌</div>
-                    <h3>관광지 응급의료</h3>
-                    <p>좌구산천문대, 블랙스톤벨포레리조트 등 관광시설에서의 응급상황에 전문적으로 대응합니다.</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">🚴</div>
-                    <h3>체험관광 특화</h3>
-                    <p>자전거공원, 민속체험박물관 등 체험관광 중 발생할 수 있는 응급상황에 특화된 서비스를 제공합니다.</p>
+            <div class="main-accordion-content">
+                <div class="sub-accordion-container">
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🌟</span>
+                            <h3>증평군 전국 최소 군지역 특성</h3>
+                            <span class="sub-toggle-btn">+</span>
+                        </div>
+                        <div class="sub-accordion-content">
+                            <p>증평군은 81.84㎢의 면적으로 울릉군 다음으로 전국에서 두 번째로 작은 군이며, 육지에서는 가장 작은 군입니다. 2003년 전국에서 가장 늦게 개청한 증평군은 좌구산천문대, 블랙스톤벨포레리조트, 증평민속체험박물관 등 다양한 관광시설을 보유하고 있어 관광객 응급의료 서비스가 중요합니다.</p>
+                            <div class="specialty-list">
+                                <div class="specialty-item">
+                                    <strong>증평읍</strong><br>
+                                    군청소재지, 좌구산천문대
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>도안면</strong><br>
+                                    블랙스톤벨포레, 연암생태지질공원
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>관광시설</strong><br>
+                                    자전거공원, 민속체험박물관
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>청주 인접</strong><br>
+                                    최단거리 신속 이송
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🌟</span>
+                            <h3>최소 군지역 특화</h3>
+                            <span class="sub-toggle-btn">+</span>
+                        </div>
+                        <div class="sub-accordion-content">
+                            <p>전국 최소 군지역의 특성을 고려하여 신속하고 효율적인 응급의료 서비스를 제공합니다. 소규모 지역의 장점을 활용한 맞춤형 의료이송 서비스입니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🚗</span>
+                            <h3>청주 최단거리</h3>
+                            <span class="sub-toggle-btn">+</span>
+                        </div>
+                        <div class="sub-accordion-content">
+                            <p>증평에서 청주까지 최적거리로 충북에서 가장 빠른 의료이송이 가능합니다. 응급상황에 따라 최적 경로를 선택하여 신속하게 이송합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🌌</span>
+                            <h3>관광지 응급의료</h3>
+                            <span class="sub-toggle-btn">+</span>
+                        </div>
+                        <div class="sub-accordion-content">
+                            <p>좌구산천문대, 블랙스톤벨포레리조트 등 관광시설에서의 응급상황에 전문적으로 대응합니다. 관광지 특성을 고려한 전문 응급처치와 신속한 병원 이송을 제공합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🚴</span>
+                            <h3>체험관광 특화</h3>
+                            <span class="sub-toggle-btn">+</span>
+                        </div>
+                        <div class="sub-accordion-content">
+                            <p>자전거공원, 민속체험박물관 등 체험관광 중 발생할 수 있는 응급상황에 특화된 서비스를 제공합니다. 체험활동 중 안전사고에 전문적으로 대응합니다.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="services-section">
-        <div class="container">
-            <h2 class="section-title">증평 전문 이송 서비스</h2>
-            <p class="section-subtitle">전국 최소 군지역 특성에 맞는 6가지 전문 이송 서비스를 제공합니다</p>
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content-accordion">
+                    <h2 class="section-title">증평 전문 이송 서비스</h2>
+                    <p class="section-subtitle">전국 최소 군지역 특성에 맞는 6가지 전문 이송 서비스를 제공합니다</p>
+                </div>
+                <span class="main-toggle-btn">+</span>
+            </div>
             
-            <div class="services-grid">
-                <div class="service-card" onclick="location.href='general_patient_transport.html'">
-                    <div class="service-icon">🏥</div>
-                    <h3>증평 일반환자이송</h3>
-                    <p>증평보건소에서 청주 대학병원까지 최단거리 신속 이송. 좌구산천문대, 블랙스톤벨포레 등 관광지에서의 응급상황과 지역 주민들의 건강검진을 위한 신속하고 안전한 이송 서비스를 제공합니다.</p>
-                    <div class="service-features">
-                        <span class="feature-tag">청주 신속이송</span>
-                        <span class="feature-tag">관광지 특화</span>
-                        <span class="feature-tag">최소 군</span>
+            <div class="main-accordion-content">
+                <div class="services-grid">
+                    <div class="service-card" onclick="location.href='general_patient_transport.html'">
+                        <div class="service-icon">🏥</div>
+                        <h3>증평 일반환자이송</h3>
+                        <p>증평보건소에서 청주 대학병원까지 최단거리 신속 이송. 좌구산천문대, 블랙스톤벨포레 등 관광지에서의 응급상황과 지역 주민들의 건강검진을 위한 신속하고 안전한 이송 서비스를 제공합니다.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">청주 신속이송</span>
+                            <span class="feature-tag">관광지 특화</span>
+                            <span class="feature-tag">최소 군</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card" onclick="location.href='nursing_home_transport.html'">
+                        <div class="service-icon">🏚️</div>
+                        <h3>증평 요양병원입원</h3>
+                        <p>증평 지역 고령 인구를 위한 요양병원 입·퇴원 이송. 전국 최소 군지역의 특성을 살려 개인맞춤형 침상형 구급차로 편안한 이송을 제공합니다.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">구급차</span>
+                            <span class="feature-tag">개인맞춤</span>
+                            <span class="feature-tag">소규모 지역</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card" onclick="location.href='mental_health_transport.html'">
+                        <div class="service-icon">🧠</div>
+                        <h3>증평 정신병원입원</h3>
+                        <p>정신건강 문제로 어려움을 겪는 분들을 위한 전문 이송. 소규모 지역의 특성을 고려하여 프라이버시를 최대한 보장하며 청주·대전 정신병원으로 안전하게 이송합니다.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">정신병원 입원</span>
+                            <span class="feature-tag">전문 응급구조사</span>
+                            <span class="feature-tag">소규모 지역</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card" onclick="location.href='alcohol_treatment_transport.html'">
+                        <div class="service-icon">🍺</div>
+                        <h3>증평 알코올중독 입원</h3>
+                        <p>증평 지역 알코올중독 환자를 위한 전문 치료기관 이송. 소규모 지역사회의 특성을 고려하여 신중하고 전문적인 맞춤형 이송 서비스를 제공합니다.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">알코올중독 입원</span>
+                            <span class="feature-tag">지역사회 배려</span>
+                            <span class="feature-tag">치료 연계</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card" onclick="location.href='event_medical_support.html'">
+                        <div class="service-icon">🎭</div>
+                        <h3>증평 행사의료지원</h3>
+                        <p>좌구산천문대 관측행사, 블랙스톤벨포레 체험활동, 자전거공원 행사 등에서의 응급의료 지원. 소규모 지역 특성을 활용한 밀착형 의료 지원 서비스입니다.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">천문대 행사</span>
+                            <span class="feature-tag">체험활동</span>
+                            <span class="feature-tag">밀착형 서비스</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card" onclick="location.href='goin_transport_service.html'">
+                        <div class="service-icon">🕊️</div>
+                        <h3>증평 고인이송</h3>
+                        <p>증평 지역 고인의 존엄성을 지키며 청주·대전 장례식장까지 정중한 이송. 소규모 지역사회의 따뜻한 인정처럼 정중하고 신속하게 대응합니다.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">존엄성 보장</span>
+                            <span class="feature-tag">지역사회 배려</span>
+                            <span class="feature-tag">신속 이송</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="service-card" onclick="location.href='nursing_home_transport.html'">
-                    <div class="service-icon">🏚️</div>
-                    <h3>증평 요양병원입원</h3>
-                    <p>증평 지역 고령 인구를 위한 요양병원 입·퇴원 이송. 전국 최소 군지역의 특성을 살려 개인맞춤형 침상형 구급차로 편안한 이송을 제공합니다.</p>
-                    <div class="service-features">
-                        <span class="feature-tag">구급차</span>
-                        <span class="feature-tag">개인맞춤</span>
-                        <span class="feature-tag">소규모 지역</span>
-                    </div>
+                <div style="text-align: center; margin-top: 20px; padding: 20px; background: #fdf2e9; border-radius: 15px;">
+                    <h4 style="color: #e67e22; margin-bottom: 10px;">🌟 증평 지역 특화 서비스</h4>
+                    <p style="color: #555; line-height: 1.4; font-size: 0.9rem;">
+                        전국 최소 군지역인 증평군의 특성을 고려하여 관광객과 지역 주민을 위한 전문 응급의료 서비스를 제공합니다. 
+                        좌구산천문대, 블랙스톤벨포레 등 관광시설에서의 응급상황부터 일상적인 의료이송까지 신속하고 안전하게 대응합니다.
+                    </p>
                 </div>
-
-                <div class="service-card" onclick="location.href='mental_health_transport.html'">
-                    <div class="service-icon">🧠</div>
-                    <h3>증평 정신병원입원</h3>
-                    <p>정신건강 문제로 어려움을 겪는 분들을 위한 전문 이송. 소규모 지역의 특성을 고려하여 프라이버시를 최대한 보장하며 청주·대전 정신병원으로 안전하게 이송합니다.</p>
-                    <div class="service-features">
-                        <span class="feature-tag">정신병원 입원</span>
-                        <span class="feature-tag">전문 응급구조사</span>
-                        <span class="feature-tag">소규모 지역</span>
-                    </div>
-                </div>
-
-                <div class="service-card" onclick="location.href='alcohol_treatment_transport.html'">
-                    <div class="service-icon">🍺</div>
-                    <h3>증평 알코올중독 입원</h3>
-                    <p>증평 지역 알코올중독 환자를 위한 전문 치료기관 이송. 소규모 지역사회의 특성을 고려하여 신중하고 전문적인 맞춤형 이송 서비스를 제공합니다.</p>
-                    <div class="service-features">
-                        <span class="feature-tag">알코올중독 입원</span>
-                        <span class="feature-tag">지역사회 배려</span>
-                        <span class="feature-tag">치료 연계</span>
-                    </div>
-                </div>
-
-                <div class="service-card" onclick="location.href='event_medical_support.html'">
-                    <div class="service-icon">🎭</div>
-                    <h3>증평 행사의료지원</h3>
-                    <p>좌구산천문대 관측행사, 블랙스톤벨포레 체험활동, 자전거공원 행사 등에서의 응급의료 지원. 소규모 지역 특성을 활용한 밀착형 의료 지원 서비스입니다.</p>
-                    <div class="service-features">
-                        <span class="feature-tag">천문대 행사</span>
-                        <span class="feature-tag">체험활동</span>
-                        <span class="feature-tag">밀착형 서비스</span>
-                    </div>
-                </div>
-
-                <div class="service-card" onclick="location.href='goin_transport_service.html'">
-                    <div class="service-icon">🕊️</div>
-                    <h3>증평 고인이송</h3>
-                    <p>증평 지역 고인의 존엄성을 지키며 청주·대전 장례식장까지 정중한 이송. 소규모 지역사회의 따뜻한 인정처럼 정중하고 신속하게 대응합니다.</p>
-                    <div class="service-features">
-                        <span class="feature-tag">존엄성 보장</span>
-                        <span class="feature-tag">지역사회 배려</span>
-                        <span class="feature-tag">신속 이송</span>
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 20px; padding: 20px; background: #fdf2e9; border-radius: 15px;">
-                <h4 style="color: #e67e22; margin-bottom: 10px;">🌟 증평 지역 특화 서비스</h4>
-                <p style="color: #555; line-height: 1.4; font-size: 0.9rem;">
-                    전국 최소 군지역인 증평군의 특성을 고려하여 관광객과 지역 주민을 위한 전문 응급의료 서비스를 제공합니다. 
-                    좌구산천문대, 블랙스톤벨포레 등 관광시설에서의 응급상황부터 일상적인 의료이송까지 신속하고 안전하게 대응합니다.
-                </p>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
+    
     <section class="hospitals-section">
-        <div class="container">
-            <h2 class="section-title">증평군 주요 의료기관 정보(전체현황은 상단 병원찾기 클릭)</h2>
-            <p class="section-subtitle">증평 지역 병원 현황과 이송 가능한 주요 의료기관 안내</p>
-
-            <div class="hospitals-grid">
-                <!-- 증평보건소 -->
-                <div class="hospital-card">
-                    <div class="hospital-header">
-                        <div class="hospital-type">보건소</div>
-                    </div>
-                    <h3>증평군보건소</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon-small">📍</span>
-                            <span>증평군 증평읍 보건복지로 63</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">📞</span>
-                            <span>043-835-4000</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🚨</span>
-                            <span>응급실: 평일 운영</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🏥</span>
-                            <span>기본 의료서비스 제공</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">⭐</span>
-                            <span>내과, 가정의학과, 예방의학</span>
-                        </div>
-                    </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
-                        <a href="tel:043-835-4000" class="btn btn-secondary">보건소 연락</a>
-                    </div>
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content-accordion">
+                    <h2 class="section-title">증평군 주요 의료기관 정보(전체현황은 상단 병원찾기 클릭)</h2>
+                    <p class="section-subtitle">증평 지역 병원 현황과 이송 가능한 주요 의료기관 안내</p>
                 </div>
-
-                <!-- 증평의원 -->
-                <div class="hospital-card" style="border: 2px solid #f39c12;">
-                    <div class="hospital-header">
-                        <div class="hospital-type" style="background: #f39c12;">지역 의원</div>
-                    </div>
-                    <h3>증평지역 의료기관</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon-small">📍</span>
-                            <span>증평군 증평읍 일원</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🏥</span>
-                            <span>1차 의료기관</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🚑</span>
-                            <span>청주 병원 이송 필요시</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">⭐</span>
-                            <span>내과, 외과, 정형외과 등</span>
-                        </div>
-                    </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
-                        <a href="#" class="btn btn-secondary">의료기관 문의</a>
-                    </div>
-                </div>
-
-                <!-- 청주 주요 병원 (이송 추천) -->
-                <div class="hospital-card" style="border: 2px solid #e74c3c;">
-                    <div class="hospital-header">
-                        <div class="hospital-type" style="background: #e74c3c;">이송 추천</div>
-                    </div>
-                    <h3>충북대학교병원 (청주)</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon-small">📍</span>
-                            <span>청주시 서원구 1순환로 776</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🚑</span>
-                            <span>증평에서 청주까지 최단거리</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🏥</span>
-                            <span>상급종합병원 (권역응급의료센터)</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">⭐</span>
-                            <span>모든 진료과, 응급의학과, 중환자실</span>
-                        </div>
-                    </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">전문 이송 문의</a>
-                        <a href="tel:043-269-6114" class="btn btn-secondary">병원 연락</a>
-                    </div>
-                </div>
-
-                <!-- 청주성모병원 (이송 추천) -->
-                <div class="hospital-card" style="border: 2px solid #3498db;">
-                    <div class="hospital-header">
-                        <div class="hospital-type" style="background: #3498db;">이송 추천</div>
-                    </div>
-                    <h3>청주성모병원</h3>
-                    <div class="hospital-info">
-                        <div class="info-item">
-                            <span class="info-icon-small">📍</span>
-                            <span>청주시 상당구 대성로 173-19</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🚑</span>
-                            <span>증평에서 신속이송</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">🏥</span>
-                            <span>종합병원 (지역응급의료센터)</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon-small">⭐</span>
-                            <span>응급의학과, 심장센터, 뇌신경센터</span>
-                        </div>
-                    </div>
-                    <div class="hospital-actions">
-                        <a href="tel:010-8841-4114" class="btn btn-primary">전문 이송 문의</a>
-                        <a href="tel:043-219-8114" class="btn btn-secondary">병원 연락</a>
-                    </div>
-                </div>
+                <span class="main-toggle-btn">+</span>
             </div>
+            
+            <div class="main-accordion-content">
+                <div class="hospitals-grid">
+                    <!-- 증평보건소 -->
+                    <div class="hospital-card">
+                        <div class="hospital-header">
+                            <div class="hospital-type">보건소</div>
+                        </div>
+                        <h3>증평군보건소</h3>
+                        <div class="hospital-info">
+                            <div class="info-item">
+                                <span class="info-icon-small">📍</span>
+                                <span>증평군 증평읍 보건복지로 63</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">📞</span>
+                                <span>043-835-4000</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">🚨</span>
+                                <span>응급실: 평일 운영</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">🏥</span>
+                                <span>기본 의료서비스 제공</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">⭐</span>
+                                <span>내과, 가정의학과, 예방의학</span>
+                            </div>
+                        </div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="tel:043-835-4000" class="btn btn-secondary">보건소 연락</a>
+                        </div>
+                    </div>
 
-            <div class="emergency-banner">
-                <h4>🌟 증평 전국 최소 군지역 응급상황 대응 시스템</h4>
-                <p>전국 최소 군지역의 특성을 활용하여 좌구산천문대, 블랙스톤벨포레 등 관광시설에서의 응급상황에 즉시 출동하는 전문 응급의료 시스템을 운영합니다. 119 신고와 함께 즉시 연락주시면 최적의 응급처치와 병원 이송을 제공합니다.</p>
+                    <!-- 증평의원 -->
+                    <div class="hospital-card" style="border: 2px solid #f39c12;">
+                        <div class="hospital-header">
+                            <div class="hospital-type" style="background: #f39c12;">지역 의원</div>
+                        </div>
+                        <h3>증평지역 의료기관</h3>
+                        <div class="hospital-info">
+                            <div class="info-item">
+                                <span class="info-icon-small">📍</span>
+                                <span>증평군 증평읍 일원</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">🏥</span>
+                                <span>1차 의료기관</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">🚑</span>
+                                <span>청주 병원 이송 필요시</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">⭐</span>
+                                <span>내과, 외과, 정형외과 등</span>
+                            </div>
+                        </div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">이송 문의</a>
+                            <a href="#" class="btn btn-secondary">의료기관 문의</a>
+                        </div>
+                    </div>
+
+                    <!-- 청주 주요 병원 (이송 추천) -->
+                    <div class="hospital-card" style="border: 2px solid #e74c3c;">
+                        <div class="hospital-header">
+                            <div class="hospital-type" style="background: #e74c3c;">이송 추천</div>
+                        </div>
+                        <h3>충북대학교병원 (청주)</h3>
+                        <div class="hospital-info">
+                            <div class="info-item">
+                                <span class="info-icon-small">📍</span>
+                                <span>청주시 서원구 1순환로 776</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">🚑</span>
+                                <span>증평에서 청주까지 최단거리</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">🏥</span>
+                                <span>상급종합병원 (권역응급의료센터)</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">⭐</span>
+                                <span>모든 진료과, 응급의학과, 중환자실</span>
+                            </div>
+                        </div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">전문 이송 문의</a>
+                            <a href="tel:043-269-6114" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+
+                    <!-- 청주성모병원 (이송 추천) -->
+                    <div class="hospital-card" style="border: 2px solid #3498db;">
+                        <div class="hospital-header">
+                            <div class="hospital-type" style="background: #3498db;">이송 추천</div>
+                        </div>
+                        <h3>청주성모병원</h3>
+                        <div class="hospital-info">
+                            <div class="info-item">
+                                <span class="info-icon-small">📍</span>
+                                <span>청주시 상당구 대성로 173-19</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">🚑</span>
+                                <span>증평에서 신속이송</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">🏥</span>
+                                <span>종합병원 (지역응급의료센터)
+                                    </div>
+                            <div class="info-item">
+                                <span class="info-icon-small">⭐</span>
+                                <span>응급의학과, 심장센터, 뇌신경센터</span>
+                            </div>
+                        </div>
+                        <div class="hospital-actions">
+                            <a href="tel:010-8841-4114" class="btn btn-primary">전문 이송 문의</a>
+                            <a href="tel:043-219-8114" class="btn btn-secondary">병원 연락</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="emergency-banner">
+                    <h4>🌟 증평 전국 최소 군지역 응급상황 대응 시스템</h4>
+                    <p>전국 최소 군지역의 특성을 활용하여 좌구산천문대, 블랙스톤벨포레 등 관광시설에서의 응급상황에 즉시 출동하는 전문 응급의료 시스템을 운영합니다. 119 신고와 함께 즉시 연락주시면 최적의 응급처치와 병원 이송을 제공합니다.</p>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- 고정 전화 버튼 -->
     <a href="tel:010-8841-4114" class="fixed-call-btn" title="진천 사설구급차 즉시 연결">📞</a>
@@ -1382,6 +1741,41 @@
     </footer>
 
     <script>
+        // 메인 아코디언 토글 기능
+function toggleMainAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+
+// 서브 아코디언 토글 기능
+function toggleSubAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    // 같은 컨테이너 내의 다른 서브 아코디언들 닫기
+    const container = header.closest('.sub-accordion-container');
+    const allSubHeaders = container.querySelectorAll('.sub-accordion-header');
+    const allSubContents = container.querySelectorAll('.sub-accordion-content');
+    
+    allSubHeaders.forEach(h => {
+        if (h !== header) {
+            h.classList.remove('active');
+        }
+    });
+    
+    allSubContents.forEach(c => {
+        if (c !== content) {
+            c.classList.remove('active');
+        }
+    });
+    
+    // 현재 항목 토글
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
         // FAQ 토글 기능
         function toggleFaq(element) {
             const answer = element.nextElementSibling;
