@@ -993,15 +993,22 @@
         </div>
     </nav>
 
-    <section class="page-hero">
+    <section class="page-hero" itemscope itemtype="https://schema.org/MedicalBusiness">
     <div class="container">
-        <h1>보은 사설구급차 전문 서비스</h1>
-        <p>보은군 속리산 산악지역 24시간 환자이송 서비스. 법주사 삼년산성 관광지 응급의료와 청주 신속 이송</p>
+        <h1 itemprop="name">보은 사설구급차 24시간 전문 서비스</h1>
+        <p itemprop="description">보은구급차 전문업체! 속리산 법주사 산악지역 24시간 응급환자이송, 삼년산성 관광지 응급의료, 청주 신속이송 서비스</p>
+        <!-- E-E-A-T 전문성 신호 추가 -->
+        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; margin-top: 20px; font-size: 0.9rem;">
+            <span itemprop="specialty">✓ 보건복지부 고시 기준 준수</span> │ 
+            <span>✓ 전문 응급구조사 상주</span> │ 
+            <span>✓ 다년간의 경력</span> │ 
+            <span>✓ 24시간 대기</span>
+        </div>
         <div class="hero-features">
-            <div class="hero-feature">⛰️ 속리산</div>
-            <div class="hero-feature">⏰ 24시간 즉시대응</div>
-            <div class="hero-feature">🚗 청주 신속이송</div>
-            <div class="hero-feature">🏛️ 법주사</div>
+            <div class="hero-feature">🚑 보은사설구급차</div>
+            <div class="hero-feature">⏰ 24시간 보은구급차</div>
+            <div class="hero-feature">🏥 청주신속이송</div>
+            <div class="hero-feature">📞 010-8841-4114</div>
         </div>
     </div>
 </section>
@@ -1091,6 +1098,291 @@
         text-overflow: ellipsis;
     }
 }
+    /* 충주 기준 컴팩트 모바일 스타일 */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    
+    .container {
+        max-width: 100%;
+        overflow-x: hidden;
+        padding: 0 15px;
+    }
+
+    .page-hero {
+        padding: 15px 0;
+    }
+    
+    .page-hero .container {
+        padding: 0 15px;
+    }
+    
+    .page-hero h1 {
+        font-size: 1.3rem;
+        margin: 0 0 8px 0;
+        line-height: 1.2;
+    }
+    
+    .page-hero p {
+        font-size: 0.9rem;
+        margin: 0 0 12px 0;
+        line-height: 1.3;
+    }
+    
+    .hero-features {
+        gap: 6px;
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    
+    .hero-feature {
+        padding: 4px 6px;
+        font-size: 0.65rem;
+        border-radius: 10px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+    
+    .service-card {
+        padding: 8px;
+        min-height: auto;
+    }
+    
+    .service-card h3 {
+        font-size: 0.85rem;
+        margin: 0 0 4px 0;
+        line-height: 1.2;
+    }
+    
+    .service-card p {
+        font-size: 0.7rem;
+        line-height: 1.2;
+        margin-bottom: 6px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .service-icon {
+        font-size: 1.3rem;
+        margin-bottom: 4px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .service-features {
+        gap: 2px;
+        flex-wrap: wrap;
+    }
+    
+    .feature-tag {
+        font-size: 0.6rem;
+        padding: 2px 4px;
+        border-radius: 8px;
+    }
+}
+
+/* 아주 작은 화면 (360px 이하) */
+@media (max-width: 360px) {
+    .page-hero {
+        padding: 12px 0;
+    }
+    
+    .page-hero h1 {
+        font-size: 1.2rem;
+    }
+    
+    .page-hero p {
+        font-size: 0.8rem;
+    }
+    
+    .hero-feature {
+        padding: 3px 5px;
+        font-size: 0.6rem;
+    }
+}
+
+/* 서브 아코디언 스타일 */
+.sub-accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sub-accordion-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.sub-accordion-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #667eea;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.sub-accordion-header:hover {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    border-color: #5a6fd8;
+}
+
+.sub-accordion-header.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.sub-accordion-icon {
+    font-size: 1.3rem;
+    margin-right: 12px;
+}
+
+.sub-accordion-header h3 {
+    margin: 0;
+    flex-grow: 1;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.sub-accordion-header.active h3 {
+    color: white;
+}
+
+.sub-toggle-btn {
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    color: #667eea;
+}
+
+.sub-accordion-header.active .sub-toggle-btn {
+    transform: rotate(45deg);
+    color: white;
+}
+
+.sub-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    background: white;
+    padding: 0 20px;
+    border-top: 2px solid #667eea;
+}
+
+.sub-accordion-content.active {
+    max-height: 1500px;
+    padding: 20px;
+}
+
+/* 이중 아코디언 스타일 통일 */
+.main-accordion {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.main-accordion-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.main-accordion-header:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px);
+}
+
+.header-content-accordion {
+    flex-grow: 1;
+}
+
+.main-accordion-header .section-title {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main-accordion-header .section-subtitle {
+    margin: 0;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.main-toggle-btn {
+    font-size: 2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-left: 20px;
+}
+
+.main-accordion-header.active .main-toggle-btn {
+    transform: rotate(45deg);
+}
+
+.main-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    background: white;
+    padding: 0 30px;
+}
+
+.main-accordion-content.active {
+    max-height: 2000px;
+    padding: 30px;
+}
+
+@media (max-width: 768px) {
+    .main-accordion-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-accordion-header .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+    }
+    
+    .main-accordion-header .section-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .main-toggle-btn {
+        margin: 10px 0 0 0;
+        font-size: 1.5rem;
+    }
+    
+    .main-accordion-content {
+        padding: 15px;
+    }
+}
 
 /* 아주 작은 화면 (360px 이하) */
 @media (max-width: 360px) {
@@ -1113,174 +1405,192 @@
 }
 </style>
 
-    <section class="faq-section">
-        <div class="container">
-            <h2 class="section-title">보은 사설구급차 자주 묻는 질문</h2>
-            <p class="section-subtitle">보은 지역 환자이송 관련 자주 묻는 질문들입니다</p>
+    <section class="faq-section" role="region" aria-labelledby="faq-title">
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content-accordion">
+                    <h2 class="section-title">보은 사설구급차 자주 묻는 질문</h2>
+                    <p class="section-subtitle">보은 지역 환자이송 관련 자주 묻는 질문들입니다</p>
+                </div>
+                <span class="main-toggle-btn">+</span>
+            </div>
             
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 보은에서 서울 대학병원으로 응급 이송도 가능한가요?
+            <div class="main-accordion-content">
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 보은에서 서울 대학병원으로 응급 이송도 가능한가요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 장거리 응급 이송도 가능합니다. 보은에서 서울까지는 중부내륙고속도로를 이용하여 약 2시간 30분-3시간 소요됩니다. 중증 환자나 특수 치료가 필요한 경우 서울 주요 대학병원으로 신속하게 이송하며, 이송 중 지속적인 응급처치와 모니터링을 제공합니다.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>네, 장거리 응급 이송도 가능합니다. 보은에서 서울까지는 중부내륙고속도로를 이용하여 약 2시간 30분-3시간 소요됩니다. 중증 환자나 특수 치료가 필요한 경우 서울 주요 대학병원으로 신속하게 이송하며, 이송 중 지속적인 응급처치와 모니터링을 제공합니다.</p>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 속리산이나 법주사에서 응급상황 발생 시 즉시 출동 가능한가요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 가능합니다. 속리산국립공원, 법주사, 삼년산성 등 보은 주요 관광지에서의 응급상황에 24시간 즉시 출동 체계를 운영하고 있습니다. 보은지역 경험이 있는 전문 응급구조사가 동행하며, 필요시 119와 연계하여 최적의 병원으로 이송합니다.</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 속리산이나 법주사에서 응급상황 발생 시 즉시 출동 가능한가요?
-                    </div>
-                    <div class="faq-answer">
-                        <p>네, 가능합니다. 속리산국립공원, 법주사, 삼년산성 등 보은 주요 관광지에서의 응급상황에 24시간 즉시 출동 체계를 운영하고 있습니다. 보은지역 경험이 있는 전문 응급구조사가 동행하며, 필요시 119와 연계하여 최적의 병원으로 이송합니다.</p>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 보은에서 청주 병원까지 정말 빠르게 갈 수 있나요?
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 보은에서 청주 병원까지 정말 빠르게 갈 수 있나요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 가능합니다. 보은읍에서 청주 시내까지 약 45-55km 거리로, 중부내륙고속도로나 국도를 이용하면 대략1시간 내에 도착 가능합니다. 다만 속리산이나 산간지역에서는 출발지까지의 접근시간을 추가로 고려해야 합니다. 응급상황 시 최적의 경로를 선택하여 신속하게 이송합니다.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>네, 가능합니다. 보은읍에서 청주 시내까지 약 45-55km 거리로, 중부내륙고속도로나 국도를 이용하면 대략1시간 내에 도착 가능합니다. 다만 속리산이나 산간지역에서는 출발지까지의 접근시간을 추가로 고려해야 합니다. 응급상황 시 최적의 경로를 선택하여 신속하게 이송합니다.</p>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 속리산숲체험휴양마을이나 체험시설에서 사고 시에도 출동하나요?
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 속리산숲체험휴양마을이나 체험시설에서 사고 시에도 출동하나요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 출동합니다. 속리산숲체험휴양마을에서의 체험활동 중 사고나 모노레일, 스카이바이크, 집라인 등 액티비티 시설에서의 안전사고에 전문적으로 대응합니다. 산림휴양시설의 특성을 고려한 신속한 응급처치 후 적절한 의료기관으로 이송합니다.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>네, 출동합니다. 속리산숲체험휴양마을에서의 체험활동 중 사고나 모노레일, 스카이바이크, 집라인 등 액티비티 시설에서의 안전사고에 전문적으로 대응합니다. 산림휴양시설의 특성을 고려한 신속한 응급처치 후 적절한 의료기관으로 이송합니다.</p>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 속리산 알몸마라톤대회나 지역행사 시 행사구급차도 가능한가요?
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 속리산 알몸마라톤대회나 지역행사 시 행사구급차도 가능한가요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 가능합니다. 말티재 알몸마라톤대회, 속리산 등반대회, 법주사 행사 등에서 행사구급차 지원 서비스를 제공합니다. 보은지역 특성을 고려한 응급구조사와 행사구급차를 현장에 배치하여 응급상황에 즉시 대응하며, 필요시 병원 이송까지 원스톱으로 처리합니다.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>네, 가능합니다. 말티재 알몸마라톤대회, 속리산 등반대회, 법주사 행사 등에서 행사구급차 지원 서비스를 제공합니다. 보은지역 특성을 고려한 응급구조사와 행사구급차를 현장에 배치하여 응급상황에 즉시 대응하며, 필요시 병원 이송까지 원스톱으로 처리합니다.</p>
-                    </div>
-                </div>
 
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Q. 외각지역이나 접근이 어려운 작은마을도 출동하나요?
-                    </div>
-                    <div class="faq-answer">
-                        <p>네, 출동합니다. 임도 등 접근이 어려운 곳까지 출동 가능합니다. 필요시 도보로 현장에 도착한 후, 환자를 안전한 곳으로 이동시켜 구급차로 환승하여 병원까지 이송하는 시스템을 운영하고 있습니다.</p>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            Q. 외각지역이나 접근이 어려운 작은마을도 출동하나요?
+                        </div>
+                        <div class="faq-answer">
+                            <p>네, 출동합니다. 임도 등 접근이 어려운 곳까지 출동 가능합니다. 필요시 도보로 현장에 도착한 후, 환자를 안전한 곳으로 이동시켜 구급차로 환승하여 병원까지 이송하는 시스템을 운영하고 있습니다.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="quick-info">
     <div class="container">
-        <h2 class="section-title">보은 사설구급차 이용 가이드</h2>
-        <p class="section-subtitle">보은군 속리산 산악지역 특성에 맞춘 전문 응급의료 서비스</p>
-        
-        <div class="accordion-container">
-            <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <span class="accordion-icon">⛰️</span>
-                    <h3>속리산국립공원 응급의료 서비스</h3>
-                    <span class="toggle-btn">+</span>
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content-accordion">
+                    <h2 class="section-title">보은 사설구급차 이용 가이드</h2>
+                    <p class="section-subtitle">보은군 속리산 산악지역 특성에 맞춘 전문 응급의료 서비스</p>
                 </div>
-                <div class="accordion-content">
-                    <p>속리산국립공원과 법주사 일대는 연간 수백만 명의 관광객이 찾는 대표적인 산악관광지입니다. 등산 중 발생하는 낙상, 탈수, 심장질환 등의 응급상황에 신속히 대응하며, 산악구조 전문팀과 협력하여 접근이 어려운 산간지역까지 구급차 이송 서비스를 제공합니다.</p>
-                    <div class="detail-list">
-                        <div class="detail-item">
-                            <strong>법주사 구급차 이송</strong><br>
-                            세계문화유산 법주사 참배객 응급상황 전담
+                <span class="main-toggle-btn">+</span>
+            </div>
+            
+            <div class="main-accordion-content">
+                <div class="sub-accordion-container">
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">⛰️</span>
+                            <h3>속리산국립공원 응급의료 서비스</h3>
+                            <span class="sub-toggle-btn">+</span>
                         </div>
-                        <div class="detail-item">
-                            <strong>등산로 응급대응</strong><br>
-                            속리산 주요 등산로 응급환자 신속 구조
-                        </div>
-                        <div class="detail-item">
-                            <strong>관광시설 안전관리</strong><br>
-                            모노레일, 스카이바이크 등 체험시설 응급의료
+                        <div class="sub-accordion-content">
+                            <p>속리산국립공원과 법주사 일대는 연간 수백만 명의 관광객이 찾는 대표적인 산악관광지입니다. 등산 중 발생하는 낙상, 탈수, 심장질환 등의 응급상황에 신속히 대응하며, 산악구조 전문팀과 협력하여 접근이 어려운 산간지역까지 구급차 이송 서비스를 제공합니다.</p>
+                            <div class="specialty-list">
+                                <div class="specialty-item">
+                                    <strong>법주사 구급차 이송</strong><br>
+                                    세계문화유산 법주사 참배객 응급상황 전담
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>등산로 응급대응</strong><br>
+                                    속리산 주요 등산로 응급환자 신속 구조
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>관광시설 안전관리</strong><br>
+                                    모노레일, 스카이바이크 등 체험시설 응급의료
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <span class="accordion-icon">🏛️</span>
-                    <h3>보은군 지역별 특화 서비스</h3>
-                    <span class="toggle-btn">+</span>
-                </div>
-                <div class="accordion-content">
-                    <p>보은군 각 면별 특성을 고려한 맞춤형 응급의료 서비스를 제공합니다. 보은읍 시가지부터 산간마을까지 지역별 접근성과 의료시설 분포를 파악하여 최적의 이송 경로를 설정합니다.</p>
-                    <div class="detail-list">
-                        <div class="detail-item">
-                            <strong>보은읍</strong><br>
-                            군청소재지, 삼년산성 관광객 응급의료
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🏛️</span>
+                            <h3>보은군 지역별 특화 서비스</h3>
+                            <span class="sub-toggle-btn">+</span>
                         </div>
-                        <div class="detail-item">
-                            <strong>속리산면</strong><br>
-                            법주사·속리산 관광객 전문 응급서비스
-                        </div>
-                        <div class="detail-item">
-                            <strong>장안면·마로면</strong><br>
-                            농촌지역 고령환자 맞춤 이송서비스
-                        </div>
-                        <div class="detail-item">
-                            <strong>탄부면·회북면</strong><br>
-                            산간지역 접근성 고려한 응급대응
+                        <div class="sub-accordion-content">
+                            <p>보은군 각 면별 특성을 고려한 맞춤형 응급의료 서비스를 제공합니다. 보은읍 시가지부터 산간마을까지 지역별 접근성과 의료시설 분포를 파악하여 최적의 이송 경로를 설정합니다.</p>
+                            <div class="specialty-list">
+                                <div class="specialty-item">
+                                    <strong>보은읍</strong><br>
+                                    군청소재지, 삼년산성 관광객 응급의료
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>속리산면</strong><br>
+                                    법주사·속리산 관광객 전문 응급서비스
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>장안면·마로면</strong><br>
+                                    농촌지역 고령환자 맞춤 이송서비스
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>탄부면·회북면</strong><br>
+                                    산간지역 접근성 고려한 응급대응
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <span class="accordion-icon">🚗</span>
-                    <h3>청주·대전 신속 이송 시스템</h3>
-                    <span class="toggle-btn">+</span>
-                </div>
-                <div class="accordion-content">
-                    <p>보은에서 청주까지 약 40분, 대전까지 약 50분의 최적 경로로 중증환자를 신속하게 이송합니다. 경부고속도로 청주IC와 대전IC를 활용한 효율적인 이송 시스템을 구축하여 골든타임을 확보합니다.</p>
-                    <div class="detail-list">
-                        <div class="detail-item">
-                            <strong>청주 대형병원 이송</strong><br>
-                            충북대병원, 청주한국병원 등 즉시 이송
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🚗</span>
+                            <h3>청주·대전 신속 이송 시스템</h3>
+                            <span class="sub-toggle-btn">+</span>
                         </div>
-                        <div class="detail-item">
-                            <strong>대전 상급종합병원</strong><br>
-                            충남대병원, 을지대병원 등 전문치료 이송
-                        </div>
-                        <div class="detail-item">
-                            <strong>응급실 사전연락</strong><br>
-                            이송 중 응급실과 실시간 연락으로 대기시간 단축
+                        <div class="sub-accordion-content">
+                            <p>보은에서 청주까지 약 40분, 대전까지 약 50분의 최적 경로로 중증환자를 신속하게 이송합니다. 경부고속도로 청주IC와 대전IC를 활용한 효율적인 이송 시스템을 구축하여 골든타임을 확보합니다.</p>
+                            <div class="specialty-list">
+                                <div class="specialty-item">
+                                    <strong>청주 대형병원 이송</strong><br>
+                                    충북대병원, 청주한국병원 등 즉시 이송
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>대전 상급종합병원</strong><br>
+                                    충남대병원, 을지대병원 등 전문치료 이송
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>응급실 사전연락</strong><br>
+                                    이송 중 응급실과 실시간 연락으로 대기시간 단축
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAccordion(this)">
-                    <span class="accordion-icon">🌲</span>
-                    <h3>산림휴양·체험시설 응급의료</h3>
-                    <span class="toggle-btn">+</span>
-                </div>
-                <div class="accordion-content">
-                    <p>속리산숲체험휴양마을, 농촌체험마을 등에서의 각종 체험활동 중 발생할 수 있는 응급상황에 전문적으로 대응합니다. 계절별 관광 특성을 고려한 맞춤형 응급의료 서비스를 제공합니다.</p>
-                    <div class="detail-list">
-                        <div class="detail-item">
-                            <strong>체험활동 응급대응</strong><br>
-                            산림체험, 농촌체험 중 사고 전문 대응
+                    <div class="sub-accordion-item">
+                        <div class="sub-accordion-header" onclick="toggleSubAccordion(this)">
+                            <span class="sub-accordion-icon">🌲</span>
+                            <h3>산림휴양·체험시설 응급의료</h3>
+                            <span class="sub-toggle-btn">+</span>
                         </div>
-                        <div class="detail-item">
-                            <strong>계절별 특화서비스</strong><br>
-                            여름철 탈수·열사병, 겨울철 저체온증 대응
-                        </div>
-                        <div class="detail-item">
-                            <strong>집단 방문객 대응</strong><br>
-                            수학여행, 단체관광 응급상황 신속 처리
+                        <div class="sub-accordion-content">
+                            <p>속리산숲체험휴양마을, 농촌체험마을 등에서의 각종 체험활동 중 발생할 수 있는 응급상황에 전문적으로 대응합니다. 계절별 관광 특성을 고려한 맞춤형 응급의료 서비스를 제공합니다.</p>
+                            <div class="specialty-list">
+                                <div class="specialty-item">
+                                    <strong>체험활동 응급대응</strong><br>
+                                    산림체험, 농촌체험 중 사고 전문 대응
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>계절별 특화서비스</strong><br>
+                                    여름철 탈수·열사병, 겨울철 저체온증 대응
+                                </div>
+                                <div class="specialty-item">
+                                    <strong>집단 방문객 대응</strong><br>
+                                    수학여행, 단체관광 응급상황 신속 처리
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1469,7 +1779,7 @@ function toggleAccordion(element) {
     <div class="container">
         <div class="main-accordion">
             <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
-                <div class="header-content">
+                <div class="header-content-accordion">
                     <h2 class="section-title">보은 전문 환자이송 6가지 서비스</h2>
                     <p class="section-subtitle">보은군 속리산 산악지역 특성에 맞는 6가지 전문 이송 서비스를 제공합니다</p>
                 </div>
@@ -1786,7 +2096,7 @@ function toggleMainAccordion(element) {
     <div class="container">
         <div class="main-accordion">
             <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
-                <div class="header-content">
+                <div class="header-content-accordion">
                     <h2 class="section-title">보은군 주요 의료기관 정보(전체현황은 상단 병원찾기 클릭)</h2>
                     <p class="section-subtitle">보은 지역 병원 현황과 이송 가능한 주요 의료기관 안내</p>
                 </div>
@@ -2312,6 +2622,41 @@ function toggleMainAccordion(element) {
     </footer>
 
     <script>
+        // 메인 아코디언 토글 기능
+function toggleMainAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
+
+// 서브 아코디언 토글 기능
+function toggleSubAccordion(element) {
+    const content = element.nextElementSibling;
+    const header = element;
+    
+    // 같은 컨테이너 내의 다른 서브 아코디언들 닫기
+    const container = header.closest('.sub-accordion-container');
+    const allSubHeaders = container.querySelectorAll('.sub-accordion-header');
+    const allSubContents = container.querySelectorAll('.sub-accordion-content');
+    
+    allSubHeaders.forEach(h => {
+        if (h !== header) {
+            h.classList.remove('active');
+        }
+    });
+    
+    allSubContents.forEach(c => {
+        if (c !== content) {
+            c.classList.remove('active');
+        }
+    });
+    
+    // 현재 항목 토글
+    header.classList.toggle('active');
+    content.classList.toggle('active');
+}
         // 수정된 코드 (정상 작동)
 function openSummary() {
     const modal = document.getElementById('summaryModal');
