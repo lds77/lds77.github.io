@@ -546,21 +546,21 @@
         }
 
         .faq-question {
-            background: #27ae60;
-            color: white;
-            padding: 15px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: background 0.3s ease;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    background: #667eea;
+    color: white;
+    padding: 18px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .faq-question:hover {
-            background: #229954;
-        }
+.faq-question:hover {
+    background: #5a6fd8;
+}
 
         .faq-question::after {
             content: '+';
@@ -574,17 +574,17 @@
         }
 
         .faq-answer {
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            background: white;
-        }
+    padding: 0;
+    max-height: 25px; /* 기본적으로 조금 열려있음 */
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+}
 
-        .faq-answer.active {
-            padding: 15px;
-            max-height: 300px;
-        }
+.faq-answer.active {
+    padding: 18px;
+    max-height: 250px;
+}
 
         .faq-answer p {
             color: #555;
@@ -1301,6 +1301,7 @@
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
+/* 메인 아코디언 헤더 색상 변경 */
 .main-accordion-header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -1317,36 +1318,57 @@
     transform: translateY(-2px);
 }
 
-.header-content-accordion {
-    flex-grow: 1;
+/* 서브 아코디언 색상도 변경 */
+.sub-accordion-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #667eea;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
 }
 
-.main-accordion-header .section-title {
-    margin: 0 0 10px 0;
-    font-size: 2rem;
-    font-weight: 700;
+.sub-accordion-header:hover {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    border-color: #5a6fd8;
+}
+
+.sub-accordion-header.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
 }
 
-.main-accordion-header .section-subtitle {
-    margin: 0;
-    font-size: 1.1rem;
-    color: rgba(255,255,255,0.9);
-}
-
-.main-toggle-btn {
-    font-size: 2rem;
+.sub-toggle-btn {
+    font-size: 1.3rem;
     font-weight: bold;
     transition: transform 0.3s ease;
-    margin-left: 20px;
+    color: #667eea;
 }
 
-.main-accordion-header.active .main-toggle-btn {
+.sub-accordion-header.active .sub-toggle-btn {
     transform: rotate(45deg);
+    color: white;
 }
 
-.main-accordion-content {
+.sub-accordion-content {
     max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    background: white;
+    padding: 0 20px;
+    border-top: 2px solid #667eea;
+}
+
+.sub-accordion-content.active {
+    max-height: 1500px;
+    padding: 20px;
+}
+
+/* 모든 아코디언을 기본적으로 조금씩 열어놓기 */
+.main-accordion-content {
+    max-height: 50px; /* 기본적으로 조금 열려있음 */
     overflow: hidden;
     transition: max-height 0.5s ease, padding 0.5s ease;
     background: white;
@@ -1358,6 +1380,22 @@
     padding: 30px;
 }
 
+/* 서브 아코디언도 기본적으로 조금씩 열어놓기 */
+.sub-accordion-content {
+    max-height: 30px; /* 기본적으로 조금 열려있음 */
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    background: white;
+    padding: 0 20px;
+    border-top: 2px solid #667eea;
+}
+
+.sub-accordion-content.active {
+    max-height: 1500px;
+    padding: 20px;
+}
+
+/* 모바일에서 컴팩트한 크기 */
 @media (max-width: 768px) {
     .main-accordion-header {
         padding: 15px 20px;
@@ -1380,27 +1418,60 @@
     }
     
     .main-accordion-content {
+        padding: 0 15px;
+        max-height: 30px; /* 모바일에서도 기본 열림 */
+    }
+    
+    .main-accordion-content.active {
         padding: 15px;
     }
-}
-
-/* 아주 작은 화면 (360px 이하) */
-@media (max-width: 360px) {
-    .page-hero {
-        padding: 20px 0;
+    
+    /* 서브 아코디언 모바일 스타일 */
+    .sub-accordion-header {
+        padding: 10px 15px;
     }
     
-    .page-hero h1 {
-        font-size: 1.2rem;
+    .sub-accordion-icon {
+        font-size: 1.1rem;
+        margin-right: 8px;
     }
     
-    .page-hero p {
-        font-size: 0.85rem;
+    .sub-accordion-header h3 {
+        font-size: 0.9rem;
     }
     
-    .hero-feature {
-        padding: 5px 10px;
+    .sub-toggle-btn {
+        font-size: 1.1rem;
+    }
+    
+    .sub-accordion-content {
+        padding: 0 15px;
+        max-height: 20px; /* 모바일에서도 기본 열림 */
+    }
+    
+    .sub-accordion-content.active {
+        padding: 12px 15px;
+    }
+    
+    .sub-accordion-content p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+    
+    .specialty-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+    }
+    
+    .specialty-item {
+        padding: 8px;
         font-size: 0.75rem;
+    }
+    
+    .specialty-item strong {
+        font-size: 0.8rem;
+        margin-bottom: 2px;
     }
 }
 </style>
@@ -1650,20 +1721,20 @@
 }
 
 .accordion-content {
-   /* display: none; */
-   opacity: 0;
-   visibility: hidden;
-   max-height: 0;
-   overflow: hidden;
-   transition: all 0.3s ease;
-   background: white;
-   padding: 25px;
-   border-top: 3px solid #667eea;
+    opacity: 1;
+    visibility: visible;
+    max-height: 40px; /* 기본적으로 조금 열려있음 */
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+    padding: 10px 25px; /* 기본 패딩 */
+    border-top: 3px solid #667eea;
 }
 .accordion-content.active {
-   opacity: 1;
-   visibility: visible;
-   max-height: 600px;
+    opacity: 1;
+    visibility: visible;
+    max-height: 600px;
+    padding: 25px;
 }
 
 @keyframes slideDown {
@@ -2760,6 +2831,28 @@ document.getElementById('summaryModal').onclick = function(event) {
                 closeSummary();
             }
         });
+        // 페이지 로드 시 첫 번째 메인 아코디언 열기
+document.addEventListener('DOMContentLoaded', function() {
+    const firstMainAccordion = document.querySelector('.main-accordion-header');
+    const firstMainContent = document.querySelector('.main-accordion-content');
+    if (firstMainAccordion && firstMainContent) {
+        firstMainAccordion.classList.add('active');
+        firstMainContent.classList.add('active');
+    }
+    
+    // 기존 애니메이션 코드들...
+    const cards = document.querySelectorAll('.info-card, .service-card, .hospital-card, .faq-item');
+    cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 50);
+    });
+});
     </script>
 
 </body>
