@@ -1286,12 +1286,11 @@
 }
 
 .sub-accordion-content {
-    max-height: 20px; /* 기존 30px에서 축소 */
+    max-height: 0; /* 기존 30px이나 다른 값에서 0으로! */
     overflow: hidden;
     transition: max-height 0.5s ease, padding 0.5s ease;
     background: white;
-    padding: 0 15px; /* 기존 20px에서 축소 */
-    border-top: 2px solid #667eea;
+    padding: 0 20px;
 }
 
 .sub-accordion-content.active {
@@ -2008,11 +2007,11 @@ function toggleAccordion(element) {
 }
 
 .main-accordion-content {
-    max-height: 30px; /* 기존 50px에서 축소 */
+    max-height: 0; /* 30px → 0으로! */
     overflow: hidden;
     transition: max-height 0.5s ease, padding 0.5s ease;
     background: white;
-    padding: 0 20px; /* 기존 30px에서 축소 */
+    padding: 0 20px;
 }
 
 .main-accordion-content.active {
@@ -2846,14 +2845,6 @@ document.getElementById('summaryModal').onclick = function(event) {
                 closeSummary();
             }
         });
-        // 페이지 로드 시 첫 번째 메인 아코디언 열기
-document.addEventListener('DOMContentLoaded', function() {
-    const firstMainAccordion = document.querySelector('.main-accordion-header');
-    const firstMainContent = document.querySelector('.main-accordion-content');
-    if (firstMainAccordion && firstMainContent) {
-        firstMainAccordion.classList.add('active');
-        firstMainContent.classList.add('active');
-    }
     
     // 기존 애니메이션 코드들...
     const cards = document.querySelectorAll('.info-card, .service-card, .hospital-card, .faq-item');
