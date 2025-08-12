@@ -1407,9 +1407,7 @@
 /* 모바일에서 컴팩트한 크기 */
 @media (max-width: 768px) {
     .main-accordion-header {
-        padding: 10px 15px; /* 기존 20px 25px에서 절반으로 축소 */
-        flex-direction: column;
-        text-align: center;
+        padding: 5px 8px !important; /* 값을 절반으로 줄임 */
     }
     
     .main-accordion-header .section-title {
@@ -1427,16 +1425,22 @@
         margin: 5px 0 0 0;
         font-size: 1.2rem; /* 모바일에서 축소 */
     }
-}
     
     .main-accordion-content {
-        padding: 0 8px; /* 기존 10px에서 더 축소 */
-        max-height: 15px; /* 기존 20px에서 더 축소 */
+        padding: 0 5px !important; /* 추가 */
     }
     
     .main-accordion-content.active {
-        padding: 8px; /* 기존 10px에서 더 축소 */
+        padding: 5px !important; /* 추가 */
     }
+    .quick-info, .services-section, .faq-section, .hospitals-section {
+        padding: 15px 0 !important;
+    }
+    /* 이 한 줄만 추가! */
+    footer {
+        padding: 8px 0 !important;
+    }
+}
     
     /* 서브 아코디언 모바일 스타일 */
     .sub-accordion-header {
