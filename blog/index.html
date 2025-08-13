@@ -41,6 +41,35 @@ keywords:
         <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
             {% for post in site.posts %}
             <article class="blog-card" data-category="{{ post.category | default: '응급의료' }}" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;" onclick="location.href='first-aid-guide.html'">
+            <article class="blog-card" data-category="지역정보" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;" onclick="location.href='cheongju_hospitals-guide.html'">
+    
+    <!-- 블로그 이미지 -->
+    <div class="blog-image" style="height: 180px; background: linear-gradient(135deg, #059669, #047857); display: flex; align-items: center; justify-content: center; position: relative;">
+        <div class="blog-icon" style="font-size: 3.5rem; color: white;">🏥</div>
+        
+        <!-- 카테고리 태그 -->
+        <span class="blog-category" style="position: absolute; top: 15px; left: 15px; background: rgba(255,255,255,0.9); color: #059669; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">
+            지역정보
+        </span>
+    </div>
+    
+    <!-- 블로그 내용 -->
+    <div class="blog-content" style="padding: 25px;">
+        <h3 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 15px; color: #2c3e50; line-height: 1.4;">
+            청주 주요 병원별 특징과 전문 진료과목
+        </h3>
+        
+        <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+            청주 지역 주요 병원들의 특성화 진료과목과 구급차 이송 시 알아야 할 정보들을 정리했습니다.
+        </p>
+        
+        <!-- 메타 정보 -->
+        <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #888; border-top: 1px solid #f0f0f0; padding-top: 15px;">
+            <span class="blog-date">📅 2025년 1월 20일</span>
+            <span class="blog-views">👁️ 634회</span>
+        </div>
+    </div>
+</article>  
                 
                 <!-- 블로그 이미지 -->
                 <div class="blog-image" style="height: 180px; background: linear-gradient(135deg, #e74c3c, #c0392b); display: flex; align-items: center; justify-content: center; position: relative;">
