@@ -1,262 +1,194 @@
----
-layout: default
-title: "청주구급차 응급의료 정보 블로그"
-description: "{{ site.business.name }}에서 제공하는 응급의료 정보와 환자이송 가이드"
-keywords: 
-  - "{{ site.location.city }}구급차 정보"
-  - "응급의료 가이드"
-  - "환자이송 정보"
-  - "{{ site.business.name }} 블로그"
----
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청주구급차 응급의료 정보 블로그 - 직지응급환자이송단</title>
+    <meta name="description" content="직지응급환자이송단에서 제공하는 응급의료 정보와 환자이송 가이드">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif; line-height: 1.6; color: #333; background: #fafafa; margin: 0; padding: 0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        header { background: linear-gradient(135deg, #dc2626, #b91c1c); color: white; padding: 2rem 0; margin-bottom: 2rem; }
+        .header-content { text-align: center; }
+        footer { background: #1e293b; color: white; padding: 1.5rem 0; text-align: center; margin-top: 3rem; }
+        .fixed-home-btn { position: fixed; bottom: 30px; right: 30px; background: #dc2626; color: white; padding: 15px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3); z-index: 1000; }
+        .blog-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; margin-bottom: 20px; }
+        .blog-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">직지응급환자이송단 블로그</h1>
+                <p style="opacity: 0.9;">전문 응급의료 정보</p>
+            </div>
+        </div>
+    </header>
 
-<!-- 블로그 헤더 -->
-<section class="blog-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 0; text-align: center; margin-bottom: 40px;">
-    <div class="container">
-        <h1 style="font-size: 2.5rem; margin-bottom: 20px;">{{ site.location.city }}구급차 응급의료 정보</h1>
-        <p style="font-size: 1.2rem; opacity: 0.9;">{{ site.business.name }}에서 제공하는 전문 의료정보와 환자이송 가이드</p>
-        <div style="margin-top: 30px;">
-            <a href="tel:{{ site.business.phone }}" style="background: rgba(255,255,255,0.2); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; border: 2px solid rgba(255,255,255,0.3);">
-                📞 응급상담: {{ site.business.phone }}
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- 카테고리 필터 -->
-<nav class="blog-categories" style="text-align: center; margin-bottom: 40px;">
-    <div class="container">
-        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-            <a href="#all" class="category-filter active" data-category="all">전체</a>
-            <a href="#emergency" class="category-filter" data-category="응급의료">응급의료</a>
-            <a href="#transport" class="category-filter" data-category="환자이송">환자이송</a>
-            <a href="#regional" class="category-filter" data-category="지역정보">지역정보</a>
-            <a href="#safety" class="category-filter" data-category="안전가이드">안전가이드</a>
-        </div>
-    </div>
-</nav>
-
-<!-- 최신 글 목록 -->
-<section class="blog-posts">
-    <div class="container">
-        <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
-            {% for post in site.posts %}
-            <article class="blog-card" data-category="{{ post.category | default: '응급의료' }}" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;" onclick="location.href='first-aid-guide.html'">
-            <article class="blog-card" data-category="지역정보" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;" onclick="location.href='cheongju_hospitals-guide.html'">
-    
-    <!-- 블로그 이미지 -->
-    <div class="blog-image" style="height: 180px; background: linear-gradient(135deg, #059669, #047857); display: flex; align-items: center; justify-content: center; position: relative;">
-        <div class="blog-icon" style="font-size: 3.5rem; color: white;">🏥</div>
-        
-        <!-- 카테고리 태그 -->
-        <span class="blog-category" style="position: absolute; top: 15px; left: 15px; background: rgba(255,255,255,0.9); color: #059669; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">
-            지역정보
-        </span>
-    </div>
-    
-    <!-- 블로그 내용 -->
-    <div class="blog-content" style="padding: 25px;">
-        <h3 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 15px; color: #2c3e50; line-height: 1.4;">
-            청주 주요 병원별 특징과 전문 진료과목
-        </h3>
-        
-        <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-            청주 지역 주요 병원들의 특성화 진료과목과 구급차 이송 시 알아야 할 정보들을 정리했습니다.
-        </p>
-        
-        <!-- 메타 정보 -->
-        <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #888; border-top: 1px solid #f0f0f0; padding-top: 15px;">
-            <span class="blog-date">📅 2025년 1월 20일</span>
-            <span class="blog-views">👁️ 634회</span>
-        </div>
-    </div>
-</article>  
-                
-                <!-- 블로그 이미지 -->
-                <div class="blog-image" style="height: 180px; background: linear-gradient(135deg, #e74c3c, #c0392b); display: flex; align-items: center; justify-content: center; position: relative;">
-                    {% if post.icon %}
-                        <div class="blog-icon" style="font-size: 3.5rem; color: white;">{{ post.icon }}</div>
-                    {% else %}
-                        <div class="blog-icon" style="font-size: 3.5rem; color: white;">📋</div>
-                    {% endif %}
-                    
-                    <!-- 카테고리 태그 -->
-                    <span class="blog-category" style="position: absolute; top: 15px; left: 15px; background: rgba(255,255,255,0.9); color: #e74c3c; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">
-                        {{ post.category | default: "응급의료" }}
-                    </span>
-                </div>
-                
-                <!-- 블로그 내용 -->
-                <div class="blog-content" style="padding: 25px;">
-                    <h3 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 15px; color: #2c3e50; line-height: 1.4;">
-                        {{ post.title }}
-                    </h3>
-                    
-                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-                        {{ post.excerpt | strip_html | truncatewords: 25 }}
-                    </p>
-                    
-                    <!-- 메타 정보 -->
-                    <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #888; border-top: 1px solid #f0f0f0; padding-top: 15px;">
-                        <span class="blog-date">📅 {{ post.date | date: "%Y년 %m월 %d일" }}</span>
-                        <span class="blog-views">👁️ {{ post.views | default: "234" }}회</span>
-                    </div>
-                </div>
-            </article>
-            {% endfor %}
-            
-            <!-- 글이 없을 때 기본 카드들 -->
-            {% if site.posts.size == 0 %}
-            <article class="blog-card" data-category="응급의료">
-                <div class="blog-image" style="height: 180px; background: linear-gradient(135deg, #e74c3c, #c0392b); display: flex; align-items: center; justify-content: center;">
-                    <div class="blog-icon" style="font-size: 3.5rem; color: white;">💊</div>
-                    <span class="blog-category" style="position: absolute; top: 15px; left: 15px; background: rgba(255,255,255,0.9); color: #e74c3c; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">응급의료</span>
-                </div>
-                <div class="blog-content" style="padding: 25px;">
-                    <h3 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 15px; color: #2c3e50;">응급상황별 기본 응급처치 방법</h3>
-                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">심정지, 출혈, 골절, 화상 등 응급상황별 올바른 응급처치 방법을 전문가가 알려드립니다.</p>
-                    <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #888; border-top: 1px solid #f0f0f0; padding-top: 15px;">
-                        <span>📅 2025년 1월 20일</span>
-                        <span>👁️ 1,523회</span>
-                    </div>
-                </div>
-            </article>
-            
-            <article class="blog-card" data-category="환자이송">
-                <div class="blog-image" style="height: 180px; background: linear-gradient(135deg, #e74c3c, #c0392b); display: flex; align-items: center; justify-content: center;">
-                    <div class="blog-icon" style="font-size: 3.5rem; color: white;">📋</div>
-                    <span class="blog-category" style="position: absolute; top: 15px; left: 15px; background: rgba(255,255,255,0.9); color: #e74c3c; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">환자이송</span>
-                </div>
-                <div class="blog-content" style="padding: 25px;">
-                    <h3 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 15px; color: #2c3e50;">환자이송 시 필요한 서류와 준비물</h3>
-                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">{{ site.location.city }} 지역 구급차 이송 시 반드시 준비해야 할 서류들과 체크리스트를 정리했습니다.</p>
-                    <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #888; border-top: 1px solid #f0f0f0; padding-top: 15px;">
-                        <span>📅 2025년 1월 18일</span>
-                        <span>👁️ 1,234회</span>
-                    </div>
-                </div>
-            </article>
-            {% endif %}
-        </div>
-        
-        <!-- 블로그 하단 CTA -->
-        <div class="blog-cta" style="text-align: center; margin-top: 60px; padding: 40px; background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 15px;">
-            <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #2c3e50;">응급상황 시 즉시 연락하세요</h3>
-            <p style="color: #666; margin-bottom: 25px;">{{ site.business.name }}은 {{ site.business.hours }} 언제든지 신속한 응급의료 서비스를 제공합니다.</p>
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="tel:{{ site.business.phone }}" style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
-                    📞 응급상담: {{ site.business.phone }}
-                </a>
-                <a href="{{ site.baseurl }}/" style="background: transparent; color: #e74c3c; border: 2px solid #e74c3c; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
-                    🏠 메인페이지로
+    <!-- 블로그 헤더 -->
+    <section class="blog-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 0; text-align: center; margin-bottom: 40px;">
+        <div class="container">
+            <h1 style="font-size: 2.5rem; margin-bottom: 20px;">청주구급차 응급의료 정보</h1>
+            <p style="font-size: 1.2rem; opacity: 0.9;">직지응급환자이송단에서 제공하는 전문 의료정보와 환자이송 가이드</p>
+            <div style="margin-top: 30px;">
+                <a href="tel:010-8841-4114" style="background: rgba(255,255,255,0.2); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; border: 2px solid rgba(255,255,255,0.3);">
+                    📞 응급상담: 010-8841-4114
                 </a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- 카테고리 필터 JavaScript -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const categoryFilters = document.querySelectorAll('.category-filter');
-    const blogCards = document.querySelectorAll('.blog-card');
-    
-    // 카테고리 필터 스타일
-    categoryFilters.forEach(filter => {
-        filter.style.cssText = `
-            padding: 8px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            color: #666;
-            background: white;
-            border: 2px solid #e9ecef;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        `;
-    });
-    
-    // 활성 필터 스타일
-    document.querySelector('.category-filter.active').style.cssText += `
-        background: #e74c3c;
-        color: white;
-        border-color: #e74c3c;
-    `;
-    
-    // 필터 클릭 이벤트
-    categoryFilters.forEach(filter => {
-        filter.addEventListener('click', function(e) {
-            e.preventDefault();
+    <!-- 카테고리 필터 -->
+    <nav class="blog-categories" style="text-align: center; margin-bottom: 40px;">
+        <div class="container">
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="#all" class="category-filter active" data-category="all">전체</a>
+                <a href="#emergency" class="category-filter" data-category="응급의료">응급의료</a>
+                <a href="#transport" class="category-filter" data-category="환자이송">환자이송</a>
+                <a href="#regional" class="category-filter" data-category="지역정보">지역정보</a>
+                <a href="#safety" class="category-filter" data-category="안전가이드">안전가이드</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 최신 글 목록 -->
+    <section class="blog-posts">
+        <div class="container">
+            <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                
+                <!-- 첫 번째 글: 응급처치 가이드 -->
+                <article class="blog-card" data-category="응급의료" onclick="location.href='first-aid-guide.html'">
+                    <div class="blog-image" style="height: 180px; background: linear-gradient(135deg, #e74c3c, #c0392b); display: flex; align-items: center; justify-content: center; position: relative;">
+                        <div class="blog-icon" style="font-size: 3.5rem; color: white;">💊</div>
+                        <span class="blog-category" style="position: absolute; top: 15px; left: 15px; background: rgba(255,255,255,0.9); color: #e74c3c; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">
+                            응급의료
+                        </span>
+                    </div>
+                    <div class="blog-content" style="padding: 25px;">
+                        <h3 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 15px; color: #2c3e50; line-height: 1.4;">
+                            응급상황별 기본 응급처치 방법
+                        </h3>
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                            심정지, 출혈, 골절, 화상 등 응급상황별 올바른 응급처치 방법을 전문가가 알려드립니다.
+                        </p>
+                        <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #888; border-top: 1px solid #f0f0f0; padding-top: 15px;">
+                            <span class="blog-date">📅 2025년 1월 20일</span>
+                            <span class="blog-views">👁️ 1,523회</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 두 번째 글: 청주 병원 가이드 -->
+                <article class="blog-card" data-category="지역정보" onclick="location.href='cheongju_hospitals-guide.html'">
+                    <div class="blog-image" style="height: 180px; background: linear-gradient(135deg, #059669, #047857); display: flex; align-items: center; justify-content: center; position: relative;">
+                        <div class="blog-icon" style="font-size: 3.5rem; color: white;">🏥</div>
+                        <span class="blog-category" style="position: absolute; top: 15px; left: 15px; background: rgba(255,255,255,0.9); color: #059669; padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">
+                            지역정보
+                        </span>
+                    </div>
+                    <div class="blog-content" style="padding: 25px;">
+                        <h3 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 15px; color: #2c3e50; line-height: 1.4;">
+                            청주 주요 병원별 특징과 전문 진료과목
+                        </h3>
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                            청주 지역 주요 병원들의 특성화 진료과목과 구급차 이송 시 알아야 할 정보들을 정리했습니다.
+                        </p>
+                        <div class="blog-meta" style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #888; border-top: 1px solid #f0f0f0; padding-top: 15px;">
+                            <span class="blog-date">📅 2025년 1월 20일</span>
+                            <span class="blog-views">👁️ 634회</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
             
-            // 모든 필터에서 active 제거
-            categoryFilters.forEach(f => {
-                f.classList.remove('active');
-                f.style.cssText = f.style.cssText.replace(/background: #e74c3c[^;]*;/g, 'background: white;').replace(/color: white[^;]*;/g, 'color: #666;').replace(/border-color: #e74c3c[^;]*;/g, 'border-color: #e9ecef;');
+            <!-- 블로그 하단 CTA -->
+            <div class="blog-cta" style="text-align: center; margin-top: 60px; padding: 40px; background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 15px;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #2c3e50;">응급상황 시 즉시 연락하세요</h3>
+                <p style="color: #666; margin-bottom: 25px;">직지응급환자이송단은 24시간 언제든지 신속한 응급의료 서비스를 제공합니다.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="tel:010-8841-4114" style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                        📞 응급상담: 010-8841-4114
+                    </a>
+                    <a href="/" style="background: transparent; color: #e74c3c; border: 2px solid #e74c3c; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                        🏠 메인페이지로
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 직지응급환자이송단. 응급의료 정보 블로그.</p>
+        </div>
+    </footer>
+    
+    <a href="/" class="fixed-home-btn">🏠 메인</a>
+
+    <script>
+        // 카테고리 필터 기능
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryFilters = document.querySelectorAll('.category-filter');
+            const blogCards = document.querySelectorAll('.blog-card');
+            
+            // 카테고리 필터 스타일
+            categoryFilters.forEach(filter => {
+                filter.style.cssText = `
+                    padding: 8px 20px;
+                    border-radius: 25px;
+                    text-decoration: none;
+                    color: #666;
+                    background: white;
+                    border: 2px solid #e9ecef;
+                    transition: all 0.3s ease;
+                    font-weight: 500;
+                `;
             });
             
-            // 클릭된 필터에 active 추가
-            this.classList.add('active');
-            this.style.cssText += `
+            // 활성 필터 스타일
+            document.querySelector('.category-filter.active').style.cssText += `
                 background: #e74c3c;
                 color: white;
                 border-color: #e74c3c;
             `;
             
-            const selectedCategory = this.getAttribute('data-category');
-            
-            // 블로그 카드 필터링
-            blogCards.forEach(card => {
-                const cardCategory = card.getAttribute('data-category');
-                if (selectedCategory === 'all' || cardCategory === selectedCategory) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+            // 필터 클릭 이벤트
+            categoryFilters.forEach(filter => {
+                filter.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 모든 필터에서 active 제거
+                    categoryFilters.forEach(f => {
+                        f.classList.remove('active');
+                        f.style.cssText = f.style.cssText.replace(/background: #e74c3c[^;]*;/g, 'background: white;').replace(/color: white[^;]*;/g, 'color: #666;').replace(/border-color: #e74c3c[^;]*;/g, 'border-color: #e9ecef;');
+                    });
+                    
+                    // 클릭된 필터에 active 추가
+                    this.classList.add('active');
+                    this.style.cssText += `
+                        background: #e74c3c;
+                        color: white;
+                        border-color: #e74c3c;
+                    `;
+                    
+                    const selectedCategory = this.getAttribute('data-category');
+                    
+                    // 블로그 카드 필터링
+                    blogCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
             });
         });
-    });
-    
-    // 블로그 카드 호버 효과
-    blogCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-            this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
-        });
-    });
-});
-</script>
+    </script>
 
-<style>
-/* 추가 블로그 스타일 */
-.blog-card {
-    position: relative;
-}
-
-.blog-image {
-    position: relative;
-}
-
-@media (max-width: 768px) {
-    .blog-grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-    }
-    
-    .blog-cta div {
-        flex-direction: column !important;
-        gap: 15px !important;
-    }
-    
-    .blog-categories div {
-        gap: 10px !important;
-    }
-    
-    .category-filter {
-        font-size: 0.85rem !important;
-        padding: 6px 15px !important;
-    }
-}
-</style>
+</body>
+</html>
