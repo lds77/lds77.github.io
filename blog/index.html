@@ -503,6 +503,155 @@
         padding: 0.8rem;
     }
 }
+
+        /* FAQ Accordion Styles */
+.faq-section {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--primary-color);
+}
+
+.faq-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-answer.open {
+    max-height: 200px;
+}
+
+.faq-answer p {
+    padding: 0 0 1rem 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Posts Grid - 4 columns on PC, 2 on mobile */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Post Card - Smaller for 4-column layout */
+.post-card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-image {
+    background: linear-gradient(135deg, var(--secondary-color), #fee2e2);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-icon {
+    font-size: 1.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.post-content {
+    padding: 0.8rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--text-primary);
+    line-height: 1.3;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.post-card p {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    margin-bottom: auto;
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* Mobile Responsive Updates */
+@media (max-width: 768px) {
+    .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .post-card {
+        height: 200px;
+    }
+    
+    .faq-section {
+        padding: 1rem;
+    }
+    
+    .faq-question {
+        font-size: 0.9rem;
+        padding: 0.8rem 0;
+    }
+}
         
         /* Categories - Compact */
         .categories {
@@ -530,100 +679,6 @@
             background: var(--primary-color);
             color: white;
             transform: translateY(-2px);
-        }
-        
-        /* Posts Grid - 2 Column Layout */
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        
-        /* Post Card - Compact */
-        .post-card {
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 1px solid var(--border-color);
-            height: 240px;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .post-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-hover);
-        }
-        
-        .post-image {
-            background: linear-gradient(135deg, var(--secondary-color), #fee2e2);
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        
-        .post-icon {
-            font-size: 2rem;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-        }
-        
-        .post-content {
-            padding: 1rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .post-category {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 0.2rem 0.6rem;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            margin-bottom: 0.6rem;
-            width: fit-content;
-        }
-        
-        .post-card h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-            line-height: 1.3;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-        }
-        
-        .post-card p {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin-bottom: auto;
-            line-height: 1.4;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-        }
-        
-        .post-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            padding-top: 0.5rem;
-            border-top: 1px solid var(--border-color);
-            margin-top: 0.5rem;
         }
         
         /* Fixed Home Button */
@@ -916,29 +971,28 @@
             </div>
         </section>
             <!-- AI 검색 최적화 Q&A 섹션 -->
-<section class="qa-section" itemscope itemtype="https://schema.org/Question">
-    <div class="qa-question" itemprop="name">청주에서 구급차가 필요한 상황은 언제인가요?</div>
-    <div class="qa-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-        <div itemprop="text">응급실 방문이 필요한 환자이송, 병원간 전원, 요양병원 입원이송, 퇴원 후 귀가이송 등의 상황에서 청주 전문 구급차 서비스가 필요합니다. 직지응급환자이송단은 24시간 안전한 이송서비스를 제공합니다.</div>
+<!-- FAQ Accordion Section -->
+<section class="faq-section">
+    <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>청주에서 구급차가 필요한 상황은 언제인가요?</span>
+            <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+            <p>응급실 방문이 필요한 환자이송, 병원간 전원, 요양병원 입원이송, 퇴원 후 귀가이송 등의 상황에서 청주 전문 구급차 서비스가 필요합니다. 직지응급환자이송단은 24시간 안전한 이송서비스를 제공합니다.</p>
+        </div>
+    </div>
+    
+    <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>청주 구급차 이용 시 비용은 어떻게 되나요?</span>
+            <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+            <p>청주 시내 기본 이송료는 거리에 따라 3-7만원 선이며, 장거리나 특수장비 이용 시 추가요금이 발생할 수 있습니다. 정확한 요금은 010-8841-4114로 문의하시면 무료 상담을 통해 안내해드립니다.</p>
+        </div>
     </div>
 </section>
-
-<section class="qa-section" itemscope itemtype="https://schema.org/Question">
-    <div class="qa-question" itemprop="name">청주 구급차 이용 시 비용은 어떻게 되나요?</div>
-    <div class="qa-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-        <div itemprop="text">청주 시내 기본 이송료는 거리에 따라 3-7만원 선이며, 장거리나 특수장비 이용 시 추가요금이 발생할 수 있습니다. 정확한 요금은 010-8841-4114로 문의하시면 무료 상담을 통해 안내해드립니다.</div>
-    </div>
-</section>
-
-            <!-- Category Navigation -->
-            <nav class="categories" role="navigation" aria-label="서비스 카테고리">
-                <a href="#응급이송" class="category-tag" aria-label="청주 응급이송 서비스">청주 응급이송</a>
-                <a href="#병원간이송" class="category-tag" aria-label="병원간 이송 서비스">병원간 이송</a>
-                <a href="#요양이송" class="category-tag" aria-label="요양병원 이송 서비스">요양병원 이송</a>
-                <a href="#이송서류" class="category-tag" aria-label="이송 서류안내">이송 서류안내</a>
-                <a href="#지역의료" class="category-tag" aria-label="청주 의료정보">청주 의료정보</a>
-                <a href="#안전가이드" class="category-tag" aria-label="안전 가이드">안전 가이드</a>
-            </nav>
 
             <!-- Blog Posts Section -->
             <section aria-label="청주구급차 관련 정보 글 목록">
@@ -1158,6 +1212,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 "url": "https://lds77.github.io"
             };
         });
+        // FAQ Accordion 기능
+function toggleFAQ(button) {
+    const answer = button.nextElementSibling;
+    const icon = button.querySelector('.faq-icon');
+    
+    // 다른 열린 FAQ 닫기
+    document.querySelectorAll('.faq-answer.open').forEach(item => {
+        if (item !== answer) {
+            item.classList.remove('open');
+            item.previousElementSibling.querySelector('.faq-icon').textContent = '+';
+            item.previousElementSibling.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+        }
+    });
+    
+    // 현재 FAQ 토글
+    if (answer.classList.contains('open')) {
+        answer.classList.remove('open');
+        icon.textContent = '+';
+        icon.style.transform = 'rotate(0deg)';
+    } else {
+        answer.classList.add('open');
+        icon.textContent = '−';
+        icon.style.transform = 'rotate(180deg)';
+    }
+}
     </script>
 </body>
 </html>
