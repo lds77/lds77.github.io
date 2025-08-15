@@ -2110,18 +2110,23 @@ function toggleAccordion(element) {
 
 @media (max-width: 768px) {
     .main-accordion-header {
-        padding: 10px 15px; /* 기존 20px 25px에서 절반으로 축소 */
+        padding: 8px 12px; /* 기존 20px 25px에서 절반으로 축소 */
     }
 }
     
     .main-accordion-header .section-title {
-        font-size: 1.2rem; /* 모바일에서 더 축소 */
+        font-size: 1.1rem; /* 모바일에서 더 축소 */
         margin-bottom: 2px;
+    }
+
+    .main-accordion-header .section-subtitle {  /* 이 부분을 새로 추가 */
+        font-size: 0.8rem !important;
+        margin: 0 !important;
     }
     
     .main-toggle-btn {
-        margin: 5px 0 0 0;
-        font-size: 1.2rem; /* 모바일에서 축소 */
+        margin: 3px 0 0 0;
+        font-size: 1.1rem; /* 모바일에서 축소 */
     }
     
     .main-accordion-content {
