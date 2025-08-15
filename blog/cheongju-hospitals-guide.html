@@ -1,18 +1,153 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <!-- 성능 최적화 (Critical Resource Hints) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//lds77.github.io">
+    
+    <!-- 폰트 최적화 (Critical CSS) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"></noscript>
+    
+    <!-- SEO 최적화 (네이버 특화 + 2025년 최신 기법) -->
     <title>청주 병원 응급실 추천 및 구급차 이용 안내 | 직지응급환자이송단</title>
     <meta name="description" content="청주 주요 종합병원, 상급종합병원, 응급실 정보 총정리. 충북대, 성모, 한국병원 등 특징 비교 및 야간, 휴일 진료 안내. 청주구급차 이용이 필요할 때 확인하세요.">
     <meta name="keywords" content="청주 병원, 청주 응급실, 청주구급차, 청주 종합병원, 충북대병원, 청주성모병원, 한국병원, 청주의료원, 병원 예약, 직지응급환자이송단">
     <meta name="author" content="직지응급환자이송단">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="NaverBot" content="index, follow">
+    <meta name="Yeti" content="index, follow">
+    <meta name="googlebot" content="index, follow">
 
+    <!-- Open Graph + Twitter Cards (완전 버전) -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="청주 병원 응급실 추천 및 구급차 이용 안내">
+    <meta property="og:title" content="청주 병원 응급실 추천 및 구급차 이용 안내 | 직지응급환자이송단">
     <meta property="og:description" content="청주 주요 병원의 특징, 진료과목, 응급실 정보를 한눈에 비교하고, 청주구급차 이용 방법을 확인하세요.">
     <meta property="og:url" content="https://lds77.github.io/blog/cheongju-hospitals.html">
+    <meta property="og:image" content="https://lds77.github.io/images/cheongju-hospitals-guide.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="직지응급환자이송단">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="article:author" content="직지응급환자이송단">
+    <meta property="article:section" content="의료서비스">
+    <meta property="article:published_time" content="2025-08-16T09:00:00+09:00">
+    <meta property="article:modified_time" content="2025-08-16T09:00:00+09:00">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="청주 병원 응급실 추천 및 구급차 이용 안내">
+    <meta name="twitter:description" content="청주 주요 병원 정보와 구급차 이용 가이드">
+    <meta name="twitter:image" content="https://lds77.github.io/images/cheongju-hospitals-guide.jpg">
 
+    <!-- 구조화 데이터 (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "청주 병원 응급실 추천 및 구급차 이용 안내",
+                "description": "청주 주요 종합병원, 상급종합병원, 응급실 정보 총정리",
+                "author": {
+                    "@type": "Organization",
+                    "name": "직지응급환자이송단",
+                    "url": "https://lds77.github.io/"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "직지응급환자이송단",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://lds77.github.io/images/logo.png"
+                    }
+                },
+                "datePublished": "2025-08-16T09:00:00+09:00",
+                "dateModified": "2025-08-16T09:00:00+09:00",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://lds77.github.io/blog/cheongju-hospitals.html"
+                },
+                "image": "https://lds77.github.io/images/cheongju-hospitals-guide.jpg"
+            },
+            {
+                "@type": "LocalBusiness",
+                "name": "직지응급환자이송단",
+                "description": "청주 24시간 전문 응급환자 이송 서비스",
+                "telephone": "010-8841-4114",
+                "url": "https://lds77.github.io/",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "청주시",
+                    "@region": "충청북도",
+                    "addressCountry": "KR"
+                },
+                "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
+                "serviceArea": {
+                    "@type": "City",
+                    "name": "청주시"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "홈",
+                        "item": "https://lds77.github.io/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "의료정보",
+                        "item": "https://lds77.github.io/medical-info"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "청주 병원 가이드"
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "청주에서 가장 큰 병원은 어디인가요?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "충북대학교병원이 청주 지역 최대 상급종합병원으로 중증·희귀질환 전문 치료를 제공합니다."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "청주구급차는 언제 이용해야 하나요?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "병원 간 이송, 외래진료 이동, 입퇴원 시, 재활병원 이송 등 비응급 상황에서 전문 이송 서비스가 필요할 때 이용하시면 됩니다."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <!-- 모바일 최적화 추가 메타태그 -->
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#0066cc">
+    
+    <!-- 캐시 최적화 -->
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+    
+    <!-- 폰트 최적화 (제거 - Critical CSS로 이동) -->
     <style>
         :root {
             --primary-color: #0066cc;
@@ -25,113 +160,276 @@
             --border-radius: 12px;
         }
         body {
-            font-family: 'Noto Sans KR', sans-serif;
-            line-height: 1.7;
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.5; /* 모바일 가독성 최적화 */
             color: var(--text-primary);
             background-color: #f5f7fa;
+            font-size: 0.9rem; /* 모바일 기본: 0.9rem */
         }
-        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        /* 컨테이너 시스템 (모바일 퍼스트) */
+        .container { 
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto; 
+            padding: 0 1rem;
+        }
+        
+        /* 컴팩트 헤더 (50% 축소) */
         header {
             background: linear-gradient(135deg, var(--primary-color), #004499);
             color: white;
-            padding: 2.5rem 0;
-            margin-bottom: 2rem;
+            padding: 1rem 0; /* 2.5rem → 1rem (60% 축소) */
+            margin-bottom: 1rem;
             text-align: center;
-            border-radius: 0 0 20px 20px;
+            border-radius: 0 0 12px 12px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        h1 { font-size: 2.2rem; font-weight: 700; }
-        .header-subtitle { font-size: 1.1rem; opacity: 0.9; }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo {
+            width: 60px; /* 모바일 기본 크기 */
+            height: 60px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        h1 { 
+            font-size: 1.4rem; /* 모바일: 2.2rem → 1.4rem */
+            font-weight: 700; 
+            margin: 0;
+            line-height: 1.2;
+        }
+        
+        .header-subtitle { 
+            font-size: 0.9rem; /* 모바일: 1.1rem → 0.9rem */
+            opacity: 0.9; 
+            text-align: center;
+            margin: 0;
+        }
 
         .section {
             background: white;
             border-radius: var(--border-radius);
-            padding: 2rem;
-            margin-bottom: 2rem;
+            padding: 1.5rem; /* 모바일: 2rem → 1.5rem */
+            margin-bottom: 1.5rem; /* 모바일: 2rem → 1.5rem */
             box-shadow: var(--shadow);
         }
+        
         .section-title {
-            font-size: 1.8rem;
+            font-size: 1.1rem; /* 모바일: 1.8rem → 1.1rem */
             font-weight: 600;
             color: var(--primary-color);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem; /* 1.5rem → 1rem */
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.75rem;
+            gap: 0.5rem; /* 0.75rem → 0.5rem */
+            line-height: 1.3;
         }
 
-        /* Emergency Info */
+        /* Emergency Info 컴팩트 */
         .emergency-info {
             background: linear-gradient(135deg, #fff1f2, #ffdfe2);
             border-left: 5px solid var(--danger-color);
             text-align: center;
+            padding: 1rem; /* 컴팩트하게 조정 */
         }
-        .emergency-info h2 { color: var(--danger-color); }
-        .emergency-info p { font-size: 1.2rem; font-weight: 600; line-height: 1.8; color: #5b21b6; }
-        .emergency-info strong { color: var(--danger-color); font-size: 1.4rem; }
+        .emergency-info h2 { 
+            color: var(--danger-color); 
+            font-size: 1.1rem; /* 모바일 사이즈 조정 */
+        }
+        .emergency-info p { 
+            font-size: 1rem; /* 모바일: 1.2rem → 1rem */
+            font-weight: 600; 
+            line-height: 1.6; /* 1.8 → 1.6 */
+            color: #5b21b6; 
+            margin: 0.5rem 0;
+        }
+        .emergency-info strong { 
+            color: var(--danger-color); 
+            font-size: 1.1rem; /* 모바일: 1.4rem → 1.1rem */
+        }
 
-        /* Hospital Grid */
+        /* Hospital Grid 최종 컴팩트 디자인 */
         .hospitals-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: 1fr; /* 모바일: 세로 스택 */
+            gap: 0.75rem; /* 더욱 컴팩트 */
         }
+        
         .hospital-card {
             background: white;
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
+            border-radius: 10px; /* 약간 둥글게 */
+            padding: 0.75rem; /* 더욱 컴팩트 */
             border: 1px solid var(--border-color);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.2s ease; /* 빠른 반응 */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
+        
         .hospital-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transform: translateY(-1px); /* 미세한 움직임 */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
         }
+        
         .hospital-header {
             display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 1rem;
+            align-items: flex-start; /* 상단 정렬로 변경 */
+            gap: 0.5rem; /* 더욱 컴팩트 */
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #f1f5f9;
+            margin-bottom: 0.5rem;
         }
+        
         .hospital-logo {
-            width: 50px; height: 50px;
+            width: 40px; height: 40px; /* 더 작게 */
             background: var(--primary-color);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem; color: white; font-weight: 700; flex-shrink: 0;
+            border-radius: 8px; /* 덜 둥글게 */
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            font-size: 0.8rem; /* 더 작은 글씨 */
+            color: white; 
+            font-weight: 700; 
+            flex-shrink: 0;
         }
-        .hospital-info h3 { font-size: 1.3rem; margin: 0; }
-        .hospital-info .tags { display: flex; gap: 0.5rem; margin-top: 0.25rem; }
-        .hospital-info .tag {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            padding: 0.2rem 0.6rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
+        
+        .hospital-info {
+            flex: 1;
+            min-width: 0; /* 텍스트 오버플로우 방지 */
+        }
+        
+        .hospital-info h3 { 
+            font-size: 1rem; /* 더 작게 */
+            margin: 0 0 0.25rem 0; 
+            line-height: 1.2;
             font-weight: 600;
-            border: 1px solid var(--primary-color);
         }
-        .hospital-details p { margin: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.5rem; font-weight: 500;}
-        .hospital-details .icon { font-size: 1.1rem; color: var(--primary-color); margin-top: 2px;}
+        
+        .hospital-info .tags { 
+            display: flex; 
+            gap: 0.2rem; 
+            margin: 0;
+            flex-wrap: wrap;
+        }
+        
+        .hospital-info .tag {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 0.1rem 0.4rem; /* 더 작게 */
+            border-radius: 10px;
+            font-size: 0.7rem; /* 더 작은 글씨 */
+            font-weight: 500;
+            border: none;
+            line-height: 1.2;
+        }
+        
+        .hospital-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem; /* 더 촘촘하게 */
+        }
+        
+        .hospital-details p { 
+            margin: 0;
+            display: flex; 
+            align-items: flex-start; 
+            gap: 0.3rem;
+            font-weight: 400; /* 더 가벼운 폰트 */
+            font-size: 0.8rem; /* 더 작은 글씨 */
+            line-height: 1.3;
+            color: #4b5563;
+        }
+        
+        .hospital-details strong {
+            color: #1f2937;
+            font-weight: 500;
+        }
+        
+        .hospital-details .icon { 
+            font-size: 0.9rem;
+            color: var(--primary-color); 
+            margin-top: 1px;
+            flex-shrink: 0;
+        }
+        
+        /* 특별한 카드 스타일 (상급종합병원) */
+        .hospital-card.premium {
+            border: 2px solid #fbbf24;
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+        }
+        
+        .hospital-card.premium .hospital-logo {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
+        }
 
-        /* Ambulance Section */
+        /* Ambulance Section 컴팩트 */
         .ambulance-section {
             background: linear-gradient(135deg, #f0fdf4, #dcfce7);
             border-left: 5px solid var(--accent-color);
+            padding: 1rem; /* 컴팩트하게 조정 */
         }
-        .ambulance-section h2 { color: var(--accent-color); }
-        .ambulance-section ul { list-style: none; padding: 0; }
+        
+        .ambulance-section h2 { 
+            color: var(--accent-color); 
+            font-size: 1.1rem; /* 모바일 사이즈 조정 */
+        }
+        
+        .ambulance-section p {
+            font-size: 0.85rem; /* 작은 글씨로 조정 */
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        
+        .ambulance-section ul { 
+            list-style: none; 
+            padding: 0; 
+        }
+        
         .ambulance-section li {
             background: white;
-            padding: 1rem;
+            padding: 0.75rem; /* 1rem → 0.75rem */
             border-radius: 8px;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem; /* 1rem → 0.75rem */
             border: 1px solid var(--accent-color);
         }
-        .ambulance-section li h4 { color: var(--accent-color); margin-bottom: 0.5rem; }
+        
+        .ambulance-section li h4 { 
+            color: var(--accent-color); 
+            margin-bottom: 0.4rem; /* 0.5rem → 0.4rem */
+            font-size: 0.9rem; /* 작은 제목 */
+            line-height: 1.3;
+        }
+        
+        .ambulance-section li p {
+            font-size: 0.8rem; /* 작은 본문 */
+            line-height: 1.4;
+            margin: 0;
+            color: #4b5563;
+        }
 
         /* Home Button */
         .fixed-home-btn {
@@ -142,15 +440,216 @@
             text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             transition: transform 0.3s; font-size: 1.8rem; z-index: 1000;
         }
-        .fixed-home-btn:hover { transform: scale(1.1); }
+        /* 태블릿 최적화 (768px+) */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+                padding: 0 1.5rem;
+            }
+            
+            body {
+                font-size: 1rem; /* 태블릿: 1rem */
+            }
+            
+            .logo {
+                width: 70px;
+                height: 70px;
+                font-size: 1.4rem;
+            }
+            
+            h1 { 
+                font-size: 1.6rem;
+            }
+            
+            .header-subtitle { 
+                font-size: 1rem;
+            }
+            
+            header {
+                padding: 1.25rem 0;
+            }
+            
+            .section {
+                padding: 1.75rem; /* 태블릿: 약간 여유 */
+                margin-bottom: 1.75rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem; /* 태블릿 */
+            }
+            
+            .hospitals-grid {
+                grid-template-columns: repeat(2, 1fr); /* 태블릿: 2열 */
+                gap: 1rem;
+            }
+            
+            .hospital-card {
+                padding: 1rem; /* 태블릿에서 약간 여유 */
+            }
+            
+            .hospital-logo {
+                width: 45px; 
+                height: 45px;
+                font-size: 0.9rem;
+            }
+            
+            .hospital-info h3 { 
+                font-size: 1.1rem;
+            }
+            
+            .hospital-details p {
+                font-size: 0.85rem;
+            }
+        }
+        /* 전화번호 링크 스타일 */
+        .hospital-details a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .hospital-details a:hover {
+            text-decoration: underline;
+            color: #004499;
+        }
+        
+        .hospital-details a:focus-visible {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 1px;
+            border-radius: 2px;
+        }
+        
+        /* 태블릿 카드 높이 보장 */
+        @media (min-width: 768px) {
+            .hospital-card {
+                min-height: 160px;
+            }
+        }
+        /* 데스크톱 최적화 (1024px+) */
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1000px;
+                padding: 0 2rem;
+            }
+            
+            body {
+                font-size: 1rem; /* 데스크톱: 1rem */
+            }
+            
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+            
+            .logo {
+                width: 80px; /* PC: 80px */
+                height: 80px;
+                font-size: 1.6rem;
+            }
+            
+            h1 { 
+                font-size: 1.8rem; /* PC: 1.8rem */
+            }
+            
+            .header-subtitle { 
+                font-size: 1.1rem; /* PC: 1.1rem */
+            }
+            
+            header {
+                padding: 1.5rem 0;
+                margin-bottom: 1.5rem;
+            }
+            
+            .section {
+                padding: 2rem; /* 데스크톱: 원래 크기 */
+                margin-bottom: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem; /* 데스크톱 */
+                gap: 0.75rem;
+            }
+            
+            .hospitals-grid {
+                grid-template-columns: repeat(3, 1fr); /* 데스크톱: 3열 */
+                gap: 1.25rem;
+            }
+            
+            .hospital-card {
+                padding: 1.25rem; /* 데스크톱에서 충분한 여백 */
+                transition: all 0.3s ease; /* 부드러운 애니메이션 */
+                min-height: 180px; /* 데스크톱 최소 높이 */
+            }
+            
+            .hospital-card:hover {
+                transform: translateY(-3px) translateZ(0); /* GPU 가속 */
+                box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            }
+            
+            .hospital-header {
+                gap: 0.75rem;
+                padding-bottom: 0.75rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .hospital-logo {
+                width: 50px; 
+                height: 50px;
+                font-size: 1rem;
+                border-radius: 10px; /* 데스크톱에서 약간 둥글게 */
+            }
+            
+            .hospital-info h3 { 
+                font-size: 1.2rem;
+            }
+            
+            .hospital-info .tag {
+                font-size: 0.75rem;
+                padding: 0.15rem 0.5rem;
+            }
+            
+            .hospital-details p {
+                font-size: 0.9rem;
+                gap: 0.4rem;
+            }
+            
+            .hospital-details .icon {
+                font-size: 1rem;
+            }
+            
+            .emergency-info p { 
+                font-size: 1.2rem;
+            }
+            
+            .emergency-info strong { 
+                font-size: 1.4rem;
+            }
+        }
+        
+        /* 초고해상도 디스플레이 최적화 */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .hospital-logo {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="container">
-            <h1>청주 병원·응급실 정보 및 구급차 이용 안내</h1>
-            <p class="header-subtitle">직지응급환자이송단이 제공하는 청주시 의료 정보 가이드</p>
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">직지</div>
+                    <div>
+                        <h1>응급환자이송단</h1>
+                        <p class="header-subtitle">직지응급환자이송단이 제공하는 청주시 의료 정보 가이드</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -166,90 +665,108 @@
         <div class="section">
             <h2 class="section-title">🏥 청주 주요 병원 한눈에 보기</h2>
             <div class="hospitals-grid">
-                <div class="hospital-card">
+                <article class="hospital-card premium" role="article" tabindex="0" aria-label="충북대학교병원 정보">
                     <div class="hospital-header">
-                        <div class="hospital-logo">충북대</div>
+                        <div class="hospital-logo" aria-hidden="true">충북대</div>
                         <div class="hospital-info">
                             <h3>충북대학교병원</h3>
-                            <div class="tags"><span class="tag">상급종합</span><span class="tag">권역응급</span></div>
+                            <div class="tags" role="list">
+                                <span class="tag" role="listitem">상급종합</span>
+                                <span class="tag" role="listitem">권역응급</span>
+                            </div>
                         </div>
                     </div>
                     <div class="hospital-details">
-                        <p><span class="icon">💡</span> <strong>특징:</strong> 중증·희귀질환 전문, 권역외상센터, 심뇌혈관센터 등 운영</p>
-                        <p><span class="icon">📞</span> <strong>대표전화:</strong> 1533-0075</p>
-                        <p><span class="icon">📍</span> <strong>주소:</strong> 서원구 1순환로 776</p>
+                        <p><span class="icon" aria-hidden="true">💡</span> <strong>특징:</strong> 중증·희귀질환 전문, 권역외상센터, 심뇌혈관센터</p>
+                        <p><span class="icon" aria-hidden="true">📞</span> <strong>전화:</strong> <a href="tel:1533-0075" aria-label="충북대학교병원 전화걸기">1533-0075</a></p>
+                        <p><span class="icon" aria-hidden="true">📍</span> <strong>위치:</strong> 서원구 1순환로 776</p>
                     </div>
-                </div>
-                <div class="hospital-card">
+                </article>
+                <article class="hospital-card" role="article" tabindex="0" aria-label="청주성모병원 정보">
                     <div class="hospital-header">
-                        <div class="hospital-logo">성모</div>
+                        <div class="hospital-logo" aria-hidden="true">성모</div>
                         <div class="hospital-info">
                             <h3>청주성모병원</h3>
-                            <div class="tags"><span class="tag">종합병원</span><span class="tag">지역응급</span></div>
+                            <div class="tags" role="list">
+                                <span class="tag" role="listitem">종합병원</span>
+                                <span class="tag" role="listitem">지역응급</span>
+                            </div>
                         </div>
                     </div>
                     <div class="hospital-details">
-                        <p><span class="icon">💡</span> <strong>특징:</strong> 호스피스 완화의료, 건강검진센터, 청원구 대표 병원</p>
-                        <p><span class="icon">📞</span> <strong>대표전화:</strong> 043-219-8000</p>
-                        <p><span class="icon">📍</span> <strong>주소:</strong> 청원구 주성로 173-19</p>
+                        <p><span class="icon" aria-hidden="true">💡</span> <strong>특징:</strong> 호스피스 완화의료, 건강검진센터</p>
+                        <p><span class="icon" aria-hidden="true">📞</span> <strong>전화:</strong> <a href="tel:043-219-8000" aria-label="청주성모병원 전화걸기">043-219-8000</a></p>
+                        <p><span class="icon" aria-hidden="true">📍</span> <strong>위치:</strong> 청원구 주성로 173-19</p>
                     </div>
-                </div>
-                <div class="hospital-card">
+                </article>
+                <article class="hospital-card" role="article" tabindex="0" aria-label="한국병원 정보">
                     <div class="hospital-header">
-                        <div class="hospital-logo">한국</div>
+                        <div class="hospital-logo" aria-hidden="true">한국</div>
                         <div class="hospital-info">
                             <h3>한국병원</h3>
-                            <div class="tags"><span class="tag">종합병원</span><span class="tag">지역응급</span></div>
+                            <div class="tags" role="list">
+                                <span class="tag" role="listitem">종합병원</span>
+                                <span class="tag" role="listitem">지역응급</span>
+                            </div>
                         </div>
                     </div>
                     <div class="hospital-details">
-                        <p><span class="icon">💡</span> <strong>특징:</strong> 산업의학, 통증클리닉 전문, 흥덕구 대표 병원</p>
-                        <p><span class="icon">📞</span> <strong>대표전화:</strong> 043-222-7000</p>
-                        <p><span class="icon">📍</span> <strong>주소:</strong> 흥덕구 가경동</p>
+                        <p><span class="icon" aria-hidden="true">💡</span> <strong>특징:</strong> 산업의학, 통증클리닉 전문</p>
+                        <p><span class="icon" aria-hidden="true">📞</span> <strong>전화:</strong> <a href="tel:043-222-7000" aria-label="한국병원 전화걸기">043-222-7000</a></p>
+                        <p><span class="icon" aria-hidden="true">📍</span> <strong>위치:</strong> 흥덕구 가경동</p>
                     </div>
-                </div>
-                <div class="hospital-card">
+                </article>
+                <article class="hospital-card" role="article" tabindex="0" aria-label="청주의료원 정보">
                     <div class="hospital-header">
-                        <div class="hospital-logo">의료원</div>
+                        <div class="hospital-logo" aria-hidden="true">의료원</div>
                         <div class="hospital-info">
                             <h3>청주의료원</h3>
-                            <div class="tags"><span class="tag">종합병원</span><span class="tag">공공병원</span></div>
+                            <div class="tags" role="list">
+                                <span class="tag" role="listitem">종합병원</span>
+                                <span class="tag" role="listitem">공공병원</span>
+                            </div>
                         </div>
                     </div>
                     <div class="hospital-details">
-                        <p><span class="icon">💡</span> <strong>특징:</strong> 지역 거점 공공의료, 공공 어린이 재활, 양·한방 협진</p>
-                        <p><span class="icon">📞</span> <strong>대표전화:</strong> 043-279-8114</p>
-                        <p><span class="icon">📍</span> <strong>주소:</strong> 서원구 흥덕로 48</p>
+                        <p><span class="icon" aria-hidden="true">💡</span> <strong>특징:</strong> 지역 거점 공공의료, 공공 어린이 재활</p>
+                        <p><span class="icon" aria-hidden="true">📞</span> <strong>전화:</strong> <a href="tel:043-279-8114" aria-label="청주의료원 전화걸기">043-279-8114</a></p>
+                        <p><span class="icon" aria-hidden="true">📍</span> <strong>위치:</strong> 서원구 흥덕로 48</p>
                     </div>
-                </div>
-                <div class="hospital-card">
+                </article>
+                <article class="hospital-card" role="article" tabindex="0" aria-label="하나병원 정보">
                     <div class="hospital-header">
-                        <div class="hospital-logo">하나</div>
+                        <div class="hospital-logo" aria-hidden="true">하나</div>
                         <div class="hospital-info">
                             <h3>하나병원</h3>
-                            <div class="tags"><span class="tag">종합병원</span><span class="tag">지역응급</span></div>
+                            <div class="tags" role="list">
+                                <span class="tag" role="listitem">종합병원</span>
+                                <span class="tag" role="listitem">지역응급</span>
+                            </div>
                         </div>
                     </div>
                     <div class="hospital-details">
-                        <p><span class="icon">💡</span> <strong>특징:</strong> 24시간 응급실 운영, 흥덕구 지역민 밀착 의료 서비스</p>
-                        <p><span class="icon">📞</span> <strong>대표전화:</strong> 043-230-6114</p>
-                        <p><span class="icon">📍</span> <strong>주소:</strong> 흥덕구 2순환로 1262</p>
+                        <p><span class="icon" aria-hidden="true">💡</span> <strong>특징:</strong> 24시간 응급실 운영, 지역민 밀착 의료</p>
+                        <p><span class="icon" aria-hidden="true">📞</span> <strong>전화:</strong> <a href="tel:043-230-6114" aria-label="하나병원 전화걸기">043-230-6114</a></p>
+                        <p><span class="icon" aria-hidden="true">📍</span> <strong>위치:</strong> 흥덕구 2순환로 1262</p>
                     </div>
-                </div>
-                <div class="hospital-card">
+                </article>
+                <article class="hospital-card" role="article" tabindex="0" aria-label="효성병원 정보">
                     <div class="hospital-header">
-                        <div class="hospital-logo">효성</div>
+                        <div class="hospital-logo" aria-hidden="true">효성</div>
                         <div class="hospital-info">
                             <h3>효성병원</h3>
-                            <div class="tags"><span class="tag">종합병원</span><span class="tag">재활특화</span></div>
+                            <div class="tags" role="list">
+                                <span class="tag" role="listitem">종합병원</span>
+                                <span class="tag" role="listitem">재활특화</span>
+                            </div>
                         </div>
                     </div>
                     <div class="hospital-details">
-                        <p><span class="icon">💡</span> <strong>특징:</strong> 중풍 및 재활치료센터 특화, 양·한방 협진 시스템</p>
-                        <p><span class="icon">📞</span> <strong>대표전화:</strong> 043-221-5000</p>
-                        <p><span class="icon">📍</span> <strong>주소:</strong> 상당구 쇠내로 16</p>
+                        <p><span class="icon" aria-hidden="true">💡</span> <strong>특징:</strong> 중풍 및 재활치료센터 특화</p>
+                        <p><span class="icon" aria-hidden="true">📞</span> <strong>전화:</strong> <a href="tel:043-221-5000" aria-label="효성병원 전화걸기">043-221-5000</a></p>
+                        <p><span class="icon" aria-hidden="true">📍</span> <strong>위치:</strong> 상당구 쇠내로 16</p>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
 
