@@ -378,36 +378,131 @@
             font-size: 0.9rem;
             display: inline-block;
         }
-        
-        /* Emergency CTA */
-        .emergency-cta {
-            background: linear-gradient(135deg, var(--accent-color), #1d4ed8);
-            color: white;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow);
-        }
-        
-        .emergency-cta h2 {
-            font-size: 1.3rem;
-            margin-bottom: 0.3rem;
-        }
-        
-        .emergency-cta p {
-            font-size: 1rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .emergency-number {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.4rem 0.8rem;
-            border-radius: 8px;
-            display: inline-block;
-        }
+
+        /* Hero Section - Compact Design */
+.hero-section {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+/* Emergency Bar - Horizontal Layout */
+.emergency-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, var(--primary-color), #b91c1c);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.emergency-icon {
+    font-size: 1.2rem;
+}
+
+.emergency-text, .service-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.emergency-btn, .contact-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.emergency-btn:hover, .contact-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.divider {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
+}
+
+/* Features Grid - Compact */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.feature-card {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.feature-card h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 0 0.2rem 0;
+    color: var(--text-primary);
+}
+
+.feature-card p {
+    font-size: 0.8rem;
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .emergency-bar {
+        padding: 0.6rem 1rem;
+        gap: 0.5rem;
+    }
+    
+    .emergency-text, .service-text {
+        font-size: 0.8rem;
+    }
+    
+    .emergency-btn, .contact-btn {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .feature-card {
+        padding: 0.8rem;
+    }
+}
         
         /* Categories - Compact */
         .categories {
@@ -532,33 +627,33 @@
         }
         
         /* Service Highlight */
-        .service-highlight {
-            background: linear-gradient(135deg, var(--success-color), #047857);
-            color: white;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .service-highlight h2 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .service-features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .feature-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.8rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-        }
+.service-highlight {
+    background: linear-gradient(135deg, var(--success-color), #047857);
+    color: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.service-highlight h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
         
         /* Fixed Home Button */
         .fixed-home-btn {
@@ -797,69 +892,58 @@
     </header>
 
     <main itemscope itemtype="https://schema.org/WebPage">
-        <nav class="breadcrumb" aria-label="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-    <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="https://lds77.github.io/">
-            <span itemprop="name">청주구급차</span>
-        </a>
-        <meta itemprop="position" content="1">
-    </span>
-    <span> > </span>
-    <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name">응급환자이송 정보</span>
-        <meta itemprop="position" content="2">
-    </span>
-</nav>
-        <div class="container">
-            <!-- Emergency Call-to-Action -->
-            <section class="emergency-cta" itemscope itemtype="https://schema.org/EmergencyService">
-                <h2 itemprop="name">🚨 응급상황 시 즉시 연락</h2>
-                <p itemprop="description">생명이 위급한 상황에서는 망설이지 마세요</p>
-                <div class="emergency-number" itemprop="telephone">119</div>
-            </section>
-
-            <!-- Service Highlight -->
-            <section class="service-highlight" itemscope itemtype="https://schema.org/MedicalBusiness" itemid="https://lds77.github.io/#business">
-    <meta itemprop="url" content="https://lds77.github.io/">
-    <meta itemprop="logo" content="https://lds77.github.io/images/logo.jpg">
-    <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" style="display: none;">
-        <meta itemprop="addressLocality" content="청주시">
-        <meta itemprop="addressRegion" content="충청북도">
-        <meta itemprop="addressCountry" content="KR">
-    </div>
-                <h2 itemprop="name">🚑 청주구급차 전문 서비스 직지응급환자이송단</h2>
-                <p itemprop="description">충청북도 청주시 전 지역 24시간 신속하고 안전한 환자이송 서비스</p>
-                <div class="service-features">
-                    <div class="feature-item" itemprop="openingHours" content="Mo-Su 00:00-23:59">
-                        <strong>24시간 운영</strong><br>
-                        연중무휴 대기
-                    </div>
-                    <div class="feature-item">
-                        <strong>전문 장비</strong><br>
-                        최신 의료장비 완비
-                    </div>
-                    <div class="feature-item">
-                        <strong>숙련된 팀</strong><br>
-                        경험 풍부한 전문진
-                    </div>
-                </div>
-                <div style="display: none;" itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
-                    <span itemprop="telephone">010-8841-4114</span>
-                    <span itemprop="contactType">customer service</span>
-                    <span itemprop="areaServed">청주시</span>
-                </div>
-                <!-- 직지응급환자이송단 연락처 (서비스 하이라이트 섹션 끝에 추가) -->
-            <div class="contact-info" style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem; text-align: center;">
-                <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">📞 직지응급환자이송단 전문 상담</h3>
-                <a href="tel:010-8841-4114" 
-   itemprop="telephone"
-   style="color: white; text-decoration: none; font-size: 1.3rem; font-weight: bold; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; display: inline-block; margin: 0.5rem 0;"
-   aria-label="직지응급환자이송단 강경성에게 전화걸기">
-   010-8841-4114 (강경성)
-</a>
-                <p style="font-size: 0.9rem; margin-top: 0.5rem;">24시간 무료 상담 | 청주 전 지역 출동</p>
+    <div class="container">
+        <!-- Compact Emergency & Service Combined Section -->
+        <section class="hero-section" itemscope itemtype="https://schema.org/MedicalBusiness" itemid="https://lds77.github.io/#business">
+            <meta itemprop="url" content="https://lds77.github.io/">
+            <meta itemprop="logo" content="https://lds77.github.io/images/logo.jpg">
+            <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" style="display: none;">
+                <meta itemprop="addressLocality" content="청주시">
+                <meta itemprop="addressRegion" content="충청북도">
+                <meta itemprop="addressCountry" content="KR">
             </div>
-            </section>
+            
+            <!-- Emergency Alert Bar -->
+            <div class="emergency-bar" itemscope itemtype="https://schema.org/EmergencyService">
+                <span class="emergency-icon">🚨</span>
+                <span class="emergency-text">응급상황 시</span>
+                <a href="tel:119" class="emergency-btn">119</a>
+                <span class="divider">|</span>
+                <span class="service-text">전문 상담</span>
+                <a href="tel:010-8841-4114" class="contact-btn" itemprop="telephone" aria-label="직지응급환자이송단 강경성에게 전화걸기">010-8841-4114</a>
+            </div>
+            
+            <!-- Service Features Grid -->
+            <div class="features-grid">
+                <div class="feature-card" itemprop="openingHours" content="Mo-Su 00:00-23:59">
+                    <div class="feature-icon">⏰</div>
+                    <div>
+                        <h4>24시간 운영</h4>
+                        <p>연중무휴 대기</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏥</div>
+                    <div>
+                        <h4>전문 장비</h4>
+                        <p>최신 의료장비</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍⚕️</div>
+                    <div>
+                        <h4>숙련된 팀</h4>
+                        <p>경험 풍부한 전문진</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: none;" itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
+                <span itemprop="telephone">010-8841-4114</span>
+                <span itemprop="contactType">customer service</span>
+                <span itemprop="areaServed">청주시</span>
+            </div>
+        </section>
             <!-- AI 검색 최적화 Q&A 섹션 -->
 <section class="qa-section" itemscope itemtype="https://schema.org/Question">
     <div class="qa-question" itemprop="name">청주에서 구급차가 필요한 상황은 언제인가요?</div>
