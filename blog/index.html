@@ -28,7 +28,21 @@
 <meta name="geo.position" content="36.642;127.489">
 <meta name="ICBM" content="36.642, 127.489">
 
-<!-- 네이버 블로그/카페 최적화 -->
+<!-- 네이버 검색 최적화 강화 -->
+<meta name="naver" content="6c12d9e5b0f8f2a4d3e7b9c1a5e8f3d2">
+<meta name="NaverBot" content="index, follow">
+<meta name="Yeti" content="index, follow">
+
+<!-- 지역 SEO 강화 -->
+<meta name="DC.title" content="청주구급차 직지응급환자이송단">
+<meta name="DC.creator" content="직지응급환자이송단">
+<meta name="DC.subject" content="청주구급차, 청주사설구급차, 응급환자이송">
+<meta name="DC.description" content="청주시 전문 구급차 서비스">
+
+<!-- 모바일 네이버 앱 최적화 -->
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#1e3a8a">
+<meta name="msapplication-TileColor" content="#1e3a8a">
 <!-- 핵심 비즈니스 정보만 유지 -->
 <meta name="business-hours" content="Mo-Su 00:00-23:59">
 <meta name="business-phone" content="010-8841-4114">
@@ -257,23 +271,51 @@
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "직지응급환자이송단 - 청주구급차 전문서비스",
-    "alternateName": "청주구급차",
-    "url": "https://lds77.github.io/",
-    "description": "청주시 전문 구급차 서비스, 24시간 응급환자이송, 병원간이송, 요양병원이송",
-    "publisher": {
-        "@type": "Organization",
-        "name": "직지응급환자이송단"
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "청주구급차 이용료는 얼마인가요?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "청주 특수구급차는 기본 10km 기준 75,000원이며, 초과거리 및 산소공급장치, 심전도모니터 등 전문의료장비 사용 시 추가요금이 발생합니다. 정확한 견적은 010-8841-4114로 무료 상담받으실 수 있습니다.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "직지응급환자이송단"
+                }
+            }
+        }
+    ]
+}
+</script>
+    <!-- 리뷰/평점 구조화 데이터 -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "직지응급환자이송단",
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
     },
-    "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://lds77.github.io/?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-    }
+    "review": [
+        {
+            "@type": "Review",
+            "author": {
+                "@type": "Person",
+                "name": "김○○"
+            },
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "reviewBody": "응급상황에서 신속하고 안전하게 이송해주셨습니다. 직원분들도 매우 친절하셨어요."
+        }
+    ]
 }
 </script>
     
@@ -900,7 +942,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="/logo.jpg" alt="직지응급환자이송단 로고" loading="lazy" width="96" height="96">
+                    <img src="/logo.jpg" alt="직지응급환자이송단 로고 - 청주구급차 전문서비스" loading="lazy" width="96" height="96">
                     <div>
                         <h1>직지응급환자이송단</h1>
                         <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충북 사설구급차 환자이송</p>
