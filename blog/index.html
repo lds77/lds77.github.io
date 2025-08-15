@@ -573,6 +573,19 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
+            .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .logo {
+        justify-content: center;
+    }
+    
+    .emergency-contact a {
+        font-size: 1.1em !important;
+    }
             .posts-grid {
                 grid-template-columns: 1fr;
                 gap: 1rem;
@@ -707,12 +720,35 @@
     </style>
 </head>
 <body>
-    <header>
+    <!-- Navigation Breadcrumb for SEO -->
+    <nav aria-label="breadcrumb" style="display:none;">
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a itemprop="item" href="https://lds77.github.io/">
+                    <span itemprop="name">홈</span>
+                </a>
+                <meta itemprop="position" content="1" />
+            </li>
+        </ol>
+    </nav>
+
+    <header role="banner">
         <div class="container">
             <div class="header-content">
-                <h1>청주구급차 전문 서비스</h1>
-                <p class="header-subtitle">24시간 안전한 환자이송과 응급의료 가이드</p>
-                <span class="brand-tag">직지응급환자이송단</span>
+                <div class="logo">
+                    <img src="/logo.jpg" alt="직지응급환자이송단 로고" loading="lazy" width="96" height="96">
+                    <div>
+                        <h1>직지응급환자이송단</h1>
+                        <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">충북 사설구급차 환자이송</p>
+                    </div>
+                </div>
+                <nav class="emergency-contact" role="navigation">
+                    <a href="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html" 
+                       style="color: #FFFF00; font-weight: bold; font-size: 1.3em; text-decoration: none; display: block; text-align: right; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);"
+                       title="충북 지역별 병원 정보">
+                        충북 지역별 병원찾기(클릭)
+                    </a>
+                </nav>
             </div>
         </div>
     </header>
