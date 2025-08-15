@@ -757,12 +757,12 @@
         }
 
         .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-            overflow: visible;
-        }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4개 고정 */
+    gap: 20px; /* 30px → 20px */
+    margin-top: 50px;
+    overflow: visible;
+}
 
         .blog-card {
             background: white;
