@@ -584,29 +584,6 @@
             }
         }
         
-        /* 다크모드 지원 기본 */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --text-primary: #f1f5f9;
-                --border-color: #374151;
-            }
-            
-            body {
-                background-color: #111827;
-                color: var(--text-primary);
-            }
-            
-            .section {
-                background: #1f2937;
-                border: 1px solid var(--border-color);
-            }
-            
-            .hospital-card {
-                background: #1f2937;
-                border-color: var(--border-color);
-            }
-        }
-        
         /* 태블릿 최적화 (768px+) */
         @media (min-width: 768px) {
             .container {
