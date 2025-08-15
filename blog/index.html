@@ -317,15 +317,45 @@
         
         /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary-color), #b91c1c);
-            color: white;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-        }
+    background: linear-gradient(135deg, var(--primary-color), #b91c1c);
+    color: white;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
         
         .header-content {
-            text-align: center;
-        }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+        .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+.logo p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.emergency-contact a:hover {
+    color: #FFD700 !important;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
         
         h1 {
             font-size: 2.2rem;
