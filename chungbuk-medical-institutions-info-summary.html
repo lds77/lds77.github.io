@@ -386,9 +386,15 @@
             }
             
             .info-section {
-                padding: 10px;
-                margin-bottom: 10px;
-            }
+        padding: 10px;           /* 15px → 10px */
+        margin-bottom: 10px;     /* 15px → 10px */
+    }
+    
+    .info-section h2 {
+        font-size: 1.1em;       /* 제목 크기 줄이기 */
+        margin-bottom: 10px;     /* 15px → 10px */
+        padding-bottom: 5px;     /* 8px → 5px */
+    }
             
             .hospital-grid {
         grid-template-columns: 1fr 1fr; /* 2열로 변경 */
@@ -432,9 +438,18 @@
             }
             
             .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 8px;
-            }
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;               /* 8px → 6px */
+    margin-bottom: 15px;    /* 새로 추가 */
+}
+
+            .search-container {
+        margin-bottom: 15px;    /* 20px → 15px */
+    }
+    
+    .category-tabs {
+        margin-bottom: 15px;    /* 20px → 15px */
+    }
             
             .stat-card {
                 padding: 12px;
@@ -2048,6 +2063,7 @@
     </script>
 </body>
 </html>
+
 
 
 
