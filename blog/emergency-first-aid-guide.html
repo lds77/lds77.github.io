@@ -420,6 +420,20 @@
             text-decoration: underline;
         }
 
+        /* FAQ 아코디언 기능 */
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-answer {
+            display: none;
+        }
+        .faq-toggle {
+            transition: transform 0.3s;
+        }
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
         /* 모바일 최적화 */
         @media (max-width: 768px) {
             .toc {
@@ -492,7 +506,7 @@
                 <div class="faq-item" itemscope itemtype="https://schema.org/Question">
                     <div class="faq-question" itemprop="name" onclick="toggleFAQ(this)">
                         응급상황에서 가장 먼저 해야 할 일은 무엇인가요?
-                        <span aria-hidden="true">▼</span>
+                        <span class="faq-toggle" aria-hidden="true">▼</span>
                     </div>
                     <div class="faq-answer" itemscope itemtype="https://schema.org/Answer">
                         <div itemprop="text">
@@ -504,7 +518,7 @@
                 <div class="faq-item" itemscope itemtype="https://schema.org/Question">
                     <div class="faq-question" itemprop="name" onclick="toggleFAQ(this)">
                         심폐소생술은 언제 시행해야 하나요?
-                        <span aria-hidden="true">▼</span>
+                        <span class="faq-toggle" aria-hidden="true">▼</span>
                     </div>
                     <div class="faq-answer" itemscope itemtype="https://schema.org/Answer">
                         <div itemprop="text">
@@ -516,7 +530,7 @@
                 <div class="faq-item" itemscope itemtype="https://schema.org/Question">
                     <div class="faq-question" itemprop="name" onclick="toggleFAQ(this)">
                         청주에서 24시간 응급실이 있는 병원은 어디인가요?
-                        <span aria-hidden="true">▼</span>
+                        <span class="faq-toggle" aria-hidden="true">▼</span>
                     </div>
                     <div class="faq-answer" itemscope itemtype="https://schema.org/Answer">
                         <div itemprop="text">
