@@ -111,6 +111,14 @@
                             "@type": "Answer",
                             "text": "즉시 119에 신고하여 전문 구급대원의 도움을 받으시기 바랍니다."
                         }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "정신병원 이송 비용은 얼마나 드나요?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "119 응급이송은 무료이며, 사설구급차는 20-40만원, 전문 정신과 이송은 20-50만원입니다."
+                        }
                     }
                 ]
             }
@@ -351,32 +359,90 @@
             padding: 1.5rem;
         }
         
-        .content-body h2 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 1.5rem 0 0.75rem 0;
-            color: var(--mental-health);
-            border-bottom: 2px solid var(--mental-health);
-            padding-bottom: 0.25rem;
-        }
-        
-        .content-body h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin: 1rem 0 0.5rem 0;
-            color: var(--text-primary);
-        }
-        
         .content-body p {
             margin-bottom: 1rem;
             line-height: 1.6;
         }
         
-        .content-body ul, .content-body ol {
+        /* 아코디언 스타일 */
+        .accordion-section {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        
+        .accordion-header {
+            width: 100%;
+            background: var(--mental-health);
+            color: white;
+            padding: 1rem;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background-color 0.3s ease;
+            text-align: left;
+        }
+        
+        .accordion-header:hover {
+            background: #6d28d9;
+        }
+        
+        .accordion-header .icon {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+        
+        .accordion-header::after {
+            content: "▼";
+            transition: transform 0.3s ease;
+            font-size: 0.8rem;
+        }
+        
+        .accordion-header.active::after {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 2000px;
+        }
+        
+        .accordion-inner {
+            padding: 1.5rem;
+        }
+        
+        /* 아코디언 내부 스타일 */
+        .accordion-inner h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 1rem 0 0.5rem 0;
+            color: var(--mental-health);
+        }
+        
+        .accordion-inner h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.75rem 0 0.5rem 0;
+            color: var(--text-primary);
+        }
+        
+        .accordion-inner ul, .accordion-inner ol {
             margin: 0.75rem 0 1rem 1.25rem;
         }
         
-        .content-body li {
+        .accordion-inner li {
             margin-bottom: 0.25rem;
             line-height: 1.5;
         }
@@ -491,6 +557,57 @@
             color: var(--mental-health);
             flex-shrink: 0;
             font-size: 1rem;
+        }
+        
+        /* 단계별 가이드 */
+        .step-guide {
+            display: grid;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .step-item {
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
+            border: 2px solid var(--accent);
+            border-radius: var(--radius-sm);
+            padding: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        
+        .step-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .step-number {
+            background: var(--accent);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 0.8rem;
+        }
+        
+        .step-content h4 {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .step-content p {
+            color: #991b1b;
+            font-weight: 500;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            margin: 0;
         }
         
         /* FAQ 아코디언 */
@@ -703,8 +820,8 @@
                 font-size: 1.6rem;
             }
             
-            .content-body h2 {
-                font-size: 1.3rem;
+            .accordion-header {
+                font-size: 1.1rem;
             }
             
             .posts-grid {
@@ -739,16 +856,20 @@
                 font-size: 1.8rem;
             }
             
+            .accordion-header {
+                font-size: 1.2rem;
+            }
+            
             .posts-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
             
-            .content-body {
+            .accordion-inner {
                 padding: 2rem;
             }
         }
-        
-        /* 접근성 */
+
+/* 접근성 */
         .sr-only {
             position: absolute;
             width: 1px;
@@ -791,18 +912,37 @@
                 display: none;
             }
             
-            .post-content {
+            .post-content,
+            .accordion-section {
                 box-shadow: none;
                 border: 1px solid #ccc;
             }
             
-            .content-body {
-                padding: 1rem;
+            .accordion-content {
+                max-height: none !important;
             }
+            
+            .accordion-header::after {
+                display: none;
+            }
+        }
+        
+        /* 검색 최적화를 위한 숨김 텍스트 */
+        .seo-text {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
+    <!-- 검색 최적화용 숨김 텍스트 -->
+    <div class="seo-text">
+        청주 정신병원 이송 서비스, 정신질환자 안전 이송, 응급환자 이송, 사설구급차, 병원 이송 전문, 24시간 상담, 직지응급환자이송단
+    </div>
+
     <!-- 컴팩트 헤더 -->
     <header class="compact-header">
         <div class="container">
@@ -881,211 +1021,302 @@
                     </div>
 
                     <p><strong>정신질환을 앓고 있는 가족을 정신병원으로 이송</strong>하는 것은 매우 민감하고 복잡한 과정입니다. 환자의 상태, 법적 요건, 가족의 준비사항 등을 종합적으로 고려해야 하며, 무엇보다 환자의 인권과 안전을 보장하는 것이 가장 중요합니다.</p>
+                </div>
+            </article>
 
-                    <h2>🚨 이송이 필요한 응급상황</h2>
-                    
-                    <ul>
-                        <li><strong>자해나 타해의 위험이 높은 경우</strong> - 환자가 자신이나 타인에게 해를 끼칠 가능성이 높을 때</li>
-                        <li><strong>현실 판단력이 현저히 저하된 경우</strong> - 망상, 환각 등으로 일상생활이 불가능할 때</li>
-                        <li><strong>극도의 흥분상태나 공격성</strong> - 주변 사람들의 안전이 위협받을 때</li>
-                        <li><strong>의식 저하나 신체적 응급상황</strong> - 의료진의 즉각적인 개입이 필요할 때</li>
-                    </ul>
-
-                    <div class="alert alert-emergency">
-                        <h4>🚨 응급상황 행동요령</h4>
-                        <p>환자가 자해나 타해의 위험이 높거나 극도로 흥분한 상태라면 <strong>즉시 119에 신고</strong>하여 응급이송을 요청하세요. 가족이 직접 이송하려 하지 말고 전문 구급대원의 도움을 받으시기 바랍니다.</p>
-                    </div>
-
-                    <h2>📋 입원 종류와 법적 절차</h2>
-                    
-                    <div class="table-container">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>입원 종류</th>
-                                    <th>절차</th>
-                                    <th>필요 서류</th>
-                                    <th>특징</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>동의입원</strong></td>
-                                    <td>환자 본인 동의</td>
-                                    <td>입원동의서, 신분증</td>
-                                    <td>자발적 치료 희망</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>보호의무자 동의입원</strong></td>
-                                    <td>보호의무자 2인 동의 + 의사 진단</td>
-                                    <td>동의서, 가족관계증명서, 진단서</td>
-                                    <td>치료 거부하지만 입원 필요</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>행정입원</strong></td>
-                                    <td>시장·군수·구청장 결정</td>
-                                    <td>행정입원 신청서, 진단서</td>
-                                    <td>자해·타해 위험 응급상황</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>응급입원</strong></td>
-                                    <td>응급상황 시 즉시</td>
-                                    <td>응급입원 신청서, 응급진단서</td>
-                                    <td>72시간 이내 임시입원</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h2>✅ 이송 전 준비사항</h2>
-                    
-                    <div class="checklist">
-                        <h4>📋 이송 전 필수 체크리스트</h4>
-                        <div class="checklist-item">병원 예약 확인 및 입원 가능 여부 확인</div>
-                        <div class="checklist-item">환자의 현재 복용 중인 약물 리스트 작성</div>
-                        <div class="checklist-item">과거 치료 기록 및 진료 기록 준비</div>
-                        <div class="checklist-item">보호의무자 관계 증명 서류 준비</div>
-                        <div class="checklist-item">응급상황 시 연락할 수 있는 연락처 정리</div>
-                        <div class="checklist-item">환자 안전을 위한 이송 수단 준비</div>
-                        <div class="checklist-item">환자 진정을 위한 물품 준비 (음악, 사진 등)</div>
-                    </div>
-
-                    <h3>필수 준비 서류</h3>
-                    <ul>
-                        <li><strong>신분증</strong> - 환자 본인 및 보호의무자 신분증</li>
-                        <li><strong>가족관계증명서</strong> - 보호의무자임을 증명하는 서류</li>
-                        <li><strong>의료진 소견서</strong> - 기존 주치의의 소견서나 진료 기록</li>
-                        <li><strong>복용 약물 리스트</strong> - 현재 복용 중인 모든 약물의 상세 정보</li>
-                        <li><strong>보험증</strong> - 건강보험증 또는 의료급여증</li>
-                    </ul>
-
-                    <h2>🚑 안전한 이송 방법</h2>
-                    
-                    <h3>전문 이송 서비스 이용</h3>
-                    <p>정신질환자 이송은 일반적인 환자 이송과 다른 특별한 주의사항이 필요합니다:</p>
-                    
-                    <ul>
-                        <li><strong>119 응급이송</strong> - 응급상황 시 가장 안전한 선택</li>
-                        <li><strong>전문 정신과 이송 서비스</strong> - 정신질환자 이송 경험이 풍부한 전문업체</li>
-                        <li><strong>병원 이송 서비스</strong> - 목적지 병원에서 제공하는 이송 서비스</li>
-                    </ul>
-
-                    <div class="alert alert-warning">
-                        <h4>⚠️ 가족 직접 이송 시 주의사항</h4>
-                        <p>가족이 직접 이송하는 경우 다음 사항을 반드시 준수하세요:</p>
+            <!-- 응급상황 아코디언 -->
+            <section class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span><span class="icon">🚨</span>이송이 필요한 응급상황</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
                         <ul>
-                            <li>환자를 절대 혼자 두지 마세요</li>
-                            <li>급작스러운 움직임이나 큰 소리를 피하세요</li>
-                            <li>환자의 이름을 부르며 안심시키세요</li>
-                            <li>위험한 물건은 미리 제거하세요</li>
-                            <li>이송 중 지속적으로 상태를 관찰하세요</li>
+                            <li><strong>자해나 타해의 위험이 높은 경우</strong> - 환자가 자신이나 타인에게 해를 끼칠 가능성이 높을 때</li>
+                            <li><strong>현실 판단력이 현저히 저하된 경우</strong> - 망상, 환각 등으로 일상생활이 불가능할 때</li>
+                            <li><strong>극도의 흥분상태나 공격성</strong> - 주변 사람들의 안전이 위협받을 때</li>
+                            <li><strong>의식 저하나 신체적 응급상황</strong> - 의료진의 즉각적인 개입이 필요할 때</li>
                         </ul>
+
+                        <div class="alert alert-emergency">
+                            <h4>🚨 응급상황 행동요령</h4>
+                            <p>환자가 자해나 타해의 위험이 높거나 극도로 흥분한 상태라면 <strong>즉시 119에 신고</strong>하여 응급이송을 요청하세요. 가족이 직접 이송하려 하지 말고 전문 구급대원의 도움을 받으시기 바랍니다.</p>
+                        </div>
                     </div>
+                </div>
+            </section>
 
-                    <h2>🏥 청주 지역 정신병원 정보</h2>
-                    
-                    <div class="table-container">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>병원명</th>
-                                    <th>연락처</th>
-                                    <th>특징</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>충북대학교병원</strong><br>정신건강의학과</td>
-                                    <td>043-269-6000</td>
-                                    <td>응급정신과, 24시간 응급실</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>청주성모병원</strong><br>정신건강의학과</td>
-                                    <td>043-219-8114</td>
-                                    <td>정신응급 입원병동</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>청주의료원</strong><br>정신건강의학과</td>
-                                    <td>043-200-1114</td>
-                                    <td>공공의료기관, 저소득층 지원</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <!-- 입원 종류 아코디언 -->
+            <section class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span><span class="icon">📋</span>입원 종류와 법적 절차</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>입원 종류</th>
+                                        <th>절차</th>
+                                        <th>필요 서류</th>
+                                        <th>특징</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>동의입원</strong></td>
+                                        <td>환자 본인 동의</td>
+                                        <td>입원동의서, 신분증</td>
+                                        <td>자발적 치료 희망</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>보호의무자 동의입원</strong></td>
+                                        <td>보호의무자 2인 동의 + 의사 진단</td>
+                                        <td>동의서, 가족관계증명서, 진단서</td>
+                                        <td>치료 거부하지만 입원 필요</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>행정입원</strong></td>
+                                        <td>시장·군수·구청장 결정</td>
+                                        <td>행정입원 신청서, 진단서</td>
+                                        <td>자해·타해 위험 응급상황</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>응급입원</strong></td>
+                                        <td>응급상황 시 즉시</td>
+                                        <td>응급입원 신청서, 응급진단서</td>
+                                        <td>72시간 이내 임시입원</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
+                </div>
+            </section>
 
-                    <h2>⚡ 이송 중 응급상황 대처법</h2>
-                    
-                    <h3>환자가 극도로 흥분하는 경우</h3>
-                    <ol>
-                        <li><strong>안전 확보</strong> - 환자와 다른 사람들의 안전을 최우선으로 고려</li>
-                        <li><strong>침착한 대응</strong> - 큰 소리를 내거나 물리적 제지를 하지 말 것</li>
-                        <li><strong>전문가 도움 요청</strong> - 즉시 119에 신고하여 응급구조대 출동 요청</li>
-                        <li><strong>환자와의 소통</strong> - 부드러운 목소리로 환자의 이름을 불러 안심시킴</li>
-                        <li><strong>안전한 환경 조성</strong> - 위험한 물건 제거 및 안전한 공간 확보</li>
-                    </ol>
+            <!-- 준비사항 아코디언 -->
+            <section class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span><span class="icon">✅</span>이송 전 준비사항</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="checklist">
+                            <h4>📋 이송 전 필수 체크리스트</h4>
+                            <div class="checklist-item">병원 예약 확인 및 입원 가능 여부 확인</div>
+                            <div class="checklist-item">환자의 현재 복용 중인 약물 리스트 작성</div>
+                            <div class="checklist-item">과거 치료 기록 및 진료 기록 준비</div>
+                            <div class="checklist-item">보호의무자 관계 증명 서류 준비</div>
+                            <div class="checklist-item">응급상황 시 연락할 수 있는 연락처 정리</div>
+                            <div class="checklist-item">환자 안전을 위한 이송 수단 준비</div>
+                            <div class="checklist-item">환자 진정을 위한 물품 준비 (음악, 사진 등)</div>
+                        </div>
 
-                    <div class="alert alert-success">
-                        <h4>✅ 성공적인 이송을 위한 팁</h4>
+                        <h3>필수 준비 서류</h3>
                         <ul>
-                            <li>환자가 평소 신뢰하는 사람이 함께 동행하세요</li>
-                            <li>환자가 좋아하는 음악이나 물건을 준비하세요</li>
-                            <li>이송 경로를 미리 파악하고 최단 시간 내 도착하세요</li>
-                            <li>병원 도착 전 담당 의료진에게 환자 상태를 미리 알리세요</li>
-                        </ul>
-                    </div>
-
-                    <h2>💰 비용 정보 및 지원 제도</h2>
-                    
-                    <div class="table-container">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>이송 방법</th>
-                                    <th>예상 비용</th>
-                                    <th>보험 적용</th>
-                                    <th>비고</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>119 응급이송</td>
-                                    <td>무료</td>
-                                    <td>-</td>
-                                    <td>응급상황시만</td>
-                                </tr>
-                                <tr>
-                                    <td>사설구급차</td>
-                                    <td>15-30만원</td>
-                                    <td>일부 적용</td>
-                                    <td>거리/시간 차등</td>
-                                </tr>
-                                <tr>
-                                    <td>전문 정신과 이송</td>
-                                    <td>20-50만원</td>
-                                    <td>미적용</td>
-                                    <td>전문 인력 동반</td>
-                                </tr>
-                                <tr>
-                                    <td>가족 이송</td>
-                                    <td>교통비만</td>
-                                    <td>-</td>
-                                    <td>안전성 검토 필요</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="alert alert-info">
-                        <h4>💡 의료비 지원 제도</h4>
-                        <ul>
-                            <li><strong>건강보험 적용</strong> - 정신과 치료는 건강보험 적용 대상</li>
-                            <li><strong>중증질환 산정특례</strong> - 조현병 등 중증 정신질환은 본인부담률 10%</li>
-                            <li><strong>의료급여</strong> - 저소득층 대상 의료비 지원</li>
-                            <li><strong>응급의료비 지원</strong> - 응급상황 시 의료비 지원 제도 활용</li>
+                            <li><strong>신분증</strong> - 환자 본인 및 보호의무자 신분증</li>
+                            <li><strong>가족관계증명서</strong> - 보호의무자임을 증명하는 서류</li>
+                            <li><strong>의료진 소견서</strong> - 기존 주치의의 소견서나 진료 기록</li>
+                            <li><strong>복용 약물 리스트</strong> - 현재 복용 중인 모든 약물의 상세 정보</li>
+                            <li><strong>보험증</strong> - 건강보험증 또는 의료급여증</li>
                         </ul>
                     </div>
                 </div>
-            </article>
+            </section>
+
+            <!-- 안전한 이송 방법 아코디언 -->
+            <section class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span><span class="icon">🚑</span>안전한 이송 방법</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <h3>전문 이송 서비스 이용</h3>
+                        <p>정신질환자 이송은 일반적인 환자 이송과 다른 특별한 주의사항이 필요합니다:</p>
+                        
+                        <ul>
+                            <li><strong>119 응급이송</strong> - 응급상황 시 가장 안전한 선택</li>
+                            <li><strong>전문 정신과 이송 서비스</strong> - 정신질환자 이송 경험이 풍부한 전문업체</li>
+                            <li><strong>병원 이송 서비스</strong> - 목적지 병원에서 제공하는 이송 서비스</li>
+                        </ul>
+
+                        <div class="alert alert-warning">
+                            <h4>⚠️ 가족 직접 이송 시 주의사항</h4>
+                            <p>가족이 직접 이송하는 경우 다음 사항을 반드시 준수하세요:</p>
+                            <ul>
+                                <li>환자를 절대 혼자 두지 마세요</li>
+                                <li>급작스러운 움직임이나 큰 소리를 피하세요</li>
+                                <li>환자의 이름을 부르며 안심시키세요</li>
+                                <li>위험한 물건은 미리 제거하세요</li>
+                                <li>이송 중 지속적으로 상태를 관찰하세요</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 청주 지역 병원 정보 아코디언 -->
+            <section class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span><span class="icon">🏥</span>청주 지역 정신병원 정보</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>병원명</th>
+                                        <th>연락처</th>
+                                        <th>특징</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>충북대학교병원</strong><br>정신건강의학과</td>
+                                        <td>043-269-6000</td>
+                                        <td>응급정신과, 24시간 응급실</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>청주성모병원</strong><br>정신건강의학과</td>
+                                        <td>043-219-8114</td>
+                                        <td>정신응급 입원병동</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>청주의료원</strong><br>정신건강의학과</td>
+                                        <td>043-200-1114</td>
+                                        <td>공공의료기관, 저소득층 지원</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 응급상황 대처법 아코디언 -->
+            <section class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span><span class="icon">⚡</span>이송 중 응급상황 대처법</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <h3>환자가 극도로 흥분하는 경우</h3>
+                        
+                        <div class="step-guide">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>안전 확보</h4>
+                                    <p>환자와 다른 사람들의 안전을 최우선으로 고려</p>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>침착한 대응</h4>
+                                    <p>큰 소리를 내거나 물리적 제지를 하지 말 것</p>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>전문가 도움 요청</h4>
+                                    <p>즉시 119에 신고하여 응급구조대 출동 요청</p>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>환자와의 소통</h4>
+                                    <p>부드러운 목소리로 환자의 이름을 불러 안심시킴</p>
+                                </div>
+                            </div>
+
+                            <div class="step-item">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h4>안전한 환경 조성</h4>
+                                    <p>위험한 물건 제거 및 안전한 공간 확보</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-success">
+                            <h4>✅ 성공적인 이송을 위한 팁</h4>
+                            <ul>
+                                <li>환자가 평소 신뢰하는 사람이 함께 동행하세요</li>
+                                <li>환자가 좋아하는 음악이나 물건을 준비하세요</li>
+                                <li>이송 경로를 미리 파악하고 최단 시간 내 도착하세요</li>
+                                <li>병원 도착 전 담당 의료진에게 환자 상태를 미리 알리세요</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 비용 정보 아코디언 -->
+            <section class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span><span class="icon">💰</span>비용 정보 및 지원 제도</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>이송 방법</th>
+                                        <th>예상 비용</th>
+                                        <th>보험 적용</th>
+                                        <th>비고</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>119 응급이송</td>
+                                        <td>무료</td>
+                                        <td>-</td>
+                                        <td>응급상황시만</td>
+                                    </tr>
+                                    <tr>
+                                        <td>사설구급차</td>
+                                        <td>15-30만원</td>
+                                        <td>일부 적용</td>
+                                        <td>거리/시간 차등</td>
+                                    </tr>
+                                    <tr>
+                                        <td>전문 정신과 이송</td>
+                                        <td>20-50만원</td>
+                                        <td>미적용</td>
+                                        <td>전문 인력 동반</td>
+                                    </tr>
+                                    <tr>
+                                        <td>가족 이송</td>
+                                        <td>교통비만</td>
+                                        <td>-</td>
+                                        <td>안전성 검토 필요</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="alert alert-info">
+                            <h4>💡 의료비 지원 제도</h4>
+                            <ul>
+                                <li><strong>건강보험 적용</strong> - 정신과 치료는 건강보험 적용 대상</li>
+                                <li><strong>중증질환 산정특례</strong> - 조현병 등 중증 정신질환은 본인부담률 10%</li>
+                                <li><strong>의료급여</strong> - 저소득층 대상 의료비 지원</li>
+                                <li><strong>응급의료비 지원</strong> - 응급상황 시 의료비 지원 제도 활용</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- FAQ 아코디언 -->
             <section class="faq-compact">
@@ -1149,6 +1380,27 @@
     </footer>
 
     <script>
+        // 아코디언 토글 기능
+        function toggleAccordion(element) {
+            const content = element.nextElementSibling;
+            const isActive = element.classList.contains('active');
+            
+            // 모든 아코디언 닫기 (원하는 경우)
+            // document.querySelectorAll('.accordion-header.active').forEach(header => {
+            //     header.classList.remove('active');
+            //     header.nextElementSibling.classList.remove('active');
+            // });
+            
+            // 현재 아코디언 토글
+            if (isActive) {
+                element.classList.remove('active');
+                content.classList.remove('active');
+            } else {
+                element.classList.add('active');
+                content.classList.add('active');
+            }
+        }
+
         // FAQ 아코디언 토글 기능
         function toggleFAQ() {
             const toggle = document.querySelector('.faq-toggle');
@@ -1180,7 +1432,6 @@
             // 스크롤 성능 최적화
             let ticking = false;
             function updateScrollPosition() {
-                // 스크롤 기반 애니메이션이 필요한 경우 여기에 추가
                 ticking = false;
             }
 
@@ -1193,27 +1444,67 @@
 
             window.addEventListener('scroll', requestTick);
 
-            // Core Web Vitals 최적화
-            // CLS 방지를 위한 이미지 크기 설정
+            // Core Web Vitals 최적화 - CLS 방지
             const imgs = document.querySelectorAll('img');
             imgs.forEach(img => {
                 if (!img.width && !img.height) {
                     img.style.aspectRatio = '16/9';
                 }
             });
+
+            // 첫 번째 아코디언 자동 열기 (선택사항)
+            const firstAccordion = document.querySelector('.accordion-header');
+            if (firstAccordion) {
+                toggleAccordion(firstAccordion);
+            }
+
+            console.log('정신병원 이송 가이드 - 아코디언 최적화 버전 로드 완료');
         });
 
         // 클릭 이벤트 성능 최적화 (Event Delegation)
         document.addEventListener('click', function(e) {
             // CTA 버튼 클릭 추적
             if (e.target.classList.contains('cta-btn')) {
-                // 클릭 이벤트 추적 (Google Analytics 등)
-                console.log('CTA 버튼 클릭:', e.target.textContent);
+                console.log('응급연락처 클릭:', e.target.textContent);
+                
+                // Google Analytics 이벤트 추적 (실제 환경에서 사용)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'CTA',
+                        'event_label': e.target.textContent
+                    });
+                }
             }
             
             // 전화번호 클릭 추적
             if (e.target.href && e.target.href.startsWith('tel:')) {
                 console.log('전화번호 클릭:', e.target.href);
+                
+                // 전화번호 클릭 이벤트 추적
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'phone_call', {
+                        'event_category': 'Contact',
+                        'event_label': e.target.href
+                    });
+                }
+            }
+
+            // 아코디언 클릭 추적
+            if (e.target.classList.contains('accordion-header') || 
+                e.target.closest('.accordion-header')) {
+                const header = e.target.classList.contains('accordion-header') ? 
+                              e.target : e.target.closest('.accordion-header');
+                const sectionName = header.textContent.trim();
+                
+                console.log('아코디언 섹션 클릭:', sectionName);
+                
+                // 아코디언 사용 패턴 추적
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'accordion_toggle', {
+                        'event_category': 'Content Interaction',
+                        'event_label': sectionName
+                    });
+                }
             }
         });
 
@@ -1230,6 +1521,140 @@
                 }
             });
         });
+
+        // 키보드 접근성 개선
+        document.addEventListener('keydown', function(e) {
+            // Enter 또는 Space키로 아코디언 토글
+            if ((e.key === 'Enter' || e.key === ' ') && 
+                e.target.classList.contains('accordion-header')) {
+                e.preventDefault();
+                toggleAccordion(e.target);
+            }
+        });
+
+        // 스크롤 위치에 따른 읽기 진행률 추적 (선택사항)
+        function trackReadingProgress() {
+            const article = document.querySelector('.post-content');
+            if (!article) return;
+
+            const articleTop = article.offsetTop;
+            const articleHeight = article.offsetHeight;
+            const windowHeight = window.innerHeight;
+            const scrollTop = window.pageYOffset;
+
+            const progress = Math.min(
+                Math.max((scrollTop - articleTop + windowHeight/2) / articleHeight * 100, 0),
+                100
+            );
+
+            // 25%, 50%, 75%, 100% 지점에서 이벤트 발생
+            const milestones = [25, 50, 75, 100];
+            milestones.forEach(milestone => {
+                if (progress >= milestone && !window[`milestone_${milestone}`]) {
+                    window[`milestone_${milestone}`] = true;
+                    console.log(`읽기 진행률: ${milestone}%`);
+                    
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'scroll_depth', {
+                            'event_category': 'Reading Progress',
+                            'event_label': `${milestone}%`,
+                            'value': milestone
+                        });
+                    }
+                }
+            });
+        }
+
+        // 스크롤 이벤트에 읽기 진행률 추적 추가
+        let progressTicking = false;
+        function requestProgressTick() {
+            if (!progressTicking) {
+                requestAnimationFrame(() => {
+                    trackReadingProgress();
+                    progressTicking = false;
+                });
+                progressTicking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestProgressTick);
+
+        // SEO 및 사용성 개선을 위한 구조화된 데이터 동적 업데이트
+        function updatePageMetrics() {
+            // 페이지 로드 시간 측정
+            if (typeof performance !== 'undefined' && performance.timing) {
+                const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+                console.log(`페이지 로드 시간: ${loadTime}ms`);
+                
+                // 로드 시간이 3초 이상이면 경고
+                if (loadTime > 3000) {
+                    console.warn('페이지 로드 시간이 3초를 초과했습니다. 성능 최적화가 필요합니다.');
+                }
+            }
+
+            // Core Web Vitals 측정
+            if ('PerformanceObserver' in window) {
+                // LCP (Largest Contentful Paint) 측정
+                const lcpObserver = new PerformanceObserver((list) => {
+                    const entries = list.getEntries();
+                    const lastEntry = entries[entries.length - 1];
+                    console.log('LCP:', lastEntry.startTime);
+                });
+                lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+
+                // FID (First Input Delay) 측정
+                const fidObserver = new PerformanceObserver((list) => {
+                    const entries = list.getEntries();
+                    entries.forEach(entry => {
+                        console.log('FID:', entry.processingStart - entry.startTime);
+                    });
+                });
+                fidObserver.observe({ entryTypes: ['first-input'] });
+            }
+        }
+
+        // 페이지 로드 완료 후 메트릭 업데이트
+        window.addEventListener('load', updatePageMetrics);
+
+        // 오류 처리 및 사용자 피드백
+        window.addEventListener('error', function(e) {
+            console.error('JavaScript 오류 발생:', e.error);
+            
+            // 사용자에게 친화적인 오류 메시지 표시 (선택사항)
+            // const errorDiv = document.createElement('div');
+            // errorDiv.className = 'alert alert-warning';
+            // errorDiv.innerHTML = '<h4>⚠️ 일시적인 오류</h4><p>페이지 새로고침을 시도해 주세요.</p>';
+            // document.querySelector('.container').prepend(errorDiv);
+        });
+
+        // 모바일 터치 제스처 지원
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartY = e.changedTouches[0].screenY;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const swipeDistance = touchStartY - touchEndY;
+            
+            // 위로 스와이프 (다음 섹션으로)
+            if (swipeDistance > swipeThreshold) {
+                const currentAccordion = document.querySelector('.accordion-header.active');
+                if (currentAccordion) {
+                    const nextAccordion = currentAccordion.parentElement.nextElementSibling?.querySelector('.accordion-header');
+                    if (nextAccordion) {
+                        nextAccordion.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            }
+        }
     </script>
 </body>
 </html>
