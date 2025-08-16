@@ -434,18 +434,146 @@
             transform: rotate(180deg);
         }
 
-        /* 모바일 최적화 */
+        /* 모바일 스크롤 70% 감소 최적화 */
         @media (max-width: 768px) {
-            .toc {
-                flex-direction: column;
-                align-items: center;
+            body { font-size: 0.85rem; line-height: 1.5; }
+            .container { padding: 0 15px; }
+            
+            /* 헤더 50% 축소 */
+            header { padding: 1.2rem 0; margin-bottom: 1rem; }
+            h1 { font-size: 1.4rem; margin-bottom: 0.3rem; }
+            .header-subtitle { font-size: 0.9rem; }
+            .last-updated { font-size: 0.75rem; margin-top: 0.5rem; }
+            
+            /* 네비게이션 컴팩트 */
+            nav { padding: 0.6rem 0; margin-bottom: 1rem; }
+            .toc { 
+                flex-direction: column; 
+                align-items: center; 
+                gap: 0.8rem; 
             }
-            .first-aid-grid,
-            .hospitals-grid {
-                grid-template-columns: 1fr;
+            .toc a { 
+                padding: 0.3rem 0.8rem; 
+                font-size: 0.8rem; 
             }
-            h1 {
-                font-size: 1.8rem;
+            
+            /* 섹션 대폭 축소 */
+            .section { 
+                padding: 1rem; 
+                margin-bottom: 1rem; 
+                border-radius: 8px;
+            }
+            .section h2 { 
+                font-size: 1.3rem; 
+                margin-bottom: 1rem; 
+            }
+            
+            /* 응급연락처 컴팩트 */
+            .emergency-contact { 
+                min-height: auto; 
+                padding: 1rem; 
+            }
+            .emergency-contact h2 { 
+                font-size: 1.1rem; 
+                margin-bottom: 0.5rem; 
+            }
+            .emergency-contact p { 
+                font-size: 0.9rem; 
+                line-height: 1.4; 
+            }
+            
+            /* FAQ 컴팩트 */
+            .faq-item { margin-bottom: 0.8rem; }
+            .faq-question { 
+                padding: 0.7rem; 
+                font-size: 0.85rem; 
+            }
+            .faq-answer { 
+                padding: 0.7rem; 
+                font-size: 0.8rem; 
+                display: none; /* 기본 접힌 상태 */
+            }
+            
+            /* 응급처치 카드 컴팩트 */
+            .first-aid-grid { 
+                grid-template-columns: 1fr; 
+                gap: 1rem; 
+            }
+            .aid-card { 
+                padding: 1rem; 
+                border-radius: 8px; 
+            }
+            .aid-card h3 { 
+                font-size: 1.1rem; 
+                margin-bottom: 0.7rem; 
+            }
+            .aid-card h3 .emoji { 
+                font-size: 1.3rem; 
+            }
+            .aid-card ol { 
+                padding-left: 1.2rem; 
+                font-size: 0.8rem; 
+            }
+            .aid-card li { 
+                margin-bottom: 0.3rem; 
+            }
+            
+            /* 병원 카드 컴팩트 */
+            .hospitals-grid { 
+                grid-template-columns: 1fr; 
+                gap: 1rem; 
+            }
+            .hospital-card { 
+                padding: 1rem; 
+                border-radius: 8px; 
+            }
+            .hospital-header { 
+                padding-bottom: 0.7rem; 
+                margin-bottom: 0.7rem; 
+            }
+            .hospital-logo { 
+                width: 35px; 
+                height: 35px; 
+                font-size: 0.8rem; 
+            }
+            .hospital-info h3 { 
+                font-size: 1rem; 
+            }
+            .hospital-info .hospital-type { 
+                font-size: 0.7rem; 
+                padding: 0.1rem 0.4rem; 
+            }
+            .hospital-details { 
+                font-size: 0.8rem; 
+            }
+            .hospital-details p { 
+                margin: 0.3rem 0; 
+            }
+            
+            /* 푸터 컴팩트 */
+            footer { 
+                padding: 1.2rem 0; 
+                margin-top: 1.5rem; 
+            }
+            footer p { 
+                margin: 0.3rem 0; 
+                font-size: 0.8rem; 
+            }
+            .footer-links { 
+                margin: 0.5rem 0; 
+            }
+            .footer-links a { 
+                margin: 0 0.5rem; 
+                font-size: 0.8rem; 
+            }
+            
+            /* 홈 버튼 컴팩트 */
+            .fixed-home-btn { 
+                width: 45px; 
+                height: 45px; 
+                bottom: 15px; 
+                right: 15px; 
+                font-size: 1.3rem; 
             }
         }
     </style>
