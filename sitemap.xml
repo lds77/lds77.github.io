@@ -154,10 +154,31 @@
 
     <!-- 블로그 포스트들 (최신순 및 중요도순 정렬) -->
     <url>
+        <loc>https://lds77.github.io/blog/elderly-safety-guide.html</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://lds77.github.io/blog/emergency-room-checklist.html</loc>
+        <lastmod>2025-01-13</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.65</priority>
+    </url>
+        
+    <url>
         <loc>https://lds77.github.io/blog/emergency-first-aid-guide.html</loc>
         <lastmod>2025-01-12</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.65</priority>
+    </url>
+
+    <url>
+        <loc>https://lds77.github.io/blog/mental-health-transport-guide.html</loc>
+        <lastmod>2025-01-11</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
     </url>
 
     <url>
@@ -220,3 +241,4 @@
     -->
 
 </urlset>
+
