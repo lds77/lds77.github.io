@@ -490,7 +490,7 @@
                     자주 묻는 질문 (FAQ)
                 </h2>
                 <div class="faq-item" itemscope itemtype="https://schema.org/Question">
-                    <div class="faq-question" itemprop="name">
+                    <div class="faq-question" itemprop="name" onclick="toggleFAQ(this)">
                         응급상황에서 가장 먼저 해야 할 일은 무엇인가요?
                         <span aria-hidden="true">▼</span>
                     </div>
@@ -502,7 +502,7 @@
                 </div>
                 
                 <div class="faq-item" itemscope itemtype="https://schema.org/Question">
-                    <div class="faq-question" itemprop="name">
+                    <div class="faq-question" itemprop="name" onclick="toggleFAQ(this)">
                         심폐소생술은 언제 시행해야 하나요?
                         <span aria-hidden="true">▼</span>
                     </div>
@@ -514,7 +514,7 @@
                 </div>
                 
                 <div class="faq-item" itemscope itemtype="https://schema.org/Question">
-                    <div class="faq-question" itemprop="name">
+                    <div class="faq-question" itemprop="name" onclick="toggleFAQ(this)">
                         청주에서 24시간 응급실이 있는 병원은 어디인가요?
                         <span aria-hidden="true">▼</span>
                     </div>
@@ -862,6 +862,52 @@
     <a href="https://lds77.github.io/" class="fixed-home-btn" title="홈으로 이동" role="button" aria-label="홈으로 이동">
         <span role="img" aria-label="홈">🏠</span>
     </a>
+    <script>
+        // FAQ 아코디언 기능
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // 모든 FAQ 닫기
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // 클릭한 FAQ만 열기 (이미 열려있지 않은 경우)
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+        
+        // 성능 최적화: 지연 로딩
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.style.opacity = '1';
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.transform = 'translateY(20px)';
+                section.style.opacity = '0';
+                section.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+                observer.observe(section);
+            });
+        }
+        
+        // 접근성 개선: 키보드 네비게이션
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                if (e.target.classList.contains('faq-question')) {
+                    e.preventDefault();
+                    toggleFAQ(e.target);
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
