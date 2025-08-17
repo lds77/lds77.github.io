@@ -127,6 +127,104 @@
   "openingHours": "Mo-Su 00:00-23:59"
 }
 </script>
+    <!-- BreadcrumbList 스키마 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "홈",
+      "item": "https://lds77.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "옥천 사설구급차",
+      "item": "https://lds77.github.io/okcheon_hospitals.html"
+    }
+  ]
+}
+</script>
+
+<!-- WebPage 스키마 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "옥천 사설구급차 | 옥천구급차 요금 환자이송 24시간",
+  "description": "옥천 사설구급차 전문업체. 옥천군 24시간 환자이송, 옥천보건의료원 연계, 청주·대전 신속이송. 농촌지역 응급이송 전문.",
+  "url": "https://lds77.github.io/okcheon_hospitals.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "직지응급환자이송단",
+    "url": "https://lds77.github.io/"
+  }
+}
+</script>
+    <!-- Service 스키마 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "옥천 사설구급차 서비스",
+  "description": "옥천군 전문 24시간 응급환자이송 서비스",
+  "provider": {
+    "@type": "Organization",
+    "name": "직지응급환자이송단"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "옥천군",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "충청북도"
+    }
+  },
+  "serviceType": "Emergency Medical Transport",
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "servicePhone": "010-8841-4114",
+    "availableLanguage": "Korean"
+  }
+}
+</script>
+
+<!-- FAQPage 스키마 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "옥천 농촌지역에서도 24시간 응급출동이 가능한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 가능합니다. 옥천군 농촌지역 전체를 24시간 커버하는 응급출동 체계를 운영하고 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "옥천에서 청주와 대전 중 어느 병원이 더 좋나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "환자의 상태와 필요한 치료에 따라 달라집니다. 심장·뇌혈관 응급환자는 충북대병원(청주), 외상환자는 대전의 외상센터를 추천합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "고령 어르신 요양병원 이송 시 특별한 배려가 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 있습니다. 옥천 지역 고령 인구 특성을 고려하여 침상형 구급차와 노인 전문 응급처치에 숙련된 응급구조사가 동행합니다."
+      }
+    }
+  ]
+}
+</script>
     
     <style>
         * {
@@ -1296,13 +1394,13 @@
         </div>
     </nav>
 
-    <section class="page-hero" itemscope itemtype="https://schema.org/MedicalBusiness">
+    <section class="page-hero">
     <div class="container">
-        <h1 itemprop="name">옥천 사설구급차 24시간 전문 서비스</h1>
-        <p itemprop="description">옥천구급차 전문업체! 옥천군 농촌지역 24시간 응급환자이송, 청주·대전 신속이송 서비스</p>
+        <h1>옥천 사설구급차 24시간 전문 서비스</h1>
+        <p>옥천구급차 전문업체! 옥천군 농촌지역 24시간 응급환자이송, 청주·대전 신속이송 서비스</p>
         <!-- E-E-A-T 전문성 신호 추가 -->
         <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; margin-top: 20px; font-size: 0.9rem;">
-            <span itemprop="specialty">✓ 보건복지부 고시 기준 준수</span> │ 
+            <span>✓ 보건복지부 고시 기준 준수</span> │ 
             <span>✓ 전문 응급구조사 상주</span> │ 
             <span>✓ 다년간의 경력</span> │ 
             <span>✓ 24시간 대기</span>
