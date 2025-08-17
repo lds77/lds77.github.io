@@ -2,40 +2,18 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>119 vs 사설구급차, 언제 이용해야 할까? | 올바른 선택 가이드 | 직지응급환자이송단</title>
     <meta name="description" content="응급상황에서 119와 사설구급차 중 올바른 선택 방법을 알아보세요. 상황별 이용 기준, 장단점, 비용 차이를 충북 전문 응급구조사가 상세히 설명드립니다.">
     <meta name="keywords" content="119 구급차, 사설구급차, 응급환자이송, 구급차 차이, 청주 사설구급차, 충북 응급이송, 환자이송 선택법">
-    
-    <!-- 지역 SEO -->
-    <meta name="geo.region" content="KR-43">
-    <meta name="geo.placename" content="청주시, 충청북도">
     
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="119 vs 사설구급차, 언제 이용해야 할까? 올바른 선택 가이드">
     <meta property="og:description" content="응급상황에서 119와 사설구급차 중 올바른 선택 방법을 충북 전문 응급구조사가 상세히 알려드립니다.">
-    <meta property="og:url" content="https://lds77.github.io/blog/emergency-vs-private-ambulance.html">
+    <meta property="og:image" content="https://lds77.github.io/직지응급환자이송단_129.jpg">
     <meta property="og:site_name" content="직지응급환자이송단">
-    <meta property="og:locale" content="ko_KR">
-    <meta property="og:image" content="https://lds77.github.io/blog/images/119-vs-private-ambulance.jpg">
-    <meta property="article:published_time" content="2025-01-10">
-    <meta property="article:author" content="직지응급환자이송단">
-    <meta property="article:section" content="응급의료">
-    <meta property="article:tag" content="119구급차, 사설구급차, 응급이송">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="119 vs 사설구급차, 언제 이용해야 할까?">
-    <meta name="twitter:description" content="응급상황에서 올바른 구급차 선택 방법을 전문가가 알려드립니다.">
-
-    <!-- 추가 SEO -->
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="직지응급환자이송단">
-    <link rel="canonical" href="https://lds77.github.io/blog/emergency-vs-private-ambulance.html">
-    <link rel="shortcut icon" href="https://lds77.github.io/favicon.ico">
-<link rel="icon" type="image/x-icon" href="https://lds77.github.io/favicon.ico">
-
+    
     <!-- 구조화된 데이터 -->
     <script type="application/ld+json">
     {
@@ -43,220 +21,329 @@
       "@type": "Article",
       "headline": "119 vs 사설구급차, 언제 이용해야 할까? 올바른 선택 가이드",
       "description": "응급상황에서 119와 사설구급차 중 올바른 선택 방법을 충북 전문 응급구조사가 상세히 알려드립니다.",
-      "image": "https://lds77.github.io/blog/images/119-vs-private-ambulance.jpg",
       "author": {
         "@type": "Organization",
-        "name": "직지응급환자이송단",
-        "url": "https://lds77.github.io/"
+        "name": "직지응급환자이송단"
       },
-      "publisher": {
-        "@type": "Organization",
-        "name": "직지응급환자이송단",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://lds77.github.io/logo.png"
-        }
-      },
-      "datePublished": "2025-01-10",
-      "dateModified": "2025-01-10",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://lds77.github.io/blog/emergency-vs-private-ambulance.html"
-      },
-      "articleSection": "응급의료 가이드",
-      "keywords": ["119구급차", "사설구급차", "응급환자이송", "구급차 선택법"]
+      "datePublished": "2025-01-10"
     }
     </script>
 
     <style>
+        :root {
+            --primary: #e74c3c;
+            --primary-dark: #c0392b;
+            --secondary: #f8f9fa;
+            --accent: #3498db;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --text-primary: #2c3e50;
+            --text-secondary: #7f8c8d;
+            --border: #e9ecef;
+            --bg-white: #ffffff;
+            --bg-gray: #f8f9fa;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 25px rgba(0,0,0,0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
         body {
-            font-family: 'Noto Sans KR', Arial, sans-serif;
-            line-height: 1.7;
-            color: #333;
-            background: #f8f9fa;
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-gray);
+            overflow-x: hidden;
+        }
+
+        /* 모바일 터치 최적화 */
+        button, a, .clickable {
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            min-height: 44px;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 100%;
+            padding: 1rem;
             margin: 0 auto;
-            padding: 0 20px;
         }
 
-        /* Header */
-        .blog-header {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        /* 컴팩트 헤더 */
+        .compact-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
         }
 
         .header-content {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex: 1;
+            min-width: 0;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: white;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: white;
-            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
-            color: #e74c3c;
+            font-size: 1.25rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .header-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .home-link {
-            background: rgba(255,255,255,0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.5rem 0.75rem;
+            border-radius: var(--radius-sm);
             color: white;
             text-decoration: none;
-            transition: all 0.3s ease;
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
         }
 
-        .home-link:hover {
-            background: rgba(255,255,255,0.3);
+        /* Hero 섹션 */
+        .hero-section {
+            background: var(--bg-white);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
         }
 
-        /* Article */
-        .article {
-            background: white;
-            margin: 40px auto;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .article-header {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 40px;
+        .hero-content {
             text-align: center;
-            border-bottom: 1px solid #dee2e6;
         }
 
-        .article-category {
-            background: #e74c3c;
+        .hero-category {
+            background: var(--primary);
             color: white;
-            padding: 6px 16px;
+            padding: 0.4rem 1rem;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 600;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 1rem;
         }
 
-        .article-title {
-            font-size: 2.2rem;
+        .hero-title {
+            font-size: 1.4rem;
             font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 20px;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
             line-height: 1.3;
         }
 
-        .article-meta {
+        .hero-meta {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            color: #666;
-            font-size: 0.9rem;
+            gap: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
         }
 
-        .article-content {
-            padding: 40px;
-        }
-
-        .featured-image {
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto 30px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .featured-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .article-intro {
+        .hero-intro {
             background: #e8f4fd;
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            border-left: 4px solid #3498db;
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--accent);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            text-align: left;
         }
 
-        .article-intro p {
-            margin: 0;
-            font-size: 1.1rem;
-            color: #2c3e50;
+        /* 대표 이미지 */
+        .hero-image {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .hero-image img {
+            width: 80%;
+            max-width: 400px;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-image p {
+            margin-top: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
             font-weight: 500;
         }
 
-        h2 {
-            font-size: 1.8rem;
-            color: #2c3e50;
-            margin: 40px 0 20px 0;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e74c3c;
+        /* 아코디언 스타일 */
+        .accordion-section {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            border: 1px solid var(--border);
         }
 
-        h3 {
-            font-size: 1.4rem;
-            color: #34495e;
-            margin: 30px 0 15px 0;
-        }
-
-        p {
-            margin-bottom: 20px;
+        .accordion-header {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            border: none;
             font-size: 1rem;
-            line-height: 1.8;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            text-align: left;
+            min-height: 60px;
         }
 
+        .accordion-header:hover, .accordion-header:focus {
+            background: var(--primary-dark);
+            outline: none;
+        }
+
+        .accordion-header:active {
+            transform: scale(0.98);
+        }
+
+        .header-text {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .header-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .header-title-text {
+            font-size: 1rem;
+            line-height: 1.3;
+        }
+
+        .accordion-header::after {
+            content: "▼";
+            transition: transform 0.3s ease;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            margin-left: 0.5rem;
+        }
+
+        .accordion-header.active::after {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+
+        .accordion-content.active {
+            max-height: 5000px;
+        }
+
+        .accordion-inner {
+            padding: 1.5rem;
+        }
+
+        /* 응급 경고 박스 */
+        .emergency-alert {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .emergency-alert h4 {
+            color: #721c24;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .emergency-alert p {
+            color: #721c24;
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* 비교 테이블 */
         .comparison-table {
             background: white;
-            border-radius: 10px;
+            border-radius: var(--radius-sm);
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin: 30px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 1rem 0;
         }
 
         .comparison-table table {
             width: 100%;
             border-collapse: collapse;
+            font-size: 0.85rem;
         }
 
         .comparison-table th {
-            background: #e74c3c;
+            background: var(--primary);
             color: white;
-            padding: 15px;
+            padding: 0.75rem 0.5rem;
             text-align: center;
             font-weight: 600;
+            font-size: 0.8rem;
         }
 
         .comparison-table td {
-            padding: 15px;
+            padding: 0.75rem 0.5rem;
             text-align: center;
-            border-bottom: 1px solid #dee2e6;
+            border-bottom: 1px solid var(--border);
+            line-height: 1.4;
         }
 
         .comparison-table tr:nth-child(even) {
@@ -268,32 +355,50 @@
             color: white;
             font-weight: 600;
             text-align: left;
+            font-size: 0.8rem;
         }
 
+        /* 장단점 비교 */
         .pros-cons {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 30px 0;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
         }
 
         .pros, .cons {
             background: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: var(--radius-sm);
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .pros h4 {
-            color: #27ae60;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
+            color: var(--success);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .cons h4 {
-            color: #e74c3c;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pros h4::before {
+            content: "✅";
+            font-size: 1.1rem;
+        }
+
+        .cons h4::before {
+            content: "⚠️";
+            font-size: 1.1rem;
         }
 
         .pros ul, .cons ul {
@@ -301,602 +406,770 @@
             padding: 0;
         }
 
-        .pros li {
-            margin-bottom: 10px;
-            padding-left: 25px;
+        .pros li, .cons li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
             position: relative;
-        }
-
-        .cons li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
 
         .pros li::before {
             content: "✓";
             position: absolute;
             left: 0;
-            color: #27ae60;
+            color: var(--success);
             font-weight: bold;
         }
 
         .cons li::before {
-            content: "✗";
+            content: "×";
             position: absolute;
             left: 0;
-            color: #e74c3c;
+            color: var(--primary);
             font-weight: bold;
         }
 
-        .decision-guide {
+        /* 상황 예시 박스 */
+        .situation-box {
             background: #fff3cd;
             border: 1px solid #ffeaa7;
-            border-left: 4px solid #f39c12;
-            padding: 25px;
-            margin: 30px 0;
-            border-radius: 5px;
+            border-left: 4px solid var(--warning);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: var(--radius-sm);
         }
 
-        .decision-guide h4 {
-            color: #e67e22;
-            margin-bottom: 15px;
+        .situation-box h5 {
+            color: #856404;
+            margin-bottom: 0.75rem;
             font-weight: 600;
+            font-size: 0.95rem;
         }
 
-        .emergency-box {
-            background: #f8d7da;
-            border: 1px solid #f5c6cb;
-            border-left: 4px solid #e74c3c;
-            padding: 25px;
-            margin: 30px 0;
-            border-radius: 5px;
+        .situation-box ul {
+            margin: 0;
+            padding-left: 1rem;
         }
 
-        .emergency-box h4 {
-            color: #721c24;
-            margin-bottom: 15px;
+        .situation-box li {
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        /* 케이스 스터디 */
+        .case-study {
+            background: #e8f5e8;
+            border: 1px solid #c3e6c3;
+            border-left: 4px solid var(--success);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: var(--radius-sm);
+        }
+
+        .case-study h5 {
+            color: #155724;
+            margin-bottom: 0.5rem;
             font-weight: 600;
+            font-size: 0.9rem;
         }
 
-        .situation-examples {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 10px;
-            margin: 20px 0;
+        .case-study p {
+            color: #155724;
+            margin: 0;
+            font-size: 0.85rem;
+            line-height: 1.4;
         }
 
-        .situation-examples h5 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .contact-banner {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        /* CTA 섹션 */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            padding: 30px;
-            border-radius: 10px;
+            padding: 1.5rem;
+            border-radius: var(--radius);
             text-align: center;
-            margin: 40px 0;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-lg);
         }
 
-        .contact-banner h3 {
-            margin-bottom: 15px;
+        .cta-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
         }
 
-        .contact-banner .phone {
-            font-size: 1.8rem;
+        .cta-section .phone {
+            font-size: 1.6rem;
             font-weight: 700;
-            margin: 10px 0;
+            margin: 1rem 0;
+            letter-spacing: 1px;
         }
 
-        .related-articles {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 40px;
+        .cta-section p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
 
-        .related-articles h3 {
+        .cta-warning {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.75rem;
+            border-radius: var(--radius-sm);
+            margin-top: 1rem;
+            font-size: 0.8rem;
+        }
+
+        /* 푸터 */
+        .compact-footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 1rem;
             text-align: center;
-            margin-bottom: 20px;
-            color: #2c3e50;
+            font-size: 0.75rem;
+            opacity: 0.9;
+            line-height: 1.4;
         }
 
-        .related-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .related-item {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #333;
-            transition: all 0.3s ease;
-            border: 1px solid #dee2e6;
-        }
-
-        .related-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-decoration: none;
-            color: #333;
-        }
-
-        .related-item h4 {
-            color: #e74c3c;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        @media (max-width: 768px) {
+        /* 태블릿 최적화 */
+        @media (min-width: 768px) {
             .container {
-                padding: 0 15px;
+                max-width: 720px;
+                padding: 1.5rem;
             }
 
-            .article-title {
+            .hero-title {
                 font-size: 1.8rem;
             }
 
-            .article-content {
-                padding: 25px;
-            }
-
-            .article-meta {
-                flex-direction: column;
-                gap: 10px;
+            .accordion-header {
+                font-size: 1.1rem;
             }
 
             .pros-cons {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
 
             .comparison-table {
                 font-size: 0.9rem;
             }
+        }
+
+        /* 데스크톱 최적화 */
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1000px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .accordion-inner {
+                padding: 2rem;
+            }
+        }
+
+        /* 접근성 개선 */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* 포커스 스타일 */
+        button:focus, a:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* 모바일 최적화 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0.75rem;
+            }
+
+            .hero-title {
+                font-size: 1.2rem;
+            }
+
+            .hero-meta {
+                font-size: 0.75rem;
+                gap: 0.5rem;
+            }
+
+            .accordion-header {
+                font-size: 0.9rem;
+                padding: 0.75rem;
+            }
+
+            .accordion-inner {
+                padding: 1rem;
+            }
+
+            .comparison-table {
+                font-size: 0.75rem;
+            }
 
             .comparison-table th,
             .comparison-table td {
-                padding: 10px 8px;
+                padding: 0.5rem 0.3rem;
             }
         }
     </style>
-    <!-- 네이버 검색 최적화 메타태그 -->
-<meta property="og:title" content="응급구급차 vs 민간구급차 - 직지응급환자이송단">
-<meta property="og:description" content="응급구급차와 민간구급차의 차이점, 선택 기준과 이용 방법 완벽 가이드">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://lds77.github.io/blog/emergency-vs-private-ambulance.html">
-<meta property="og:image" content="https://lds77.github.io/직지응급환자이송단_129.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:site_name" content="직지응급환자이송단">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "응급구급차 vs 민간구급차",
-  "url": "https://lds77.github.io/blog/emergency-vs-private-ambulance.html",
-  "image": "https://lds77.github.io/직지응급환자이송단_129.jpg",
-  "description": "응급구급차와 민간구급차의 차이점, 선택 기준과 이용 방법 완벽 가이드",
-  "publisher": {
-    "@type": "Organization",
-    "name": "직지응급환자이송단"
-  }
-}
-</script>
 </head>
 <body>
-    <header class="blog-header">
+    <!-- 컴팩트 헤더 -->
+    <header class="compact-header">
         <div class="container">
             <div class="header-content">
-                <a href="../index.html" class="logo">
-                    <div class="logo-icon">🚑</div>
-                    <span style="font-weight: 700;">직지응급환자이송단</span>
-                </a>
-                <a href="../index.html" class="home-link">홈으로 돌아가기</a>
+                <div class="logo-section">
+                    <div class="logo">🚑</div>
+                    <h1 class="header-title">직지응급환자이송단</h1>
+                </div>
+                <a href="../index.html" class="home-link">홈으로</a>
             </div>
         </div>
     </header>
-<!-- 대표 이미지 (네이버 크롤링용) -->
-<div style="text-align: center; margin: 30px 0; padding: 20px;">
-    <img src="../직지응급환자이송단_129.jpg" alt="직지응급환자이송단 - 24시간 응급환자 전문 이송서비스" style="width: 80%; max-width: 600px; height: auto; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); display: block; margin: 0 auto;">
-    <p style="margin-top: 20px; color: #555; font-size: 16px; font-weight: 500;">📞 010-8841-4114 | 24시간 응급환자 전문 이송서비스</p>
-</div>
-    <main>
-        <article class="article">
-            <header class="article-header">
-                <div class="container">
-                    <span class="article-category">응급의료 가이드</span>
-                    <h1 class="article-title">119 vs 사설구급차, 언제 이용해야 할까?</h1>
-                    <div class="article-meta">
-                        <span>📅 2025년 1월 10일</span>
-                        <span>👤 직지응급환자이송단</span>
-                        <span>👁 조회수 1,247</span>
-                        <span>⏱ 읽는 시간 6분</span>
-                    </div>
+
+    <!-- Hero 섹션 -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-category">응급의료 가이드</span>
+                <h1 class="hero-title">119 vs 사설구급차<br>언제 이용해야 할까?</h1>
+                <div class="hero-meta">
+                    <span>📅 2025년 1월 10일</span>
+                    <span>👤 직지응급환자이송단</span>
+                    <span>👁 조회수 1,247</span>
+                    <span>⏱ 읽는 시간 6분</span>
                 </div>
-            </header>
-
-            <div class="article-content">
-                <div class="container">
-                    <div class="featured-image">
-                        <img src="https://lds77.github.io/images/ambulance/logo.jpg" alt="청주사설구급차">
-                    </div>
-
-                    <div class="article-intro">
-                        <p><strong>응급상황에서 구급차를 부를 때, 119와 사설구급차 중 어느 것을 선택해야 할까요?</strong> 충청북도에서 12년간 응급환자이송을 담당해온 전문 응급구조사가 상황별 올바른 선택 방법을 알려드립니다.</p>
-                    </div>
-
-                    <div class="emergency-box">
-                        <h4>🚨 먼저 알아두세요!</h4>
-                        <p><strong>생명이 위급한 응급상황에서는 무조건 119를 먼저 신고하세요.</strong> 이 글은 응급상황 이후 병원 간 이송이나 비응급 상황에서의 선택 가이드입니다.</p>
-                    </div>
-
-                    <h2>1. 119 구급차 vs 사설구급차 기본 차이점</h2>
-
-                    <div class="comparison-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>구분</th>
-                                    <th>119 구급차</th>
-                                    <th>사설구급차</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="category">운영 주체</td>
-                                    <td>소방서 (공공)</td>
-                                    <td>민간업체</td>
-                                </tr>
-                                <tr>
-                                    <td class="category">이용 비용</td>
-                                    <td>무료</td>
-                                    <td>거리별 유료</td>
-                                </tr>
-                                <tr>
-                                    <td class="category">출동 기준</td>
-                                    <td>응급상황 우선</td>
-                                    <td>예약제 운영</td>
-                                </tr>
-                                <tr>
-                                    <td class="category">의료진</td>
-                                    <td>응급구조사</td>
-                                    <td>응급구조사 + 간호사</td>
-                                </tr>
-                                <tr>
-                                    <td class="category">장비</td>
-                                    <td>기본 응급장비</td>
-                                    <td>침상형 + 고급장비</td>
-                                </tr>
-                                <tr>
-                                    <td class="category">대기시간</td>
-                                    <td>상황에 따라 변동</td>
-                                    <td>예약 시간 정확</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h2>2. 119 구급차를 이용해야 하는 경우</h2>
-
-                    <div class="situation-examples">
-                        <h5>🚨 즉시 119 신고가 필요한 상황</h5>
-                        <ul>
-                            <li><strong>심정지 및 호흡곤란:</strong> 의식을 잃고 호흡이 없거나 매우 불규칙한 경우</li>
-                            <li><strong>대량출혈:</strong> 지혈이 되지 않는 심한 외상과 출혈</li>
-                            <li><strong>교통사고:</strong> 중상을 입었거나 의식이 없는 경우</li>
-                            <li><strong>심근경색/뇌졸중:</strong> 가슴 통증, 반신마비, 언어장애 등</li>
-                            <li><strong>중독 및 약물 과다복용:</strong> 의식 저하가 동반된 경우</li>
-                            <li><strong>산업재해:</strong> 추락, 끼임, 화상 등 중상</li>
-                        </ul>
-                    </div>
-
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>119 구급차 장점</h4>
-                            <ul>
-                                <li>무료 이용</li>
-                                <li>신속한 응급처치</li>
-                                <li>응급실 직접 연계</li>
-                                <li>24시간 즉시 출동</li>
-                                <li>전문 응급구조사 탑승</li>
-                                <li>고급 생명유지장치 구비</li>
-                            </ul>
-                        </div>
-                        <div class="cons">
-                            <h4>119 구급차 제한사항</h4>
-                            <ul>
-                                <li>응급상황 우선 출동</li>
-                                <li>병원 선택 제한</li>
-                                <li>대기시간 예측 어려움</li>
-                                <li>비응급 이송 불가</li>
-                                <li>장거리 이송 한계</li>
-                                <li>예약 불가</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h2>3. 사설구급차를 이용해야 하는 경우</h2>
-
-                    <div class="situation-examples">
-                        <h5>🚑 사설구급차가 적합한 상황</h5>
-                        <ul>
-                            <li><strong>병원 간 전원:</strong> 큰 병원으로의 전원이 필요한 경우</li>
-                            <li><strong>요양병원 입·퇴원:</strong> 거동이 불편한 고령 환자</li>
-                            <li><strong>정기 투석:</strong> 주 3회 투석 치료를 받는 환자</li>
-                            <li><strong>정신과 이송:</strong> 정신질환자의 안전한 병원 이송</li>
-                            <li><strong>장거리 이송:</strong> 서울, 대전 등 타 지역 병원으로의 이송</li>
-                            <li><strong>예약 진료:</strong> 중환자의 예약된 검사나 수술</li>
-                        </ul>
-                    </div>
-
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>사설구급차 장점</h4>
-                            <ul>
-                                <li>예약제로 정확한 시간</li>
-                                <li>병원 선택 자유</li>
-                                <li>장거리 이송 가능</li>
-                                <li>침상형 구급차 이용</li>
-                                <li>개별 맞춤 서비스</li>
-                                <li>비응급 이송 가능</li>
-                            </ul>
-                        </div>
-                        <div class="cons">
-                            <h4>사설구급차 제한사항</h4>
-                            <ul>
-                                <li>이용료 부담</li>
-                                <li>예약 필요</li>
-                                <li>즉시 출동 어려움</li>
-                                <li>응급실 직접 연계 한계</li>
-                                <li>업체별 서비스 차이</li>
-                                <li>보험 적용 제한</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h2>4. 상황별 선택 가이드</h2>
-
-                    <div class="decision-guide">
-                        <h4>🤔 이런 경우 어떻게 선택할까요?</h4>
-                        
-                        <h5>Case 1: 할머니가 넘어져서 허리를 다치셨어요</h5>
-                        <p><strong>→ 119 신고:</strong> 골절 가능성이 있고 통증이 심하다면 응급상황입니다.</p>
-
-                        <h5>Case 2: 아버지가 큰 병원에서 정밀검사를 받아야 해요</h5>
-                        <p><strong>→ 사설구급차:</strong> 예약된 검사이고 특정 병원 방문이 필요한 경우입니다.</p>
-
-                        <h5>Case 3: 어머니를 요양병원에 입원시켜야 해요</h5>
-                        <p><strong>→ 사설구급차:</strong> 비응급 상황이며 침상형 구급차가 필요한 경우입니다.</p>
-
-                        <h5>Case 4: 갑자기 가슴이 아프고 숨이 찹니다</h5>
-                        <p><strong>→ 즉시 119 신고:</strong> 심근경색 가능성이 있는 응급상황입니다.</p>
-                    </div>
-
-                    <h2>5. 충청북도 지역 특성 고려사항</h2>
-
-                    <h3>지역별 119 대응시간</h3>
-                    <ul>
-                        <li><strong>청주시:</strong> 평균 8-12분 (도심지역)</li>
-                        <li><strong>충주시:</strong> 평균 10-15분</li>
-                        <li><strong>제천시:</strong> 평균 12-18분</li>
-                        <li><strong>산간지역:</strong> 20-30분 이상 소요 가능</li>
-                    </ul>
-
-                    <h3>사설구급차 이용 고려사항</h3>
-                    <ul>
-                        <li>충북에서 서울까지: 약 2-3시간 소요</li>
-                        <li>청주-대전 간 이송: 약 1시간 소요</li>
-                        <li>산간지역에서는 사설구급차가 더 신속할 수 있음</li>
-                        <li>응급구조사 동행으로 안전한 장거리 이송 가능</li>
-                    </ul>
-
-                    <h2>6. 비용 및 보험 적용</h2>
-
-                    <div class="comparison-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>구분</th>
-                                    <th>119 구급차</th>
-                                    <th>사설구급차</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="category">기본 이용료</td>
-                                    <td>무료</td>
-                                    <td>75,000원 (10km 이내)</td>
-                                </tr>
-                                <tr>
-                                    <td class="category">추가 거리</td>
-                                    <td>-</td>
-                                    <td>1km당 1,300원</td>
-                                </tr>
-                                <tr>
-                                    <td class="category">건강보험</td>
-                                    <td>적용 (무료)</td>
-                                    <td>적용 안됨</td>
-                                </tr>
-                                <tr>
-                                    <td class="category">실비보험</td>
-                                    <td>해당없음</td>
-                                    <td>일부 적용 가능</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h2>7. 올바른 선택을 위한 체크리스트</h2>
-
-                    <div class="decision-guide">
-                        <h4>✅ 119 vs 사설구급차 선택 체크리스트</h4>
-                        
-                        <div style="margin: 20px 0;">
-                            <h5>🚨 119를 선택하세요 (다음 중 하나라도 해당시)</h5>
-                            <ul style="margin-left: 20px;">
-                                <li>✓ 생명이 위급한 응급상황</li>
-                                <li>✓ 의식을 잃었거나 호흡에 문제가 있음</li>
-                                <li>✓ 심한 외상이나 대량 출혈</li>
-                                <li>✓ 심장마비, 뇌졸중 의심 증상</li>
-                                <li>✓ 즉시 응급실 치료가 필요함</li>
-                            </ul>
-                        </div>
-
-                        <div style="margin: 20px 0;">
-                            <h5>🚑 사설구급차를 선택하세요</h5>
-                            <ul style="margin-left: 20px;">
-                                <li>✓ 예약된 병원 방문 (검사, 수술 등)</li>
-                                <li>✓ 병원 간 전원 이송</li>
-                                <li>✓ 요양병원 입·퇴원</li>
-                                <li>✓ 장거리 이송 (타 지역 병원)</li>
-                                <li>✓ 거동 불편 환자의 정기 치료</li>
-                                <li>✓ 특수 환자 이송 (정신질환, 투석 등)</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h2>8. 응급상황 시 행동요령</h2>
-
-                    <div class="emergency-box">
-                        <h4>🆘 응급상황 발생 시 단계별 행동요령</h4>
-                        <ol style="margin-left: 20px; margin-top: 15px;">
-                            <li><strong>안전 확보:</strong> 본인과 환자의 안전을 먼저 확보하세요</li>
-                            <li><strong>119 신고:</strong> 정확한 위치와 상황을 신고하세요</li>
-                            <li><strong>응급처치:</strong> 119 상황실 지시에 따라 응급처치를 시행하세요</li>
-                            <li><strong>구급차 유도:</strong> 구급차가 쉽게 찾을 수 있도록 유도하세요</li>
-                        </ol>
-                    </div>
-
-                    <h3>119 신고 시 알려야 할 정보</h3>
-                    <div class="situation-examples">
-                        <ul>
-                            <li><strong>정확한 위치:</strong> "충북 청주시 ○○구 ○○동 ○○번지"</li>
-                            <li><strong>환자 상태:</strong> "의식 없음", "호흡 곤란", "심한 출혈" 등</li>
-                            <li><strong>발생 경위:</strong> "교통사고", "추락", "가슴 통증" 등</li>
-                            <li><strong>연락처:</strong> 추가 문의 가능한 전화번호</li>
-                        </ul>
-                    </div>
-
-                    <h2>9. 충북 지역별 주요 병원 안내</h2>
-
-                    <h3>응급실 운영 주요 병원</h3>
-                    <div class="situation-examples">
-                        <h5>청주 지역</h5>
-                        <ul>
-                            <li><strong>충북대학교병원:</strong> 권역응급의료센터 (24시간)</li>
-                            <li><strong>청주한국병원:</strong> 응급의료센터</li>
-                            <li><strong>충북국립대병원:</strong> 외상센터 운영</li>
-                        </ul>
-
-                        <h5>충주 지역</h5>
-                        <ul>
-                            <li><strong>건국대 충주병원:</strong> 응급의료센터</li>
-                            <li><strong>충주중앙병원:</strong> 24시간 응급실</li>
-                        </ul>
-
-                        <h5>제천 지역</h5>
-                        <ul>
-                            <li><strong>세명대 제천한방병원:</strong> 응급의료센터</li>
-                            <li><strong>제천병원:</strong> 24시간 응급실</li>
-                        </ul>
-                    </div>
-
-                    <h2>10. 전문가 조언</h2>
-
-                    <div class="article-intro">
-                        <p><strong>"응급상황에서는 주저하지 말고 119를 신고하세요. 사설구급차는 비응급 상황에서 환자의 편의와 안전을 위한 선택입니다. 가장 중요한 것은 환자의 상태를 정확히 판단하는 것입니다."</strong></p>
-                        <p style="text-align: right; margin-top: 15px; font-style: italic;">- 직지응급환자이송단 1급 응급구조사</p>
-                    </div>
-
-                    <h3>추가 고려사항</h3>
-                    <ul>
-                        <li><strong>시간대 고려:</strong> 야간이나 주말에는 119 대응시간이 길어질 수 있음</li>
-                        <li><strong>날씨 영향:</strong> 폭설, 폭우 시에는 사설구급차도 지연 가능</li>
-                        <li><strong>환자 상태:</strong> 중환자의 경우 의료진 동행 여부 확인 필수</li>
-                        <li><strong>가족 동행:</strong> 사설구급차는 가족 동행이 용이함</li>
-                    </ul>
-
-                    <div class="contact-banner">
-                        <h3>🚑 충북 전문 사설구급차 서비스</h3>
-                        <p>24시간 전문 응급구조사 동행 | 침상형 구급차 완비</p>
-                        <div class="phone">010-8841-4114</div>
-                        <p>응급이송 · 요양병원이송 · 장거리이송 · 정신질환자이송</p>
-                        <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.9;">
-                            ※ 응급상황 시에는 반드시 119를 먼저 신고해 주세요
-                        </p>
-                    </div>
-
-                    <h2>마무리</h2>
-                    <p>119 구급차와 사설구급차는 각각의 역할과 장점이 다릅니다. <strong>생명이 위급한 응급상황에서는 반드시 119를 신고</strong>하고, 비응급 상황에서의 병원 이송이나 특수한 상황에서는 사설구급차를 이용하시는 것이 올바른 선택입니다.</p>
-
-                    <p>무엇보다 중요한 것은 환자의 상태를 정확히 판단하고, 적절한 시기에 적절한 서비스를 이용하는 것입니다. 확실하지 않다면 119에 상담을 요청하시거나, 응급의료 정보센터(1339)에 문의하시기 바랍니다.</p>
-
-                    <div class="related-articles">
-                        <h3>📚 관련 글 더 보기</h3>
-                        <div class="related-grid">
-                            <a href="emergency-first-aid-guide.html" class="related-item">
-                                <h4>응급상황별 기본 응급처치 방법</h4>
-                                <p>심정지, 출혈, 골절 등 응급상황 대처법을 알아보세요.</p>
-                            </a>
-                            <a href="patient-transport-documents.html" class="related-item">
-                                <h4>환자이송 시 필요한 서류</h4>
-                                <p>병원 이송 시 준비해야 할 서류들을 확인하세요.</p>
-                            </a>
-                            <a href="cheongju-hospitals-guide.html" class="related-item">
-                                <h4>청주 주요 병원 가이드</h4>
-                                <p>청주 지역 병원별 특징과 진료과목을 알아보세요.</p>
-                            </a>
-                        </div>
-                    </div>
+                <div class="hero-intro">
+                    <p><strong>응급상황에서 구급차를 부를 때, 119와 사설구급차 중 어느 것을 선택해야 할까요?</strong> 충청북도에서 12년간 응급환자이송을 담당해온 전문 응급구조사가 상황별 올바른 선택 방법을 알려드립니다.</p>
                 </div>
             </div>
-        </article>
+        </div>
+    </section>
+
+    <!-- 대표 이미지 -->
+    <div class="hero-image">
+        <div class="container">
+            <img src="../직지응급환자이송단_129.jpg" alt="직지응급환자이송단 - 24시간 응급환자 전문 이송서비스">
+            <p>📞 010-8841-4114 | 24시간 응급환자 전문 이송서비스</p>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <!-- 중요 안내 -->
+            <div class="emergency-alert">
+                <h4>🚨 먼저 알아두세요!</h4>
+                <p><strong>생명이 위급한 응급상황에서는 무조건 119를 먼저 신고하세요.</strong> 이 글은 응급상황 이후 병원 간 이송이나 비응급 상황에서의 선택 가이드입니다.</p>
+            </div>
+
+            <!-- 기본 차이점 아코디언 -->
+            <section class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                    <div class="header-text">
+                        <span class="header-icon">📊</span>
+                        <span class="header-title-text">119 구급차 vs 사설구급차 기본 차이점</span>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>구분</th>
+                                        <th>119 구급차</th>
+                                        <th>사설구급차</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="category">운영 주체</td>
+                                        <td>소방서 (공공)</td>
+                                        <td>민간업체</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="category">이용 비용</td>
+                                        <td>무료</td>
+                                        <td>거리별 유료</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="category">출동 기준</td>
+                                        <td>응급상황 우선</td>
+                                        <td>예약제 운영</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="category">의료진</td>
+                                        <td>응급구조사</td>
+                                        <td>응급구조사 + 간호사</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="category">장비</td>
+                                        <td>기본 응급장비</td>
+                                        <td>침상형 + 고급장비</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="category">대기시간</td>
+                                        <td>상황에 따라 변동</td>
+                                        <td>예약 시간 정확</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 119 구급차 이용 아코디언 -->
+            <section class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                    <div class="header-text">
+                        <span class="header-icon">🚨</span>
+                        <span class="header-title-text">119 구급차를 이용해야 하는 경우</span>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="situation-box">
+                            <h5>🚨 즉시 119 신고가 필요한 상황</h5>
+                            <ul>
+                                <li><strong>심정지 및 호흡곤란:</strong> 의식을 잃고 호흡이 없거나 매우 불규칙한 경우</li>
+                                <li><strong>대량출혈:</strong> 지혈이 되지 않는 심한 외상과 출혈</li>
+                                <li><strong>교통사고:</strong> 중상을 입었거나 의식이 없는 경우</li>
+                                <li><strong>심근경색/뇌졸중:</strong> 가슴 통증, 반신마비, 언어장애 등</li>
+                                <li><strong>중독 및 약물 과다복용:</strong> 의식 저하가 동반된 경우</li>
+                                <li><strong>산업재해:</strong> 추락, 끼임, 화상 등 중상</li>
+                            </ul>
+                        </div>
+
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h4>119 구급차 장점</h4>
+                                <ul>
+                                    <li>무료 이용</li>
+                                    <li>신속한 응급처치</li>
+                                    <li>응급실 직접 연계</li>
+                                    <li>24시간 즉시 출동</li>
+                                    <li>전문 응급구조사 탑승</li>
+                                    <li>고급 생명유지장치 구비</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h4>119 구급차 제한사항</h4>
+                                <ul>
+                                    <li>응급상황 우선 출동</li>
+                                    <li>병원 선택 제한</li>
+                                    <li>대기시간 예측 어려움</li>
+                                    <li>비응급 이송 불가</li>
+                                    <li>장거리 이송 한계</li>
+                                    <li>예약 불가</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 사설구급차 이용 아코디언 -->
+            <section class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                    <div class="header-text">
+                        <span class="header-icon">🚑</span>
+                        <span class="header-title-text">사설구급차를 이용해야 하는 경우</span>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="situation-box">
+                            <h5>🚑 사설구급차가 적합한 상황</h5>
+                            <ul>
+                                <li><strong>병원 간 전원:</strong> 큰 병원으로의 전원이 필요한 경우</li>
+                                <li><strong>요양병원 입·퇴원:</strong> 거동이 불편한 고령 환자</li>
+                                <li><strong>정기 투석:</strong> 주 3회 투석 치료를 받는 환자</li>
+                                <li><strong>정신과 이송:</strong> 정신질환자의 안전한 병원 이송</li>
+                                <li><strong>장거리 이송:</strong> 서울, 대전 등 타 지역 병원으로의 이송</li>
+                                <li><strong>예약 진료:</strong> 중환자의 예약된 검사나 수술</li>
+                            </ul>
+                        </div>
+
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h4>사설구급차 장점</h4>
+                                <ul>
+                                    <li>예약제로 정확한 시간</li>
+                                    <li>병원 선택 자유</li>
+                                    <li>장거리 이송 가능</li>
+                                    <li>침상형 구급차 이용</li>
+                                    <li>개별 맞춤 서비스</li>
+                                    <li>비응급 이송 가능</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h4>사설구급차 제한사항</h4>
+                                <ul>
+                                    <li>이용료 부담</li>
+                                    <li>예약 필요</li>
+                                    <li>즉시 출동 어려움</li>
+                                    <li>응급실 직접 연계 한계</li>
+                                    <li>업체별 서비스 차이</li>
+                                    <li>보험 적용 제한</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 상황별 선택 가이드 아코디언 -->
+            <section class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                    <div class="header-text">
+                        <span class="header-icon">🤔</span>
+                        <span class="header-title-text">상황별 선택 가이드 & 실제 케이스</span>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="case-study">
+                            <h5>Case 1: 할머니가 넘어져서 허리를 다치셨어요</h5>
+                            <p><strong>→ 119 신고:</strong> 골절 가능성이 있고 통증이 심하다면 응급상황입니다.</p>
+                        </div>
+
+                        <div class="case-study">
+                            <h5>Case 2: 아버지가 큰 병원에서 정밀검사를 받아야 해요</h5>
+                            <p><strong>→ 사설구급차:</strong> 예약된 검사이고 특정 병원 방문이 필요한 경우입니다.</p>
+                        </div>
+
+                        <div class="case-study">
+                            <h5>Case 3: 어머니를 요양병원에 입원시켜야 해요</h5>
+                            <p><strong>→ 사설구급차:</strong> 비응급 상황이며 침상형 구급차가 필요한 경우입니다.</p>
+                        </div>
+
+                        <div class="case-study">
+                            <h5>Case 4: 갑자기 가슴이 아프고 숨이 찹니다</h5>
+                            <p><strong>→ 즉시 119 신고:</strong> 심근경색 가능성이 있는 응급상황입니다.</p>
+                        </div>
+
+                        <div class="situation-box">
+                            <h5>✅ 119 vs 사설구급차 선택 체크리스트</h5>
+                            <ul>
+                                <li><strong>119를 선택하세요:</strong> 생명 위급, 의식잃음, 호흡곤란, 심한외상, 대량출혈</li>
+                                <li><strong>사설구급차를 선택하세요:</strong> 예약진료, 병원간전원, 요양병원이송, 장거리이송, 정기치료</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 충북 지역 특성 아코디언 -->
+            <section class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                    <div class="header-text">
+                        <span class="header-icon">🗺️</span>
+                        <span class="header-title-text">충청북도 지역 특성 & 주요 병원</span>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <h3>지역별 119 대응시간</h3>
+                        <ul>
+                            <li><strong>청주시:</strong> 평균 8-12분 (도심지역)</li>
+                            <li><strong>충주시:</strong> 평균 10-15분</li>
+                            <li><strong>제천시:</strong> 평균 12-18분</li>
+                            <li><strong>산간지역:</strong> 20-30분 이상 소요 가능</li>
+                        </ul>
+
+                        <h3>사설구급차 이용 고려사항</h3>
+                        <ul>
+                            <li>충북에서 서울까지: 약 2-3시간 소요</li>
+                            <li>청주-대전 간 이송: 약 1시간 소요</li>
+                            <li>산간지역에서는 사설구급차가 더 신속할 수 있음</li>
+                            <li>응급구조사 동행으로 안전한 장거리 이송 가능</li>
+                        </ul>
+
+                        <div class="situation-box">
+                            <h5>🏥 충북 주요 응급실 운영 병원</h5>
+                            <ul>
+                                <li><strong>청주:</strong> 충북대학교병원(권역응급센터), 청주한국병원, 충북국립대병원</li>
+                                <li><strong>충주:</strong> 건국대 충주병원, 충주중앙병원</li>
+                                <li><strong>제천:</strong> 세명대 제천한방병원, 제천병원</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 비용 및 보험 아코디언 -->
+            <section class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                    <div class="header-text">
+                        <span class="header-icon">💰</span>
+                        <span class="header-title-text">비용 및 보험 적용 정보</span>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>구분</th>
+                                        <th>119 구급차</th>
+                                        <th>사설구급차</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="category">기본 이용료</td>
+                                        <td>무료</td>
+                                        <td>75,000원 (10km 이내)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="category">추가 거리</td>
+                                        <td>-</td>
+                                        <td>1km당 1,300원</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="category">건강보험</td>
+                                        <td>적용 (무료)</td>
+                                        <td>적용 안됨</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="category">실비보험</td>
+                                        <td>해당없음</td>
+                                        <td>일부 적용 가능</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 응급상황 행동요령 아코디언 -->
+            <section class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                    <div class="header-text">
+                        <span class="header-icon">🆘</span>
+                        <span class="header-title-text">응급상황 시 행동요령</span>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="emergency-alert">
+                            <h4>🆘 응급상황 발생 시 단계별 행동요령</h4>
+                            <ol style="margin-left: 20px; margin-top: 15px;">
+                                <li><strong>안전 확보:</strong> 본인과 환자의 안전을 먼저 확보하세요</li>
+                                <li><strong>119 신고:</strong> 정확한 위치와 상황을 신고하세요</li>
+                                <li><strong>응급처치:</strong> 119 상황실 지시에 따라 응급처치를 시행하세요</li>
+                                <li><strong>구급차 유도:</strong> 구급차가 쉽게 찾을 수 있도록 유도하세요</li>
+                            </ol>
+                        </div>
+
+                        <div class="situation-box">
+                            <h5>📞 119 신고 시 알려야 할 정보</h5>
+                            <ul>
+                                <li><strong>정확한 위치:</strong> "충북 청주시 ○○구 ○○동 ○○번지"</li>
+                                <li><strong>환자 상태:</strong> "의식 없음", "호흡 곤란", "심한 출혈" 등</li>
+                                <li><strong>발생 경위:</strong> "교통사고", "추락", "가슴 통증" 등</li>
+                                <li><strong>연락처:</strong> 추가 문의 가능한 전화번호</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 전문가 조언 아코디언 -->
+            <section class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                    <div class="header-text">
+                        <span class="header-icon">👨‍⚕️</span>
+                        <span class="header-title-text">전문가 조언 & 추가 고려사항</span>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="hero-intro">
+                            <p><strong>"응급상황에서는 주저하지 말고 119를 신고하세요. 사설구급차는 비응급 상황에서 환자의 편의와 안전을 위한 선택입니다. 가장 중요한 것은 환자의 상태를 정확히 판단하는 것입니다."</strong></p>
+                            <p style="text-align: right; margin-top: 15px; font-style: italic;">- 직지응급환자이송단 1급 응급구조사</p>
+                        </div>
+
+                        <h3>추가 고려사항</h3>
+                        <ul>
+                            <li><strong>시간대 고려:</strong> 야간이나 주말에는 119 대응시간이 길어질 수 있음</li>
+                            <li><strong>날씨 영향:</strong> 폭설, 폭우 시에는 사설구급차도 지연 가능</li>
+                            <li><strong>환자 상태:</strong> 중환자의 경우 의료진 동행 여부 확인 필수</li>
+                            <li><strong>가족 동행:</strong> 사설구급차는 가족 동행이 용이함</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA 섹션 -->
+            <div class="cta-section">
+                <h3>🚑 충북 전문 사설구급차 서비스</h3>
+                <p>24시간 전문 응급구조사 동행 | 침상형 구급차 완비</p>
+                <div class="phone">010-8841-4114</div>
+                <p>응급이송 · 요양병원이송 · 장거리이송 · 정신질환자이송</p>
+                <div class="cta-warning">
+                    ※ 응급상황 시에는 반드시 119를 먼저 신고해 주세요
+                </div>
+            </div>
+
+            <!-- 마무리 -->
+            <section class="accordion-section">
+                <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                    <div class="header-text">
+                        <span class="header-icon">📝</span>
+                        <span class="header-title-text">마무리 & 핵심 정리</span>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <p>119 구급차와 사설구급차는 각각의 역할과 장점이 다릅니다. <strong>생명이 위급한 응급상황에서는 반드시 119를 신고</strong>하고, 비응급 상황에서의 병원 이송이나 특수한 상황에서는 사설구급차를 이용하시는 것이 올바른 선택입니다.</p>
+
+                        <p>무엇보다 중요한 것은 환자의 상태를 정확히 판단하고, 적절한 시기에 적절한 서비스를 이용하는 것입니다. 확실하지 않다면 119에 상담을 요청하시거나, 응급의료 정보센터(1339)에 문의하시기 바랍니다.</p>
+
+                        <div class="situation-box">
+                            <h5>🔍 핵심 기억사항</h5>
+                            <ul>
+                                <li><strong>응급상황 = 119:</strong> 생명위험, 의식잃음, 호흡곤란 등</li>
+                                <li><strong>비응급 이송 = 사설구급차:</strong> 예약진료, 전원, 요양병원</li>
+                                <li><strong>판단 어려우면:</strong> 119나 응급의료정보센터(1339) 상담</li>
+                                <li><strong>충북 사설구급차:</strong> 010-8841-4114 (24시간)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
+    <!-- 컴팩트 푸터 -->
+    <footer class="compact-footer">
+        <div class="container">
+            <p>&copy; 2025 직지응급환자이송단. 모든 권리 보유.<br>
+            응급상황 시에는 반드시 119를 먼저 신고해 주세요.</p>
+        </div>
+    </footer>
+
     <script>
-        // 스크롤 시 헤더 효과
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.blog-header');
-            if (window.scrollY > 100) {
-                header.style.background = 'linear-gradient(135deg, rgba(231, 76, 60, 0.95) 0%, rgba(192, 57, 43, 0.95) 100%)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)';
-                header.style.backdropFilter = 'none';
-            }
-        });
-
-        // 읽기 진행률 표시
-        window.addEventListener('scroll', function() {
-            const article = document.querySelector('.article-content');
-            const scrolled = window.scrollY;
-            const rate = scrolled / (article.offsetHeight - window.innerHeight);
-            const progress = Math.min(rate * 100, 100);
+        // 아코디언 토글 기능
+        function toggleAccordion(element) {
+            const content = element.nextElementSibling;
+            const isActive = element.classList.contains('active');
             
-            if (progress > 0) {
-                document.title = `(${Math.round(progress)}%) 119 vs 사설구급차, 언제 이용해야 할까? | 직지응급환자이송단`;
-            }
-        });
-
-        // 부드러운 스크롤
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
+            // 현재 아코디언 토글
+            if (isActive) {
+                element.classList.remove('active');
+                element.setAttribute('aria-expanded', 'false');
+                content.classList.remove('active');
+            } else {
+                element.classList.add('active');
+                element.setAttribute('aria-expanded', 'true');
+                content.classList.add('active');
+                
+                // 아코디언이 열릴 때 부드럽게 스크롤
+                setTimeout(() => {
+                    element.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'nearest' 
                     });
+                }, 100);
+            }
+        }
+
+        // DOM 로드 완료 후 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            // 첫 번째 아코디언 자동 열기 (모바일에서만)
+            if (window.innerWidth <= 768) {
+                const firstAccordion = document.querySelector('.accordion-header');
+                if (firstAccordion) {
+                    toggleAccordion(firstAccordion);
+                }
+            }
+
+            // 스크롤 시 헤더 효과
+            let lastScrollY = window.scrollY;
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.compact-header');
+                const currentScrollY = window.scrollY;
+                
+                if (currentScrollY > 100) {
+                    header.style.background = 'linear-gradient(135deg, rgba(231, 76, 60, 0.95), rgba(192, 57, 43, 0.95))';
+                    header.style.backdropFilter = 'blur(10px)';
+                } else {
+                    header.style.background = 'linear-gradient(135deg, var(--primary), var(--primary-dark))';
+                    header.style.backdropFilter = 'none';
+                }
+                
+                lastScrollY = currentScrollY;
+            }, { passive: true });
+
+            // 키보드 접근성
+            document.addEventListener('keydown', function(e) {
+                if ((e.key === 'Enter' || e.key === ' ') && 
+                    e.target.classList.contains('accordion-header')) {
+                    e.preventDefault();
+                    toggleAccordion(e.target);
+                }
+
+                // ESC 키로 열린 아코디언 닫기
+                if (e.key === 'Escape') {
+                    const activeAccordion = document.querySelector('.accordion-header.active');
+                    if (activeAccordion) {
+                        toggleAccordion(activeAccordion);
+                    }
                 }
             });
+
+            // 클릭 이벤트 추적
+            document.addEventListener('click', function(e) {
+                if (e.target.href && e.target.href.startsWith('tel:')) {
+                    console.log('전화번호 클릭:', e.target.href);
+                }
+
+                if (e.target.classList.contains('accordion-header') || 
+                    e.target.closest('.accordion-header')) {
+                    const header = e.target.classList.contains('accordion-header') ? 
+                                  e.target : e.target.closest('.accordion-header');
+                    const sectionName = header.querySelector('.header-title-text')?.textContent || 
+                                      header.textContent.trim();
+                    console.log('아코디언 섹션 클릭:', sectionName);
+                }
+            });
+
+            console.log('119 vs 사설구급차 아코디언 가이드 로드 완료');
         });
+
+        // 오류 처리
+        window.addEventListener('error', function(e) {
+            console.error('JavaScript 오류 발생:', e.error);
+        });
+
+        // 성능 최적화
+        let ticking = false;
+        function updateOnScroll() {
+            ticking = false;
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateOnScroll);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestTick, { passive: true });
     </script>
 </body>
 </html>
