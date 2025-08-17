@@ -1294,20 +1294,9 @@
             }, { passive: true });
 
             function handleSwipe() {
-                const swipeThreshold = 100;
-                const swipeDistance = Math.abs(touchStartY - touchEndY);
-                
-                // 세로 스와이프만 처리 (가로 스와이프는 브라우저 네비게이션용)
-                if (swipeDistance > swipeThreshold && Math.abs(touchStartX - touchEndX) < 50) {
-                    // 위로 스와이프 시 다음 섹션으로 이동
-                    if (touchStartY > touchEndY) {
-                        const nextSection = document.querySelector('.accordion-section:not(.active) .accordion-header');
-                        if (nextSection) {
-                            nextSection.click();
-                        }
-                    }
-                }
-            }
+    // 스와이프 기능 비활성화 - 아코디언 자동 열림 방지
+    return;
+}
 
             // 스크롤 성능 최적화
             let ticking = false;
