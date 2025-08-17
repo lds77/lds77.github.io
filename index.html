@@ -1644,94 +1644,97 @@
         </article>
 
         <section class="faq-section" aria-labelledby="faq-title">
-            <div class="container">
-                <div class="main-accordion">
-                    <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
-                        <div class="header-content">
-                            <h2 id="faq-title" class="section-title">자주 묻는 질문</h2>
-                            <p class="section-subtitle">청주 사설구급차 이용 시 자주 묻는 질문들입니다</p>
+    <div class="container">
+        <div class="main-accordion">
+            <div class="main-accordion-header" onclick="toggleMainAccordion(this)">
+                <div class="header-content">
+                    <h2 id="faq-title" class="section-title">자주 묻는 질문</h2>
+                    <p class="section-subtitle">청주 사설구급차 이용 시 자주 묻는 질문들입니다</p>
+                </div>
+                <span class="main-toggle-btn" aria-label="펼치기">+</span>
+            </div>
+            
+            <div class="main-accordion-content">
+                <!-- FAQPage는 한 번만 선언 -->
+                <div class="faq-grid" itemscope itemtype="https://schema.org/FAQPage">
+                    
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" onclick="toggleFaq(this)" itemprop="name">
+                            Q. 청주사설구급차 미리 예약이 가능한가요?
+                        </h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">네, 가능합니다. 계획된 이송의 경우 미리 예약을 받고 있으며, 응급상황에서는 즉시 출동합니다. 예약 시에는 이송 날짜, 시간, 출발지, 목적지, 환자 상태 등을 알려주시면 됩니다.</p>
                         </div>
-                        <span class="main-toggle-btn" aria-label="펼치기">+</span>
                     </div>
                     
-                    <div class="main-accordion-content">
-                        <div class="faq-grid" itemscope itemtype="https://schema.org/FAQPage">
-                            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                                <h3 class="faq-question" onclick="toggleFaq(this)" itemprop="name">
-                                    Q. 청주사설구급차 미리 예약이 가능한가요?
-                                </h3>
-                                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                                    <p itemprop="text">네, 가능합니다. 계획된 이송의 경우 미리 예약을 받고 있으며, 응급상황에서는 즉시 출동합니다. 예약 시에는 이송 날짜, 시간, 출발지, 목적지, 환자 상태 등을 알려주시면 됩니다.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                                <h3 class="faq-question" onclick="toggleFaq(this)" itemprop="name">
-                                    Q. 정신질환자나 알콜중독 환자도 이송 가능한가요?
-                                </h3>
-                                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                                    <p itemprop="text">네, 가능합니다. 정신질환자와 알콜중독 환자 이송을 위한 특별한 훈련을 받은 전문 인력이 상주하고 있으며, 환자의 상태와 안전을 최우선으로 하는 인도적인 이송 서비스를 제공합니다.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                                <h3 class="faq-question" onclick="toggleFaq(this)" itemprop="name">
-                                    Q. 보험 적용이 되나요?
-                                </h3>
-                                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                                    <p itemprop="text">청주사설구급차 이용료는 일반적으로 건강보험 적용이 되지 않습니다. 다만, 실비보험이나 상해보험에 따라 보상이 가능한 경우가 있으니 해당 보험사에 문의하시기 바랍니다. 청주사설구급차 정확한 요금은 사전에 투명하게 안내해드립니다.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                                <h3 class="faq-question" onclick="toggleFaq(this)" itemprop="name">
-                                    Q. 청주에서 서울까지 이송이 가능한가요?
-                                </h3>
-                                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                                    <p itemprop="text">네, 가능합니다. 청주를 기점으로 전국 어디든 장거리 이송 서비스를 제공하고 있습니다. 서울, 대전, 대구, 부산 등 전국 주요 도시로의 환자이송이 가능하며, 거리에 따른 요금은 사전에 정확히 안내해드립니다.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                                <h3 class="faq-question" onclick="toggleFaq(this)" itemprop="name">
-                                    Q. 응급구조사가 항상 동행하나요?
-                                </h3>
-                                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                                    <p itemprop="text">네, 청주사설구급차 직지응급환자이송단은 상황별로 전문 응급구조사가 동행합니다. 1급 응급구조사 자격을 보유한 전문 인력이 이송 중 환자의 상태를 지속적으로 모니터링하고 필요시 응급처치를 실시합니다.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                                <h3 class="faq-question" onclick="toggleFaq(this)" itemprop="name">
-                                    Q. 야간이나 주말에도 이송이 가능한가요?
-                                </h3>
-                                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                                    <p itemprop="text">네, 24시간 365일 언제든지 이송 서비스를 제공합니다. 야간(00시~04시)과 공휴일/주말에는 20%의 할증이 적용되지만, 응급상황에서는 신속한 대응을 최우선으로 하고 있습니다.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                                <h3 class="faq-question" onclick="toggleFaq(this)" itemprop="name">
-                                    Q. 요양병원 이송 시 필요한 준비물이 있나요?
-                                </h3>
-                                <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                                    <p itemprop="text">환자의 의료기록, 보험증, 신분증, 복용 중인 약물 리스트를 준비해주세요. 침상형 구급차 이용 시에는 편안한 의복과 개인 용품을 챙겨주시면 됩니다. 의료장비는 저희가 모두 준비합니다.</p>
-                                </div>
-                            </div>
-
-                            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 class="faq-question" onclick="toggleFaq(this)" itemprop="name">
-        Q. 청주사설구급차와 119 구급차의 차이점은 무엇인가요?
-    </h3>
-    <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <p itemprop="text">119는 응급환자 무료 이송이지만 비응급 시 이용이 제한됩니다. 청주사설구급차는 유료이지만 예약가능, 장거리이송, 병원지정, 보호자동승 등이 자유롭고 대기시간이 짧습니다. 청주사설구급차는 개인 맞춤형 서비스를 제공합니다.</p>
-    </div>
-</div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" onclick="toggleFaq(this)" itemprop="name">
+                            Q. 정신질환자나 알콜중독 환자도 이송 가능한가요?
+                        </h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">네, 가능합니다. 정신질환자와 알콜중독 환자 이송을 위한 특별한 훈련을 받은 전문 인력이 상주하고 있으며, 환자의 상태와 안전을 최우선으로 하는 인도적인 이송 서비스를 제공합니다.</p>
                         </div>
                     </div>
+                    
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" onclick="toggleFaq(this)" itemprop="name">
+                            Q. 보험 적용이 되나요?
+                        </h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">청주사설구급차 이용료는 일반적으로 건강보험 적용이 되지 않습니다. 다만, 실비보험이나 상해보험에 따라 보상이 가능한 경우가 있으니 해당 보험사에 문의하시기 바랍니다. 청주사설구급차 정확한 요금은 사전에 투명하게 안내해드립니다.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" onclick="toggleFaq(this)" itemprop="name">
+                            Q. 청주에서 서울까지 이송이 가능한가요?
+                        </h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">네, 가능합니다. 청주를 기점으로 전국 어디든 장거리 이송 서비스를 제공하고 있습니다. 서울, 대전, 대구, 부산 등 전국 주요 도시로의 환자이송이 가능하며, 거리에 따른 요금은 사전에 정확히 안내해드립니다.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" onclick="toggleFaq(this)" itemprop="name">
+                            Q. 응급구조사가 항상 동행하나요?
+                        </h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">네, 청주사설구급차 직지응급환자이송단은 상황별로 전문 응급구조사가 동행합니다. 1급 응급구조사 자격을 보유한 전문 인력이 이송 중 환자의 상태를 지속적으로 모니터링하고 필요시 응급처치를 실시합니다.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" onclick="toggleFaq(this)" itemprop="name">
+                            Q. 야간이나 주말에도 이송이 가능한가요?
+                        </h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">네, 24시간 365일 언제든지 이송 서비스를 제공합니다. 야간(00시~04시)과 공휴일/주말에는 20%의 할증이 적용되지만, 응급상황에서는 신속한 대응을 최우선으로 하고 있습니다.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" onclick="toggleFaq(this)" itemprop="name">
+                            Q. 요양병원 이송 시 필요한 준비물이 있나요?
+                        </h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">환자의 의료기록, 보험증, 신분증, 복용 중인 약물 리스트를 준비해주세요. 침상형 구급차 이용 시에는 편안한 의복과 개인 용품을 챙겨주시면 됩니다. 의료장비는 저희가 모두 준비합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" onclick="toggleFaq(this)" itemprop="name">
+                            Q. 청주사설구급차와 119 구급차의 차이점은 무엇인가요?
+                        </h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">119는 응급환자 무료 이송이지만 비응급 시 이용이 제한됩니다. 청주사설구급차는 유료이지만 예약가능, 장거리이송, 병원지정, 보호자동승 등이 자유롭고 대기시간이 짧습니다. 청주사설구급차는 개인 맞춤형 서비스를 제공합니다.</p>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
         <section id="services" class="services" aria-labelledby="services-title">
             <div class="container">
