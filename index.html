@@ -112,132 +112,133 @@
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     
     <!-- Enhanced Structured Data - Organization -->
-    <script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": "https://lds77.github.io/#organization",
+  "name": "청주사설구급차 직지응급환자이송단",
+  "alternateName": ["청주사설구급차", "충북사설구급차", "청주구급차", "직지구급차", "청주사설응급차"],
+  "description": "충청북도 전문 24시간 사설구급차 서비스. 응급환자이송, 요양병원이송, 정신병원입원 전문",
+  "url": "https://lds77.github.io/",
+  "telephone": "+82-10-8841-4114",
+  "email": "contact@jikjiambulance.kr",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "충청북도",
+    "addressLocality": "청주시",
+    "addressCountry": "KR",
+    "postalCode": "28394"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 36.6424341,
+    "longitude": 127.4890319
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "priceRange": "₩₩",
+  "currenciesAccepted": "KRW",
+  "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
+  "areaServed": {
+    "@type": "State",
+    "name": "충청북도",
+    "containsPlace": [
+      {"@type": "City", "name": "청주시"},
+      {"@type": "City", "name": "충주시"},
+      {"@type": "City", "name": "제천시"},
+      {"@type": "City", "name": "음성군"},
+      {"@type": "City", "name": "진천군"},
+      {"@type": "City", "name": "괴산군"},
+      {"@type": "City", "name": "증평군"},
+      {"@type": "City", "name": "보은군"},
+      {"@type": "City", "name": "옥천군"},
+      {"@type": "City", "name": "영동군"},
+      {"@type": "City", "name": "단양군"}
+    ]
+  },
+  "medicalSpecialty": ["Emergency Medicine", "Patient Transport", "Mental Health Transport"],
+  "availableService": [
     {
-      "@context": "https://schema.org",
-      "@type": "MedicalBusiness",
-      "@id": "https://lds77.github.io/#organization",
-      "name": "청주사설구급차 직지응급환자이송단",
-"alternateName": ["청주사설구급차", "충북사설구급차", "청주구급차", "직지구급차", "청주사설응급차"],
-      "description": "충청북도 전문 24시간 사설구급차 서비스. 응급환자이송, 요양병원이송, 정신병원입원 전문",
-      "url": "https://lds77.github.io/",
-      "telephone": "+82-10-8841-4114",
-      "email": "contact@jikjiambulance.kr",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://lds77.github.io/logo.jpg",
-        "width": "512",
-        "height": "512"
-      },
-      "image": "https://lds77.github.io/og-image.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "충청북도",
-        "addressLocality": "청주시",
-        "addressCountry": "KR",
-        "postalCode": "28394"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "36.6424341",
-        "longitude": "127.4890319"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens": "00:00",
-        "closes": "23:59"
-      },
-      "priceRange": "₩₩",
-      "currenciesAccepted": "KRW",
-      "paymentAccepted": ["Cash", "Credit Card", "Bank Transfer"],
-      "areaServed": [
-        {
-          "@type": "State",
-          "name": "충청북도",
-          "containsPlace": [
-            {"@type": "City", "name": "청주시"},
-            {"@type": "City", "name": "충주시"},
-            {"@type": "City", "name": "제천시"},
-            {"@type": "City", "name": "음성군"},
-            {"@type": "City", "name": "진천군"},
-            {"@type": "City", "name": "괴산군"},
-            {"@type": "City", "name": "증평군"},
-            {"@type": "City", "name": "보은군"},
-            {"@type": "City", "name": "옥천군"},
-            {"@type": "City", "name": "영동군"},
-            {"@type": "City", "name": "단양군"}
-          ]
-        }
-      ],
-      "medicalSpecialty": ["Emergency Medicine", "Patient Transport", "Mental Health Transport"],
-      "availableService": {
-        "@type": "MedicalProcedure",
-        "name": ["응급환자이송", "요양병원이송", "정신병원입원이송", "알콜중독치료이송", "행사의료지원", "장거리환자이송"]
-      },
-      "hasCredential": {
-        "@type": "EducationalOccupationalCredential",
-        "credentialCategory": "응급환자이송업 신고필",
-        "recognizedBy": {
-          "@type": "Organization",
-          "name": "보건복지부"
-        }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "287",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "김○○"
-          },
-          "reviewBody": "어머니 요양병원 이송 때 정말 친절하고 안전하게 모셔주셨습니다.",
-          "datePublished": "2025-01-15"
-        }
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+82-10-8841-4114",
-        "contactType": "customer service",
-        "availableLanguage": "Korean",
-        "areaServed": "충청북도",
-        "hoursAvailable": "Mo-Su 00:00-23:59"
-      },
-      "sameAs": [
-        "https://blog.naver.com/ldszuno",
-        "https://www.instagram.com/jikjiambulance",
-        "https://www.facebook.com/jikjiambulance"
-      ],
-      "founder": {
-        "@type": "Person",
-        "name": "손기범",
-        "jobTitle": "대표",
-        "hasCredential": {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "1급 응급구조사"
-        }
-      },
-      "employee": {
-        "@type": "Person",
-        "name": "강경성",
-        "jobTitle": "담당자",
-        "hasCredential": {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "응급구조사"
-        }
-      }
+      "@type": "MedicalProcedure",
+      "name": "응급환자이송"
+    },
+    {
+      "@type": "MedicalProcedure", 
+      "name": "요양병원이송"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "정신병원입원이송"
     }
-    </script>
+  ],
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "응급환자이송업 신고필",
+    "recognizedBy": {
+      "@type": "Organization",
+      "name": "보건복지부"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 4.9,
+    "reviewCount": 287,
+    "bestRating": 5,
+    "worstRating": 1
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5
+      },
+      "author": {
+        "@type": "Person",
+        "name": "김○○"
+      },
+      "reviewBody": "어머니 요양병원 이송 때 정말 친절하고 안전하게 모셔주셨습니다.",
+      "datePublished": "2025-01-15"
+    }
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+82-10-8841-4114",
+    "contactType": "customer service",
+    "availableLanguage": "Korean",
+    "areaServed": "충청북도",
+    "hoursAvailable": "Mo-Su 00:00-23:59"
+  },
+  "sameAs": [
+    "https://blog.naver.com/ldszuno",
+    "https://www.instagram.com/jikjiambulance",
+    "https://www.facebook.com/jikjiambulance"
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "손기범",
+    "jobTitle": "대표",
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "1급 응급구조사"
+    }
+  },
+  "employee": {
+    "@type": "Person",
+    "name": "강경성",
+    "jobTitle": "담당자",
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "응급구조사"
+    }
+  }
+}
+</script>
 
     <!-- BreadcrumbList Schema (NEW) -->
     <script type="application/ld+json">
@@ -267,78 +268,51 @@
     }
     </script>
 
-    <!-- Service Schema (NEW) -->
-    <script type="application/ld+json">
+    <!-- Service Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "청주사설구급차 응급환자이송 서비스",
+  "serviceType": "Medical Patient Transport",
+  "description": "24시간 전문 응급환자이송 및 요양병원 이송 서비스",
+  "provider": {
+    "@id": "https://lds77.github.io/#organization"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "충청북도"
+  },
+  "offers": [
     {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "청주사설구급차 응급환자이송 서비스",
-      "provider": {
-        "@type": "MedicalBusiness",
-        "name": "직지응급환자이송단"
-      },
-      "areaServed": {
-        "@type": "State",
-        "name": "충청북도"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "환자이송 서비스",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "기본 환자이송 (10km 이내)",
-              "description": "응급구조사 동행 기본 이송 서비스"
-            },
-            "price": "75000",
-            "priceCurrency": "KRW"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "장거리 환자이송",
-              "description": "10km 초과 시 km당 추가요금"
-            },
-            "price": "1300",
-            "priceCurrency": "KRW",
-            "unitCode": "KMT"
-          }
-        ]
-      }
-    }
-    </script>
-
-    <!-- WebSite Schema for Sitelinks Searchbox -->
-    <script type="application/ld+json">
+      "@type": "Offer",
+      "name": "기본 환자이송 (10km 이내)",
+      "description": "응급구조사 동행 기본 이송 서비스",
+      "price": "75000",
+      "priceCurrency": "KRW",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2025-01-01"
+    },
     {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "url": "https://lds77.github.io/",
-      "name": "청주사설구급차 직지응급환자이송단",
-"description": "청주사설구급차 전문업체. 충북 24시간 응급환자이송 서비스",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://lds77.github.io/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "@type": "Offer", 
+      "name": "장거리 환자이송 추가요금",
+      "description": "10km 초과 시 km당 추가요금",
+      "price": "1300",
+      "priceCurrency": "KRW",
+      "unitCode": "KMT",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2025-01-01"
     }
-    </script>
-
-    <!-- SpeakableSpecification for Voice Search (NEW) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "직지응급환자이송단 홈페이지",
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [".hero h2", ".phone-number", ".faq-answer"]
-      }
-    }
-    </script>
+  ],
+  "category": ["Emergency Medical Services", "Patient Transport", "Healthcare"],
+  "hoursAvailable": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
+}
+</script>
 
     <style>
         /* Logo Styles */
