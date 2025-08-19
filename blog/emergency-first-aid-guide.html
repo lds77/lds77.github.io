@@ -151,13 +151,101 @@
     }
     </script>
     
-    <!-- 5. 심폐소생술 방법 가이드 -->
+    <!-- 5. 지역업체 정보 (이미지 포함) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "청주사설구급차 직지응급환자이송단",
+      "alternateName": "직지응급환자이송단",
+      "description": "청주 지역 24시간 전문 응급환자이송 서비스",
+      "image": [
+        "https://lds77.github.io/직지응급환자이송단_129.jpg",
+        "https://lds77.github.io/응급환자이송-129.png"
+      ],
+      "logo": "https://lds77.github.io/직지응급환자이송단_129.jpg",
+      "url": "https://lds77.github.io/",
+      "telephone": "010-8841-4114",
+      "priceRange": "$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "청주시",
+        "addressRegion": "충청북도",
+        "addressCountry": "KR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.6424341,
+        "longitude": 127.4890319
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "청주시"
+        },
+        {
+          "@type": "State", 
+          "name": "충청북도"
+        }
+      ],
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 36.6424341,
+          "longitude": 127.4890319
+        },
+        "geoRadius": "50000"
+      },
+      "openingHours": "Mo-Su 00:00-23:59",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday", "Tuesday", "Wednesday", "Thursday", 
+            "Friday", "Saturday", "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "응급환자이송 서비스",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "24시간 응급환자이송",
+              "description": "전문 의료진 동반 응급환자 이송 서비스"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "요양병원 환자이송",
+              "description": "요양병원 전문 환자 이송 서비스"
+            }
+          }
+        ]
+      },
+      "@id": "https://lds77.github.io/#localbusiness"
+    }
+    </script>
+    
+    <!-- 6. 심폐소생술 방법 가이드 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "HowTo",
       "name": "심폐소생술(CPR) 방법",
       "description": "생명을 구하는 심폐소생술의 정확한 단계별 실행 방법",
+      "image": [
+        "https://lds77.github.io/직지응급환자이송단_129.jpg",
+        "https://lds77.github.io/응급환자이송-129.png"
+      ],
       "totalTime": "PT10M",
       "step": [
         {
@@ -167,7 +255,7 @@
         },
         {
           "@type": "HowToStep",
-          "name": "119 신고",
+          "name": "119 신고", 
           "text": "반응이 없다면 주변에 특정인을 지목해 119 신고를 요청한다."
         },
         {
@@ -1054,8 +1142,9 @@
 
         // SEO 최적화 완료 로그
         console.log('✅ 청주 응급처치 가이드 - 최적화된 SEO 완료');
-        console.log('📊 JSON-LD 스키마: 5개 (최적화)');
-        console.log('🎯 예상 유효 항목: 10-15개 (적정 수준)');
+        console.log('📊 JSON-LD 스키마: 6개 (LocalBusiness 이미지 추가)');
+        console.log('🎯 예상 유효 항목: 12-18개 (적정 수준)');
+        console.log('🖼️ LocalBusiness 이미지 추가로 리치 결과 완성!');
     </script>
 </body>
 </html>
