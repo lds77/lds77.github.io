@@ -39,32 +39,42 @@
     
     <!-- 1. 조직 정보 -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MedicalOrganization",
-      "@id": "https://lds77.github.io/#organization",
-      "name": "청주사설구급차 직지응급환자이송단",
-      "alternateName": "직지응급환자이송단",
-      "description": "충청북도 전문 응급환자이송 서비스 제공업체",
-      "url": "https://lds77.github.io/",
-      "logo": "https://lds77.github.io/직지응급환자이송단_129.jpg",
-      "telephone": "010-8841-4114",
-      "areaServed": {
-        "@type": "State",
-        "name": "충청북도"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "청주시",
-        "addressRegion": "충청북도",
-        "addressCountry": "KR"
-      },
-      "medicalSpecialty": [
-        "Emergency Medical Services",
-        "Patient Transport Services"
-      ]
-    }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "@id": "https://lds77.github.io/#organization",
+  "name": "청주사설구급차 직지응급환자이송단",
+  "alternateName": "직지응급환자이송단",
+  "description": "충청북도 전문 응급환자이송 서비스 제공업체",
+  "url": "https://lds77.github.io/",
+  "image": [
+    "https://lds77.github.io/직지응급환자이송단_129.jpg",
+    "https://lds77.github.io/응급환자이송-129.jpg",
+    "https://lds77.github.io/og-image.jpg"
+  ],
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://lds77.github.io/직지응급환자이송단_129.jpg",
+    "width": 129,
+    "height": 129
+  },
+  "telephone": "010-8841-4114",
+  "areaServed": {
+    "@type": "State",
+    "name": "충청북도"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "청주시",
+    "addressRegion": "충청북도",
+    "addressCountry": "KR"
+  },
+  "medicalSpecialty": [
+    "Emergency Medical Services",
+    "Patient Transport Services"
+  ]
+}
+</script>
     
     <!-- 2. 웹페이지 정보 -->
     <script type="application/ld+json">
@@ -118,9 +128,10 @@
       "headline": "겨울철 낙상사고 예방 완전 가이드",
       "description": "청주 지역 겨울철 빙판길 안전을 위한 전문 가이드. 낙상 예방법부터 응급처치까지 완벽 안내.",
       "image": [
-        "https://lds77.github.io/직지응급환자이송단_129.jpg",
-        "https://lds77.github.io/응급환자이송-129.png"
-      ],
+  "https://lds77.github.io/직지응급환자이송단_129.jpg",
+  "https://lds77.github.io/응급환자이송-129.jpg",
+  "https://lds77.github.io/og-image.jpg"
+],
       "author": {
         "@id": "https://lds77.github.io/#organization"
       },
@@ -154,58 +165,64 @@
     
     <!-- 5. LocalBusiness 정보 (이미지 포함) -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "청주사설구급차 직지응급환자이송단",
+  "alternateName": "직지응급환자이송단",
+  "description": "충청북도 24시간 전문 응급환자이송 서비스",
+  "image": [
+    "https://lds77.github.io/직지응급환자이송단_129.jpg",
+    "https://lds77.github.io/응급환자이송-129.jpg",
+    "https://lds77.github.io/og-image.jpg"
+  ],
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://lds77.github.io/직지응급환자이송단_129.jpg",
+    "width": 129,
+    "height": 129
+  },
+  "url": "https://lds77.github.io/",
+  "telephone": "010-8841-4114",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "청주시",
+    "addressRegion": "충청북도",
+    "addressCountry": "KR"
+  },
+  "areaServed": [
     {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "청주사설구급차 직지응급환자이송단",
-      "alternateName": "직지응급환자이송단",
-      "description": "충청북도 24시간 전문 응급환자이송 서비스",
-      "image": [
-        "https://lds77.github.io/직지응급환자이송단_129.jpg",
-        "https://lds77.github.io/응급환자이송-129.png"
-      ],
-      "logo": "https://lds77.github.io/직지응급환자이송단_129.jpg",
-      "url": "https://lds77.github.io/",
-      "telephone": "010-8841-4114",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "청주시",
-        "addressRegion": "충청북도",
-        "addressCountry": "KR"
-      },
-      "areaServed": [
-        {
-          "@type": "State",
-          "name": "충청북도"
-        }
-      ],
-      "openingHours": "Mo-Su 00:00-23:59",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "겨울철 응급이송 서비스",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "24시간 응급상담",
-              "description": "겨울철 낙상사고 응급상담 서비스"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "응급환자이송",
-              "description": "빙판길 낙상사고 환자 전문 이송"
-            }
-          }
-        ]
-      },
-      "@id": "https://lds77.github.io/#localbusiness"
+      "@type": "State",
+      "name": "충청북도"
     }
-    </script>
+  ],
+  "openingHours": "Mo-Su 00:00-23:59",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "겨울철 응급이송 서비스",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "24시간 응급상담",
+          "description": "겨울철 낙상사고 응급상담 서비스"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "응급환자이송",
+          "description": "빙판길 낙상사고 환자 전문 이송"
+        }
+      }
+    ]
+  },
+  "@id": "https://lds77.github.io/#localbusiness"
+}
+</script>
     
     <!-- 6. FAQ 정보 -->
     <script type="application/ld+json">
