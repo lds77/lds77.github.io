@@ -2,7 +2,7 @@
 const firebaseConfig = {
     apiKey: "AIzaSyD1RZgCM0DCpm0KMXrSJfO6fC76lEiV-N8",
     authDomain: "family-messenger-63ffc.firebaseapp.com",
-    databaseURL: "https://family-messenger-63ffc-default-rtdb.firebaseio.com/",
+    databaseURL: "https://family-messenger-63ffc-default-rtdb.firebaseio.com",
     projectId: "family-messenger-63ffc",
     storageBucket: "family-messenger-63ffc.firebasestorage.app",
     messagingSenderId: "218378501344",
