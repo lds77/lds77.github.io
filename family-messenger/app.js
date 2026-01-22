@@ -1,12 +1,12 @@
-// Firebase 설정 (사용자가 직접 입력해야 함)
+// Firebase 설정
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    databaseURL: "YOUR_DATABASE_URL",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyD1RZgCM0DCpm0KMXrSJfO6fC76lEiV-N8",
+    authDomain: "family-messenger-63ffc.firebaseapp.com",
+    databaseURL: "https://family-messenger-63ffc-default-rtdb.firebaseio.com/",
+    projectId: "family-messenger-63ffc",
+    storageBucket: "family-messenger-63ffc.firebasestorage.app",
+    messagingSenderId: "218378501344",
+    appId: "1:218378501344:web:945f84362e19a052aba485"
 };
 
 // Firebase 초기화
@@ -20,10 +20,17 @@ let audioChunks = [];
 try {
     app = firebase.initializeApp(firebaseConfig);
     database = firebase.database();
-    storage = firebase.storage();
     auth = firebase.auth();
+
+    // Storage는 선택사항 (나중에 활성화 가능)
+    try {
+        storage = firebase.storage();
+    } catch (storageError) {
+        console.log('Storage는 현재 비활성화되어 있습니다. 사진첩과 음성 메시지 기능은 사용할 수 없습니다.');
+        storage = null;
+    }
 } catch (error) {
-    console.log('Firebase 설정이 필요합니다. README.md를 참고하세요.');
+    console.log('Firebase 초기화 실패:', error);
 }
 
 // DOM 요소
@@ -278,6 +285,11 @@ function stopRecording() {
 async function uploadVoiceMessage(audioBlob) {
     if (!currentFamilyCode || !currentUser) return;
 
+    if (!storage) {
+        alert('음성 메시지 기능은 현재 사용할 수 없습니다.\nFirebase Storage 설정이 필요합니다.');
+        return;
+    }
+
     try {
         const timestamp = Date.now();
         const fileName = `voice_${timestamp}.webm`;
@@ -324,6 +336,11 @@ photoUpload.addEventListener('change', async (e) => {
 });
 
 async function uploadPhoto(file) {
+    if (!storage) {
+        alert('사진 업로드 기능은 현재 사용할 수 없습니다.\nFirebase Storage 설정이 필요합니다.');
+        return;
+    }
+
     try {
         const timestamp = Date.now();
         const fileName = `photo_${timestamp}_${file.name}`;
