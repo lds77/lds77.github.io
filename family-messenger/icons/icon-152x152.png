@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+    <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <!-- Background Circle -->
+    <circle cx="256" cy="256" r="240" fill="url(#gradient)"/>
+
+    <!-- Chat Bubble -->
+    <path d="M150 200 Q256 150 362 200 L362 320 Q256 370 150 320 Z" fill="white" opacity="0.95"/>
+
+    <!-- Eyes -->
+    <circle cx="210" cy="240" r="16" fill="#6366f1"/>
+    <circle cx="302" cy="240" r="16" fill="#6366f1"/>
+
+    <!-- Smile -->
+    <path d="M200 280 Q256 310 312 280" stroke="#6366f1" stroke-width="12" fill="none" stroke-linecap="round"/>
+
+    <!-- Heart (Family Love) -->
+    <path d="M256 360 L236 340 Q220 324 220 305 Q220 285 236 275 Q246 270 256 280 Q266 270 276 275 Q292 285 292 305 Q292 324 276 340 Z" fill="#ec4899" opacity="0.9"/>
+</svg>
