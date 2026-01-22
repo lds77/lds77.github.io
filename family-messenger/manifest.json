@@ -2,7 +2,8 @@
   "name": "가족 메신저",
   "short_name": "가족메신저",
   "description": "우리 가족만의 안전한 메신저",
-  "start_url": "./index.html",
+  "start_url": "/family-messenger/",
+  "scope": "/family-messenger/",
   "display": "standalone",
   "background_color": "#6366f1",
   "theme_color": "#6366f1",
@@ -60,12 +61,5 @@
   "categories": [
     "social",
     "lifestyle"
-  ],
-  "screenshots": [
-    {
-      "src": "screenshots/screenshot1.png",
-      "sizes": "540x720",
-      "type": "image/png"
-    }
   ]
 }

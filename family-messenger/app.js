@@ -102,6 +102,11 @@ loginBtn.addEventListener('click', async () => {
         loginScreen.classList.remove('active');
         appScreen.classList.add('active');
 
+        // 알림 권한 요청
+        if ('Notification' in window && Notification.permission === 'default') {
+            Notification.requestPermission();
+        }
+
         // 데이터 로드
         loadMessages();
         loadPhotos();
@@ -141,6 +146,12 @@ window.addEventListener('load', async () => {
             currentFamilyCode = savedFamilyCode;
             loginScreen.classList.remove('active');
             appScreen.classList.add('active');
+
+            // 알림 권한 요청
+            if ('Notification' in window && Notification.permission === 'default') {
+                Notification.requestPermission();
+            }
+
             loadMessages();
             loadPhotos();
             loadLocations();
@@ -200,16 +211,66 @@ function sendMessage() {
     messageInput.value = '';
 }
 
+let isInitialLoad = true;
+let lastMessageTime = Date.now();
+
 function loadMessages() {
     if (!currentFamilyCode) return;
 
     const messagesRef = database.ref(`families/${currentFamilyCode}/messages`).limitToLast(50);
 
+    messagesRef.once('value', () => {
+        // 초기 로드 완료
+        isInitialLoad = false;
+        lastMessageTime = Date.now();
+    });
+
     messagesRef.on('child_added', (snapshot) => {
         const message = snapshot.val();
         displayMessage(message);
+
+        // 초기 로드가 아니고, 다른 사람의 메시지이면 알림 표시
+        if (!isInitialLoad && message.senderId !== currentUser.id && message.timestamp > lastMessageTime) {
+            showNotification(message);
+        }
     });
 }
+
+function showNotification(message) {
+    // 브라우저 알림 권한 요청
+    if ('Notification' in window && Notification.permission === 'granted') {
+        new Notification(`${message.sender}님의 메시지`, {
+            body: message.type === 'text' ? message.text : '음성 메시지',
+            icon: 'icons/icon-192x192.png',
+            badge: 'icons/icon-72x72.png',
+            tag: 'family-messenger',
+            requireInteraction: false
+        });
+    } else if ('Notification' in window && Notification.permission !== 'denied') {
+        // 권한 요청
+        Notification.requestPermission().then(permission => {
+            if (permission === 'granted') {
+                new Notification(`${message.sender}님의 메시지`, {
+                    body: message.type === 'text' ? message.text : '음성 메시지',
+                    icon: 'icons/icon-192x192.png'
+                });
+            }
+        });
+    }
+
+    // 화면 내 알림도 표시 (선택사항)
+    if (document.hidden) {
+        // 화면이 보이지 않을 때만
+        document.title = `💬 새 메시지 - 가족 메신저`;
+    }
+}
+
+// 화면이 다시 보이면 제목 복원
+document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) {
+        document.title = '가족 메신저';
+    }
+});
 
 function displayMessage(message) {
     const messageDiv = document.createElement('div');
@@ -482,8 +543,13 @@ function showScheduleModal() {
                 <input type="text" id="schedule-title" required>
             </div>
             <div class="form-group">
-                <label>날짜</label>
-                <input type="date" id="schedule-date" required>
+                <label>시작일</label>
+                <input type="date" id="schedule-start-date" required>
+            </div>
+            <div class="form-group">
+                <label>종료일 (선택사항)</label>
+                <input type="date" id="schedule-end-date">
+                <small style="color: #64748b; font-size: 12px;">비워두면 하루 일정으로 등록됩니다</small>
             </div>
             <div class="form-group">
                 <label>시간</label>
@@ -507,18 +573,20 @@ function showScheduleModal() {
 
 async function addSchedule() {
     const title = document.getElementById('schedule-title').value.trim();
-    const date = document.getElementById('schedule-date').value;
+    const startDate = document.getElementById('schedule-start-date').value;
+    const endDate = document.getElementById('schedule-end-date').value;
     const time = document.getElementById('schedule-time').value;
     const description = document.getElementById('schedule-description').value.trim();
 
-    if (!title || !date) {
-        alert('제목과 날짜는 필수입니다.');
+    if (!title || !startDate) {
+        alert('제목과 시작일은 필수입니다.');
         return;
     }
 
     const scheduleData = {
         title,
-        date,
+        startDate,
+        endDate: endDate || startDate, // 종료일이 없으면 시작일과 같게
         time,
         description,
         creator: currentUser.name,
@@ -539,18 +607,24 @@ async function addSchedule() {
 function loadSchedules() {
     if (!currentFamilyCode) return;
 
-    const schedulesRef = database.ref(`families/${currentFamilyCode}/schedules`).orderByChild('date');
+    const schedulesRef = database.ref(`families/${currentFamilyCode}/schedules`);
 
     schedulesRef.on('value', (snapshot) => {
         scheduleList.innerHTML = '';
         const schedules = [];
 
         snapshot.forEach((childSnapshot) => {
-            schedules.push(childSnapshot.val());
+            const schedule = childSnapshot.val();
+            // 구버전 호환성 (date가 있으면 startDate로 변환)
+            if (schedule.date && !schedule.startDate) {
+                schedule.startDate = schedule.date;
+                schedule.endDate = schedule.date;
+            }
+            schedules.push(schedule);
         });
 
         // 날짜순 정렬
-        schedules.sort((a, b) => new Date(a.date) - new Date(b.date));
+        schedules.sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
 
         schedules.forEach(schedule => displaySchedule(schedule));
 
@@ -563,15 +637,30 @@ function displaySchedule(schedule) {
     const scheduleDiv = document.createElement('div');
     scheduleDiv.className = 'schedule-item';
 
-    const date = new Date(schedule.date).toLocaleDateString('ko-KR', {
+    const startDate = new Date(schedule.startDate).toLocaleDateString('ko-KR', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
     });
 
+    let dateDisplay = startDate;
+
+    // 종료일이 있고 시작일과 다르면 기간 표시
+    if (schedule.endDate && schedule.endDate !== schedule.startDate) {
+        const endDate = new Date(schedule.endDate).toLocaleDateString('ko-KR', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        dateDisplay = `${startDate} ~ ${endDate}`;
+    }
+
     scheduleDiv.innerHTML = `
-        <div class="schedule-date">${date} ${schedule.time || ''}</div>
+        <div class="schedule-date">${dateDisplay} ${schedule.time || ''}</div>
         <div class="schedule-title">${escapeHtml(schedule.title)}</div>
+        <div class="schedule-creator" style="font-size: 13px; color: #64748b; margin-top: 4px;">
+            <span>📝 ${escapeHtml(schedule.creator || '익명')}</span>
+        </div>
         ${schedule.description ? `<div class="schedule-description">${escapeHtml(schedule.description)}</div>` : ''}
     `;
 
@@ -613,7 +702,15 @@ function renderCalendar(schedules) {
     // 날짜 추가
     for (let day = 1; day <= daysInMonth; day++) {
         const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-        const hasEvent = schedules.some(s => s.date === dateStr);
+        const currentDate = new Date(dateStr);
+
+        // 기간 일정도 고려하여 체크
+        const hasEvent = schedules.some(s => {
+            const startDate = new Date(s.startDate);
+            const endDate = new Date(s.endDate);
+            return currentDate >= startDate && currentDate <= endDate;
+        });
+
         const isToday = day === now.getDate() && month === now.getMonth() && year === now.getFullYear();
 
         calendarHTML += `
