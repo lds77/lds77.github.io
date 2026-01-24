@@ -209,6 +209,7 @@ body {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     position: relative;
+    padding-bottom: 80px; /* 하단 네비게이션 공간 확보 */
 }
 
 .tab-content {
@@ -228,6 +229,7 @@ body {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding: 20px;
+    padding-bottom: 80px; /* 채팅 입력 영역 공간 확보 */
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -326,12 +328,17 @@ body {
 }
 
 .chat-input-area {
+    position: fixed;
+    bottom: 80px; /* 하단 네비게이션 위 */
+    left: 0;
+    right: 0;
     display: flex;
     gap: 8px;
     padding: 12px 16px;
     background: var(--surface);
     border-top: 1px solid var(--border-color);
     align-items: center;
+    z-index: 99;
 }
 
 #message-input {
@@ -353,12 +360,17 @@ body {
 }
 
 .voice-recording-indicator {
+    position: fixed;
+    bottom: 80px; /* 하단 네비게이션 위 */
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
     gap: 12px;
     padding: 16px;
     background: #fee2e2;
     border-top: 1px solid #fecaca;
+    z-index: 99;
 }
 
 .voice-recording-indicator.hidden {
@@ -643,6 +655,10 @@ body {
 
 /* 하단 네비게이션 */
 .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     background: var(--surface);
     border-top: 1px solid var(--border-color);
