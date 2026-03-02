@@ -1286,7 +1286,7 @@
         // 성능 최적화: 지연 로딩
         document.addEventListener('DOMContentLoaded', function() {
             // 이미지 지연 로딩
-            const images = document.querySelectorAll('img[loading="lazy"]');
+            const images = document.querySelectorAll('img[loading="lazy"][data-src]');
             if ('IntersectionObserver' in window) {
                 const imageObserver = new IntersectionObserver((entries, observer) => {
                     entries.forEach(entry => {
