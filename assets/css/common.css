@@ -1,0 +1,17 @@
+/* 공통 로고 스타일 - 직지응급환자이송단 */
+.logo {
+    text-align: center;
+}
+.logo img {
+    max-width: 96px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-color: transparent;
+}
+@media (max-width: 600px) {
+    .logo img {
+        max-width: 72px;
+    }
+}

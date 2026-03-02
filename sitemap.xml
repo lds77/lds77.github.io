@@ -7,7 +7,7 @@
     <!-- 메인 페이지 -->
     <url>
         <loc>https://lds77.github.io/</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -15,7 +15,7 @@
     <!-- 충북 지역 병원 통합 정보 페이지 -->
     <url>
         <loc>https://lds77.github.io/chungbuk-medical-institutions-info-summary.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -23,42 +23,42 @@
     <!-- 주요 서비스 페이지들 (우선순위 높음) -->
     <url>
         <loc>https://lds77.github.io/general_patient_transport.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/nursing_home_transport.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/mental_health_transport.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/alcohol_treatment_transport.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/event_medical_support.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/goin_transport_service.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -67,21 +67,21 @@
     <!-- Tier 1: 주요 도시 (높은 우선순위) -->
     <url>
         <loc>https://lds77.github.io/cheongju_hospitals.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/chungju_hospitals.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/jecheon_hospitals.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -89,21 +89,21 @@
     <!-- Tier 2: 중요 지역 (중간 우선순위) -->
     <url>
         <loc>https://lds77.github.io/eumseong_hospitals.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/jincheon_hospitals.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/goesan_hospitals.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.65</priority>
     </url>
@@ -111,35 +111,35 @@
     <!-- Tier 3: 일반 지역 (기본 우선순위) -->
     <url>
         <loc>https://lds77.github.io/okcheon_hospitals.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/yeongdong_hospitals.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/jeungpyeong_hospitals.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/boeun_hospitals.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/danyang_hospitals.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -147,71 +147,78 @@
     <!-- 블로그 메인 페이지 -->
     <url>
         <loc>https://lds77.github.io/blog/index.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <!-- 블로그 포스트들 (최신순 및 중요도순 정렬) -->
     <url>
+        <loc>https://lds77.github.io/blog/alcohol-treatment-transport.html</loc>
+        <lastmod>2026-03-02</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.65</priority>
+    </url>
+
+    <url>
         <loc>https://lds77.github.io/blog/elderly-safety-guide.html</loc>
-        <lastmod>2025-01-15</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/blog/emergency-room-checklist.html</loc>
-        <lastmod>2025-01-13</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.65</priority>
     </url>
-        
+
     <url>
         <loc>https://lds77.github.io/blog/emergency-first-aid-guide.html</loc>
-        <lastmod>2025-01-12</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.65</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/blog/mental-health-transport-guide.html</loc>
-        <lastmod>2025-01-11</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/blog/emergency-vs-private-ambulance.html</loc>
-        <lastmod>2025-01-10</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.65</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/blog/patient-transport-documents.html</loc>
-        <lastmod>2025-01-08</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/blog/cheongju-hospitals-guide.html</loc>
-        <lastmod>2025-01-05</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/blog/nursing-home-transport-process.html</loc>
-        <lastmod>2025-01-03</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
         <loc>https://lds77.github.io/blog/winter-emergency-prevention.html</loc>
-        <lastmod>2025-01-01</lastmod>
+        <lastmod>2026-03-02</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
