@@ -1,3 +1,21 @@
+/* 전체 여백 개선 */
+p {
+    margin-bottom: 0.9rem;
+    line-height: 1.85;
+}
+
+.faq-item {
+    margin-bottom: 0.6rem;
+}
+
+.content-grid,
+.main-content .container,
+.faq-section .container,
+.hospitals-section .container {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
 /* 공통 로고 스타일 - 직지응급환자이송단 */
 .logo {
     text-align: center;
