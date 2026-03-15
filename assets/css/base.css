@@ -1,0 +1,223 @@
+/* =============================================================
+   base.css — 모든 페이지 공통 스타일
+   직지응급환자이송단 | lds77.github.io
+   ============================================================= */
+
+/* ----- Reset ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+/* ----- Font ----- */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-display: swap;
+}
+
+/* ----- Core Web Vitals ----- */
+img {
+    content-visibility: auto;
+    contain-intrinsic-size: 96px 96px;
+    max-width: 100%;
+}
+
+/* ----- Body ----- */
+body {
+    font-family: 'Noto Sans KR', Arial, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: #f8f9fa;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* ----- Container ----- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow-x: hidden;
+}
+
+/* ----- Header ----- */
+header {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.logo img {
+    max-width: 96px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.logo-icon {
+    width: 46px;
+    height: 46px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #e74c3c;
+}
+
+.logo h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.phone-number {
+    font-size: 1.6rem;
+    font-weight: 900;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* ----- Breadcrumb ----- */
+.breadcrumb {
+    background: white;
+    padding: 12px 0;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: #6c757d;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: var(--accent, #e74c3c);
+}
+
+.breadcrumb span {
+    color: var(--accent, #e74c3c);
+    font-weight: 600;
+}
+
+/* ----- 플로팅 블로그 버튼 (네이버) ----- */
+.fixed-blog-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #03C75A, #00B04F);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(3,199,90,0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.fixed-blog-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(3,199,90,0.55);
+    color: white;
+}
+
+/* ----- Pulse 애니메이션 ----- */
+@keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* =============================================================
+   반응형 — 768px
+   ============================================================= */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    header {
+        padding: 0.6rem 0;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+
+    .logo h1 {
+        font-size: 1.25rem;
+    }
+
+    .phone-number {
+        font-size: 1.3rem;
+    }
+
+    .fixed-blog-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 17px;
+        bottom: 15px;
+        left: 15px;
+    }
+}
+
+/* =============================================================
+   반응형 — 480px
+   ============================================================= */
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+        padding-left: 15px;
+    }
+
+    .logo {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .phone-number {
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: left;
+        padding-left: 15px;
+    }
+}
