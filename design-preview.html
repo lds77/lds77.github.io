@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디자인 비교</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Sans KR', Arial, sans-serif; background: #e5e7eb; }
+
+  .page-title {
+    text-align: center;
+    padding: 30px;
+    background: #111827;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .page-title span { color: #60a5fa; }
+
+  .compare-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .col-label {
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .col-label.current { background: #475569; }
+  .col-label.new { background: #0d9488; }
+
+  .col { padding: 24px; display: flex; flex-direction: column; gap: 24px; }
+  .col.current-col { background: #f1f5f9; }
+  .col.new-col { background: #f0fdf9; }
+
+  /* ===== SECTION WRAPPERS ===== */
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    margin-bottom: 8px;
+  }
+
+  /* ===== HEADER ===== */
+  .header-current {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    padding: 16px 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-new {
+    background: #1e293b;
+    padding: 16px 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-logo { display: flex; align-items: center; gap: 12px; }
+  .header-logo-icon-current {
+    width: 44px; height: 44px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+  }
+  .header-logo-icon-new {
+    width: 44px; height: 44px;
+    background: #0d9488;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+  }
+  .header-title { color: white; font-size: 1rem; font-weight: 700; }
+  .header-link-current {
+    color: #FFFF00; font-weight: 700; font-size: 0.9rem;
+  }
+  .header-link-new {
+    background: #0d9488; color: white;
+    padding: 8px 16px; border-radius: 8px;
+    font-size: 0.85rem; font-weight: 600;
+  }
+
+  /* ===== HERO ===== */
+  .hero-current {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    padding: 40px 24px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+  }
+  .hero-new {
+    background: #1e293b;
+    padding: 40px 24px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-new::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: #0d9488;
+    border-radius: 50%;
+    opacity: 0.12;
+  }
+  .hero-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 10px; }
+  .hero-sub { font-size: 0.9rem; opacity: 0.85; margin-bottom: 20px; }
+  .hero-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+  .btn-hero-current-primary {
+    background: rgba(255,255,255,0.2);
+    color: white; border: 2px solid rgba(255,255,255,0.4);
+    padding: 10px 20px; border-radius: 50px;
+    font-size: 0.9rem; font-weight: 600;
+  }
+  .btn-hero-current-secondary {
+    background: transparent;
+    color: white; border: 2px solid white;
+    padding: 10px 20px; border-radius: 50px;
+    font-size: 0.9rem; font-weight: 600;
+  }
+  .btn-hero-new-primary {
+    background: #0d9488;
+    color: white; border: none;
+    padding: 10px 20px; border-radius: 8px;
+    font-size: 0.9rem; font-weight: 700;
+    box-shadow: 0 4px 12px rgba(13,148,136,0.4);
+  }
+  .btn-hero-new-secondary {
+    background: transparent;
+    color: #94d8d4; border: 2px solid #94d8d4;
+    padding: 10px 20px; border-radius: 8px;
+    font-size: 0.9rem; font-weight: 600;
+  }
+
+  /* ===== ACCORDION HEADER ===== */
+  .accordion-current {
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+  .accordion-header-current {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px 28px; color: white;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .accordion-new {
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  .accordion-header-new {
+    background: #1e293b;
+    padding: 20px 28px; color: white;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .accordion-header-new-open {
+    background: #0f172a;
+    border-left: 4px solid #0d9488;
+  }
+  .accordion-title { font-size: 1.1rem; font-weight: 700; }
+  .accordion-sub { font-size: 0.85rem; opacity: 0.8; margin-top: 4px; }
+  .accordion-btn-current {
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1.3rem; font-weight: 700; flex-shrink: 0;
+  }
+  .accordion-btn-new {
+    width: 36px; height: 36px;
+    background: #0d9488;
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1.3rem; font-weight: 700; flex-shrink: 0;
+  }
+
+  /* ===== SERVICE CARDS ===== */
+  .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .card-current {
+    background: #f8f9fa; border: 1px solid #e9ecef;
+    border-radius: 12px; padding: 20px; text-align: center;
+  }
+  .card-icon-current {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px; font-size: 1.4rem;
+  }
+  .card-new {
+    background: white; border: 1px solid #e2e8f0;
+    border-radius: 12px; padding: 20px; text-align: center;
+    transition: all 0.2s;
+  }
+  .card-icon-new {
+    width: 56px; height: 56px;
+    background: #f0fdfa;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px; font-size: 1.4rem;
+    border: 1.5px solid #99f6e4;
+  }
+  .card-title { font-size: 0.95rem; font-weight: 700; color: #1e293b; margin-bottom: 6px; }
+  .card-desc { font-size: 0.8rem; color: #64748b; line-height: 1.5; }
+
+  /* ===== FAQ ===== */
+  .faq-q-current {
+    background: #e74c3c; color: white;
+    padding: 14px 20px; border-radius: 8px;
+    font-size: 0.9rem; font-weight: 600; margin-bottom: 8px;
+  }
+  .faq-q-new {
+    background: #f8fafc; color: #1e293b;
+    padding: 14px 20px; border-radius: 8px;
+    font-size: 0.9rem; font-weight: 600;
+    border-left: 3px solid #0d9488;
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid #0d9488;
+    margin-bottom: 8px;
+  }
+
+  /* ===== COVERAGE ===== */
+  .coverage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .cov-current {
+    background: white; border-radius: 10px;
+    padding: 16px; text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .cov-title-current { color: #e74c3c; font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
+  .cov-new {
+    background: white; border-radius: 10px;
+    padding: 16px; text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-top: 3px solid #0d9488;
+  }
+  .cov-title-new { color: #0d9488; font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
+  .cov-sub { font-size: 0.75rem; color: #94a3b8; }
+
+  /* ===== FLOATING BUTTON ===== */
+  .float-wrap { display: flex; gap: 16px; align-items: center; }
+  .float-current {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; color: white;
+    box-shadow: 0 6px 16px rgba(231,76,60,0.5);
+  }
+  .float-new {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, #0d9488, #0f766e);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; color: white;
+    box-shadow: 0 6px 16px rgba(13,148,136,0.5);
+  }
+  .float-label { font-size: 0.85rem; color: #64748b; }
+
+  /* ===== COLOR PALETTE ===== */
+  .palette { display: flex; gap: 8px; flex-wrap: wrap; }
+  .swatch { width: 48px; height: 48px; border-radius: 10px; position: relative; }
+  .swatch-label {
+    font-size: 0.7rem; color: #64748b;
+    text-align: center; margin-top: 4px; font-family: monospace;
+  }
+  .swatch-wrap { display: flex; flex-direction: column; }
+
+  /* ===== BLOG CARD ===== */
+  .blog-current {
+    background: white; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  }
+  .blog-img-current {
+    height: 80px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+  }
+  .blog-new {
+    background: white; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid #e2e8f0;
+  }
+  .blog-img-new {
+    height: 80px;
+    background: #f0fdfa;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    border-bottom: 1px solid #ccfbf1;
+  }
+  .blog-body { padding: 16px; }
+  .badge-current {
+    background: #e74c3c; color: white;
+    padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+  }
+  .badge-new {
+    background: #ccfbf1; color: #0d9488;
+    padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+  }
+  .blog-title { font-size: 0.9rem; font-weight: 700; color: #1e293b; margin: 8px 0 6px; line-height: 1.4; }
+  .blog-meta-text { font-size: 0.75rem; color: #94a3b8; }
+</style>
+</head>
+<body>
+
+<div class="page-title">디자인 비교 미리보기 — <span>현재</span> vs <span style="color:#34d399">새 디자인 (슬레이트 + 틸)</span></div>
+
+<div style="display:grid; grid-template-columns:1fr 1fr;">
+  <div class="col-label current">현재 디자인</div>
+  <div class="col-label new">새 디자인 (슬레이트 + 틸)</div>
+</div>
+
+<div class="compare-wrap">
+
+  <!-- 현재 컬럼 -->
+  <div class="col current-col">
+
+    <div>
+      <div class="section-label">색상 팔레트</div>
+      <div class="palette">
+        <div class="swatch-wrap"><div class="swatch" style="background:#3498db"></div><div class="swatch-label">#3498db</div></div>
+        <div class="swatch-wrap"><div class="swatch" style="background:#2980b9"></div><div class="swatch-label">#2980b9</div></div>
+        <div class="swatch-wrap"><div class="swatch" style="background:#e74c3c"></div><div class="swatch-label">#e74c3c</div></div>
+        <div class="swatch-wrap"><div class="swatch" style="background:#667eea"></div><div class="swatch-label">#667eea</div></div>
+        <div class="swatch-wrap"><div class="swatch" style="background:#764ba2"></div><div class="swatch-label">#764ba2</div></div>
+        <div class="swatch-wrap"><div class="swatch" style="background:#2c3e50"></div><div class="swatch-label">#2c3e50</div></div>
+      </div>
+      <div style="margin-top:8px; font-size:0.8rem; color:#ef4444; font-weight:600;">⚠ 파란색 + 빨간색 + 보라색 혼재</div>
+    </div>
+
+    <div>
+      <div class="section-label">헤더</div>
+      <div class="header-current">
+        <div class="header-logo">
+          <div class="header-logo-icon-current">🚑</div>
+          <div class="header-title">청주사설구급차 직지응급환자이송단</div>
+        </div>
+        <div class="header-link-current">충북 지역별 병원찾기(클릭)</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">히어로 섹션</div>
+      <div class="hero-current">
+        <div class="hero-title">청주사설구급차 전문업체 | 충북 24시간 응급환자이송</div>
+        <div class="hero-sub">청주를 중심으로 충청북도 전 지역 24시간 안전한 사설구급차 서비스</div>
+        <div class="hero-btns">
+          <div class="btn-hero-current-primary">📞 즉시 통화</div>
+          <div class="btn-hero-current-secondary">서비스 안내</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">섹션 아코디언 헤더</div>
+      <div class="accordion-current">
+        <div class="accordion-header-current">
+          <div>
+            <div class="accordion-title">6가지 상황별 전문 이송 서비스</div>
+            <div class="accordion-sub">청주사설구급차 전문 환자이송 서비스</div>
+          </div>
+          <div class="accordion-btn-current">+</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">서비스 카드</div>
+      <div class="cards-grid">
+        <div class="card-current">
+          <div class="card-icon-current">🏥</div>
+          <div class="card-title">환자이송</div>
+          <div class="card-desc">병원 간 이송, 외래진료 이송</div>
+        </div>
+        <div class="card-current">
+          <div class="card-icon-current">🏚️</div>
+          <div class="card-title">요양병원이송</div>
+          <div class="card-desc">안전한 입퇴원 이송</div>
+        </div>
+        <div class="card-current">
+          <div class="card-icon-current">🧠</div>
+          <div class="card-title">정신병원 입원</div>
+          <div class="card-desc">전문 응급구조사 동행</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">FAQ 질문 항목</div>
+      <div class="faq-q-current">Q. 청주사설구급차 미리 예약이 가능한가요?</div>
+      <div class="faq-q-current">Q. 응급구조사가 항상 동행하나요?</div>
+    </div>
+
+    <div>
+      <div class="section-label">지역별 커버리지 카드</div>
+      <div class="coverage-grid">
+        <div class="cov-current">
+          <div class="cov-title-current">청주사설구급차</div>
+          <div class="cov-sub">상당구, 서원구</div>
+        </div>
+        <div class="cov-current">
+          <div class="cov-title-current">충주사설구급차</div>
+          <div class="cov-sub">시내 전 지역</div>
+        </div>
+        <div class="cov-current">
+          <div class="cov-title-current">제천사설구급차</div>
+          <div class="cov-sub">시내 전 지역</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">블로그 카드</div>
+      <div class="blog-current">
+        <div class="blog-img-current">💊</div>
+        <div class="blog-body">
+          <span class="badge-current">응급의료 가이드</span>
+          <div class="blog-title">응급상황별 기본 응급처치 방법 완벽 가이드</div>
+          <div class="blog-meta-text">2025.01.12 · 조회 1,523</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">플로팅 전화 버튼</div>
+      <div class="float-wrap">
+        <div class="float-current">📞</div>
+        <div class="float-label">빨간 그라데이션<br>(강렬함)</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 새 디자인 컬럼 -->
+  <div class="col new-col">
+
+    <div>
+      <div class="section-label">색상 팔레트</div>
+      <div class="palette">
+        <div class="swatch-wrap"><div class="swatch" style="background:#1e293b"></div><div class="swatch-label">#1e293b</div></div>
+        <div class="swatch-wrap"><div class="swatch" style="background:#334155"></div><div class="swatch-label">#334155</div></div>
+        <div class="swatch-wrap"><div class="swatch" style="background:#0d9488"></div><div class="swatch-label">#0d9488</div></div>
+        <div class="swatch-wrap"><div class="swatch" style="background:#0f766e"></div><div class="swatch-label">#0f766e</div></div>
+        <div class="swatch-wrap"><div class="swatch" style="background:#f0fdfa"></div><div class="swatch-label">#f0fdfa</div></div>
+        <div class="swatch-wrap"><div class="swatch" style="background:#f8fafc; border:1px solid #e2e8f0"></div><div class="swatch-label">#f8fafc</div></div>
+      </div>
+      <div style="margin-top:8px; font-size:0.8rem; color:#0d9488; font-weight:600;">✓ 슬레이트(어두운) + 틸(포인트) 2가지로 통일</div>
+    </div>
+
+    <div>
+      <div class="section-label">헤더</div>
+      <div class="header-new">
+        <div class="header-logo">
+          <div class="header-logo-icon-new">🚑</div>
+          <div class="header-title">청주사설구급차 직지응급환자이송단</div>
+        </div>
+        <div class="header-link-new">충북 병원찾기</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">히어로 섹션</div>
+      <div class="hero-new">
+        <div class="hero-title">청주사설구급차 전문업체 | 충북 24시간 응급환자이송</div>
+        <div class="hero-sub">청주를 중심으로 충청북도 전 지역 24시간 안전한 사설구급차 서비스</div>
+        <div class="hero-btns">
+          <div class="btn-hero-new-primary">📞 즉시 통화</div>
+          <div class="btn-hero-new-secondary">서비스 안내</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">섹션 아코디언 헤더</div>
+      <div class="accordion-new">
+        <div class="accordion-header-new accordion-header-new-open">
+          <div>
+            <div class="accordion-title">6가지 상황별 전문 이송 서비스</div>
+            <div class="accordion-sub">청주사설구급차 전문 환자이송 서비스</div>
+          </div>
+          <div class="accordion-btn-new">+</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">서비스 카드</div>
+      <div class="cards-grid">
+        <div class="card-new">
+          <div class="card-icon-new">🏥</div>
+          <div class="card-title">환자이송</div>
+          <div class="card-desc">병원 간 이송, 외래진료 이송</div>
+        </div>
+        <div class="card-new">
+          <div class="card-icon-new">🏚️</div>
+          <div class="card-title">요양병원이송</div>
+          <div class="card-desc">안전한 입퇴원 이송</div>
+        </div>
+        <div class="card-new">
+          <div class="card-icon-new">🧠</div>
+          <div class="card-title">정신병원 입원</div>
+          <div class="card-desc">전문 응급구조사 동행</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">FAQ 질문 항목</div>
+      <div class="faq-q-new">Q. 청주사설구급차 미리 예약이 가능한가요?</div>
+      <div class="faq-q-new">Q. 응급구조사가 항상 동행하나요?</div>
+    </div>
+
+    <div>
+      <div class="section-label">지역별 커버리지 카드</div>
+      <div class="coverage-grid">
+        <div class="cov-new">
+          <div class="cov-title-new">청주사설구급차</div>
+          <div class="cov-sub">상당구, 서원구</div>
+        </div>
+        <div class="cov-new">
+          <div class="cov-title-new">충주사설구급차</div>
+          <div class="cov-sub">시내 전 지역</div>
+        </div>
+        <div class="cov-new">
+          <div class="cov-title-new">제천사설구급차</div>
+          <div class="cov-sub">시내 전 지역</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">블로그 카드</div>
+      <div class="blog-new">
+        <div class="blog-img-new">💊</div>
+        <div class="blog-body">
+          <span class="badge-new">응급의료 가이드</span>
+          <div class="blog-title">응급상황별 기본 응급처치 방법 완벽 가이드</div>
+          <div class="blog-meta-text">2025.01.12 · 조회 1,523</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">플로팅 전화 버튼</div>
+      <div class="float-wrap">
+        <div class="float-new">📞</div>
+        <div class="float-label">틸 그라데이션<br>(신뢰감)</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div style="text-align:center; padding:30px; background:#1e293b; color:#94a3b8; font-size:0.9rem;">
+  이 파일은 비교용 미리보기입니다. 실제 사이트에는 영향 없음. — design-preview.html
+</div>
+
+</body>
+</html>
