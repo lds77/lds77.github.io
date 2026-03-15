@@ -16,6 +16,8 @@ html {
 }
 
 /* ----- Font ----- */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
 @font-face {
     font-family: 'Noto Sans KR';
     font-display: swap;
@@ -30,9 +32,9 @@ img {
 
 /* ----- Body ----- */
 body {
-    font-family: 'Noto Sans KR', Arial, sans-serif;
+    font-family: 'Nanum Gothic', 'Noto Sans KR', Arial, sans-serif;
     line-height: 1.8;
-    color: #333;
+    color: #374151;
     background: #f8f9fa;
     max-width: 100vw;
     overflow-x: hidden;
@@ -48,10 +50,10 @@ body {
 
 /* ----- Header ----- */
 header {
-    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    background: #2d3748;
     color: white;
     padding: 1rem 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     position: relative;
 }
 
@@ -86,7 +88,7 @@ header {
     align-items: center;
     justify-content: center;
     font-size: 22px;
-    color: #e74c3c;
+    color: #38bdf8;
 }
 
 .logo h1 {

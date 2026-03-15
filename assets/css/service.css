@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap");
+
 /* =============================================================
    service.css — 서비스 페이지 공통 스타일
    (general_patient, nursing_home, mental_health, alcohol,
@@ -11,8 +13,8 @@
 :root {
     --accent:      #e74c3c;
     --accent-dark: #c0392b;
-    --blue:        #3498db;
-    --blue-dark:   #2980b9;
+    --blue:        #2d3748;
+    --blue-dark:   #374151;
     --dark:        #2c3e50;
     --dark2:       #34495e;
 }
@@ -107,7 +109,7 @@
 
 /* ----- 히어로 섹션 ----- */
 .service-hero {
-    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+    background: var(--blue);
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -364,7 +366,7 @@
 }
 
 .process-question {
-    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+    background: var(--blue);
     color: white;
     padding: 16px 22px;
     cursor: pointer;
@@ -400,7 +402,7 @@
 }
 
 .process-question:hover {
-    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
+    background: var(--blue-dark);
 }
 
 .process-number {
