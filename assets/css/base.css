@@ -50,10 +50,10 @@ body {
 
 /* ----- Header ----- */
 header {
-    background: #2d3748;
+    background: #0369a1;
     color: white;
     padding: 1rem 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    box-shadow: 0 2px 8px rgba(3,105,161,0.2);
     position: relative;
 }
 

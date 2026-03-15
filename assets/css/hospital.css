@@ -134,7 +134,7 @@
 
 /* ----- 페이지 히어로 ----- */
 .page-hero {
-    background: #2d3748;
+    background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
     color: white;
     padding: 28px 0;
     text-align: center;
@@ -363,7 +363,7 @@
 }
 
 .feature-banner-header {
-    background: #2d3748;
+    background: #0369a1;
     color: white;
     padding: 13px 18px;
     cursor: pointer;
