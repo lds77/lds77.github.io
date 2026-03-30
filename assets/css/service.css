@@ -567,6 +567,137 @@
     max-height: 600px;
 }
 
+/* ----- 추가 아코디언 섹션 (service, approach, treatment, steps, event) ----- */
+.service-item,
+.approach-item,
+.treatment-item,
+.steps-item,
+.event-item {
+    background: white;
+    margin-bottom: 16px;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.service-item:hover,
+.approach-item:hover,
+.treatment-item:hover,
+.steps-item:hover,
+.event-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    border-color: var(--accent);
+}
+
+.service-question,
+.approach-question,
+.treatment-question,
+.steps-question,
+.event-question {
+    background: var(--blue);
+    color: white;
+    padding: 16px 22px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.97rem;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.service-question:hover,
+.approach-question:hover,
+.treatment-question:hover,
+.steps-question:hover,
+.event-question:hover {
+    background: var(--blue-dark);
+}
+
+.service-question::after,
+.approach-question::after,
+.treatment-question::after,
+.steps-question::after,
+.event-question::after {
+    content: '▼';
+    font-size: 13px;
+    transition: transform 0.3s ease;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.service-question.active::after,
+.approach-question.active::after,
+.treatment-question.active::after,
+.steps-question.active::after,
+.event-question.active::after {
+    transform: rotate(180deg);
+}
+
+.service-icon,
+.approach-icon,
+.treatment-icon,
+.event-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.service-number,
+.step-number {
+    width: 34px;
+    height: 34px;
+    background: white;
+    color: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.service-text,
+.approach-text,
+.treatment-text,
+.step-text,
+.event-text {
+    flex: 1;
+}
+
+.service-answer,
+.approach-answer,
+.treatment-answer,
+.steps-answer,
+.event-answer {
+    padding: 22px 28px;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: #555;
+    line-height: 1.75;
+    font-size: 0.93rem;
+    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+    border-radius: 0 0 20px 20px;
+}
+
+.service-answer.active,
+.approach-answer.active,
+.treatment-answer.active,
+.steps-answer.active,
+.event-answer.active {
+    opacity: 1;
+    visibility: visible;
+    max-height: 600px;
+}
+
 @keyframes slideDown {
     from { opacity: 0; transform: translateY(-8px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -614,7 +745,13 @@
 
     .process-section,
     .pricing-detail,
-    .faq-section {
+    .faq-section,
+    .service-section,
+    .approach-section,
+    .treatment-section,
+    .steps-section,
+    .events-section,
+    .services-section {
         padding: 24px 0;
     }
 
@@ -661,13 +798,23 @@
     }
 
     .process-item,
-    .pricing-item {
+    .pricing-item,
+    .service-item,
+    .approach-item,
+    .treatment-item,
+    .steps-item,
+    .event-item {
         border-radius: 18px;
         margin-bottom: 12px;
     }
 
     .process-question,
-    .pricing-question {
+    .pricing-question,
+    .service-question,
+    .approach-question,
+    .treatment-question,
+    .steps-question,
+    .event-question {
         padding: 13px 18px;
         font-size: 0.88rem;
         border-radius: 16px 16px 0 0;
@@ -693,8 +840,27 @@
         margin-left: 56px;
     }
 
+    .service-number,
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 0.95rem;
+    }
+
+    .service-icon,
+    .approach-icon,
+    .treatment-icon,
+    .event-icon {
+        font-size: 1.2rem;
+    }
+
     .process-answer,
-    .pricing-answer {
+    .pricing-answer,
+    .service-answer,
+    .approach-answer,
+    .treatment-answer,
+    .steps-answer,
+    .event-answer {
         padding: 18px 22px;
         font-size: 0.88rem;
         border-radius: 0 0 16px 16px;
