@@ -61,12 +61,22 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(3,105,161,0.25);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* 스크롤 상태 — 색상은 CSS가 소유한다 (JS 인라인 스타일 금지) */
+        header.scrolled {
+            background: rgba(3, 105, 161, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 16px rgba(3,105,161,0.35);
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
             flex-wrap: wrap;
         }
 
@@ -74,6 +84,12 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .logo img {
+            max-width: 64px;
         }
 
         .logo-icon {
@@ -89,20 +105,65 @@
         }
 
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             margin: 0;
         }
 
         .emergency-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
             text-align: right;
         }
 
+        /* 헤더 전화번호 — 사이트의 1순위 전환 요소 */
         .phone-number {
-            font-size: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            line-height: 1.2;
+            color: white;
+            text-decoration: none;
+            padding: 6px 16px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.14);
+            border: 1px solid rgba(255,255,255,0.28);
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .phone-number:hover,
+        .phone-number:focus-visible {
+            background: rgba(255,255,255,0.26);
+            transform: translateY(-1px);
+            color: white;
+        }
+
+        .phone-number .phone-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            opacity: 0.9;
+            letter-spacing: 0.02em;
+        }
+
+        .phone-number .phone-digits {
+            font-size: 1.7rem;
             font-weight: 900;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            margin-bottom: 5px;
+            letter-spacing: 0.01em;
+        }
+
+        .header-sub-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fde68a;
+            text-decoration: none;
+        }
+
+        .header-sub-link:hover,
+        .header-sub-link:focus-visible {
+            color: #fff;
+            text-decoration: underline;
         }
 
         .emergency-text {
@@ -112,8 +173,19 @@
 
         /* Main Content */
         main {
-            margin-top: 120px;
+            margin-top: 112px;
             overflow: visible;
+        }
+
+        /* Hero 배너 이미지 */
+        .hero-image {
+            display: block;
+            margin: 0 auto 20px;
+            width: 100%;
+            max-width: 560px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.18);
         }
 
         /* Hero Section */
@@ -678,6 +750,62 @@
             color: white;
         }
 
+        /* =========================================================
+           모바일 하단 고정 CTA 바
+           원형 플로팅 버튼보다 탭 면적이 크고 목적이 명확하다.
+           데스크톱에서는 숨기고 플로팅 버튼을 쓴다.
+           ========================================================= */
+        .mobile-cta-bar {
+            display: none;
+        }
+
+        .mobile-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex: 1 1 0;
+            min-height: 60px;
+            padding: 8px 6px;
+            color: white;
+            text-decoration: none;
+            font-family: inherit;
+        }
+
+        .mobile-cta-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .mobile-cta-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.25;
+        }
+
+        .mobile-cta-text strong {
+            font-size: 1.05rem;
+            font-weight: 800;
+        }
+
+        .mobile-cta-text small {
+            font-size: 0.72rem;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .mobile-cta-call {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+        }
+
+        .mobile-cta-sms {
+            background: linear-gradient(135deg, #0369a1, #0284c7);
+        }
+
+        .mobile-cta:active {
+            filter: brightness(0.9);
+        }
+
         /* Main Accordion Styles */
         .main-accordion {
             max-width: 1200px;
@@ -842,14 +970,29 @@
                 padding: 0 15px;
             }
 
+            /* 모바일에서는 헤더를 고정하지 않는다.
+               전화 CTA는 하단 고정 바가 담당하므로 화면 상단을 콘텐츠에 내준다.
+               (기존의 fixed 헤더 + main margin-top 고정값 조합은 헤더가 줄바꿈될 때마다 겹쳤다) */
             header {
-                padding: 0.5rem 0;
+                position: static;
+                padding: 0.6rem 0;
             }
 
             .header-content {
-                flex-direction: column;
-                gap: 8px;
-                text-align: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+                text-align: left;
+            }
+
+            .logo {
+                gap: 10px;
+                flex: 1 1 auto;
+                min-width: 0;
+            }
+
+            .logo img {
+                max-width: 44px;
             }
 
             .logo-icon {
@@ -859,19 +1002,64 @@
             }
 
             .logo h1 {
-                font-size: 1.3rem;
+                font-size: 1.05rem;
+                line-height: 1.3;
             }
 
             .logo p {
                 font-size: 0.75rem;
             }
 
+            .emergency-contact {
+                flex: 1 1 100%;
+                align-items: stretch;
+                text-align: center;
+            }
+
             .phone-number {
-                font-size: 1.3rem;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                padding: 8px 12px;
+            }
+
+            .phone-number .phone-label {
+                font-size: 0.72rem;
+            }
+
+            .phone-number .phone-digits {
+                font-size: 1.35rem;
+            }
+
+            .header-sub-link {
+                align-self: center;
             }
 
             main {
-                margin-top: 130px;
+                margin-top: 0;
+            }
+
+            /* 하단 CTA 바 활성화 — 플로팅 원형 버튼은 중복이므로 숨긴다 */
+            .mobile-cta-bar {
+                display: flex;
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1200;
+                box-shadow: 0 -4px 16px rgba(0,0,0,0.22);
+                padding-bottom: env(safe-area-inset-bottom, 0px);
+            }
+
+            .floating-call,
+            .fixed-blog-btn {
+                display: none;
+            }
+
+            /* CTA 바가 푸터 마지막 줄을 가리지 않도록 여백 확보 */
+            body {
+                padding-bottom: 68px;
             }
 
             .hero {
