@@ -366,6 +366,7 @@
 </script>
 
     <link rel="stylesheet" href="https://lds77.github.io/assets/css/style.css">
+    <link rel="stylesheet" href="https://lds77.github.io/assets/css/nav.css">
 </head>
 <body>
 
@@ -392,6 +393,52 @@
             </div>
         </div>
     </header>
+
+    <nav class="site-nav" aria-label="주요 메뉴">
+        <div class="site-nav-inner">
+            <button type="button" class="site-nav-toggle" aria-expanded="false" aria-controls="site-nav-menu">
+                <span class="site-nav-toggle-bars" aria-hidden="true"></span>
+                <span>메뉴</span>
+            </button>
+
+            <ul class="site-nav-menu" id="site-nav-menu">
+                <li><a href="https://lds77.github.io/">홈</a></li>
+                <li class="site-nav-item--has-sub">
+                    <button type="button" class="site-nav-sub-toggle" aria-expanded="false">서비스<span class="site-nav-caret" aria-hidden="true"></span></button>
+                    <ul class="site-nav-sub">
+                    <li><a href="https://lds77.github.io/general_patient_transport.html">환자이송</a></li>
+                    <li><a href="https://lds77.github.io/nursing_home_transport.html">요양병원 이송</a></li>
+                    <li><a href="https://lds77.github.io/mental_health_transport.html">정신병원 입원</a></li>
+                    <li><a href="https://lds77.github.io/alcohol_treatment_transport.html">알콜중독</a></li>
+                    <li><a href="https://lds77.github.io/event_medical_support.html">행사 구급차</a></li>
+                    <li><a href="https://lds77.github.io/goin_transport_service.html">고인 이송</a></li>
+                    </ul>
+                </li>
+                <li class="site-nav-item--has-sub">
+                    <button type="button" class="site-nav-sub-toggle" aria-expanded="false">지역<span class="site-nav-caret" aria-hidden="true"></span></button>
+                    <ul class="site-nav-sub site-nav-sub--wide">
+                    <li><a href="https://lds77.github.io/cheongju_hospitals.html">청주</a></li>
+                    <li><a href="https://lds77.github.io/chungju_hospitals.html">충주</a></li>
+                    <li><a href="https://lds77.github.io/jecheon_hospitals.html">제천</a></li>
+                    <li><a href="https://lds77.github.io/eumseong_hospitals.html">음성</a></li>
+                    <li><a href="https://lds77.github.io/jincheon_hospitals.html">진천</a></li>
+                    <li><a href="https://lds77.github.io/goesan_hospitals.html">괴산</a></li>
+                    <li><a href="https://lds77.github.io/jeungpyeong_hospitals.html">증평</a></li>
+                    <li><a href="https://lds77.github.io/boeun_hospitals.html">보은</a></li>
+                    <li><a href="https://lds77.github.io/okcheon_hospitals.html">옥천</a></li>
+                    <li><a href="https://lds77.github.io/yeongdong_hospitals.html">영동</a></li>
+                    <li><a href="https://lds77.github.io/danyang_hospitals.html">단양</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://lds77.github.io/#pricing">요금</a></li>
+                <li><a href="https://lds77.github.io/blog/">블로그</a></li>
+                <li><a href="https://lds77.github.io/chungbuk-medical-institutions-info-summary.html">병원찾기</a></li>
+            </ul>
+
+            <a class="site-nav-call" href="tel:010-8841-4114">📞 010-8841-4114</a>
+        </div>
+    </nav>
+
 
     <main role="main">
         <article>
@@ -464,7 +511,7 @@
     </div>
 </section>
 
-        <section class="pricing" aria-labelledby="pricing-title">
+        <section id="pricing" class="pricing" aria-labelledby="pricing-title">
             <div class="container">
                 <div class="main-accordion">
                     <div class="main-accordion-header active" role="button" tabindex="0" aria-expanded="true" aria-controls="pricing-panel" onclick="toggleMainAccordion(this)">
@@ -1052,21 +1099,9 @@
             });
         });
 
-        // 스크롤 시 헤더 강조 — 색상은 CSS(.scrolled)가 소유한다.
-        // 이전에는 여기서 인라인 스타일로 구 팔레트(#3498db)를 덮어써 테마가 어긋났다.
-        (function() {
-            const header = document.querySelector('header');
-            if (!header) return;
-            let ticking = false;
-            window.addEventListener('scroll', function() {
-                if (ticking) return;
-                ticking = true;
-                requestAnimationFrame(function() {
-                    header.classList.toggle('scrolled', window.scrollY > 100);
-                    ticking = false;
-                });
-            }, { passive: true });
-        })();
+        // (스크롤 시 헤더 색 변경 로직 제거)
+        // 헤더는 더 이상 고정되지 않고 sticky 내비게이션이 그 역할을 한다.
+        // 기존 핸들러는 인라인 스타일로 구 팔레트(#3498db)를 덮어써 테마를 어긋나게 했다.
 
         // 스크롤 등장 애니메이션.
         // IntersectionObserver를 못 쓰거나 사용자가 모션 최소화를 켠 경우에는
@@ -1104,5 +1139,6 @@
         // Schema.org structured data validation
         console.log('SEO Optimization Complete - Structured Data Ready for Google Rich Results');
     </script>
+    <script src="https://lds77.github.io/assets/js/nav.js" defer></script>
 </body>
 </html>
