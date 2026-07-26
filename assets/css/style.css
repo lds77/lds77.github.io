@@ -35,8 +35,8 @@
         body {
             font-family: 'Nanum Gothic', 'Noto Sans KR', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            color: var(--c-text-strong);
+            background: var(--c-surface);
             overflow-x: clip;
             overflow-y: visible;
             position: relative;
@@ -56,7 +56,7 @@
            담당한다. 헤더까지 고정하면 두 줄이 화면을 잡아먹고, main의 margin-top
            고정값과도 계속 어긋난다. */
         header {
-            background: #0369a1;
+            background: var(--c-primary);
             color: white;
             padding: 1rem 0;
             width: 100%;
@@ -93,7 +93,7 @@
             align-items: center;
             justify-content: center;
             font-size: 24px;
-            color: #38bdf8;
+            color: var(--c-sky);
         }
 
         .logo h1 {
@@ -148,13 +148,13 @@
         .header-sub-link {
             font-size: 0.9rem;
             font-weight: 600;
-            color: #fde68a;
+            color: var(--c-highlight);
             text-decoration: none;
         }
 
         .header-sub-link:hover,
         .header-sub-link:focus-visible {
-            color: #fff;
+            color: var(--c-white);
             text-decoration: underline;
         }
 
@@ -181,7 +181,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
+            background: linear-gradient(135deg, var(--c-primary) 0%, var(--c-primary-light) 100%);
             color: white;
             padding: 44px 0;
             text-align: center;
@@ -241,7 +241,7 @@
 
         .btn-secondary:hover {
             background: white;
-            color: #0369a1;
+            color: var(--c-primary);
         }
 
         /* Services Section */
@@ -256,7 +256,7 @@
             font-size: 1.9rem;
             font-weight: 700;
             margin-bottom: 36px;
-            color: #2c3e50;
+            color: var(--c-heading);
         }
 
         .services-grid {
@@ -268,12 +268,12 @@
         }
 
         .service-card {
-            background: #f8f9fa;
+            background: var(--c-surface);
             padding: 22px;
             border-radius: 12px;
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
+            border: 1px solid var(--c-border);
             cursor: pointer;
             position: relative;
             display: block;
@@ -297,7 +297,7 @@
         .service-icon {
             width: 62px;
             height: 62px;
-            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            background: linear-gradient(135deg, var(--c-sky), var(--c-primary-lighter));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -311,11 +311,11 @@
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 10px;
-            color: #2c3e50;
+            color: var(--c-heading);
         }
 
         .service-card p {
-            color: #666;
+            color: var(--c-text-muted);
             line-height: 1.6;
         }
 
@@ -327,16 +327,16 @@
         }
 
         .faq-item {
-            background: #f8f9fa;
+            background: var(--c-surface);
             margin-bottom: 10px;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-            border: 1px solid #e9ecef;
+            border: 1px solid var(--c-border);
         }
 
         .faq-question {
-            background: #0369a1;
+            background: var(--c-primary);
             color: white;
             padding: 20px;
             cursor: pointer;
@@ -346,13 +346,13 @@
         }
 
         .faq-question:hover {
-            background: #0284c7;
+            background: var(--c-primary-light);
         }
 
         .faq-answer {
             padding: 20px;
             display: none;
-            color: #555;
+            color: var(--c-text-secondary);
             line-height: 1.7;
             background: white;
         }
@@ -364,7 +364,7 @@
         /* Coverage Section */
         .coverage {
             padding: 55px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(135deg, var(--c-surface) 0%, var(--c-border) 100%);
             overflow: visible;
         }
 
@@ -402,7 +402,7 @@
         }
 
         .coverage-item h4 {
-            color: #0ea5e9;
+            color: var(--c-primary-lighter);
             font-weight: 600;
             margin-bottom: 10px;
         }
@@ -410,7 +410,7 @@
         /* Blog Section */
         .blog-section {
             padding: 55px 0;
-            background: #f8f9fa;
+            background: var(--c-surface);
             overflow: visible;
         }
 
@@ -448,7 +448,7 @@
 
         .blog-image {
             height: 80px;
-            background: linear-gradient(135deg, #0369a1, #0284c7);
+            background: linear-gradient(135deg, var(--c-primary), var(--c-primary-light));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -465,7 +465,7 @@
         }
 
         .blog-category {
-            background: #38bdf8;
+            background: var(--c-sky);
             color: white;
             padding: 4px 12px;
             border-radius: 15px;
@@ -477,12 +477,12 @@
             font-size: 1.05rem;
             font-weight: 600;
             margin: 10px 0 8px 0;
-            color: #2c3e50;
+            color: var(--c-heading);
             line-height: 1.4;
         }
 
         .blog-card p {
-            color: #666;
+            color: var(--c-text-muted);
             font-size: 0.88rem;
             line-height: 1.5;
             margin-bottom: 12px;
@@ -493,7 +493,7 @@
             justify-content: space-between;
             align-items: center;
             font-size: 0.85rem;
-            color: #888;
+            color: var(--c-text-faint);
             border-top: 1px solid #f0f0f0;
             padding-top: 15px;
         }
@@ -518,7 +518,7 @@
         .section-subtitle {
             text-align: center;
             font-size: 1.1rem;
-            color: #666;
+            color: var(--c-text-muted);
             margin-bottom: 20px;
         }
 
@@ -530,11 +530,11 @@
         }
 
         .price-table {
-            background: #f8f9fa;
+            background: var(--c-surface);
             border-radius: 15px;
             padding: 40px;
             margin-top: 40px;
-            border: 1px solid #e9ecef;
+            border: 1px solid var(--c-border);
         }
 
         .price-row {
@@ -542,7 +542,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
-            border-bottom: 1px solid #dee2e6;
+            border-bottom: 1px solid var(--c-border-2);
         }
 
         .price-row:last-child {
@@ -551,11 +551,11 @@
 
         .price-service {
             font-weight: 600;
-            color: #2c3e50;
+            color: var(--c-heading);
         }
 
         .price-amount {
-            color: #0ea5e9;
+            color: var(--c-primary-lighter);
             font-weight: 700;
             font-size: 1.1rem;
         }
@@ -577,7 +577,7 @@
         .service-info-banner {
             margin-top: 30px;
             padding: 25px;
-            background: #0369a1;
+            background: var(--c-primary);
             border-radius: 15px;
             color: white;
             text-align: center;
@@ -596,8 +596,8 @@
         /* Contact Section */
         .contact {
             padding: 60px 0;
-            background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 100%);
-            color: #ecf0f1;
+            background: linear-gradient(135deg, var(--c-primary-darkest) 0%, var(--c-primary) 100%);
+            color: var(--c-surface-alt);
         }
 
         .contact-grid {
@@ -616,7 +616,7 @@
         }
 
         .contact-item h4 {
-            color: #7dd3fc;
+            color: var(--c-sky-pale);
             margin-bottom: 10px;
             font-size: 1.2rem;
             font-weight: 600;
@@ -624,14 +624,14 @@
 
         .contact-item p {
             font-size: 1.1rem;
-            color: #bdc3c7;
+            color: var(--c-border-3);
             font-weight: 500;
         }
 
         /* Footer */
         footer {
             background: #1a252f;
-            color: #bdc3c7;
+            color: var(--c-border-3);
             padding: 30px 0 15px;
             text-align: center;
         }
@@ -659,16 +659,16 @@
         }
 
         .footer-section a {
-            color: #bdc3c7;
+            color: var(--c-border-3);
             text-decoration: none;
         }
 
         .footer-section a:hover {
-            color: #38bdf8;
+            color: var(--c-sky);
         }
 
         .footer-bottom {
-            border-top: 1px solid #34495e;
+            border-top: 1px solid var(--c-heading-alt);
             padding-top: 15px;
             text-align: center;
             font-size: 0.9rem;
@@ -681,7 +681,7 @@
             right: 30px;
             width: 65px;
             height: 65px;
-            background: linear-gradient(135deg, #0369a1, #0284c7);
+            background: linear-gradient(135deg, var(--c-primary), var(--c-primary-light));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -722,7 +722,7 @@
             left: 20px;
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #03C75A, #00B04F);
+            background: linear-gradient(135deg, var(--c-naver), var(--c-naver-dark));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -753,7 +753,7 @@
         }
 
         .main-accordion-header {
-            background: #374151;
+            background: var(--c-text);
             color: white;
             padding: 20px 28px;
             cursor: pointer;
@@ -837,7 +837,7 @@
         }
 
         .contact-accordion-header, .footer-accordion-header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(135deg, var(--c-heading) 0%, var(--c-heading-alt) 100%);
             color: white;
             padding: 16px 28px;
             cursor: pointer;

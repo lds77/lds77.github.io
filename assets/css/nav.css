@@ -11,7 +11,7 @@
     position: sticky;
     top: 0;
     z-index: 1100;
-    background: #075985;
+    background: var(--c-primary-dark);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
     font-family: 'Nanum Gothic', 'Noto Sans KR', Arial, sans-serif;
 }
@@ -54,7 +54,7 @@
     align-items: center;
     gap: 6px;
     padding: 15px 14px;
-    color: #fff;
+    color: var(--c-white);
     font-size: 1rem;
     font-weight: 700;
     line-height: 1.2;
@@ -73,13 +73,13 @@
 .site-nav-sub-toggle:hover,
 .site-nav-sub-toggle:focus-visible {
     background: rgba(255, 255, 255, 0.16);
-    color: #fff;
+    color: var(--c-white);
 }
 
 /* 현재 페이지 표시 */
 .site-nav-menu a[aria-current="page"],
 .site-nav-item--current > .site-nav-sub-toggle {
-    box-shadow: inset 0 -3px 0 #fde68a;
+    box-shadow: inset 0 -3px 0 var(--c-highlight);
 }
 
 /* ----- 드롭다운 화살표 ----- */
@@ -106,7 +106,7 @@
     top: 100%;
     left: 0;
     min-width: 220px;
-    background: #fff;
+    background: var(--c-white);
     border-radius: 0 0 10px 10px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
 }
@@ -130,7 +130,7 @@
 .site-nav-sub a {
     display: block;
     padding: 9px 18px;
-    color: #374151;
+    color: var(--c-text);
     font-size: 0.94rem;
     font-weight: 600;
     text-decoration: none;
@@ -139,8 +139,8 @@
 
 .site-nav-sub a:hover,
 .site-nav-sub a:focus-visible {
-    background: #e0f2fe;
-    color: #075985;
+    background: var(--c-sky-bg);
+    color: var(--c-primary-dark);
 }
 
 /* ----- 전화 CTA ----- */
@@ -150,8 +150,8 @@
     align-items: center;
     gap: 6px;
     padding: 8px 16px;
-    background: #dc2626;
-    color: #fff;
+    background: var(--c-cta);
+    color: var(--c-white);
     font-size: 1.05rem;
     font-weight: 800;
     text-decoration: none;
@@ -162,8 +162,8 @@
 
 .site-nav-call:hover,
 .site-nav-call:focus-visible {
-    background: #b91c1c;
-    color: #fff;
+    background: var(--c-cta-dark);
+    color: var(--c-white);
     transform: translateY(-1px);
 }
 
@@ -197,7 +197,7 @@
     flex: 1 1 0;
     min-height: 60px;
     padding: 8px 6px;
-    color: #fff;
+    color: var(--c-white);
     text-decoration: none;
     font-family: inherit;
 }
@@ -224,8 +224,8 @@
     font-weight: 600;
 }
 
-.mobile-cta-call { background: linear-gradient(135deg, #dc2626, #b91c1c); }
-.mobile-cta-sms  { background: linear-gradient(135deg, #0369a1, #0284c7); }
+.mobile-cta-call { background: linear-gradient(135deg, var(--c-cta), var(--c-cta-dark)); }
+.mobile-cta-sms  { background: linear-gradient(135deg, var(--c-primary), var(--c-primary-light)); }
 
 .mobile-cta:active { filter: brightness(0.9); }
 
@@ -237,7 +237,7 @@
     padding: 10px 12px;
     background: none;
     border: 0;
-    color: #fff;
+    color: var(--c-white);
     font-family: inherit;
     font-size: 0.95rem;
     font-weight: 700;
@@ -248,7 +248,7 @@
     position: relative;
     width: 20px;
     height: 2px;
-    background: #fff;
+    background: var(--c-white);
     display: block;
 }
 
@@ -259,7 +259,7 @@
     left: 0;
     width: 20px;
     height: 2px;
-    background: #fff;
+    background: var(--c-white);
     transition: transform 0.2s ease, top 0.2s ease;
 }
 
@@ -362,7 +362,7 @@
     }
 
     .site-nav-sub a {
-        color: #e0f2fe;
+        color: var(--c-sky-bg);
         padding: 12px 6px 12px 22px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
@@ -370,7 +370,7 @@
     .site-nav-sub a:hover,
     .site-nav-sub a:focus-visible {
         background: rgba(255, 255, 255, 0.12);
-        color: #fff;
+        color: var(--c-white);
     }
 }
 
@@ -383,7 +383,7 @@ a:focus-visible,
 button:focus-visible,
 [tabindex]:focus-visible,
 [role="button"]:focus-visible {
-    outline: 3px solid #fbbf24;
+    outline: 3px solid var(--c-focus);
     outline-offset: 2px;
     border-radius: 4px;
 }

@@ -34,8 +34,8 @@ img {
 body {
     font-family: 'Nanum Gothic', 'Noto Sans KR', Arial, sans-serif;
     line-height: 1.8;
-    color: #374151;
-    background: #f8f9fa;
+    color: var(--c-text);
+    background: var(--c-surface);
     max-width: 100vw;
     overflow-x: clip;
 }
@@ -50,7 +50,7 @@ body {
 
 /* ----- Header ----- */
 header {
-    background: #0369a1;
+    background: var(--c-primary);
     color: white;
     padding: 1rem 0;
     box-shadow: 0 2px 8px rgba(3,105,161,0.2);
@@ -88,7 +88,7 @@ header {
     align-items: center;
     justify-content: center;
     font-size: 22px;
-    color: #38bdf8;
+    color: var(--c-sky);
 }
 
 .logo h1 {
@@ -107,23 +107,23 @@ header {
 .breadcrumb {
     background: white;
     padding: 12px 0;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid var(--c-border);
     font-size: 0.9rem;
 }
 
 .breadcrumb a {
-    color: #6c757d;
+    color: var(--c-text-muted-2);
     text-decoration: none;
     margin-right: 10px;
     transition: color 0.2s;
 }
 
 .breadcrumb a:hover {
-    color: var(--accent, #e74c3c);
+    color: var(--accent, var(--c-accent));
 }
 
 .breadcrumb span {
-    color: var(--accent, #e74c3c);
+    color: var(--accent, var(--c-accent));
     font-weight: 600;
 }
 
@@ -134,7 +134,7 @@ header {
     left: 20px;
     width: 56px;
     height: 56px;
-    background: linear-gradient(135deg, #03C75A, #00B04F);
+    background: linear-gradient(135deg, var(--c-naver), var(--c-naver-dark));
     border-radius: 50%;
     display: flex;
     align-items: center;

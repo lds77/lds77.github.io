@@ -11,12 +11,12 @@
 
 /* ----- CSS 기본 변수 (페이지별 override 가능) ----- */
 :root {
-    --accent:      #0ea5e9;
-    --accent-dark: #0284c7;
-    --blue:        #0369a1;
-    --blue-dark:   #0284c7;
-    --dark:        #0c4a6e;
-    --dark2:       #0369a1;
+    --accent:      var(--c-primary-lighter);
+    --accent-dark: var(--c-primary-light);
+    --blue:        var(--c-primary);
+    --blue-dark:   var(--c-primary-light);
+    --dark:        var(--c-primary-darkest);
+    --dark2:       var(--c-primary);
 }
 
 /* ----- SEO 요약 팝업 버튼 ----- */
@@ -84,7 +84,7 @@
     border: none;
     font-size: 22px;
     cursor: pointer;
-    color: #666;
+    color: var(--c-text-muted);
 }
 
 /* ----- 플로팅 전화 버튼 ----- */
@@ -134,7 +134,7 @@
     background: white;
     padding: 24px 0;
     text-align: center;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid var(--c-border);
 }
 
 .coverage-cities {
@@ -185,7 +185,7 @@
 .content-main p {
     margin-bottom: 10px;
     line-height: 1.75;
-    color: #555;
+    color: var(--c-text-secondary);
 }
 
 .content-main ul {
@@ -195,13 +195,13 @@
 
 .content-main li {
     margin-bottom: 5px;
-    color: #555;
+    color: var(--c-text-secondary);
     line-height: 1.7;
 }
 
 /* ----- 사이드바 ----- */
 .sidebar {
-    background: #f8f9fa;
+    background: var(--c-surface);
     padding: 22px;
     border-radius: 10px;
     height: fit-content;
@@ -250,7 +250,7 @@
     background: white;
     padding: 18px;
     border-radius: 10px;
-    border: 1px solid #e9ecef;
+    border: 1px solid var(--c-border);
 }
 
 .service-features h4 {
@@ -264,7 +264,7 @@
     align-items: center;
     margin-bottom: 10px;
     padding: 7px;
-    background: #f8f9fa;
+    background: var(--c-surface);
     border-radius: 5px;
 }
 
@@ -284,7 +284,7 @@
 
 /* ----- FAQ 섹션 ----- */
 .faq-section {
-    background: #f8f9fa;
+    background: var(--c-surface);
     padding: 36px 0;
 }
 
@@ -332,7 +332,7 @@
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease;
-    color: #555;
+    color: var(--c-text-secondary);
     line-height: 1.7;
     font-size: 0.9rem;
 }
@@ -355,7 +355,7 @@
     border-radius: 22px;
     overflow: hidden;
     box-shadow: 0 3px 10px rgba(0,0,0,0.07);
-    border: 2px solid #e9ecef;
+    border: 2px solid var(--c-border);
     transition: all 0.3s ease;
 }
 
@@ -433,10 +433,10 @@
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease;
-    color: #555;
+    color: var(--c-text-secondary);
     line-height: 1.75;
     font-size: 0.93rem;
-    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+    background: linear-gradient(135deg, var(--c-sky-bg-soft) 0%, var(--c-white) 100%);
     border-radius: 0 0 20px 20px;
     position: relative;
 }
@@ -457,7 +457,7 @@
 
 /* ----- 요금 섹션 ----- */
 .pricing-detail {
-    background: #f8f9fa;
+    background: var(--c-surface);
     padding: 36px 0;
 }
 
@@ -467,7 +467,7 @@
     border-radius: 22px;
     overflow: hidden;
     box-shadow: 0 3px 10px rgba(0,0,0,0.07);
-    border: 2px solid #e9ecef;
+    border: 2px solid var(--c-border);
     transition: all 0.3s ease;
 }
 
@@ -545,10 +545,10 @@
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease;
-    color: #555;
+    color: var(--c-text-secondary);
     line-height: 1.75;
     font-size: 0.93rem;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    background: linear-gradient(135deg, var(--c-surface) 0%, var(--c-white) 100%);
     border-radius: 0 0 20px 20px;
     position: relative;
 }
@@ -578,7 +578,7 @@
     border-radius: 22px;
     overflow: hidden;
     box-shadow: 0 3px 10px rgba(0,0,0,0.07);
-    border: 2px solid #e9ecef;
+    border: 2px solid var(--c-border);
     transition: all 0.3s ease;
 }
 
@@ -681,10 +681,10 @@
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease;
-    color: #555;
+    color: var(--c-text-secondary);
     line-height: 1.75;
     font-size: 0.93rem;
-    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+    background: linear-gradient(135deg, var(--c-sky-bg-soft) 0%, var(--c-white) 100%);
     border-radius: 0 0 20px 20px;
 }
 
