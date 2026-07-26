@@ -753,8 +753,7 @@
                             <h3>응급상황별 기본 응급처치 방법 완벽 가이드</h3>
                             <p>심정지, 출혈, 골절, 화상 등 응급상황별 올바른 응급처치 방법을 전문가가 알려드립니다. 생명을 구하는 골든타임 대처법을 배워보세요.</p>
                             <div class="blog-meta">
-                                <span class="blog-date">2025.01.12</span>
-                                <span class="blog-views">조회 1,523</span>
+                                <span class="blog-date">2025.01.15</span>
                             </div>
                         </div>
                     </a>
@@ -768,8 +767,7 @@
                             <h3>119 vs 사설구급차, 언제 이용해야 할까?</h3>
                             <p>응급상황에서 올바른 선택을 위한 완벽 가이드. 상황별 이용 기준과 장단점을 자세히 알아보세요.</p>
                             <div class="blog-meta">
-                                <span class="blog-date">2025.01.10</span>
-                                <span class="blog-views">조회 1,247</span>
+                                <span class="blog-date">2025.07.12</span>
                             </div>
                         </div>
                     </a>
@@ -783,8 +781,7 @@
                             <h3>환자이송 시 필요한 서류와 준비물</h3>
                             <p>병원 간 이송이나 응급이송 시 미리 준비해야 할 서류들과 체크리스트를 정리했습니다.</p>
                             <div class="blog-meta">
-                                <span class="blog-date">2025.01.08</span>
-                                <span class="blog-views">조회 892</span>
+                                <span class="blog-date">2025.08.16</span>
                             </div>
                         </div>
                     </a>
@@ -798,8 +795,7 @@
                             <h3>청주 주요 병원별 특징과 전문 진료과목</h3>
                             <p>청주 지역 주요 병원들의 특성화 진료과목과 이송 시 알아야 할 정보들을 정리했습니다.</p>
                             <div class="blog-meta">
-                                <span class="blog-date">2025.01.05</span>
-                                <span class="blog-views">조회 634</span>
+                                <span class="blog-date">2025.08.16</span>
                             </div>
                         </div>
                     </a>
@@ -813,8 +809,7 @@
                             <h3>요양병원 입원 시 알아야 할 이송 절차</h3>
                             <p>요양병원 입원이 결정되셨나요? 안전하고 편안한 이송을 위한 단계별 절차를 안내합니다.</p>
                             <div class="blog-meta">
-                                <span class="blog-date">2025.01.03</span>
-                                <span class="blog-views">조회 756</span>
+                                <span class="blog-date">2025.01.15</span>
                             </div>
                         </div>
                     </a>
@@ -829,7 +824,6 @@
                             <p>겨울철 빙판길 낙상사고가 증가하고 있습니다. 예방법과 응급상황 시 대처방법을 알아보세요.</p>
                             <div class="blog-meta">
                                 <span class="blog-date">2025.01.01</span>
-                                <span class="blog-views">조회 423</span>
                             </div>
                         </div>
                     </a>
@@ -843,8 +837,7 @@
                             <h3>정신병원 이송, 가족이 알아야 할 것들</h3>
                             <p>안전하고 인도적인 정신병원 이송을 위한 완전 가이드. 절차부터 주의사항까지 전문가가 알려드립니다.</p>
                             <div class="blog-meta">
-                                <span class="blog-date">2025.08.15</span>
-                                <span class="blog-views">조회 892</span>
+                                <span class="blog-date">2025.01.15</span>
                             </div>
                         </div>
                     </a>
@@ -858,8 +851,7 @@
                             <h3>알콜중독 치료 시설 이송 완벽 가이드</h3>
                             <p>알콜중독 치료를 위한 이송 절차와 가족이 알아야 할 중요한 정보들을 정리했습니다.</p>
                             <div class="blog-meta">
-                                <span class="blog-date">2025.07.25</span>
-                                <span class="blog-views">조회 1,234</span>
+                                <span class="blog-date">2025.08.20</span>
                             </div>
                         </div>
                     </a>
@@ -1054,16 +1046,8 @@
         function toggleContactAccordion(element) { togglePanel(element); }
         function toggleFooterAccordion(element)  { togglePanel(element); }
 
-        // 키보드 접근 (Enter / Space)
-        document.addEventListener('keydown', function(e) {
-            if (e.key !== 'Enter' && e.key !== ' ') return;
-            const header = e.target.closest(
-                '.main-accordion-header, .contact-accordion-header, .footer-accordion-header'
-            );
-            if (!header) return;
-            e.preventDefault();
-            togglePanel(header);
-        });
+        // 키보드 접근(Enter/Space)과 aria-expanded 동기화는 전 페이지 공용
+        // assets/js/a11y.js 가 담당한다. 여기서 중복 처리하면 두 번 토글된다.
 
         // FAQ 토글 기능
         function toggleFaq(element) {
@@ -1140,5 +1124,6 @@
         console.log('SEO Optimization Complete - Structured Data Ready for Google Rich Results');
     </script>
     <script src="https://lds77.github.io/assets/js/nav.js" defer></script>
+    <script src="https://lds77.github.io/assets/js/a11y.js" defer></script>
 </body>
 </html>
