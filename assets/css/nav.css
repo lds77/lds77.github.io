@@ -393,6 +393,30 @@ button:focus-visible,
     outline: none;
 }
 
+/* =============================================================
+   onclick 으로 이동하던 카드들을 진짜 <a href> 로 바꿨다.
+   링크 기본 스타일(파란 글자·밑줄)이 카드 모양을 덮지 않도록 상속시킨다.
+   display 는 각 페이지 CSS 가 이미 정하고 있으므로 여기서 건드리지 않는다.
+   ============================================================= */
+a.service-card,
+a.logo,
+a.post-card,
+a.coverage-item,
+a.blog-card,
+a.hospital-card,
+a.info-card {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* <button> 이던 전화 버튼도 <a href="tel:"> 로 바꿨다.
+   버튼의 기본 정렬(가운데·line-height: normal)을 그대로 되살린다. */
+a.fixed-phone-btn {
+    text-decoration: none;
+    text-align: center;
+    line-height: normal;
+}
+
 /* 스크린리더 전용 텍스트 */
 .sr-only {
     position: absolute;
