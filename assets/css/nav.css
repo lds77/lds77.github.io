@@ -1,0 +1,384 @@
+/* =============================================================
+   nav.css — 전역 내비게이션 (25개 페이지 공용)
+   직지응급환자이송단 | lds77.github.io
+
+   주의: 이 사이트는 페이지마다 CSS가 제각각이라(style.css / service.css /
+   병원 페이지 인라인 <style> 등) 모든 선택자를 .site-nav 아래로 한정하고
+   폰트·여백·목록 스타일을 명시적으로 초기화한다.
+   ============================================================= */
+
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1100;
+    background: #075985;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+    font-family: 'Nanum Gothic', 'Noto Sans KR', Arial, sans-serif;
+}
+
+.site-nav *,
+.site-nav *::before,
+.site-nav *::after {
+    box-sizing: border-box;
+}
+
+.site-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ----- 메뉴 목록 ----- */
+.site-nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex: 1 1 auto;
+}
+
+.site-nav-menu > li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav-menu > li > a,
+.site-nav-sub-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 15px 14px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    font-family: inherit;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.site-nav-menu > li > a:hover,
+.site-nav-menu > li > a:focus-visible,
+.site-nav-sub-toggle:hover,
+.site-nav-sub-toggle:focus-visible {
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+}
+
+/* 현재 페이지 표시 */
+.site-nav-menu a[aria-current="page"],
+.site-nav-item--current > .site-nav-sub-toggle {
+    box-shadow: inset 0 -3px 0 #fde68a;
+}
+
+/* ----- 드롭다운 화살표 ----- */
+.site-nav-caret {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid currentColor;
+    transition: transform 0.2s ease;
+}
+
+.site-nav-sub-toggle[aria-expanded="true"] .site-nav-caret {
+    transform: rotate(180deg);
+}
+
+/* ----- 하위 메뉴 ----- */
+.site-nav-sub {
+    list-style: none;
+    margin: 0;
+    padding: 6px 0;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: #fff;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.site-nav-sub--wide {
+    columns: 2;
+    column-gap: 0;
+    min-width: 380px;
+}
+
+.site-nav-sub-toggle[aria-expanded="true"] + .site-nav-sub {
+    display: block;
+}
+
+.site-nav-sub li {
+    margin: 0;
+    padding: 0;
+    break-inside: avoid;
+}
+
+.site-nav-sub a {
+    display: block;
+    padding: 9px 18px;
+    color: #374151;
+    font-size: 0.94rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.site-nav-sub a:hover,
+.site-nav-sub a:focus-visible {
+    background: #e0f2fe;
+    color: #075985;
+}
+
+/* ----- 전화 CTA ----- */
+.site-nav-call {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: #dc2626;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-decoration: none;
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.site-nav-call:hover,
+.site-nav-call:focus-visible {
+    background: #b91c1c;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+/* 헤더에 큰 전화번호가 이미 보이는 동안에는 내비의 전화 버튼을 감춘다.
+   스크롤로 헤더가 넘어가면 nav.js 가 클래스를 떼어 다시 노출한다.
+   (display 대신 opacity/visibility 를 써서 레이아웃이 흔들리지 않게 한다) */
+@media (min-width: 901px) {
+    .site-nav--call-idle .site-nav-call {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4px);
+        transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+    }
+}
+
+/* =============================================================
+   모바일 하단 고정 CTA 바 (전 페이지 공용)
+   원형 플로팅 버튼보다 탭 면적이 크고 목적이 명확하다.
+   데스크톱에서는 숨기고 각 페이지의 기존 플로팅 버튼을 쓴다.
+   ============================================================= */
+.mobile-cta-bar {
+    display: none;
+    font-family: 'Nanum Gothic', 'Noto Sans KR', Arial, sans-serif;
+}
+
+.mobile-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex: 1 1 0;
+    min-height: 60px;
+    padding: 8px 6px;
+    color: #fff;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.mobile-cta-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.mobile-cta-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+}
+
+.mobile-cta-text strong {
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.mobile-cta-text small {
+    font-size: 0.72rem;
+    opacity: 0.9;
+    font-weight: 600;
+}
+
+.mobile-cta-call { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+.mobile-cta-sms  { background: linear-gradient(135deg, #0369a1, #0284c7); }
+
+.mobile-cta:active { filter: brightness(0.9); }
+
+/* ----- 햄버거 버튼 (모바일 전용) ----- */
+.site-nav-toggle {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: none;
+    border: 0;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.site-nav-toggle-bars {
+    position: relative;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    display: block;
+}
+
+.site-nav-toggle-bars::before,
+.site-nav-toggle-bars::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    transition: transform 0.2s ease, top 0.2s ease;
+}
+
+.site-nav-toggle-bars::before { top: -6px; }
+.site-nav-toggle-bars::after  { top: 6px; }
+
+.site-nav-toggle[aria-expanded="true"] .site-nav-toggle-bars { background: transparent; }
+.site-nav-toggle[aria-expanded="true"] .site-nav-toggle-bars::before { top: 0; transform: rotate(45deg); }
+.site-nav-toggle[aria-expanded="true"] .site-nav-toggle-bars::after  { top: 0; transform: rotate(-45deg); }
+
+/* =============================================================
+   모바일 — 900px 이하
+   메뉴 6개 + 전화번호가 한 줄에 들어가지 않는 지점부터 드로어로 전환
+   ============================================================= */
+@media (max-width: 900px) {
+    .site-nav-inner {
+        padding: 0 15px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .site-nav-toggle {
+        display: flex;
+        order: 1;
+    }
+
+    .site-nav-call {
+        order: 2;
+        font-size: 0.95rem;
+        padding: 7px 12px;
+        margin: 6px 0;
+    }
+
+    /* 하단 고정 CTA 바가 있는 페이지에서는 내비의 전화 버튼을 숨긴다.
+       (헤더 전화번호 + 내비 버튼 + 하단 바로 전화 CTA가 3중이 되는 것을 방지) */
+    body:has(.mobile-cta-bar) .site-nav-call {
+        display: none;
+    }
+
+    /* ----- 하단 CTA 바 활성화 ----- */
+    .mobile-cta-bar {
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1200;
+        box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.22);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    /* 바가 푸터 마지막 줄을 가리지 않도록 여백 확보 */
+    body:has(.mobile-cta-bar) {
+        padding-bottom: 68px;
+    }
+
+    /* 페이지마다 제각각 붙어 있던 원형 고정 버튼들은 하단 바·내비와 기능이
+       겹치고 서로 화면을 가린다. 모바일에서는 하단 바 하나로 통일한다. */
+    body:has(.mobile-cta-bar) .floating-call,
+    body:has(.mobile-cta-bar) .fixed-call-btn,
+    body:has(.mobile-cta-bar) .fixed-phone-btn,
+    body:has(.mobile-cta-bar) .fixed-home-btn,
+    body:has(.mobile-cta-bar) .fixed-blog-btn {
+        display: none;
+    }
+
+    .site-nav-menu {
+        order: 3;
+        flex: 1 1 100%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    .site-nav.is-open .site-nav-menu {
+        display: flex;
+    }
+
+    .site-nav-menu > li > a,
+    .site-nav-sub-toggle {
+        width: 100%;
+        padding: 14px 6px;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* 모바일에서는 하위 메뉴를 겹치지 않고 그 자리에서 펼친다 */
+    .site-nav-sub {
+        position: static;
+        min-width: 0;
+        columns: 1;
+        background: rgba(0, 0, 0, 0.18);
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .site-nav-sub a {
+        color: #e0f2fe;
+        padding: 12px 6px 12px 22px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .site-nav-sub a:hover,
+    .site-nav-sub a:focus-visible {
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+    }
+}
+
+/* 모션 최소화 설정 존중 */
+@media (prefers-reduced-motion: reduce) {
+    .site-nav *,
+    .site-nav *::before,
+    .site-nav *::after {
+        transition: none !important;
+    }
+}

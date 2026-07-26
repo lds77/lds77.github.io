@@ -26,7 +26,7 @@
         }
 
         html {
-            overflow-x: hidden;
+            overflow-x: clip;
             overflow-y: auto;
             max-width: 100vw;
             scroll-behavior: smooth;
@@ -37,7 +37,7 @@
             line-height: 1.6;
             color: #333;
             background: #f8f9fa;
-            overflow-x: hidden;
+            overflow-x: clip;
             overflow-y: visible;
             position: relative;
             max-width: 100vw;
@@ -51,22 +51,24 @@
             overflow: visible;
         }
 
-        /* Header */
+        /* Header
+           고정(fixed) 해제 — 상단에 붙어 따라다니는 역할은 sticky 내비게이션(.site-nav)이
+           담당한다. 헤더까지 고정하면 두 줄이 화면을 잡아먹고, main의 margin-top
+           고정값과도 계속 어긋난다. */
         header {
             background: #0369a1;
             color: white;
             padding: 1rem 0;
-            position: fixed;
             width: 100%;
-            top: 0;
-            z-index: 1000;
             box-shadow: 0 2px 10px rgba(3,105,161,0.25);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
             flex-wrap: wrap;
         }
 
@@ -74,6 +76,12 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .logo img {
+            max-width: 64px;
         }
 
         .logo-icon {
@@ -89,20 +97,65 @@
         }
 
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             margin: 0;
         }
 
         .emergency-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
             text-align: right;
         }
 
+        /* 헤더 전화번호 — 사이트의 1순위 전환 요소 */
         .phone-number {
-            font-size: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            line-height: 1.2;
+            color: white;
+            text-decoration: none;
+            padding: 6px 16px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.14);
+            border: 1px solid rgba(255,255,255,0.28);
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .phone-number:hover,
+        .phone-number:focus-visible {
+            background: rgba(255,255,255,0.26);
+            transform: translateY(-1px);
+            color: white;
+        }
+
+        .phone-number .phone-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            opacity: 0.9;
+            letter-spacing: 0.02em;
+        }
+
+        .phone-number .phone-digits {
+            font-size: 1.7rem;
             font-weight: 900;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            margin-bottom: 5px;
+            letter-spacing: 0.01em;
+        }
+
+        .header-sub-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fde68a;
+            text-decoration: none;
+        }
+
+        .header-sub-link:hover,
+        .header-sub-link:focus-visible {
+            color: #fff;
+            text-decoration: underline;
         }
 
         .emergency-text {
@@ -112,8 +165,18 @@
 
         /* Main Content */
         main {
-            margin-top: 120px;
             overflow: visible;
+        }
+
+        /* Hero 배너 이미지 */
+        .hero-image {
+            display: block;
+            margin: 0 auto 20px;
+            width: 100%;
+            max-width: 560px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.18);
         }
 
         /* Hero Section */
@@ -678,6 +741,8 @@
             color: white;
         }
 
+        /* 모바일 하단 고정 CTA 바는 전 페이지 공용이므로 nav.css 로 이동했다. */
+
         /* Main Accordion Styles */
         .main-accordion {
             max-width: 1200px;
@@ -832,7 +897,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             html, body {
-                overflow-x: hidden;
+                overflow-x: clip;
                 max-width: 100vw;
             }
             
@@ -843,13 +908,24 @@
             }
 
             header {
-                padding: 0.5rem 0;
+                padding: 0.6rem 0;
             }
 
             .header-content {
-                flex-direction: column;
-                gap: 8px;
-                text-align: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+                text-align: left;
+            }
+
+            .logo {
+                gap: 10px;
+                flex: 1 1 auto;
+                min-width: 0;
+            }
+
+            .logo img {
+                max-width: 44px;
             }
 
             .logo-icon {
@@ -859,19 +935,38 @@
             }
 
             .logo h1 {
-                font-size: 1.3rem;
+                font-size: 1.05rem;
+                line-height: 1.3;
             }
 
             .logo p {
                 font-size: 0.75rem;
             }
 
-            .phone-number {
-                font-size: 1.3rem;
+            .emergency-contact {
+                flex: 1 1 100%;
+                align-items: stretch;
+                text-align: center;
             }
 
-            main {
-                margin-top: 130px;
+            .phone-number {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                padding: 8px 12px;
+            }
+
+            .phone-number .phone-label {
+                font-size: 0.72rem;
+            }
+
+            .phone-number .phone-digits {
+                font-size: 1.35rem;
+            }
+
+            .header-sub-link {
+                align-self: center;
             }
 
             .hero {
