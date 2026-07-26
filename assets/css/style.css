@@ -741,61 +741,7 @@
             color: white;
         }
 
-        /* =========================================================
-           모바일 하단 고정 CTA 바
-           원형 플로팅 버튼보다 탭 면적이 크고 목적이 명확하다.
-           데스크톱에서는 숨기고 플로팅 버튼을 쓴다.
-           ========================================================= */
-        .mobile-cta-bar {
-            display: none;
-        }
-
-        .mobile-cta {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            flex: 1 1 0;
-            min-height: 60px;
-            padding: 8px 6px;
-            color: white;
-            text-decoration: none;
-            font-family: inherit;
-        }
-
-        .mobile-cta-icon {
-            font-size: 1.5rem;
-            line-height: 1;
-        }
-
-        .mobile-cta-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.25;
-        }
-
-        .mobile-cta-text strong {
-            font-size: 1.05rem;
-            font-weight: 800;
-        }
-
-        .mobile-cta-text small {
-            font-size: 0.72rem;
-            opacity: 0.9;
-            font-weight: 600;
-        }
-
-        .mobile-cta-call {
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
-        }
-
-        .mobile-cta-sms {
-            background: linear-gradient(135deg, #0369a1, #0284c7);
-        }
-
-        .mobile-cta:active {
-            filter: brightness(0.9);
-        }
+        /* 모바일 하단 고정 CTA 바는 전 페이지 공용이므로 nav.css 로 이동했다. */
 
         /* Main Accordion Styles */
         .main-accordion {
@@ -1021,28 +967,6 @@
 
             .header-sub-link {
                 align-self: center;
-            }
-
-            /* 하단 CTA 바 활성화 — 플로팅 원형 버튼은 중복이므로 숨긴다 */
-            .mobile-cta-bar {
-                display: flex;
-                position: fixed;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                z-index: 1200;
-                box-shadow: 0 -4px 16px rgba(0,0,0,0.22);
-                padding-bottom: env(safe-area-inset-bottom, 0px);
-            }
-
-            .floating-call,
-            .fixed-blog-btn {
-                display: none;
-            }
-
-            /* CTA 바가 푸터 마지막 줄을 가리지 않도록 여백 확보 */
-            body {
-                padding-bottom: 68px;
             }
 
             .hero {

@@ -167,6 +167,68 @@
     transform: translateY(-1px);
 }
 
+/* 헤더에 큰 전화번호가 이미 보이는 동안에는 내비의 전화 버튼을 감춘다.
+   스크롤로 헤더가 넘어가면 nav.js 가 클래스를 떼어 다시 노출한다.
+   (display 대신 opacity/visibility 를 써서 레이아웃이 흔들리지 않게 한다) */
+@media (min-width: 901px) {
+    .site-nav--call-idle .site-nav-call {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4px);
+        transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+    }
+}
+
+/* =============================================================
+   모바일 하단 고정 CTA 바 (전 페이지 공용)
+   원형 플로팅 버튼보다 탭 면적이 크고 목적이 명확하다.
+   데스크톱에서는 숨기고 각 페이지의 기존 플로팅 버튼을 쓴다.
+   ============================================================= */
+.mobile-cta-bar {
+    display: none;
+    font-family: 'Nanum Gothic', 'Noto Sans KR', Arial, sans-serif;
+}
+
+.mobile-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex: 1 1 0;
+    min-height: 60px;
+    padding: 8px 6px;
+    color: #fff;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.mobile-cta-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.mobile-cta-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+}
+
+.mobile-cta-text strong {
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.mobile-cta-text small {
+    font-size: 0.72rem;
+    opacity: 0.9;
+    font-weight: 600;
+}
+
+.mobile-cta-call { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+.mobile-cta-sms  { background: linear-gradient(135deg, #0369a1, #0284c7); }
+
+.mobile-cta:active { filter: brightness(0.9); }
+
 /* ----- 햄버거 버튼 (모바일 전용) ----- */
 .site-nav-toggle {
     display: none;
@@ -234,6 +296,33 @@
     /* 하단 고정 CTA 바가 있는 페이지에서는 내비의 전화 버튼을 숨긴다.
        (헤더 전화번호 + 내비 버튼 + 하단 바로 전화 CTA가 3중이 되는 것을 방지) */
     body:has(.mobile-cta-bar) .site-nav-call {
+        display: none;
+    }
+
+    /* ----- 하단 CTA 바 활성화 ----- */
+    .mobile-cta-bar {
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1200;
+        box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.22);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    /* 바가 푸터 마지막 줄을 가리지 않도록 여백 확보 */
+    body:has(.mobile-cta-bar) {
+        padding-bottom: 68px;
+    }
+
+    /* 페이지마다 제각각 붙어 있던 원형 고정 버튼들은 하단 바·내비와 기능이
+       겹치고 서로 화면을 가린다. 모바일에서는 하단 바 하나로 통일한다. */
+    body:has(.mobile-cta-bar) .floating-call,
+    body:has(.mobile-cta-bar) .fixed-call-btn,
+    body:has(.mobile-cta-bar) .fixed-phone-btn,
+    body:has(.mobile-cta-bar) .fixed-home-btn,
+    body:has(.mobile-cta-bar) .fixed-blog-btn {
         display: none;
     }
 

@@ -62,6 +62,18 @@
         else if (toggle && nav.classList.contains('is-open')) toggle.focus();
     });
 
+    // 헤더에 큰 전화번호가 있는 페이지(홈)에서는 그것이 보이는 동안
+    // 내비의 전화 버튼을 감춰 같은 번호가 두 번 보이지 않게 한다.
+    var headerPhone = document.querySelector('header .phone-number');
+    if (headerPhone && 'IntersectionObserver' in window) {
+        nav.classList.add('site-nav--call-idle');
+        new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                nav.classList.toggle('site-nav--call-idle', entry.isIntersecting);
+            });
+        }, { threshold: 0 }).observe(headerPhone);
+    }
+
     // 현재 페이지 표시
     var here = location.pathname.replace(/index\.html$/, '').replace(/\/+$/, '/') || '/';
     Array.prototype.forEach.call(nav.querySelectorAll('a[href]'), function (a) {
