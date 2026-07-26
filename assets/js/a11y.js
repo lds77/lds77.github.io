@@ -80,6 +80,51 @@
         }
     });
 
+    // ----- 4) 등장 애니메이션 안전장치 -----
+    // 20개 페이지가 카드를 opacity:0 으로 숨긴 뒤 IntersectionObserver 로 되살린다.
+    // 옵저버를 못 쓰거나 되살리는 코드가 실패하면 콘텐츠가 통째로 사라진다.
+    // 여기서 별도 옵저버를 하나 더 걸어 두고, 마지막 보루로 타임아웃도 둔다.
+    function revealStuck() {
+        var stuck = Array.prototype.filter.call(
+            document.querySelectorAll('[style*="opacity"]'),
+            function (el) { return parseFloat(el.style.opacity) === 0; }
+        );
+        if (!stuck.length) return;
+
+        function show(el) {
+            el.style.opacity = '1';
+            if (el.style.transform) el.style.transform = 'none';
+        }
+
+        var reduce = window.matchMedia &&
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // 모션 최소화 설정이거나 옵저버를 못 쓰면 즉시 전부 노출
+        if (reduce || !('IntersectionObserver' in window)) {
+            stuck.forEach(show);
+            return;
+        }
+
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (!e.isIntersecting) return;
+                show(e.target);
+                io.unobserve(e.target);
+            });
+        }, { rootMargin: '200px' });
+        stuck.forEach(function (el) { io.observe(el); });
+
+        // 그래도 남아 있으면 8초 뒤 강제 노출 — 장식보다 콘텐츠가 우선이다
+        setTimeout(function () {
+            stuck.forEach(function (el) {
+                if (parseFloat(el.style.opacity) === 0) show(el);
+            });
+        }, 8000);
+    }
+
+    // 페이지 자체 스크립트가 카드를 숨긴 뒤에 실행되어야 한다
+    window.addEventListener('load', function () { setTimeout(revealStuck, 300); });
+
     if ('MutationObserver' in window && togglers.length) {
         // 헤더와 패널 어느 쪽의 class 가 바뀌어도 해당 헤더의 aria 를 다시 계산한다
         var owner = new WeakMap();
